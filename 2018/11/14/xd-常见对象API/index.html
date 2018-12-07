@@ -108,14 +108,17 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="API Application Programing Interface 应用程序编程接口   java api java提供使用的类    Object java.lang.Object  hashCode() 返回该对象的哈希码值 采用操作系统底层实现的哈希算法。   java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致  getClass() 返回此对">
+<meta property="og:type" content="article">
 <meta property="og:title" content="xd-常见对象API">
 <meta property="og:url" content="http://yoursite.com/2018/11/14/xd-常见对象API/index.html">
 <meta property="og:site_name" content="安₃">
+<meta property="og:description" content="API Application Programing Interface 应用程序编程接口   java api java提供使用的类    Object java.lang.Object  hashCode() 返回该对象的哈希码值 采用操作系统底层实现的哈希算法。   java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致  getClass() 返回此对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-14T09:29:08.265Z">
+<meta property="og:updated_time" content="2018-11-23T07:47:58.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xd-常见对象API">
+<meta name="twitter:description" content="API Application Programing Interface 应用程序编程接口   java api java提供使用的类    Object java.lang.Object  hashCode() 返回该对象的哈希码值 采用操作系统底层实现的哈希算法。   java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致  getClass() 返回此对">
 
 
 
@@ -349,8 +352,42 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-23 15:47:58" itemprop="dateModified" datetime="2018-11-23T15:47:58+08:00">2018-11-23</time>
+              
+            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -379,7 +416,617 @@
       
 
       
-        
+        <h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><ul>
+<li><code>Application Programing Interface</code><ul>
+<li>应用程序编程接口</li>
+</ul>
+</li>
+<li>java api<ul>
+<li>java提供使用的类</li>
+</ul>
+</li>
+</ul>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ul>
+<li><code>java.lang.Object</code></li>
+</ul>
+<h2 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a><code>hashCode()</code></h2><ul>
+<li>返回该对象的哈希码值<ul>
+<li>采用操作系统底层实现的哈希算法。</li>
+</ul>
+</li>
+<li>java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致</li>
+</ul>
+<h2 id="getClass"><a href="#getClass" class="headerlink" title="getClass()"></a><code>getClass()</code></h2><ul>
+<li>返回此对象的运行时类(字节码对象)</li>
+</ul>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals()"></a><code>equals()</code></h2><h3 id="amp-equals"><a href="#amp-equals" class="headerlink" title="== &amp; equals()"></a><code>==</code> &amp; <code>equals()</code></h3><ul>
+<li><code>==</code><ul>
+<li>基本类型<ul>
+<li>比较的是值</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>比较的是地址值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>equals()</code><ul>
+<li>引用类型<ul>
+<li>默认比较的是地址值，底层是<code>==</code></li>
+<li>如果不重写<code>equals()</code>，则<code>==</code>和<code>equals()</code>在比较引用类型时是一样的。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="equals-的重写"><a href="#equals-的重写" class="headerlink" title="equals()的重写"></a><code>equals()</code>的重写</h3><ul>
+<li>判断元素是否相同<ol>
+<li>判断两个元素哈希值是否相同(判断的是对象的hashCode())</li>
+<li>如果哈希值相同判断内容是否相同(判断的是对象的equals())</li>
+</ol>
+</li>
+<li>重写<code>equals()</code>也要重写<code>hashCode()</code><ul>
+<li>两个对象相同则哈希值一定相同。</li>
+<li>如果只重写<code>equals()</code>方法，结果返回true时，<code>hashCode()</code>方法还是使用的Object类中的算法，比较的是地址值，哈希值可能会不相同。</li>
+</ul>
+</li>
+</ul>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a><code>toString()</code></h2><ul>
+<li><code>类名@哈希码值的十六进制形式</code><ul>
+<li><code>getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode())</code></li>
+</ul>
+</li>
+<li>直接打印对象时默认调用<code>toString()</code>，通常会重写。</li>
+</ul>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a><code>finalize()</code></h2><ul>
+<li>当垃圾回收器执行时，会自动调用此方法</li>
+</ul>
+<h1 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h1><ul>
+<li><code>java.util.Scanner</code></li>
+<li>一个可以使用正则表达式来解析基本类型和字符串的简单文本扫描器</li>
+</ul>
+<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>Scanner(InputStream source)</code><ul>
+<li><code>Scanner sc = new Scanner(System.in)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
+<li><code>hasNext()</code><ul>
+<li>是否有下一个字符串</li>
+</ul>
+</li>
+<li><code>next()</code><ul>
+<li>获取下一个字符串</li>
+</ul>
+</li>
+<li><code>nextLine()</code><ul>
+<li>获取下一个字符串</li>
+</ul>
+</li>
+<li><strong><code>next()</code>和<code>nextLine()</code>的区别</strong><ul>
+<li>next()一定要读取到有效字符后才可以结束输入，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next()方法会自动将其去掉，只有在输入有效字符之后，next()方法才将其后输入的空格键、Tab键或Enter键等视为分隔符或结束符</li>
+<li>nextLine()方法的结束符只是Enter键，即nextLine()方法返回的是Enter键之前的所有字符，它是可以得到带空格的字符串的</li>
+</ul>
+</li>
+<li><code>hasNextXxx()</code><ul>
+<li>有一系列的此方法，来判断是否有下一个指定类型的值</li>
+<li><code>hasNextInt() hasNextDouble() ...</code></li>
+</ul>
+</li>
+<li><code>nextXxx()</code><ul>
+<li>有一系列的此方法，来获取下一个指定类型的值</li>
+<li><code>nextInt() nextDouble() ...</code></li>
+</ul>
+</li>
+<li><code>next() nextXxx()</code>等与<code>nextLine()</code>连用时的问题<ul>
+<li>如<code>nextInt()</code>，我们输入一个数<code>8</code>回车，其实输入的是<code>8\r\n</code>，<code>nextInt()</code>方法读取的是<code>8</code>遇到<code>\r</code>就结束了，而留下了<code>\r</code>，则下一个<code>nextLine()</code>直接就读取<code>\r</code>就结束了</li>
+<li>解决<ol>
+<li>在语句之后加一个nextLine()语句用来读取没有读到的<code>\r</code></li>
+<li>都使用<code>nextLine()</code>，输入字符串，需要数字就转换。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><ul>
+<li><code>java.lang.String</code></li>
+</ul>
+<h2 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>String(byte[] bytes)</code><ul>
+<li>使用平台默认码表解码字节数组构造字符串</li>
+<li>安<ul>
+<li>先要把字节转为字符，然后再组成串</li>
+<li>字节→字符即解码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String(byte[] bytes, Charset charset)</code><ul>
+<li>使用指定码表</li>
+</ul>
+</li>
+<li><code>String(byte[] bytes, int index, int length)</code></li>
+<li><code>String(char[] chars)</code></li>
+<li><code>String(char[] chars, int index, int length)</code></li>
+<li><code>String(StringBuffer/StringBuilder buffer)</code></li>
+</ul>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><ul>
+<li><code>int length()</code></li>
+<li><code>char charAt(int index)</code></li>
+<li><code>int indexOf(int ch,[int fromIndex])</code><ul>
+<li>第一次出现的位置</li>
+<li>传<code>&#39;a&#39;</code>也行传<code>97</code>也行</li>
+</ul>
+</li>
+<li><code>int indexOf(String str,[int fromIndex])</code></li>
+<li><code>int lastIndexOf(int ch,[int fromIndex])</code><ul>
+<li>最后一次出现的位置</li>
+</ul>
+</li>
+<li><code>int lastIndexOf(String str,[int fromIndex])</code></li>
+<li><code>String substring(int beginIndex,[int endIndex])</code><ul>
+<li>含头不含尾</li>
+</ul>
+</li>
+</ul>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><ul>
+<li><code>String[] split(String regex)</code></li>
+<li><code>char[] toCharArray()</code></li>
+<li><code>byte[] getBytes()</code></li>
+<li><code>toUpperCase()</code></li>
+<li><code>toLowerCase()</code></li>
+<li><code>String replace(char oldch,char newch)</code></li>
+<li><code>String replace(String s1,String s2)</code></li>
+<li><code>String trim()</code></li>
+<li><code>static valueOf(char[] chs)</code><ul>
+<li>将字符数组转成字符串<ul>
+<li>底层使用的是String类的构造方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>static valueOf(int i)</code><ul>
+<li>将基本类型转换成字符串<ul>
+<li>相当于<code>&quot;&quot;+基本类型</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>static valueOf(Object obj)</code><ul>
+<li>将对象转换为字符串<ul>
+<li>其实就是调用对象的toString()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String concat(String s)</code><ul>
+<li>相当于<code>+</code>连接</li>
+</ul>
+</li>
+</ul>
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><ul>
+<li><code>boolean isEmpty()</code><ul>
+<li><code>&quot;&quot;</code>和null的区别<ul>
+<li><code>&quot;&quot;</code>是字符串常量，同时也是一个String类对象，所以可以使用String类的方法<ul>
+<li>空字符串</li>
+</ul>
+</li>
+<li>null是空常量，调用方法会空指针。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>boolean equals(Object obj)</code></li>
+<li><code>boolean equalsIgnoreCase(String s)</code></li>
+<li><code>boolean contains(String s)</code></li>
+<li><code>boolean startsWith(String s)</code></li>
+<li><code>boolean endWith(String s)</code></li>
+<li><code>boolean matches(String regex)</code></li>
+</ul>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ul>
+<li><code>int compareTo(String s)</code><ul>
+<li>字典顺序 前边小</li>
+</ul>
+</li>
+</ul>
+<h2 id="应用-1"><a href="#应用-1" class="headerlink" title="应用"></a>应用</h2><ol>
+<li><p>对字符串数组中的元素排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private static void sortArray(String[] ss) &#123;</span><br><span class="line">    for (int i = 0; i &lt; ss.length - 1; i++) &#123;</span><br><span class="line">        for (int j = i + 1; j &lt; ss.length; j++) &#123;</span><br><span class="line">            if (ss[i].compareTo(ss[j]) &gt; 0) &#123;</span><br><span class="line">                swap(ss, i, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子串出现的次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private static int getAppearCount(String s1, String s2) &#123;</span><br><span class="line">    int count = 0;</span><br><span class="line">    int index = 0;</span><br><span class="line">    while ((index = s1.indexOf(s2, index)) != -1) &#123;</span><br><span class="line">        count++;</span><br><span class="line">        index += s2.length();</span><br><span class="line">    &#125;</span><br><span class="line">    return count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最大相同子串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private static String getMaxSameString(String s1, String s2) &#123;</span><br><span class="line">    String max, min;</span><br><span class="line">    min = s1.length() &lt; s2.length() ? s1 : s2;</span><br><span class="line">    max = min.equals(s2) ? s1 : s2;</span><br><span class="line">    for (int i = 0; i &lt; min.length() - 1; i++) &#123;</span><br><span class="line">        for (int x = 0, y = min.length() - i; y != min.length() + 1; x++, y++) &#123;</span><br><span class="line">            String sub = min.substring(x, y);</span><br><span class="line">            if (max.contains(sub)) &#123;</span><br><span class="line">                return sub;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>去除两端空格</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private static String myTrim(String s) &#123;</span><br><span class="line">    int start=0;</span><br><span class="line">    int end=s.length()-1;</span><br><span class="line">    while (start &lt;= end &amp;&amp; &apos; &apos;==s.charAt(start)) &#123;</span><br><span class="line">        start++;</span><br><span class="line">    &#125;</span><br><span class="line">    while (start &lt;= end &amp;&amp; &apos; &apos;==s.charAt(end)) &#123;</span><br><span class="line">        end--;</span><br><span class="line">    &#125;</span><br><span class="line">    return s.substring(start,end+1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abc&quot;;</span><br><span class="line">String s2 = &quot;abc&quot;;</span><br><span class="line">sout(s1 == s2);	// true</span><br><span class="line">sout(s1.equals(s2));	// true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s = new String(&quot;abc&quot;);</span><br><span class="line">这句话创建了几个对象?</span><br><span class="line">// 两个</span><br><span class="line">	一个是在堆中new出来的对象，一个是常量池中的字符串对象&quot;abc&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abc&quot;;</span><br><span class="line">String s2 = new String(&quot;abc&quot;);</span><br><span class="line">sout(s1 == s2);	// false</span><br><span class="line">sout(s1.equals(s2));	// true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abc&quot;;</span><br><span class="line">String s2 = &quot;a&quot; + &quot;b&quot; + &quot;c&quot;;</span><br><span class="line">sout(s1 == s2);	// true</span><br><span class="line">// java的常量优化机制</span><br><span class="line">sout(s1.equals(s2));	// true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abc&quot;;</span><br><span class="line">String s2 = &quot;ab&quot;;</span><br><span class="line">String s3 = s2 + &quot;c&quot;; </span><br><span class="line">sout(s1 == s3);	// false</span><br><span class="line">// 因为s2是变量，不适用常量优化机制。</span><br><span class="line">而java中+的原理是创建StringBuffer对象，然后添加元素，然后toString得到字符串。</span><br><span class="line">此过程中，创建的StringBuffer有一个地址值，toString得到的字符串又有一个地址值，最后把这个toString的地址值赋给了s3。</span><br><span class="line">sout(s1.equals(s3));	// true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><ul>
+<li><code>java.lang.StringBuffer</code></li>
+</ul>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>字符串缓冲区</li>
+<li>长度可变，可以存储不同类型数据。</li>
+<li>默认缓冲区的容量是16</li>
+</ul>
+<h3 id="String-amp-StringBuffer"><a href="#String-amp-StringBuffer" class="headerlink" title="String &amp; StringBuffer"></a>String &amp; StringBuffer</h3><ul>
+<li>String是一个不可变的字符序列</li>
+<li>StringBuffer是一个可变的字符序列</li>
+</ul>
+<h3 id="StringBuffer-amp-StringBuilder"><a href="#StringBuffer-amp-StringBuilder" class="headerlink" title="StringBuffer &amp; StringBuilder"></a>StringBuffer &amp; StringBuilder</h3><ul>
+<li>StringBuffer<ul>
+<li>线程安全，所有的缓冲区操作方法都是同步的，效率低</li>
+</ul>
+</li>
+<li>StringBuilder<ul>
+<li>线程不安全，效率高</li>
+<li>在 Java 中 无论使用何种方式进行字符串连接,实际上都使用的是 StringBuilder</li>
+</ul>
+</li>
+</ul>
+<h2 id="构造-2"><a href="#构造-2" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>StringBuffer()</code><ul>
+<li>初始容量为16字符</li>
+</ul>
+</li>
+<li><code>StringBuffer(int capacity)</code><ul>
+<li>指定容量的字符串缓冲区对象</li>
+</ul>
+</li>
+<li><code>StringBuffer(String str)</code><ul>
+<li>指定字符串内容的字符串缓冲区对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><ul>
+<li><code>StringBuffer append(data)</code><ul>
+<li>可以把任意类型数据添加到字符串缓冲区里面,并返回字符串缓冲区本身</li>
+</ul>
+</li>
+<li><code>StringBuffer insert(int offset,data)</code><ul>
+<li>在指定位置把任意类型的数据插入到字符串缓冲区里面,并返回字符串缓冲区本身</li>
+</ul>
+</li>
+</ul>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ul>
+<li><code>StringBuffer deleteCharAt(int index)</code><ul>
+<li>删除指定位置的字符，并返回本身</li>
+</ul>
+</li>
+<li><code>StringBuffer delete(int start,int end)</code><ul>
+<li>删除从指定位置开始指定位置结束的内容，并返回本身</li>
+<li>含头不含尾</li>
+<li>清空<ul>
+<li><code>StringBuffer delete(0,sb.length())</code></li>
+<li><code>sb=new StringBuffer();</code><ul>
+<li>新建一个，不推荐。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><ul>
+<li><code>StringBuffer replace(int start,int end,String s)</code><ul>
+<li>从start开始到end用s替换</li>
+</ul>
+</li>
+<li><code>void setCharAt(int index,char ch)</code></li>
+<li><code>StringBuffer reverse()</code><ul>
+<li>将此字符序列反转</li>
+</ul>
+</li>
+</ul>
+<h2 id="获取-1"><a href="#获取-1" class="headerlink" title="获取"></a>获取</h2><ul>
+<li><code>char charAt(int index)</code></li>
+<li><code>int indexOf(String s,[int fromIndex])</code></li>
+<li><code>int lastIndexOf(String s,[int fromIndex])</code></li>
+<li><code>String substring(int start, int end)</code><ul>
+<li>截取一个字符串，含头不含尾</li>
+</ul>
+</li>
+<li><code>int length()</code><ul>
+<li>获取容器中元素个数</li>
+</ul>
+</li>
+<li><code>int capacity()</code><ul>
+<li>获取容器容量</li>
+</ul>
+</li>
+</ul>
+<h1 id="基本类型包装类"><a href="#基本类型包装类" class="headerlink" title="基本类型包装类"></a>基本类型包装类</h1><h2 id="基本类型对应包装类"><a href="#基本类型对应包装类" class="headerlink" title="基本类型对应包装类"></a>基本类型对应包装类</h2><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h2><h3 id="构造-3"><a href="#构造-3" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>Integer(int i)</code></li>
+<li><code>Integer(String s)</code></li>
+</ul>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><ul>
+<li><code>static String toBinaryString(int i)</code><ul>
+<li>二进制</li>
+</ul>
+</li>
+<li><code>static String toOctalString(int i)</code><ul>
+<li>八进制</li>
+</ul>
+</li>
+<li><code>static  String toHexString(int i)</code><ul>
+<li>十六进制</li>
+</ul>
+</li>
+<li><code>static toString(int i,int radix)</code><ul>
+<li>指定进制</li>
+</ul>
+</li>
+</ul>
+<h3 id="比较-1"><a href="#比较-1" class="headerlink" title="比较"></a>比较</h3><ul>
+<li><code>int compareTo(Integer i)</code></li>
+</ul>
+<h3 id="自动拆装箱"><a href="#自动拆装箱" class="headerlink" title="自动拆装箱"></a>自动拆装箱</h3><ul>
+<li><code>Integer i=new Integer(3)</code><ul>
+<li>装箱（基本类型包装成对象）</li>
+</ul>
+</li>
+<li><code>int i = i.intValue()</code><ul>
+<li>拆箱（对象转为基本类型）</li>
+</ul>
+</li>
+<li><code>Integer i=3</code><ul>
+<li>自动装箱 </li>
+</ul>
+</li>
+<li><code>int j=i+2</code><ul>
+<li>自动拆箱（i自动转换成了int）</li>
+<li>注意如果<code>Integer i = null</code>，会空指针异常<ul>
+<li>因为自动拆箱底层调用方法<code>intValue()</code>，对象为空显然不行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="思考-1"><a href="#思考-1" class="headerlink" title="思考"></a>思考</h3><ol>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = new Integer(127);</span><br><span class="line">Integer i2 = new Integer(127);</span><br><span class="line">sout(i1 == i2);	// false </span><br><span class="line">sout(i1.equals(i2));	// true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>new是两个对象肯定是false</li>
+<li>Integer重写了equals方法，比较的是数值</li>
+</ul>
+</li>
+<li><p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = 127;</span><br><span class="line">Integer i2 = 127;</span><br><span class="line">sout(i1 == i2);	// true </span><br><span class="line">sout(i1.equals(i2));	// true</span><br><span class="line">Integer i3 = 128;</span><br><span class="line">Integer i4 = 128;</span><br><span class="line">sout(i3 == i4);	// false </span><br><span class="line">sout(i3.equals(i4));	// true</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-128~127</code>是byte的范围，如果在此范围内取值，自动装箱不会新创建对象，而是从常量池中取</li>
+<li>如果超过了byte范围，就会创建新对象。</li>
+</ul>
+</li>
+</ol>
+<h1 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h1><ul>
+<li><code>java.lang.Math</code></li>
+<li><code>PI</code><ul>
+<li>圆周率</li>
+</ul>
+</li>
+<li><code>static double random()</code><ul>
+<li><code>0.0 &lt;= x &lt;1.0</code></li>
+</ul>
+</li>
+<li><code>static int abs(int a)</code><ul>
+<li>绝对值</li>
+</ul>
+</li>
+<li><code>static double ceil(double d)</code><ul>
+<li>向上取整</li>
+</ul>
+</li>
+<li><code>static double floor(double d)</code><ul>
+<li>向下取整</li>
+</ul>
+</li>
+<li><code>static int round(float f)</code><ul>
+<li>四舍五入</li>
+</ul>
+</li>
+<li><code>static int max(int a, int b)</code></li>
+<li><code>static int min(int a, int b)</code></li>
+</ul>
+<h1 id="Ramdom"><a href="#Ramdom" class="headerlink" title="Ramdom"></a>Ramdom</h1><ul>
+<li><code>java.util.Random</code></li>
+</ul>
+<h2 id="构造-4"><a href="#构造-4" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>Random()</code><ul>
+<li>使用的种子是系统时间的纳秒值</li>
+</ul>
+</li>
+<li><code>Random(long seed)</code><ul>
+<li>seed<ul>
+<li>初始种子</li>
+<li>如果指定种子，那么多次执行获得的随机数是一样的。<ul>
+<li>这里的多次执行意思是我执行一次获取3个随机数，第二次执行获取的3个数与第一次执行获取的3个数是一样的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>int nextInt()</code><ul>
+<li>默认获取int范围内的数</li>
+</ul>
+</li>
+<li><code>int nextInt(int n)</code><ul>
+<li>获取<code>0 &lt;= x &lt;n</code>的数</li>
+</ul>
+</li>
+</ul>
+<h1 id="System"><a href="#System" class="headerlink" title="System"></a>System</h1><ul>
+<li><code>java.lang.System</code></li>
+<li><code>static void gc()</code><ul>
+<li>运行垃圾回收器</li>
+</ul>
+</li>
+<li><code>static void exit(int status)</code><ul>
+<li>终止当前正在运行的 Java 虚拟机</li>
+<li>非 0 的状态码表示异常终止，所以通常用 0</li>
+</ul>
+</li>
+<li><code>static long currentTimeMillis()</code><ul>
+<li><code>1970-01-01</code>到当前时间的毫秒值</li>
+</ul>
+</li>
+<li><code>static Properties getProperties()</code><ul>
+<li>获取系统属性集合</li>
+</ul>
+</li>
+<li><code>static String getProperty(String key)</code><ul>
+<li>获取系统指定键的属性</li>
+</ul>
+</li>
+<li><code>static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code><ul>
+<li>拷贝数组<ul>
+<li><code>src</code>：源数组</li>
+<li><code>srcPos</code>：源数组开始索引</li>
+<li><code>dest</code>：目标数组</li>
+<li><code>destPost</code>：目标数组开始索引</li>
+<li><code>length</code>：拷贝长度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Runtime"><a href="#Runtime" class="headerlink" title="Runtime"></a>Runtime</h1><ul>
+<li><code>java.lang.Runtime</code><ul>
+<li>单例</li>
+</ul>
+</li>
+<li><code>static Runtime getRuntime()</code></li>
+<li><code>void addShutdownHook(Thread hook)</code><ul>
+<li>虚拟机关闭时可以执行一些任务</li>
+<li>例如 hibernate工具类中关闭<code>sessionFactory</code></li>
+</ul>
+</li>
+<li><code>Process exec(...)</code><ul>
+<li>执行并开启一个进程</li>
+<li><code>exec(&quot;notepad.exe&quot;)</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h1><ul>
+<li><code>java.math.BigInteger</code><ul>
+<li>可以让超过Integer范围内的数据进行运算</li>
+</ul>
+</li>
+</ul>
+<h2 id="构造-5"><a href="#构造-5" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>BigInteger(String val)</code><ul>
+<li>把数字变成字符串，就可以用了。</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>BigInteger add(BigInteger val)</code><ul>
+<li><code>+</code></li>
+</ul>
+</li>
+<li><code>BigInteger subtract(BigInteger val)</code><ul>
+<li><code>-</code></li>
+</ul>
+</li>
+<li><code>BigInteger multiply(BigInteger val)</code><ul>
+<li><code>*</code></li>
+</ul>
+</li>
+<li><code>BigInteger divide(BigInteger val)</code><ul>
+<li><code>/</code></li>
+</ul>
+</li>
+<li><code>BigInteger[] divideAndRemainder(BigInteger val)</code><ul>
+<li>商和余数的数组</li>
+</ul>
+</li>
+</ul>
+<h1 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h1><ul>
+<li><code>java.math.BigDecimal</code><ul>
+<li>由于在运算的时候，float和double很容易丢失精度， 所以，为了能精确的表示、计算浮点数，Java提供了BigDecimal</li>
+<li>不可变的，任意精度的有符号十进制数</li>
+</ul>
+</li>
+</ul>
+<h2 id="构造-6"><a href="#构造-6" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>BigDecimal(String val)</code></li>
+</ul>
+<h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>BigDecimal add(BigDecimal augend)</code></li>
+<li><code>BigDecimal subtract(BigDecimal subtrahend)</code></li>
+<li><code>BigDecimal multiply(BigDecimal multiplicand)</code></li>
+<li><code>BigDecimal divide(BigDecimal divisor)</code></li>
+<li><code>static BigDecimal valueOf(double val)</code><ul>
+<li>把一个double转换为BigDecimal</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -473,8 +1120,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,7 +1149,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -538,6 +1194,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">2.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">2.1.</span> <span class="nav-text">hashCode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">2.2.</span> <span class="nav-text">getClass()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">2.3.</span> <span class="nav-text">equals()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-equals"><span class="nav-number">2.3.1.</span> <span class="nav-text">== &amp; equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-的重写"><span class="nav-number">2.3.2.</span> <span class="nav-text">equals()的重写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.4.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">2.5.</span> <span class="nav-text">finalize()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scanner"><span class="nav-number">3.</span> <span class="nav-text">Scanner</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造"><span class="nav-number">3.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">3.2.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-1"><span class="nav-number">4.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取"><span class="nav-number">4.2.</span> <span class="nav-text">获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换"><span class="nav-number">4.3.</span> <span class="nav-text">转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断"><span class="nav-number">4.4.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">4.5.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用-1"><span class="nav-number">4.6.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">4.7.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuffer-StringBuilder"><span class="nav-number">5.</span> <span class="nav-text">StringBuffer/StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-amp-StringBuffer"><span class="nav-number">5.1.1.</span> <span class="nav-text">String &amp; StringBuffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-amp-StringBuilder"><span class="nav-number">5.1.2.</span> <span class="nav-text">StringBuffer &amp; StringBuilder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-2"><span class="nav-number">5.2.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加"><span class="nav-number">5.3.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">5.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">5.5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-1"><span class="nav-number">5.6.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型包装类"><span class="nav-number">6.</span> <span class="nav-text">基本类型包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型对应包装类"><span class="nav-number">6.1.</span> <span class="nav-text">基本类型对应包装类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer"><span class="nav-number">6.2.</span> <span class="nav-text">Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造-3"><span class="nav-number">6.2.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制"><span class="nav-number">6.2.2.</span> <span class="nav-text">进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动拆装箱"><span class="nav-number">6.2.4.</span> <span class="nav-text">自动拆装箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考-1"><span class="nav-number">6.2.5.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">7.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ramdom"><span class="nav-number">8.</span> <span class="nav-text">Ramdom</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-4"><span class="nav-number">8.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-number">9.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Runtime"><span class="nav-number">10.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigInteger"><span class="nav-number">11.</span> <span class="nav-text">BigInteger</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-5"><span class="nav-number">11.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1"><span class="nav-number">11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigDecimal"><span class="nav-number">12.</span> <span class="nav-text">BigDecimal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-6"><span class="nav-number">12.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-2"><span class="nav-number">12.2.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

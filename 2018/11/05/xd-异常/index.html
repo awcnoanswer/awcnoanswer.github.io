@@ -108,14 +108,17 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="体系 Throwable Error Exception RuntimeException 编译时异常      编译时异常 &amp;amp; 运行时异常 检查和非检查是对于javac来说的  编译时异常 检查异常（checked exception）  特点 Java程序必须显示处理，否则程序就会发生错误，无法通过编译 抛出时必须声明  释义 除了Error 和 RuntimeException的其它">
+<meta property="og:type" content="article">
 <meta property="og:title" content="xd-异常">
 <meta property="og:url" content="http://yoursite.com/2018/11/05/xd-异常/index.html">
 <meta property="og:site_name" content="安₃">
+<meta property="og:description" content="体系 Throwable Error Exception RuntimeException 编译时异常      编译时异常 &amp;amp; 运行时异常 检查和非检查是对于javac来说的  编译时异常 检查异常（checked exception）  特点 Java程序必须显示处理，否则程序就会发生错误，无法通过编译 抛出时必须声明  释义 除了Error 和 RuntimeException的其它">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T09:14:49.297Z">
+<meta property="og:updated_time" content="2018-11-27T07:21:35.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xd-异常">
+<meta name="twitter:description" content="体系 Throwable Error Exception RuntimeException 编译时异常      编译时异常 &amp;amp; 运行时异常 检查和非检查是对于javac来说的  编译时异常 检查异常（checked exception）  特点 Java程序必须显示处理，否则程序就会发生错误，无法通过编译 抛出时必须声明  释义 除了Error 和 RuntimeException的其它">
 
 
 
@@ -349,8 +352,42 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-27 15:21:35" itemprop="dateModified" datetime="2018-11-27T15:21:35+08:00">2018-11-27</time>
+              
+            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -379,7 +416,188 @@
       
 
       
-        
+        <h1 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h1><ul>
+<li>Throwable<ul>
+<li>Error</li>
+<li>Exception<ul>
+<li>RuntimeException</li>
+<li>编译时异常</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="编译时异常-amp-运行时异常"><a href="#编译时异常-amp-运行时异常" class="headerlink" title="编译时异常 &amp; 运行时异常"></a>编译时异常 &amp; 运行时异常</h1><ul>
+<li><strong>检查和非检查是对于javac来说的</strong></li>
+</ul>
+<h2 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
+<li>检查异常（checked exception）</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>Java程序必须显示处理，否则程序就会发生错误，无法通过编译</li>
+<li>抛出时必须声明</li>
+</ul>
+<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><ul>
+<li>除了Error 和 RuntimeException的其它异常。javac强制要求程序员为这样的异常做预备处理工作（使用try…catch…finally或者throws）。在方法中要么用try-catch语句捕获它并处理，要么用throws子句声明抛出它，否则编译不会通过。这样的异常一般是由程序的运行环境导致的。因为程序可能被运行在各种未知的环境下，而程序员无法干预用户如何使用他编写的程序，于是程序员就应该为这样的异常时刻准备着。如SQLException , IOException 等。</li>
+</ul>
+<h2 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
+<li>非检查异常（unckecked exception）</li>
+</ul>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>无需显示处理，也可以和编译时异常一样处理</li>
+<li>抛出时可以不用声明</li>
+</ul>
+<h3 id="释义-1"><a href="#释义-1" class="headerlink" title="释义"></a>释义</h3><ul>
+<li>Error 和 RuntimeException 以及他们的子类。javac在编译时，不会提示和发现这样的异常，不要求在程序处理这些异常。所以如果愿意，我们可以编写代码处理（使用try…catch…finally）这样的异常，也可以不处理。对于这些异常，我们应该修正代码，而不是去通过异常处理器处理 。这样的异常发生的原因多半是代码写的有问题。如除0错误ArithmeticException，错误的强制类型转换错误ClassCastException，数组索引越界ArrayIndexOutOfBoundsException，使用了空对象NullPointerException等等。</li>
+</ul>
+<h2 id="区别-安"><a href="#区别-安" class="headerlink" title="区别(安)"></a>区别(安)</h2><ul>
+<li>编译时异常<ul>
+<li>程序逻辑没有错误，但是你可能会访问不存在的端口，文件..必须处理才能编译通过。</li>
+<li>未雨绸缪异常</li>
+<li>我觉得就是程序写的没问题，但是不健壮，你无法保证用户的运行环境，你不能因为用户写错了一个地址就让程序终止，而应该有此方面的相应处理，如果用户写错了，程序怎么怎么样。</li>
+</ul>
+</li>
+<li>运行时异常<ul>
+<li>程序有问题，比如除了0，角标越界，空指针.</li>
+<li>程序员所犯的错误,需要回来修改代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h1><h2 id="运行时异常-1"><a href="#运行时异常-1" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
+<li>ClassCastException<ul>
+<li>类型转换异常</li>
+</ul>
+</li>
+<li>ArithmeticException<ul>
+<li>当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。</li>
+</ul>
+</li>
+<li>NullPointerException<ul>
+<li>空指针异常</li>
+</ul>
+</li>
+<li>illegaArguementException<ul>
+<li>参数传递异常</li>
+</ul>
+</li>
+<li>IndexOutOfBoundsException<ul>
+<li>数组索引越界异常</li>
+</ul>
+</li>
+<li>ConcurrentModificationException<ul>
+<li>并发修改异常</li>
+<li>遍历集合时对集合修改会发生次异常</li>
+</ul>
+</li>
+<li>NoSuchElementException<ul>
+<li>由 Enumeration 的 nextElement 方法抛出，表明枚举中没有更多的元素。</li>
+</ul>
+</li>
+</ul>
+<h2 id="编译时异常-1"><a href="#编译时异常-1" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
+<li>ClassNotFoundException</li>
+<li>DateFormatException</li>
+<li>FileNotFoundException</li>
+<li>NoSuchMethodException</li>
+<li>NoSuchFieldException</li>
+<li>IOException</li>
+<li>SQLException</li>
+</ul>
+<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><ul>
+<li>NoClassDefFoundError</li>
+<li>OutOfMemoryError</li>
+</ul>
+<h1 id="Throwable的几个常见方法"><a href="#Throwable的几个常见方法" class="headerlink" title="Throwable的几个常见方法"></a>Throwable的几个常见方法</h1><ul>
+<li><code>getMessage()</code><ul>
+<li>获取异常信息，返回字符串。</li>
+</ul>
+</li>
+<li><code>toString()</code><ul>
+<li>获取异常类名和异常信息，返回字符串。</li>
+</ul>
+</li>
+<li><code>printStackTrace()</code><ul>
+<li>获取异常类名和异常信息，以及异常出现在程序中的位置。返回值void。</li>
+</ul>
+</li>
+</ul>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><ol>
+<li>继承Exception</li>
+<li>继承RuntimeException</li>
+</ol>
+<h1 id="继承中的异常"><a href="#继承中的异常" class="headerlink" title="继承中的异常"></a>继承中的异常</h1><ul>
+<li>子类重写父类方法时，子类的方法必须抛出相同的异常或父类异常的子类。</li>
+<li>如果父类抛出了多个异常,子类重写父类时,只能抛出相同的异常或者是他的子集,子类不能抛出父类没有的异常</li>
+<li>如果被重写的方法没有异常抛出,那么子类的方法绝对不可以抛出异常,如果子类方法内有异常发生,那么子类只能try,不能throws</li>
+</ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="JVM默认是如何处理异常的"><a href="#JVM默认是如何处理异常的" class="headerlink" title="JVM默认是如何处理异常的"></a>JVM默认是如何处理异常的</h2><ul>
+<li>main函数收到异常时<ol>
+<li>自己将该问题处理,然后继续运行</li>
+<li>自己没有针对的处理方式,只有交给调用main的jvm来处理</li>
+</ol>
+</li>
+<li>jvm有一个默认的异常处理机制<ul>
+<li><code>printStackTrace()</code></li>
+<li>将该异常的名称,异常的信息.异常出现的位置打印在了控制台上,同时将程序停止运行</li>
+</ul>
+</li>
+</ul>
+<h2 id="异常处理的原则"><a href="#异常处理的原则" class="headerlink" title="异常处理的原则"></a>异常处理的原则</h2><ul>
+<li>如果功能内部可以将问题处理，则捕获异常<ul>
+<li><code>try</code></li>
+</ul>
+</li>
+<li>如果处理不了，则抛出异常，交由调用者处理<ul>
+<li><code>throws</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="try-amp-throw-amp-throws"><a href="#try-amp-throw-amp-throws" class="headerlink" title="try &amp; throw &amp; throws"></a>try &amp; throw &amp; throws</h1><h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><ul>
+<li>try…catch用于捕获异常 处理之后，程序可以继续运行。</li>
+<li><p>多catch时，大异常要在后边。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try(</span><br><span class="line">	code;</span><br><span class="line">) catch(Exception e) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>try中的code发生异常相当于创建了一个异常对象，然后赋值给catch后边括号中的变量(即用catch中的异常变量接收)</p>
+<ul>
+<li><code>new Exception();</code></li>
+<li><code>Exception e = new Exception();</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><ul>
+<li>用来抛出一个具体的异常类型对象<ul>
+<li>抛出编译时异常<ol>
+<li>用try…catch捕获</li>
+<li>用throws声明</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用在方法中</li>
+<li>后跟异常对象，且只能一个</li>
+<li>可以单独使用，也可以结合catch使用</li>
+<li>throw 跟return一样结束程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">throw new RuntimeException()</span><br><span class="line">或</span><br><span class="line">Exception e = new Exception();</span><br><span class="line">throw e</span><br><span class="line">前者相当于抛了一个匿名对象</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><ul>
+<li>用来声明一个方法可能产生的所有异常</li>
+<li>用在方法上</li>
+<li>后跟异常类名，可以多个，用逗号隔开</li>
+<li>表示此方法不处理异常，而交给方法调用处进行处理</li>
+</ul>
+<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ul>
+<li>如果catch里面有return语句，finally的代码还会执行吗? 如果会，是在return前还是return后。<ul>
+<li>会执行，前。（准确说是中间）</li>
+<li>(安)<ul>
+<li>执行到了return,已经把要return的值准备好了。这时先去执行finally中的代码,然后再return。</li>
+<li>就算finally中改变了要return的值。结果也不会改变.因为return的值已经缓存好了，改变了也没用。</li>
+<li>但是如果finally中也return一个值，那么最后是finally的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -473,8 +691,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,7 +720,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -538,6 +765,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#体系"><span class="nav-number">1.</span> <span class="nav-text">体系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译时异常-amp-运行时异常"><span class="nav-number">2.</span> <span class="nav-text">编译时异常 &amp; 运行时异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译时异常"><span class="nav-number">2.1.</span> <span class="nav-text">编译时异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#释义"><span class="nav-number">2.1.2.</span> <span class="nav-text">释义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时异常"><span class="nav-number">2.2.</span> <span class="nav-text">运行时异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#释义-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">释义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别-安"><span class="nav-number">2.3.</span> <span class="nav-text">区别(安)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见异常"><span class="nav-number">3.</span> <span class="nav-text">常见异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时异常-1"><span class="nav-number">3.1.</span> <span class="nav-text">运行时异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译时异常-1"><span class="nav-number">3.2.</span> <span class="nav-text">编译时异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error"><span class="nav-number">3.3.</span> <span class="nav-text">error</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Throwable的几个常见方法"><span class="nav-number">4.</span> <span class="nav-text">Throwable的几个常见方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义异常"><span class="nav-number">5.</span> <span class="nav-text">自定义异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承中的异常"><span class="nav-number">6.</span> <span class="nav-text">继承中的异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">7.</span> <span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM默认是如何处理异常的"><span class="nav-number">7.1.</span> <span class="nav-text">JVM默认是如何处理异常的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理的原则"><span class="nav-number">7.2.</span> <span class="nav-text">异常处理的原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#try-amp-throw-amp-throws"><span class="nav-number">8.</span> <span class="nav-text">try &amp; throw &amp; throws</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#try"><span class="nav-number">8.1.</span> <span class="nav-text">try</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#throw"><span class="nav-number">8.2.</span> <span class="nav-text">throw</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#throws"><span class="nav-number">8.3.</span> <span class="nav-text">throws</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考"><span class="nav-number">9.</span> <span class="nav-text">思考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
