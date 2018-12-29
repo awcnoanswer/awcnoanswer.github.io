@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="概述 Java Server Pages JSP本质上就是Servlet jsp翻译的.java文件间接继承了HttpServlet    原理jsp执行过程 第一次访问会把.jsp先翻译成.java文件 把.java编译成.class文件 执行.class文件 以后访问直接执行.class文件 如果.jsp发生变化,则视为第一次访问，循环…。  jsp的html排版标签是如何展示的 在servi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-JSP">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/xd-JSP/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="概述 Java Server Pages JSP本质上就是Servlet jsp翻译的.java文件间接继承了HttpServlet    原理jsp执行过程 第一次访问会把.jsp先翻译成.java文件 把.java编译成.class文件 执行.class文件 以后访问直接执行.class文件 如果.jsp发生变化,则视为第一次访问，循环…。  jsp的html排版标签是如何展示的 在servi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-28T18:01:21.587Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-JSP">
+<meta name="twitter:description" content="概述 Java Server Pages JSP本质上就是Servlet jsp翻译的.java文件间接继承了HttpServlet    原理jsp执行过程 第一次访问会把.jsp先翻译成.java文件 把.java编译成.class文件 执行.class文件 以后访问直接执行.class文件 如果.jsp发生变化,则视为第一次访问，循环…。  jsp的html排版标签是如何展示的 在servi">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/11/xd-JSP/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-JSP | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-JSP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-JSP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:38:44" itemprop="dateCreated datePublished" datetime="2018-12-11T00:38:44+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-29 02:01:21" itemprop="dateModified" datetime="2018-12-29T02:01:21+08:00">2018-12-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>Java Server Pages</code></li>
+<li>JSP本质上就是Servlet<ul>
+<li>jsp翻译的<code>.java</code>文件间接继承了<code>HttpServlet</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="jsp执行过程"><a href="#jsp执行过程" class="headerlink" title="jsp执行过程"></a>jsp执行过程</h2><ul>
+<li>第一次访问会把<code>.jsp</code>先翻译成<code>.java</code>文件</li>
+<li>把<code>.java</code>编译成<code>.class</code>文件</li>
+<li>执行<code>.class</code>文件</li>
+<li>以后访问直接执行.class文件</li>
+<li>如果.jsp发生变化,则视为第一次访问，循环…。</li>
+</ul>
+<h2 id="jsp的html排版标签是如何展示的"><a href="#jsp的html排版标签是如何展示的" class="headerlink" title="jsp的html排版标签是如何展示的"></a>jsp的html排版标签是如何展示的</h2><ul>
+<li>在service方法中调用<code>out.write(标签)</code>写出。</li>
+</ul>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><ul>
+<li><p><code>test.jsp</code>生成的<code>.java</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.jasper.runtime.HttpJspBase;</span><br><span class="line">public final class test_jsp extends HttpJspBase &#123;</span><br><span class="line">	public void _jspService(req,res)&#123;&#125;</span><br><span class="line">	public void _jspInit() &#123;&#125;</span><br><span class="line">	public void _jspDestroy() &#123;&#125;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>HttpJspBase</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public abstract class HttpJspBase extends HttpServlet &#123;</span><br><span class="line">	public void _jspInit()&#123;&#125;</span><br><span class="line">	public void init(ServletConfig config)&#123;</span><br><span class="line">		_jspInit();</span><br><span class="line">	&#125;</span><br><span class="line">	public abstract void _jspService(req,res);</span><br><span class="line">	public void service(req,res)&#123;</span><br><span class="line">		_jspService(req,res);</span><br><span class="line">	&#125;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>jsp翻译成的<code>.java</code>文件，继承了<code>HttpJspBase</code>，而<code>HttpJspBase</code>继承了<code>HttpServlet</code>，所以说jsp就是一个Servlet。</li>
+<li>可以看到方法调用，最终还是servlet的那几个方法。</li>
+</ul>
+</li>
+</ul>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><ul>
+<li>静态内容 如:html标签和文本。</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li><code>&lt;!-- --&gt;</code><ul>
+<li>不能注释脚本</li>
+</ul>
+</li>
+<li><code>&lt;%-- --%&gt;</code><ul>
+<li>可以注释脚本</li>
+<li>不会被写出到最终的页面中，安全省流量。</li>
+</ul>
+</li>
+</ul>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><h3 id="脚本-1"><a href="#脚本-1" class="headerlink" title="脚本"></a>脚本</h3><ul>
+<li><code>&lt;% java代码 %&gt;</code><ul>
+<li>最终在翻译成的<code>.java</code>文件的<code>service()</code>中</li>
+</ul>
+</li>
+</ul>
+<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ul>
+<li><code>&lt;%= %&gt;</code><ul>
+<li><code>out.write()</code></li>
+<li>最终在翻译成的<code>.java</code>文件的<code>service()</code>中</li>
+</ul>
+</li>
+</ul>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><ul>
+<li><code>&lt;%! %&gt;</code><ul>
+<li>声明成员变量，静态块…</li>
+<li>最终在翻译成的<code>.java</code>文件的成员位置。</li>
+</ul>
+</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>jsp指令不直接产生任何可见输出，而只告诉jsp引擎如何处理jsp页面中的内容。</li>
+</ul>
+<h3 id="指令语法"><a href="#指令语法" class="headerlink" title="指令语法"></a>指令语法</h3><ul>
+<li><code>&lt;%@指令名 属性1=&quot;值&quot; 属性2=&quot;值&quot;... %&gt;</code><ul>
+<li>页面中可出现多次</li>
+</ul>
+</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h4><ul>
+<li>用于定义jsp页面的各种属性</li>
+</ul>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><code>import</code><ul>
+<li>用于导包</li>
+<li>jsp默认自动导入的包<ul>
+<li><code>import java.lang.*;</code></li>
+<li><code>import javax.servlet.*;</code></li>
+<li><code>import javax.servlet.http.*;</code></li>
+<li><code>import javax.servlet.jsp.*</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>language</code><ul>
+<li><code>java</code>： 默认</li>
+</ul>
+</li>
+<li><strong><code>pageEncoding</code></strong><ul>
+<li>告诉服务器用什么编码把<code>.jsp</code>翻译成<code>.java</code>文件</li>
+</ul>
+</li>
+<li><code>session</code><ul>
+<li><code>true</code>： 默认</li>
+<li><code>false</code></li>
+</ul>
+</li>
+<li><code>buffer</code><ul>
+<li>输出数据的缓存大小(out的缓冲区)</li>
+<li>值<ul>
+<li><code>8kb</code> ：默认</li>
+<li><code>none</code></li>
+<li><code>自定义size kb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>errorPage</code><ul>
+<li>如果页面中有错误，则跳转到指定的资源</li>
+<li><code>errorPage=&quot;/xx.jsp&quot;</code></li>
+</ul>
+</li>
+<li><code>isErrorPage</code><ul>
+<li>是否创建throwable内置对象</li>
+<li>是否是错误页面</li>
+<li>值<ul>
+<li><code>true</code></li>
+<li><code>false</code>： 默认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>contentType</code><ul>
+<li>等价于<code>response.setContentType(&quot;text/html;charset=utf-8&quot;);</code></li>
+<li>告诉浏览器用什么格式和编码解析</li>
+<li>如果不赋值，默认使用<code>pageEncoding</code>的编码</li>
+</ul>
+</li>
+<li><code>isELIgnored</code><ul>
+<li>是否忽略EL表达式</li>
+<li>值<ul>
+<li><code>true</code></li>
+<li><code>false</code>： 默认</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h4><ul>
+<li><code>&lt;%@ taglib uri=&quot;&quot; prefix=&quot;&quot; %&gt;</code><ul>
+<li>在JSP页面中导入标签库。</li>
+</ul>
+</li>
+</ul>
+<h4 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h4><ul>
+<li><code>&lt;%@ include file=&quot;&quot; %&gt;</code><ul>
+<li><strong>静态包含</strong></li>
+<li>先合并成一个文件，再翻译。所以静态包含，被包含的文件可以不写重复的标签</li>
+</ul>
+</li>
+</ul>
+<h2 id="jsp编码问题"><a href="#jsp编码问题" class="headerlink" title="jsp编码问题"></a>jsp编码问题</h2><h3 id="jsp编解码过程"><a href="#jsp编解码过程" class="headerlink" title="jsp编解码过程"></a>jsp编解码过程</h3><ol>
+<li><code>.jsp</code>的存储编码<ul>
+<li>即文件本身的存储编码</li>
+<li>我的ide通常用utf-8，所以<code>.jsp</code>也是用utf-8存的</li>
+<li>注意用什么存的，<code>pageEncoding</code>就要写什么,不然翻译就会乱码</li>
+</ul>
+</li>
+<li><code>.jsp</code>→<code>.java</code><ul>
+<li>使用<code>pageEncoding</code>指定的码表翻译</li>
+</ul>
+</li>
+<li><code>.java</code>→<code>.class</code><ul>
+<li>jvm使用utf-8编译，不可修改</li>
+</ul>
+</li>
+<li>用户浏览器解析<ul>
+<li>使用的是<code>contentType</code>指定的编码</li>
+</ul>
+</li>
+</ol>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ul>
+<li>想要不乱码，保证以下三码一致即可。<ol>
+<li><code>.jsp</code>的存储编码</li>
+<li><code>pageEncoding</code>的编码</li>
+<li><code>contentType</code>的编码</li>
+</ol>
+</li>
+<li>而由于<code>contentType</code>如果不赋值，默认会使用<code>pageEncoding</code>的编码。所以，保证<code>.jsp</code>的存储编码和<code>pageEncoding</code>的编码一致即可。</li>
+</ul>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
+<li>设置jsp的<code>pageEncoding</code>的编码为<code>.jsp</code>的文件存储编码即可</li>
+</ul>
+<h3 id="jsp中的html乱码"><a href="#jsp中的html乱码" class="headerlink" title="jsp中的html乱码"></a>jsp中的html乱码</h3><ul>
+<li>因为html本身也有编码格式，而jsp中包含有html的内容</li>
+<li>如果html的内容乱码设置好content中的charset即可<ul>
+<li><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h2><h3 id="lt-jsp-include-gt"><a href="#lt-jsp-include-gt" class="headerlink" title="&lt;jsp:include&gt;"></a><code>&lt;jsp:include&gt;</code></h3><ul>
+<li><code>&lt;jsp:include page=&quot;&quot;&gt;&lt;/jsp:include&gt;</code><ul>
+<li><strong>动态包含</strong></li>
+<li>不会合并文件，当代码执行到include时，才包含另一个文件的内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-jsp-forward-gt"><a href="#lt-jsp-forward-gt" class="headerlink" title="&lt;jsp:forward&gt;"></a><code>&lt;jsp:forward&gt;</code></h3><ul>
+<li><code>&lt;jsp:forward page=&quot;path&quot;/&gt;</code><ul>
+<li>转发</li>
+<li>相当于<code>req.getRequestDispatcher(path).forward(req,res);</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-jsp-param-gt"><a href="#lt-jsp-param-gt" class="headerlink" title="&lt;jsp:param&gt;"></a><code>&lt;jsp:param&gt;</code></h3><ul>
+<li><code>&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;</code><ul>
+<li>请求参数</li>
+<li>相当于<code>url?name=value</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-jsp-useBean-gt"><a href="#lt-jsp-useBean-gt" class="headerlink" title="&lt;jsp:useBean&gt;"></a><code>&lt;jsp:useBean&gt;</code></h3><ul>
+<li><code>&lt;jsp:useBean id=&quot;p&quot; class=&quot;cn.an.Person&quot;/&gt;</code><ul>
+<li>创建对象</li>
+<li>相当于<code>cn.an.Person p=new Person();</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-jsp-setProperty-gt"><a href="#lt-jsp-setProperty-gt" class="headerlink" title="&lt;jsp:setProperty&gt;"></a><code>&lt;jsp:setProperty&gt;</code></h3><ul>
+<li><code>&lt;jsp:setProperty property=&quot;age&quot; name=&quot;p&quot; value=&quot;8&quot;/&gt;</code><ul>
+<li>为对象属性赋值</li>
+<li>相当于<code>p.setAge(8);</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-jsp-getProperty-gt"><a href="#lt-jsp-getProperty-gt" class="headerlink" title="&lt;jsp:getProperty&gt;"></a><code>&lt;jsp:getProperty&gt;</code></h3><ul>
+<li><code>&lt;jsp:getProperty property=&quot;age&quot; name=&quot;p&quot;/&gt;</code><ul>
+<li>获取对象属性值</li>
+<li>相当于<code>p.getAge();</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h1><ul>
+<li>在<code>&lt;%= %&gt;</code>和<code>&lt;% %&gt;</code>中可以直接使用的对象。即<code>service()</code>中的对象</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>对象名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td><code>javax.servlet.http.HttpServletRequest</code></td>
+<td>request域</td>
+</tr>
+<tr>
+<td>response</td>
+<td><code>javax.servlet.http.HttpServletResponse</code></td>
+<td></td>
+</tr>
+<tr>
+<td>session</td>
+<td><code>javax.servlet.http.HttpSession</code></td>
+<td>session域 page指令的session属性开关</td>
+</tr>
+<tr>
+<td>application</td>
+<td><code>javax.servlet.ServletContext</code></td>
+<td>application域</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td><code>javax.servlet.jsp.PageContext</code></td>
+<td>pageContext域</td>
+</tr>
+<tr>
+<td>exception</td>
+<td><code>java.lang.Throwable</code></td>
+<td>page指令的isErrorPage属性开关</td>
+</tr>
+<tr>
+<td>page</td>
+<td><code>java.lang.Object</code></td>
+<td>当前servlet实例 this</td>
+</tr>
+<tr>
+<td>config</td>
+<td><code>javax.servlet.ServletConfig</code></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td><code>javax.servlet.jsp.JspWriter</code></td>
+<td>字符输出流，相当于 printWriter对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="out"><a href="#out" class="headerlink" title="out"></a>out</h2><ul>
+<li><code>out.write()</code>和<code>response.getWriter().write()</code><ul>
+<li>区别<ul>
+<li>最后响应时，tomcat总会先从response中获取数据，然后才会从out中获取数据。</li>
+<li>所以无论何时，总是response先输出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="pageContext"><a href="#pageContext" class="headerlink" title="pageContext"></a>pageContext</h2><ul>
+<li>可以获取其它八个内置对象<ul>
+<li>自定义标签时为了获取九个内置对象不需要全部传入,传入pageContext即可</li>
+</ul>
+</li>
+<li>是域对象<ul>
+<li><code>void setAttribute(String name,Object value)</code></li>
+<li><code>Object getAttribute(String name)</code></li>
+<li><code>void removeAttribute(String name)</code></li>
+</ul>
+</li>
+<li>可以操作其它域对象<ul>
+<li><code>void setAttribute(String name,Object value,int Scope)</code></li>
+<li><code>Object getAttribute(String name,int Scope)</code></li>
+<li><code>void removeAttribute(String name,int Scope)</code><ul>
+<li>Scope<ul>
+<li><code>PageContext.PAGE_SCOP</code>E </li>
+<li><code>PageContext.REQUEST_SCOPE</code></li>
+<li><code>PageContext.SESSION_SCOPE</code></li>
+<li><code>PageContext.APPLICATION_SCOPE</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Object findAttribute()</code><ul>
+<li>自动从四个域对象找,找到就返回</li>
+<li>顺序page-request-session-application</li>
+</ul>
+</li>
+<li>提供了简易方法<ul>
+<li><code>forward()</code></li>
+<li><code>include()</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><code>expression language</code></li>
+<li>简化jsp中的java代码(主要是获取数据方面的简化)</li>
+<li>不是开发语言是jsp中获取数据的一种规范<ul>
+<li>只能用在jsp，html无法解析</li>
+</ul>
+</li>
+</ul>
+<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><ul>
+<li><code>${表达式}</code></li>
+</ul>
+<h2 id="忽略EL表达式"><a href="#忽略EL表达式" class="headerlink" title="忽略EL表达式"></a>忽略EL表达式</h2><ol>
+<li>设置jsp的page指令的<code>isElIgnored</code>为true，则当前jsp都不能使用EL表达式</li>
+<li><code>\${表达式}</code><ul>
+<li>忽略当前这个EL表达式</li>
+</ul>
+</li>
+</ol>
+<h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li>算术运算符<ul>
+<li><code>+ - * /(div) %(mod)</code></li>
+<li><code>3 / 4</code>也可以表示为<code>3 div 4</code></li>
+</ul>
+</li>
+<li>比较运算符<ul>
+<li><code>&gt; &lt; &gt;= &lt;= == !=</code></li>
+</ul>
+</li>
+<li>逻辑运算符<ul>
+<li><code>&amp;&amp;(and) ||(or) !(not)</code></li>
+</ul>
+</li>
+<li>空运算符<ul>
+<li><code>empty</code><ul>
+<li>用于判断字符串，集合，数组对象是否为null或者长度是否为0</li>
+<li>true<ul>
+<li>空字符串<ul>
+<li><code>String s=null</code></li>
+<li><code>String s=&quot;&quot;</code></li>
+</ul>
+</li>
+<li>没有元素的集合(即使集合对象本身不为null)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三元运算<ul>
+<li><code>${empty key?&quot;为空&quot;:&quot;不为空&quot;}</code></li>
+<li><code>${key==1?&quot;男&quot;:&quot;女&quot;}</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>EL表达式只能从域中获取数据</li>
+<li>EL获取的值若为null会显示为<code>&quot;&quot;</code></li>
+</ul>
+<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><ol>
+<li><code>${键名}</code><ul>
+<li>相当于<code>pageContext.findAttribute()</code></li>
+<li>依次从四个域中查找数据找到就返回，如果多个域存的key相同，则后边的无法取到。<ul>
+<li><code>${pageScope.key}</code></li>
+<li><code>${requestScope.key}</code></li>
+<li><code>${sessionScope.key}</code></li>
+<li><code>${applicationScope.key}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>${域名.键名}</code><ul>
+<li>从指定域中获取指定key的值</li>
+</ul>
+</li>
+<li><code>${域名.键名.属性名}</code><ul>
+<li>域中存的是对象</li>
+<li>通过对象属性导航图获取属性值(本质调用对象get方法)</li>
+</ul>
+</li>
+<li><code>${域名.键名[索引]}</code><ul>
+<li>List集合</li>
+</ul>
+</li>
+<li><code>${域名.键名.key}</code> 或 <code>${域名.键名[&quot;key&quot;]}</code><ul>
+<li>Map集合</li>
+</ul>
+</li>
+</ol>
+<h2 id="隐式对象"><a href="#隐式对象" class="headerlink" title="隐式对象"></a>隐式对象</h2><table>
+<thead>
+<tr>
+<th>隐式对象名</th>
+<th>类型</th>
+<th>对应jsp内置对象名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pageContext</td>
+<td><code>javax.servlet.jsp.PageContex</code></td>
+<td>pageContext</td>
+<td>二者一样</td>
+</tr>
+<tr>
+<td>pageScope</td>
+<td><code>java.util.Map&lt;String,Object&gt;</code></td>
+<td>无</td>
+<td>pageContext域</td>
+</tr>
+<tr>
+<td>requestScope</td>
+<td><code>java.util.Map&lt;String,Object&gt;</code></td>
+<td>无</td>
+<td>request域</td>
+</tr>
+<tr>
+<td>sessionScope</td>
+<td><code>java.util.Map&lt;String,Object&gt;</code></td>
+<td>无</td>
+<td>session域</td>
+</tr>
+<tr>
+<td>applicationScope</td>
+<td><code>java.util.Map&lt;String,Object&gt;</code></td>
+<td>无</td>
+<td>application域</td>
+</tr>
+<tr>
+<td>param</td>
+<td><code>java.util.Map&lt;String,String&gt;</code></td>
+<td>无</td>
+<td>一个请求参数</td>
+</tr>
+<tr>
+<td>paramValues</td>
+<td><code>java.util.Map&lt;String,String[]&gt;</code></td>
+<td>无</td>
+<td>重名请求参数</td>
+</tr>
+<tr>
+<td>header</td>
+<td><code>java.util.Map&lt;String,String&gt;</code></td>
+<td>无</td>
+<td>一个请求消息头</td>
+</tr>
+<tr>
+<td>headerValues</td>
+<td><code>java.util.Map&lt;String,String[]&gt;</code></td>
+<td>无</td>
+<td>重名请求消息头</td>
+</tr>
+<tr>
+<td>initParam</td>
+<td><code>java.util.Map&lt;String,String&gt;</code></td>
+<td>无</td>
+<td>web.xml中全局参数</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td><code>java.util.Map&lt;String,Cookie&gt;</code></td>
+<td>无</td>
+<td>key:cookie对象的name值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pageContext-1"><a href="#pageContext-1" class="headerlink" title="pageContext"></a>pageContext</h3><ul>
+<li>跟jsp内置一样，可以获取jsp其它内置对象</li>
+<li><code>${pageContext.request.contextpath}</code><ul>
+<li>相当于pageContext.getRequest().getContextPah();<ul>
+<li>但注意这句不能执行</li>
+<li>因为pageContext.getRequest()得到的是ServletRequest而不是HttpServletRequest所以需要强转</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h1><h2 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><code>JavaServerPages Standard Tag Library</code></li>
+<li>JSP标准标签库<ul>
+<li>包含五个库<ul>
+<li><strong>Core</strong> 前缀c</li>
+<li>I18N 前缀fmt</li>
+<li>SQL 前缀sql</li>
+<li>XML 前缀x</li>
+<li>Functions 前缀fn</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>简化java代码(主要是逻辑处理方面,判断循环..)</li>
+<li>因为jstl存取都是在域对象中，所以jstl中不管是取值还是赋值都要用el<ul>
+<li>因为jstl不会解析表达式，只能靠el去解析</li>
+</ul>
+</li>
+</ul>
+<h2 id="引入jstl"><a href="#引入jstl" class="headerlink" title="引入jstl"></a>引入jstl</h2><ul>
+<li><code>&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;自定义&quot; %&gt;</code></li>
+</ul>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="通用标签"><a href="#通用标签" class="headerlink" title="通用标签"></a>通用标签</h3><ul>
+<li>都可以指定scope</li>
+</ul>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a><code>set</code></h4><ul>
+<li><code>&lt;c:set var=&quot;num&quot; value=&quot;10&quot; scope=&quot;session&quot; /&gt;</code><ul>
+<li>声明变量并赋值（放在了域中）<br>*存数据到域中相当于<code>setAttribute()</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="out-1"><a href="#out-1" class="headerlink" title="out"></a><code>out</code></h4><ul>
+<li><code>&lt;c:out value=&quot;${num}&quot; scope=&quot;session&quot;/&gt;</code><ul>
+<li>输出的value要写EL表达式(从域中取数据相当于<code>getAttribute()</code>)</li>
+<li>可以直接用El表达式代替out标签</li>
+</ul>
+</li>
+</ul>
+<h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a><code>remove</code></h4><ul>
+<li>`&lt;c:remove var=”num” scope=”session”/&gt;<ul>
+<li>从域中删除相当于<code>removeAttribute()</code><br>`<h3 id="条件标签"><a href="#条件标签" class="headerlink" title="条件标签"></a>条件标签</h3><h4 id="if"><a href="#if" class="headerlink" title="if"></a><code>if</code></h4></li>
+</ul>
+</li>
+<li><code>&lt;c:if test=&quot;&quot;&gt;&lt;/c:if&gt;</code><ul>
+<li>test通常会使用el表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="choose"><a href="#choose" class="headerlink" title="choose"></a><code>choose</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">	&lt;c:when test=&quot;&quot;&gt;1&lt;/c:when&gt;</span><br><span class="line">	&lt;c:when test=&quot;&quot;&gt;2&lt;/c:when&gt;</span><br><span class="line">	...</span><br><span class="line">	&lt;c:otherwise&gt;0&lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="迭代标签"><a href="#迭代标签" class="headerlink" title="迭代标签"></a>迭代标签</h3><h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a><code>forEach</code></h4><ul>
+<li>可以是普通循环,也可以是增加for循环</li>
+<li><code>&lt;c:forEach var=&quot;&quot; begin=&quot;&quot; end=&quot;&quot; step=&quot;&quot; varStatus=&quot;&quot;&gt;&lt;/c:forEach&gt;</code><ul>
+<li>普通循环</li>
+</ul>
+</li>
+<li><code>&lt;c:forEach items=&quot;&quot; var=&quot;&quot; varStatus=&quot;&quot;&gt;&lt;/c:forEach&gt;</code><ul>
+<li>增强循环</li>
+</ul>
+</li>
+</ul>
+<h5 id="varStatus"><a href="#varStatus" class="headerlink" title="varStatus"></a>varStatus</h5><ul>
+<li>底层：指向一个字符串，该字符串引用一个对象。这个对象记录着当前遍历的元素的一些信息：<ul>
+<li>map.put(“vs”,对象)</li>
+</ul>
+</li>
+<li>所以varStatus可以取到当前遍历元素的信息。<ul>
+<li><code>${vs.index}</code><ul>
+<li>返回索引 从0开始</li>
+</ul>
+</li>
+<li><code>${vs.count}</code><ul>
+<li>返回计数 从1开始</li>
+</ul>
+</li>
+<li><code>${vs.current}</code><ul>
+<li>返回当前元素</li>
+</ul>
+</li>
+<li><code>${vs.first}</code><ul>
+<li>是否第一个</li>
+</ul>
+</li>
+<li><code>${vs.last}</code><ul>
+<li>是否最后一个`</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="域对象"><a href="#域对象" class="headerlink" title="域对象"></a>域对象</h1><h2 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h2><ul>
+<li>创建<ul>
+<li>服务器启动</li>
+</ul>
+</li>
+<li>销毁<ul>
+<li>服务器关闭</li>
+</ul>
+</li>
+<li>作用域<ul>
+<li>整个web应用</li>
+</ul>
+</li>
+</ul>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><ul>
+<li>创建<ul>
+<li>第一次<code>request.getSession()</code></li>
+</ul>
+</li>
+<li>销毁<ul>
+<li>服务器关闭(非正常)</li>
+<li>失效/过期 </li>
+<li>手动<code>session.invalidate()</code></li>
+</ul>
+</li>
+<li>作用域<ul>
+<li>一次会话中</li>
+</ul>
+</li>
+</ul>
+<h3 id="request"><a href="#request" class="headerlink" title="request"></a>request</h3><ul>
+<li>创建<ul>
+<li>客户端发送请求</li>
+</ul>
+</li>
+<li>销毁<ul>
+<li>响应结束</li>
+</ul>
+</li>
+<li>作用域<ul>
+<li>一次请求</li>
+</ul>
+</li>
+</ul>
+<h3 id="pageContext-2"><a href="#pageContext-2" class="headerlink" title="pageContext"></a>pageContext</h3><ul>
+<li>作用域<ul>
+<li>当前页面</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/11/xd-Servlet/" rel="next" title="xd-Servlet">
+                <i class="fa fa-chevron-left"></i> xd-Servlet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/11/xd-Struts2/" rel="prev" title="xd-Struts2">
+                xd-Struts2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp执行过程"><span class="nav-number">2.1.</span> <span class="nav-text">jsp执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp的html排版标签是如何展示的"><span class="nav-number">2.2.</span> <span class="nav-text">jsp的html排版标签是如何展示的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码分析"><span class="nav-number">2.3.</span> <span class="nav-text">源码分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">3.1.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">3.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-number">3.3.</span> <span class="nav-text">脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">3.3.2.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">3.3.3.</span> <span class="nav-text">声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">3.4.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指令语法"><span class="nav-number">3.4.1.</span> <span class="nav-text">指令语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">3.4.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#page指令"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">page指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">3.4.2.1.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#taglib指令"><span class="nav-number">3.4.2.2.</span> <span class="nav-text">taglib指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#include指令"><span class="nav-number">3.4.2.3.</span> <span class="nav-text">include指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp编码问题"><span class="nav-number">3.5.</span> <span class="nav-text">jsp编码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp编解码过程"><span class="nav-number">3.5.1.</span> <span class="nav-text">jsp编解码过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">3.5.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">3.5.3.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp中的html乱码"><span class="nav-number">3.5.4.</span> <span class="nav-text">jsp中的html乱码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动作"><span class="nav-number">3.6.</span> <span class="nav-text">动作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-include-gt"><span class="nav-number">3.6.1.</span> <span class="nav-text">&lt;jsp:include&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-forward-gt"><span class="nav-number">3.6.2.</span> <span class="nav-text">&lt;jsp:forward&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-param-gt"><span class="nav-number">3.6.3.</span> <span class="nav-text">&lt;jsp:param&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-useBean-gt"><span class="nav-number">3.6.4.</span> <span class="nav-text">&lt;jsp:useBean&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-setProperty-gt"><span class="nav-number">3.6.5.</span> <span class="nav-text">&lt;jsp:setProperty&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-jsp-getProperty-gt"><span class="nav-number">3.6.6.</span> <span class="nav-text">&lt;jsp:getProperty&gt;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置对象"><span class="nav-number">4.</span> <span class="nav-text">内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#out"><span class="nav-number">4.1.</span> <span class="nav-text">out</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pageContext"><span class="nav-number">4.2.</span> <span class="nav-text">pageContext</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EL表达式"><span class="nav-number">5.</span> <span class="nav-text">EL表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法-1"><span class="nav-number">5.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略EL表达式"><span class="nav-number">5.3.</span> <span class="nav-text">忽略EL表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算"><span class="nav-number">5.4.</span> <span class="nav-text">运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">5.4.1.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取数据"><span class="nav-number">5.5.</span> <span class="nav-text">获取数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-2"><span class="nav-number">5.5.1.</span> <span class="nav-text">概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法-2"><span class="nav-number">5.6.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式对象"><span class="nav-number">5.7.</span> <span class="nav-text">隐式对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pageContext-1"><span class="nav-number">5.7.1.</span> <span class="nav-text">pageContext</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSTL"><span class="nav-number">6.</span> <span class="nav-text">JSTL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-3"><span class="nav-number">6.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入jstl"><span class="nav-number">6.2.</span> <span class="nav-text">引入jstl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">6.3.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用标签"><span class="nav-number">6.3.1.</span> <span class="nav-text">通用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">6.3.1.1.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#out-1"><span class="nav-number">6.3.1.2.</span> <span class="nav-text">out</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#remove"><span class="nav-number">6.3.1.3.</span> <span class="nav-text">remove</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件标签"><span class="nav-number">6.3.2.</span> <span class="nav-text">条件标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if"><span class="nav-number">6.3.2.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#choose"><span class="nav-number">6.3.2.2.</span> <span class="nav-text">choose</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代标签"><span class="nav-number">6.3.3.</span> <span class="nav-text">迭代标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#forEach"><span class="nav-number">6.3.3.1.</span> <span class="nav-text">forEach</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#varStatus"><span class="nav-number">6.3.3.1.1.</span> <span class="nav-text">varStatus</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域对象"><span class="nav-number">7.</span> <span class="nav-text">域对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext"><span class="nav-number">7.1.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session"><span class="nav-number">7.2.</span> <span class="nav-text">session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#request"><span class="nav-number">7.2.1.</span> <span class="nav-text">request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pageContext-2"><span class="nav-number">7.2.2.</span> <span class="nav-text">pageContext</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

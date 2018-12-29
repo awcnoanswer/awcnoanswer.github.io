@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="概述HTML Hyper Text Markup Language 超文本标记语言  超文本 指页面可以包含非文字内容。   标记 使用标签将需要的内容包括起来      XHTML Extensible Hyper Text Markup Language 可扩展的超文本标记语言 可以理解为升级版HTML    html的访问 本地 file:///绝对路径   web访问 http://loc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-Html">
+<meta property="og:url" content="http://yoursite.com/2018/12/07/xd-Html/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="概述HTML Hyper Text Markup Language 超文本标记语言  超文本 指页面可以包含非文字内容。   标记 使用标签将需要的内容包括起来      XHTML Extensible Hyper Text Markup Language 可扩展的超文本标记语言 可以理解为升级版HTML    html的访问 本地 file:///绝对路径   web访问 http://loc">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-24T08:27:52.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-Html">
+<meta name="twitter:description" content="概述HTML Hyper Text Markup Language 超文本标记语言  超文本 指页面可以包含非文字内容。   标记 使用标签将需要的内容包括起来      XHTML Extensible Hyper Text Markup Language 可扩展的超文本标记语言 可以理解为升级版HTML    html的访问 本地 file:///绝对路径   web访问 http://loc">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/07/xd-Html/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-Html | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/xd-Html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-Html
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-07 17:26:28" itemprop="dateCreated datePublished" datetime="2018-12-07T17:26:28+08:00">2018-12-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 16:27:52" itemprop="dateModified" datetime="2018-12-24T16:27:52+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
+<li><code>Hyper Text Markup Language</code></li>
+<li>超文本标记语言 <ul>
+<li>超文本<ul>
+<li>指页面可以包含非文字内容。</li>
+</ul>
+</li>
+<li>标记<ul>
+<li>使用标签将需要的内容包括起来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="XHTML"><a href="#XHTML" class="headerlink" title="XHTML"></a>XHTML</h2><ul>
+<li><code>Extensible Hyper Text Markup Language</code></li>
+<li>可扩展的超文本标记语言<ul>
+<li>可以理解为升级版HTML</li>
+</ul>
+</li>
+</ul>
+<h2 id="html的访问"><a href="#html的访问" class="headerlink" title="html的访问"></a>html的访问</h2><ol>
+<li>本地<ul>
+<li><code>file:///绝对路径</code></li>
+</ul>
+</li>
+<li>web访问<ul>
+<li><code>http://localhost:8080/...</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="小细节"><a href="#小细节" class="headerlink" title="小细节"></a>小细节</h2><h3 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h3><ul>
+<li>html中的数值默认单位是像素<code>px</code></li>
+<li>尺寸写法<ol>
+<li>像素<ul>
+<li><code>0px</code></li>
+</ul>
+</li>
+<li>百分百：占据副标签的百分比<ul>
+<li><code>0%</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
+<li><code>./</code><ul>
+<li>当前目录</li>
+</ul>
+</li>
+<li><code>../</code><ul>
+<li>上一级目录</li>
+</ul>
+</li>
+</ul>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
+<li><code>//</code></li>
+<li><code>/* */</code></li>
+<li><code>&lt;!-- --&gt;</code></li>
+</ul>
+<h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><ul>
+<li><code>&amp;nbsp;</code>空格</li>
+<li><code>&amp;gt;</code>大于号</li>
+<li><code>&amp;lt;</code>小于号</li>
+<li><code>&amp;copy;</code>版权符号</li>
+<li><code>&amp;reg;</code>注册符号</li>
+</ul>
+<h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><h3 id="lt-br-gt"><a href="#lt-br-gt" class="headerlink" title="&lt;br/&gt;"></a><code>&lt;br/&gt;</code></h3><h3 id="lt-hr-gt"><a href="#lt-hr-gt" class="headerlink" title="&lt;hr/&gt;"></a><code>&lt;hr/&gt;</code></h3><h3 id="lt-h1-gt-lt-h6-gt"><a href="#lt-h1-gt-lt-h6-gt" class="headerlink" title="&lt;h1&gt;~&lt;h6&gt;"></a><code>&lt;h1&gt;~&lt;h6&gt;</code></h3><h3 id="lt-span-gt"><a href="#lt-span-gt" class="headerlink" title="&lt;span&gt;"></a><code>&lt;span&gt;</code></h3><h3 id="lt-div-gt"><a href="#lt-div-gt" class="headerlink" title="&lt;div&gt;"></a><code>&lt;div&gt;</code></h3><h3 id="lt-p-gt"><a href="#lt-p-gt" class="headerlink" title="&lt;p&gt;"></a><code>&lt;p&gt;</code></h3><ul>
+<li>段与段之间有空行</li>
+</ul>
+<h3 id="lt-b-gt"><a href="#lt-b-gt" class="headerlink" title="&lt;b&gt;"></a><code>&lt;b&gt;</code></h3><ul>
+<li>粗体</li>
+</ul>
+<h3 id="lt-i-gt"><a href="#lt-i-gt" class="headerlink" title="&lt;i&gt;"></a><code>&lt;i&gt;</code></h3><ul>
+<li>斜体</li>
+</ul>
+<h3 id="lt-font-gt"><a href="#lt-font-gt" class="headerlink" title="&lt;font&gt;"></a><code>&lt;font&gt;</code></h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>size</code><ul>
+<li><code>1~7</code> 浏览器默认为3</li>
+</ul>
+</li>
+<li><code>color</code><ol>
+<li><code>#xxxxxx</code><ul>
+<li><code>00-FF</code></li>
+</ul>
+</li>
+<li><code>colorname</code></li>
+</ol>
+</li>
+<li><code>face</code><ul>
+<li>字体</li>
+</ul>
+</li>
+</ul>
+<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><ul>
+<li><code>&lt;font color=&quot;red&quot; size=&quot;3&quot; face=&quot;黑体&quot;&gt;&lt;/font&gt;</code></li>
+</ul>
+<h3 id="lt-img-gt"><a href="#lt-img-gt" class="headerlink" title="&lt;img&gt;"></a><code>&lt;img&gt;</code></h3><h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>src</code></li>
+<li><code>alt</code><ul>
+<li>图片无法正常显示时的文字</li>
+</ul>
+</li>
+<li><code>width</code></li>
+<li><code>height</code></li>
+<li><code>align</code><ul>
+<li>对齐方式(top middle bottom)</li>
+<li>代表图片与相邻文本的相对位置</li>
+</ul>
+</li>
+</ul>
+<h3 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a><code>&lt;a&gt;</code></h3><h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>href</code></li>
+<li><code>name</code></li>
+<li><code>target</code><ul>
+<li><code>_selt</code> <ul>
+<li>本页打开 默认</li>
+</ul>
+</li>
+<li><code>_blank</code> <ul>
+<li>空白页打开</li>
+</ul>
+</li>
+<li><code>标签name</code><ul>
+<li>在指定name位置打开</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li>协议<ul>
+<li>如果不指定协议，默认是file协议。(<code>file:///</code>)</li>
+<li>访问网上资源要指定<code>http://</code></li>
+</ul>
+</li>
+<li><code>&lt;a href=&quot;javascript:void(0)&quot;&gt;</code><ul>
+<li>取消超链接默认点击效果    </li>
+</ul>
+</li>
+<li><code>&lt;a href=&quot;javascript:fun()&quot;&gt;</code><ul>
+<li>使用<code>javascript:</code>前缀说明后边是js代码不是url</li>
+</ul>
+</li>
+<li><code>&lt;a href=&quot;#id&quot;&gt;</code><ul>
+<li>锚点<code>#</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h2><p>html5为了提高可读性提供的标签。</p>
+<h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="层级列表"><a href="#层级列表" class="headerlink" title="层级列表"></a>层级列表</h3><h4 id="lt-dl-gt"><a href="#lt-dl-gt" class="headerlink" title="&lt;dl&gt;"></a><code>&lt;dl&gt;</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="lt-dt-gt"><a href="#lt-dt-gt" class="headerlink" title="&lt;dt&gt;"></a><code>&lt;dt&gt;</code></h5><ul>
+<li>一个<code>&lt;dt&gt;</code>可以有多个<code>&lt;dd&gt;</code></li>
+</ul>
+<h5 id="lt-dd-gt"><a href="#lt-dd-gt" class="headerlink" title="&lt;dd&gt;"></a><code>&lt;dd&gt;</code></h5><ul>
+<li>是对<code>&lt;dt&gt;</code>的解释</li>
+</ul>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><h4 id="lt-ul-gt"><a href="#lt-ul-gt" class="headerlink" title="&lt;ul&gt;"></a><code>&lt;ul&gt;</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><h4 id="lt-ol-gt"><a href="#lt-ol-gt" class="headerlink" title="&lt;ol&gt;"></a><code>&lt;ol&gt;</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="lt-li-gt"><a href="#lt-li-gt" class="headerlink" title="&lt;li&gt;"></a><code>&lt;li&gt;</code></h5><ul>
+<li><code>type</code><ul>
+<li>1、A、a、I、i（数字、字母、罗马数字）</li>
+</ul>
+</li>
+<li><code>start</code><ul>
+<li>数字，代表首项是从第几个开始。</li>
+</ul>
+</li>
+</ul>
+<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><h3 id="lt-table-gt"><a href="#lt-table-gt" class="headerlink" title="&lt;table&gt;"></a><code>&lt;table&gt;</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;caption&gt;&lt;/caption&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;th&gt;&lt;/th&gt;</span><br><span class="line">		&lt;td&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>border</code>：边框</li>
+<li><code>align</code>：对齐方式</li>
+<li><code>bgcolor</code>：背景颜色</li>
+<li><code>cellpadding</code><ul>
+<li>单元格边框与内容的空白</li>
+</ul>
+</li>
+<li><code>cellspaceing</code><ul>
+<li>单元格之间的空白</li>
+</ul>
+</li>
+<li><code>width</code>：宽</li>
+</ul>
+<h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4><ul>
+<li><code>&lt;table&gt;</code>的下一级标签是<code>&lt;tbody&gt;</code>不写也存在。<ul>
+<li><code>&lt;tbody&gt;</code>可以有多个</li>
+<li><code>xxx.tBodies</code><ul>
+<li>获取所有<code>&lt;tbody&gt;</code></li>
+</ul>
+</li>
+<li><code>xxx.rows</code><ul>
+<li>获取所有行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="lt-caption-gt"><a href="#lt-caption-gt" class="headerlink" title="&lt;caption&gt;"></a><code>&lt;caption&gt;</code></h4><ul>
+<li>标题</li>
+</ul>
+<h4 id="lt-th-gt"><a href="#lt-th-gt" class="headerlink" title="&lt;th&gt;"></a><code>&lt;th&gt;</code></h4><ul>
+<li>用于定义表头，单元格内容默认居中，加粗。</li>
+</ul>
+<h4 id="lt-td-gt"><a href="#lt-td-gt" class="headerlink" title="&lt;td&gt;"></a><code>&lt;td&gt;</code></h4><ul>
+<li><code>colspan</code><ul>
+<li>列合并</li>
+</ul>
+</li>
+<li><code>rowspan</code><ul>
+<li>行合并</li>
+</ul>
+</li>
+<li><code>align</code><ul>
+<li>对齐方式（left,right,center）</li>
+</ul>
+</li>
+</ul>
+<h2 id="框架标签"><a href="#框架标签" class="headerlink" title="框架标签"></a>框架标签</h2><h3 id="lt-frameset-gt"><a href="#lt-frameset-gt" class="headerlink" title="&lt;frameset&gt;"></a><code>&lt;frameset&gt;</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;frameset &gt;</span><br><span class="line">	&lt;frame src=&quot;&quot;/&gt;</span><br><span class="line">	&lt;frameset&gt;</span><br><span class="line">		&lt;frame src=&quot;&quot;/&gt;</span><br><span class="line">	&lt;/frameset&gt;</span><br><span class="line">&lt;/frameset&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>rows</code><ul>
+<li>按行分</li>
+</ul>
+</li>
+<li><code>cols</code><ul>
+<li>按列分</li>
+</ul>
+</li>
+</ul>
+<h4 id="lt-frame-gt"><a href="#lt-frame-gt" class="headerlink" title="&lt;frame&gt;"></a><code>&lt;frame&gt;</code></h4><ul>
+<li>每一部分是一个frame</li>
+<li><code>name</code></li>
+<li><code>src</code><ul>
+<li>加载页面的路径</li>
+</ul>
+</li>
+</ul>
+<h4 id="注"><a href="#注" class="headerlink" title="注"></a>注</h4><ul>
+<li>分割有两种<ol>
+<li>按具体长度划分<ul>
+<li><code>60,*,75</code><ul>
+<li>意思是页面分三部分60+*+75=总长度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>按百分比划分<ul>
+<li><code>25%,*</code><ul>
+<li>页面分两部分25%和75%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><code>&lt;frameset&gt;</code>不能用在<code>&lt;body&gt;</code>中，通常不写<code>&lt;body&gt;</code>直接用</li>
+<li><code>&lt;frameset&gt;</code>可以嵌套</li>
+<li><code>&lt;frameset&gt;</code>已经过时，html5不支持</li>
+<li><code>&lt;iframe&gt;</code> 画中画标签</li>
+</ul>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><h3 id="lt-form-gt"><a href="#lt-form-gt" class="headerlink" title="&lt;form&gt;"></a><code>&lt;form&gt;</code></h3><h4 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>action</code><ul>
+<li>提交的位置</li>
+</ul>
+</li>
+<li><code>method</code><ul>
+<li>提交的方法(get/post/…)</li>
+</ul>
+</li>
+</ul>
+<h4 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a><code>&lt;input&gt;</code></h4><h5 id="type"><a href="#type" class="headerlink" title="type"></a>type</h5><ul>
+<li><code>text</code><ul>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>标签值</li>
+<li>可以省略不写，写上则为输入框默认值。</li>
+</ul>
+</li>
+<li><code>placeholder</code><ul>
+<li>设置默认值<ul>
+<li>类似淘宝等等网站登录时的<code>**请输入用户名**</code></li>
+</ul>
+</li>
+<li>字体为灰色，得到焦点不会消失，一输入值就消失。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>password</code><ul>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>标签值</li>
+<li>可以省略不写，写上则为输入框默认值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>radio</code><ul>
+<li><code>name</code><ul>
+<li>name一致的radio为一个组，只能单选。</li>
+</ul>
+</li>
+<li><code>value</code><ul>
+<li>标签值。</li>
+<li>显示的值只是显示而已，只能代表着哪个value，与value是什么值无关。提交的是value的值。</li>
+</ul>
+</li>
+<li><code>checked</code><ul>
+<li>默认选中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>checkbox</code><ul>
+<li><code>name</code><ul>
+<li>name一致的checkbox为一个组，多选。</li>
+</ul>
+</li>
+<li><code>value</code><ul>
+<li>标签值。</li>
+<li>显示的值只是显示而已，只能代表着哪个value，与value是什么值无关。提交的是value的值。</li>
+</ul>
+</li>
+<li><code>checked</code><ul>
+<li>默认选中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>file</code><ul>
+<li><code>name</code></li>
+</ul>
+</li>
+<li><code>button</code><ul>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>按钮显示名称</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>image</code><ul>
+<li>图片按钮，也会提交（同submit）</li>
+<li><code>name</code></li>
+<li><code>src</code></li>
+<li><code>alt</code></li>
+</ul>
+</li>
+<li><code>hidden</code><ul>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>标签值        </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>submit</code><ul>
+<li>不指定服务端会提交到当前页面。</li>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>按钮显示名称</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>reset</code><ul>
+<li><code>name</code></li>
+<li><code>value</code><ul>
+<li>按钮显示名称</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a><code>&lt;select&gt;</code></h4><ul>
+<li><code>name</code></li>
+</ul>
+<h5 id="lt-option-gt"><a href="#lt-option-gt" class="headerlink" title="&lt;option&gt;"></a><code>&lt;option&gt;</code></h5><ul>
+<li><code>value</code><ul>
+<li>标签值</li>
+</ul>
+</li>
+<li><code>selected</code><ul>
+<li>默认选中</li>
+</ul>
+</li>
+</ul>
+<h6 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h6><ul>
+<li><code>options</code><ul>
+<li>option集合</li>
+</ul>
+</li>
+<li><code>selectedIndex</code><ul>
+<li>选中的option的索引</li>
+</ul>
+</li>
+<li>获取选中的option<ul>
+<li><code>var optionElement=selectElement[selectElement.selectedIndex]</code></li>
+<li><code>var optionElement=selectElement.options[selectedIndex]</code></li>
+</ul>
+</li>
+<li>获取option中的值<ul>
+<li><code>var value=optionElement.value</code></li>
+<li><code>var value=optionElement.innerHTML</code></li>
+</ul>
+</li>
+<li>清空select中的option<ul>
+<li><code>selectElement.options.length=0</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="lt-textarea-gt"><a href="#lt-textarea-gt" class="headerlink" title="&lt;textarea&gt;"></a><code>&lt;textarea&gt;</code></h4><ul>
+<li><code>name</code></li>
+</ul>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<li>如果给服务端提交数据，必须使用表单标签，表单中组件必须有name和value。<ul>
+<li><code>text</code> <code>password</code><ul>
+<li>name必写</li>
+<li>value省略，由用户填写</li>
+</ul>
+</li>
+<li><code>radio</code> <code>checkbox</code> <code>hidden</code><ul>
+<li>name和value必写</li>
+</ul>
+</li>
+<li><code>file</code><ul>
+<li>name必写</li>
+<li>没有value，提交的是上传的文件</li>
+</ul>
+</li>
+<li><code>button</code> <code>reset</code> <code>submit</code><ul>
+<li>name不写</li>
+<li>value写(显示名称)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="其它标签"><a href="#其它标签" class="headerlink" title="其它标签"></a>其它标签</h2><ul>
+<li><code>&lt;meta&gt;</code></li>
+<li><code>&lt;link&gt;</code></li>
+<li><code>&lt;script&gt;</code></li>
+<li><code>&lt;abbr&gt;</code><ul>
+<li>缩略语</li>
+</ul>
+</li>
+</ul>
+<h1 id="附"><a href="#附" class="headerlink" title="附"></a>附</h1><ul>
+<li>html标签的属性不要直接写，因为无法复用。用css写在<code>style</code>属性中</li>
+</ul>
+<h2 id="html属性与css属性的对应"><a href="#html属性与css属性的对应" class="headerlink" title="html属性与css属性的对应"></a>html属性与css属性的对应</h2><h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>html的align<ul>
+<li><code>text-align</code><ul>
+<li>文字</li>
+<li><code>text-align: center</code></li>
+</ul>
+</li>
+<li><code>margin</code><ul>
+<li>区块</li>
+<li><code>margin: auto</code> 相当于 <code>align: center</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="文字控制属性"><a href="#文字控制属性" class="headerlink" title="文字控制属性"></a>文字控制属性</h3><ul>
+<li><code>font-size</code></li>
+<li><code>font-family</code><ul>
+<li>字体</li>
+</ul>
+</li>
+<li><code>color</code></li>
+<li><code>text-align</code></li>
+<li><code>font-weight</code><ul>
+<li>加粗</li>
+</ul>
+</li>
+<li><code>font-style</code><ul>
+<li>文字风格</li>
+</ul>
+</li>
+<li><code>text-decoration</code><ul>
+<li>文本修饰（线段）</li>
+</ul>
+</li>
+<li><code>line-height</code><ul>
+<li>行高</li>
+</ul>
+</li>
+<li><code>text-indent</code><ul>
+<li>首行缩进</li>
+<li><code>text-indent：2em</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="区块控制属性"><a href="#区块控制属性" class="headerlink" title="区块控制属性"></a>区块控制属性</h3><ul>
+<li><code>width</code></li>
+<li><code>height</code></li>
+<li><code>background</code><ul>
+<li>盒子默认是透明状态</li>
+</ul>
+</li>
+<li><code>border</code><ul>
+<li><code>border: 1px solid #000</code></li>
+</ul>
+</li>
+<li><code>margin</code></li>
+<li><code>padding</code></li>
+<li><code>list-style: none</code><ul>
+<li>列表项目符号</li>
+</ul>
+</li>
+<li><code>resize: none</code><ul>
+<li>禁止任意拖拽</li>
+</ul>
+</li>
+<li><code>float</code><ul>
+<li>浮动</li>
+</ul>
+</li>
+<li><code>position</code><ul>
+<li>定位</li>
+</ul>
+</li>
+<li><code>clear</code><ul>
+<li>清除浮动</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/xd-递归/" rel="next" title="xd-递归">
+                <i class="fa fa-chevron-left"></i> xd-递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/11/xd-CSS/" rel="prev" title="xd-CSS">
+                xd-CSS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XHTML"><span class="nav-number">1.2.</span> <span class="nav-text">XHTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html的访问"><span class="nav-number">1.3.</span> <span class="nav-text">html的访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小细节"><span class="nav-number">1.4.</span> <span class="nav-text">小细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单位"><span class="nav-number">1.4.1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径"><span class="nav-number">1.4.2.</span> <span class="nav-text">路径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊字符"><span class="nav-number">3.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签"><span class="nav-number">4.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本标签"><span class="nav-number">4.1.</span> <span class="nav-text">基本标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-br-gt"><span class="nav-number">4.1.1.</span> <span class="nav-text">&lt;br/&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-hr-gt"><span class="nav-number">4.1.2.</span> <span class="nav-text">&lt;hr/&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-h1-gt-lt-h6-gt"><span class="nav-number">4.1.3.</span> <span class="nav-text">&lt;h1&gt;~&lt;h6&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-span-gt"><span class="nav-number">4.1.4.</span> <span class="nav-text">&lt;span&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-div-gt"><span class="nav-number">4.1.5.</span> <span class="nav-text">&lt;div&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-p-gt"><span class="nav-number">4.1.6.</span> <span class="nav-text">&lt;p&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-b-gt"><span class="nav-number">4.1.7.</span> <span class="nav-text">&lt;b&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-i-gt"><span class="nav-number">4.1.8.</span> <span class="nav-text">&lt;i&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-font-gt"><span class="nav-number">4.1.9.</span> <span class="nav-text">&lt;font&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">4.1.9.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例"><span class="nav-number">4.1.9.2.</span> <span class="nav-text">例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-img-gt"><span class="nav-number">4.1.10.</span> <span class="nav-text">&lt;img&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">4.1.10.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-a-gt"><span class="nav-number">4.1.11.</span> <span class="nav-text">&lt;a&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">4.1.11.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">4.1.11.2.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语义化标签"><span class="nav-number">4.2.</span> <span class="nav-text">语义化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-header-gt"><span class="nav-number">4.2.1.</span> <span class="nav-text">&lt;header&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-footer-gt"><span class="nav-number">4.2.2.</span> <span class="nav-text">&lt;footer&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表标签"><span class="nav-number">4.3.</span> <span class="nav-text">列表标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层级列表"><span class="nav-number">4.3.1.</span> <span class="nav-text">层级列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-dl-gt"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">&lt;dl&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-dt-gt"><span class="nav-number">4.3.1.1.1.</span> <span class="nav-text">&lt;dt&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-dd-gt"><span class="nav-number">4.3.1.1.2.</span> <span class="nav-text">&lt;dd&gt;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">4.3.2.</span> <span class="nav-text">无序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-ul-gt"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">&lt;ul&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">4.3.3.</span> <span class="nav-text">有序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-ol-gt"><span class="nav-number">4.3.3.1.</span> <span class="nav-text">&lt;ol&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-li-gt"><span class="nav-number">4.3.3.1.1.</span> <span class="nav-text">&lt;li&gt;</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格标签"><span class="nav-number">4.4.</span> <span class="nav-text">表格标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-table-gt"><span class="nav-number">4.4.1.</span> <span class="nav-text">&lt;table&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-3"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明-1"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-caption-gt"><span class="nav-number">4.4.1.3.</span> <span class="nav-text">&lt;caption&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-th-gt"><span class="nav-number">4.4.1.4.</span> <span class="nav-text">&lt;th&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-td-gt"><span class="nav-number">4.4.1.5.</span> <span class="nav-text">&lt;td&gt;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架标签"><span class="nav-number">4.5.</span> <span class="nav-text">框架标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-frameset-gt"><span class="nav-number">4.5.1.</span> <span class="nav-text">&lt;frameset&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-4"><span class="nav-number">4.5.1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-frame-gt"><span class="nav-number">4.5.1.2.</span> <span class="nav-text">&lt;frame&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注"><span class="nav-number">4.5.1.3.</span> <span class="nav-text">注</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单标签"><span class="nav-number">4.6.</span> <span class="nav-text">表单标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-form-gt"><span class="nav-number">4.6.1.</span> <span class="nav-text">&lt;form&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-5"><span class="nav-number">4.6.1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-input-gt"><span class="nav-number">4.6.1.2.</span> <span class="nav-text">&lt;input&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#type"><span class="nav-number">4.6.1.2.1.</span> <span class="nav-text">type</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-select-gt"><span class="nav-number">4.6.1.3.</span> <span class="nav-text">&lt;select&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-option-gt"><span class="nav-number">4.6.1.3.1.</span> <span class="nav-text">&lt;option&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#技巧"><span class="nav-number">4.6.1.3.1.1.</span> <span class="nav-text">技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-textarea-gt"><span class="nav-number">4.6.1.4.</span> <span class="nav-text">&lt;textarea&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">4.6.1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它标签"><span class="nav-number">4.7.</span> <span class="nav-text">其它标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附"><span class="nav-number">5.</span> <span class="nav-text">附</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html属性与css属性的对应"><span class="nav-number">5.1.</span> <span class="nav-text">html属性与css属性的对应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">5.1.1.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字控制属性"><span class="nav-number">5.1.2.</span> <span class="nav-text">文字控制属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块控制属性"><span class="nav-number">5.1.3.</span> <span class="nav-text">区块控制属性</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

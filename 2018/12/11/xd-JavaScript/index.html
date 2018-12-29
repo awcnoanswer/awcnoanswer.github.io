@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ECMAScript概述 ECMAScript实际上是一种脚本在语法和语义上的标准。 ECMAScript是JavaScript的规格 JavaScript是ECMAScript的一种实现      实现 JavaScript JScript ActionScript  说明 三个都是ECMAScript。但是在操作浏览器对象等方面又有各自独特的方法，这些都是各自语言的扩展。 类似于ASCII码表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-JavaScript">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/xd-JavaScript/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="ECMAScript概述 ECMAScript实际上是一种脚本在语法和语义上的标准。 ECMAScript是JavaScript的规格 JavaScript是ECMAScript的一种实现      实现 JavaScript JScript ActionScript  说明 三个都是ECMAScript。但是在操作浏览器对象等方面又有各自独特的方法，这些都是各自语言的扩展。 类似于ASCII码表">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-25T05:41:53.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-JavaScript">
+<meta name="twitter:description" content="ECMAScript概述 ECMAScript实际上是一种脚本在语法和语义上的标准。 ECMAScript是JavaScript的规格 JavaScript是ECMAScript的一种实现      实现 JavaScript JScript ActionScript  说明 三个都是ECMAScript。但是在操作浏览器对象等方面又有各自独特的方法，这些都是各自语言的扩展。 类似于ASCII码表">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/11/xd-JavaScript/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-JavaScript | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-JavaScript
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:36:14" itemprop="dateCreated datePublished" datetime="2018-12-11T00:36:14+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-25 13:41:53" itemprop="dateModified" datetime="2018-12-25T13:41:53+08:00">2018-12-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>ECMAScript实际上是一种脚本在语法和语义上的标准。</li>
+<li>ECMAScript是JavaScript的规格</li>
+<li>JavaScript是ECMAScript的一种实现    </li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ul>
+<li><code>JavaScript</code></li>
+<li><code>JScript</code></li>
+<li><code>ActionScript</code></li>
+</ul>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>三个都是ECMAScript。但是在操作浏览器对象等方面又有各自独特的方法，这些都是各自语言的扩展。</li>
+<li>类似于ASCII码表，以后的码表都包含这个。这三个脚本语言都包含ECMAScript而又有各自的东西(安)</li>
+</ul>
+<h1 id="DHTML"><a href="#DHTML" class="headerlink" title="DHTML"></a>DHTML</h1><ul>
+<li>不是一门语言，是多项技术综合体的简称</li>
+<li>html <ul>
+<li>负责提供标签，进行数据的封装。便于对数据的操作。</li>
+<li>用标签封装数据。</li>
+</ul>
+</li>
+<li>css <ul>
+<li>负责提供样式。</li>
+<li>对数据定义样式。</li>
+</ul>
+</li>
+<li>dom <ul>
+<li>负责将标签文档解析，封装对象，便于操作。</li>
+<li>解析文档封装对象。</li>
+</ul>
+</li>
+<li>javascript    <ul>
+<li>负责提供程序设计语言，对页面的对象进行逻辑操作。</li>
+<li>页面的行为定义，就是页面的动态效果。</li>
+</ul>
+</li>
+<li><strong>DHTML+XMLhttpRequest=AJAX</strong></li>
+</ul>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><strong>基于对象和事件驱动的解释性脚本语言</strong>。<ul>
+<li>基于对象<ul>
+<li>JS本身就有一些现成的对象可供程序员使用，也可自定义对象。</li>
+</ul>
+</li>
+<li>事件驱动<ul>
+<li>JS代码写好后，需要外界触发后，方可运行</li>
+<li>例如：单击事件，定时执行。。。</li>
+</ul>
+</li>
+<li>解释性<ul>
+<li>每次运行JS代码时，得需要将原代码一行一行的解释执行</li>
+<li>相对编译型语言（例如：Java、C++）执行速度相对较慢</li>
+</ul>
+</li>
+<li>基于浏览器的动态交互网页技术<ul>
+<li>JS嵌入到HTML中，可以不需要服务器支持，直接由浏览器解释执行</li>
+<li>JS嵌入到JSP或Servlet中，必需要服务器支持，直接由浏览器解释执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>交互性</li>
+<li>安全性<ul>
+<li>js不能访问本地磁盘</li>
+</ul>
+</li>
+<li>跨平台</li>
+</ul>
+<h3 id="基于对象-amp-面向对象-网"><a href="#基于对象-amp-面向对象-网" class="headerlink" title="基于对象&amp;面向对象(网)"></a>基于对象&amp;面向对象(网)</h3><ul>
+<li>基于对象<ul>
+<li>先有一个具体的对象，然后在这个对象的基础上创建新的对象</li>
+<li>一个工程师建了一栋房子，然后其它的工程师按照这个房子的样子去建造其它的房子</li>
+</ul>
+</li>
+<li>面向对象<ul>
+<li>先有一个抽象的对象描述，然后以此为蓝本构建具体对象</li>
+<li>一个工程师再图纸上设计出一栋房子的样子，然后其它工程师按照这个图纸的设计去建造房子</li>
+</ul>
+</li>
+</ul>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><h3 id="ECMAScript-1"><a href="#ECMAScript-1" class="headerlink" title="ECMAScript"></a>ECMAScript</h3><ul>
+<li>核心</li>
+<li>描述了语言的语法和基本对象。</li>
+</ul>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul>
+<li><code>document object model</code><ul>
+<li>文档对象模型</li>
+</ul>
+</li>
+</ul>
+<h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><ul>
+<li><code>browser object moel</code><ul>
+<li>浏览器对象模型</li>
+</ul>
+</li>
+</ul>
+<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><ol>
+<li><strong>内嵌脚本</strong><ul>
+<li><code>&lt;input type=&quot;button&quot; value=&quot;button&quot; onclick=&quot;alert(&#39;xxx&#39;)&quot;/&gt;</code></li>
+</ul>
+</li>
+<li><strong>内部脚本</strong><ul>
+<li><strong>将js代码封装到<code>&lt;script&gt;</code>标签中</strong></li>
+<li><code>&lt;script type=&quot;text/javascript&quot;&gt;js代码&lt;script&gt;</code><ul>
+<li>type可以省略 默认。</li>
+<li><code>&lt;script&gt;</code>标签可以出现在html页面的任意位置，但实际操作中，一般会写在<code>&lt;head&gt;</code>标签中。</li>
+<li>在不影响html功能的前提下越晚加载越好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>外部脚本</strong>        <ul>
+<li><strong>将js代码封装成js文件，使用时通过<code>&lt;script&gt;</code>标签的src属性导入</strong></li>
+<li><code>&lt;script src=&quot;xx.js&gt;&lt;/script&gt;&quot;</code><ul>
+<li>外部的js文件中不能包含<code>&lt;script&gt;</code>标签。</li>
+<li>在导入外部js文件的<code>&lt;script&gt;</code>标签中不能在写js代码(标签体为空)。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h3><h4 id="number"><a href="#number" class="headerlink" title="number"></a>number</h4><ul>
+<li>任何数字都看成是number类型</li>
+<li><code>整数/小数/NaN(not a number 一个不是数字的数字类型)</code></li>
+</ul>
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><ul>
+<li>单引号或双引号声明。</li>
+</ul>
+<h4 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h4><ul>
+<li>false<ul>
+<li>0 null</li>
+</ul>
+</li>
+<li>true<ul>
+<li>非0 非空 默认1</li>
+</ul>
+</li>
+</ul>
+<h4 id="null"><a href="#null" class="headerlink" title="null"></a>null</h4><ul>
+<li>变量没有声明</li>
+</ul>
+<h4 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h4><ul>
+<li>变量声明了未初始化</li>
+<li>值undefined实际上是从值null派生出来的。因此null==undefined得到的结果是true.</li>
+</ul>
+<h4 id="注"><a href="#注" class="headerlink" title="注"></a>注</h4><ul>
+<li>对变量或值调用 <strong>typeof</strong> 运算符将返回下列值之一：<ul>
+<li>undefined - 如果变量是 undefined 类型的</li>
+<li>boolean - 如果变量是 boolean 类型的</li>
+<li>number - 如果变量是 number 类型的</li>
+<li>string - 如果变量是 string 类型的</li>
+<li>object - 如果变量是一种引用类型或 null 类型的<ul>
+<li><code>typeof null</code>返回的是object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><h4 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h4><ul>
+<li>对象调用成员有两种方式<ul>
+<li><code>对象.属性</code></li>
+<li><code>对象[&quot;属性&quot;]</code></li>
+</ul>
+</li>
+<li><code>var obj=new Object([value]);</code></li>
+<li><code>toString()</code></li>
+<li><code>toLocalString()</code></li>
+<li><code>valueOf()</code></li>
+</ul>
+<h5 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h5><h6 id="String"><a href="#String" class="headerlink" title="String"></a>String</h6><ul>
+<li>创建<ul>
+<li><code>var str = new String(s);</code></li>
+<li><code>var str = &quot;s&quot;;</code></li>
+</ul>
+</li>
+<li>属性<ul>
+<li>length<ul>
+<li>字符串的长度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>charAt()<ul>
+<li>返回索引字符</li>
+</ul>
+</li>
+<li>charCodeAt<ul>
+<li>返回索引字符unicode</li>
+</ul>
+</li>
+<li>indexOf()<ul>
+<li>返回字符的索引</li>
+</ul>
+</li>
+<li>lastIndexOf()<ul>
+<li>逆向返回字符的索引</li>
+</ul>
+</li>
+<li>split()<ul>
+<li>将字符串按照特殊字符切割成数组</li>
+</ul>
+</li>
+<li>substr()<ul>
+<li>提取字符串中从起始索引号指定数目的字符</li>
+</ul>
+</li>
+<li>substring()<ul>
+<li>提取字符串中两个指定的索引号之间的字符</li>
+</ul>
+</li>
+<li>toUpperCase()<ul>
+<li>转大写</li>
+</ul>
+</li>
+<li>toLowerCase()<ul>
+<li>转小写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h6><ul>
+<li>构造<ul>
+<li><code>var arr=new Array()</code><ul>
+<li>相当于<code>var arr=[];</code></li>
+</ul>
+</li>
+<li><code>var arr=new Array(5)</code><ul>
+<li>数组长度为5</li>
+</ul>
+</li>
+<li><code>var arr=new Array(9,5,2,7)</code><ul>
+<li>相当于<code>var arr=[9,5,2,7]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>属性<ul>
+<li>length<ul>
+<li>数组长度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>join()<ul>
+<li>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔</li>
+</ul>
+</li>
+<li>push()<ul>
+<li>向数组的末尾添加一个或更多元素，并返回新的长度</li>
+<li>如果参数为数组，把数组作为元素添加到数组中。(二维数组)</li>
+</ul>
+</li>
+<li>shift()<ul>
+<li>删除并返回第一个元素</li>
+</ul>
+</li>
+<li>pop()<ul>
+<li>删除并返回最后元素</li>
+</ul>
+</li>
+<li>concat()<ul>
+<li>将参数作为元素添加到数组中，返回新数组。</li>
+<li>参数如果为数组，就把数组中的元素作为元素添加到新数组。</li>
+</ul>
+</li>
+<li>unshift()<ul>
+<li>在数组首添加元素，并返回该数组</li>
+</ul>
+</li>
+<li>reverse()<ul>
+<li>反转数组</li>
+</ul>
+</li>
+<li>sort()<ul>
+<li>排序</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h6><ul>
+<li>创建<ul>
+<li>var myNum=new Number(value);</li>
+<li>var myNum=Number(value);</li>
+</ul>
+</li>
+<li>属性和方法<ul>
+<li>toString()<ul>
+<li>转成字符串(原始string类型)</li>
+</ul>
+</li>
+<li>valueOf()<ul>
+<li>返回一个 Number 对象的基本数字值(原始number类型)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h6><ul>
+<li>创建<ul>
+<li>var bool = new Boolean(value);    </li>
+<li>var bool = Boolean(value);</li>
+</ul>
+</li>
+<li>属性和方法<ul>
+<li>toString()<ul>
+<li>转成字符串(原始string类型)</li>
+</ul>
+</li>
+<li>valueOf()<ul>
+<li>返回一个 Boolean 对象的基本值(原始boolean)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6><ul>
+<li>创建<ul>
+<li>var myDate = new Date();</li>
+<li>var myDate = new Date(毫秒值);<ul>
+<li>代表从1970-1-1到现在的一个毫秒值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>属性和方法<ul>
+<li>toLocalString()<ul>
+<li>获得本地时间格式的字符串</li>
+</ul>
+</li>
+<li>getTime()<ul>
+<li>返回1970年1月1日午夜到指定日期（字符串）的毫秒数</li>
+</ul>
+</li>
+<li><code>static parse(str)</code><ul>
+<li>转成毫秒值</li>
+</ul>
+</li>
+<li>getFullYear()<ul>
+<li>年</li>
+</ul>
+</li>
+<li>getMonth()<ul>
+<li>月 0-11</li>
+</ul>
+</li>
+<li>getDate()<ul>
+<li>日 1-31</li>
+</ul>
+</li>
+<li>getDay()<ul>
+<li>星期 0-6</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h6><ul>
+<li>创建<ul>
+<li>Math 对象并不像 Date 和 String 那样是对象的类因此没有构造函数Math()，像 Math.sin() 这样的函数只是函数,不是某个对象的方法。无需创建它，通过把 Math 作为对象使用就可以调用其所有属性和方法。</li>
+<li>Math中的方法都是静态的。</li>
+</ul>
+</li>
+<li>属性和方法<ul>
+<li>PI<ul>
+<li>圆周率</li>
+</ul>
+</li>
+<li>abs()<ul>
+<li>绝对值</li>
+</ul>
+</li>
+<li>ceil()<ul>
+<li>对数进行上舍入</li>
+</ul>
+</li>
+<li>floor()<ul>
+<li>对数进行下舍入</li>
+</ul>
+</li>
+<li>pow(x,y)<ul>
+<li>返回 x 的 y 次幂</li>
+</ul>
+</li>
+<li>random()<ul>
+<li>0-1之间的随机数(含0不含1)</li>
+</ul>
+</li>
+<li>round()<ul>
+<li>四舍五入</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h6><ul>
+<li>正则</li>
+<li>创建<ul>
+<li><code>var reg = new RegExp(pattern)</code>;</li>
+<li><code>var reg = /^正则规则$/</code></li>
+</ul>
+</li>
+<li>方法<ul>
+<li>test(str)<ul>
+<li>检索字符串是否匹配某个模式。返回true/false</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h6><ul>
+<li>属性<ul>
+<li><code>length</code><ul>
+<li>形参个数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h6><h6 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h6><ul>
+<li>全局对象</li>
+<li>方法和属性不需要对象调用，可以直接实用</li>
+<li><strong>URL编码</strong><ul>
+<li>中文先按照自身编码转成二进制</li>
+<li>然后变成16进制（每个16进制位前边加一个%作为分割）</li>
+</ul>
+</li>
+<li><strong>编码解码</strong><ul>
+<li><code>encodeURI()</code>—<code>decodeURI()</code></li>
+<li><code>encodeURIComponet()</code>—<code>decodeURIComponent()</code></li>
+<li><code>escape()</code>—<code>unescape()</code></li>
+<li>三者区别<ul>
+<li>进行编码的符号范围不同，实际开发中常使用第一种</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>parseInt()</code><ul>
+<li>字符串转数字</li>
+<li>逐一判断每一个字符，直到不是数字为止，将前边转为数字</li>
+</ul>
+</li>
+<li><code>eval(&quot;&quot;)</code><ul>
+<li>将字符串当作脚本进行解析运行<ul>
+<li><code>var str=&quot;var a=2;var b=3;alert(a+b)&quot;;</code></li>
+<li><code>eval(str)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>isNaN()</code><ul>
+<li>判断是否为NaN</li>
+<li>因为NaN六亲不认<ul>
+<li><code>var a = NaN; a==NaN</code>是false</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h5><ol>
+<li><p>无参构造</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 定义</span><br><span class="line">function Person()&#123;&#125;</span><br><span class="line">// 创建</span><br><span class="line">var person=new Person();</span><br><span class="line">// 设置属性和方法</span><br><span class="line">person.name=&quot;xq&quot;;</span><br><span class="line">person.age=8;</span><br><span class="line">person.show=function()&#123;code...&#125;</span><br><span class="line">// 调用</span><br><span class="line">person.show();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有参构造</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.age=age;</span><br><span class="line">		this.show=function()&#123;code...&#125;</span><br><span class="line">&#125;</span><br><span class="line">var person=new Person(&quot;xq&quot;,8);</span><br><span class="line">person.show();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;</span><br><span class="line">	&quot;name&quot;:&quot;xq&quot;,</span><br><span class="line">	&quot;age&quot;,8,</span><br><span class="line">	&quot;show&quot;:function()&#123;code...&#125;</span><br><span class="line">&#125;</span><br><span class="line">person.show();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object方式</p>
+<ul>
+<li>相当于无参构造，不过不用定义新的对象构造了，直接使用Object(安)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person=new Object();</span><br><span class="line">person.name=&quot;xq&quot;;</span><br><span class="line">person.age=8;</span><br><span class="line">person.show=function()&#123;code...&#125;</span><br><span class="line">person.show();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>区分大小写</li>
+<li>弱类型</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>全局变量<ul>
+<li>在脚本片段中定义的变量，包括语句中的如<code>for(var i=0)</code></li>
+<li>不用var的是全局变量，用var是局部变量</li>
+</ul>
+</li>
+<li>局部变量<ul>
+<li>在函数中定义的变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li>赋值运算符<ul>
+<li><code>=</code></li>
+</ul>
+</li>
+<li>算数运算符<ul>
+<li><code>+</code><ul>
+<li>遇到字符串变成连接</li>
+</ul>
+</li>
+<li><code>-</code><ul>
+<li>先把字符串转成数字然后进行运算</li>
+</ul>
+</li>
+<li><code>*</code><ul>
+<li>先把字符串转成数字然后进行运算</li>
+</ul>
+</li>
+<li><code>/</code><ul>
+<li>先把字符串转成数字然后进行运算</li>
+</ul>
+</li>
+<li><code>%</code></li>
+</ul>
+</li>
+<li>逻辑运算符<ul>
+<li><code>&amp;&amp; || !</code></li>
+</ul>
+</li>
+<li>比较运算符<ul>
+<li><code>&lt; &gt; &gt;= &lt;= != == ===</code><ul>
+<li>===<ul>
+<li>全等：类型与值都要相等</li>
+<li>例如<code>&quot;&quot; == false</code>结果是true，因为可以认为空字符串和false有相同含义，<code>&quot;&quot; === false</code>结果为false，还会比较数据类型</li>
+</ul>
+</li>
+<li>!==<ul>
+<li>全不等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>位运算符<ul>
+<li><code>&amp; | ^ &gt;&gt; &lt;&lt; &gt;&gt;&gt;</code></li>
+</ul>
+</li>
+<li>三元运算符</li>
+<li>void运算符<ul>
+<li><code>javascript:void(0);</code></li>
+<li><code>&lt;a href=&quot;javascript:void(0);&quot;&gt;xxx&lt;/a&gt;</code><ul>
+<li>不会跳转。</li>
+</ul>
+</li>
+<li><code>&lt;a href=&quot;#&quot;&gt;xxx&lt;/a&gt;</code><ul>
+<li>会跳转只是跳向本页面。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类型运算符<ul>
+<li><code>typeof</code><ul>
+<li>判断数据类型并返回</li>
+<li><code>typeof obj</code></li>
+<li><code>typeof(obj)</code></li>
+</ul>
+</li>
+<li><code>instanceof</code><ul>
+<li>判断是否是某种数据类型返回boolean</li>
+<li><code>obj instanceof Object</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><ul>
+<li>条件<ul>
+<li>数字非0 字符串非空 引用类型非空<ul>
+<li>true</li>
+</ul>
+</li>
+<li>undefined<ul>
+<li>false</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h4><ul>
+<li><code>for(index in arr){//index代表角标}</code></li>
+</ul>
+<h4 id="with"><a href="#with" class="headerlink" title="with"></a>with</h4><ul>
+<li><code>with(对象){在该区域直接使用对象的属性方法。不用写对象.}</code></li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h4><ol>
+<li>直接定义<ul>
+<li><code>var arr=[];</code></li>
+<li><code>var arr=[元素列表]</code></li>
+</ul>
+</li>
+<li>使用Array对象构造<ul>
+<li><code>var arr=new Array()</code><ul>
+<li>相当于<code>var arr=[];</code></li>
+</ul>
+</li>
+<li><code>var arr=new Array(默认数组长度)</code></li>
+<li><code>var arr=new Array(元素列表)</code><ul>
+<li>相当于<code>var arr=[元素列表]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>长度可变<ul>
+<li>如果数组有3个元素，访问<code>arr[10]</code>，则长度会变成11</li>
+</ul>
+</li>
+<li>存储类型任意</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>函数也是对象<ul>
+<li>如Function对象的属性length属性，函数也可以调用</li>
+</ul>
+</li>
+</ul>
+<h4 id="定义方式-1"><a href="#定义方式-1" class="headerlink" title="定义方式"></a>定义方式</h4><ol>
+<li><p>正常方式</p>
+<ul>
+<li><code>function 函数名(参数列表){函数体}</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function add(num1,num2)&#123;</span><br><span class="line">			return num1+num2;</span><br><span class="line">&#125;</span><br><span class="line">add(1,1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>匿名函数</p>
+<ul>
+<li><code>var 函数名=function(参数列表){函数体}</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var add=function(num1,num2)&#123;</span><br><span class="line">			return num1+num2;	</span><br><span class="line">		&#125;</span><br><span class="line">add(1,1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>构造器方式(了解)</p>
+<ul>
+<li><code>var 函数名=new Function(参数列表,函数体);</code></li>
+<li>参数列表/函数体必须使用字符串形式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var add=new Function(&quot;num1&quot;,&quot;num2&quot;,&quot;return num1+num2;&quot;);</span><br><span class="line">add(1,1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="注-1"><a href="#注-1" class="headerlink" title="注"></a>注</h4><h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><ul>
+<li>形参没有var去修饰</li>
+<li>形参和实参个数不一定相等<ul>
+<li>函数中有一个隐藏内置<code>arguments</code>数组对象 会将传递的实参进行存储</li>
+<li><code>function add(a,b){return a+b;}</code><ul>
+<li><code>add(1,2,3,4);</code>  → 3</li>
+<li>1234都会被存储再数组中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><ul>
+<li>在定义函数的时候不必表明是否具有返回值</li>
+<li>没有具体返回值，return可以省略。</li>
+</ul>
+<h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><ul>
+<li>原型<ul>
+<li>就是对该对象的描述，如果添加了新功能，那么该对象就具备新功能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li><code>对象.prototype=</code></li>
+<li>例<ul>
+<li>添加属性<ul>
+<li><code>String.prototype.len=1</code></li>
+</ul>
+</li>
+<li>添加行为<ul>
+<li><code>String.prototype.trim=方法名(trim)或者匿名函数</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="焦点事件"><a href="#焦点事件" class="headerlink" title="焦点事件"></a>焦点事件</h3><ul>
+<li><code>onblur</code><ul>
+<li>失去焦点</li>
+</ul>
+</li>
+<li><code>onfoucus</code><ul>
+<li>获得焦点</li>
+</ul>
+</li>
+</ul>
+<h3 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h3><ul>
+<li><code>onclick</code><ul>
+<li>单击</li>
+</ul>
+</li>
+<li><code>ondbclick</code><ul>
+<li>双击</li>
+</ul>
+</li>
+</ul>
+<h3 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h3><ul>
+<li><code>onload</code><ul>
+<li>页面加载完毕</li>
+</ul>
+</li>
+<li><code>onunload</code> <ul>
+<li>页面关闭</li>
+</ul>
+</li>
+</ul>
+<h3 id="选择-amp-改变事件"><a href="#选择-amp-改变事件" class="headerlink" title="选择&amp;改变事件"></a>选择&amp;改变事件</h3><ul>
+<li><code>onchange</code><ul>
+<li>域内容被改变</li>
+</ul>
+</li>
+<li><code>onselect</code><ul>
+<li>文本被选择</li>
+</ul>
+</li>
+</ul>
+<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><ul>
+<li><code>onsubmit</code><ul>
+<li>提交按钮被点击</li>
+<li><code>return boolean</code></li>
+</ul>
+</li>
+<li><code>onreset</code><ul>
+<li>重置按钮被点击</li>
+</ul>
+</li>
+</ul>
+<h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><ul>
+<li><code>onkeydown</code><ul>
+<li>键盘按键按下</li>
+<li>定义方法式，定义一个形参，接收event对象</li>
+<li>event对象的keycode属性可以知道哪个键被点击了</li>
+</ul>
+</li>
+<li><code>onkeyup</code><ul>
+<li>键盘按键松开</li>
+</ul>
+</li>
+<li><code>onkeypress</code><ul>
+<li>键盘按键按下并松开</li>
+</ul>
+</li>
+</ul>
+<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><ul>
+<li><code>onmouseover</code><ul>
+<li>鼠标悬浮</li>
+</ul>
+</li>
+<li><code>onmouseout</code><ul>
+<li>鼠标移出</li>
+</ul>
+</li>
+<li><code>onmousedown</code><ul>
+<li>鼠标按下</li>
+<li>定义方法式，定义一个形参，接收event对象</li>
+<li>event对象的button属性可以知道哪个键被点击了</li>
+</ul>
+</li>
+<li><code>onmouseup</code> <ul>
+<li>鼠标松开</li>
+</ul>
+</li>
+<li><code>onmousemove</code><ul>
+<li>鼠标移动</li>
+</ul>
+</li>
+</ul>
+<h3 id="事件的绑定方式"><a href="#事件的绑定方式" class="headerlink" title="事件的绑定方式"></a>事件的绑定方式</h3><ol>
+<li>将事件和响应行为都内嵌到html标签中<ul>
+<li><code>&lt;input type=&quot;button&quot; value=&quot;button&quot;  onclick=&quot;alert(&#39;xxx&#39;)&quot;/&gt;</code></li>
+</ul>
+</li>
+<li><p>将事件内嵌到html中而响应行为用函数进行封装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; value=&quot;button&quot; onclick=&quot;fn()&quot; /&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	function fn()&#123;</span><br><span class="line">		alert(&quot;yyy&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将事件和响应行为 与html标签完全分离</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;button&quot;/&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var btn = document.getElementById(&quot;btn&quot;);</span><br><span class="line">	btn.onclick = function()&#123;</span><br><span class="line">		alert(&quot;zzz&quot;);</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><ul>
+<li>this经过事件的函数进行传递的是html标签对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;btn&quot; name=&quot;mybtn&quot; type=&quot;button&quot; value=&quot;button123&quot; onclick=&quot;fn(this)&quot;/&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	function fn(obj)&#123;</span><br><span class="line">		alert(obj.name);//mybtn</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="阻止事件的默认行为"><a href="#阻止事件的默认行为" class="headerlink" title="阻止事件的默认行为"></a>阻止事件的默认行为</h3><ul>
+<li>如a标签的跳转…</li>
+</ul>
+<ol>
+<li><p>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot; onclick=&quot;fun()&quot;&gt;点我&lt;a/&gt;</span><br><span class="line">function fun()&#123;code...&#125;</span><br><span class="line">//点击链接时会先执行fun然后跳转，所以可以在函数内做一些事阻止跳转</span><br></pre></td></tr></table></figure>
+<ul>
+<li>IE<ul>
+<li><code>window.event.returnValue = false;</code></li>
+</ul>
+</li>
+<li>W3C<ul>
+<li><code>传递过来的事件对象.preventDefault();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通过事件返回false也可以阻止事件的默认行为<ul>
+<li><code>&lt;a href=&quot;xx.html&quot; onclick=&quot;return false&quot;&gt;点击&lt;/a&gt;</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot; onclick=&quot;fun(event)&quot;&gt;点我&lt;a/&gt;</span><br><span class="line">function fun(e)&#123;</span><br><span class="line">        if(e&amp;e.preventDefault())&#123;</span><br><span class="line">            e.preventDefault();</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            window.event.returnValue = false;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="阻止事件的传播"><a href="#阻止事件的传播" class="headerlink" title="阻止事件的传播"></a>阻止事件的传播</h3><ul>
+<li>比如子级有个点击事件，父级也有一个点击事件。点击子级，连父级的事件也会触发。<ul>
+<li>IE<ul>
+<li><code>window.event.cancelBubble = true;</code></li>
+</ul>
+</li>
+<li>W3C<ul>
+<li><code>传递过来的事件对象.stopPropagation();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="BOM-1"><a href="#BOM-1" class="headerlink" title="BOM"></a>BOM</h2><h3 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h3><ul>
+<li>浏览器窗口对象。</li>
+</ul>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="获取其它BOM对象"><a href="#获取其它BOM对象" class="headerlink" title="获取其它BOM对象"></a>获取其它BOM对象</h5><ul>
+<li>navigator</li>
+<li>history</li>
+<li>location</li>
+<li>screen</li>
+</ul>
+<h5 id="获取DOM对象"><a href="#获取DOM对象" class="headerlink" title="获取DOM对象"></a>获取DOM对象</h5><ul>
+<li>document</li>
+</ul>
+<h5 id="设置或获取状态栏信息"><a href="#设置或获取状态栏信息" class="headerlink" title="设置或获取状态栏信息"></a>设置或获取状态栏信息</h5><ul>
+<li>status</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><h5 id="弹框"><a href="#弹框" class="headerlink" title="弹框"></a>弹框</h5><ul>
+<li><code>alert(&quot;提示信息&quot;)</code><ul>
+<li>提示框</li>
+</ul>
+</li>
+<li><code>confirm(&quot;确认信息&quot;)</code><ul>
+<li>确认框</li>
+<li>有返回值,点确定返回true取消返回false</li>
+</ul>
+</li>
+<li><code>prompt(&quot;提示信息&quot;)</code><ul>
+<li>输入框</li>
+<li>有返回值,点确定返回输入值取消返回null</li>
+</ul>
+</li>
+</ul>
+<h5 id="打开关闭"><a href="#打开关闭" class="headerlink" title="打开关闭"></a>打开关闭</h5><ul>
+<li><code>open(&quot;url地址&quot;)</code><ul>
+<li>访问url</li>
+</ul>
+</li>
+<li><code>close()</code><ul>
+<li>关闭当前窗口</li>
+</ul>
+</li>
+</ul>
+<h5 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h5><ul>
+<li><code>setTimeout(函数,毫秒值)</code><ul>
+<li>指定时间后执行一次函数</li>
+</ul>
+</li>
+<li><code>clearTimeout(定时器的名称)</code><ul>
+<li>定时器的名称即<code>setTimeout</code>的返回值</li>
+</ul>
+</li>
+<li><code>setInterval(函数,毫秒值)</code><ul>
+<li>每隔指定时间后执行一次函数</li>
+</ul>
+</li>
+<li><code>clearInterval(定时器的名称)</code></li>
+</ul>
+<h5 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h5><ul>
+<li><code>moveTo(x,y)</code><ul>
+<li>将窗口左上角的屏幕位置移动到指定的 x 和 y 位置</li>
+</ul>
+</li>
+<li><code>moveby(x,y)</code><ul>
+<li>将窗口的位置移动指定 x 和 y 偏移值。</li>
+</ul>
+</li>
+<li><code>focus()</code><ul>
+<li>获取焦点</li>
+</ul>
+</li>
+</ul>
+<h4 id="事件-1"><a href="#事件-1" class="headerlink" title="事件"></a>事件</h4><ul>
+<li><code>onload</code><ul>
+<li>窗口加载完毕触发</li>
+</ul>
+</li>
+<li><code>onbeforeunload</code><ul>
+<li>窗口关闭前</li>
+</ul>
+</li>
+<li><code>onunload</code><ul>
+<li>窗口关闭</li>
+</ul>
+</li>
+</ul>
+<h3 id="History"><a href="#History" class="headerlink" title="History"></a>History</h3><ul>
+<li>历史记录对象</li>
+</ul>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>length<ul>
+<li>当前窗口历史记录列表的个数</li>
+</ul>
+</li>
+</ul>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>back()</code><ul>
+<li>后退</li>
+</ul>
+</li>
+<li><code>forward()</code><ul>
+<li>前进</li>
+</ul>
+</li>
+<li><code>go()</code><ul>
+<li>go(1)<ul>
+<li>前进</li>
+</ul>
+</li>
+<li>go(0)<ul>
+<li>刷新</li>
+</ul>
+</li>
+<li>go(-1)<ul>
+<li>后退</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Location"><a href="#Location" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>地址栏对象</li>
+</ul>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>href<ul>
+<li>设置或获取url地址</li>
+</ul>
+</li>
+<li>protocal<ul>
+<li>设置或获取协议</li>
+</ul>
+</li>
+<li>hostname<ul>
+<li>设置或获取主机名</li>
+</ul>
+</li>
+<li>port<ul>
+<li>设置或获取端口</li>
+</ul>
+</li>
+<li>host<ul>
+<li>hostname+port</li>
+</ul>
+</li>
+</ul>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>reload()</code><ul>
+<li>刷新</li>
+</ul>
+</li>
+</ul>
+<h3 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h3><ul>
+<li>浏览器对象</li>
+</ul>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>appName</code><ul>
+<li>浏览器名称</li>
+</ul>
+</li>
+<li><code>appVersion</code><ul>
+<li>浏览器版本</li>
+</ul>
+</li>
+</ul>
+<h3 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h3><ul>
+<li>显示器屏幕对象</li>
+</ul>
+<h2 id="DOM-1"><a href="#DOM-1" class="headerlink" title="DOM"></a>DOM</h2><h3 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>用来将<strong>标记型文档</strong>封装成对象，并将标记型文档中的所有内容(标签，文本，属性等)都封装成对象。</li>
+<li>常见标记型文档<ul>
+<li>html </li>
+<li>xml</li>
+</ul>
+</li>
+</ul>
+<h3 id="DOM分类"><a href="#DOM分类" class="headerlink" title="DOM分类"></a>DOM分类</h3><h4 id="核心-DOM"><a href="#核心-DOM" class="headerlink" title="核心 DOM"></a>核心 DOM</h4><ul>
+<li>针对任何结构化文档的标准模型</li>
+<li>Node<ul>
+<li>Document</li>
+<li>Element</li>
+<li>Attribute</li>
+<li>Text</li>
+<li>Comment</li>
+</ul>
+</li>
+</ul>
+<h4 id="XML-DOM"><a href="#XML-DOM" class="headerlink" title="XML DOM"></a>XML DOM</h4><ul>
+<li>针对 XML 文档的标准模型</li>
+</ul>
+<h4 id="HTML-DOM"><a href="#HTML-DOM" class="headerlink" title="HTML DOM"></a>HTML DOM</h4><ul>
+<li>针对 HTML 文档的标准模型</li>
+</ul>
+<h3 id="DOM级别"><a href="#DOM级别" class="headerlink" title="DOM级别"></a>DOM级别</h3><ul>
+<li>DOM level 1<ul>
+<li>将html文档封装成对象</li>
+</ul>
+</li>
+<li>DOM level 2<ul>
+<li>在level 1基础上加入新功能，如解析名称空间。</li>
+<li>名称空间<ul>
+<li>为了区分同一个标签的所属。类似于java的包名。(安)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DOM level 3<ul>
+<li>将xml文档封装成了对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><h4 id="dom解析"><a href="#dom解析" class="headerlink" title="dom解析"></a>dom解析</h4><ul>
+<li>w3c标准解析</li>
+<li>将标记型文档解析成DOM树，并将树中的内容都封装成节点对象。<ul>
+<li><strong>DOM树</strong><ul>
+<li>按照标签的层次关系体现出标签的所属，形成的一个树状结构。</li>
+</ul>
+</li>
+<li><strong>节点(Node)</strong><ul>
+<li>DOM树中的标签，属性及文本。</li>
+<li>节点也成为对象。</li>
+<li>标签通常也称为页面中的元素。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>好处<ul>
+<li>可以对节点进行任意操作。</li>
+</ul>
+</li>
+<li>弊端<ul>
+<li>需要将整个标记型文档加载进内存，如果文档过大，浪费内存空间。</li>
+</ul>
+</li>
+</ul>
+<h4 id="SAX解析"><a href="#SAX解析" class="headerlink" title="SAX解析"></a>SAX解析</h4><ul>
+<li>民间方式。</li>
+<li>基于事件驱动的解析。</li>
+<li>依序读入文件并产生相应事件，可以处理任意大小的文件。</li>
+<li>只能读取，不能修改。不能往回读。</li>
+</ul>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><ul>
+<li>其它5个DOM对象的父类</li>
+</ul>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="Document"><a href="#Document" class="headerlink" title="Document"></a>Document</h5><ul>
+<li>文档节点 </li>
+<li>整个文档</li>
+</ul>
+<h5 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h5><ul>
+<li>元素节点 </li>
+<li>html元素</li>
+</ul>
+<h5 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h5><ul>
+<li>属性节点</li>
+<li>html属性</li>
+</ul>
+<h5 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h5><ul>
+<li>文本节点 </li>
+<li>html元素内的文本</li>
+</ul>
+<h5 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h5><ul>
+<li>注释节点</li>
+<li>注释</li>
+</ul>
+<h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>nodeName</code>(只读)<ul>
+<li>节点名,每个节点都有此属性</li>
+<li>元素节点：返回元素名称</li>
+<li>属性节点：返回属性名称</li>
+<li>文本节点：返回#text</li>
+</ul>
+</li>
+<li><code>nodeType</code>(只读)<ul>
+<li>节点类型，返回一个正数</li>
+<li>Node.ELEMENT_NODE—1</li>
+<li>Node.ATTRIBUTE_NODE—2</li>
+<li>Node.TEXT_NODE—3</li>
+</ul>
+</li>
+<li><code>nodeValue</code>(读写)<ul>
+<li>节点值</li>
+<li>元素节点:返回null</li>
+<li>属性节点:返回属性的值</li>
+<li>文本节点:返回文本节点的内容</li>
+</ul>
+</li>
+<li><code>innerHTML</code><ul>
+<li>标签体内容。</li>
+</ul>
+</li>
+<li><code>parentNode</code><ul>
+<li>父节点</li>
+</ul>
+</li>
+<li><code>childNodes</code><ul>
+<li>子节点集合</li>
+</ul>
+</li>
+<li><code>previousSibling</code><ul>
+<li>兄节点</li>
+</ul>
+</li>
+<li><code>nextSibling</code><ul>
+<li>弟节点</li>
+</ul>
+</li>
+</ul>
+<h4 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>appendChild()</code><ul>
+<li>添加子节点</li>
+</ul>
+</li>
+<li><code>removeChild()</code><ul>
+<li>删除子节点</li>
+</ul>
+</li>
+<li><code>replaceChild()</code><ul>
+<li>替换子节点</li>
+</ul>
+</li>
+<li><code>insertBefore()</code><ul>
+<li><code>父.insertBefore(新元素，目标元素)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Document-1"><a href="#Document-1" class="headerlink" title="Document"></a>Document</h3><h4 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><code>forms</code><ul>
+<li>文档中所有 form 对象的集合</li>
+<li>表单对象有一个提交方法<code>formElement.submit();</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h4><h5 id="获取Element对象"><a href="#获取Element对象" class="headerlink" title="获取Element对象"></a>获取Element对象</h5><ul>
+<li><code>getElementById()</code></li>
+<li><code>getElementsByName()</code><ul>
+<li>根据name属性获取元素对象数组</li>
+</ul>
+</li>
+<li><code>getElementsByTagName()</code><ul>
+<li>根据元素名称(标签名)获取元素对象数组</li>
+</ul>
+</li>
+<li><code>getElementsByClassName()</code><ul>
+<li>根据class属性获取元素对象数组</li>
+</ul>
+</li>
+</ul>
+<h5 id="创建其它DOM对象"><a href="#创建其它DOM对象" class="headerlink" title="创建其它DOM对象"></a>创建其它DOM对象</h5><ul>
+<li><code>createElement()</code><ul>
+<li>创建元素节点</li>
+</ul>
+</li>
+<li><code>createAttribute()</code><ul>
+<li>创建属性节点</li>
+</ul>
+</li>
+<li><code>createTextNode()</code><ul>
+<li>创建文本节点</li>
+</ul>
+</li>
+<li><code>createComment()</code><ul>
+<li>创建注释节点</li>
+</ul>
+</li>
+</ul>
+<h5 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h5><ul>
+<li><code>hasChildNodes()</code><ul>
+<li>是否有子节点</li>
+<li>文本和属性节点没有子节点,所以返回false </li>
+</ul>
+</li>
+</ul>
+<h3 id="Element-1"><a href="#Element-1" class="headerlink" title="Element"></a>Element</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><ul>
+<li>通过Document对象获取Element对象</li>
+</ul>
+<h4 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>setAttribute()</code></li>
+<li><code>getAttribute()</code></li>
+<li><code>removeAttribute()</code></li>
+</ul>
+<h3 id="Html-DOM"><a href="#Html-DOM" class="headerlink" title="Html DOM"></a>Html DOM</h3><ol>
+<li>获取和设置标签体<ul>
+<li><code>innerHTML</code><ul>
+<li>标签内部的所有东西都属于标签体，如为table添加tr<ul>
+<li><code>tableElement.innerHtml+=&quot;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用html元素对象的属性</li>
+<li>样式<ol>
+<li>使用元素<code>style</code>属性设置</li>
+<li>提前设置好类选择器，通过元素<code>className</code>来设置class属性值</li>
+</ol>
+</li>
+</ol>
+<h1 id="安"><a href="#安" class="headerlink" title="安"></a>安</h1><ul>
+<li><p>不只可以用<code>document.getElementBy...</code>,</p>
+<ul>
+<li>如已经获取select节点<ul>
+<li><code>var selectNode=...</code></li>
+</ul>
+</li>
+<li>可以用select节点获取option节点<ul>
+<li><code>var optionNode=selectNode.getElementBy...</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>关于方法后边是否加括号的问题</strong></p>
+<ul>
+<li>在赋值（=）和return后边<ul>
+<li><strong>有括号表示传递的是函数的返回值。</strong></li>
+<li><strong>无括号表示传递的是函数这个对象。</strong></li>
+</ul>
+</li>
+<li><code>function add(){return 3}</code></li>
+<li>现在有这样一个方法add</li>
+<li><code>var s = add();</code> // 结果是3</li>
+<li><code>var s = add;</code> // 结果是函数add对象</li>
+<li>这就不难理解为何<ul>
+<li><code>window.onload = add</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/11/xd-CSS/" rel="next" title="xd-CSS">
+                <i class="fa fa-chevron-left"></i> xd-CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/11/xd-Ajax/" rel="prev" title="xd-Ajax">
+                xd-Ajax <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.2.1.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DHTML"><span class="nav-number">2.</span> <span class="nav-text">DHTML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">3.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">3.1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于对象-amp-面向对象-网"><span class="nav-number">3.1.2.</span> <span class="nav-text">基于对象&amp;面向对象(网)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组成"><span class="nav-number">3.2.</span> <span class="nav-text">组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">ECMAScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">3.2.2.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">3.2.3.</span> <span class="nav-text">BOM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入方式"><span class="nav-number">3.3.</span> <span class="nav-text">引入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.4.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型"><span class="nav-number">3.4.1.</span> <span class="nav-text">原始类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#number"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean"><span class="nav-number">3.4.1.3.</span> <span class="nav-text">boolean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">3.4.1.4.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.1.5.</span> <span class="nav-text">undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注"><span class="nav-number">3.4.1.6.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">3.4.2.</span> <span class="nav-text">引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内置对象"><span class="nav-number">3.4.2.1.1.</span> <span class="nav-text">内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#String"><span class="nav-number">3.4.2.1.1.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Array"><span class="nav-number">3.4.2.1.1.2.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Number"><span class="nav-number">3.4.2.1.1.3.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Boolean"><span class="nav-number">3.4.2.1.1.4.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Date"><span class="nav-number">3.4.2.1.1.5.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Math"><span class="nav-number">3.4.2.1.1.6.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#RegExp"><span class="nav-number">3.4.2.1.1.7.</span> <span class="nav-text">RegExp</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Function"><span class="nav-number">3.4.2.1.1.8.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Events"><span class="nav-number">3.4.2.1.1.9.</span> <span class="nav-text">Events</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Global"><span class="nav-number">3.4.2.1.1.10.</span> <span class="nav-text">Global</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义对象"><span class="nav-number">3.4.2.1.2.</span> <span class="nav-text">自定义对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">3.5.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-2"><span class="nav-number">3.5.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">3.5.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.5.3.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句"><span class="nav-number">3.5.4.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if"><span class="nav-number">3.5.4.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-in"><span class="nav-number">3.5.4.2.</span> <span class="nav-text">for in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#with"><span class="nav-number">3.5.4.3.</span> <span class="nav-text">with</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.5.5.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义方式"><span class="nav-number">3.5.5.1.</span> <span class="nav-text">定义方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点-1"><span class="nav-number">3.5.5.2.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">3.5.6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义方式-1"><span class="nav-number">3.5.6.1.</span> <span class="nav-text">定义方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注-1"><span class="nav-number">3.5.6.2.</span> <span class="nav-text">注</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数"><span class="nav-number">3.5.6.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值"><span class="nav-number">3.5.6.2.2.</span> <span class="nav-text">返回值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype"><span class="nav-number">3.5.7.</span> <span class="nav-text">prototype</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">3.5.7.1.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">3.6.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#焦点事件"><span class="nav-number">3.6.1.</span> <span class="nav-text">焦点事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击事件"><span class="nav-number">3.6.2.</span> <span class="nav-text">点击事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载事件"><span class="nav-number">3.6.3.</span> <span class="nav-text">加载事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择-amp-改变事件"><span class="nav-number">3.6.4.</span> <span class="nav-text">选择&amp;改变事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单事件"><span class="nav-number">3.6.5.</span> <span class="nav-text">表单事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘事件"><span class="nav-number">3.6.6.</span> <span class="nav-text">键盘事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标事件"><span class="nav-number">3.6.7.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的绑定方式"><span class="nav-number">3.6.8.</span> <span class="nav-text">事件的绑定方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this关键字"><span class="nav-number">3.6.9.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止事件的默认行为"><span class="nav-number">3.6.10.</span> <span class="nav-text">阻止事件的默认行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止事件的传播"><span class="nav-number">3.6.11.</span> <span class="nav-text">阻止事件的传播</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM-1"><span class="nav-number">3.7.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Window"><span class="nav-number">3.7.1.</span> <span class="nav-text">Window</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">3.7.1.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取其它BOM对象"><span class="nav-number">3.7.1.1.1.</span> <span class="nav-text">获取其它BOM对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取DOM对象"><span class="nav-number">3.7.1.1.2.</span> <span class="nav-text">获取DOM对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置或获取状态栏信息"><span class="nav-number">3.7.1.1.3.</span> <span class="nav-text">设置或获取状态栏信息</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">3.7.1.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#弹框"><span class="nav-number">3.7.1.2.1.</span> <span class="nav-text">弹框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打开关闭"><span class="nav-number">3.7.1.2.2.</span> <span class="nav-text">打开关闭</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器"><span class="nav-number">3.7.1.2.3.</span> <span class="nav-text">定时器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位"><span class="nav-number">3.7.1.2.4.</span> <span class="nav-text">定位</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件-1"><span class="nav-number">3.7.1.3.</span> <span class="nav-text">事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History"><span class="nav-number">3.7.2.</span> <span class="nav-text">History</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">3.7.2.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">3.7.2.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Location"><span class="nav-number">3.7.3.</span> <span class="nav-text">Location</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">3.7.3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2"><span class="nav-number">3.7.3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigator"><span class="nav-number">3.7.4.</span> <span class="nav-text">Navigator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-3"><span class="nav-number">3.7.4.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Screen"><span class="nav-number">3.7.5.</span> <span class="nav-text">Screen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-1"><span class="nav-number">3.8.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-3"><span class="nav-number">3.8.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM分类"><span class="nav-number">3.8.2.</span> <span class="nav-text">DOM分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#核心-DOM"><span class="nav-number">3.8.2.1.</span> <span class="nav-text">核心 DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-DOM"><span class="nav-number">3.8.2.2.</span> <span class="nav-text">XML DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-DOM"><span class="nav-number">3.8.2.3.</span> <span class="nav-text">HTML DOM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM级别"><span class="nav-number">3.8.3.</span> <span class="nav-text">DOM级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">3.8.4.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dom解析"><span class="nav-number">3.8.4.1.</span> <span class="nav-text">dom解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SAX解析"><span class="nav-number">3.8.4.2.</span> <span class="nav-text">SAX解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node"><span class="nav-number">3.8.5.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">3.8.5.1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Document"><span class="nav-number">3.8.5.1.1.</span> <span class="nav-text">Document</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Element"><span class="nav-number">3.8.5.1.2.</span> <span class="nav-text">Element</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Attribute"><span class="nav-number">3.8.5.1.3.</span> <span class="nav-text">Attribute</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Text"><span class="nav-number">3.8.5.1.4.</span> <span class="nav-text">Text</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Comment"><span class="nav-number">3.8.5.1.5.</span> <span class="nav-text">Comment</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-4"><span class="nav-number">3.8.5.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-3"><span class="nav-number">3.8.5.3.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-1"><span class="nav-number">3.8.6.</span> <span class="nav-text">Document</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-5"><span class="nav-number">3.8.6.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-4"><span class="nav-number">3.8.6.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取Element对象"><span class="nav-number">3.8.6.2.1.</span> <span class="nav-text">获取Element对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建其它DOM对象"><span class="nav-number">3.8.6.2.2.</span> <span class="nav-text">创建其它DOM对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断"><span class="nav-number">3.8.6.2.3.</span> <span class="nav-text">判断</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element-1"><span class="nav-number">3.8.7.</span> <span class="nav-text">Element</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">3.8.7.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-5"><span class="nav-number">3.8.7.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Html-DOM"><span class="nav-number">3.8.8.</span> <span class="nav-text">Html DOM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安"><span class="nav-number">4.</span> <span class="nav-text">安</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

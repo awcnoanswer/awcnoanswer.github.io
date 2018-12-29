@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Web容器 所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统 Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-WEB">
+<meta property="og:url" content="http://yoursite.com/2018/12/25/xd-WEB/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="Web容器 所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统 Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-27T13:17:06.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-WEB">
+<meta name="twitter:description" content="Web容器 所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统 Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/25/xd-WEB/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-WEB | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-WEB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-WEB
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-25 22:57:57" itemprop="dateCreated datePublished" datetime="2018-12-25T22:57:57+08:00">2018-12-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-27 21:17:06" itemprop="dateModified" datetime="2018-12-27T21:17:06+08:00">2018-12-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h1><ul>
+<li>所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统</li>
+<li>Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境被称为Web容器，Java Web程序与Web容器之间存在数据交互。</li>
+</ul>
+<h2 id="独立的Java-Web容器"><a href="#独立的Java-Web容器" class="headerlink" title="独立的Java Web容器"></a>独立的Java Web容器</h2><ul>
+<li>在这种容器里面只能运行Web程序，这种容器一般也叫做Web服务器，如Tomcat</li>
+</ul>
+<h2 id="与其他Java-EE容器混合在一起的Web容器"><a href="#与其他Java-EE容器混合在一起的Web容器" class="headerlink" title="与其他Java EE容器混合在一起的Web容器"></a>与其他Java EE容器混合在一起的Web容器</h2><ul>
+<li>Web容器负责运行Web程序，其他容器负责运行EJB等程序，如WebLogic</li>
+</ul>
+<h2 id="web容器与web应用间的数据交互"><a href="#web容器与web应用间的数据交互" class="headerlink" title="web容器与web应用间的数据交互"></a>web容器与web应用间的数据交互</h2><ul>
+<li>web容器接收客户端请求封装<strong>HttpServletRequest</strong>对象，并传递给web应用</li>
+<li>web应用处理请求</li>
+<li>web容器将结果封装到<strong>HttpServletResponse</strong>对象，响应给客户端</li>
+<li>注<ul>
+<li>这两个对象仅存在于Web容器和Web应用当中，与浏览器没有关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat和servlet的区别"><a href="#tomcat和servlet的区别" class="headerlink" title="tomcat和servlet的区别"></a>tomcat和servlet的区别</h2><ul>
+<li>Tomcat 是Web应用服务器,是一个Servlet/JSP容器</li>
+<li>servlet是一种运行在服务器端的Java应用程序</li>
+</ul>
+<h2 id="web应用服务器"><a href="#web应用服务器" class="headerlink" title="web应用服务器"></a>web应用服务器</h2><ul>
+<li><code>tomcat</code><ul>
+<li>支持servlet/jsp规范</li>
+</ul>
+</li>
+<li><code>weblogic</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>websphere</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>jboss</code></li>
+</ul>
+<h1 id="标准JavaWeb应用目录结构"><a href="#标准JavaWeb应用目录结构" class="headerlink" title="标准JavaWeb应用目录结构"></a>标准JavaWeb应用目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyApp  				//项目名</span><br><span class="line">	html,css,js,img... //资源文件</span><br><span class="line">	WEB-INF</span><br><span class="line">		classes	    //.class文件，配置文件</span><br><span class="line">		lib			// jar包</span><br><span class="line">		web.xml		//web配置文件</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明<ul>
+<li>ide中的src目录<ul>
+<li>编译后会存在web-inf下的classes中。</li>
+</ul>
+</li>
+<li>以下三个目录中的文件会直接存在应用下，与web-inf同级，相当于资源文件<ul>
+<li>eclipse中的WebContent目录</li>
+<li>Myeclipse中的WebRoot目录</li>
+<li>intellij中的web目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>Tomcat启动时，需要查找<code>CATALINA_HOME</code>这个环境变量<ul>
+<li>判断<code>CATALINA_HOME</code>环境变量是否为空<ul>
+<li>为空<ul>
+<li>就将当前目录设为CATALINA_HOME的值，接着判断当前目录下是否存在<code>bin\catalina.bat</code>，如果文件不存在，将当前目录的父目录设为<code>CATALINA_HOM</code>E的值，循环，最后如果找不到<code>bin\catalina.bat</code>就报错。</li>
+</ul>
+</li>
+<li>不为空<ul>
+<li>通过这个环境变量调用<code>bin\catalina.bat</code>命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行<code>startup.bat</code>命令，会自动去执行<code>catalina.bat start</code>命令</li>
+</ul>
+<p>##<code>CATALINA_HOME</code>和<code>CATALINA_BASE</code>区别</p>
+<h3 id="CATALINA-HOME"><a href="#CATALINA-HOME" class="headerlink" title="CATALINA_HOME"></a>CATALINA_HOME</h3><ul>
+<li>是Tomcat的安装目录</li>
+<li>类似于<code>JAVA_HOME</code>环境变量</li>
+<li>如果配置了就能在任意路径执行bin目录下的bat或者exe</li>
+<li>通常不配置</li>
+</ul>
+<h3 id="CATALINA-BASE"><a href="#CATALINA-BASE" class="headerlink" title="CATALINA_BASE"></a>CATALINA_BASE</h3><ul>
+<li>是Tomcat的工作目录</li>
+<li>如果CATALINA_BASE没有值的话，它默认的值就是CATALINA_HOME</li>
+</ul>
+<h3 id="tomcat目录"><a href="#tomcat目录" class="headerlink" title="tomcat目录"></a>tomcat目录</h3><ul>
+<li>其中只有 bin 和 lib 目录被多个tomcat示例公用</li>
+<li>其它目录conf、logs、temp、webapps和work 每个Tomcat实例必须拥有其自己独立的备份</li>
+<li>catalina.home(安装目录)：<ul>
+<li>指向公用信息的位置，就是bin和lib的父目录</li>
+</ul>
+</li>
+<li>catalina.base(工作目录)：<ul>
+<li>指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。</li>
+</ul>
+</li>
+<li>仅运行一个Tomcat实例时，这两个属性指向的位置是相同的</li>
+</ul>
+<h3 id="网上自建startup-bat的内容"><a href="#网上自建startup-bat的内容" class="headerlink" title="网上自建startup.bat的内容"></a>网上自建<code>startup.bat</code>的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set &quot;CATALINA_BASE=%cd%&quot;  </span><br><span class="line">set &quot;CATALINA_HOME=D:/save/apache-tomcat-8.0.48&quot;  </span><br><span class="line">set &quot;EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat&quot;  </span><br><span class="line">call &quot;%EXECUTABLE%&quot; start</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%cd%</code><ul>
+<li>代表当前目录（不太确定）</li>
+</ul>
+</li>
+<li><code>CATALINA_BASE</code>就代表一个tomcat的运行实例<ul>
+<li>包含<code>conf</code>,logs,temp,webapps,work`的目录。</li>
+</ul>
+</li>
+<li><code>CATALINA_HOME</code>代表了一个tomcat，需要tomcat的<code>bin,lib...</code></li>
+<li>启动tomcat后，<code>CATALINA_BASE</code>指向哪个tomcat实例，就运行哪个。<ul>
+<li>比如我有一个tomcat8080，然后再另一个文件夹复制了一个<code>conf</code>并设置端口号为7070</li>
+<li><code>CATALINA_HOME</code>为tomcat8080安装目录，设置<code>CATALINA_BASE</code>为7070对应的目录，那么能访问的是7070而非8080,</li>
+<li><strong>虚拟目录</strong>貌似就是这个原理。</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat部署应用"><a href="#tomcat部署应用" class="headerlink" title="tomcat部署应用"></a>tomcat部署应用</h2><h3 id="部署形式"><a href="#部署形式" class="headerlink" title="部署形式"></a>部署形式</h3><ol>
+<li>项目文件夹</li>
+<li>war包<ul>
+<li>tomcat会自动判断war包并解压。</li>
+</ul>
+</li>
+</ol>
+<h3 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h3><h4 id="一-将项目复制到tomcat-webapps目录下。"><a href="#一-将项目复制到tomcat-webapps目录下。" class="headerlink" title="一 将项目复制到tomcat/webapps目录下。"></a>一 将项目复制到<code>tomcat/webapps</code>目录下。</h4><ul>
+<li>Myeclipse就是这种方式。</li>
+</ul>
+<h4 id="二-虚拟目录"><a href="#二-虚拟目录" class="headerlink" title="二 虚拟目录"></a>二 虚拟目录</h4><ul>
+<li>就是把项目放到其它位置通过一些配置也能一样访问。(安)</li>
+</ul>
+<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><ul>
+<li><p><code>tomcat/conf/server.xml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host&gt;</span><br><span class="line">	&lt;Context docBase=&quot;应用的真实路径&quot; path=&quot;网络访问的虚拟目录名(自定义)&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Eclipse使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不推荐，修改需要重启tomcat</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><ul>
+<li><p><code>tomcat/conf/catalina/localhost</code></p>
+<ul>
+<li>新建<code>虚拟目录名(自定义).xml</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;应用的真实路径&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Intellij使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>Intellij/system/tomcat/</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>支持热部署，修改不用重启tomcat</li>
+<li>如果新建的<code>虚拟目录名</code>为<code>ROOT</code>，则访问时，可以不写<ul>
+<li>Intellij就是这样做的</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat的访问"><a href="#tomcat的访问" class="headerlink" title="tomcat的访问"></a>tomcat的访问</h2><ul>
+<li><code>http://ip:端口/应用/资源</code></li>
+</ul>
+<h3 id="默认端口"><a href="#默认端口" class="headerlink" title="默认端口"></a>默认端口</h3><ul>
+<li>http协议端口为80</li>
+<li>把tomcat端口设为80就不用写端口了</li>
+</ul>
+<h3 id="默认应用"><a href="#默认应用" class="headerlink" title="默认应用"></a>默认应用</h3><ul>
+<li>tomcat默认访问ROOT应用<br>  *（见上边虚拟目录）</li>
+</ul>
+<h3 id="默认主页"><a href="#默认主页" class="headerlink" title="默认主页"></a>默认主页</h3><ul>
+<li><code>web.xml</code>中配置</li>
+</ul>
+<h2 id="idea中tomcat的部署"><a href="#idea中tomcat的部署" class="headerlink" title="idea中tomcat的部署"></a>idea中tomcat的部署</h2><h3 id="war"><a href="#war" class="headerlink" title="war"></a><code>war</code></h3><ul>
+<li>将web工程以war包的形式上传到服务器</li>
+<li>可以称之为是发布模式，看名字也知道，这是先打包war包，再发布</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\apache-tomcat-8.0.48\webapps\ROOT\</code></li>
+<li>结果是tomcat的webapps的Root目录</li>
+<li>会把Root目录项目替换成此项目<ul>
+<li>此种情况是配置tomcat时application context选择了<code>/</code></li>
+<li>如果配置成别的如<code>/aaa</code><ul>
+<li>则不会替换Root，而是在webapps下创建aaa</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="war-exploed"><a href="#war-exploed" class="headerlink" title="war exploed"></a><code>war exploed</code></h3><ul>
+<li>将web工程以当前文件夹的位置关系上传到服务器</li>
+<li>展开部署(相当于将资源文件进行展开后进行部署)</li>
+<li>直接把文件夹，jsp页面，classes等等移到Tomcat部署文件夹里面，进行加载部署。因此这种方式支持热部署，一般在开发的时候也是用这种方式。</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\IntellijWP\project\HelloMaven\target\HelloMaven-1.0-SNAPSHOT\</code></li>
+<li>可以看到是项目target下的目录</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/xd-BootStrap/" rel="next" title="xd-BootStrap">
+                <i class="fa fa-chevron-left"></i> xd-BootStrap
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/28/xd-上传和下载/" rel="prev" title="xd-上传和下载">
+                xd-上传和下载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web容器"><span class="nav-number">1.</span> <span class="nav-text">Web容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#独立的Java-Web容器"><span class="nav-number">1.1.</span> <span class="nav-text">独立的Java Web容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与其他Java-EE容器混合在一起的Web容器"><span class="nav-number">1.2.</span> <span class="nav-text">与其他Java EE容器混合在一起的Web容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web容器与web应用间的数据交互"><span class="nav-number">1.3.</span> <span class="nav-text">web容器与web应用间的数据交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat和servlet的区别"><span class="nav-number">1.4.</span> <span class="nav-text">tomcat和servlet的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web应用服务器"><span class="nav-number">1.5.</span> <span class="nav-text">web应用服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准JavaWeb应用目录结构"><span class="nav-number">2.</span> <span class="nav-text">标准JavaWeb应用目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat"><span class="nav-number">3.</span> <span class="nav-text">tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">3.1.</span> <span class="nav-text">启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CATALINA-HOME"><span class="nav-number">3.1.1.</span> <span class="nav-text">CATALINA_HOME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CATALINA-BASE"><span class="nav-number">3.1.2.</span> <span class="nav-text">CATALINA_BASE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat目录"><span class="nav-number">3.1.3.</span> <span class="nav-text">tomcat目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网上自建startup-bat的内容"><span class="nav-number">3.1.4.</span> <span class="nav-text">网上自建startup.bat的内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat部署应用"><span class="nav-number">3.2.</span> <span class="nav-text">tomcat部署应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署形式"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">部署方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-将项目复制到tomcat-webapps目录下。"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">一 将项目复制到tomcat/webapps目录下。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-虚拟目录"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">二 虚拟目录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">3.2.2.2.1.</span> <span class="nav-text">1.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">2.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat的访问"><span class="nav-number">3.3.</span> <span class="nav-text">tomcat的访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认端口"><span class="nav-number">3.3.1.</span> <span class="nav-text">默认端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认应用"><span class="nav-number">3.3.2.</span> <span class="nav-text">默认应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认主页"><span class="nav-number">3.3.3.</span> <span class="nav-text">默认主页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea中tomcat的部署"><span class="nav-number">3.4.</span> <span class="nav-text">idea中tomcat的部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#war"><span class="nav-number">3.4.1.</span> <span class="nav-text">war</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#war-exploed"><span class="nav-number">3.4.2.</span> <span class="nav-text">war exploed</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

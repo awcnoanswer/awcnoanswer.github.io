@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="上传前提 提供form表单 method为post enctype属性为multipart/form-data 提供&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;mn&amp;quot;&amp;gt;上传输入域  enctype 告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的） application/x-www-form-urlen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-上传和下载">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/xd-上传和下载/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="上传前提 提供form表单 method为post enctype属性为multipart/form-data 提供&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;mn&amp;quot;&amp;gt;上传输入域  enctype 告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的） application/x-www-form-urlen">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-27T17:28:45.311Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-上传和下载">
+<meta name="twitter:description" content="上传前提 提供form表单 method为post enctype属性为multipart/form-data 提供&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;mn&amp;quot;&amp;gt;上传输入域  enctype 告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的） application/x-www-form-urlen">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/28/xd-上传和下载/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-上传和下载 | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-上传和下载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-上传和下载
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-28 00:43:09 / 修改时间：01:28:45" itemprop="dateCreated datePublished" datetime="2018-12-28T00:43:09+08:00">2018-12-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ol>
+<li>提供form表单 method为post</li>
+<li>enctype属性为<code>multipart/form-data</code></li>
+<li>提供<code>&lt;input type=&quot;file&quot; name=&quot;mn&quot;&gt;</code>上传输入域</li>
+</ol>
+<h3 id="enctype"><a href="#enctype" class="headerlink" title="enctype"></a>enctype</h3><ul>
+<li>告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的）</li>
+<li><p><code>application/x-www-form-urlencoded</code></p>
+<ul>
+<li>默认<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">...</span><br><span class="line">请求体</span><br><span class="line">name=an3&amp;mn(input中file的name)=文件名(mm.jpg)</span><br><span class="line">//服务器获取数据</span><br><span class="line">String name = request.getParameter(&quot;name&quot;)</span><br><span class="line">String name=request.getParameter(&quot;mm&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>multipart/form-data</code></p>
+<ul>
+<li>上传用</li>
+<li>使用<code>request.getParameter(key)</code>取不到表单数据</li>
+<li><p>获取数据要使用流</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type:multipart/form-data; boundar=======7df24c3430fa2</span><br><span class="line">//请求体</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;name&quot;</span><br><span class="line">an3</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;mn&quot;; filename=&quot;mm.jpg&quot;</span><br><span class="line">Contenet-Type: image/pjpeg</span><br><span class="line">图片的二进制数据</span><br><span class="line">//服务器获取数据</span><br><span class="line">//用字节流获取请求体的所有内容</span><br><span class="line">request.getInputStream()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说明(安)</p>
+<ul>
+<li>可以看出enctype为<code>multipart/form-data</code>时<ul>
+<li>请求体中包含了文件名，文件类型，文件具体内容。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件上传原理"><a href="#文件上传原理" class="headerlink" title="文件上传原理"></a>文件上传原理</h2><ul>
+<li>解析请求体的每部分的内容</li>
+</ul>
+<h2 id="上传步骤-安"><a href="#上传步骤-安" class="headerlink" title="上传步骤(安)"></a>上传步骤(安)</h2><ul>
+<li>获取上传的文件的输入流</li>
+<li>确定服务器保存路径</li>
+<li>确定服务器保存文件名</li>
+<li>新建File对象(路径+文件名)</li>
+<li>以新建的file对象创建输出流</li>
+<li>然后读写操作。。</li>
+</ul>
+<h2 id="上传需要注意的问题-安"><a href="#上传需要注意的问题-安" class="headerlink" title="上传需要注意的问题(安)"></a>上传需要注意的问题(安)</h2><ul>
+<li>文件路径<ul>
+<li>存储在服务器端的路径</li>
+</ul>
+</li>
+<li>文件名<ul>
+<li>存储的文件名，避免重复</li>
+<li>随机啊日期啊</li>
+</ul>
+</li>
+</ul>
+<h2 id="fileupload"><a href="#fileupload" class="headerlink" title="fileupload"></a>fileupload</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>第三方的上传组件用来解析上传文件，帮我们解析<code>request.getInputStream()</code></li>
+</ul>
+<h3 id="核心类"><a href="#核心类" class="headerlink" title="核心类"></a>核心类</h3><ul>
+<li><code>DiskFileItemFactory</code></li>
+<li><code>ServletFileUpload</code></li>
+<li><code>FileItem</code></li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><code>DiskFileItemFactory factory = new DiskFileItemFactory()</code><ul>
+<li>创建工厂类DiskFileItemFactory对象</li>
+<li>创建工厂时还可以指定缓存文件的大小和临时文件的位置</li>
+<li>或者先创建，然后set也行<ul>
+<li><code>factory.setSizeThreshold(字节)</code></li>
+<li><code>factory.setRepository(new File(path))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ServletFileUpload fileUpload = new ServletFileUpload(factory)</code><ul>
+<li>使用工厂创建解析器对象ServletFileUpload</li>
+</ul>
+</li>
+<li><code>fileUpload.isMultipartContent(request)</code><ul>
+<li>判断表单<code>enctype</code>是否是上传.</li>
+</ul>
+</li>
+<li><code>List&lt;FileItem&gt; list = fileUpload.parseRequest(request)</code><ul>
+<li>使用解析器来解析request对象</li>
+</ul>
+</li>
+</ul>
+<h4 id="FileItem"><a href="#FileItem" class="headerlink" title="FileItem"></a>FileItem</h4><ul>
+<li>对应一个表单项（表单字段）。可以是文件字段或普通字段</li>
+<li><code>boolean isFormField()</code><ul>
+<li>判断当前表单字段是否为普通文本字段，如果返回false，说明是文件字段</li>
+</ul>
+</li>
+<li><code>String getFieldName()</code><ul>
+<li>获取字段名称</li>
+</ul>
+</li>
+<li><code>String getString()</code><ul>
+<li>获取字段的内容</li>
+<li>如果是文件字段(必须是文本文件)，那么获取的是文件内容。</li>
+<li>可以传入编码参数<ul>
+<li><code>getString(&quot;utf-8&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String getName()</code><ul>
+<li>获取文件字段的文件名称(如：mm.jpg)</li>
+</ul>
+</li>
+<li><code>String getContentType()</code><ul>
+<li>获取上传的文件的MIME类型，例如：text/plain。</li>
+</ul>
+</li>
+<li><code>int getSize()</code><ul>
+<li>获取上传文件的大小</li>
+</ul>
+</li>
+<li><code>InputStream getInputStream()</code><ul>
+<li>获取上传文件对应的输入流；</li>
+</ul>
+</li>
+<li><code>void write(File)</code><ul>
+<li>把上传的文件保存到指定文件中</li>
+</ul>
+</li>
+<li><code>IOUtils.copey(in,out)</code><ul>
+<li>工具类保存</li>
+</ul>
+</li>
+<li><code>delete()</code><ul>
+<li>清理临时文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="上传要考虑的问题"><a href="#上传要考虑的问题" class="headerlink" title="上传要考虑的问题"></a>上传要考虑的问题</h3><ul>
+<li>文件名问题<ul>
+<li>上传的文件名是全路径，有的浏览器会自动处理，有的不会，最好处理一下。<ol>
+<li>手动处理</li>
+<li><code>FilenameUtils</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>保证服务器安全<ul>
+<li>把保存上传文件的目录放在用户直接访问不到的地方(web-inf下)</li>
+</ul>
+</li>
+<li>避免文件被覆盖<ul>
+<li>文件名唯一</li>
+</ul>
+</li>
+<li>避免同一个文件夹中的文件过多<ul>
+<li>按照日期进行打散存储目录</li>
+<li>用文件名的hashCode计算打散的存储目录：二级目录</li>
+</ul>
+</li>
+<li>限制文件的大小：web方式不适合上传大的文件<ul>
+<li>单个文件大小<ul>
+<li><code>ServletFileUpload.setFileSizeMax(字节)</code></li>
+</ul>
+</li>
+<li>总文件大小：（多文件上传）<ul>
+<li><code>ServletFileUpload.setSizeMax(字节)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上传字段用户没有上传的问题<ul>
+<li>通过判断文件名是否为空即可</li>
+</ul>
+</li>
+<li>临时文件的问题<ul>
+<li><code>DiskFileItemFactory</code><ul>
+<li>内部有一个缓存，缓存大小默认是10Kb。如果上传的文件超过10Kb，用磁盘作为缓存。</li>
+<li>存放缓存文件的目录默认是系统的临时目录。</li>
+<li>可以自己设置缓存大小，和临时目录（见上边）</li>
+</ul>
+</li>
+<li>上传后，会在临时目录产生一个临时文件。</li>
+<li>如果自己用IO流实现的文件上传，要在流关闭后，清理临时文件。<ul>
+<li><code>FileItem.delete();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><code>Content-disposition</code><ul>
+<li>响应头，服务器告诉客户端以什么格式打开响应体数据</li>
+<li><code>in-line</code><ul>
+<li>默认值</li>
+<li>在当前页面内打开</li>
+</ul>
+</li>
+<li><code>attachment;filename=</code><ul>
+<li>以附件形式打开响应体</li>
+<li>文件下载</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
+<li>设置响应头告诉浏览器是下载文件<ul>
+<li><code>response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+fileName);</code></li>
+</ul>
+</li>
+<li>设置响应头告诉浏览器下载的文件类型<ol>
+<li><code>response.setHeader(&quot;content-type&quot;, &quot;image/jpeg&quot;);</code><ul>
+<li>手动设置文件类型是图片</li>
+</ul>
+</li>
+<li><code>response.setContentType(this.getServletContext().getMimeType(fileName))</code><ul>
+<li>设置类型为根据文件名获取的类型</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>根据请求参数获取文件名<ul>
+<li><code>String filename = request.getParameter(String filename)</code></li>
+</ul>
+</li>
+<li>根据文件名获取文件服务器路径<ul>
+<li><code>String path=this.getServletContext.getRealPath(&quot;/filename&quot;);</code></li>
+</ul>
+</li>
+<li>根据文件路径创建输入流</li>
+<li>设置响应头<ol>
+<li>下载文件</li>
+<li>文件类型</li>
+</ol>
+</li>
+<li>获取响应输出流，不断读写</li>
+</ol>
+<h3 id="下载文件名中文问题"><a href="#下载文件名中文问题" class="headerlink" title="下载文件名中文问题"></a>下载文件名中文问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// agent就是请求头User-Agent的值</span><br><span class="line">public class DownLoadUtils &#123;</span><br><span class="line">    public static String getFileName(String agent, String filename) throws UnsupportedEncodingException &#123;</span><br><span class="line">        if (agent.contains(&quot;MSIE&quot;)) &#123;</span><br><span class="line">            // IE浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">            filename = filename.replace(&quot;+&quot;, &quot; &quot;);</span><br><span class="line">        &#125; else if (agent.contains(&quot;Firefox&quot;)) &#123;</span><br><span class="line">            // 火狐浏览器</span><br><span class="line">            BASE64Encoder base64Encoder = new BASE64Encoder();</span><br><span class="line">            filename = &quot;=?utf-8?B?&quot; + base64Encoder.encode(filename.getBytes(&quot;utf-8&quot;)) + &quot;?=&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 其它浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return filename;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/xd-WEB/" rel="next" title="xd-WEB">
+                <i class="fa fa-chevron-left"></i> xd-WEB
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/28/xd-工具/" rel="prev" title="xd-工具">
+                xd-工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#上传"><span class="nav-number">1.</span> <span class="nav-text">上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-number">1.1.</span> <span class="nav-text">前提</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#enctype"><span class="nav-number">1.1.1.</span> <span class="nav-text">enctype</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件上传原理"><span class="nav-number">1.2.</span> <span class="nav-text">文件上传原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传步骤-安"><span class="nav-number">1.3.</span> <span class="nav-text">上传步骤(安)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传需要注意的问题-安"><span class="nav-number">1.4.</span> <span class="nav-text">上传需要注意的问题(安)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fileupload"><span class="nav-number">1.5.</span> <span class="nav-text">fileupload</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.5.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心类"><span class="nav-number">1.5.2.</span> <span class="nav-text">核心类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.5.3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FileItem"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">FileItem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传要考虑的问题"><span class="nav-number">1.5.4.</span> <span class="nav-text">上传要考虑的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载文件名中文问题"><span class="nav-number">2.3.1.</span> <span class="nav-text">下载文件名中文问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

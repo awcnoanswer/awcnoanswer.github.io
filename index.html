@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/xd-GUI-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-会话/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -322,8 +322,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/05/xd-GUI-1/" itemprop="url">
-                  xd-GUI
+                <a class="post-title-link" href="/2018/12/28/xd-会话/" itemprop="url">
+                  xd-会话
                 </a>
               
             
@@ -349,163 +349,12 @@
                 
               
 
-              <time title="创建时间：2018-12-05 10:18:37" itemprop="dateCreated datePublished" datetime="2018-12-05T10:18:37+08:00">2018-12-05</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/xd-递归/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/29/xd-递归/" itemprop="url">
-                  xd-递归
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-29 14:46:48" itemprop="dateCreated datePublished" datetime="2018-11-29T14:46:48+08:00">2018-11-29</time>
+              <time title="创建时间：2018-12-28 01:30:11 / 修改时间：16:10:15" itemprop="dateCreated datePublished" datetime="2018-12-28T01:30:11+08:00">2018-12-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-30 01:17:15" itemprop="dateModified" datetime="2018-11-30T01:17:15+08:00">2018-11-30</time>
               
             
           </span>
@@ -558,65 +407,201 @@
       
         
           
-            <h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
-<li>自己调用自己</li>
-<li>确定结束条件</li>
+            <h1 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h1><h2 id="一次会话"><a href="#一次会话" class="headerlink" title="一次会话"></a>一次会话</h2><ul>
+<li>浏览器第一次给服务器发送请求，会话建立，直到有一方断开为止。</li>
+<li>包含多次请求和响应</li>
 </ul>
-<h1 id="好处-amp-弊端"><a href="#好处-amp-弊端" class="headerlink" title="好处 &amp; 弊端"></a>好处 &amp; 弊端</h1><ul>
-<li>好处<ul>
-<li>不用知道循环次数。</li>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>在一次会话范围共享数据</li>
 </ul>
-</li>
-<li>弊端<ul>
-<li>调用次数过多，栈内存会溢出。</li>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><code>Cookie</code></li>
+<li><code>Session</code> </li>
 </ul>
-</li>
-</ul>
-<h1 id="例"><a href="#例" class="headerlink" title="例"></a>例</h1><ol>
-<li><p>求一个数的阶乘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int jc(int num) &#123;</span><br><span class="line">	if (num == 1) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return num * jc(num-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>求一个数的阶乘结果后边有多少个0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int fun(int num) &#123;</span><br><span class="line">	if (num &gt;0 &amp;&amp; num &lt; 5) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return num/5 + fun(num/5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>规律<ul>
-<li>只要一个数是5的倍数，那么它跟偶数相乘末尾肯定有个0，所以一个数有多少个5，结果末尾就有多少个0</li>
-<li>每隔5个的数就包含一个5。<code>num/5</code>可以求出包含一个5的数有多少个<ul>
-<li><code>5*1 5*2 5*3 5*4 5*5 ...</code></li>
-<li>而这些数中每隔5个的数包含两个5，<code>num/5/5</code>可以求出包含两个5的数有多少个<ul>
-<li><code>5*5*1 5*5*2 5*5*3 5*5*4 5*5*5 ...</code></li>
-<li>在这些数中每隔5个的数包含三个5，<code>num/5/5/5</code>可以求出包含三个5的数有多少个</li>
-<li>……</li>
-<li>一直到最后数不够5个了，就没有包含5的数了。</li>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>客户端技术<ul>
+<li>Cookie是由客户端保存和携带的。</li>
+<li>只能存储字符串</li>
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>基于响应头<code>set-cookie</code>和请求头<code>cookie</code>实现</li>
+<li>程序把每个用户的数据以cookie形式响应给用户各自的浏览器，存在本地。当用户再次请求访问服务器的web资源时，就会带着各自的(cookie)去。如此，web资源处理的就是用户各自的数据。</li>
 </ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>创建Cookie(在服务端)<ul>
+<li><code>Cookie cookie=new Cookie(String name,String value,[String path])</code><ul>
+<li><code>path</code><ul>
+<li>默认是创建cookie的应用的虚拟目录。</li>
+<li>可以指定<ol>
+<li>构造时指定path</li>
+<li><code>cookie.setPath()</code></li>
+</ol>
 </li>
-</ul>
-</li>
-<li><p>斐波那契数列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int fun(int num) &#123;</span><br><span class="line">	if (num == 1 || num ==2) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return fun(num - 1) + fun (num - 2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>问题<ul>
-<li>一对刚出生的兔子，一个月后长成大兔子，此后每月都会生出一对兔子，问n月兔子的总对数。</li>
-</ul>
-</li>
-<li>规律<ul>
-<li><code>1 1 2 3 5 8 13 ...</code></li>
-<li>可以看出除了第一第二月，后边每月是前边两月的和。</li>
+<li>只有以cookie的path开头的访问路径才会携带cookie。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>约瑟夫环（非递归，集合）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">private int getLuckyNum(int n) &#123;</span><br><span class="line">	ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">	// 把n个人添加到集合</span><br><span class="line">	for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">		list.add(i);</span><br><span class="line">	&#125;</span><br><span class="line">	// 定义数数变量</span><br><span class="line">	int count = 1;</span><br><span class="line">	// 只要多于一个人，就一直杀</span><br><span class="line">	for (int i = 0; list.size() != 1; i++) &#123;</span><br><span class="line">		// 如果数到末尾了，从头接着数</span><br><span class="line">		if (i == list.size()) &#123;</span><br><span class="line">			i = 0;</span><br><span class="line">		&#125;</span><br><span class="line">		// 如果数到3的倍数就把人杀掉，指针记得--，数数记得++</span><br><span class="line">		if (count % 3 == 0) &#123;</span><br><span class="line">			list.remove(i--);</span><br><span class="line">		&#125;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	// 最后就剩了一个人</span><br><span class="line">	return list.get(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>问题<ul>
-<li>n个人围成一个环，从头开始数数，数到3的倍数就把这个位置的人杀掉，那么n个人中哪个数是活到最后的。</li>
 </ul>
 </li>
+<li>响应Cookie到客户端<ul>
+<li><code>response.addCookie(Cookie c)</code><ul>
+<li>响应头<code>set-Cookie</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>再次请求时获取Cookie<ul>
+<li><code>Cookie[] cs=request.getCookies()</code><ul>
+<li>获取cookie列表。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><h3 id="一次可不可以发送多个Cookie"><a href="#一次可不可以发送多个Cookie" class="headerlink" title="一次可不可以发送多个Cookie"></a>一次可不可以发送多个Cookie</h3><ul>
+<li>可以</li>
+<li>创建多个Cookie对象，使用response调用多次<code>addCookie()</code>即可</li>
+</ul>
+<h3 id="Cookie的存活时间"><a href="#Cookie的存活时间" class="headerlink" title="Cookie的存活时间"></a>Cookie的存活时间</h3><ul>
+<li><code>void setMaxAge(int time)</code><ul>
+<li><code>time</code><ul>
+<li>负数<ul>
+<li>默认</li>
+<li>默认cookie是会话级别的，即浏览器一关闭就会消失</li>
+</ul>
+</li>
+<li>正数<ul>
+<li>持久化存储，存活时间</li>
+</ul>
+</li>
+<li>0<ul>
+<li>删除Cookie</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cookie能否存中文"><a href="#Cookie能否存中文" class="headerlink" title="Cookie能否存中文"></a>Cookie能否存中文</h3><ul>
+<li>tomcat8之前<ul>
+<li>不可以</li>
+<li>需要将中文转码，一般采用URL编码(%16进制)</li>
+</ul>
+</li>
+<li>tomcat8之后，Cookie支持中文<ul>
+<li>但是不支持特殊字符，建议使用URL编解码<ul>
+<li>URL编码后会变成<code>%E7</code>这种形式的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h4><ul>
+<li><code>URLEncoder</code><ul>
+<li><code>encode(String s, String character)</code><ul>
+<li>编码</li>
+</ul>
+</li>
+<li><code>decode(String s, String character)</code><ul>
+<li>解码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cookie共享问题"><a href="#Cookie共享问题" class="headerlink" title="Cookie共享问题"></a>Cookie共享问题</h3><ol>
+<li>同一个服务器下的多个we项目<ul>
+<li>因为默认path是创建cookie的项目的虚拟目录，其它web项目是访问不到的。</li>
+<li>即默认不能共享</li>
+<li>共享<ul>
+<li><code>setPath(&quot;/&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不同服务器间的共享<ul>
+<li><code>setDomain(String path)</code><ul>
+<li>如果设置一级域名相同，那么多个服务区间的Cookie可以共享</li>
+<li><code>setDomain(&quot;.baidu.com&quot;)</code><ul>
+<li>则<code>tieba.baidu.com</code>和<code>news.baidu.com</code>…之间就可以共享</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>服务端技术，session依赖于cookie<ul>
+<li>可以存储任意对象</li>
+</ul>
+</li>
+<li>在一次会话的多次请求间共享数据，将数据保存在服务端的对象种</li>
+</ul>
+<h2 id="获取Session"><a href="#获取Session" class="headerlink" title="获取Session"></a>获取Session</h2><ul>
+<li><code>HttpSession session = request.getSession()</code><ul>
+<li>若session不存在则创建，存在则获取</li>
+</ul>
+</li>
+</ul>
+<h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>第一次访问会创建session并分配<code>JSessionID</code></li>
+<li>响应到客户端,并以cookie形式存储</li>
+<li>以后访问会带着这个cookie<ul>
+<li>若有此cookie则可以获取session</li>
+<li>若无此cookie则视为第一次访问，循环…。</li>
+</ul>
+</li>
+</ul>
+<h2 id="HttpSession"><a href="#HttpSession" class="headerlink" title="HttpSession"></a>HttpSession</h2><ul>
+<li><code>String getId()</code><ul>
+<li>获取session的JSessionID</li>
+</ul>
+</li>
+<li><code>setMaxInactiveInterval(int interval)</code><ul>
+<li>设置session存活时间，默认30分</li>
+</ul>
+</li>
+<li><code>invalidate()</code><ul>
+<li>销毁session </li>
+</ul>
+</li>
+</ul>
+<h2 id="细节-1"><a href="#细节-1" class="headerlink" title="细节"></a>细节</h2><h3 id="客户端关闭，服务器不关闭，两次获取的session是否是同一个"><a href="#客户端关闭，服务器不关闭，两次获取的session是否是同一个" class="headerlink" title="客户端关闭，服务器不关闭，两次获取的session是否是同一个"></a>客户端关闭，服务器不关闭，两次获取的session是否是同一个</h3><ul>
+<li>默认情况下，不是<ul>
+<li>因为虽然session默认存活30分钟，但是session是以cookie的形式保存在客户端的，而cookie默认客户端已关闭就会消失。</li>
+</ul>
+</li>
+<li>若想获取同一个<ul>
+<li>可以创建Cookie，键为<code>JSessionID</code>，并设置存活时间</li>
+</ul>
+</li>
+</ul>
+<h3 id="客户端不关闭，服务器关闭，两次获取的session是否是同一个"><a href="#客户端不关闭，服务器关闭，两次获取的session是否是同一个" class="headerlink" title="客户端不关闭，服务器关闭，两次获取的session是否是同一个"></a>客户端不关闭，服务器关闭，两次获取的session是否是同一个</h3><ul>
+<li>不是<ul>
+<li>因为对象的地址值是有随机性的，服务器重启会重新创建。两次创建很难一样。</li>
+</ul>
+</li>
+<li>对象虽然不是同一个，但需要保证数据不丢失<ul>
+<li>使用<strong>Session的钝化和活化</strong></li>
+<li>在服务器关闭时将session钝化，服务器再次开启时将session活化</li>
+<li>注<ul>
+<li>dos命令下，正常关闭tomcat，tomcat会自动钝化session，在<code>work</code>目录下生成<code>Session.ser</code>文件，再次启动，会活化。</li>
+<li>idea中，idea使用虚拟目录方式部署应用，在idea中关闭tomcat时，也会钝化，但是再次启动时，idea会先删除<code>work</code>目录，钝化的文件被删除了，也就无法活化了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Session的销毁"><a href="#Session的销毁" class="headerlink" title="Session的销毁"></a>Session的销毁</h3><ol>
+<li>服务器关闭</li>
+<li>调用<code>invalidate()</code></li>
+<li>tomcat的<code>/conf/web.xml</code>中的默认配置<code>&lt;session-config&gt;</code><ul>
+<li>默认是30分钟，可以自己修改</li>
 </ul>
 </li>
 </ol>
@@ -677,7 +662,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-Jar包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-工具/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -696,8 +681,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/23/xd-Jar包/" itemprop="url">
-                  xd-Jar包
+                <a class="post-title-link" href="/2018/12/28/xd-工具/" itemprop="url">
+                  xd-工具
                 </a>
               
             
@@ -723,163 +708,12 @@
                 
               
 
-              <time title="创建时间：2018-11-23 17:33:05" itemprop="dateCreated datePublished" datetime="2018-11-23T17:33:05+08:00">2018-11-23</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-JDK新特性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-JDK新特性/" itemprop="url">
-                  xd-JDK新特性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:32:16" itemprop="dateCreated datePublished" datetime="2018-11-23T17:32:16+08:00">2018-11-23</time>
+              <time title="创建时间：2018-12-28 00:44:53 / 修改时间：00:51:00" itemprop="dateCreated datePublished" datetime="2018-12-28T00:44:53+08:00">2018-12-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 23:28:56" itemprop="dateModified" datetime="2018-12-06T23:28:56+08:00">2018-12-06</time>
               
             
           </span>
@@ -932,606 +766,268 @@
       
         
           
-            <h1 id="Jdk-5"><a href="#Jdk-5" class="headerlink" title="Jdk 5"></a>Jdk 5</h1><h2 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h2><h3 id="interface-Iterable"><a href="#interface-Iterable" class="headerlink" title="interface Iterable"></a>interface Iterable</h3><ul>
-<li><code>Iterator iterator()</code></li>
-<li>此接口为<code>Collection</code>的父接口</li>
-<li>实现此接口的都可以用<code>for-each</code></li>
-</ul>
-<h3 id="三种迭代能否删除"><a href="#三种迭代能否删除" class="headerlink" title="三种迭代能否删除"></a>三种迭代能否删除</h3><ul>
-<li>普通for循环<ul>
-<li>可以删除,但是索引要<code>--</code></li>
-</ul>
-</li>
-<li>迭代器<ul>
-<li>可以删除,但是必须使用迭代器自身的<code>remove()</code>方法,否则会出现并发修改异常</li>
-</ul>
-</li>
-<li>增强for循环<ul>
-<li>不能删除</li>
-<li>增强for依赖的是迭代器，会发生并发修改异常</li>
-</ul>
-</li>
-</ul>
-<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><ul>
-<li>格式<ul>
-<li>修饰符 返回值类型 方法名(<code>数据类型…  变量名</code>){}</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>这里的变量其实是一个数组</li>
-<li>如果一个方法有可变参数，并且有多个参数，那么，可变参数肯定是最后一个 </li>
-</ul>
-</li>
-</ul>
-<h2 id="静态导入"><a href="#静态导入" class="headerlink" title="静态导入"></a>静态导入</h2><ul>
-<li>格式<ul>
-<li><code>import static 包名.类名.方法名</code> <ul>
-<li>静态导入导入的是类中的静态方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h1 id="Jdk-6"><a href="#Jdk-6" class="headerlink" title="Jdk 6"></a>Jdk 6</h1><h1 id="Jdk-7"><a href="#Jdk-7" class="headerlink" title="Jdk 7"></a>Jdk 7</h1><h2 id="二进制字面量"><a href="#二进制字面量" class="headerlink" title="二进制字面量"></a>二进制字面量</h2><ul>
-<li>用<code>0b</code>表示二进制<ul>
-<li><code>0b110</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="数字字面量可以出现下划线"><a href="#数字字面量可以出现下划线" class="headerlink" title="数字字面量可以出现下划线"></a>数字字面量可以出现下划线</h2><ul>
-<li>运行时会去掉<ul>
-<li><code>100_000</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="switch语句可以用字符串"><a href="#switch语句可以用字符串" class="headerlink" title="switch语句可以用字符串"></a><code>switch</code>语句可以用字符串</h2><h2 id="泛型简化-菱形泛型"><a href="#泛型简化-菱形泛型" class="headerlink" title="泛型简化,菱形泛型"></a>泛型简化,菱形泛型</h2><ul>
-<li>=号前写了泛型，=后只写个<code>&lt;&gt;</code>即可<ul>
-<li><code>List&lt;String&gt; list=new ArrayList&lt;&gt;();</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="异常的多个catch合并，每个异常用或"><a href="#异常的多个catch合并，每个异常用或" class="headerlink" title="异常的多个catch合并，每个异常用或|"></a>异常的多个catch合并，每个异常用或<code>|</code></h2><h2 id="标准异常处理代码"><a href="#标准异常处理代码" class="headerlink" title="标准异常处理代码"></a>标准异常处理代码</h2><ul>
-<li><code>try-with-resources</code>语句</li>
-</ul>
-<h1 id="jdk-8"><a href="#jdk-8" class="headerlink" title="jdk 8"></a>jdk 8</h1><h2 id="接口中可以定义一般方法"><a href="#接口中可以定义一般方法" class="headerlink" title="接口中可以定义一般方法"></a>接口中可以定义一般方法</h2><ul>
-<li>使用<code>default</code>关键字<ul>
-<li><code>public default void fun(){}</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="接口中可以定义静态方法"><a href="#接口中可以定义静态方法" class="headerlink" title="接口中可以定义静态方法"></a>接口中可以定义静态方法</h2><ul>
-<li><code>public static void fun(){}</code><ul>
-<li>调用<code>接口名.方法名</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="局部内部类访问局部变量时可以不加final"><a href="#局部内部类访问局部变量时可以不加final" class="headerlink" title="局部内部类访问局部变量时可以不加final"></a>局部内部类访问局部变量时可以不加final</h2><ul>
-<li>但实际上还是final的</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-江湖百晓生/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-江湖百晓生/" itemprop="url">
-                  xd-江湖百晓生
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:31:39" itemprop="dateCreated datePublished" datetime="2018-11-23T17:31:39+08:00">2018-11-23</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-测试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-测试/" itemprop="url">
-                  xd-测试
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:30:36" itemprop="dateCreated datePublished" datetime="2018-11-23T17:30:36+08:00">2018-11-23</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-枚举/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-枚举/" itemprop="url">
-                  xd-枚举
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:29:18" itemprop="dateCreated datePublished" datetime="2018-11-23T17:29:18+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 23:14:54" itemprop="dateModified" datetime="2018-12-06T23:14:54+08:00">2018-12-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li>将变量的值意义列举出来，变量的值只限于列举出来的范围内。如：一周7天。。。</li>
-<li>单例类<ul>
-<li>一个类一个实例</li>
-</ul>
-</li>
-<li>多例类<ul>
-<li>一个类有多个实例</li>
-</ul>
-</li>
-<li>枚举类<ul>
-<li>一个类有有限个实例</li>
-</ul>
-</li>
-</ul>
-<h1 id="手动实现枚举类"><a href="#手动实现枚举类" class="headerlink" title="手动实现枚举类"></a>手动实现枚举类</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><ul>
-<li>类似单例，不过是有多个实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Week&#123;</span><br><span class="line">    public static Week Mon=new Week();</span><br><span class="line">    public static Week Tus=new Week();</span><br><span class="line">    public static Week Sun=new Week();</span><br><span class="line"></span><br><span class="line">    private Week() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><ul>
-<li>有成员变量，构造是有参的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Week&#123;</span><br><span class="line">    public static Week Mon=new Week(&quot;xxx&quot;);</span><br><span class="line">    public static Week Tus=new Week(&quot;xxx&quot;);</span><br><span class="line">    public static Week Sun=new Week(&quot;xxx&quot;);</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    private Week(String name) &#123;</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><ul>
-<li>如果是抽象类,使用匿名内部类<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">abstract class Week&#123;</span><br><span class="line">    public static Week Mon=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;        </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    public static Week Tus=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    public static Week Sun=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    private Week() &#123;&#125;</span><br><span class="line"></span><br><span class="line">   public abstract void show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h1><ul>
-<li>枚举类</li>
-</ul>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>定义枚举类要用<code>enum</code><ul>
-<li><code>public enum xxx</code></li>
-</ul>
-</li>
-<li>枚举项要在首行。</li>
-<li>枚举类可以有构造器， 但必须是私有的，默认也是私有的</li>
-<li>枚举类可以有抽象方法，但枚举项必须重写抽象方法</li>
-<li>枚举项都是有编号的。</li>
+            <h1 id="StringUtils"><a href="#StringUtils" class="headerlink" title="StringUtils"></a>StringUtils</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>在<code>commons-lang3.jar</code>中</li>
 </ul>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><code>int ordinal()</code><ul>
-<li>返回枚举常量的编号</li>
+<li><code>boolean isEmpty(String s)</code><ul>
+<li>判断字符串是否为空，不会去除字符串空格。</li>
+<li><code>String s=null</code><ul>
+<li>true</li>
 </ul>
 </li>
-<li><code>int compareTo(E o)</code><ul>
-<li>比较的就是序号</li>
+<li><code>String s=&quot;&quot;</code><ul>
+<li>true</li>
 </ul>
 </li>
-<li><code>String name()</code><ul>
-<li>返回此枚举常量的名称</li>
-</ul>
-</li>
-<li><code>valueOf(Class&lt;T&gt; enumType, String name)</code><ul>
-<li>返回带指定名称的指定枚举类型的枚举常量</li>
-<li><code>Week mon=Week.valueOf(Week.class,&quot;Mon&quot;)</code></li>
-</ul>
-</li>
-<li><code>values()</code><ul>
-<li>文档中没有，但所有枚举都有这个方法。获取所有枚举值</li>
+<li><code>String s=&quot; &quot;</code> <ul>
+<li>false</li>
 </ul>
 </li>
 </ul>
-<h1 id="Enum的枚举"><a href="#Enum的枚举" class="headerlink" title="Enum的枚举"></a>Enum的枚举</h1><h2 id="一-1"><a href="#一-1" class="headerlink" title="一"></a>一</h2><ul>
-<li>默认空参构造就是私有的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum Week&#123;</span><br><span class="line">        Mon,Tus,Sun;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><code>boolean isBlank(String s)</code><ul>
+<li>判断字符串是否为空，会去除字符串空格。    </li>
+<li><code>String s=null</code><ul>
+<li>true</li>
+</ul>
+</li>
+<li><code>String s=&quot;&quot;</code><ul>
+<li>true</li>
+</ul>
+</li>
+<li><code>String s=&quot; &quot;</code> <ul>
+<li>true</li>
+</ul>
 </li>
 </ul>
-<h2 id="二-1"><a href="#二-1" class="headerlink" title="二"></a>二</h2><ul>
-<li>有成员变量，有参构造。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public enum Week&#123;</span><br><span class="line">        Mon(&quot;星期一&quot;),Tus(&quot;星期二&quot;),Sun(&quot;星期天&quot;);</span><br><span class="line">        private String name;</span><br><span class="line">        private Week(String name)&#123;</span><br><span class="line">          this.name=name;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="三-1"><a href="#三-1" class="headerlink" title="三"></a>三</h2><ul>
-<li>如果有抽象方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">enum Week3&#123;</span><br><span class="line">    Mon(&quot;星期一&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Tus(&quot;星期二&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ,Sun(&quot;星期天&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    private String name;</span><br><span class="line">    private Week5(String name)&#123;</span><br><span class="line">        this.name=name;</span><br><span class="line">    &#125;</span><br><span class="line">    public abstract void show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<h1 id="DBUtils"><a href="#DBUtils" class="headerlink" title="DBUtils"></a>DBUtils</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>java编程中的数据库操作实用工具，小巧简单实用</li>
+<li>封装了对JDBC的操作，简化了JDBC操作<ul>
+<li>对于数据表的读操作，它可以把结果转换成List，Array，Set等等</li>
+<li>对于数据表的写操作，只需写sql语句</li>
+<li>可以使用数据源，使用JNDI，数据库连接池等技术来优化性能–重用已经构建好的数据库连接对象</li>
+</ul>
+</li>
+<li>一个工具类,定义了关闭资源与事务处理的方法</li>
+</ul>
+<h2 id="QueryRunner"><a href="#QueryRunner" class="headerlink" title="QueryRunner"></a>QueryRunner</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>提供对sql语句操作的API.</li>
+<li>构造和方法中<ul>
+<li>有Connection参数可以自己控制事务</li>
+<li>没有Connection参数自动事务</li>
+</ul>
+</li>
+</ul>
+<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>QueryRunner([boolean pmdKnownBroken])</code></li>
+<li><code>QueryRunner(DataSource ds,[boolean pmdKnownBroken])</code><ul>
+<li>true<ul>
+<li>Oracle使用</li>
+</ul>
+</li>
+<li>false或空参<ul>
+<li>mysql    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>&lt;T&gt; T query(String sql,ResultSetHandler&lt;T&gt; rsh,[Object... params])</code><ul>
+<li>查询select</li>
+</ul>
+</li>
+<li><code>int update([Connection conn].String sql,[Object... params])</code><ul>
+<li>增删改(insert delete update)</li>
+<li>int 影响行数</li>
+</ul>
+</li>
+<li><code>int[] batch([Connection conn],String sql,Object[][] params)</code><ul>
+<li>批处理</li>
+</ul>
+</li>
+</ul>
+<h4 id="ResultSetHandler"><a href="#ResultSetHandler" class="headerlink" title="ResultSetHandler"></a>ResultSetHandler</h4><h5 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h5><ul>
+<li>用于定义select操作后，怎样封装结果集</li>
+</ul>
+<h5 id="结果处理器"><a href="#结果处理器" class="headerlink" title="结果处理器"></a>结果处理器</h5><ul>
+<li><code>ArrayHandler</code><ul>
+<li>适合取1条记录。把该条记录的每列值封装到一个数组中Object[]</li>
+<li><code>Object[]</code></li>
+</ul>
+</li>
+<li><code>ArrayListHandler</code><ul>
+<li>适合取多条记录。把每条记录的每列值封装到一个数组中Object[]，把数组封装到一个List中</li>
+<li><code>List&lt;Object[]&gt;</code></li>
+</ul>
+</li>
+<li><code>ColumnListHandler</code><ul>
+<li>取某一列的数据(sql语句中的某一列)。封装到List中</li>
+<li><code>List&lt;Object&gt;</code></li>
+</ul>
+</li>
+<li><code>KeyedHandler</code><ul>
+<li>取多条记录，每一条记录封装到一个Map中，再把这个Map封装到另外一个Map中，key为指定的字段值。</li>
+<li><code>Map&lt;自定义key,Map&lt;列名,列值&gt;&gt;</code></li>
+</ul>
+</li>
+<li><code>MapHandler</code><ul>
+<li>适合取1条记录。把当前记录的列名和列值放到一个Map中</li>
+<li><code>Map&lt;列名,列值&gt;</code></li>
+</ul>
+</li>
+<li><code>MapListHandler</code><ul>
+<li>适合取多条记录。把每条记录封装到一个Map中，再把Map封装到List中</li>
+<li><code>List&lt;Map&lt;列名,列值&gt;&gt;</code></li>
+</ul>
+</li>
+<li><code>ScalarHandler</code><ul>
+<li>适合取单行单列数据</li>
+<li>如取<code>count(*)</code></li>
+<li><code>Object</code></li>
+</ul>
+</li>
+<li><code>BeanHandler</code><ul>
+<li>取一个对象</li>
+<li><code>Object</code></li>
+</ul>
+</li>
+<li><code>BeanListHandler</code><ul>
+<li><code>取对象的集合</code></li>
+<li><code>List&lt;Object&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a>JDBCTemplate</h1><h2 id="概述-4"><a href="#概述-4" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>spring 提供用于操作JDBC工具类，类似DBUtils</li>
+<li>依赖 连接池DataSource （数据源）</li>
+</ul>
+<h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>update(String sql, Object... obj)</code><ul>
+<li>执行DML语句 （增删改）</li>
+</ul>
+</li>
+<li><code>queryForMap(String sql, Object... obj)</code><ul>
+<li>查询的结果集封装为map集合</li>
+<li>此方法查询结果集长度只能是1<ul>
+<li>列名为key，列值为value</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>queryForList(String sql, Object... obj)</code><ul>
+<li>将每一条记录封装为map集合，然后将map集合封装到list集合中</li>
+<li><code>List&lt;Map&lt;String, Object&gt;&gt;</code></li>
+</ul>
+</li>
+<li><code>query(String sql, RowMapper&lt;Object obj&gt; rowMapper, Object... obj)</code><ul>
+<li>查询结果封装为javabean对象，然后封装到list集合</li>
+<li><code>List&lt;Object obj&gt;</code></li>
+</ul>
+</li>
+<li><code>queryForObject(String sql, Class&lt;? extends Object&gt; type, Object... obj)</code><ul>
+<li>查询结果封装为对象（通常是基本数据类型包装类）</li>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+<h3 id="RowMapper"><a href="#RowMapper" class="headerlink" title="RowMapper"></a>RowMapper</h3><ul>
+<li>类似于DBUtils的ResultSetHandler</li>
+<li>可以自己实现，也可使用提供的</li>
+</ul>
+<h4 id="BeanPropertyRowMapper"><a href="#BeanPropertyRowMapper" class="headerlink" title="BeanPropertyRowMapper"></a>BeanPropertyRowMapper</h4><ul>
+<li>将结果集封装为对象，然后存在list中</li>
+</ul>
+<h1 id="内省-Introspector"><a href="#内省-Introspector" class="headerlink" title="内省(Introspector)"></a>内省(Introspector)</h1><h2 id="Introspector"><a href="#Introspector" class="headerlink" title="Introspector"></a>Introspector</h2><ul>
+<li>Introspector根据<code>JavaBean.class</code>构建一个BeanInfo对象。</li>
+<li>BeanInfo封装了一个类的所有属性</li>
+<li>由BeanInfo获取属性描述器<code>PropertyDescriptor</code><ul>
+<li><code>Method getReadMethod()</code><ul>
+<li>对应get</li>
+</ul>
+</li>
+<li><code>Method getWriteMethod()</code><ul>
+<li>对应set</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>开发框架时，经常使用java对象的属性来封装程序的数据，每次都使用反射来完成此类操作过于麻烦。</li>
+</ul>
+<h2 id="java-beans"><a href="#java-beans" class="headerlink" title="java.beans"></a>java.beans</h2><ul>
+<li>sun公司开发的一套api专门用于操作java对象的属性。</li>
+<li>上述操作太过繁琐，Apache组织开发了一套api以简化编写</li>
+</ul>
+<h2 id="Beanutils"><a href="#Beanutils" class="headerlink" title="Beanutils"></a>Beanutils</h2><h3 id="BeanUtils"><a href="#BeanUtils" class="headerlink" title="BeanUtils"></a>BeanUtils</h3><ul>
+<li><code>void setProperty(Object bean,String filedName,Object value)</code></li>
+<li><code>String getProperty(Object bean,String filedName)</code></li>
+<li><code>void populate(Object bean,Map map)</code><ul>
+<li>map中存字段名和值的键值对。</li>
+</ul>
+</li>
+</ul>
+<h3 id="PropertyUtils"><a href="#PropertyUtils" class="headerlink" title="PropertyUtils"></a>PropertyUtils</h3><h3 id="ConvertUtils"><a href="#ConvertUtils" class="headerlink" title="ConvertUtils"></a>ConvertUtils</h3><ul>
+<li><code>void register(Converter con,Class&lt;?&gt; clazz)</code><ul>
+<li>注册转换器</li>
+<li>Beanutils默认支持8种基本类型，自动转换。</li>
+<li>对于如日期需要先注册转换器。</li>
+<li>使用<ul>
+<li>在上述<code>BeanUtils</code>赋值前，调用一下。</li>
+<li>可以使用内部类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="发邮件"><a href="#发邮件" class="headerlink" title="发邮件"></a>发邮件</h1><ul>
+<li><code>javaMail.jar</code></li>
+<li>然后工具类指定一些配置即可。</li>
+</ul>
+<h1 id="JS-插件"><a href="#JS-插件" class="headerlink" title="JS 插件"></a>JS 插件</h1><h3 id="validate-js"><a href="#validate-js" class="headerlink" title="validate.js"></a>validate.js</h3><ul>
+<li>校验插件</li>
+<li><p>使用</p>
+<ul>
+<li><p><code>$(&quot;form表单&quot;).validate(json数据);</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myForm&quot;).validate(&#123;</span><br><span class="line">	rules:&#123;</span><br><span class="line">		&quot;username&quot;:&#123;</span><br><span class="line">			&quot;required&quot;:true</span><br><span class="line">		&#125;,</span><br><span class="line">		&quot;password&quot;:&#123;</span><br><span class="line">			&quot;rerquired&quot;:true</span><br><span class="line">			&quot;rangelength&quot;:[6,12]</span><br><span class="line">		&#125;,	</span><br><span class="line">		......</span><br><span class="line">	&#125;,</span><br><span class="line">	messages:&#123;</span><br><span class="line">		&quot;username&quot;:&#123;</span><br><span class="line">			&quot;required&quot;:&quot;用户名不能为空&quot;,			</span><br><span class="line">		&#125;，</span><br><span class="line">		&quot;password&quot;:&#123;</span><br><span class="line">			&quot;rerquired&quot;:true</span><br><span class="line">			&quot;rangelength&quot;:&quot;密码长度6-12&quot;</span><br><span class="line">		&#125;,	</span><br><span class="line">		.......		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个规则，一个信息</p>
+</li>
+<li>可自定义规则</li>
+</ul>
+</li>
+</ul>
+<h1 id="第三方支付"><a href="#第三方支付" class="headerlink" title="第三方支付"></a>第三方支付</h1><h2 id="国付宝"><a href="#国付宝" class="headerlink" title="国付宝"></a>国付宝</h2><h2 id="连连支付"><a href="#连连支付" class="headerlink" title="连连支付"></a>连连支付</h2><ul>
+<li>拍拍贷</li>
+<li>陆金所</li>
+<li>温商贷</li>
+<li>玖富</li>
+<li>360金融</li>
+<li>点融 </li>
+</ul>
+<h2 id="易宝"><a href="#易宝" class="headerlink" title="易宝"></a>易宝</h2><h1 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h1><h2 id="邮箱客户端"><a href="#邮箱客户端" class="headerlink" title="邮箱客户端"></a>邮箱客户端</h2><ul>
+<li>客户端<ul>
+<li>foxmail</li>
+<li>outlook</li>
+</ul>
+</li>
+<li>网页</li>
+</ul>
+<h2 id="邮箱服务端"><a href="#邮箱服务端" class="headerlink" title="邮箱服务端"></a>邮箱服务端</h2><ul>
+<li>邮件的接收和推送</li>
+</ul>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><ul>
+<li>接收<ul>
+<li>POP3</li>
+<li>IMAP</li>
+</ul>
+</li>
+<li>发送<ul>
+<li>SMTP</li>
+</ul>
+</li>
 </ul>
 
           
@@ -1590,7 +1086,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-设计模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-上传和下载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -1609,8 +1105,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/23/xd-设计模式/" itemprop="url">
-                  xd-设计模式
+                <a class="post-title-link" href="/2018/12/28/xd-上传和下载/" itemprop="url">
+                  xd-上传和下载
                 </a>
               
             
@@ -1636,24 +1132,12 @@
                 
               
 
-              <time title="创建时间：2018-11-23 17:28:18" itemprop="dateCreated datePublished" datetime="2018-11-23T17:28:18+08:00">2018-11-23</time>
+              <time title="创建时间：2018-12-28 00:43:09 / 修改时间：01:28:45" itemprop="dateCreated datePublished" datetime="2018-12-28T00:43:09+08:00">2018-12-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 22:40:35" itemprop="dateModified" datetime="2018-12-06T22:40:35+08:00">2018-12-06</time>
               
             
           </span>
@@ -1706,158 +1190,30 @@
       
         
           
-            <h1 id="装饰"><a href="#装饰" class="headerlink" title="装饰"></a>装饰</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>继承是成为某类的子类覆写方法增强</li>
-<li><p>装饰类持有被装饰类成员对象。在需要装饰的方法中调用被装饰类的方法，在调用前后可以写增强代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">被装饰方法() &#123;</span><br><span class="line">	增强代码。。。</span><br><span class="line">	被装饰类调用被装饰方法。</span><br><span class="line">	增强代码。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>装饰类和被装饰类必须所属同一个接口或者父类。</p>
-</li>
-<li>比如缓冲流对于流（安）</li>
-</ul>
-<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">	void chiFan()&#123;</span><br><span class="line">		System.out.println(&quot;吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	void changGe()&#123;</span><br><span class="line">		System.out.println(&quot;流行歌曲&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class NewPerson&#123;</span><br><span class="line">	private Person p;</span><br><span class="line">	public NewPerson(Person p)&#123;</span><br><span class="line">		this.p=p;</span><br><span class="line">	&#125;</span><br><span class="line">	//需要装饰的方法=被装饰类方法+装饰代码</span><br><span class="line">	void chiFan()&#123;</span><br><span class="line">		System.out.println(&quot;开胃酒&quot;);</span><br><span class="line">		p.chifan();</span><br><span class="line">		System.out.println(&quot;饭后甜点&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	//不需要装饰的方法=被装饰类方法</span><br><span class="line">	void changGe()&#123;</span><br><span class="line">		p.changGe();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h1><h1 id="简单工厂（静态工厂）"><a href="#简单工厂（静态工厂）" class="headerlink" title="简单工厂（静态工厂）"></a>简单工厂（静态工厂）</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>定义一个具体的工厂类负责创建一些类的实例</li>
-</ul>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>客户端不需要负责对象的创建，从而明确了各个类的职责</li>
-</ul>
-<h2 id="例-1"><a href="#例-1" class="headerlink" title="例"></a>例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 动物接口</span><br><span class="line">public abtract class Animal &#123;</span><br><span class="line">	public abstract void eat();	</span><br><span class="line">&#125;</span><br><span class="line">// 动物接口实现类 </span><br><span class="line">class Dog extends Animal()&#123;&#125;</span><br><span class="line">class Cat extends Animal()&#123;&#125;</span><br><span class="line">// 工厂类</span><br><span class="line">public classs AnimalFactory &#123;</span><br><span class="line">	// 1.</span><br><span class="line">	public static Dog createDog() &#123; return new Dog(); &#125;</span><br><span class="line">	public static Cat createCat() &#123; return new Cat(); &#125;</span><br><span class="line">	// 2. </span><br><span class="line">	public static Animal createAnimal(String name)&#123;</span><br><span class="line">		// 根据name判断需要创建什么动物</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>静态工厂类负责所有对象的创建，如果有新的对象增加，或者某些对象的创建方式不同，就要不断的修改工厂类，不利于后期维护。</li>
-</ul>
-<h1 id="工厂方法（一般工厂）"><a href="#工厂方法（一般工厂）" class="headerlink" title="工厂方法（一般工厂）"></a>工厂方法（一般工厂）</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>抽象工厂类负责定义创建对象的接口，具体对象的创建由继承抽象工厂的具体类实现。</li>
-<li>其实就是创建一个抽象的顶级接口，然后具体对象有一个针对的工厂类实现顶级接口。新增对象时，新增一个对象工厂即可，不必修改其它工厂。</li>
-</ul>
-<h2 id="例-2"><a href="#例-2" class="headerlink" title="例"></a>例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 动物接口</span><br><span class="line">public abtract class Animal &#123;</span><br><span class="line">	public abstract void eat();	</span><br><span class="line">&#125;</span><br><span class="line">// 动物接口实现类 </span><br><span class="line">class Dog extends Animal()&#123;&#125;</span><br><span class="line">class Cat extends Animal()&#123;&#125;</span><br><span class="line">// 抽象工厂</span><br><span class="line">public abstract class AniamlFactory()&#123;</span><br><span class="line">	public abstract Animal createAnimal();</span><br><span class="line">&#125;</span><br><span class="line">// 具体类工厂实现抽象工厂</span><br><span class="line">public class DogFactory implements AnimalFactory()&#123;&#125;</span><br><span class="line">public class CatFactory implements AnimalFactory()&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h1><h2 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>假如有个接口有许多方法，我们要实现接口，就要覆写所有的方法，有些方法我们根本用不到。</li>
-<li>现在有个类或抽象类，实现接口，把所有方法或不常用的方法覆写。可能方法内部什么也没做，就是简单的覆写。</li>
-<li>这样我们继承这个类或抽象类。只需要覆写想要覆写的方法或者实现没有覆写的抽象方法即可。</li>
-</ul>
-<h2 id="例-3"><a href="#例-3" class="headerlink" title="例"></a>例</h2><ul>
-<li>Servlet接口 GenericServlet抽象类</li>
-<li>Servlet接口中有五个方法，如果我们实现了Servlet接口，就必须要覆写这五个方法，有的方法，我们根本用不到。</li>
-<li>现在有了GenericServlet抽象类实现了Servlet接口，我们继承GenericServlet即可。</li>
-</ul>
-<h2 id="例-4"><a href="#例-4" class="headerlink" title="例"></a>例</h2><ul>
-<li>事件监听<ul>
-<li><code>MouseListener</code>中有多个方法<ul>
-<li><code>MouseAdapter</code>全部实现，方法体为空，使用时只继承适配器类即可，用哪个方法复写哪个。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="模版模式-Template"><a href="#模版模式-Template" class="headerlink" title="模版模式(Template)"></a>模版模式(Template)</h1><h2 id="概述-4"><a href="#概述-4" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>定义一个算法的骨架，而将具体的算法延迟到子类中实现</li>
-<li>优点<ul>
-<li>使用模板模式，在定义算法骨架的同时，可以很灵活的实现具体的算法，满足多变的需求</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>如果算法骨架有修改的话，需修改抽象类</li>
-</ul>
-</li>
-</ul>
-<h2 id="例-5"><a href="#例-5" class="headerlink" title="例"></a>例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//计算一段代码执行的时间 使用模板模式</span><br><span class="line">//首先定义一个抽象父类，并给出计算时间的算法骨架</span><br><span class="line">abstract class Time&#123;</span><br><span class="line">	//算法骨架，不想让子类重写</span><br><span class="line">	public final long getTime()&#123;</span><br><span class="line">		long start=System.currentTimeMillis();//开始时间</span><br><span class="line">		code();//要计算的执行代码</span><br><span class="line">		long end=System.currentTimeMillis();//结束时间</span><br><span class="line">		return end - start;</span><br><span class="line">	&#125;</span><br><span class="line">	//用于子类重写的代码方法</span><br><span class="line">	public abstract void code();</span><br><span class="line">&#125;</span><br><span class="line">//子类</span><br><span class="line">class Test extends Time&#123;</span><br><span class="line">	public void code()&#123;</span><br><span class="line">		code...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//测试</span><br><span class="line">psvm&#123;</span><br><span class="line">	new Test().getTime();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ol>
+<li>提供form表单 method为post</li>
+<li>enctype属性为<code>multipart/form-data</code></li>
+<li>提供<code>&lt;input type=&quot;file&quot; name=&quot;mn&quot;&gt;</code>上传输入域</li>
+</ol>
+<h3 id="enctype"><a href="#enctype" class="headerlink" title="enctype"></a>enctype</h3><ul>
+<li>告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的）</li>
+<li><p><code>application/x-www-form-urlencoded</code></p>
 <ul>
-<li>例<ul>
-<li>HttpServlet</li>
-</ul>
-</li>
-</ul>
-<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><ul>
-<li><code>Proxy Pattern</code></li>
-</ul>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
-<li>目标对象<ul>
-<li>真正要访问的对象</li>
-</ul>
-</li>
-<li>代理对象</li>
-<li>代理类<ul>
-<li>用来生成代理对象</li>
-</ul>
-</li>
-<li>目标对象和代理对象实现同一接口</li>
-</ul>
-<h2 id="原理-安"><a href="#原理-安" class="headerlink" title="原理(安)"></a>原理(安)</h2><ul>
-<li>目标对象和代理对象有着相同的功能。</li>
-<li>做一件事，内部其实还是目标对象在做，只是表面是代理对象在执行行为。</li>
-<li>代理对象的行为内部在目标对象做的事前后还可以自己做一些事情。</li>
-<li>例<ul>
-<li>潘金莲和王婆有相同功能（实现同一个接口）抛媚眼</li>
-<li>潘金莲（目标对象）给西门庆抛媚眼（事情），不直接这么干，表面上由王婆（代理对象）抛媚眼，其实真正抛媚眼的还是潘金莲。</li>
-<li>在王婆的抛媚眼方法内部，执行的是潘金莲的抛媚眼，而在潘金莲抛媚眼前后，王婆还可以做一些事情(如之前拿些好处，之后干掉武大郎)</li>
-</ul>
-</li>
-</ul>
-<h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><ul>
-<li>大致实现。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//类A和代理类B都实现接口C</span><br><span class="line">interface C&#123;</span><br><span class="line">	show();</span><br><span class="line">&#125;</span><br><span class="line">public class A implements C&#123;</span><br><span class="line">	void show()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class B implements C&#123;</span><br><span class="line">	private C c;</span><br><span class="line">	public B(C c)&#123;</span><br><span class="line">		this.c=c;</span><br><span class="line">	&#125;</span><br><span class="line">	void show()&#123;</span><br><span class="line">		//前---校验。。。</span><br><span class="line">		c.show();</span><br><span class="line">		//后---日志。。。</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Test&#123;</span><br><span class="line">	new B(new A()).show();</span><br><span class="line">	//这样还是执行的A的show方法，而且，在show方法之前和之后做了校验和日志。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><h4 id="概述-5"><a href="#概述-5" class="headerlink" title="概述"></a>概述</h4><ul>
-<li>动态代理可以直接给某一个目标对象生成一个代理对象，而不需要代理类存在。</li>
-<li>目标对象和代理对象实现同一接口是为了保证方法一致</li>
-<li>动态代理与代理模式原理是一样的，只是它没有具体的代理类，直接通过反射生成了一个代理对象。</li>
-</ul>
-<h4 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h4><h5 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h5><ul>
-<li>对装饰者设计模式简化。使用前提：必须有接口</li>
-<li>接口+实现类</li>
-</ul>
-<h5 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h5><ul>
-<li>返回代理对象的名称<ul>
-<li><code>$Proxy数字</code></li>
-</ul>
-</li>
-</ul>
-<h6 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h6><ul>
-<li><code>static Object newProxyInstance(ClassLoader loader,Class&lt;?&gt;[] interfaces,InvocationHandler h)</code><ul>
-<li>返回一个指定接口的代理类实例。</li>
-<li><code>ClassLoader</code><ul>
-<li>类加载器。固定写法，和被代理类使用相同的类加载器即可,动态代理类 运行时创建，任何类都需要类加载器将其加载到内存。<ul>
-<li><code>当前类.class.getClassLoader()</code></li>
-<li><code>代理类实例.getClass().getClassLoader()</code></li>
-</ul>
+<li>默认<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">...</span><br><span class="line">请求体</span><br><span class="line">name=an3&amp;mn(input中file的name)=文件名(mm.jpg)</span><br><span class="line">//服务器获取数据</span><br><span class="line">String name = request.getParameter(&quot;name&quot;)</span><br><span class="line">String name=request.getParameter(&quot;mm&quot;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><code>Class[] interface</code><ul>
-<li>代理类要实现的接口。固定写法，和被代理类使用相同的接口即可<ul>
-<li><code>代理类实例.getClass().getInterfaces()</code></li>
-<li><code>new Class[]{被代理类接口.class}</code></li>
-</ul>
+<li><p><code>multipart/form-data</code></p>
+<ul>
+<li>上传用</li>
+<li>使用<code>request.getParameter(key)</code>取不到表单数据</li>
+<li><p>获取数据要使用流</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type:multipart/form-data; boundar=======7df24c3430fa2</span><br><span class="line">//请求体</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;name&quot;</span><br><span class="line">an3</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;mn&quot;; filename=&quot;mm.jpg&quot;</span><br><span class="line">Contenet-Type: image/pjpeg</span><br><span class="line">图片的二进制数据</span><br><span class="line">//服务器获取数据</span><br><span class="line">//用字节流获取请求体的所有内容</span><br><span class="line">request.getInputStream()</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-<li><code>InvocationHandler</code><ul>
-<li>接口，一般采用匿名内部类</li>
-<li>代理类的每一个方法执行时，都将调用一次<code>invoke()</code></li>
-<li><code>Object invoke(Object proxy,Method method,Object[] args)</code><ul>
-<li>proxy<ul>
-<li>代理对象,一般用不着</li>
-</ul>
-</li>
-<li>method<ul>
-<li>代理对象当前执行的方法的描述对象（反射）</li>
-<li>获取方法名<ul>
-<li>method.getName()</li>
-</ul>
-</li>
-<li>执行方法<ul>
-<li>method.invoke(实现类对象，实际参数)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>args<ul>
-<li>方法实际参数</li>
-</ul>
-</li>
-<li>返回值<ul>
-<li>即目标方法的返回值</li>
+<li><p>说明(安)</p>
+<ul>
+<li>可以看出enctype为<code>multipart/form-data</code>时<ul>
+<li>请求体中包含了文件名，文件类型，文件具体内容。</li>
 </ul>
 </li>
 </ul>
@@ -1865,81 +1221,568 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>安<ul>
-<li>我们要执行一个目标类<code>A</code>的目标方法<code>add()</code><ul>
-<li>原<ul>
-<li><code>A a=new A()</code></li>
-<li><code>a.add()</code></li>
+<h2 id="文件上传原理"><a href="#文件上传原理" class="headerlink" title="文件上传原理"></a>文件上传原理</h2><ul>
+<li>解析请求体的每部分的内容</li>
+</ul>
+<h2 id="上传步骤-安"><a href="#上传步骤-安" class="headerlink" title="上传步骤(安)"></a>上传步骤(安)</h2><ul>
+<li>获取上传的文件的输入流</li>
+<li>确定服务器保存路径</li>
+<li>确定服务器保存文件名</li>
+<li>新建File对象(路径+文件名)</li>
+<li>以新建的file对象创建输出流</li>
+<li>然后读写操作。。</li>
+</ul>
+<h2 id="上传需要注意的问题-安"><a href="#上传需要注意的问题-安" class="headerlink" title="上传需要注意的问题(安)"></a>上传需要注意的问题(安)</h2><ul>
+<li>文件路径<ul>
+<li>存储在服务器端的路径</li>
 </ul>
 </li>
-<li>使用代理<ul>
-<li><code>A $a=Proxy.newProxyInstance(classLoader,interfaces,h)</code><ul>
-<li>获取A的代理对象<code>$a</code></li>
-</ul>
-</li>
-<li><code>$a.add()</code><ul>
-<li>代理类<code>$a</code>执行方法<code>add()</code>时，会自动调用h的<code>invoke()</code>方法</li>
-</ul>
-</li>
-<li><code>invoke()</code>方法中的<code>method.invoke(a，实际参数)</code><ul>
-<li>执行的是目标类的方法。即<code>a.add()</code></li>
-<li>这样就通过代理完成了目标类A的目标方法<code>add()</code></li>
-</ul>
-</li>
-<li>而在<code>invoke()</code>方法中调用<code>method.invoke(a，实际参数)</code>前后还可以做一些其它事情。<ul>
-<li>这样通过代理我们不仅可以实现原来调用目标方法的目的，还可以在目标方法执行前后做一些事。</li>
+<li>文件名<ul>
+<li>存储的文件名，避免重复</li>
+<li>随机啊日期啊</li>
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="fileupload"><a href="#fileupload" class="headerlink" title="fileupload"></a>fileupload</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>第三方的上传组件用来解析上传文件，帮我们解析<code>request.getInputStream()</code></li>
 </ul>
-</li>
+<h3 id="核心类"><a href="#核心类" class="headerlink" title="核心类"></a>核心类</h3><ul>
+<li><code>DiskFileItemFactory</code></li>
+<li><code>ServletFileUpload</code></li>
+<li><code>FileItem</code></li>
 </ul>
-</li>
-</ul>
-<h4 id="Cglib动态代理"><a href="#Cglib动态代理" class="headerlink" title="Cglib动态代理"></a>Cglib动态代理</h4><h5 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h5><ul>
-<li>没有接口,只有实现类。</li>
-<li>采用字节码增强框架 cglib，在运行时 创建目标类的子类，从而对目标类进行增强。</li>
-<li>可以对任何类生成代理，原理是对目标对象进行继承代理</li>
-</ul>
-<h5 id="jar包"><a href="#jar包" class="headerlink" title="jar包"></a>jar包</h5><ul>
-<li><code>cglib.jar</code><ul>
-<li>核心包</li>
-</ul>
-</li>
-<li><code>asm.jar</code><ul>
-<li>依赖包</li>
-</ul>
-</li>
-<li><code>spring-core.jar</code><ul>
-<li>整合了上述两个包</li>
-</ul>
-</li>
-</ul>
-<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><ul>
-<li>创建cglib核心类<ul>
-<li><code>Enhancer en=new Enhancer();</code></li>
-</ul>
-</li>
-<li>确定父类<ul>
-<li><code>en.setSuperclass(目标类实例.getClass());</code></li>
-</ul>
-</li>
-<li>设置回调函数<ul>
-<li><code>en.setCallback(new MethodInterceptor(){});</code><ul>
-<li><code>MethodInterceptor</code><ul>
-<li>等效jdk的<code>InvocationHandler</code></li>
-<li><code>Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy)</code><ul>
-<li>等效 <code>InvocationHandler</code>的 <code>invoke()</code></li>
-<li><code>methodProxy</code><ul>
-<li>方法的代理</li>
-<li><code>methodProxy.invokeSuper(proxy,objects)</code><ul>
-<li>同<code>method.invoke(实现类,objects)</code></li>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><code>DiskFileItemFactory factory = new DiskFileItemFactory()</code><ul>
+<li>创建工厂类DiskFileItemFactory对象</li>
+<li>创建工厂时还可以指定缓存文件的大小和临时文件的位置</li>
+<li>或者先创建，然后set也行<ul>
+<li><code>factory.setSizeThreshold(字节)</code></li>
+<li><code>factory.setRepository(new File(path))</code></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><code>ServletFileUpload fileUpload = new ServletFileUpload(factory)</code><ul>
+<li>使用工厂创建解析器对象ServletFileUpload</li>
+</ul>
+</li>
+<li><code>fileUpload.isMultipartContent(request)</code><ul>
+<li>判断表单<code>enctype</code>是否是上传.</li>
+</ul>
+</li>
+<li><code>List&lt;FileItem&gt; list = fileUpload.parseRequest(request)</code><ul>
+<li>使用解析器来解析request对象</li>
+</ul>
+</li>
+</ul>
+<h4 id="FileItem"><a href="#FileItem" class="headerlink" title="FileItem"></a>FileItem</h4><ul>
+<li>对应一个表单项（表单字段）。可以是文件字段或普通字段</li>
+<li><code>boolean isFormField()</code><ul>
+<li>判断当前表单字段是否为普通文本字段，如果返回false，说明是文件字段</li>
+</ul>
+</li>
+<li><code>String getFieldName()</code><ul>
+<li>获取字段名称</li>
+</ul>
+</li>
+<li><code>String getString()</code><ul>
+<li>获取字段的内容</li>
+<li>如果是文件字段(必须是文本文件)，那么获取的是文件内容。</li>
+<li>可以传入编码参数<ul>
+<li><code>getString(&quot;utf-8&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String getName()</code><ul>
+<li>获取文件字段的文件名称(如：mm.jpg)</li>
+</ul>
+</li>
+<li><code>String getContentType()</code><ul>
+<li>获取上传的文件的MIME类型，例如：text/plain。</li>
+</ul>
+</li>
+<li><code>int getSize()</code><ul>
+<li>获取上传文件的大小</li>
+</ul>
+</li>
+<li><code>InputStream getInputStream()</code><ul>
+<li>获取上传文件对应的输入流；</li>
+</ul>
+</li>
+<li><code>void write(File)</code><ul>
+<li>把上传的文件保存到指定文件中</li>
+</ul>
+</li>
+<li><code>IOUtils.copey(in,out)</code><ul>
+<li>工具类保存</li>
+</ul>
+</li>
+<li><code>delete()</code><ul>
+<li>清理临时文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="上传要考虑的问题"><a href="#上传要考虑的问题" class="headerlink" title="上传要考虑的问题"></a>上传要考虑的问题</h3><ul>
+<li>文件名问题<ul>
+<li>上传的文件名是全路径，有的浏览器会自动处理，有的不会，最好处理一下。<ol>
+<li>手动处理</li>
+<li><code>FilenameUtils</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>保证服务器安全<ul>
+<li>把保存上传文件的目录放在用户直接访问不到的地方(web-inf下)</li>
+</ul>
+</li>
+<li>避免文件被覆盖<ul>
+<li>文件名唯一</li>
+</ul>
+</li>
+<li>避免同一个文件夹中的文件过多<ul>
+<li>按照日期进行打散存储目录</li>
+<li>用文件名的hashCode计算打散的存储目录：二级目录</li>
+</ul>
+</li>
+<li>限制文件的大小：web方式不适合上传大的文件<ul>
+<li>单个文件大小<ul>
+<li><code>ServletFileUpload.setFileSizeMax(字节)</code></li>
+</ul>
+</li>
+<li>总文件大小：（多文件上传）<ul>
+<li><code>ServletFileUpload.setSizeMax(字节)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上传字段用户没有上传的问题<ul>
+<li>通过判断文件名是否为空即可</li>
+</ul>
+</li>
+<li>临时文件的问题<ul>
+<li><code>DiskFileItemFactory</code><ul>
+<li>内部有一个缓存，缓存大小默认是10Kb。如果上传的文件超过10Kb，用磁盘作为缓存。</li>
+<li>存放缓存文件的目录默认是系统的临时目录。</li>
+<li>可以自己设置缓存大小，和临时目录（见上边）</li>
+</ul>
+</li>
+<li>上传后，会在临时目录产生一个临时文件。</li>
+<li>如果自己用IO流实现的文件上传，要在流关闭后，清理临时文件。<ul>
+<li><code>FileItem.delete();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><code>Content-disposition</code><ul>
+<li>响应头，服务器告诉客户端以什么格式打开响应体数据</li>
+<li><code>in-line</code><ul>
+<li>默认值</li>
+<li>在当前页面内打开</li>
+</ul>
+</li>
+<li><code>attachment;filename=</code><ul>
+<li>以附件形式打开响应体</li>
+<li>文件下载</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
+<li>设置响应头告诉浏览器是下载文件<ul>
+<li><code>response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+fileName);</code></li>
+</ul>
+</li>
+<li>设置响应头告诉浏览器下载的文件类型<ol>
+<li><code>response.setHeader(&quot;content-type&quot;, &quot;image/jpeg&quot;);</code><ul>
+<li>手动设置文件类型是图片</li>
+</ul>
+</li>
+<li><code>response.setContentType(this.getServletContext().getMimeType(fileName))</code><ul>
+<li>设置类型为根据文件名获取的类型</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>根据请求参数获取文件名<ul>
+<li><code>String filename = request.getParameter(String filename)</code></li>
+</ul>
+</li>
+<li>根据文件名获取文件服务器路径<ul>
+<li><code>String path=this.getServletContext.getRealPath(&quot;/filename&quot;);</code></li>
+</ul>
+</li>
+<li>根据文件路径创建输入流</li>
+<li>设置响应头<ol>
+<li>下载文件</li>
+<li>文件类型</li>
+</ol>
+</li>
+<li>获取响应输出流，不断读写</li>
+</ol>
+<h3 id="下载文件名中文问题"><a href="#下载文件名中文问题" class="headerlink" title="下载文件名中文问题"></a>下载文件名中文问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// agent就是请求头User-Agent的值</span><br><span class="line">public class DownLoadUtils &#123;</span><br><span class="line">    public static String getFileName(String agent, String filename) throws UnsupportedEncodingException &#123;</span><br><span class="line">        if (agent.contains(&quot;MSIE&quot;)) &#123;</span><br><span class="line">            // IE浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">            filename = filename.replace(&quot;+&quot;, &quot; &quot;);</span><br><span class="line">        &#125; else if (agent.contains(&quot;Firefox&quot;)) &#123;</span><br><span class="line">            // 火狐浏览器</span><br><span class="line">            BASE64Encoder base64Encoder = new BASE64Encoder();</span><br><span class="line">            filename = &quot;=?utf-8?B?&quot; + base64Encoder.encode(filename.getBytes(&quot;utf-8&quot;)) + &quot;?=&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 其它浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return filename;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-WEB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/xd-WEB/" itemprop="url">
+                  xd-WEB
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-25 22:57:57" itemprop="dateCreated datePublished" datetime="2018-12-25T22:57:57+08:00">2018-12-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-27 21:17:06" itemprop="dateModified" datetime="2018-12-27T21:17:06+08:00">2018-12-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h1><ul>
+<li>所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统</li>
+<li>Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境被称为Web容器，Java Web程序与Web容器之间存在数据交互。</li>
+</ul>
+<h2 id="独立的Java-Web容器"><a href="#独立的Java-Web容器" class="headerlink" title="独立的Java Web容器"></a>独立的Java Web容器</h2><ul>
+<li>在这种容器里面只能运行Web程序，这种容器一般也叫做Web服务器，如Tomcat</li>
+</ul>
+<h2 id="与其他Java-EE容器混合在一起的Web容器"><a href="#与其他Java-EE容器混合在一起的Web容器" class="headerlink" title="与其他Java EE容器混合在一起的Web容器"></a>与其他Java EE容器混合在一起的Web容器</h2><ul>
+<li>Web容器负责运行Web程序，其他容器负责运行EJB等程序，如WebLogic</li>
+</ul>
+<h2 id="web容器与web应用间的数据交互"><a href="#web容器与web应用间的数据交互" class="headerlink" title="web容器与web应用间的数据交互"></a>web容器与web应用间的数据交互</h2><ul>
+<li>web容器接收客户端请求封装<strong>HttpServletRequest</strong>对象，并传递给web应用</li>
+<li>web应用处理请求</li>
+<li>web容器将结果封装到<strong>HttpServletResponse</strong>对象，响应给客户端</li>
+<li>注<ul>
+<li>这两个对象仅存在于Web容器和Web应用当中，与浏览器没有关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat和servlet的区别"><a href="#tomcat和servlet的区别" class="headerlink" title="tomcat和servlet的区别"></a>tomcat和servlet的区别</h2><ul>
+<li>Tomcat 是Web应用服务器,是一个Servlet/JSP容器</li>
+<li>servlet是一种运行在服务器端的Java应用程序</li>
+</ul>
+<h2 id="web应用服务器"><a href="#web应用服务器" class="headerlink" title="web应用服务器"></a>web应用服务器</h2><ul>
+<li><code>tomcat</code><ul>
+<li>支持servlet/jsp规范</li>
+</ul>
+</li>
+<li><code>weblogic</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>websphere</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>jboss</code></li>
+</ul>
+<h1 id="标准JavaWeb应用目录结构"><a href="#标准JavaWeb应用目录结构" class="headerlink" title="标准JavaWeb应用目录结构"></a>标准JavaWeb应用目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyApp  				//项目名</span><br><span class="line">	html,css,js,img... //资源文件</span><br><span class="line">	WEB-INF</span><br><span class="line">		classes	    //.class文件，配置文件</span><br><span class="line">		lib			// jar包</span><br><span class="line">		web.xml		//web配置文件</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明<ul>
+<li>ide中的src目录<ul>
+<li>编译后会存在web-inf下的classes中。</li>
+</ul>
+</li>
+<li>以下三个目录中的文件会直接存在应用下，与web-inf同级，相当于资源文件<ul>
+<li>eclipse中的WebContent目录</li>
+<li>Myeclipse中的WebRoot目录</li>
+<li>intellij中的web目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>Tomcat启动时，需要查找<code>CATALINA_HOME</code>这个环境变量<ul>
+<li>判断<code>CATALINA_HOME</code>环境变量是否为空<ul>
+<li>为空<ul>
+<li>就将当前目录设为CATALINA_HOME的值，接着判断当前目录下是否存在<code>bin\catalina.bat</code>，如果文件不存在，将当前目录的父目录设为<code>CATALINA_HOM</code>E的值，循环，最后如果找不到<code>bin\catalina.bat</code>就报错。</li>
+</ul>
+</li>
+<li>不为空<ul>
+<li>通过这个环境变量调用<code>bin\catalina.bat</code>命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行<code>startup.bat</code>命令，会自动去执行<code>catalina.bat start</code>命令</li>
+</ul>
+<p>##<code>CATALINA_HOME</code>和<code>CATALINA_BASE</code>区别</p>
+<h3 id="CATALINA-HOME"><a href="#CATALINA-HOME" class="headerlink" title="CATALINA_HOME"></a>CATALINA_HOME</h3><ul>
+<li>是Tomcat的安装目录</li>
+<li>类似于<code>JAVA_HOME</code>环境变量</li>
+<li>如果配置了就能在任意路径执行bin目录下的bat或者exe</li>
+<li>通常不配置</li>
+</ul>
+<h3 id="CATALINA-BASE"><a href="#CATALINA-BASE" class="headerlink" title="CATALINA_BASE"></a>CATALINA_BASE</h3><ul>
+<li>是Tomcat的工作目录</li>
+<li>如果CATALINA_BASE没有值的话，它默认的值就是CATALINA_HOME</li>
+</ul>
+<h3 id="tomcat目录"><a href="#tomcat目录" class="headerlink" title="tomcat目录"></a>tomcat目录</h3><ul>
+<li>其中只有 bin 和 lib 目录被多个tomcat示例公用</li>
+<li>其它目录conf、logs、temp、webapps和work 每个Tomcat实例必须拥有其自己独立的备份</li>
+<li>catalina.home(安装目录)：<ul>
+<li>指向公用信息的位置，就是bin和lib的父目录</li>
+</ul>
+</li>
+<li>catalina.base(工作目录)：<ul>
+<li>指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。</li>
+</ul>
+</li>
+<li>仅运行一个Tomcat实例时，这两个属性指向的位置是相同的</li>
+</ul>
+<h3 id="网上自建startup-bat的内容"><a href="#网上自建startup-bat的内容" class="headerlink" title="网上自建startup.bat的内容"></a>网上自建<code>startup.bat</code>的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set &quot;CATALINA_BASE=%cd%&quot;  </span><br><span class="line">set &quot;CATALINA_HOME=D:/save/apache-tomcat-8.0.48&quot;  </span><br><span class="line">set &quot;EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat&quot;  </span><br><span class="line">call &quot;%EXECUTABLE%&quot; start</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%cd%</code><ul>
+<li>代表当前目录（不太确定）</li>
+</ul>
+</li>
+<li><code>CATALINA_BASE</code>就代表一个tomcat的运行实例<ul>
+<li>包含<code>conf</code>,logs,temp,webapps,work`的目录。</li>
+</ul>
+</li>
+<li><code>CATALINA_HOME</code>代表了一个tomcat，需要tomcat的<code>bin,lib...</code></li>
+<li>启动tomcat后，<code>CATALINA_BASE</code>指向哪个tomcat实例，就运行哪个。<ul>
+<li>比如我有一个tomcat8080，然后再另一个文件夹复制了一个<code>conf</code>并设置端口号为7070</li>
+<li><code>CATALINA_HOME</code>为tomcat8080安装目录，设置<code>CATALINA_BASE</code>为7070对应的目录，那么能访问的是7070而非8080,</li>
+<li><strong>虚拟目录</strong>貌似就是这个原理。</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat部署应用"><a href="#tomcat部署应用" class="headerlink" title="tomcat部署应用"></a>tomcat部署应用</h2><h3 id="部署形式"><a href="#部署形式" class="headerlink" title="部署形式"></a>部署形式</h3><ol>
+<li>项目文件夹</li>
+<li>war包<ul>
+<li>tomcat会自动判断war包并解压。</li>
+</ul>
+</li>
+</ol>
+<h3 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h3><h4 id="一-将项目复制到tomcat-webapps目录下。"><a href="#一-将项目复制到tomcat-webapps目录下。" class="headerlink" title="一 将项目复制到tomcat/webapps目录下。"></a>一 将项目复制到<code>tomcat/webapps</code>目录下。</h4><ul>
+<li>Myeclipse就是这种方式。</li>
+</ul>
+<h4 id="二-虚拟目录"><a href="#二-虚拟目录" class="headerlink" title="二 虚拟目录"></a>二 虚拟目录</h4><ul>
+<li>就是把项目放到其它位置通过一些配置也能一样访问。(安)</li>
+</ul>
+<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><ul>
+<li><p><code>tomcat/conf/server.xml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host&gt;</span><br><span class="line">	&lt;Context docBase=&quot;应用的真实路径&quot; path=&quot;网络访问的虚拟目录名(自定义)&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Eclipse使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不推荐，修改需要重启tomcat</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><ul>
+<li><p><code>tomcat/conf/catalina/localhost</code></p>
+<ul>
+<li>新建<code>虚拟目录名(自定义).xml</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;应用的真实路径&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Intellij使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>Intellij/system/tomcat/</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>支持热部署，修改不用重启tomcat</li>
+<li>如果新建的<code>虚拟目录名</code>为<code>ROOT</code>，则访问时，可以不写<ul>
+<li>Intellij就是这样做的</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat的访问"><a href="#tomcat的访问" class="headerlink" title="tomcat的访问"></a>tomcat的访问</h2><ul>
+<li><code>http://ip:端口/应用/资源</code></li>
+</ul>
+<h3 id="默认端口"><a href="#默认端口" class="headerlink" title="默认端口"></a>默认端口</h3><ul>
+<li>http协议端口为80</li>
+<li>把tomcat端口设为80就不用写端口了</li>
+</ul>
+<h3 id="默认应用"><a href="#默认应用" class="headerlink" title="默认应用"></a>默认应用</h3><ul>
+<li>tomcat默认访问ROOT应用<br>  *（见上边虚拟目录）</li>
+</ul>
+<h3 id="默认主页"><a href="#默认主页" class="headerlink" title="默认主页"></a>默认主页</h3><ul>
+<li><code>web.xml</code>中配置</li>
+</ul>
+<h2 id="idea中tomcat的部署"><a href="#idea中tomcat的部署" class="headerlink" title="idea中tomcat的部署"></a>idea中tomcat的部署</h2><h3 id="war"><a href="#war" class="headerlink" title="war"></a><code>war</code></h3><ul>
+<li>将web工程以war包的形式上传到服务器</li>
+<li>可以称之为是发布模式，看名字也知道，这是先打包war包，再发布</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\apache-tomcat-8.0.48\webapps\ROOT\</code></li>
+<li>结果是tomcat的webapps的Root目录</li>
+<li>会把Root目录项目替换成此项目<ul>
+<li>此种情况是配置tomcat时application context选择了<code>/</code></li>
+<li>如果配置成别的如<code>/aaa</code><ul>
+<li>则不会替换Root，而是在webapps下创建aaa</li>
 </ul>
 </li>
 </ul>
@@ -1947,13 +1790,13 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>创建代理<ul>
-<li><code>en.creat();</code></li>
-<li>返回代理对象的名称<ul>
-<li>目标类$$EnhancerByCGLIB$$数字</li>
-</ul>
-</li>
+<h3 id="war-exploed"><a href="#war-exploed" class="headerlink" title="war exploed"></a><code>war exploed</code></h3><ul>
+<li>将web工程以当前文件夹的位置关系上传到服务器</li>
+<li>展开部署(相当于将资源文件进行展开后进行部署)</li>
+<li>直接把文件夹，jsp页面，classes等等移到Tomcat部署文件夹里面，进行加载部署。因此这种方式支持热部署，一般在开发的时候也是用这种方式。</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\IntellijWP\project\HelloMaven\target\HelloMaven-1.0-SNAPSHOT\</code></li>
+<li>可以看到是项目target下的目录</li>
 </ul>
 </li>
 </ul>
@@ -2014,7 +1857,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-日志/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-BootStrap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -2033,8 +1876,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/23/xd-日志/" itemprop="url">
-                  xd-日志
+                <a class="post-title-link" href="/2018/12/25/xd-BootStrap/" itemprop="url">
+                  xd-BootStrap
                 </a>
               
             
@@ -2060,7 +1903,536 @@
                 
               
 
-              <time title="创建时间：2018-11-23 17:28:05" itemprop="dateCreated datePublished" datetime="2018-11-23T17:28:05+08:00">2018-11-23</time>
+              <time title="创建时间：2018-12-25 13:38:34 / 修改时间：13:38:35" itemprop="dateCreated datePublished" datetime="2018-12-25T13:38:34+08:00">2018-12-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/xd-事务和连接池/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/20/xd-事务和连接池/" itemprop="url">
+                  xd-事务和连接池
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-20 13:06:35" itemprop="dateCreated datePublished" datetime="2018-12-20T13:06:35+08:00">2018-12-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 14:45:19" itemprop="dateModified" datetime="2018-12-24T14:45:19+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/DB/" itemprop="url" rel="index"><span itemprop="name">DB</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ACID特性"><a href="#ACID特性" class="headerlink" title="ACID特性"></a>ACID特性</h1><h2 id="原子性（atomicity）"><a href="#原子性（atomicity）" class="headerlink" title="原子性（atomicity）"></a>原子性（atomicity）</h2><ul>
+<li>一个事务是一个不可分割的工作单位，事务中包括的诸操作要么都做，要么都不做。</li>
+</ul>
+<h2 id="一致性（consistency）"><a href="#一致性（consistency）" class="headerlink" title="一致性（consistency）"></a>一致性（consistency）</h2><ul>
+<li>事务必须是使数据库从一个一致性状态变到另一个一致性状态。即事务操作的前后, 数据表中的数据没有变化</li>
+<li>一致性与原子性是密切相关的。</li>
+</ul>
+<h2 id="隔离性（isolation）"><a href="#隔离性（isolation）" class="headerlink" title="隔离性（isolation）"></a>隔离性（isolation）</h2><ul>
+<li>一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰。</li>
+</ul>
+<h2 id="持久性（durability）"><a href="#持久性（durability）" class="headerlink" title="持久性（durability）"></a>持久性（durability）</h2><ul>
+<li>持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响。</li>
+</ul>
+<h1 id="事务原理"><a href="#事务原理" class="headerlink" title="事务原理"></a>事务原理</h1><ul>
+<li>事务开启之后, 所有的操作都会临时保存到事务日志, 事务日志只有在得到commit命令才会同步到数据表,其他任何情况都会清空(rollback, 断电, 断开连接)</li>
+</ul>
+<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><ul>
+<li>在一个事务处理过程里读取了另一个事务未提交的数据。</li>
+<li><strong>例</strong><ul>
+<li>我开启查看工资的事务,老板给我发工资，本来是1万，老板不小心多打了个0，发了10万，但老板没提交事务，我看到发了10万，高兴坏了，然后老板发现后回滚了。</li>
+<li>最后实际还是发了1万工资，可我确看到10万，这就是脏读。</li>
+</ul>
+</li>
+</ul>
+<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><ul>
+<li>在一个事务内读取表中的某一行数据，多次读取结果不同。一个事务读取到了另一个事务提交后的数据。(update)</li>
+<li><strong>例</strong><ul>
+<li>我开启事务查看卡里有多少钱，发现还有1万，还个事务没提交，这时我媳妇用我的卡转了1万并提交了。然后我想确认一下，又查了一遍，发现没钱了，我就懵逼了。</li>
+<li>在一个事务中，有另一个事务进行了update操作并提交，导致两次读取数据不一致，就是不可重复读.</li>
+</ul>
+</li>
+</ul>
+<h3 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读(幻读)"></a>虚读(幻读)</h3><ul>
+<li>是指在一个事务内读取到了别的事务插入的数据，导致前后读取不一致。(insert)</li>
+<li><strong>例</strong><ul>
+<li>我开启事务查询班里多少人，发现有24个人，还没提交，然后老师又插入了一个人，我确认一下，又查了一遍，发现25个人了，我又懵逼了。</li>
+<li>在一个事务中，有另一个事务进行了insert操作并提交，导致两次读取数据不一致，就是虚读(幻读).</li>
+</ul>
+</li>
+</ul>
+<h3 id="总"><a href="#总" class="headerlink" title="总"></a>总</h3><ul>
+<li>读了未提交的事务的数据即<strong>脏读</strong></li>
+<li>读了已提交的事务的数据(update)即<strong>不可重复读</strong></li>
+<li>读了已提交的事务的数据(insert)即<strong>虚读(幻读)</strong></li>
+</ul>
+<h2 id="隔离级别解决问题"><a href="#隔离级别解决问题" class="headerlink" title="隔离级别解决问题"></a>隔离级别解决问题</h2><ul>
+<li>设置隔离级别要在开启事务之前。</li>
+</ul>
+<h3 id="1-READ-UNCOMMITTED"><a href="#1-READ-UNCOMMITTED" class="headerlink" title="1 READ UNCOMMITTED"></a><code>1 READ UNCOMMITTED</code></h3><ul>
+<li>读未提交<ul>
+<li>就是一个事务可以读取另一个未提交事务的数据</li>
+</ul>
+</li>
+<li>脏读，不可重复读，虚读（幻读）都可能发生</li>
+</ul>
+<h3 id="2-READ-COMMITTED"><a href="#2-READ-COMMITTED" class="headerlink" title="2 READ COMMITTED"></a><code>2 READ COMMITTED</code></h3><ul>
+<li>读已提交<ul>
+<li>就是一个事务要等另一个事务提交后才能读取数据</li>
+</ul>
+</li>
+<li>可避免脏读的发生</li>
+<li>不可重复度，虚读(幻读)有可能发生.</li>
+<li>Sql Server,oracle默认</li>
+</ul>
+<h3 id="4-REPEATABLE-READ"><a href="#4-REPEATABLE-READ" class="headerlink" title="4 REPEATABLE READ"></a><code>4 REPEATABLE READ</code></h3><ul>
+<li>可重复读<ul>
+<li>开始读取数据(事务开启)时，不允许别的事务进行update操作,但可以进行inser操作。</li>
+</ul>
+</li>
+<li>可避免脏读、不可重复读的发生</li>
+<li>虚读(幻读)有可能发生</li>
+<li>mysql默认</li>
+</ul>
+<h3 id="8-SERIALIZABLE"><a href="#8-SERIALIZABLE" class="headerlink" title="8 SERIALIZABLE"></a><code>8 SERIALIZABLE</code></h3><ul>
+<li>串行化</li>
+<li>最高级别，都可以避免。</li>
+<li>级别越高，性能越低，数据越安全</li>
+</ul>
+<h1 id="jdbc的事务"><a href="#jdbc的事务" class="headerlink" title="jdbc的事务"></a>jdbc的事务</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
+<li>自动提交事务（默认）<ul>
+<li>每条单独的语句都是一个事务。每个语句后都隐含一个commit。 </li>
+</ul>
+</li>
+<li><code>Connection.setAutoCommit(false)</code><ul>
+<li>将自动提交设置为false即视为开启事务。</li>
+</ul>
+</li>
+<li><code>Connection.commit()</code></li>
+<li><code>Connection.rollback()</code></li>
+</ul>
+<h2 id="隔离级别-1"><a href="#隔离级别-1" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
+<li><code>Connection.setTransactionIsolation(int level)</code><ul>
+<li>设置隔离级别(必须在开启事务之前)<ul>
+<li>level 常量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="mysql的事务"><a href="#mysql的事务" class="headerlink" title="mysql的事务"></a>mysql的事务</h1><h2 id="事务-1"><a href="#事务-1" class="headerlink" title="事务"></a>事务</h2><ul>
+<li>在mysql命令行下，默认事务都是自动提交的<ul>
+<li><code>set autocommit=0/off</code><ul>
+<li>关闭自动提交</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>begin</code> | <code>start transction</code> | <code>set autocommit=0/off</code><ul>
+<li>开启事务</li>
+</ul>
+</li>
+<li><code>commit</code></li>
+<li><code>rollback</code></li>
+</ul>
+<h2 id="隔离级别-2"><a href="#隔离级别-2" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
+<li><code>SELECT @@TX_ISOLATION;</code><ul>
+<li>查看隔离级别</li>
+</ul>
+</li>
+<li><code>SET TRANSACTION ISOLATION LEVEL 四个级别之一</code><ul>
+<li>设置隔离级别</li>
+<li>必须在开启事务之前</li>
+</ul>
+</li>
+</ul>
+<h1 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h1><h2 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h2><ul>
+<li>数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏。这项技术能明显提高对数据库操作的性能。</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>解决建立数据库连接耗费资源和时间很多的问题，提高性能</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>连接池基本的思想是在系统初始化的时候，将数据库连接作为对象存储在内存中，当用户需要访问数据库时，并非建立一个新的连接，而是从连接池中取出一个已建立的空闲连接对象。使用完毕后，用户也并非将连接关闭，而是将连接放回连接池中，以供下一个请求访问使用。而连接的建立、断开都由连接池自身来管理。同时，还可以通过设置连接池的参数来控制连接池中的初始连接数、连接的上下限数以及每个连接的最大使用次数、最大空闲时间等等。也可以通过其自身的管理机制来监视数据库连接的数量、使用情况等。</li>
+</ul>
+<h2 id="javax-sql-DataSorce"><a href="#javax-sql-DataSorce" class="headerlink" title="javax.sql.DataSorce"></a><code>javax.sql.DataSorce</code></h2><ul>
+<li>sun官方标准的连接池接口</li>
+<li>自定义连接池实现此接口，数据库厂商自己实现。</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>Connection getConnection()</code></li>
+<li><code>Connection getConnection(String username, String password)</code></li>
+</ul>
+<h2 id="常用连接池"><a href="#常用连接池" class="headerlink" title="常用连接池"></a>常用连接池</h2><h3 id="DBCP"><a href="#DBCP" class="headerlink" title="DBCP"></a>DBCP</h3><ul>
+<li><code>Database Connection Pool</code></li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li>导包</li>
+<li>配置文件</li>
+<li>获取数据源<ul>
+<li><code>BasicDataSourceFactory</code><ul>
+<li><code>static DataSource createDataSource(properties prop)</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Properties prop = new Properties();</span><br><span class="line">prop.load(DBCPUtils.class.getClassLoader().getResourceAsStream(&quot;dbcp.properties&quot;));</span><br><span class="line">DataSource ds = BasicDataSourceFactory.createDataSource(prop);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="C3P0"><a href="#C3P0" class="headerlink" title="C3P0"></a>C3P0</h3><h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><ul>
+<li>导包</li>
+<li>配置文件<ul>
+<li><code>c3p0-config.xml</code></li>
+<li>名称必须为c3p0-config.xml，否则找不到</li>
+</ul>
+</li>
+<li>获取数据源<ul>
+<li><code>ComboPooledDataSource</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ComboPooledDataSource ds=new ComboPooledDataSource();</span><br><span class="line">ds.setDriver()</span><br><span class="line">ds.setJdbcUrl()</span><br><span class="line">ds.setUser()</span><br><span class="line">ds.setPassword;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h3><ul>
+<li><code>com.alibaba.druid.pool.DruidDataSource</code></li>
+<li>阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池）</li>
+</ul>
+<h4 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h4><ul>
+<li>导包</li>
+<li>配置文件<ul>
+<li>任意位置，任意名称<code>.properties</code></li>
+</ul>
+</li>
+<li>获取数据源<ul>
+<li><code>DruidDataSourceFactory</code><ul>
+<li><code>DataSource createDataSource(Properties prop)</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="用JavaWeb服务器管理数据源"><a href="#用JavaWeb服务器管理数据源" class="headerlink" title="用JavaWeb服务器管理数据源"></a>用JavaWeb服务器管理数据源</h2><h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ol>
+<li>拷贝数据库连接的jar(mysql-Connector)到tomcat的lib目录下</li>
+<li><p>配置数据源XML文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context&gt;</span><br><span class="line">	&lt;Resource name=&quot;jdbc/TestDB&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot;</span><br><span class="line">           maxTotal=&quot;100&quot; maxIdle=&quot;30&quot; maxWaitMillis=&quot;10000&quot;</span><br><span class="line">           username=&quot;root&quot; password=&quot;root&quot; driverClassName=&quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">           url=&quot;jdbc:mysql://localhost:3306/javatest&quot;/&gt;</span><br><span class="line">&lt;/Context&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果是在当前应用的META-INF中创建<code>context.xml</code>, 编写配置信息，那么只有当前应用可以使用。</li>
+<li>如果把配置信息写在tomcat下的conf目录的<code>context.xml</code>中，那么所有应用都能使用此数据源。<ul>
+<li>可以多个Resource如mysql，Oracle，sqlserver…</li>
+<li>多个就构成了<strong>JNDI</strong>(安)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="使用-3"><a href="#使用-3" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Context initContext = new InitialContext();</span><br><span class="line"></span><br><span class="line">//Context envContext  = (Context)initContext.lookup(&quot;java:/comp/env&quot;);</span><br><span class="line">//DataSource ds = (DataSource)envContext.lookup(&quot;jdbc/TestDB&quot;);</span><br><span class="line"></span><br><span class="line">//上面两句可以合写成下面这一句</span><br><span class="line">DataSource ds = (DataSource)=initContext.lookup(&quot;java:/comp/env/jdbc/TestDB&quot;);</span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>java:/comp/env</code><ul>
+<li>是固定写法</li>
+</ul>
+</li>
+<li><code>jdbc/TestDB</code><ul>
+<li>是Resource的name，自定义。</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-MyBatis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-MyBatis/" itemprop="url">
+                  xd-MyBatis
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:40:45" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:45+08:00">2018-12-11</time>
             
 
             
@@ -2153,7 +2525,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-注解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-SpringMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -2172,8 +2544,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/23/xd-注解/" itemprop="url">
-                  xd-注解
+                <a class="post-title-link" href="/2018/12/11/xd-SpringMVC/" itemprop="url">
+                  xd-SpringMVC
                 </a>
               
             
@@ -2199,7 +2571,285 @@
                 
               
 
-              <time title="创建时间：2018-11-23 17:27:06" itemprop="dateCreated datePublished" datetime="2018-11-23T17:27:06+08:00">2018-11-23</time>
+              <time title="创建时间：2018-12-11 00:40:23" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:23+08:00">2018-12-11</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-Spring/" itemprop="url">
+                  xd-Spring
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:40:07" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:07+08:00">2018-12-11</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-Hibernate/" itemprop="url">
+                  xd-Hibernate
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:39:59" itemprop="dateCreated datePublished" datetime="2018-12-11T00:39:59+08:00">2018-12-11</time>
             
 
             
@@ -2281,7 +2931,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2328,7 +2978,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2345,7 +2995,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
