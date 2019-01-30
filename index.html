@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-会话/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/xd-Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -322,8 +322,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/28/xd-会话/" itemprop="url">
-                  xd-会话
+                <a class="post-title-link" href="/2019/01/30/xd-Git/" itemprop="url">
+                  xd-Git
                 </a>
               
             
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="创建时间：2018-12-28 01:30:11 / 修改时间：16:10:15" itemprop="dateCreated datePublished" datetime="2018-12-28T01:30:11+08:00">2018-12-28</time>
+              <time title="创建时间：2019-01-30 15:57:51 / 修改时间：22:12:59" itemprop="dateCreated datePublished" datetime="2019-01-30T15:57:51+08:00">2019-01-30</time>
             
 
             
@@ -371,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
 
                 
                 
@@ -407,626 +407,435 @@
       
         
           
-            <h1 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h1><h2 id="一次会话"><a href="#一次会话" class="headerlink" title="一次会话"></a>一次会话</h2><ul>
-<li>浏览器第一次给服务器发送请求，会话建立，直到有一方断开为止。</li>
-<li>包含多次请求和响应</li>
+            <h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><ul>
+<li>分布式版本管理</li>
 </ul>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>在一次会话范围共享数据</li>
+<h1 id="git配置的增删改查"><a href="#git配置的增删改查" class="headerlink" title="git配置的增删改查"></a>git配置的增删改查</h1><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
+<li><code>git config --list</code><ul>
+<li><code>git config -l</code>简写</li>
 </ul>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
-<li><code>Cookie</code></li>
-<li><code>Session</code> </li>
-</ul>
-<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>客户端技术<ul>
-<li>Cookie是由客户端保存和携带的。</li>
-<li>只能存储字符串</li>
-</ul>
-</li>
-</ul>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>基于响应头<code>set-cookie</code>和请求头<code>cookie</code>实现</li>
-<li>程序把每个用户的数据以cookie形式响应给用户各自的浏览器，存在本地。当用户再次请求访问服务器的web资源时，就会带着各自的(cookie)去。如此，web资源处理的就是用户各自的数据。</li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
-<li>创建Cookie(在服务端)<ul>
-<li><code>Cookie cookie=new Cookie(String name,String value,[String path])</code><ul>
-<li><code>path</code><ul>
-<li>默认是创建cookie的应用的虚拟目录。</li>
-<li>可以指定<ol>
-<li>构造时指定path</li>
-<li><code>cookie.setPath()</code></li>
-</ol>
-</li>
-<li>只有以cookie的path开头的访问路径才会携带cookie。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>响应Cookie到客户端<ul>
-<li><code>response.addCookie(Cookie c)</code><ul>
-<li>响应头<code>set-Cookie</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>再次请求时获取Cookie<ul>
-<li><code>Cookie[] cs=request.getCookies()</code><ul>
-<li>获取cookie列表。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><h3 id="一次可不可以发送多个Cookie"><a href="#一次可不可以发送多个Cookie" class="headerlink" title="一次可不可以发送多个Cookie"></a>一次可不可以发送多个Cookie</h3><ul>
-<li>可以</li>
-<li>创建多个Cookie对象，使用response调用多次<code>addCookie()</code>即可</li>
-</ul>
-<h3 id="Cookie的存活时间"><a href="#Cookie的存活时间" class="headerlink" title="Cookie的存活时间"></a>Cookie的存活时间</h3><ul>
-<li><code>void setMaxAge(int time)</code><ul>
-<li><code>time</code><ul>
-<li>负数<ul>
-<li>默认</li>
-<li>默认cookie是会话级别的，即浏览器一关闭就会消失</li>
-</ul>
-</li>
-<li>正数<ul>
-<li>持久化存储，存活时间</li>
-</ul>
-</li>
-<li>0<ul>
-<li>删除Cookie</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Cookie能否存中文"><a href="#Cookie能否存中文" class="headerlink" title="Cookie能否存中文"></a>Cookie能否存中文</h3><ul>
-<li>tomcat8之前<ul>
-<li>不可以</li>
-<li>需要将中文转码，一般采用URL编码(%16进制)</li>
-</ul>
-</li>
-<li>tomcat8之后，Cookie支持中文<ul>
-<li>但是不支持特殊字符，建议使用URL编解码<ul>
-<li>URL编码后会变成<code>%E7</code>这种形式的</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h4><ul>
-<li><code>URLEncoder</code><ul>
-<li><code>encode(String s, String character)</code><ul>
-<li>编码</li>
-</ul>
-</li>
-<li><code>decode(String s, String character)</code><ul>
-<li>解码</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Cookie共享问题"><a href="#Cookie共享问题" class="headerlink" title="Cookie共享问题"></a>Cookie共享问题</h3><ol>
-<li>同一个服务器下的多个we项目<ul>
-<li>因为默认path是创建cookie的项目的虚拟目录，其它web项目是访问不到的。</li>
-<li>即默认不能共享</li>
-<li>共享<ul>
-<li><code>setPath(&quot;/&quot;)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>不同服务器间的共享<ul>
-<li><code>setDomain(String path)</code><ul>
-<li>如果设置一级域名相同，那么多个服务区间的Cookie可以共享</li>
-<li><code>setDomain(&quot;.baidu.com&quot;)</code><ul>
-<li>则<code>tieba.baidu.com</code>和<code>news.baidu.com</code>…之间就可以共享</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>服务端技术，session依赖于cookie<ul>
-<li>可以存储任意对象</li>
-</ul>
-</li>
-<li>在一次会话的多次请求间共享数据，将数据保存在服务端的对象种</li>
-</ul>
-<h2 id="获取Session"><a href="#获取Session" class="headerlink" title="获取Session"></a>获取Session</h2><ul>
-<li><code>HttpSession session = request.getSession()</code><ul>
-<li>若session不存在则创建，存在则获取</li>
-</ul>
-</li>
-</ul>
-<h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>第一次访问会创建session并分配<code>JSessionID</code></li>
-<li>响应到客户端,并以cookie形式存储</li>
-<li>以后访问会带着这个cookie<ul>
-<li>若有此cookie则可以获取session</li>
-<li>若无此cookie则视为第一次访问，循环…。</li>
-</ul>
-</li>
-</ul>
-<h2 id="HttpSession"><a href="#HttpSession" class="headerlink" title="HttpSession"></a>HttpSession</h2><ul>
-<li><code>String getId()</code><ul>
-<li>获取session的JSessionID</li>
-</ul>
-</li>
-<li><code>setMaxInactiveInterval(int interval)</code><ul>
-<li>设置session存活时间，默认30分</li>
-</ul>
-</li>
-<li><code>invalidate()</code><ul>
-<li>销毁session </li>
-</ul>
-</li>
-</ul>
-<h2 id="细节-1"><a href="#细节-1" class="headerlink" title="细节"></a>细节</h2><h3 id="客户端关闭，服务器不关闭，两次获取的session是否是同一个"><a href="#客户端关闭，服务器不关闭，两次获取的session是否是同一个" class="headerlink" title="客户端关闭，服务器不关闭，两次获取的session是否是同一个"></a>客户端关闭，服务器不关闭，两次获取的session是否是同一个</h3><ul>
-<li>默认情况下，不是<ul>
-<li>因为虽然session默认存活30分钟，但是session是以cookie的形式保存在客户端的，而cookie默认客户端已关闭就会消失。</li>
-</ul>
-</li>
-<li>若想获取同一个<ul>
-<li>可以创建Cookie，键为<code>JSessionID</code>，并设置存活时间</li>
-</ul>
-</li>
-</ul>
-<h3 id="客户端不关闭，服务器关闭，两次获取的session是否是同一个"><a href="#客户端不关闭，服务器关闭，两次获取的session是否是同一个" class="headerlink" title="客户端不关闭，服务器关闭，两次获取的session是否是同一个"></a>客户端不关闭，服务器关闭，两次获取的session是否是同一个</h3><ul>
-<li>不是<ul>
-<li>因为对象的地址值是有随机性的，服务器重启会重新创建。两次创建很难一样。</li>
-</ul>
-</li>
-<li>对象虽然不是同一个，但需要保证数据不丢失<ul>
-<li>使用<strong>Session的钝化和活化</strong></li>
-<li>在服务器关闭时将session钝化，服务器再次开启时将session活化</li>
-<li>注<ul>
-<li>dos命令下，正常关闭tomcat，tomcat会自动钝化session，在<code>work</code>目录下生成<code>Session.ser</code>文件，再次启动，会活化。</li>
-<li>idea中，idea使用虚拟目录方式部署应用，在idea中关闭tomcat时，也会钝化，但是再次启动时，idea会先删除<code>work</code>目录，钝化的文件被删除了，也就无法活化了。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Session的销毁"><a href="#Session的销毁" class="headerlink" title="Session的销毁"></a>Session的销毁</h3><ol>
-<li>服务器关闭</li>
-<li>调用<code>invalidate()</code></li>
-<li>tomcat的<code>/conf/web.xml</code>中的默认配置<code>&lt;session-config&gt;</code><ul>
-<li>默认是30分钟，可以自己修改</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-工具/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/28/xd-工具/" itemprop="url">
-                  xd-工具
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-28 00:44:53 / 修改时间：00:51:00" itemprop="dateCreated datePublished" datetime="2018-12-28T00:44:53+08:00">2018-12-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="StringUtils"><a href="#StringUtils" class="headerlink" title="StringUtils"></a>StringUtils</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>在<code>commons-lang3.jar</code>中</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><code>boolean isEmpty(String s)</code><ul>
-<li>判断字符串是否为空，不会去除字符串空格。</li>
-<li><code>String s=null</code><ul>
-<li>true</li>
-</ul>
-</li>
-<li><code>String s=&quot;&quot;</code><ul>
-<li>true</li>
-</ul>
-</li>
-<li><code>String s=&quot; &quot;</code> <ul>
-<li>false</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>boolean isBlank(String s)</code><ul>
-<li>判断字符串是否为空，会去除字符串空格。    </li>
-<li><code>String s=null</code><ul>
-<li>true</li>
-</ul>
-</li>
-<li><code>String s=&quot;&quot;</code><ul>
-<li>true</li>
-</ul>
-</li>
-<li><code>String s=&quot; &quot;</code> <ul>
-<li>true</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="DBUtils"><a href="#DBUtils" class="headerlink" title="DBUtils"></a>DBUtils</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>java编程中的数据库操作实用工具，小巧简单实用</li>
-<li>封装了对JDBC的操作，简化了JDBC操作<ul>
-<li>对于数据表的读操作，它可以把结果转换成List，Array，Set等等</li>
-<li>对于数据表的写操作，只需写sql语句</li>
-<li>可以使用数据源，使用JNDI，数据库连接池等技术来优化性能–重用已经构建好的数据库连接对象</li>
-</ul>
-</li>
-<li>一个工具类,定义了关闭资源与事务处理的方法</li>
-</ul>
-<h2 id="QueryRunner"><a href="#QueryRunner" class="headerlink" title="QueryRunner"></a>QueryRunner</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
-<li>提供对sql语句操作的API.</li>
-<li>构造和方法中<ul>
-<li>有Connection参数可以自己控制事务</li>
-<li>没有Connection参数自动事务</li>
-</ul>
-</li>
-</ul>
-<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><ul>
-<li><code>QueryRunner([boolean pmdKnownBroken])</code></li>
-<li><code>QueryRunner(DataSource ds,[boolean pmdKnownBroken])</code><ul>
-<li>true<ul>
-<li>Oracle使用</li>
-</ul>
-</li>
-<li>false或空参<ul>
-<li>mysql    </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
-<li><code>&lt;T&gt; T query(String sql,ResultSetHandler&lt;T&gt; rsh,[Object... params])</code><ul>
-<li>查询select</li>
-</ul>
-</li>
-<li><code>int update([Connection conn].String sql,[Object... params])</code><ul>
-<li>增删改(insert delete update)</li>
-<li>int 影响行数</li>
-</ul>
-</li>
-<li><code>int[] batch([Connection conn],String sql,Object[][] params)</code><ul>
-<li>批处理</li>
-</ul>
-</li>
-</ul>
-<h4 id="ResultSetHandler"><a href="#ResultSetHandler" class="headerlink" title="ResultSetHandler"></a>ResultSetHandler</h4><h5 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h5><ul>
-<li>用于定义select操作后，怎样封装结果集</li>
-</ul>
-<h5 id="结果处理器"><a href="#结果处理器" class="headerlink" title="结果处理器"></a>结果处理器</h5><ul>
-<li><code>ArrayHandler</code><ul>
-<li>适合取1条记录。把该条记录的每列值封装到一个数组中Object[]</li>
-<li><code>Object[]</code></li>
-</ul>
 </li>
-<li><code>ArrayListHandler</code><ul>
-<li>适合取多条记录。把每条记录的每列值封装到一个数组中Object[]，把数组封装到一个List中</li>
-<li><code>List&lt;Object[]&gt;</code></li>
 </ul>
-</li>
-<li><code>ColumnListHandler</code><ul>
-<li>取某一列的数据(sql语句中的某一列)。封装到List中</li>
-<li><code>List&lt;Object&gt;</code></li>
-</ul>
-</li>
-<li><code>KeyedHandler</code><ul>
-<li>取多条记录，每一条记录封装到一个Map中，再把这个Map封装到另外一个Map中，key为指定的字段值。</li>
-<li><code>Map&lt;自定义key,Map&lt;列名,列值&gt;&gt;</code></li>
-</ul>
-</li>
-<li><code>MapHandler</code><ul>
-<li>适合取1条记录。把当前记录的列名和列值放到一个Map中</li>
-<li><code>Map&lt;列名,列值&gt;</code></li>
-</ul>
-</li>
-<li><code>MapListHandler</code><ul>
-<li>适合取多条记录。把每条记录封装到一个Map中，再把Map封装到List中</li>
-<li><code>List&lt;Map&lt;列名,列值&gt;&gt;</code></li>
-</ul>
-</li>
-<li><code>ScalarHandler</code><ul>
-<li>适合取单行单列数据</li>
-<li>如取<code>count(*)</code></li>
-<li><code>Object</code></li>
-</ul>
-</li>
-<li><code>BeanHandler</code><ul>
-<li>取一个对象</li>
-<li><code>Object</code></li>
-</ul>
-</li>
-<li><code>BeanListHandler</code><ul>
-<li><code>取对象的集合</code></li>
-<li><code>List&lt;Object&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h1 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a>JDBCTemplate</h1><h2 id="概述-4"><a href="#概述-4" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>spring 提供用于操作JDBC工具类，类似DBUtils</li>
-<li>依赖 连接池DataSource （数据源）</li>
-</ul>
-<h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><code>update(String sql, Object... obj)</code><ul>
-<li>执行DML语句 （增删改）</li>
-</ul>
-</li>
-<li><code>queryForMap(String sql, Object... obj)</code><ul>
-<li>查询的结果集封装为map集合</li>
-<li>此方法查询结果集长度只能是1<ul>
-<li>列名为key，列值为value</li>
-</ul>
-</li>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><ul>
+<li><code>git config --global 键 &#39;值&#39;</code></li>
 </ul>
-</li>
-<li><code>queryForList(String sql, Object... obj)</code><ul>
-<li>将每一条记录封装为map集合，然后将map集合封装到list集合中</li>
-<li><code>List&lt;Map&lt;String, Object&gt;&gt;</code></li>
-</ul>
-</li>
-<li><code>query(String sql, RowMapper&lt;Object obj&gt; rowMapper, Object... obj)</code><ul>
-<li>查询结果封装为javabean对象，然后封装到list集合</li>
-<li><code>List&lt;Object obj&gt;</code></li>
-</ul>
-</li>
-<li><code>queryForObject(String sql, Class&lt;? extends Object&gt; type, Object... obj)</code><ul>
-<li>查询结果封装为对象（通常是基本数据类型包装类）</li>
-<li>一般用于聚合函数的查询</li>
-</ul>
-</li>
-</ul>
-<h3 id="RowMapper"><a href="#RowMapper" class="headerlink" title="RowMapper"></a>RowMapper</h3><ul>
-<li>类似于DBUtils的ResultSetHandler</li>
-<li>可以自己实现，也可使用提供的</li>
-</ul>
-<h4 id="BeanPropertyRowMapper"><a href="#BeanPropertyRowMapper" class="headerlink" title="BeanPropertyRowMapper"></a>BeanPropertyRowMapper</h4><ul>
-<li>将结果集封装为对象，然后存在list中</li>
-</ul>
-<h1 id="内省-Introspector"><a href="#内省-Introspector" class="headerlink" title="内省(Introspector)"></a>内省(Introspector)</h1><h2 id="Introspector"><a href="#Introspector" class="headerlink" title="Introspector"></a>Introspector</h2><ul>
-<li>Introspector根据<code>JavaBean.class</code>构建一个BeanInfo对象。</li>
-<li>BeanInfo封装了一个类的所有属性</li>
-<li>由BeanInfo获取属性描述器<code>PropertyDescriptor</code><ul>
-<li><code>Method getReadMethod()</code><ul>
-<li>对应get</li>
-</ul>
-</li>
-<li><code>Method getWriteMethod()</code><ul>
-<li>对应set</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>开发框架时，经常使用java对象的属性来封装程序的数据，每次都使用反射来完成此类操作过于麻烦。</li>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
+<li><code>git config   --global --unset  键</code></li>
 </ul>
-<h2 id="java-beans"><a href="#java-beans" class="headerlink" title="java.beans"></a>java.beans</h2><ul>
-<li>sun公司开发的一套api专门用于操作java对象的属性。</li>
-<li>上述操作太过繁琐，Apache组织开发了一套api以简化编写</li>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
+<li><code>git config --global --replace-all 键 &#39;值&#39;</code></li>
 </ul>
-<h2 id="Beanutils"><a href="#Beanutils" class="headerlink" title="Beanutils"></a>Beanutils</h2><h3 id="BeanUtils"><a href="#BeanUtils" class="headerlink" title="BeanUtils"></a>BeanUtils</h3><ul>
-<li><code>void setProperty(Object bean,String filedName,Object value)</code></li>
-<li><code>String getProperty(Object bean,String filedName)</code></li>
-<li><code>void populate(Object bean,Map map)</code><ul>
-<li>map中存字段名和值的键值对。</li>
+<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
+<li><code>git init</code><ul>
+<li>将一个目录变成Git管理的仓库</li>
+<li>目录下会有一个隐藏的<code>.git</code>文件</li>
 </ul>
 </li>
-</ul>
-<h3 id="PropertyUtils"><a href="#PropertyUtils" class="headerlink" title="PropertyUtils"></a>PropertyUtils</h3><h3 id="ConvertUtils"><a href="#ConvertUtils" class="headerlink" title="ConvertUtils"></a>ConvertUtils</h3><ul>
-<li><code>void register(Converter con,Class&lt;?&gt; clazz)</code><ul>
-<li>注册转换器</li>
-<li>Beanutils默认支持8种基本类型，自动转换。</li>
-<li>对于如日期需要先注册转换器。</li>
-<li>使用<ul>
-<li>在上述<code>BeanUtils</code>赋值前，调用一下。</li>
-<li>可以使用内部类</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="发邮件"><a href="#发邮件" class="headerlink" title="发邮件"></a>发邮件</h1><ul>
-<li><code>javaMail.jar</code></li>
-<li>然后工具类指定一些配置即可。</li>
 </ul>
-<h1 id="JS-插件"><a href="#JS-插件" class="headerlink" title="JS 插件"></a>JS 插件</h1><h3 id="validate-js"><a href="#validate-js" class="headerlink" title="validate.js"></a>validate.js</h3><ul>
-<li>校验插件</li>
-<li><p>使用</p>
+<h1 id="版本库概念"><a href="#版本库概念" class="headerlink" title="版本库概念"></a>版本库概念</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库1.png" alt=""></p>
 <ul>
-<li><p><code>$(&quot;form表单&quot;).validate(json数据);</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myForm&quot;).validate(&#123;</span><br><span class="line">	rules:&#123;</span><br><span class="line">		&quot;username&quot;:&#123;</span><br><span class="line">			&quot;required&quot;:true</span><br><span class="line">		&#125;,</span><br><span class="line">		&quot;password&quot;:&#123;</span><br><span class="line">			&quot;rerquired&quot;:true</span><br><span class="line">			&quot;rangelength&quot;:[6,12]</span><br><span class="line">		&#125;,	</span><br><span class="line">		......</span><br><span class="line">	&#125;,</span><br><span class="line">	messages:&#123;</span><br><span class="line">		&quot;username&quot;:&#123;</span><br><span class="line">			&quot;required&quot;:&quot;用户名不能为空&quot;,			</span><br><span class="line">		&#125;，</span><br><span class="line">		&quot;password&quot;:&#123;</span><br><span class="line">			&quot;rerquired&quot;:true</span><br><span class="line">			&quot;rangelength&quot;:&quot;密码长度6-12&quot;</span><br><span class="line">		&#125;,	</span><br><span class="line">		.......		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个规则，一个信息</p>
-</li>
-<li>可自定义规则</li>
+<li>仓库包含<ul>
+<li>版本库<ul>
+<li><code>.git</code></li>
 </ul>
 </li>
-</ul>
-<h1 id="第三方支付"><a href="#第三方支付" class="headerlink" title="第三方支付"></a>第三方支付</h1><h2 id="国付宝"><a href="#国付宝" class="headerlink" title="国付宝"></a>国付宝</h2><h2 id="连连支付"><a href="#连连支付" class="headerlink" title="连连支付"></a>连连支付</h2><ul>
-<li>拍拍贷</li>
-<li>陆金所</li>
-<li>温商贷</li>
-<li>玖富</li>
-<li>360金融</li>
-<li>点融 </li>
-</ul>
-<h2 id="易宝"><a href="#易宝" class="headerlink" title="易宝"></a>易宝</h2><h1 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h1><h2 id="邮箱客户端"><a href="#邮箱客户端" class="headerlink" title="邮箱客户端"></a>邮箱客户端</h2><ul>
-<li>客户端<ul>
-<li>foxmail</li>
-<li>outlook</li>
+<li>工作区<ul>
+<li>除了<code>.git</code>文件夹外的其它</li>
 </ul>
 </li>
-<li>网页</li>
-</ul>
-<h2 id="邮箱服务端"><a href="#邮箱服务端" class="headerlink" title="邮箱服务端"></a>邮箱服务端</h2><ul>
-<li>邮件的接收和推送</li>
-</ul>
-<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><ul>
-<li>接收<ul>
-<li>POP3</li>
-<li>IMAP</li>
 </ul>
 </li>
-<li>发送<ul>
-<li>SMTP</li>
 </ul>
+<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库2.jpg" alt=""></p>
+<ul>
+<li><code>git add</code><ul>
+<li>把工作区的文件添加到版本库的暂存区</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库3.jpg" alt=""></p>
+<ul>
+<li><code>git commit</code><ul>
+<li>把暂存区的文件提交到版本库的指定分支</li>
+</ul>
+</li>
+</ul>
+<h1 id="添加-amp-提交"><a href="#添加-amp-提交" class="headerlink" title="添加 &amp; 提交"></a>添加 &amp; 提交</h1><ul>
+<li><code>git add</code><ul>
+<li>把文件添加到版本库的暂存区</li>
+<li>注意文件编码</li>
+<li>可以多次add不同的文件</li>
+</ul>
+</li>
+<li><code>git commit [-m &quot;message&quot;]</code><ul>
+<li>把文件提交到版本库的分支</li>
+<li><code>-m</code><ul>
+<li>提交的说明</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h1><ul>
+<li><code>git status</code><ul>
+<li>查看仓库状态</li>
+</ul>
+</li>
+<li><code>git diff</code><ul>
+<li>比较工作区和暂存区文件的区别</li>
+</ul>
+</li>
+<li><code>git diff --cached</code><ul>
+<li>比较暂存区和分支文件的区别</li>
+</ul>
+</li>
+<li><code>git diff HEAD</code><ul>
+<li>比较工作区和分支文件的区别</li>
+</ul>
+</li>
+<li><code>git log [--pretty=oneline]</code><ul>
+<li>查看历史记录</li>
+<li><code>--pretty=oneline</code><ul>
+<li>整理日志信息（在一行..）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><ul>
+<li><code>HEAD</code><ul>
+<li>表示当前版本</li>
+</ul>
+</li>
+<li><code>HEAD^</code><ul>
+<li>上一个版本</li>
+</ul>
+</li>
+<li><code>HEAD^^</code><ul>
+<li>上上个版本</li>
+</ul>
+</li>
+<li><code>HEAD-100</code><ul>
+<li>上100个版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li><code>git reset  --hard HEAD或commit id</code></li>
+<li><code>git reflog</code><ul>
+<li>记录着每一次命令（有命令id）</li>
+<li>回退后，可以用此命令查询commit id </li>
+</ul>
+</li>
+</ul>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h3 id="工作区的文件修改了，尚未add"><a href="#工作区的文件修改了，尚未add" class="headerlink" title="工作区的文件修改了，尚未add"></a>工作区的文件修改了，尚未add</h3><ul>
+<li><code>git checkout -- &lt;file&gt;</code><ul>
+<li>撤销工作区文件的修改</li>
+<li>我的理解就是从版本库分支中检出了一份覆盖了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="工作区的文件修改了，已经add，尚未commit"><a href="#工作区的文件修改了，已经add，尚未commit" class="headerlink" title="工作区的文件修改了，已经add，尚未commit"></a>工作区的文件修改了，已经add，尚未commit</h3><ul>
+<li><code>git reset HEAD &lt;file&gt;</code><ul>
+<li>将文件从暂存区回退到工作区</li>
+</ul>
+</li>
+<li><code>git checkout -- &lt;file&gt;</code></li>
+</ul>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
+<li><code>rm &lt;file&gt;</code><ul>
+<li>删除本地的（工作区的）</li>
+</ul>
+</li>
+<li><code>git checkout -- &lt;file&gt;</code><ul>
+<li>不想删了，可以再检出回来</li>
+</ul>
+</li>
+<li><code>git rm &lt;file&gt;</code></li>
+<li><code>git commit -m</code><ul>
+<li>经过上面两步就把版本库中的也删除了</li>
+</ul>
+</li>
+</ul>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>不需要私匙和公匙，推送和克隆时需要邮箱和密码</li>
+</ul>
+<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><ul>
+<li><code>Secure Shell</code><ul>
+<li>安全外壳协议</li>
+</ul>
+</li>
+<li>使用私匙和公匙推送和克隆</li>
+</ul>
+<h3 id="为什么GitHub需要SSH-Key呢？"><a href="#为什么GitHub需要SSH-Key呢？" class="headerlink" title="为什么GitHub需要SSH Key呢？"></a>为什么GitHub需要SSH Key呢？</h3><ul>
+<li>因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送</li>
+</ul>
+<h3 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH KEY"></a>配置SSH KEY</h3><ol>
+<li>创建SSH Key<ul>
+<li>先看本地用户目录下是否有<code>.ssh</code><ul>
+<li><code>id_rsa</code><ul>
+<li>私钥，不能泄露出去</li>
+</ul>
+</li>
+<li><code>id_rsa.pub</code><ul>
+<li>公钥，可以放心地告诉任何人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><ul>
+<li>如果没有，用此命令创建</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>登陆GitHub，打开“Account settings”，“SSH Keys”页面<ul>
+<li><code>Add SSH Key</code><ul>
+<li>Title<ul>
+<li>任意</li>
+</ul>
+</li>
+<li>Key<ul>
+<li>id_rsa.pub文件的内容</li>
+<li>可以添加多个</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="从本地推送到远程库"><a href="#从本地推送到远程库" class="headerlink" title="从本地推送到远程库"></a>从本地推送到远程库</h3><ol>
+<li>在GitHub创建一个库</li>
+<li>与本地仓库关联（在需要关联的仓库下执行命令）<ul>
+<li><code>git remote add origin git@github.com:awcnoanswer/test.git</code><ul>
+<li>远程库默认名<code>origin</code>（别名）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>推送本地内容到远程库<ul>
+<li><code>git push -u origin master</code><ul>
+<li>第一次推送master分支时，</li>
+<li><code>-u</code><ul>
+<li>Git不但会把本地的master分支所有内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>git push origin master 最新修改</code><ul>
+<li>在以后的推送或者拉取时就可以简化命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h3><ul>
+<li><code>git clone git@github.com:awcnoanswer/test.git</code><ul>
+<li>会克隆到执行命令的目录</li>
+</ul>
+</li>
+</ul>
+<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/分支.png" alt=""></p>
+<ul>
+<li><code>master</code><ul>
+<li>主分支</li>
+</ul>
+</li>
+<li><code>dev</code><ul>
+<li>分支</li>
+</ul>
+</li>
+<li><code>HEAD</code><ul>
+<li>当前版本</li>
+</ul>
+</li>
+<li>默认只有一条主分支，然后创建分支，想要切换分支，只要把<code>HEAD</code>指向想要切换的分支即可。</li>
+<li>分支合并到主分支<ul>
+<li><code>master</code>指向分支即可。</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建-amp-合并分支"><a href="#创建-amp-合并分支" class="headerlink" title="创建&amp;合并分支"></a>创建&amp;合并分支</h2><ul>
+<li><code>git branch dev</code><ul>
+<li>创建分支dev（自定义）</li>
+</ul>
+</li>
+<li><code>git checkout dev</code><ul>
+<li>切换到分支dev</li>
+</ul>
+</li>
+<li><code>git checkout -b dev</code><ul>
+<li>git checkout命令加上-b参数表示创建并切换，相当于上两条</li>
+</ul>
+</li>
+<li><code>git branch</code><ul>
+<li>查看当前分支</li>
+<li>会列出分支列表，当前分支前有<code>*</code>号</li>
+</ul>
+</li>
+<li><code>git merge dev</code><ul>
+<li>把分支dev合并到当前分支</li>
+</ul>
+</li>
+<li><code>git branch -d dev</code><ul>
+<li>删除分支dev</li>
+</ul>
+</li>
+</ul>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><ol>
+<li><code>git status</code><ul>
+<li>查看冲突信息</li>
+</ul>
+</li>
+<li>手动修改冲突文件</li>
+<li><code>add commit</code></li>
+</ol>
+<ul>
+<li><code>git log --graph</code><ul>
+<li>查看分支合并图</li>
+</ul>
+</li>
+</ul>
+<h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><ul>
+<li><code>git merge dev</code><ul>
+<li>默认使用<code>fast forward</code><ul>
+<li>快进模式下，删除分支后，会丢掉分支信息</li>
+<li>合并就看不出来曾经做过合并。</li>
+</ul>
+</li>
+<li><code>--no-ff</code><ul>
+<li>用普通模式合并，合并后的历史有分支，能看出来曾经做过合并</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="分支管理原则"><a href="#分支管理原则" class="headerlink" title="分支管理原则"></a>分支管理原则</h3><ul>
+<li><code>master</code><ul>
+<li>主分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活</li>
+</ul>
+</li>
+<li><code>dev</code><ul>
+<li>分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本，然后继续在分支干活准备2.0版本。</li>
+<li>平时在分支上干活</li>
+</ul>
+</li>
+</ul>
+<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><ul>
+<li>正在分支进行工作，临时需要修复一个bug，然而分支工作没完成不能提交，<ol>
+<li>先保存当前分支工作空间</li>
+<li>创建临时bug分支</li>
+<li>修复完合并并删除bug分支</li>
+<li>恢复分支工作空间</li>
+</ol>
+</li>
+<li>注意?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">先说几个名词</span><br><span class="line">    未被追踪的文件:指的是新建的文件或文件夹且还没加入到暂存区(新建的还没有被git add 过得)</span><br><span class="line">    未加入到暂存区的文件:指的是已经被追踪过，但是没有加入到暂存区(已经执行过git add/commit的但是这次修改后还没有git add)</span><br><span class="line">    举例:</span><br><span class="line">        readme.md  已经被git add/git commit过，但是呢 我这次只是修改了，而且没有修改完，不能commit</span><br><span class="line">        test    新建的文件夹,没有被git add/git commit过</span><br><span class="line">        有个急事需要处理,这时候我需要切换分支，去处理紧急任务,比如文中的举例去修改bug，</span><br><span class="line">        正确的步骤:</span><br><span class="line">            git add test（让git去追踪这个新文件）</span><br><span class="line">            git stash保留现场</span><br><span class="line">   如果我不执行这两个命令，那么我在修改BUG完成之后</span><br><span class="line">   git status，就会发现readme.md 没有添加到暂存区，同时又多了个test文件,但是自己的readme.md没有完成，万万不可以提交，这样导致bug的修改代码也提交不了。所以你需要</span><br><span class="line">git stash，这样你在提交修改bug代码的时候 ，就不会看见readme.md 和 test。可以安心提交修改bug的代码。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><ul>
+<li><code>git stash</code><ul>
+<li>保存工作空间</li>
+</ul>
+</li>
+<li><code>git stash list</code><ul>
+<li>查看保存列表</li>
+</ul>
+</li>
+<li><code>git stash apply</code><ul>
+<li>恢复工作空间，但不删除stash内容</li>
+</ul>
+</li>
+<li><code>git stash pop</code><ul>
+<li>恢复工作空间，同时删除stash内容</li>
+</ul>
+</li>
+</ul>
+<h2 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h2><ul>
+<li>附加功能分支，要添加新功能，重新开启一个分支</li>
+<li><code>git branch -D &lt;name&gt;</code><ul>
+<li>强制删除还没有合并的分支</li>
+</ul>
+</li>
+</ul>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><ul>
+<li><code>git remote</code><ul>
+<li>查看远程仓库信息</li>
+</ul>
+</li>
+<li><code>git remote -v</code><ul>
+<li>查看远程仓库详细信息</li>
+</ul>
+</li>
+<li><code>git checkout -b branch-name origin/branch-name</code><ul>
+<li>将远程仓库origin中的分支<code>branch-name</code>检出到本地</li>
+</ul>
+</li>
+<li><code>git push origin branch-name</code><ul>
+<li>将分支推送到远程仓库</li>
+<li>如果推送失败，先<code>git pull</code>更新，解决冲突后，再提交</li>
+</ul>
+</li>
+<li><code>gti pull</code><ul>
+<li>抓取最新的提交</li>
+<li>如果失败提示<code>no tracking information</code>说明本地分支与远程分支的链接关系没有创建<ul>
+<li><code>git branch --set-upstream branch-name origin/branch-name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><h2 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h2><ul>
+<li><code>git tag &lt;name&gt;</code><ul>
+<li>新建一个标签，默认为HEAD，也可以指定一个commit id</li>
+</ul>
+</li>
+<li><code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
+<li>可以创建时指定标签信息</li>
+</ul>
+</li>
+<li><code>git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
+<li>用PGP签名标签</li>
+<li>签名采用PGP签名，因此，必须首先安装gpg（GnuPG）</li>
+</ul>
+</li>
+<li><code>git tag</code><ul>
+<li>查看所有标签，默认安装字母排序</li>
+</ul>
+</li>
+<li><code>git show &lt;tagname&gt;</code><ul>
+<li>查看标签信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><ul>
+<li><code>git push origin &lt;tagname&gt;</code><ul>
+<li>推送一个本地标签到远程仓库</li>
+</ul>
+</li>
+<li><code>git push origin --tags</code><ul>
+<li>推送全部未推送过的本地标签</li>
+</ul>
+</li>
+<li><code>git tag -d &lt;tagname&gt;</code><ul>
+<li>删除一个本地标签；</li>
+</ul>
+</li>
+<li><code>git push origin :refs/tags/&lt;tagname&gt;</code><ul>
+<li>删除一个远程标签。</li>
+</ul>
+</li>
+</ul>
+<h1 id="自定义git"><a href="#自定义git" class="headerlink" title="自定义git"></a>自定义git</h1><h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><ul>
+<li>在工作区创建<code>.gitignore</code>，然后把要忽略的文件名填进去.<ul>
+<li><code>.gitignore</code>文件可以在线查询</li>
+</ul>
+</li>
+<li>忽略文件的原则是：<ol>
+<li>忽略操作系统自动生成的文件，比如缩略图等；</li>
+<li>忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；</li>
+<li>忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件</li>
+</ol>
 </li>
 </ul>
 
@@ -1086,7 +895,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/xd-上传和下载/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/xd-JNDI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -1105,8 +914,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/28/xd-上传和下载/" itemprop="url">
-                  xd-上传和下载
+                <a class="post-title-link" href="/2019/01/21/xd-JNDI/" itemprop="url">
+                  xd-JNDI
                 </a>
               
             
@@ -1132,7 +941,7 @@
                 
               
 
-              <time title="创建时间：2018-12-28 00:43:09 / 修改时间：01:28:45" itemprop="dateCreated datePublished" datetime="2018-12-28T00:43:09+08:00">2018-12-28</time>
+              <time title="创建时间：2019-01-21 14:00:02 / 修改时间：14:39:55" itemprop="dateCreated datePublished" datetime="2019-01-21T14:00:02+08:00">2019-01-21</time>
             
 
             
@@ -1190,242 +999,40 @@
       
         
           
-            <h1 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ol>
-<li>提供form表单 method为post</li>
-<li>enctype属性为<code>multipart/form-data</code></li>
-<li>提供<code>&lt;input type=&quot;file&quot; name=&quot;mn&quot;&gt;</code>上传输入域</li>
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>Java Naming and Directory Interface</code></li>
+<li>Java命名和目录接口</li>
+<li>是SUN公司提供的一种标准的Java命名系统接口，JNDI提供统一的客户端API，通过不同的访问提供者接口JNDI服务供应接口(SPI)的实现，由管理者将JNDI API映射为特定的命名服务和目录系统，使得Java应用程序可以和这些命名服务和目录服务之间进行交互</li>
+</ul>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/JNDI原理.png" alt=""></p>
+<h1 id="用JavaWeb服务器管理数据源"><a href="#用JavaWeb服务器管理数据源" class="headerlink" title="用JavaWeb服务器管理数据源"></a>用JavaWeb服务器管理数据源</h1><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
+<li>拷贝数据库连接的jar(mysql-Connector)到tomcatlib目录下<ul>
+<li>maven好像不用拷贝</li>
+</ul>
+</li>
+<li><p>配置数据源XML文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context&gt;</span><br><span class="line">		&lt;Resource </span><br><span class="line">			name=&quot;jdbc/TestDB&quot;		 	//数据源名称</span><br><span class="line">			auth=&quot;Container&quot; 			  //数据源提供者</span><br><span class="line">			type=&quot;javax.sql.DataSource&quot;	//数据源类型</span><br><span class="line">			maxTotal=&quot;100&quot; 			</span><br><span class="line">			maxIdle=&quot;30&quot; 				</span><br><span class="line">			maxWaitMillis=&quot;10000&quot;</span><br><span class="line">			username=&quot;root&quot; </span><br><span class="line">			password=&quot;root&quot; </span><br><span class="line">			driverClassName=&quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">			url=&quot;jdbc:mysql://localhost:3306/javatest&quot;/&gt;</span><br><span class="line">&lt;/Context&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在当前应用的<code>META-INF</code>中创建<code>context.xml</code>, 编写配置信息，那么只有当前应用可以使用。</li>
+<li>在tomcat下的conf目录的<code>context.xml</code>中，编写配置信息，那么tomcat下所有应用都能使用此数据源。<ul>
+<li>可以多个Resource如mysql，Oracle，sqlserver…</li>
+<li>多个就构成了<strong>JNDI</strong>(安)</li>
+</ul>
+</li>
 </ol>
-<h3 id="enctype"><a href="#enctype" class="headerlink" title="enctype"></a>enctype</h3><ul>
-<li>告知服务器请求正文的MIME类型。（请求消息头：Content-Type作用是一致的）</li>
-<li><p><code>application/x-www-form-urlencoded</code></p>
+</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Context initContext = new InitialContext();</span><br><span class="line">//Context envContext  = (Context)initContext.lookup(&quot;java:/comp/env&quot;);</span><br><span class="line">//DataSource ds = (DataSource)envContext.lookup(&quot;jdbc/TestDB&quot;);</span><br><span class="line">//上面两句可以合写成下面这一句</span><br><span class="line">DataSource ds = (DataSource)=initContext.lookup(&quot;java:/comp/env/jdbc/TestDB&quot;);</span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
 <ul>
-<li>默认<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">...</span><br><span class="line">请求体</span><br><span class="line">name=an3&amp;mn(input中file的name)=文件名(mm.jpg)</span><br><span class="line">//服务器获取数据</span><br><span class="line">String name = request.getParameter(&quot;name&quot;)</span><br><span class="line">String name=request.getParameter(&quot;mm&quot;);</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>java:/comp/env</code><ul>
+<li>是固定写法</li>
 </ul>
 </li>
-<li><p><code>multipart/form-data</code></p>
-<ul>
-<li>上传用</li>
-<li>使用<code>request.getParameter(key)</code>取不到表单数据</li>
-<li><p>获取数据要使用流</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//请求信息</span><br><span class="line">//请求行</span><br><span class="line">//请求头</span><br><span class="line">...</span><br><span class="line">Content-Type:multipart/form-data; boundar=======7df24c3430fa2</span><br><span class="line">//请求体</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;name&quot;</span><br><span class="line">an3</span><br><span class="line"> boundar=======7df24c3430fa2</span><br><span class="line">Content-Disposition: form-data; name=&quot;mn&quot;; filename=&quot;mm.jpg&quot;</span><br><span class="line">Contenet-Type: image/pjpeg</span><br><span class="line">图片的二进制数据</span><br><span class="line">//服务器获取数据</span><br><span class="line">//用字节流获取请求体的所有内容</span><br><span class="line">request.getInputStream()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>说明(安)</p>
-<ul>
-<li>可以看出enctype为<code>multipart/form-data</code>时<ul>
-<li>请求体中包含了文件名，文件类型，文件具体内容。</li>
+<li><code>jdbc/TestDB</code><ul>
+<li>数据源XML配置中的Resource的name，自定义。</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="文件上传原理"><a href="#文件上传原理" class="headerlink" title="文件上传原理"></a>文件上传原理</h2><ul>
-<li>解析请求体的每部分的内容</li>
-</ul>
-<h2 id="上传步骤-安"><a href="#上传步骤-安" class="headerlink" title="上传步骤(安)"></a>上传步骤(安)</h2><ul>
-<li>获取上传的文件的输入流</li>
-<li>确定服务器保存路径</li>
-<li>确定服务器保存文件名</li>
-<li>新建File对象(路径+文件名)</li>
-<li>以新建的file对象创建输出流</li>
-<li>然后读写操作。。</li>
-</ul>
-<h2 id="上传需要注意的问题-安"><a href="#上传需要注意的问题-安" class="headerlink" title="上传需要注意的问题(安)"></a>上传需要注意的问题(安)</h2><ul>
-<li>文件路径<ul>
-<li>存储在服务器端的路径</li>
-</ul>
-</li>
-<li>文件名<ul>
-<li>存储的文件名，避免重复</li>
-<li>随机啊日期啊</li>
-</ul>
-</li>
-</ul>
-<h2 id="fileupload"><a href="#fileupload" class="headerlink" title="fileupload"></a>fileupload</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
-<li>第三方的上传组件用来解析上传文件，帮我们解析<code>request.getInputStream()</code></li>
-</ul>
-<h3 id="核心类"><a href="#核心类" class="headerlink" title="核心类"></a>核心类</h3><ul>
-<li><code>DiskFileItemFactory</code></li>
-<li><code>ServletFileUpload</code></li>
-<li><code>FileItem</code></li>
-</ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
-<li><code>DiskFileItemFactory factory = new DiskFileItemFactory()</code><ul>
-<li>创建工厂类DiskFileItemFactory对象</li>
-<li>创建工厂时还可以指定缓存文件的大小和临时文件的位置</li>
-<li>或者先创建，然后set也行<ul>
-<li><code>factory.setSizeThreshold(字节)</code></li>
-<li><code>factory.setRepository(new File(path))</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>ServletFileUpload fileUpload = new ServletFileUpload(factory)</code><ul>
-<li>使用工厂创建解析器对象ServletFileUpload</li>
-</ul>
-</li>
-<li><code>fileUpload.isMultipartContent(request)</code><ul>
-<li>判断表单<code>enctype</code>是否是上传.</li>
-</ul>
-</li>
-<li><code>List&lt;FileItem&gt; list = fileUpload.parseRequest(request)</code><ul>
-<li>使用解析器来解析request对象</li>
-</ul>
-</li>
-</ul>
-<h4 id="FileItem"><a href="#FileItem" class="headerlink" title="FileItem"></a>FileItem</h4><ul>
-<li>对应一个表单项（表单字段）。可以是文件字段或普通字段</li>
-<li><code>boolean isFormField()</code><ul>
-<li>判断当前表单字段是否为普通文本字段，如果返回false，说明是文件字段</li>
-</ul>
-</li>
-<li><code>String getFieldName()</code><ul>
-<li>获取字段名称</li>
-</ul>
-</li>
-<li><code>String getString()</code><ul>
-<li>获取字段的内容</li>
-<li>如果是文件字段(必须是文本文件)，那么获取的是文件内容。</li>
-<li>可以传入编码参数<ul>
-<li><code>getString(&quot;utf-8&quot;)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>String getName()</code><ul>
-<li>获取文件字段的文件名称(如：mm.jpg)</li>
-</ul>
-</li>
-<li><code>String getContentType()</code><ul>
-<li>获取上传的文件的MIME类型，例如：text/plain。</li>
-</ul>
-</li>
-<li><code>int getSize()</code><ul>
-<li>获取上传文件的大小</li>
-</ul>
-</li>
-<li><code>InputStream getInputStream()</code><ul>
-<li>获取上传文件对应的输入流；</li>
-</ul>
-</li>
-<li><code>void write(File)</code><ul>
-<li>把上传的文件保存到指定文件中</li>
-</ul>
-</li>
-<li><code>IOUtils.copey(in,out)</code><ul>
-<li>工具类保存</li>
-</ul>
-</li>
-<li><code>delete()</code><ul>
-<li>清理临时文件</li>
-</ul>
-</li>
-</ul>
-<h3 id="上传要考虑的问题"><a href="#上传要考虑的问题" class="headerlink" title="上传要考虑的问题"></a>上传要考虑的问题</h3><ul>
-<li>文件名问题<ul>
-<li>上传的文件名是全路径，有的浏览器会自动处理，有的不会，最好处理一下。<ol>
-<li>手动处理</li>
-<li><code>FilenameUtils</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>保证服务器安全<ul>
-<li>把保存上传文件的目录放在用户直接访问不到的地方(web-inf下)</li>
-</ul>
-</li>
-<li>避免文件被覆盖<ul>
-<li>文件名唯一</li>
-</ul>
-</li>
-<li>避免同一个文件夹中的文件过多<ul>
-<li>按照日期进行打散存储目录</li>
-<li>用文件名的hashCode计算打散的存储目录：二级目录</li>
-</ul>
-</li>
-<li>限制文件的大小：web方式不适合上传大的文件<ul>
-<li>单个文件大小<ul>
-<li><code>ServletFileUpload.setFileSizeMax(字节)</code></li>
-</ul>
-</li>
-<li>总文件大小：（多文件上传）<ul>
-<li><code>ServletFileUpload.setSizeMax(字节)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>上传字段用户没有上传的问题<ul>
-<li>通过判断文件名是否为空即可</li>
-</ul>
-</li>
-<li>临时文件的问题<ul>
-<li><code>DiskFileItemFactory</code><ul>
-<li>内部有一个缓存，缓存大小默认是10Kb。如果上传的文件超过10Kb，用磁盘作为缓存。</li>
-<li>存放缓存文件的目录默认是系统的临时目录。</li>
-<li>可以自己设置缓存大小，和临时目录（见上边）</li>
-</ul>
-</li>
-<li>上传后，会在临时目录产生一个临时文件。</li>
-<li>如果自己用IO流实现的文件上传，要在流关闭后，清理临时文件。<ul>
-<li><code>FileItem.delete();</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li><code>Content-disposition</code><ul>
-<li>响应头，服务器告诉客户端以什么格式打开响应体数据</li>
-<li><code>in-line</code><ul>
-<li>默认值</li>
-<li>在当前页面内打开</li>
-</ul>
-</li>
-<li><code>attachment;filename=</code><ul>
-<li>以附件形式打开响应体</li>
-<li>文件下载</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>设置响应头告诉浏览器是下载文件<ul>
-<li><code>response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+fileName);</code></li>
-</ul>
-</li>
-<li>设置响应头告诉浏览器下载的文件类型<ol>
-<li><code>response.setHeader(&quot;content-type&quot;, &quot;image/jpeg&quot;);</code><ul>
-<li>手动设置文件类型是图片</li>
-</ul>
-</li>
-<li><code>response.setContentType(this.getServletContext().getMimeType(fileName))</code><ul>
-<li>设置类型为根据文件名获取的类型</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>根据请求参数获取文件名<ul>
-<li><code>String filename = request.getParameter(String filename)</code></li>
-</ul>
-</li>
-<li>根据文件名获取文件服务器路径<ul>
-<li><code>String path=this.getServletContext.getRealPath(&quot;/filename&quot;);</code></li>
-</ul>
-</li>
-<li>根据文件路径创建输入流</li>
-<li>设置响应头<ol>
-<li>下载文件</li>
-<li>文件类型</li>
-</ol>
-</li>
-<li>获取响应输出流，不断读写</li>
-</ol>
-<h3 id="下载文件名中文问题"><a href="#下载文件名中文问题" class="headerlink" title="下载文件名中文问题"></a>下载文件名中文问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// agent就是请求头User-Agent的值</span><br><span class="line">public class DownLoadUtils &#123;</span><br><span class="line">    public static String getFileName(String agent, String filename) throws UnsupportedEncodingException &#123;</span><br><span class="line">        if (agent.contains(&quot;MSIE&quot;)) &#123;</span><br><span class="line">            // IE浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">            filename = filename.replace(&quot;+&quot;, &quot; &quot;);</span><br><span class="line">        &#125; else if (agent.contains(&quot;Firefox&quot;)) &#123;</span><br><span class="line">            // 火狐浏览器</span><br><span class="line">            BASE64Encoder base64Encoder = new BASE64Encoder();</span><br><span class="line">            filename = &quot;=?utf-8?B?&quot; + base64Encoder.encode(filename.getBytes(&quot;utf-8&quot;)) + &quot;?=&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 其它浏览器</span><br><span class="line">            filename = URLEncoder.encode(filename, &quot;utf-8&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return filename;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1483,7 +1090,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-WEB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/xd-nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -1502,8 +1109,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/25/xd-WEB/" itemprop="url">
-                  xd-WEB
+                <a class="post-title-link" href="/2019/01/17/xd-nginx/" itemprop="url">
+                  xd-nginx
                 </a>
               
             
@@ -1529,7 +1136,486 @@
                 
               
 
-              <time title="创建时间：2018-12-25 22:57:57" itemprop="dateCreated datePublished" datetime="2018-12-25T22:57:57+08:00">2018-12-25</time>
+              <time title="创建时间：2019-01-17 14:26:57 / 修改时间：16:36:14" itemprop="dateCreated datePublished" datetime="2019-01-17T14:26:57+08:00">2019-01-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li>Nginx (engine x) 是一个高性能的HTTP和反向代理服务，也是一个IMAP/POP3/SMTP服务</li>
+<li>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行</li>
+</ul>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ol>
+<li><code>start nginx</code><ul>
+<li>推荐</li>
+</ul>
+</li>
+<li><code>nginx.exe</code><ul>
+<li>会使cmd窗口一直处于执行中，不能进行其他命令操作</li>
+</ul>
+</li>
+</ol>
+<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h3><ol>
+<li><code>nginx.exe -s quit</code><ul>
+<li>完整有序的停止nginx，并保存相关信息</li>
+</ul>
+</li>
+<li><code>nginx.exe -s stop</code><ul>
+<li>快速停止nginx，可能并不保存相关信息</li>
+</ul>
+</li>
+</ol>
+<h3 id="重新加载配置"><a href="#重新加载配置" class="headerlink" title="重新加载配置"></a>重新加载配置</h3><ul>
+<li><code>nginx.exe -s reload</code></li>
+</ul>
+<h3 id="重新打开日志"><a href="#重新打开日志" class="headerlink" title="重新打开日志"></a>重新打开日志</h3><ul>
+<li><code>nginx.exe -s reopen</code></li>
+</ul>
+<h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><ul>
+<li><code>nginx -v</code></li>
+</ul>
+<h2 id="tomcat集群"><a href="#tomcat集群" class="headerlink" title="tomcat集群"></a>tomcat集群</h2><ol>
+<li><p>修改各个tomcat端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Server port=&quot;8015&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</span><br><span class="line">&lt;Connector port=&quot;8081&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;8443&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;8019&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每个tomcat一套端口（3个），都不能一样。</li>
+</ul>
+</li>
+<li>配置nginx<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#配置服务器列表 名称(serverlb)任意(有的版本不能用&quot;_&quot;);</span><br><span class="line">upstream serverlb&#123;</span><br><span class="line">	# 格式 server ip:端口 weight=num;</span><br><span class="line">	# weight 权重 num越大访问的概率越高</span><br><span class="line">	server 127.0.0.1:8081;</span><br><span class="line">	server 127.0.0.1:8082;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    # 集群后的统一访问名称，有域名可以用域名 </span><br><span class="line">    server_name  localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">		root   html;</span><br><span class="line">		# 配置代理</span><br><span class="line">		proxy_pass http://serverlb;</span><br><span class="line">		index  index.html index.htm;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="tomcat集群的session共享"><a href="#tomcat集群的session共享" class="headerlink" title="tomcat集群的session共享"></a>tomcat集群的session共享</h2><ol>
+<li><p>配置nginx，使每个用户只会访问一个tomcat，而不是随机访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream xxx&#123;</span><br><span class="line">	server ip:端口;</span><br><span class="line">	...</span><br><span class="line">	# 一个用户只会访问一个tomcat</span><br><span class="line">	ip_hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用tomcat广播机制完成session共享（不推荐）</p>
+</li>
+<li>每个用户的数据存在redis中，不同tomcat从redis中取数据，来实现session共享（推荐） </li>
+</ol>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
+<li><code>gcc</code><ul>
+<li><code>yum install gcc-c++</code></li>
+</ul>
+</li>
+<li><code>pcre</code><ul>
+<li><code>yum install -y pcre pcre-devel</code></li>
+</ul>
+</li>
+<li><code>zlib</code><ul>
+<li><code>yum install -y zlib zlib-delvel</code></li>
+</ul>
+</li>
+<li><code>openssl</code><ul>
+<li><code>yum install -y openssl openssl-devel</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cd srcdir</span><br><span class="line">./configure --prefix=destdir（默认/usrl/local/nginx）</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h2><h3 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h3><ul>
+<li><code>/destdir/sbin/nginx [-c /destdir/conf/nginx.conf]</code><ul>
+<li><code>-c</code><ul>
+<li>指定配置文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="停止-1"><a href="#停止-1" class="headerlink" title="停止"></a>停止</h2><ul>
+<li><code>/destdir/sbin/nginx -s stop</code></li>
+<li><code>/destdir/sbin/nginx -s quit</code></li>
+</ul>
+<h2 id="重新加载配置-1"><a href="#重新加载配置-1" class="headerlink" title="重新加载配置"></a>重新加载配置</h2><ul>
+<li><code>/destdir/sbin/nginx -s reload</code></li>
+</ul>
+<h2 id="tomcat集群-1"><a href="#tomcat集群-1" class="headerlink" title="tomcat集群"></a>tomcat集群</h2><ul>
+<li>配置和windows一样</li>
+</ul>
+<h2 id="tomcat集群的session共享-1"><a href="#tomcat集群的session共享-1" class="headerlink" title="tomcat集群的session共享"></a>tomcat集群的session共享</h2><ul>
+<li>使用redis</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/xd-SecureCRT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/14/xd-SecureCRT/" itemprop="url">
+                  xd-SecureCRT
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-14 19:55:55 / 修改时间：20:00:53" itemprop="dateCreated datePublished" datetime="2019-01-14T19:55:55+08:00">2019-01-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件</li>
+</ul>
+<h1 id="文件上传到服务端和从服务器下载"><a href="#文件上传到服务端和从服务器下载" class="headerlink" title="文件上传到服务端和从服务器下载"></a>文件上传到服务端和从服务器下载</h1><h2 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h2><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><ul>
+<li>只需在shell终端仿真器中输入命令“rz”，</li>
+<li>即可从弹出的对话框中选择本地磁盘上的文件</li>
+<li>利用Zmodem上传到服务器当前路径下</li>
+</ul>
+<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><ul>
+<li>只需在shell终端仿真器中输入命令“sz 文件名”</li>
+<li>即可利用Zmodem将文件下载到本地某目录下。</li>
+</ul>
+<h2 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h2><h3 id="开启会话"><a href="#开启会话" class="headerlink" title="开启会话"></a>开启会话</h3><ul>
+<li><code>ALT+P</code><ul>
+<li>开启新会话进行ftp操作</li>
+</ul>
+</li>
+<li><code>链接SFTP会话</code><ul>
+<li>在链接session上右键</li>
+</ul>
+</li>
+</ul>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li><code>:help</code><ul>
+<li>显示该FTP提供的所有命令         </li>
+</ul>
+</li>
+<li><code>pwd</code><ul>
+<li>查询linux主机所在目录(也就是远程主机目录)</li>
+</ul>
+</li>
+<li><code>lpwd</code><ul>
+<li>查询本地目录</li>
+<li>（一般指windows上传文件的目录：我们可以通过查看”选项“下拉框中的”会话选项“，如图二：我们知道本地上传目录为：D:/我的文档）</li>
+</ul>
+</li>
+<li><code>ls</code><ul>
+<li>查询连接到当前linux主机所在目录有哪些文件</li>
+</ul>
+</li>
+<li><code>lls</code><ul>
+<li>查询当前本地上传目录有哪些文件</li>
+</ul>
+</li>
+<li><code>lcd</code><ul>
+<li>改变本地上传目录的路径</li>
+</ul>
+</li>
+<li><code>cd</code><ul>
+<li>改变远程上传目录</li>
+</ul>
+</li>
+<li><code>get</code>: <ul>
+<li>将远程目录中文件下载到本地目录</li>
+</ul>
+</li>
+<li><code>put</code> <ul>
+<li>将本地目录中文件上传到远程主机(linux)</li>
+</ul>
+</li>
+<li><code>quit</code>:<ul>
+<li>断开FTP连接</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/xd-Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/14/xd-Linux/" itemprop="url">
+                  xd-Linux
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-14 19:53:27" itemprop="dateCreated datePublished" datetime="2019-01-14T19:53:27+08:00">2019-01-14</time>
             
 
             
@@ -1546,7 +1632,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-27 21:17:06" itemprop="dateModified" datetime="2018-12-27T21:17:06+08:00">2018-12-27</time>
+                <time title="修改时间：2019-01-17 16:17:33" itemprop="dateModified" datetime="2019-01-17T16:17:33+08:00">2019-01-17</time>
               
             
           </span>
@@ -1563,7 +1649,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -1599,207 +1685,1334 @@
       
         
           
-            <h1 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h1><ul>
-<li>所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统</li>
-<li>Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境被称为Web容器，Java Web程序与Web容器之间存在数据交互。</li>
-</ul>
-<h2 id="独立的Java-Web容器"><a href="#独立的Java-Web容器" class="headerlink" title="独立的Java Web容器"></a>独立的Java Web容器</h2><ul>
-<li>在这种容器里面只能运行Web程序，这种容器一般也叫做Web服务器，如Tomcat</li>
-</ul>
-<h2 id="与其他Java-EE容器混合在一起的Web容器"><a href="#与其他Java-EE容器混合在一起的Web容器" class="headerlink" title="与其他Java EE容器混合在一起的Web容器"></a>与其他Java EE容器混合在一起的Web容器</h2><ul>
-<li>Web容器负责运行Web程序，其他容器负责运行EJB等程序，如WebLogic</li>
-</ul>
-<h2 id="web容器与web应用间的数据交互"><a href="#web容器与web应用间的数据交互" class="headerlink" title="web容器与web应用间的数据交互"></a>web容器与web应用间的数据交互</h2><ul>
-<li>web容器接收客户端请求封装<strong>HttpServletRequest</strong>对象，并传递给web应用</li>
-<li>web应用处理请求</li>
-<li>web容器将结果封装到<strong>HttpServletResponse</strong>对象，响应给客户端</li>
-<li>注<ul>
-<li>这两个对象仅存在于Web容器和Web应用当中，与浏览器没有关系</li>
-</ul>
-</li>
-</ul>
-<h2 id="tomcat和servlet的区别"><a href="#tomcat和servlet的区别" class="headerlink" title="tomcat和servlet的区别"></a>tomcat和servlet的区别</h2><ul>
-<li>Tomcat 是Web应用服务器,是一个Servlet/JSP容器</li>
-<li>servlet是一种运行在服务器端的Java应用程序</li>
-</ul>
-<h2 id="web应用服务器"><a href="#web应用服务器" class="headerlink" title="web应用服务器"></a>web应用服务器</h2><ul>
-<li><code>tomcat</code><ul>
-<li>支持servlet/jsp规范</li>
-</ul>
-</li>
-<li><code>weblogic</code><ul>
-<li>支持全部j2ee规范</li>
-</ul>
-</li>
-<li><code>websphere</code><ul>
-<li>支持全部j2ee规范</li>
-</ul>
-</li>
-<li><code>jboss</code></li>
-</ul>
-<h1 id="标准JavaWeb应用目录结构"><a href="#标准JavaWeb应用目录结构" class="headerlink" title="标准JavaWeb应用目录结构"></a>标准JavaWeb应用目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyApp  				//项目名</span><br><span class="line">	html,css,js,img... //资源文件</span><br><span class="line">	WEB-INF</span><br><span class="line">		classes	    //.class文件，配置文件</span><br><span class="line">		lib			// jar包</span><br><span class="line">		web.xml		//web配置文件</span><br></pre></td></tr></table></figure>
+            <h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/linux目录结构.jpg" alt=""></p>
 <ul>
-<li>说明<ul>
-<li>ide中的src目录<ul>
-<li>编译后会存在web-inf下的classes中。</li>
+<li><code>/</code><ul>
+<li><code>etc</code><ul>
+<li>存放系统配置文件</li>
 </ul>
 </li>
-<li>以下三个目录中的文件会直接存在应用下，与web-inf同级，相当于资源文件<ul>
-<li>eclipse中的WebContent目录</li>
-<li>Myeclipse中的WebRoot目录</li>
-<li>intellij中的web目录</li>
+<li><code>home</code><ul>
+<li>其它用户的家目录</li>
 </ul>
 </li>
+<li><code>usr</code><ul>
+<li>存放共享资源，软件…</li>
 </ul>
 </li>
-</ul>
-<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
-<li>Tomcat启动时，需要查找<code>CATALINA_HOME</code>这个环境变量<ul>
-<li>判断<code>CATALINA_HOME</code>环境变量是否为空<ul>
-<li>为空<ul>
-<li>就将当前目录设为CATALINA_HOME的值，接着判断当前目录下是否存在<code>bin\catalina.bat</code>，如果文件不存在，将当前目录的父目录设为<code>CATALINA_HOM</code>E的值，循环，最后如果找不到<code>bin\catalina.bat</code>就报错。</li>
+<li><code>root</code><ul>
+<li>管理员的家目录</li>
 </ul>
 </li>
-<li>不为空<ul>
-<li>通过这个环境变量调用<code>bin\catalina.bat</code>命令</li>
+<li><code>var</code><ul>
+<li>运行时需要改变数据的文件</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>执行<code>startup.bat</code>命令，会自动去执行<code>catalina.bat start</code>命令</li>
-</ul>
-<p>##<code>CATALINA_HOME</code>和<code>CATALINA_BASE</code>区别</p>
-<h3 id="CATALINA-HOME"><a href="#CATALINA-HOME" class="headerlink" title="CATALINA_HOME"></a>CATALINA_HOME</h3><ul>
-<li>是Tomcat的安装目录</li>
-<li>类似于<code>JAVA_HOME</code>环境变量</li>
-<li>如果配置了就能在任意路径执行bin目录下的bat或者exe</li>
-<li>通常不配置</li>
-</ul>
-<h3 id="CATALINA-BASE"><a href="#CATALINA-BASE" class="headerlink" title="CATALINA_BASE"></a>CATALINA_BASE</h3><ul>
-<li>是Tomcat的工作目录</li>
-<li>如果CATALINA_BASE没有值的话，它默认的值就是CATALINA_HOME</li>
-</ul>
-<h3 id="tomcat目录"><a href="#tomcat目录" class="headerlink" title="tomcat目录"></a>tomcat目录</h3><ul>
-<li>其中只有 bin 和 lib 目录被多个tomcat示例公用</li>
-<li>其它目录conf、logs、temp、webapps和work 每个Tomcat实例必须拥有其自己独立的备份</li>
-<li>catalina.home(安装目录)：<ul>
-<li>指向公用信息的位置，就是bin和lib的父目录</li>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>[root@-an3 ~]#</code><ul>
+<li><code>root</code><ul>
+<li>登录账号</li>
 </ul>
 </li>
-<li>catalina.base(工作目录)：<ul>
-<li>指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。</li>
+<li><code>an3</code><ul>
+<li>主机名</li>
 </ul>
 </li>
-<li>仅运行一个Tomcat实例时，这两个属性指向的位置是相同的</li>
+<li><code>~</code><ul>
+<li>当前所在目录名</li>
+<li><code>~</code>就是用户主目录<ul>
+<li>root账号的主目录<code>/root</code></li>
+<li>其它用户的主目录<code>/home/xxx</code></li>
 </ul>
-<h3 id="网上自建startup-bat的内容"><a href="#网上自建startup-bat的内容" class="headerlink" title="网上自建startup.bat的内容"></a>网上自建<code>startup.bat</code>的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set &quot;CATALINA_BASE=%cd%&quot;  </span><br><span class="line">set &quot;CATALINA_HOME=D:/save/apache-tomcat-8.0.48&quot;  </span><br><span class="line">set &quot;EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat&quot;  </span><br><span class="line">call &quot;%EXECUTABLE%&quot; start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><code>vimtutor</code><ul>
+<li>vim自带的教程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h3><ul>
+<li><code>cd xxx</code><ul>
+<li>切换到当前目录下的xxx目录</li>
+</ul>
+</li>
+<li><code>cd ../</code><ul>
+<li>切换到上一层目录</li>
+</ul>
+</li>
+<li><code>cd /</code><ul>
+<li>切换到系统根目录</li>
+</ul>
+</li>
+<li><code>cd ~</code><ul>
+<li>切换到用户主目录</li>
+<li>如 root就切换到<code>/root</code></li>
+</ul>
+</li>
+<li><code>cd -</code><ul>
+<li>切换到上一个目录（相当于返回）</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>mkdir xxx</code><ul>
+<li>在当前目录下创建xxx目录</li>
+</ul>
+</li>
+<li><code>mkdir -p xxx/yyy/zzz</code><ul>
+<li><code>-p</code><ul>
+<li>会创建父目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><ul>
+<li><code>pwd</code><ul>
+<li>查看当前所在目录名</li>
+</ul>
+</li>
+<li><code>ls</code><ul>
+<li>查看当前目录的文件和目录列表</li>
+</ul>
+</li>
+<li><code>ls -a</code><ul>
+<li>查看当前目录所有的文件和目录列表(包括隐藏)</li>
+</ul>
+</li>
+<li><code>ls -l</code><ul>
+<li><code>ll</code> 简写</li>
+<li>当前目录的文件和目录列表的详细信息</li>
+<li><code>ll -h</code><ul>
+<li>友好显示文件大小</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><ul>
+<li><code>find 目录 参数</code><ul>
+<li><code>find /root -name &#39;test&#39;</code><ul>
+<li>根据<code>name</code>查找<code>/root</code>目录下包含<code>test</code>的目录(文件)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><ul>
+<li><code>mv 目录名 新名称</code><ul>
+<li>重命名</li>
+<li><code>mv</code>同样适用于文件，压缩包等的重命名</li>
+</ul>
+</li>
+<li><code>mv 目录名 新目录</code><ul>
+<li>剪切</li>
+<li><code>mv</code>同样适用于文件，压缩包等的剪切</li>
+</ul>
+</li>
+</ul>
+<h3 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h3><ul>
+<li><code>cp [-r] 目录名 目标位置</code><ul>
+<li><code>-r</code><ul>
+<li>表示递归，拷贝目录时使用</li>
+<li>如果是文件，压缩包等，不需要<code>-r</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><ul>
+<li><code>rm [-rf] 目录/文件/压缩包</code><ul>
+<li><code>-r</code><ul>
+<li>递归</li>
+</ul>
+</li>
+<li><code>-f</code><ul>
+<li>不加，每个都会询问是否删除</li>
+<li>不询问强制删除</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>touch xxx</code><ul>
+<li>创建文件，linux不需要后缀名，通常带后缀名为了表明是什么文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看-1"><a href="#查看-1" class="headerlink" title="查看"></a>查看</h3><ul>
+<li><code>cat/more/less/tail 文件</code><ul>
+<li><code>cat</code><ul>
+<li>只显示文件内容的最后一屏</li>
+</ul>
+</li>
+<li><code>more</code><ul>
+<li>显示一屏</li>
+<li><code>回车</code>： 翻一行</li>
+<li><code>空格</code>： 翻页</li>
+<li><code>q</code>： 退出查看</li>
+</ul>
+</li>
+<li><code>less</code><ul>
+<li>显示一屏</li>
+<li><code>pageUp</code>：向上翻页</li>
+<li><code>pageDown</code>：向下翻页</li>
+</ul>
+</li>
+<li><code>tail -num</code><ul>
+<li>看文件的后num行（10行）</li>
+<li><code>ctrl+c</code>：强制结束</li>
+</ul>
+</li>
+<li><code>tail -f</code><ul>
+<li>可以对文件进行动态监控</li>
+<li>例如 监控tomcat的日志文件，文件一变化，就会显示</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><ul>
+<li><code>grep 关键字 文件 [--color] [-Anum -Bnum]</code><ul>
+<li>在文件中搜索指定关键字</li>
+<li><code>--color</code><ul>
+<li>高亮</li>
+</ul>
+</li>
+<li><code>-Anum</code><ul>
+<li><code>after num</code> 后num行</li>
+</ul>
+</li>
+<li><code>-Bnum</code><ul>
+<li><code>before num</code> 前num行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改-1"><a href="#修改-1" class="headerlink" title="修改"></a>修改</h3><ul>
+<li><code>vim 文件</code><ul>
+<li><code>:wq</code><ul>
+<li>保存并退出</li>
+</ul>
+</li>
+<li><code>:q</code><ul>
+<li>不保存退出，会提示</li>
+</ul>
+</li>
+<li><code>:q!</code><ul>
+<li>不保存直接退出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>linux中<ul>
+<li>打包文件一般以<code>.tar</code>结尾</li>
+<li>压缩命令一般以<code>.gz</code>结尾</li>
+<li>而通常打包和压缩是一起进行的，打包并压缩后的文件后缀一般为<code>.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h3><ul>
+<li><code>tar -zcvf 打包压缩后的文件名 要打包压缩的文件</code><ul>
+<li><code>z</code><ul>
+<li>调用gzip压缩命令进行压缩</li>
+</ul>
+</li>
+<li><code>c</code><ul>
+<li>打包文件,创建一个新的<code>.tar</code>文件</li>
+</ul>
+</li>
+<li><code>v</code><ul>
+<li>显示运行过程</li>
+</ul>
+</li>
+<li><code>f</code><ul>
+<li>指定文件名</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -zcvf abc.tar.gz x.txt y.conf z.cfg</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="解压（重要）"><a href="#解压（重要）" class="headerlink" title="解压（重要）"></a>解压（重要）</h3><ul>
+<li><code>tar [-xzvf] 压缩文件</code><ul>
+<li><code>x</code><ul>
+<li>解压</li>
+<li>默认解压到当前目录</li>
+</ul>
+</li>
+<li><code>z</code><ul>
+<li>表示 tar 包是被 gzip 压缩过的，所以解压时需要用gunzip 解压</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -xvf abc.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tar [-xzvf] 压缩文件 -C 目录</code><ul>
+<li><code>-C</code><ul>
+<li>代表指定解压的位置</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -xvf abc.tar.gz -C /usr</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li><code>locale</code><ul>
+<li>查看编码</li>
+</ul>
+</li>
+<li><code>ctrl+c</code><ul>
+<li>终止命令</li>
+</ul>
+</li>
+<li><code>ctrl+z</code><ul>
+<li>后台执行</li>
+<li><code>fg</code><ul>
+<li>调回前台</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>history</code><ul>
+<li>查看历史命令</li>
+</ul>
+</li>
+<li><code>wget 地址</code><ul>
+<li>下载</li>
+</ul>
+</li>
+</ul>
+<h2 id="重定向输出"><a href="#重定向输出" class="headerlink" title="重定向输出"></a>重定向输出</h2><ul>
+<li><code>&gt;</code><ul>
+<li>将前一个命令输出到指定目的地</li>
+<li><code>ip addr &gt; test.txt</code><ul>
+<li>会把<code>ip addr</code>查询的结果输出到<code>test.txt</code>中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&gt;&gt;</code><ul>
+<li><code>&gt;</code>每次输出都会覆盖</li>
+<li><code>&gt;&gt;</code>追加</li>
+</ul>
+</li>
+</ul>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><ul>
+<li><code>|</code><ul>
+<li>将前一个命令的输出作为本次命令的输入</li>
+<li><code>ps -ef | grep xxx</code><ul>
+<li>搜索运行进程中含有xxx的进程</li>
+<li>即管道把<code>ps -ef</code>的输出结果给<code>grep xxx</code>查询</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h2><ul>
+<li><code>&amp;&amp;</code><ul>
+<li>前一个命令执行成功，则执行后一个命令</li>
+<li><code>mkdir xxx &amp;&amp; cd xxx</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ul>
+<li><code>ps -ef</code><ul>
+<li>查看当前运行的进程</li>
+</ul>
+</li>
+<li><code>kill [-9] 进程的PID</code><ul>
+<li>结束进程</li>
+<li><code>-9</code><ul>
+<li>强制结束</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络通信"><a href="#网络通信" class="headerlink" title="网络通信"></a>网络通信</h2><ul>
+<li><code>ifconfig</code></li>
+<li><code>ip addr</code></li>
+<li><code>ping [-c num] ip地址</code><ul>
+<li>测试连接<ul>
+<li>-c num<ul>
+<li>限制次数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>netstat -an</code><ul>
+<li>查询网络端口</li>
+<li><code>netstat -an | grep 3306</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h2><ul>
+<li><code>date</code></li>
+<li><code>df</code><ul>
+<li>显示磁盘信息</li>
+<li><code>df -h</code><ul>
+<li>友好显示大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>free</code><ul>
+<li>显示内存状态</li>
+<li><code>free -m</code><ul>
+<li>以mb为单位显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>top</code><ul>
+<li>显示执行中的程序，以及一些其它的系统信息，负载，cpu…</li>
+</ul>
+</li>
+<li><code>du</code><ul>
+<li>显示目录下所有文件的大小</li>
+<li><code>du -h</code></li>
+</ul>
+</li>
+<li><code>who</code><ul>
+<li>显示登录用户信息</li>
+</ul>
+</li>
+<li><code>hostname</code><ul>
+<li>显示主机名</li>
+<li>修改<ul>
+<li><code>/etc/sysconfig/network</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>uname -a</code><ul>
+<li>显示系统信息</li>
+</ul>
+</li>
+<li><code>clear</code><ul>
+<li>清屏</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
+<li><code>useradd 用户名 [-d 目录] [-g 组名]</code><ul>
+<li>默认home目录<code>/home/用户名</code></li>
+<li><code>-d 目录</code><ul>
+<li>指定home目录</li>
+</ul>
+</li>
+<li><code>-g 组名</code><ul>
+<li>指定组</li>
+<li>如果没有指定组，会创建一个与用户名相同的私有组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>password 用户名</code><ul>
+<li>然后输入密码</li>
+</ul>
+</li>
+<li><code>userdel [-r] 用户名</code><ul>
+<li>删除用户（不会删除home目录）</li>
+<li><code>-r</code><ul>
+<li>删除用户且删除home目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>切换登录<ul>
+<li><code>ssh -1 用户名 -p 22 ip</code><ul>
+<li>使用ssh协议切换登录</li>
+<li><code>22</code><ul>
+<li>ssh的端口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>su -用户名</code><ul>
+<li><code>su -root</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h2><ul>
+<li><code>groupadd 组名</code></li>
+<li><code>groupdel 组名</code><ul>
+<li>如果该组又用户，必须先删除用户</li>
+</ul>
+</li>
+</ul>
+<h2 id="账户文件"><a href="#账户文件" class="headerlink" title="账户文件"></a>账户文件</h2><ul>
+<li><code>/etc/passwd</code><ul>
+<li>用户文件</li>
+</ul>
+</li>
+<li><code>/etc/shadow</code><ul>
+<li>密码文件</li>
+</ul>
+</li>
+<li><code>/etc/group</code><ul>
+<li>组信息文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><ul>
+<li>权限是linux中的重要概念，每个文件/目录都具有权限</li>
+</ul>
+<h2 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h2><ul>
+<li><code>0123456789</code><ul>
+<li>总共十位<code>1+3+3+3</code></li>
+</ul>
+</li>
+<li><code>0</code><ul>
+<li>文件类型<ul>
+<li><code>d</code>：文件夹(directory)</li>
+<li><code>-</code>：文件</li>
+<li><code>l</code>：相当于快捷方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>123</code><ul>
+<li>属主权限<ul>
+<li><code>r</code>：读取权<ul>
+<li>可以用4表示</li>
+</ul>
+</li>
+<li><code>w</code>：写入权<ul>
+<li>2</li>
+</ul>
+</li>
+<li><code>x</code>：执行权<ul>
+<li>1</li>
+</ul>
+</li>
+<li><code>-</code> 无操作权限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>456</code><ul>
+<li>属组权限<ul>
+<li><code>rwx-</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>789</code><ul>
+<li>其它用户权限<ul>
+<li><code>rwx-</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h2><ol>
+<li><code>chmod u=rwx, g=rw, o=r 文件/目录</code><ul>
+<li>u代表属主（user）</li>
+<li>g代表属组（group）</li>
+<li>o代表其它用户（other）</li>
+</ul>
+</li>
+<li><code>chmod u=7, g=6, o=1 文件/目录</code><ul>
+<li>可以设置为权限相加的和</li>
+</ul>
+</li>
+<li><code>chmod 761 文件/目录</code></li>
+</ol>
 <ul>
-<li><code>%cd%</code><ul>
-<li>代表当前目录（不太确定）</li>
-</ul>
-</li>
-<li><code>CATALINA_BASE</code>就代表一个tomcat的运行实例<ul>
-<li>包含<code>conf</code>,logs,temp,webapps,work`的目录。</li>
-</ul>
-</li>
-<li><code>CATALINA_HOME</code>代表了一个tomcat，需要tomcat的<code>bin,lib...</code></li>
-<li>启动tomcat后，<code>CATALINA_BASE</code>指向哪个tomcat实例，就运行哪个。<ul>
-<li>比如我有一个tomcat8080，然后再另一个文件夹复制了一个<code>conf</code>并设置端口号为7070</li>
-<li><code>CATALINA_HOME</code>为tomcat8080安装目录，设置<code>CATALINA_BASE</code>为7070对应的目录，那么能访问的是7070而非8080,</li>
-<li><strong>虚拟目录</strong>貌似就是这个原理。</li>
+<li><code>chown [-R] 用户:组 文件/目录</code><ul>
+<li>改变当前文件/目录所属的用户/组</li>
+<li><code>-R</code><ul>
+<li>改变目录和其中所有的文件和子目录</li>
 </ul>
 </li>
 </ul>
-<h2 id="tomcat部署应用"><a href="#tomcat部署应用" class="headerlink" title="tomcat部署应用"></a>tomcat部署应用</h2><h3 id="部署形式"><a href="#部署形式" class="headerlink" title="部署形式"></a>部署形式</h3><ol>
-<li>项目文件夹</li>
-<li>war包<ul>
-<li>tomcat会自动判断war包并解压。</li>
+</li>
+</ul>
+<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><h3 id="查询某个软件是否安装"><a href="#查询某个软件是否安装" class="headerlink" title="查询某个软件是否安装"></a>查询某个软件是否安装</h3><ol>
+<li>rpm包安装的<ul>
+<li><code>rpm -qa [| grep ]</code></li>
+</ul>
+</li>
+<li>deb包安装的<ul>
+<li><code>dpkg -1 [| grep ]</code></li>
+</ul>
+</li>
+<li>yum安装的<ul>
+<li><code>yum list installed [| grep ]</code></li>
+</ul>
+</li>
+<li>源码包安装<ul>
+<li>只能看可执行文件是否存在</li>
+<li>以root安装的，可执行程序通常都在<code>/sbin:/usr/bin</code>目录下</li>
 </ul>
 </li>
 </ol>
-<h3 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h3><h4 id="一-将项目复制到tomcat-webapps目录下。"><a href="#一-将项目复制到tomcat-webapps目录下。" class="headerlink" title="一 将项目复制到tomcat/webapps目录下。"></a>一 将项目复制到<code>tomcat/webapps</code>目录下。</h4><ul>
-<li>Myeclipse就是这种方式。</li>
+<h3 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h3><ul>
+<li><code>Redhat Package Manager</code></li>
+<li>相当于一个360之类的管理工具</li>
 </ul>
-<h4 id="二-虚拟目录"><a href="#二-虚拟目录" class="headerlink" title="二 虚拟目录"></a>二 虚拟目录</h4><ul>
-<li>就是把项目放到其它位置通过一些配置也能一样访问。(安)</li>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li><code>rpm -ivh</code><ul>
+<li><code>-i</code><ul>
+<li>安装</li>
 </ul>
-<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><ul>
-<li><p><code>tomcat/conf/server.xml</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host&gt;</span><br><span class="line">	&lt;Context docBase=&quot;应用的真实路径&quot; path=&quot;网络访问的虚拟目录名(自定义)&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Eclipse使用这种方式</p>
+<li><code>-v</code><ul>
+<li>可视化</li>
+</ul>
+</li>
+<li><code>-h</code><ul>
+<li>显示安装进度</li>
+</ul>
+</li>
+<li><code>--force</code><ul>
+<li>强制安装，即使覆盖属于其他包的文件也要安装 </li>
+</ul>
+</li>
+<li><code>--nodeps</code><ul>
+<li>当要安装的rpm包依赖其他包时，即使其他包没有安装，也要安装这个包</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h4><ul>
+<li><code>rpm -Uvh</code></li>
+</ul>
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><ul>
+<li><code>rpm -e</code></li>
+<li><code>rpm -e --nodeps</code></li>
+</ul>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ul>
+<li><code>rpm -qa</code><ul>
+<li><code>-qa</code><ul>
+<li><code>query alll</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h3><ul>
+<li><code>yum list</code><ul>
+<li>列出所有可用rpm包资源</li>
+</ul>
+</li>
+<li><code>yum search</code> 或 <code>yum list | grep</code></li>
+<li><code>yum install -y</code><ul>
+<li><code>-y</code><ul>
+<li>确认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>yum remove -y</code></li>
+<li><code>yum update -y</code></li>
+<li><code>yum grouplist</code><ul>
+<li>列出套件</li>
+</ul>
+</li>
+<li><code>yum groupinstall</code></li>
+<li><code>yum groupremove</code></li>
+</ul>
+<h3 id="安装目录"><a href="#安装目录" class="headerlink" title="安装目录"></a>安装目录</h3><ul>
+<li><code>/usr</code><ul>
+<li>系统级的目录，可以理解为<code>C:/Windows/</code></li>
+</ul>
+</li>
+<li><code>/usr/lib</code><ul>
+<li>理解为<code>C:/Windows/System32</code></li>
+</ul>
+</li>
+<li><code>/usr/local</code><ul>
+<li>用户级的程序目录，可以理解为<code>C:/Progrem Files/</code></li>
+<li>用户自己编译的软件默认会安装到这个目录下</li>
+</ul>
+</li>
+<li><code>/opt</code><ul>
+<li>用户级的程序目录，可以理解为<code>D:/Software</code></li>
+<li>opt有可选的意思，这里可以用于放置第三方大型软件（或游戏）</li>
+<li>当你不需要时，直接rm -rf掉即可。</li>
+<li>在硬盘容量不够时，也可将/opt单独挂载到其他磁盘上使用。</li>
+<li>文档说明<ul>
+<li>主要存放那些可选的程序，如你想尝试最新的firefox测试版</li>
+<li>那就装到/opt目录下吧，这样，当你尝试完，想删掉firefox的时候，你就可 以直接删除它，而不影响系统其他任何设置</li>
+<li>安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面</li>
+<li>如测试版firefox安装在<code>/opt/firefox_beta</code><ul>
+<li><code>/opt/firefox_beta</code>目录下面就包含了运 行firefox所需要的所有文件、库、数据等等。要删除firefox的时候，你只需删除/opt/firefox_beta目录即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="源码目录"><a href="#源码目录" class="headerlink" title="源码目录"></a>源码目录</h3><ul>
+<li><code>/usr/src</code><ul>
+<li>系统级的源码目录</li>
+</ul>
+</li>
+<li><code>/usr/local/src</code><ul>
+<li>用户级的源码目录</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><h3 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h3><h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4><ul>
+<li><code>yum install gcc</code></li>
+</ul>
+<h4 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h4><ol>
+<li>要有编译器。因为要编译源码。</li>
+<li>下载源码包<code>gcc.tar.gz</code></li>
+<li>安装依赖库</li>
+<li>三个目录<ul>
+<li><code>srcdir</code><ul>
+<li>源码目录，即解压的目录</li>
+</ul>
+</li>
+<li><code>destdir</code><ul>
+<li>安装目录</li>
+</ul>
+</li>
+<li><code>objdir</code><ul>
+<li>编译输出目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配置</li>
+<li>编译</li>
+<li>安装</li>
+</ol>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><ul>
+<li><code>rpm -qa | grep java</code><ul>
+<li>查看是否安装有jdk</li>
+<li>如果是源码(.tar.gz)安装 查不出来</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps 要卸载的软件</code><ul>
+<li>卸载</li>
+</ul>
+</li>
+<li>把jdk传到linux，解压到指定目录<ul>
+<li>我用的是<code>.tar.gz</code>的形式，直接解压就能用</li>
+<li>删除我没查到怎么删，我直接把文件夹删了。。</li>
+</ul>
+</li>
+<li><p>配置环境遍量</p>
 <ul>
-<li><code>Catalina_Base</code><ul>
-<li><code>workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps</code></li>
-</ul>
+<li>打开<code>/etc/profile</code>配置文件，在最后加上<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#set java environment</span><br><span class="line">	JAVA_HOME=/usr/local/jdk1.8.0_192</span><br><span class="line">	CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">	PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">	export JAVA_HOME CLASSPATH PATH</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>不推荐，修改需要重启tomcat</li>
-</ul>
-<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><ul>
-<li><p><code>tomcat/conf/catalina/localhost</code></p>
+<li><p>重新加载<code>/etc/profile</code></p>
 <ul>
-<li>新建<code>虚拟目录名(自定义).xml</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;应用的真实路径&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<li><code>source /etc/profile</code></li>
+</ul>
+</li>
+<li><code>java -version</code></li>
+</ul>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul>
+<li>解压到指定目录</li>
+<li>然后开放8080端口即可<ul>
+<li><code>firewall-cmd --zone=public --add-port=8080/tcp --permanent</code></li>
+<li><code>firewall-cmd --reload</code></li>
+<li><code>firewall-cmd --zone=public --query-port=8080/tcp</code></li>
+</ul>
+</li>
+<li>进去tomcat的bin<ul>
+<li><code>./startup.sh</code></li>
+<li><code>./shutdown.sh</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li>CentOS7自带的是mariadb数据库，安装新版mysql前，需将系统自带的mariadb-lib卸载<ul>
+<li><code>rpm -qa | grep mysql</code><ul>
+<li>查看是否有mysql</li>
+</ul>
+</li>
+<li><code>rpm -qa|grep mariadb</code><ul>
+<li>查看是否有mariadb</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps mariadb-libs-5.5.56-2.el7.x86_64</code><ul>
+<li>卸载mariadb</li>
+</ul>
 </li>
 </ul>
 </li>
-<li><p>Intellij使用这种方式</p>
+</ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li><strong>Red Hat Enterprise Linux 7 / Oracle Linux 7 (x86, 64-bit), RPM Bundle</strong><ul>
+<li>使用这个版本</li>
+<li>由于下载的mysql是<code>.tar</code>没有打成一个包，最好自己建一个文件夹mysql</li>
+<li>解压mysql到新建文件夹mysql</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>在<code>/mysql</code>下安装mysql<ul>
+<li><code>rpm -ivh mysql-community-common-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>mysql-community-libs-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>rpm -ivh mysql-community-client-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>rpm -ivh MySQL-server-5.6.22-1.el6.i686.rpm</code><ul>
+<li>按照顺序按照，会有依赖关系</li>
+<li>安装server前还要安装<code>libaio-0.3.107-10.el6.x86_64.rpm</code><ul>
+<li>可以离线</li>
+<li>也可以<code>yum install libaio</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="启动运行"><a href="#启动运行" class="headerlink" title="启动运行"></a>启动运行</h3><ul>
+<li><code>service mysql start</code>或<code>systemctl start mysqld.service</code><ul>
+<li>启动mysql</li>
+</ul>
+</li>
+<li><code>systemctl status mysqld.service</code><ul>
+<li>查看运行状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ul>
+<li>安装好会有一个随机密码在日志中<ul>
+<li><code>cat /var/log/mysqld.log | grep &#39;password&#39;</code>或<code>grep &quot;password&quot; /var/log/mysqld.log</code><ul>
+<li>可以找到password</li>
+<li><code>A temporary password is generated for root@localhost: lRym!ofXx6/r</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>mysql -uroot -p</code><ul>
+<li>登录</li>
+<li>登录后发现必须修改密码才能做其他事</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><ul>
+<li><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;root&#39;;</code></li>
+<li><code>set password=&#39;新密码&#39;;</code><ul>
+<li>新密码要大小写数字特殊符号。。。</li>
+</ul>
+</li>
+<li><code>SHOW VARIABLES LIKE &#39;validate_password%&#39;;</code><ul>
+<li>可以查看mysql对密码的规范</li>
+<li>修改规范使得可以设置简单密码<ul>
+<li><code>set global validate_password_policy=0;</code></li>
+<li><code>set global validate_password_length=1;</code></li>
+<li>这样就可以设置简单密码了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="开机启动服务"><a href="#开机启动服务" class="headerlink" title="开机启动服务"></a>开机启动服务</h3><ul>
+<li><code>systemctl enable mysqld</code></li>
+</ul>
+<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><ul>
+<li>Linux默认不能远程登录mysql，所以需要设置开启远程登录的权限<ul>
+<li><code>grant all privileges on *.* to &#39;root&#39; @&#39;%&#39; identified by &#39;root&#39;;</code><ul>
+<li>最后一个root，是远程访问密码，可以设置别的，自己用就root了。。</li>
+</ul>
+</li>
+<li><code>flush privileges;</code></li>
+</ul>
+</li>
+<li>还要开放3306端口</li>
+</ul>
+<h3 id="卸载上边安装的mysql"><a href="#卸载上边安装的mysql" class="headerlink" title="卸载上边安装的mysql"></a>卸载上边安装的mysql</h3><ul>
+<li><code>rpm -qa | grep mysql</code><ul>
+<li>查看是否安装了MySQL</li>
+</ul>
+</li>
+<li><code>service mysqld status</code><ul>
+<li>查看mysql服务状态</li>
+</ul>
+</li>
+<li><code>service mysqld stop</code><ul>
+<li>关闭mysql服务</li>
+</ul>
+</li>
+<li>卸载组件，存在依赖关系，卸载顺序<code>server-client-libs-common</code><ul>
+<li><code>rpm -ev xxx</code></li>
+</ul>
+</li>
+<li>查询并删除相关文件<ul>
+<li><code>whereis mysql</code></li>
+<li><code>find / -name mysql</code></li>
+<li>我删了一回，在这几个目录<ul>
+<li><code>/usr/local/mysql</code><ul>
+<li>我的安装目录</li>
+</ul>
+</li>
+<li><code>/usr/share/mysql</code></li>
+<li><code>/var/lib/mysql</code></li>
+<li><code>/var/lib/mysql/mysql</code></li>
+<li><code>/var/log/mysqld.log</code><ul>
+<li>日志</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最后可以查询是否删除干净<ul>
+<li><code>rpm -qa | grep mysql</code></li>
+<li><code>whereis mysql</code></li>
+<li><code>find / -name mysql</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="源码安装-1"><a href="#源码安装-1" class="headerlink" title="源码安装"></a>源码安装</h3><ul>
+<li><strong>mysql-5.7.23-linux-glibc2.12-x86_64.tar.gz</strong></li>
+</ul>
+<h4 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h4><ul>
+<li><code>ps -ef|grep mysql</code><ul>
+<li>查看是否安装了mysql</li>
+</ul>
+</li>
+<li><code>ps -ef|grep mariadb</code><ul>
+<li>查看是否安装了mariadb</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps xxx</code><ul>
+<li><code>nodeps</code><ul>
+<li>强制卸载</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>解压</li>
+<li>在<code>srcdir</code>下新建目录data<ul>
+<li><code>mkdir data</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="创建用户和组"><a href="#创建用户和组" class="headerlink" title="创建用户和组"></a>创建用户和组</h4><ul>
+<li><code>cat /etc/group | grep mysql</code><ul>
+<li>查询是否有用户组“mysql”</li>
+</ul>
+</li>
+<li><code>cat /etc/passwd | grep mysql</code><ul>
+<li>查询是否有用户“mysql”</li>
+</ul>
+</li>
+<li><code>groupadd mysql</code><ul>
+<li>创建用户组”mysql”(可自定义名称 安)</li>
+</ul>
+</li>
+<li><code>useradd -r -g mysql  mysql</code><ul>
+<li>创建用户”mysql” 并关联到组”mysql”上</li>
+</ul>
+</li>
+<li><code>chown mysql:mysql data</code><ul>
+<li>将data目录的所属从<code>root</code>变为<code>mysql组的mysql用户</code></li>
+</ul>
+</li>
+<li><code>chmod 750 data</code><ul>
+<li>修改data目录的权限</li>
+</ul>
+</li>
+</ul>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><ul>
+<li><code>bin/mysqld --initialize --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --user=mysql</code><br>6kZ1rGR/ld4W<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4></li>
+<li><code>touch /etc/my.cnf</code><ul>
+<li>在etc下创建my.cnf</li>
+</ul>
+</li>
+<li><code>vim /etc/my.cnf</code><ul>
+<li>注意my.cnf第一行要有组<code>[mysqld]</code></li>
+<li>仅供参考<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir=/usr/local/mysql</span><br><span class="line">datadir=/usr/local/mysql/data</span><br><span class="line">port=3306</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br><span class="line">character-set-server=utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><ul>
+<li><code>cp -r support-files/mysql.server /etc/init.d/mysql</code><ul>
+<li>将mysql放到本地系统服务中</li>
+</ul>
+</li>
+<li><code>service mysql start</code><ul>
+<li>启动服务</li>
+<li><code>cannot create xxx.sock</code><ul>
+<li>sock文件要设置到tmp中，并设置用户组</li>
+<li><code>chown mysql:mysq tmp</code></li>
+</ul>
+</li>
+<li><code>ERROR! The server quit without updating PID file</code><ul>
+<li>因为新版本的mysql安全启动安装包只认/usr/local/mysql这个路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>开机自动启动服务<ul>
+<li><code>chkconfig --add mysql</code></li>
+<li><code>chkconfig mysql on</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="登录-1"><a href="#登录-1" class="headerlink" title="登录"></a>登录</h4><ul>
+<li><code>bin/mysql -uroot -p</code><ul>
+<li>登陆，初始密码在初始化时有个随机的记得记录一下</li>
+<li>如果你想用<code>msyql –uroot –p</code>登录<ol>
+<li>建立软连接<ul>
+<li><code>ln -s /basedir/bin/mysql /usr/bin</code><ul>
+<li>系统默认会查找/usr/bin下的命令，如果这个命令不在这个目录下，当然会找不到命令</li>
+<li>需要做的就是映射一个链接到/usr/bin目录下，相当于建立一个链接文</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>修改<code>bin/mysqld_safe</code>文件<ul>
+<li>将所有<code>usr/local/mysql</code>改为<code>basedir</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;root&#39;;</code><ul>
+<li>修改密码</li>
+</ul>
+</li>
+</ul>
+<h4 id="开启远程服务"><a href="#开启远程服务" class="headerlink" title="开启远程服务"></a>开启远程服务</h4><ul>
+<li><code>grant all privileges  on *.* to &#39;用户名&#39;@&#39;%&#39; identified by &#39;密码&#39; with grant option;</code></li>
+<li>mysql8.x<ul>
+<li><code>CREATE USER &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;root&#39;;</code></li>
+<li><code>GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39;WITH GRANT OPTION;</code></li>
+</ul>
+</li>
+<li><code>flush privileges;</code></li>
+</ul>
+<h4 id="设置防火墙开放3306端口"><a href="#设置防火墙开放3306端口" class="headerlink" title="设置防火墙开放3306端口"></a>设置防火墙开放3306端口</h4><ul>
+<li>linux的防火墙默认之开启22端口</li>
+<li><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent</code><ul>
+<li><code>permanent</code><ul>
+<li>永久生效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>firewall-cmd --reload</code><ul>
+<li>不重启直接重新加载</li>
+</ul>
+</li>
+<li><code>firewall-cmd --zone=public --query-port=3306/tcp</code><ul>
+<li>查看3306端口的状态</li>
+</ul>
+</li>
+</ul>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><ul>
+<li>解压缩到<code>/usr/local</code></li>
+<li>进入解压目录<ul>
+<li><code>make test</code><ul>
+<li>如果有错误<code>You need tcl 8.5 or newer in order to run the Redis test</code></li>
+<li>是因为没有安装TCL<ul>
+<li>(Tool Command Language）工具脚本语言，是Linux内的一种语言包</li>
+<li>下载，上传解压</li>
+<li>到安装目录<ul>
+<li><code>cd unix</code></li>
+<li><code>./configure</code></li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>cd src</code></li>
+<li><code>make install PREFIX=/usr/local/redis</code></li>
+<li>将解压目录下的<code>redis.conf</code>拷贝到安装路径下</li>
+<li>前端启动<ul>
+<li><code>cd redis/bin</code></li>
+<li><code>./reids-server</code><ul>
+<li>此时启动成功看到一大堆东西，还有个图</li>
+<li>这属于前端启动，启动后，控制台不能做任何操作了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>后端启动<ul>
+<li>编辑<code>vim redis/redis.conf</code><ul>
+<li><code>daemonize no</code><ul>
+<li>改为yes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>./bin/redis-server ./redis.conf</code><ul>
+<li>加载配置启动</li>
+</ul>
+</li>
+<li><code>ps -ef | grep -i redis</code><ul>
+<li>查看是否启动</li>
+</ul>
+</li>
+<li><code>./bin/redis-cli</code><ul>
+<li>启动客户端</li>
+</ul>
+</li>
+<li><code>./bin/redis-cli shutdown</code><ul>
+<li>关闭redis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><ul>
+<li>解压后</li>
+<li>在<code>srcdir</code>目录<code>make</code></li>
+<li>在<code>srcdir/src</code>目录<code>make install</code></li>
+<li>然后把<code>srcdir/src</code>下的<code>redis-server redis-cli</code>和<code>srcdir</code>下的<code>redis.conf</code>移动到一个文件夹下，方便使用</li>
+<li>启动同上边</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li><p><code>-bash: vim: command not found</code></p>
 <ul>
-<li><code>Catalina_Base</code><ul>
-<li><code>Intellij/system/tomcat/</code></li>
+<li>Centos默认安装了VI编辑器，VIM是没有安装的</li>
+<li>VIM编辑器需要三个包<ul>
+<li><code>vim-enhanced</code></li>
+<li><code>vim-minimal</code></li>
+<li><code>vim-common</code></li>
+</ul>
+</li>
+<li><code>rpm -qa|grep vim</code><ul>
+<li>查看是否安装</li>
+<li>缺少哪个包就安装哪个</li>
+</ul>
+</li>
+<li><code>yum -y install vim-enhanced</code><ul>
+<li>安装<code>vim-enhanced</code></li>
+</ul>
+</li>
+<li><code>yum -y install vim *</code><ul>
+<li>安装所有缺少的包</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>支持热部署，修改不用重启tomcat</li>
-<li>如果新建的<code>虚拟目录名</code>为<code>ROOT</code>，则访问时，可以不写<ul>
-<li>Intellij就是这样做的</li>
+<li><p>centos7 添加端口</p>
+<ul>
+<li>centos7防火墙为firewall </li>
+<li><code>firewall-cmd --list-ports</code><ul>
+<li>查看已经开放的端口</li>
 </ul>
 </li>
+<li><code>firewall-cmd --zone=public --add-port=80/tcp --permanent</code><ul>
+<li>开启端口</li>
+<li><code>--zone</code><ul>
+<li>作用域</li>
 </ul>
-<h2 id="tomcat的访问"><a href="#tomcat的访问" class="headerlink" title="tomcat的访问"></a>tomcat的访问</h2><ul>
-<li><code>http://ip:端口/应用/资源</code></li>
+</li>
+<li><code>--add-port=80/tcp</code><ul>
+<li>添加端口=端口号/协议</li>
 </ul>
-<h3 id="默认端口"><a href="#默认端口" class="headerlink" title="默认端口"></a>默认端口</h3><ul>
-<li>http协议端口为80</li>
-<li>把tomcat端口设为80就不用写端口了</li>
-</ul>
-<h3 id="默认应用"><a href="#默认应用" class="headerlink" title="默认应用"></a>默认应用</h3><ul>
-<li>tomcat默认访问ROOT应用<br>  *（见上边虚拟目录）</li>
-</ul>
-<h3 id="默认主页"><a href="#默认主页" class="headerlink" title="默认主页"></a>默认主页</h3><ul>
-<li><code>web.xml</code>中配置</li>
-</ul>
-<h2 id="idea中tomcat的部署"><a href="#idea中tomcat的部署" class="headerlink" title="idea中tomcat的部署"></a>idea中tomcat的部署</h2><h3 id="war"><a href="#war" class="headerlink" title="war"></a><code>war</code></h3><ul>
-<li>将web工程以war包的形式上传到服务器</li>
-<li>可以称之为是发布模式，看名字也知道，这是先打包war包，再发布</li>
-<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
-<li><code>D:\save\apache-tomcat-8.0.48\webapps\ROOT\</code></li>
-<li>结果是tomcat的webapps的Root目录</li>
-<li>会把Root目录项目替换成此项目<ul>
-<li>此种情况是配置tomcat时application context选择了<code>/</code></li>
-<li>如果配置成别的如<code>/aaa</code><ul>
-<li>则不会替换Root，而是在webapps下创建aaa</li>
+</li>
+<li><code>--permanent</code><ul>
+<li>永久生效，没此参数重启后失效。</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><code>firewall-cmd --reload</code><ul>
+<li>重启firewall</li>
+</ul>
+</li>
+<li><code>systemctl stop firewalld.service</code><ul>
+<li>停止firewall</li>
+</ul>
+</li>
+<li><code>systemctl start  firewalld.service</code><ul>
+<li>启动firewall</li>
+</ul>
+</li>
+<li><code>systemctl disable firewalld.service</code><ul>
+<li>禁止firewall开机启动</li>
 </ul>
 </li>
 </ul>
-<h3 id="war-exploed"><a href="#war-exploed" class="headerlink" title="war exploed"></a><code>war exploed</code></h3><ul>
-<li>将web工程以当前文件夹的位置关系上传到服务器</li>
-<li>展开部署(相当于将资源文件进行展开后进行部署)</li>
-<li>直接把文件夹，jsp页面，classes等等移到Tomcat部署文件夹里面，进行加载部署。因此这种方式支持热部署，一般在开发的时候也是用这种方式。</li>
-<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
-<li><code>D:\save\IntellijWP\project\HelloMaven\target\HelloMaven-1.0-SNAPSHOT\</code></li>
-<li>可以看到是项目target下的目录</li>
+</li>
+<li><p>CentOS 7 以下版本 iptables 命令</p>
+<ul>
+<li>centos7以下防火墙为iptables</li>
+<li><code>/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</code><ul>
+<li>开放端口</li>
+</ul>
+</li>
+<li><code>/etc/rc.d/init.d/iptables save</code><ul>
+<li>永久保存</li>
+</ul>
+</li>
+<li><code>/etc/init.d/iptables status</code><ul>
+<li>查看已打开的端口</li>
 </ul>
 </li>
 </ul>
+</li>
+</ol>
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><ol>
+<li>下载源码包，解压<ul>
+<li>注意先别安装，安装vim需要个东西，还得重新编译安装。坑四了。</li>
+</ul>
+</li>
+<li>在解压目录（即srcdir 源码目录）<ul>
+<li><code>./configure  --prefix=/usr/local</code><ul>
+<li><code>./</code><ul>
+<li>表示目录是当前目录</li>
+</ul>
+</li>
+<li><code>prefix</code><ul>
+<li>安装目录</li>
+</ul>
+</li>
+<li>如果未安装编译工具如<code>gcc...</code>会报错</li>
+</ul>
+</li>
+<li><code>make</code><ul>
+<li><code>zlib.h: No such file or directory</code><ul>
+<li>缺少 zlib的头文件， 开发包没装<ul>
+<li><code>yum install zlib</code><ul>
+<li>系统默认已经装上</li>
+</ul>
+</li>
+<li><code>yum install zlib-devel</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Can&#39;t locate ExtUtils/MakeMaker.pm in @INC</code>或者 <code>perl.make command not found</code><ul>
+<li><code>yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>sudo make install</code><ul>
+<li><code>sudo</code><ul>
+<li>貌似是管理员的意思</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安装好后<ul>
+<li><code>git --version</code><ul>
+<li>安装到<code>/usr/local</code>可以<ul>
+<li>因为<code>/usr/local/bin</code>这个目录默认已经加入了PATH环境变量中，这样你的git会安装到/usr/local/bin这个目录，所以你在shell下执行时可以找到这个命令</li>
+</ul>
+</li>
+<li>自定义目录<code>/usr/loacl/git</code>不可以<ul>
+<li>因为没有环境变量，类似windows</li>
+<li>可以在安装目录使用命令<code>/usr/local/git/bin/git --version</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>手动添加环境变量<ol>
+<li><code>$PATH=&quot;$PATH&quot;:/NEW_PATH</code><ul>
+<li>临时配置，关闭shell失效</li>
+</ul>
+</li>
+<li><code>/etc/profile</code><ul>
+<li>在下面添加<code>export  PATH=&quot;$PATH:/NEW_PATH&quot;</code></li>
+<li>是针对所有用户（配置好需要重启）</li>
+</ul>
+</li>
+<li>修改个人用户目录下的<code>.bashrc</code><ul>
+<li>在下面添加<code>export  PATH=&quot;$PATH:/NEW_PATH&quot;</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>注意<ul>
+<li><code>-bash: Export: command not found</code><ul>
+<li>export不能大写，linux区分大小写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配置基本信息(网上，未测试)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//配置基本信息</span><br><span class="line">[root@localhost ~]# git config --global user.name &quot;an3&quot;</span><br><span class="line">[root@localhost ~]# git config --global user.email xxx@qq.com</span><br><span class="line">//查看配置</span><br><span class="line">[root@localhost ~]# git config --list</span><br><span class="line">user.name=an3</span><br><span class="line">user.email=xxx@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h2 id="一-使用git安装"><a href="#一-使用git安装" class="headerlink" title="一 使用git安装"></a>一 使用git安装</h2><ol>
+<li><p><code>git clone https://github.com/vim/vim.git</code></p>
+<ul>
+<li><code>fatal: Unable to find remote helper for &#39;https&#39;</code><ul>
+<li>是因为没有安装<code>curl-devel</code><ol>
+<li>源码安装crul，然后重新编译安装git<ul>
+<li><code>./configure --prefix=/usr/local/git --with-curl=curl安装目录</code></li>
+</ul>
+</li>
+<li>yum安装crul，然后重写编译安装git<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ yum install curl-devel</span><br><span class="line">$ # cd to wherever the source for git is</span><br><span class="line">$ ./configure</span><br><span class="line">$ make</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd srcdir</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="二-源码安装"><a href="#二-源码安装" class="headerlink" title="二 源码安装"></a>二 源码安装</h2><ol>
+<li>下载源码包<ul>
+<li>如果源码包是<code>.tar.bz2</code>的<ul>
+<li>解压<code>tar jxvf xxx.tar.bz2</code></li>
+<li><code>bzip2: Cannot exec: No such file or directory</code><ul>
+<li>没有安装<code>bzip2</code></li>
+<li><code>yum install bzip2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>然后编译安装。。<ul>
+<li><code>You need to install a terminal library; for example ncurses.       Or specify the name of the libra</code><ul>
+<li><code>yum install ncurses-devel.x86_64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
           
         
@@ -1857,7 +3070,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-BootStrap/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/xd-Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -1876,8 +3089,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/25/xd-BootStrap/" itemprop="url">
-                  xd-BootStrap
+                <a class="post-title-link" href="/2019/01/05/xd-Redis/" itemprop="url">
+                  xd-Redis
                 </a>
               
             
@@ -1903,150 +3116,7 @@
                 
               
 
-              <time title="创建时间：2018-12-25 13:38:34 / 修改时间：13:38:35" itemprop="dateCreated datePublished" datetime="2018-12-25T13:38:34+08:00">2018-12-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/xd-事务和连接池/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/20/xd-事务和连接池/" itemprop="url">
-                  xd-事务和连接池
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-20 13:06:35" itemprop="dateCreated datePublished" datetime="2018-12-20T13:06:35+08:00">2018-12-20</time>
+              <time title="创建时间：2019-01-05 01:55:58" itemprop="dateCreated datePublished" datetime="2019-01-05T01:55:58+08:00">2019-01-05</time>
             
 
             
@@ -2063,7 +3133,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-24 14:45:19" itemprop="dateModified" datetime="2018-12-24T14:45:19+08:00">2018-12-24</time>
+                <time title="修改时间：2019-01-14 19:55:25" itemprop="dateModified" datetime="2019-01-14T19:55:25+08:00">2019-01-14</time>
               
             
           </span>
@@ -2116,776 +3186,1845 @@
       
         
           
-            <h1 id="ACID特性"><a href="#ACID特性" class="headerlink" title="ACID特性"></a>ACID特性</h1><h2 id="原子性（atomicity）"><a href="#原子性（atomicity）" class="headerlink" title="原子性（atomicity）"></a>原子性（atomicity）</h2><ul>
-<li>一个事务是一个不可分割的工作单位，事务中包括的诸操作要么都做，要么都不做。</li>
+            <h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><code>Not Only SQL</code></li>
+<li>全新数据库理念，泛指非关系型数据库</li>
+<li>适合大数据高并发，高负载，高扩展</li>
+<li>性能高</li>
+<li>数据之间没有关系，数据存储在内存中</li>
 </ul>
-<h2 id="一致性（consistency）"><a href="#一致性（consistency）" class="headerlink" title="一致性（consistency）"></a>一致性（consistency）</h2><ul>
-<li>事务必须是使数据库从一个一致性状态变到另一个一致性状态。即事务操作的前后, 数据表中的数据没有变化</li>
-<li>一致性与原子性是密切相关的。</li>
-</ul>
-<h2 id="隔离性（isolation）"><a href="#隔离性（isolation）" class="headerlink" title="隔离性（isolation）"></a>隔离性（isolation）</h2><ul>
-<li>一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰。</li>
-</ul>
-<h2 id="持久性（durability）"><a href="#持久性（durability）" class="headerlink" title="持久性（durability）"></a>持久性（durability）</h2><ul>
-<li>持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响。</li>
-</ul>
-<h1 id="事务原理"><a href="#事务原理" class="headerlink" title="事务原理"></a>事务原理</h1><ul>
-<li>事务开启之后, 所有的操作都会临时保存到事务日志, 事务日志只有在得到commit命令才会同步到数据表,其他任何情况都会清空(rollback, 断电, 断开连接)</li>
-</ul>
-<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><ul>
-<li>在一个事务处理过程里读取了另一个事务未提交的数据。</li>
-<li><strong>例</strong><ul>
-<li>我开启查看工资的事务,老板给我发工资，本来是1万，老板不小心多打了个0，发了10万，但老板没提交事务，我看到发了10万，高兴坏了，然后老板发现后回滚了。</li>
-<li>最后实际还是发了1万工资，可我确看到10万，这就是脏读。</li>
+<h2 id="常见NoSQL数据库"><a href="#常见NoSQL数据库" class="headerlink" title="常见NoSQL数据库"></a>常见NoSQL数据库</h2><ul>
+<li><code>Redis</code></li>
+<li><code>mongo</code></li>
+<li><code>HBASE</code><ul>
+<li>hadoop中生态系统中</li>
 </ul>
 </li>
 </ul>
-<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><ul>
-<li>在一个事务内读取表中的某一行数据，多次读取结果不同。一个事务读取到了另一个事务提交后的数据。(update)</li>
-<li><strong>例</strong><ul>
-<li>我开启事务查看卡里有多少钱，发现还有1万，还个事务没提交，这时我媳妇用我的卡转了1万并提交了。然后我想确认一下，又查了一遍，发现没钱了，我就懵逼了。</li>
-<li>在一个事务中，有另一个事务进行了update操作并提交，导致两次读取数据不一致，就是不可重复读.</li>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>官网<ul>
+<li><code>redis.io</code></li>
+</ul>
+</li>
+<li>中文网<ul>
+<li><code>redis.net.cn</code></li>
+</ul>
+</li>
+<li>端口 <ul>
+<li><code>6379</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读(幻读)"></a>虚读(幻读)</h3><ul>
-<li>是指在一个事务内读取到了别的事务插入的数据，导致前后读取不一致。(insert)</li>
-<li><strong>例</strong><ul>
-<li>我开启事务查询班里多少人，发现有24个人，还没提交，然后老师又插入了一个人，我确认一下，又查了一遍，发现25个人了，我又懵逼了。</li>
-<li>在一个事务中，有另一个事务进行了insert操作并提交，导致两次读取数据不一致，就是虚读(幻读).</li>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>前端启动<ul>
+<li><code>./redis-server</code></li>
+<li>直接使用<code>redis-server</code>启动</li>
+<li>类似tomcat的dos窗口，不能关，一关就结束了</li>
 </ul>
 </li>
-</ul>
-<h3 id="总"><a href="#总" class="headerlink" title="总"></a>总</h3><ul>
-<li>读了未提交的事务的数据即<strong>脏读</strong></li>
-<li>读了已提交的事务的数据(update)即<strong>不可重复读</strong></li>
-<li>读了已提交的事务的数据(insert)即<strong>虚读(幻读)</strong></li>
-</ul>
-<h2 id="隔离级别解决问题"><a href="#隔离级别解决问题" class="headerlink" title="隔离级别解决问题"></a>隔离级别解决问题</h2><ul>
-<li>设置隔离级别要在开启事务之前。</li>
-</ul>
-<h3 id="1-READ-UNCOMMITTED"><a href="#1-READ-UNCOMMITTED" class="headerlink" title="1 READ UNCOMMITTED"></a><code>1 READ UNCOMMITTED</code></h3><ul>
-<li>读未提交<ul>
-<li>就是一个事务可以读取另一个未提交事务的数据</li>
-</ul>
-</li>
-<li>脏读，不可重复读，虚读（幻读）都可能发生</li>
-</ul>
-<h3 id="2-READ-COMMITTED"><a href="#2-READ-COMMITTED" class="headerlink" title="2 READ COMMITTED"></a><code>2 READ COMMITTED</code></h3><ul>
-<li>读已提交<ul>
-<li>就是一个事务要等另一个事务提交后才能读取数据</li>
-</ul>
-</li>
-<li>可避免脏读的发生</li>
-<li>不可重复度，虚读(幻读)有可能发生.</li>
-<li>Sql Server,oracle默认</li>
-</ul>
-<h3 id="4-REPEATABLE-READ"><a href="#4-REPEATABLE-READ" class="headerlink" title="4 REPEATABLE READ"></a><code>4 REPEATABLE READ</code></h3><ul>
-<li>可重复读<ul>
-<li>开始读取数据(事务开启)时，不允许别的事务进行update操作,但可以进行inser操作。</li>
-</ul>
-</li>
-<li>可避免脏读、不可重复读的发生</li>
-<li>虚读(幻读)有可能发生</li>
-<li>mysql默认</li>
-</ul>
-<h3 id="8-SERIALIZABLE"><a href="#8-SERIALIZABLE" class="headerlink" title="8 SERIALIZABLE"></a><code>8 SERIALIZABLE</code></h3><ul>
-<li>串行化</li>
-<li>最高级别，都可以避免。</li>
-<li>级别越高，性能越低，数据越安全</li>
-</ul>
-<h1 id="jdbc的事务"><a href="#jdbc的事务" class="headerlink" title="jdbc的事务"></a>jdbc的事务</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
-<li>自动提交事务（默认）<ul>
-<li>每条单独的语句都是一个事务。每个语句后都隐含一个commit。 </li>
-</ul>
-</li>
-<li><code>Connection.setAutoCommit(false)</code><ul>
-<li>将自动提交设置为false即视为开启事务。</li>
-</ul>
-</li>
-<li><code>Connection.commit()</code></li>
-<li><code>Connection.rollback()</code></li>
-</ul>
-<h2 id="隔离级别-1"><a href="#隔离级别-1" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
-<li><code>Connection.setTransactionIsolation(int level)</code><ul>
-<li>设置隔离级别(必须在开启事务之前)<ul>
-<li>level 常量</li>
+<li>后端启动<ul>
+<li>拷贝解压目录中的<code>redis.conf</code>到安装目录中，并修改<code>daemonize no</code>为<code>yes</code></li>
+<li><code>./redis-server redis.conf</code></li>
+<li>关闭<ul>
+<li>如果在操作中，<code>exit</code>回到命令</li>
+<li><code>./redis-cli shutdown</code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="mysql的事务"><a href="#mysql的事务" class="headerlink" title="mysql的事务"></a>mysql的事务</h1><h2 id="事务-1"><a href="#事务-1" class="headerlink" title="事务"></a>事务</h2><ul>
-<li>在mysql命令行下，默认事务都是自动提交的<ul>
-<li><code>set autocommit=0/off</code><ul>
-<li>关闭自动提交</li>
+<h2 id="Redis连接java报错"><a href="#Redis连接java报错" class="headerlink" title="Redis连接java报错"></a>Redis连接java报错</h2><ul>
+<li><code>Connection refused: connect</code><ul>
+<li>是因为<code>redis.conf</code>中<code>bind 127.0.0.1</code>绑定了本地ip</li>
+<li>该配置会导致，其它ip登录被拒绝，注释掉它</li>
+</ul>
+</li>
+<li><code>DENIED Redis is running in protected mode because protected mode is enabled…</code><ul>
+<li>注释后又有了新问题，说redis处于受保护模式，不允许非本地客户端链接</li>
+<li>可以通过给redis设置密码，链接时写上密码即可<ul>
+<li><code>config set requirepass 密码</code></li>
+<li><code>Jedis j = new Jedis(&quot;ip&quot;,6379)</code></li>
+<li><code>j.auth(&quot;密码&quot;)</code></li>
+</ul>
+</li>
+<li>还有一种说法是修改<code>redis.conf</code>把<code>protected-mod yes</code>改为no</li>
+</ul>
+</li>
+</ul>
+<h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><ul>
+<li>一款java操作redis数据库的工具，类似jdbc，是用来在java中操作redis的</li>
+<li>jar包<ul>
+<li><code>commons-pool.jar</code></li>
+<li><code>jedis.jar</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Jedis-1"><a href="#Jedis-1" class="headerlink" title="Jedis"></a>Jedis</h3><h4 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h4><ul>
+<li><code>Jedis()</code><ul>
+<li>空参构造，默认为<code>localhost和6379</code></li>
+</ul>
+</li>
+<li><code>Jedis(String host, int port)</code></li>
+</ul>
+<h4 id="操作string"><a href="#操作string" class="headerlink" title="操作string"></a>操作string</h4><ul>
+<li><code>String set(String key, String value)</code></li>
+<li><code>String get(String key)</code></li>
+<li><code>String setex(String key, int seconds, String value)</code><ul>
+<li>seconds：存活时间，过期删除</li>
+</ul>
+</li>
+</ul>
+<h4 id="操作hash"><a href="#操作hash" class="headerlink" title="操作hash"></a>操作hash</h4><ul>
+<li><code>Long hset(String map, String key, String value)</code></li>
+<li><code>Map&lt;String, String&gt; hgetAll(String map)</code></li>
+<li><code>Set&lt;String&gt; hkeys(String map)</code></li>
+</ul>
+<h4 id="操作list"><a href="#操作list" class="headerlink" title="操作list"></a>操作list</h4><ul>
+<li><code>Long lpush(String list, String... strings)</code></li>
+<li><code>List&lt;String&gt; lrange(String list, long start, long end)</code></li>
+<li><code>String lpop(String list)</code></li>
+</ul>
+<h4 id="操作set"><a href="#操作set" class="headerlink" title="操作set"></a>操作set</h4><ul>
+<li><code>Long sadd(String set, String... members)</code></li>
+<li><code>Set&lt;String&gt; smembers(String set)</code></li>
+</ul>
+<h4 id="操作sortedset"><a href="#操作sortedset" class="headerlink" title="操作sortedset"></a>操作sortedset</h4><ul>
+<li><code>Long zadd(String set, double score, String member)</code></li>
+<li><code>Set&lt;String&gt; zrange(String set, long start, long end)</code></li>
+</ul>
+<h2 id="JedisPool-连接池"><a href="#JedisPool-连接池" class="headerlink" title="JedisPool 连接池"></a>JedisPool 连接池</h2><ol>
+<li>创建连接池配置对象<ul>
+<li><code>JedisPoolConfig cfg = new JedisPoolConfig();</code><ul>
+<li>cfg的一些设置(最大链接数，最大空闲数，最小空闲数…)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>begin</code> | <code>start transction</code> | <code>set autocommit=0/off</code><ul>
+<li>根据配置创建连接池对象并获取Jedis对象<ul>
+<li><code>JedisPool pool = new JedisPool(cfg, ip, port)</code></li>
+<li><code>Jedis jedis = pool.getResource()</code></li>
+</ul>
+</li>
+<li>操作</li>
+<li>关闭资源<ul>
+<li><code>jedis.close()</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h2><ul>
+<li>存的是键值对<ul>
+<li>KEY<ul>
+<li>都是字符串</li>
+</ul>
+</li>
+<li>value<ul>
+<li>字符串(string)</li>
+<li>哈希(hash map)</li>
+<li>字符串序列(list)</li>
+<li>字符串集合(set)</li>
+<li>有序字符串集合(sorted set)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><ul>
+<li><code>KEY</code> = <code>string</code></li>
+<li>是redis中最基础也是最重要的</li>
+<li>是二进制安全的<ul>
+<li>即存取数据相同</li>
+</ul>
+</li>
+<li><strong>存</strong><ul>
+<li><code>set KEY value</code></li>
+</ul>
+</li>
+<li><strong>取</strong><ul>
+<li><code>get KEY</code></li>
+<li><code>getset KEY value</code><ul>
+<li>先获取KEY的value值，然后修改为value</li>
+</ul>
+</li>
+<li>获取空为<code>nil</code></li>
+</ul>
+</li>
+<li><strong>删</strong><ul>
+<li><code>del KEY</code><ul>
+<li>各种数据通用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数值增减</strong><ul>
+<li><code>incr KEY</code><ul>
+<li>i++</li>
+<li>KEY的value值可以转成数字</li>
+<li>如果KEY不存在，会增加一个KEY，且初始value为0，并++</li>
+</ul>
+</li>
+<li><code>decr KEY</code><ul>
+<li>i–</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>扩展</strong><ul>
+<li><code>increby key 数字</code><ul>
+<li>将指定key的值增加指定数字</li>
+<li><code>i+=数字</code></li>
+</ul>
+</li>
+<li><code>devrby key 数字</code><ul>
+<li><code>i-=数字</code></li>
+</ul>
+</li>
+<li><code>append key value</code><ul>
+<li>为key的值拼接value</li>
+<li>拼接字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><ul>
+<li><code>KEY</code> = <code>map</code></li>
+<li><code>hset KEY key value</code><ul>
+<li>为指定的map(map名为KEY)中的key赋值</li>
+</ul>
+</li>
+<li><code>hmset KEY key1 value1 key2 value2 ... n</code><ul>
+<li>批量添加</li>
+</ul>
+</li>
+<li><code>hget KEY key</code><ul>
+<li>取值</li>
+</ul>
+</li>
+<li><code>hmget KEY key1 key2 ... n</code><ul>
+<li>批量获取</li>
+</ul>
+</li>
+<li><code>hgetall KEY</code><ul>
+<li>获取KEY的map所有键值</li>
+</ul>
+</li>
+<li><code>hdel KEY key</code><ul>
+<li>删除KEY中map的key</li>
+</ul>
+</li>
+<li><code>del KEY</code><ul>
+<li>删除KEY</li>
+</ul>
+</li>
+<li><code>hincrby KEY key 数字</code><ul>
+<li>为KEY中map的key的value增加指定数字</li>
+</ul>
+</li>
+<li><code>hexists KEY key</code><ul>
+<li>KEY的map中是否存在key</li>
+<li>返回1/0</li>
+</ul>
+</li>
+<li><code>hlen KEY</code><ul>
+<li>获取KEY的map中的键值对数量</li>
+</ul>
+</li>
+<li><code>hkeys KEY</code><ul>
+<li>获取KEY的map的所有key</li>
+</ul>
+</li>
+</ul>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><ul>
+<li><code>KEY</code> = <code>list</code><ul>
+<li>list底层是链表</li>
+</ul>
+</li>
+<li><code>lpush KEY value1 value2 ... n</code><ul>
+<li>从左边往栈中存</li>
+<li>存取都是从两端存或取</li>
+<li>存的时候是压栈</li>
+</ul>
+</li>
+<li><code>rpush KEY value1 value2 ... n</code><ul>
+<li>从右边往栈中存</li>
+</ul>
+</li>
+<li><code>lrange KEY start end</code><ul>
+<li>取</li>
+<li>start 从0开始</li>
+<li>start、end可为负数，若为-1则表示链表尾部的元素，-2则表示倒数第二个，依次类推… </li>
+<li><code>0 -1</code>：表示从0开始到最后一个元素</li>
+</ul>
+</li>
+<li><code>lpop KEY</code><ul>
+<li>从左弹栈一个值(即左边第一个)</li>
+<li>相当于删除并返回</li>
+</ul>
+</li>
+<li><code>rpop KEY</code><ul>
+<li>从右弹栈</li>
+</ul>
+</li>
+<li><code>llen KEY</code><ul>
+<li>获取长度</li>
+</ul>
+</li>
+<li><code>lpushx KEY value</code><ul>
+<li>如果KEY不存在，不会存</li>
+</ul>
+</li>
+<li><code>rpushx KEY value</code></li>
+<li><code>lrem KEY count value</code><ul>
+<li>删除count个值为value的元素</li>
+<li>如果count大于0，从头向尾遍历并删除count个值为value的元素</li>
+<li>如果count小于0，则从尾向头遍历并删除</li>
+<li>如果count等于0，则删除链表中所有等于value的元素</li>
+</ul>
+</li>
+<li><code>let KEY index value</code><ul>
+<li>将指定index处的值修改为value</li>
+</ul>
+</li>
+<li><code>linsert KEY before/after value value1</code><ul>
+<li>在指定value前/后边插入value1</li>
+</ul>
+</li>
+<li><code>rpoplpuch KEY1 KEY2</code><ul>
+<li>将KEY1的右边元素弹栈，压栈到KEY2的左边</li>
+<li>就是KEY1的最右边元素放到KEY2的最左边</li>
+</ul>
+</li>
+</ul>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><ul>
+<li><code>KEY</code> = <code>set</code><ul>
+<li>这里的set是无序的，唯一</li>
+</ul>
+</li>
+<li><code>sadd KEY value1 ... n</code><ul>
+<li>如果value已经存在，则不会重复添加</li>
+</ul>
+</li>
+<li><code>smembers KEY</code><ul>
+<li>获取全部</li>
+</ul>
+</li>
+<li><code>scard KEY</code><ul>
+<li>获取数量</li>
+</ul>
+</li>
+<li><code>srem KEY value1 ... n</code><ul>
+<li>删除</li>
+</ul>
+</li>
+<li><code>sismember KEY value</code><ul>
+<li>查看是否存在value</li>
+<li>返回0或者本身</li>
+</ul>
+</li>
+<li><code>srandmember KEY</code><ul>
+<li>返回set中随机一个value</li>
+</ul>
+</li>
+<li><code>sdiff KEY1 KEY2</code><ul>
+<li>返回KEY1中不在KEY2中的元素</li>
+</ul>
+</li>
+<li><code>sdiffstore KEY KEY1 KEY2</code><ul>
+<li>将KEY1中不在KEY2中的元素存储到KEY中</li>
+</ul>
+</li>
+<li><code>sinter KEY1 KEY2</code><ul>
+<li>返回KEY1中在KEY2中的元素（交集）</li>
+</ul>
+</li>
+<li><code>sunion KEY1 KEY2</code><ul>
+<li>返回并集</li>
+</ul>
+</li>
+</ul>
+<h3 id="sortedset"><a href="#sortedset" class="headerlink" title="sortedset"></a>sortedset</h3><ul>
+<li><code>KEY</code> = <code>sortedset</code><ul>
+<li>sortedset中的元素都有一个与之关联的double类型的分数(score)</li>
+<li>有序，唯一，分数可以重复</li>
+</ul>
+</li>
+<li><code>zadd KEY score1 value1 score2 value2 ... n</code><ul>
+<li>添加时要指定分数</li>
+</ul>
+</li>
+<li><code>zcard KEY</code><ul>
+<li>获取数量</li>
+</ul>
+</li>
+<li><code>zcount KEY min max</code><ul>
+<li>获取分数在[min,max]之间的成员</li>
+</ul>
+</li>
+<li><code>zincrby KEY 数字 value</code><ul>
+<li>指定的value的分数加上指定数字</li>
+</ul>
+</li>
+<li><code>zrange KEY start end [withscores]</code><ul>
+<li>获取集合中脚标为start-end的成员</li>
+<li><code>withscores</code><ul>
+<li>明返回的成员包含其分数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>zrangebyscore KEY min max [withscores] [limit offset count]</code><ul>
+<li>返回分数在[min,max]的成员并按照分数从低到高排序</li>
+<li><code>limit offset count</code><ul>
+<li>表明从脚标为offset的元素开始并返回count个成员</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>zrank KEY value</code><ul>
+<li>返回value的位置</li>
+</ul>
+</li>
+<li><code>zrem KEY value1 ... n</code><ul>
+<li>移除</li>
+</ul>
+</li>
+<li><code>zscore KEY value</code><ul>
+<li>获取指定value的分数</li>
+</ul>
+</li>
+</ul>
+<h3 id="KEY的通用操作"><a href="#KEY的通用操作" class="headerlink" title="KEY的通用操作"></a>KEY的通用操作</h3><ul>
+<li><code>keys pattern</code><ul>
+<li>获取与pattern匹配的KEY</li>
+<li><code>*</code>：任意一个或多个</li>
+<li><code>?</code>：任意一个</li>
+</ul>
+</li>
+<li><code>del KEY1 ... n</code></li>
+<li><code>exists KEY</code><ul>
+<li>返回0/1</li>
+</ul>
+</li>
+<li><code>rename KEY newKEY</code><ul>
+<li>重命名</li>
+</ul>
+</li>
+<li><code>expire KEY n秒</code><ul>
+<li>设置过期时间(n秒以后)</li>
+</ul>
+</li>
+<li><code>ttl KEY</code><ul>
+<li>返回所剩的超时时间</li>
+<li>如果未设置过，返回-1</li>
+<li>如果已超时，返回-2</li>
+</ul>
+</li>
+<li><code>type KEY</code><ul>
+<li>获取KEY存储的类型</li>
+</ul>
+</li>
+</ul>
+<h1 id="Redis-特性"><a href="#Redis-特性" class="headerlink" title="Redis 特性"></a>Redis 特性</h1><h2 id="多数据库"><a href="#多数据库" class="headerlink" title="多数据库"></a>多数据库</h2><ul>
+<li>redis默认有16个数据库<ul>
+<li><code>db0~15</code></li>
+</ul>
+</li>
+<li>默认使用0号库</li>
+<li><code>select 数字</code><ul>
+<li>使用几号库</li>
+<li><code>select 0</code></li>
+</ul>
+</li>
+<li><code>move KEY 数字</code><ul>
+<li>将KEY剪切到指定数字的库</li>
+<li><strong>移库</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="服务器命令"><a href="#服务器命令" class="headerlink" title="服务器命令"></a>服务器命令</h1><ul>
+<li><code>ping</code><ul>
+<li>测试链接是否存活</li>
+</ul>
+</li>
+<li><code>quit</code><ul>
+<li>退出链接</li>
+</ul>
+</li>
+<li><code>echo xxx</code><ul>
+<li>在命令行打印内容</li>
+</ul>
+</li>
+<li><code>select num</code><ul>
+<li>选择数据库</li>
+</ul>
+</li>
+<li><code>dbsize</code><ul>
+<li>返回当前数据库KEY的数目</li>
+</ul>
+</li>
+<li><code>info</code><ul>
+<li>获取服务器信息统计</li>
+</ul>
+</li>
+<li><code>flushdb</code><ul>
+<li>删除当前数据库的所有KEY</li>
+</ul>
+</li>
+<li><code>flushall</code><ul>
+<li>删除所有数据库的所有KEY</li>
+</ul>
+</li>
+</ul>
+<h1 id="消息订阅与发布"><a href="#消息订阅与发布" class="headerlink" title="消息订阅与发布"></a>消息订阅与发布</h1><ul>
+<li><code>subscibe channel</code><ul>
+<li>订阅指定频道</li>
+<li><code>subscibe mychat</code><ul>
+<li>订阅mychat频道</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>psubscribe channel*</code><ul>
+<li>批量订阅频道</li>
+<li><code>psubscibe s*</code><ul>
+<li>订阅以s开头的频道</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>publish channel content</code><ul>
+<li>在指定频道中发布消息</li>
+<li><code>publish channel mychat &#39;hello&#39;</code><ul>
+<li>在mychat中发布<code>hello</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Redos-事务"><a href="#Redos-事务" class="headerlink" title="Redos 事务"></a>Redos 事务</h1><ul>
+<li>更确切的说应该是批处理<ul>
+<li>原来是写一句执行一句</li>
+<li>开启事务以后，一直到提交，才一起执行<ul>
+<li>有语句错误不影响其它语句</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>multi</code><ul>
 <li>开启事务</li>
 </ul>
 </li>
-<li><code>commit</code></li>
-<li><code>rollback</code></li>
-</ul>
-<h2 id="隔离级别-2"><a href="#隔离级别-2" class="headerlink" title="隔离级别"></a>隔离级别</h2><ul>
-<li><code>SELECT @@TX_ISOLATION;</code><ul>
-<li>查看隔离级别</li>
+<li><code>exec</code><ul>
+<li>提交事务</li>
 </ul>
 </li>
-<li><code>SET TRANSACTION ISOLATION LEVEL 四个级别之一</code><ul>
-<li>设置隔离级别</li>
-<li>必须在开启事务之前</li>
+<li><code>discard</code><ul>
+<li>回滚</li>
+<li>事务中的语句都作废，不执行</li>
 </ul>
 </li>
 </ul>
-<h1 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h1><h2 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h2><ul>
-<li>数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏。这项技术能明显提高对数据库操作的性能。</li>
+<h1 id="Redis-持久化"><a href="#Redis-持久化" class="headerlink" title="Redis 持久化"></a>Redis 持久化</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>Redis的高性能是因为数据存储到了内存中，为了使Redis在重启之后仍能保证数据不丢失，需要将数据从内存同步到硬盘中，即持久化</li>
 </ul>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
-<li>解决建立数据库连接耗费资源和时间很多的问题，提高性能</li>
-</ul>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>连接池基本的思想是在系统初始化的时候，将数据库连接作为对象存储在内存中，当用户需要访问数据库时，并非建立一个新的连接，而是从连接池中取出一个已建立的空闲连接对象。使用完毕后，用户也并非将连接关闭，而是将连接放回连接池中，以供下一个请求访问使用。而连接的建立、断开都由连接池自身来管理。同时，还可以通过设置连接池的参数来控制连接池中的初始连接数、连接的上下限数以及每个连接的最大使用次数、最大空闲时间等等。也可以通过其自身的管理机制来监视数据库连接的数量、使用情况等。</li>
-</ul>
-<h2 id="javax-sql-DataSorce"><a href="#javax-sql-DataSorce" class="headerlink" title="javax.sql.DataSorce"></a><code>javax.sql.DataSorce</code></h2><ul>
-<li>sun官方标准的连接池接口</li>
-<li>自定义连接池实现此接口，数据库厂商自己实现。</li>
-</ul>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
-<li><code>Connection getConnection()</code></li>
-<li><code>Connection getConnection(String username, String password)</code></li>
-</ul>
-<h2 id="常用连接池"><a href="#常用连接池" class="headerlink" title="常用连接池"></a>常用连接池</h2><h3 id="DBCP"><a href="#DBCP" class="headerlink" title="DBCP"></a>DBCP</h3><ul>
-<li><code>Database Connection Pool</code></li>
-</ul>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
-<li>导包</li>
-<li>配置文件</li>
-<li>获取数据源<ul>
-<li><code>BasicDataSourceFactory</code><ul>
-<li><code>static DataSource createDataSource(properties prop)</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Properties prop = new Properties();</span><br><span class="line">prop.load(DBCPUtils.class.getClassLoader().getResourceAsStream(&quot;dbcp.properties&quot;));</span><br><span class="line">DataSource ds = BasicDataSourceFactory.createDataSource(prop);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="C3P0"><a href="#C3P0" class="headerlink" title="C3P0"></a>C3P0</h3><h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><ul>
-<li>导包</li>
-<li>配置文件<ul>
-<li><code>c3p0-config.xml</code></li>
-<li>名称必须为c3p0-config.xml，否则找不到</li>
-</ul>
-</li>
-<li>获取数据源<ul>
-<li><code>ComboPooledDataSource</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ComboPooledDataSource ds=new ComboPooledDataSource();</span><br><span class="line">ds.setDriver()</span><br><span class="line">ds.setJdbcUrl()</span><br><span class="line">ds.setUser()</span><br><span class="line">ds.setPassword;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h3><ul>
-<li><code>com.alibaba.druid.pool.DruidDataSource</code></li>
-<li>阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池）</li>
-</ul>
-<h4 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h4><ul>
-<li>导包</li>
-<li>配置文件<ul>
-<li>任意位置，任意名称<code>.properties</code></li>
-</ul>
-</li>
-<li>获取数据源<ul>
-<li><code>DruidDataSourceFactory</code><ul>
-<li><code>DataSource createDataSource(Properties prop)</code> </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="用JavaWeb服务器管理数据源"><a href="#用JavaWeb服务器管理数据源" class="headerlink" title="用JavaWeb服务器管理数据源"></a>用JavaWeb服务器管理数据源</h2><h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ol>
-<li>拷贝数据库连接的jar(mysql-Connector)到tomcat的lib目录下</li>
-<li><p>配置数据源XML文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context&gt;</span><br><span class="line">	&lt;Resource name=&quot;jdbc/TestDB&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot;</span><br><span class="line">           maxTotal=&quot;100&quot; maxIdle=&quot;30&quot; maxWaitMillis=&quot;10000&quot;</span><br><span class="line">           username=&quot;root&quot; password=&quot;root&quot; driverClassName=&quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">           url=&quot;jdbc:mysql://localhost:3306/javatest&quot;/&gt;</span><br><span class="line">&lt;/Context&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="RDB持久化"><a href="#RDB持久化" class="headerlink" title="RDB持久化"></a>RDB持久化</h2><ul>
+<li>默认支持，无需配置</li>
+<li>该机制是在指定的时间间隔内将内存中的数据集快照写入硬盘</li>
+<li><p>存储时机及位置</p>
 <ul>
-<li>如果是在当前应用的META-INF中创建<code>context.xml</code>, 编写配置信息，那么只有当前应用可以使用。</li>
-<li>如果把配置信息写在tomcat下的conf目录的<code>context.xml</code>中，那么所有应用都能使用此数据源。<ul>
-<li>可以多个Resource如mysql，Oracle，sqlserver…</li>
-<li>多个就构成了<strong>JNDI</strong>(安)</li>
+<li><p>在<code>redis.conf</code>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 60 10000</span><br><span class="line">dbfilename dump.rdb</span><br><span class="line">dir ./</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>save</code></p>
+<ul>
+<li>表示修改1个以上，每隔900秒来一个快照</li>
+<li>修改10个以上，隔300秒</li>
+<li>修改10000以上，隔60秒<ul>
+<li><code>dbfilename</code></li>
+</ul>
+</li>
+<li>表示存到哪个文件<ul>
+<li><code>dir</code></li>
+</ul>
+</li>
+<li>存储文件的目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="AOF持久化"><a href="#AOF持久化" class="headerlink" title="AOF持久化"></a>AOF持久化</h2><ul>
+<li>该机制将以日志的形式记录服务器所处理的每一个写操作，在Redis服务器启动之初会读取该文件来重新构建数据库，以保证启动后数据是完整的</li>
+<li><p>配置</p>
+<ul>
+<li><p><code>redis.conf</code>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">appendonly no</span><br><span class="line">appendfilename &quot;appendonly.aof&quot;</span><br><span class="line"># appendfsync always</span><br><span class="line">appendfsync everysec</span><br><span class="line"># appendfsync no</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>appendonly</code></p>
+<ul>
+<li>默认不使用aof</li>
+</ul>
+</li>
+<li><code>appendfilename</code><ul>
+<li>存储文件名</li>
+</ul>
+</li>
+<li><code>appendfsync</code><ul>
+<li><code>always</code><ul>
+<li>一修改就存储</li>
+</ul>
+</li>
+<li><code>everysec</code><ul>
+<li>每分钟存储一次</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-工作流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/xd-工作流/" itemprop="url">
+                  xd-工作流
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 14:56:06" itemprop="dateCreated datePublished" datetime="2019-01-03T14:56:06+08:00">2019-01-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-SSM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/xd-SSM/" itemprop="url">
+                  xd-SSM
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 14:55:49" itemprop="dateCreated datePublished" datetime="2019-01-03T14:55:49+08:00">2019-01-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-SSH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/xd-SSH/" itemprop="url">
+                  xd-SSH
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 14:55:42" itemprop="dateCreated datePublished" datetime="2019-01-03T14:55:42+08:00">2019-01-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-Maven/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/xd-Maven/" itemprop="url">
+                  xd-Maven
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 14:55:23" itemprop="dateCreated datePublished" datetime="2019-01-03T14:55:23+08:00">2019-01-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-29 23:22:01" itemprop="dateModified" datetime="2019-01-29T23:22:01+08:00">2019-01-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li>Maven基于POM（项目对象模型），可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具</li>
+<li>跨平台(java开发的)</li>
+</ul>
+<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><h2 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h2><ul>
+<li>jar包</li>
+</ul>
+<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><ul>
+<li><code>清理→编译→测试→报告→打包→部署</code></li>
+</ul>
+<h3 id="项目构建方式"><a href="#项目构建方式" class="headerlink" title="项目构建方式"></a>项目构建方式</h3><h4 id="ide"><a href="#ide" class="headerlink" title="ide"></a>ide</h4><ul>
+<li>使用eclipse进行项目构建，相对来说，步骤比较零散，不好操作</li>
+</ul>
+<h4 id="Ant"><a href="#Ant" class="headerlink" title="Ant"></a>Ant</h4><ul>
+<li>它是一个专门的项目构建工具，它可以通过一些配置来完成项目构建,这些配置要明确的告诉ant，源码包在哪？目标class文件应该存放在哪？资源文件应该在哪</li>
+</ul>
+<h4 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h4><ul>
+<li>它是一个项目管理工具，它也是一个项目构建工具，通过使用maven，可以对项目进行快速简单的构建，它不需要告诉maven很多信息，但是需要安装maven去的规范去进行代码的开发。也就是说maven是有约束的</li>
+</ul>
+<h1 id="安装-amp-配置"><a href="#安装-amp-配置" class="headerlink" title="安装 &amp; 配置"></a>安装 &amp; 配置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>解压</li>
+<li>配置path</li>
+<li>测试<ul>
+<li><code>mvn -v</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><ul>
+<li><code>conf/settings.xml</code><ul>
+<li>默认本地仓库目录<code>~/.m2/repository</code></li>
+<li><code>~</code>代表C盘用户目录</li>
+<li>对操作系统的所有使用者生效</li>
+<li>自定义本地仓库<ul>
+<li><code>&lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h3><ul>
+<li><code>~/.m2/setting.xml</code><ul>
+<li>Maven安装后，用户目录下不会自动生成<code>settings.xml</code>，只有全局配置文件。可以复制一份。</li>
+<li>只对当前操作系统的使用者生效</li>
+<li>如果两者都存在，它们的内容将被合并，并且用户配置会覆盖全局配置</li>
+</ul>
+</li>
+</ul>
+<h3 id="maven模板"><a href="#maven模板" class="headerlink" title="maven模板"></a>maven模板</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li>IDEA根据<code>maven archetype</code>的本质，其实是执行<code>mvn archetype:generate</code>命令，该命令执行时，需要指定一个<code>archetype-catalog.xml</code>文件</li>
+</ul>
+<h4 id="DarchetypeCatalog"><a href="#DarchetypeCatalog" class="headerlink" title="-DarchetypeCatalog"></a><code>-DarchetypeCatalog</code></h4><ul>
+<li>此命令配置maven怎么寻找<code>archetype-catalog.xml</code></li>
+</ul>
+<ol>
+<li><code>remote</code><ul>
+<li>默认，指向maven中央仓库</li>
+<li><code>http://repo1.maven.org/maven2/archetype-catalog.xml</code></li>
+</ul>
+</li>
+<li><code>internal</code><ul>
+<li><code>maven-archetype-plugin</code>内置的</li>
+</ul>
+</li>
+<li><code>local</code> （推荐）<ul>
+<li>本地</li>
+<li>可以从中央仓库下载，然后放在本地仓库下<ul>
+<li><code>本地仓库\org\apache\maven\archetype\archetype-catalog\3.0.1</code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h4 id="使用-3"><a href="#使用-3" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Context initContext = new InitialContext();</span><br><span class="line"></span><br><span class="line">//Context envContext  = (Context)initContext.lookup(&quot;java:/comp/env&quot;);</span><br><span class="line">//DataSource ds = (DataSource)envContext.lookup(&quot;jdbc/TestDB&quot;);</span><br><span class="line"></span><br><span class="line">//上面两句可以合写成下面这一句</span><br><span class="line">DataSource ds = (DataSource)=initContext.lookup(&quot;java:/comp/env/jdbc/TestDB&quot;);</span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+<h1 id="Maven项目标准目录结构"><a href="#Maven项目标准目录结构" class="headerlink" title="Maven项目标准目录结构"></a>Maven项目标准目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">	main</span><br><span class="line">		java</span><br><span class="line">		resource</span><br><span class="line">		webapp</span><br><span class="line">			* 页面资源，js，css，图片......</span><br><span class="line">	test</span><br><span class="line">		java</span><br><span class="line">		resource</span><br><span class="line">			* 若此目录没有，默认从main的resource找</span><br><span class="line">target</span><br><span class="line">	* class文件,报告等信息存储的地方</span><br><span class="line">pom.xml</span><br></pre></td></tr></table></figure>
+<h1 id="Maven命令"><a href="#Maven命令" class="headerlink" title="Maven命令"></a>Maven命令</h1><ul>
+<li>Maven的命令要在pom.xml所在目录中去执行</li>
+<li>Maven命令其实用的就是插件</li>
+</ul>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ul>
+<li><code>mvn [plugin-name]:[goal-name]</code><ul>
+<li>执行插件<code>plugin-name</code>的动作<code>goal-name</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="mvn-tomcat-run"><a href="#mvn-tomcat-run" class="headerlink" title="mvn tomcat:run"></a><code>mvn tomcat:run</code></h3><h3 id="mvn-compile"><a href="#mvn-compile" class="headerlink" title="mvn compile"></a><code>mvn compile</code></h3><h3 id="mvn-clean"><a href="#mvn-clean" class="headerlink" title="mvn clean"></a><code>mvn clean</code></h3><ul>
+<li>清除已经编译好的class文件，具体说清除的是target目录中的文件</li>
+</ul>
+<h3 id="mvn-test"><a href="#mvn-test" class="headerlink" title="mvn test"></a><code>mvn test</code></h3><ul>
+<li>main和test下都会编译，因为同一个声明周期</li>
+</ul>
+<h3 id="mvn-package"><a href="#mvn-package" class="headerlink" title="mvn package"></a><code>mvn package</code></h3><ul>
+<li>会在模块下的target目录生成jar或war等文件</li>
+</ul>
+<h3 id="mvn-install"><a href="#mvn-install" class="headerlink" title="mvn install"></a><code>mvn install</code></h3><ul>
+<li>会将打好的包，安装到本地仓库</li>
+</ul>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><ul>
+<li>可以理解为<strong>项目构建的步骤集合</strong></li>
+<li>由多个阶段（Phase）组成。每个阶段都是一个完整的功能<ul>
+<li>如mvn clean中的clean就是一个阶段</li>
+</ul>
+</li>
+<li><strong>maven中，只要在同一个生命周期，执行后面的阶段，前面的阶段会自动被执行</strong></li>
+</ul>
+<h2 id="Default-Lifecycle"><a href="#Default-Lifecycle" class="headerlink" title="Default Lifecycle"></a>Default Lifecycle</h2><ul>
+<li><strong>compile → test → package → install</strong></li>
+</ul>
+<ol>
+<li><code>validate</code></li>
+<li><code>generate-sources</code></li>
+<li><code>process-sources</code></li>
+<li><code>generate-resources</code></li>
+<li><code>process-resources</code><ul>
+<li>复制并处理资源文件，至目标目录，准备打包</li>
+</ul>
+</li>
+<li><strong>compile</strong><ul>
+<li>编译项目的源代码</li>
+</ul>
+</li>
+<li><code>process-classes</code></li>
+<li><code>generate-test-sources</code></li>
+<li><code>process-test-sources</code></li>
+<li><code>generate-test-resources</code></li>
+<li><code>process-test-resources</code><ul>
+<li>复制并处理资源文件，至目标测试目录</li>
+</ul>
+</li>
+<li><code>test-compile</code><ul>
+<li>编译测试源代码</li>
+</ul>
+</li>
+<li><code>process-test-classes</code></li>
+<li><strong>test</strong><ul>
+<li>使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署</li>
+</ul>
+</li>
+<li><code>prepare-package</code></li>
+<li><strong>package</strong><ul>
+<li>接受编译好的代码，打包成可发布的格式，如 JAR</li>
+</ul>
+</li>
+<li><code>pre-integration-test</code></li>
+<li><code>integration-test</code></li>
+<li><code>post-integration-test</code></li>
+<li><code>verify</code></li>
+<li><strong>install</strong><ul>
+<li>将包安装至本地仓库，以让其它项目依赖</li>
+</ul>
+</li>
+<li><code>deploy</code><ul>
+<li>将最终的包复制到远程的仓库，以让其它开发人员与项目共享</li>
+</ul>
+</li>
+</ol>
+<h2 id="Clean-Lifecycle"><a href="#Clean-Lifecycle" class="headerlink" title="Clean Lifecycle"></a>Clean Lifecycle</h2><ul>
+<li>在进行真正的构建之前进行一些清理工作</li>
+</ul>
+<ol>
+<li><code>pre-clean</code><ul>
+<li>执行一些需要在clean之前完成的工作</li>
+</ul>
+</li>
+<li><code>clean</code><ul>
+<li>移除所有上一次构建生成的文件</li>
+</ul>
+</li>
+<li><code>post-clean</code><ul>
+<li>执行一些需要在clean之后立刻完成的工作</li>
+</ul>
+</li>
+</ol>
+<h2 id="Site-Lifecycle"><a href="#Site-Lifecycle" class="headerlink" title="Site Lifecycle"></a>Site Lifecycle</h2><ul>
+<li>生成项目报告，站点，发布站点</li>
+</ul>
+<ol>
+<li><code>pre-site</code><ul>
+<li>执行一些需要在生成站点文档之前完成的工作</li>
+</ul>
+</li>
+<li><code>site</code><ul>
+<li>生成项目的站点文档</li>
+</ul>
+</li>
+<li><code>post-site</code><ul>
+<li>执行一些需要在生成站点文档之后完成的工作，并且为部署做准备</li>
+</ul>
+</li>
+<li><code>site-deploy</code><ul>
+<li>将生成的站点文档部署到特定的服务器上</li>
+</ul>
+</li>
+</ol>
+<h1 id="命令和生命周期阶段的关系"><a href="#命令和生命周期阶段的关系" class="headerlink" title="命令和生命周期阶段的关系"></a>命令和生命周期阶段的关系</h1><ul>
+<li>不同的生命周期的命令可以同时执行</li>
+<li><code>mvn clean compile</code><ul>
+<li>先清空再编译</li>
+</ul>
+</li>
+<li><code>mvn clean test</code><ul>
+<li>先执行clean，再执行test，通常应用于测试环节</li>
+</ul>
+</li>
+<li><code>mvn clean package</code><ul>
+<li>先执行clean，再执行package，将项目打包，通常应用于发布前</li>
+<li>执行过程<ul>
+<li>清理————清空环境</li>
+<li>编译————编译源码</li>
+<li>测试————测试源码</li>
+<li>打包————将编译的非测试类打包</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>mvn clean install</code><ul>
+<li>先执行clean，再执行install，将项目打包，通常应用于发布前</li>
+<li>执行过程<ul>
+<li>清理————清空环境</li>
+<li>编译————编译源码</li>
+<li>测试————测试源码</li>
+<li>打包————将编译的非测试类打包</li>
+<li>部署————将打好的包发布到资源仓库中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Maven概念模型"><a href="#Maven概念模型" class="headerlink" title="Maven概念模型"></a>Maven概念模型</h1><h2 id="项目对象模型（pom-xml）"><a href="#项目对象模型（pom-xml）" class="headerlink" title="项目对象模型（pom.xml）"></a>项目对象模型（pom.xml）</h2><ul>
+<li>项目自身信息</li>
+<li>项目运行所依赖的jar包信息</li>
+<li>项目运行环境信息，如jdk，tomcat…</li>
+</ul>
+<h2 id="依赖管理模型（Dependency）"><a href="#依赖管理模型（Dependency）" class="headerlink" title="依赖管理模型（Dependency）"></a>依赖管理模型（Dependency）</h2><h3 id="坐标"><a href="#坐标" class="headerlink" title="坐标"></a>坐标</h3><ul>
+<li><code>groupId</code><ul>
+<li>定义当前项目的公司组织名称</li>
+</ul>
+</li>
+<li><code>artifactId</code><ul>
+<li>定义实际项目名称</li>
+</ul>
+</li>
+<li><code>version</code><ul>
+<li>定义项目的当前版本</li>
+</ul>
+</li>
+</ul>
+<h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><ul>
+<li>用来统一存储所有Maven共享构建的位置就是仓库。</li>
+<li>根据Maven坐标定义每个构建在仓库中唯一存储路径大致为：<ul>
+<li><code>groupId/artifactId/version/artifactId-version.packaging</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
+<li>本地仓库</li>
+<li>远程仓库（私服）<ul>
+<li>相当于一个私有的中央仓库，找jar包都会到私服中找</li>
+<li>第一个人找jar包时，私服中没有，私服会到中央仓库下载，然后第二个人再找时就有了。</li>
+<li>使用<strong>Nexus</strong>搭建私服</li>
+</ul>
+</li>
+<li>中央仓库<ul>
+<li><code>http://repo1.maven.org/maven2</code></li>
+<li>不包含有版权的jar包</li>
+</ul>
+</li>
+</ul>
+<h1 id="依赖管理-1"><a href="#依赖管理-1" class="headerlink" title="依赖管理"></a>依赖管理</h1><h2 id="依赖范围（scope）"><a href="#依赖范围（scope）" class="headerlink" title="依赖范围（scope）"></a>依赖范围（scope）</h2><ul>
+<li>用来控制依赖和编译，测试，运行的classpath的关系</li>
+</ul>
+<h3 id="compile"><a href="#compile" class="headerlink" title="compile"></a><code>compile</code></h3><ul>
+<li>默认编译依赖范围。对于编译，测试，运行三种classpath都有效。</li>
+<li>有些依赖在主代码中需要import，在测试代码中也需要import，打包的时候还需要一起打包上传服务器，则scope是compile</li>
+<li>编译，测试，运行都需要</li>
+</ul>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a><code>test</code></h3><ul>
+<li>测试依赖范围。只对于测试classpath有效</li>
+<li>有些代码是测试需要import，而主代码中不需要，我们不需要把junit打包上传到服务器，则scope是test</li>
+<li>scope为test只能在<code>src/test/java</code>引用</li>
+<li>测试需要</li>
+<li>编译，运行不需要</li>
+</ul>
+<h3 id="provided"><a href="#provided" class="headerlink" title="provided"></a><code>provided</code></h3><ul>
+<li>已提供依赖范围。对于编译，测试的classpath都有效，但对于运行无效。因为由容器已经提供，<ul>
+<li>例如servlet-api，jsp-api，只是编译和测试时需要，运行时tomcat已经提供了</li>
+</ul>
+</li>
+<li>以servlet-api为例，tomcat中已经提供了servlet-api的jar包，但是本地写代码的时候，只需要import进去，而不需要把servlet-api的jar包打包到服务器上，如果打包了，可能会产生jar包冲突，这个时候用provided</li>
+<li>编译，测试需要</li>
+<li>运行不需要</li>
+</ul>
+<h3 id="runtime"><a href="#runtime" class="headerlink" title="runtime"></a><code>runtime</code></h3><ul>
+<li>运行时提供。例如:jdbc驱动</li>
+<li>如MySQL的jdbc驱动，在本地写代码的时候，我们都是引入的jdbc接口，并不需要引入具体的jdbc驱动实现，所以写代码的时候并不需要，而运行的时候，我们需要使用具体的驱动，这样的jar包我们的scope为runtime</li>
+<li>测试，运行需要</li>
+<li>编译不需要</li>
+</ul>
+<h2 id="依赖传递"><a href="#依赖传递" class="headerlink" title="依赖传递"></a>依赖传递</h2><h3 id="直接依赖"><a href="#直接依赖" class="headerlink" title="直接依赖"></a>直接依赖</h3><ul>
+<li>直接导入的jar包</li>
+</ul>
+<h3 id="传递依赖"><a href="#传递依赖" class="headerlink" title="传递依赖"></a>传递依赖</h3><ul>
+<li>没有直接导入，而是直接依赖的jar包的依赖包</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>依赖传递</th>
+<th>传递依赖(横)</th>
+<th>compile</th>
+<th>provided</th>
+<th>runtime</th>
+<th>test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>直接依赖(竖)</strong></td>
+<td>~~~</td>
+<td>~~~</td>
+<td>~~~</td>
+<td>~~~</td>
+<td>~~~</td>
+</tr>
+<tr>
+<td>compile</td>
+<td>~~~</td>
+<td>compile</td>
+<td>-</td>
+<td>runtime</td>
+<td>-</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>~~~</td>
+<td>provided</td>
+<td>provided</td>
+<td>provided</td>
+<td>-</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>~~~</td>
+<td>runtime</td>
+<td>-</td>
+<td>runtime</td>
+<td>-</td>
+</tr>
+<tr>
+<td>test</td>
+<td>~~~</td>
+<td>test</td>
+<td>-</td>
+<td>test</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><code>java:/comp/env</code><ul>
-<li>是固定写法</li>
+<li>注<ul>
+<li><code>~~~</code><ul>
+<li>填充行，没什么意义</li>
 </ul>
 </li>
-<li><code>jdbc/TestDB</code><ul>
-<li>是Resource的name，自定义。</li>
+<li><code>-</code><ul>
+<li>表示不能传递</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="依赖冲突"><a href="#依赖冲突" class="headerlink" title="依赖冲突"></a>依赖冲突</h2><h3 id="maven自己的解决方法"><a href="#maven自己的解决方法" class="headerlink" title="maven自己的解决方法"></a>maven自己的解决方法</h3><ol>
+<li>第一声明原则<ul>
+<li>谁先声明用谁的传递依赖</li>
+</ul>
+</li>
+<li>就近原则<ul>
+<li>直接依赖优先于传递依赖</li>
+<li>比如你有依赖的版本，我手动给你添加一个，手动添加的属于直接依赖</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>注<ul>
+<li>第一声明就好比两个侄子，谁大我用谁</li>
+<li>就近就好比一个儿子，一个侄子，肯定用儿子</li>
+</ul>
+</li>
+</ul>
+<h3 id="手动排除依赖"><a href="#手动排除依赖" class="headerlink" title="手动排除依赖"></a>手动排除依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;exclusions&gt;</span><br><span class="line">	&lt;exclusion&gt;</span><br><span class="line">		&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">	&lt;/exclusion&gt;</span><br><span class="line">&lt;/exclusions&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>排除依赖包时可以不指定版本，因为和主包版本一样。</li>
+</ul>
+<h3 id="版本锁定"><a href="#版本锁定" class="headerlink" title="版本锁定"></a>版本锁定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 自定义变量 --&gt;</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">    &lt;spring.version&gt;5.1.4.RELEASE&lt;/spring.version&gt;</span><br><span class="line">&lt;/properties&gt;</span><br><span class="line">&lt;!-- 锁定版本 --&gt;</span><br><span class="line">&lt;dependencyManagement&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">&lt;/dependencyManagement&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;dependencyManagement&gt;</code>指定版本</li>
+</ul>
+<h2 id="可选依赖"><a href="#可选依赖" class="headerlink" title="可选依赖"></a>可选依赖</h2><ul>
+<li><code>optional</code><ul>
+<li>标示该依赖是否可选，默认是false</li>
+<li>true:表示该依赖不会传递下去</li>
+</ul>
+</li>
+</ul>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><ul>
+<li>Maven 是一个执行插件的框架，每一个任务实际上是由插件完成的</li>
+<li>Maven的核心是生命周期，但是生命周期相当于主要指定了maven命令执行的流程顺序，而没有真正实现流程的功能，功能是有插件来实现的</li>
+</ul>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><ul>
+<li>编译插件<ul>
+<li>指定编译用的jdk版本</li>
+</ul>
+</li>
+<li>tomcat插件<ul>
+<li>如果使用maven的tomcat插件的话，那么本地则不需要安装tomcat。</li>
+<li><code>tomcat:run</code></li>
+<li><code>tomcat7:run</code><ul>
+<li>插件也是jar包</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="拆分-amp-聚合"><a href="#拆分-amp-聚合" class="headerlink" title="拆分&amp;聚合"></a>拆分&amp;聚合</h1><ul>
+<li>在真实项目中，一个项目有表现层、业务层、持久层，对于业务层和持久层，它们可以在多个工程中被使用，所以一般会将业务层和持久单独创建为java工程，为其他工程依赖</li>
+</ul>
+<h2 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h2><ul>
+<li>将各层的代码及配置文件提取到一个表现上独立的工程中</li>
+</ul>
+<h2 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h2><ul>
+<li>对拆分后的项目进行聚合，提出概念父工程</li>
+<li><strong>父工程打包方式必须为pom</strong></li>
+<li>例<ul>
+<li><code>ssh-parent</code>父工程<ul>
+<li><code>ssh-web</code>子模块</li>
+<li><code>ssh-service</code></li>
+<li><code>ssh-dao</code></li>
+</ul>
+</li>
+<li>父工程不进行编码</li>
+<li>项目需要的依赖的信息，在父工程定义，子模块继承</li>
+</ul>
+</li>
+</ul>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ol>
+<li>运行父工程，父工程将各个子模块 聚合到一起，打成war包发布到tomcat<ul>
+<li>启动父工程没有问题</li>
+<li>因为父工程的pom.xml中的所有依赖在本地仓库或者中央仓库都有</li>
+</ul>
+</li>
+<li>直接运行web子模块工程<ul>
+<li>会找不到service模块的jar包</li>
+<li>因为web模块pom.xml中依赖的service坐标在本地仓库没有</li>
+<li>先安装service和dao到本地仓库</li>
+</ul>
+</li>
+<li>部署到tomcat</li>
+</ol>
+<h1 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h1><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
+<li><code>modelVersion</code> <ul>
+<li>Maven模块版本</li>
+</ul>
+</li>
+<li><code>groupId</code><ul>
+<li>项目或者组织的唯一标志</li>
+</ul>
+</li>
+<li><code>artifactId</code><ul>
+<li>项目名称</li>
+</ul>
+</li>
+<li><code>version</code><ul>
+<li>项目版本</li>
+</ul>
+</li>
+<li><code>packaging</code><ul>
+<li>打包类型，这个配置用于package的phase<ul>
+<li>jar</li>
+<li>war</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><h3 id="properties"><a href="#properties" class="headerlink" title="properties"></a><code>properties</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">    &lt;spring.version&gt;5.1.4.RELEASE&lt;/spring.version&gt;</span><br><span class="line">    &lt;mybatis.version&gt;3.4.6&lt;/mybatis.version&gt;</span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用于自定义变量，在它处用<code>${}</code>引用</li>
+</ul>
+<h3 id="dependencyManagement"><a href="#dependencyManagement" class="headerlink" title="dependencyManagement"></a><code>dependencyManagement</code></h3><ul>
+<li>用于在父模块中统一对子模块依赖管理(自己也能用)，并不会引入依赖</li>
+<li>在当前模块或子模块<ol>
+<li>声明了依赖的<code>groupId</code>和<code>artifactId</code>，才会引入依赖</li>
+<li>如果声明时指定了版本，则使用指定的版本</li>
+</ol>
+</li>
+</ul>
+<h3 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a><code>dependencies</code></h3><ul>
+<li>用于引入依赖</li>
+<li>在子模块中，即使不声明也会引入父模块的依赖</li>
+</ul>
+<h3 id="pluginManagement"><a href="#pluginManagement" class="headerlink" title="pluginManagement"></a><code>pluginManagement</code></h3><ul>
+<li>类似<code>dependencyManagement</code></li>
+</ul>
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a><code>plugins</code></h3><ul>
+<li>类似<code>dependencies</code></li>
+<li>和<code>dependencies</code></li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>在pom.xml文件中我们可以使用<code>${propertyName}</code>的形式引用属性。是值的占位符，类似EL，类似ant的属性，比如${X}，可用于pom文件任何赋值的位置。</li>
+</ul>
+<h3 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><code>env.propertyName</code><ul>
+<li>表示引用的是环境变量</li>
+<li>如需要引用当前系统的环境变量PATH的时候，就可以使用<code>${env.PATH}</code></li>
+</ul>
+</li>
+<li><code>project.propertyName</code><ul>
+<li>表示引用的是当前这个pom.xml中project根元素下面的子元素的值</li>
+<li>如需要引用当前project下面的version的时候，就可以使用<code>${project.version}</code></li>
+</ul>
+</li>
+<li><code>settings.propertyName</code><ul>
+<li>表示引用的是Maven本地用户配置settings.xml或本地全局配置settings.xml文件根元素settings下的元素</li>
+<li>如需要引用settings下的本地仓库localRepository元素的值时，可以用<code>${settings.localRepository}</code></li>
+</ul>
+</li>
+<li><code>Java System Properties</code><ul>
+<li>java的系统属性，所有在java中使用java.lang.System.getProperties()能够获取到的属性都可以在pom.xml中引用</li>
+<li>如<code>${java.home}</code></li>
+</ul>
+</li>
+<li><p><code>自定义</code></p>
+<ul>
+<li><p>pom.xml中properties元素下面的子元素作为属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">		&lt;hello.world&gt;helloWorld&lt;/hello.world&gt;</span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>就可以使用<code>${hello.world}</code>引用到对应的helloWorld</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><h3 id="dependencies-1"><a href="#dependencies-1" class="headerlink" title="dependencies"></a><code>dependencies</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;&lt;/version&gt;</span><br><span class="line">		&lt;scope&gt;&lt;/scope&gt;</span><br><span class="line">		&lt;type&gt;&lt;/type&gt;</span><br><span class="line">		&lt;exclusions&gt;</span><br><span class="line">			&lt;exclusion&gt;</span><br><span class="line">				&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">			&lt;/exclusion&gt;</span><br><span class="line">		&lt;/exclusions&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>type</code><ul>
+<li>默认jar</li>
+<li>jar,ejb-client,test-jar…,</li>
+<li>可设置plugins中的extensions值为true后在增加 新的类型</li>
+</ul>
+</li>
+<li><code>scope</code><ul>
+<li>compile<ul>
+<li>缺省值，适用于所有阶段，会随着项目一起发布。</li>
+</ul>
+</li>
+<li>provided<ul>
+<li>类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。</li>
+</ul>
+</li>
+<li>runtime<ul>
+<li>只在运行时使用，如JDBC驱动，适用运行和测试阶段。</li>
+</ul>
+</li>
+<li>test<ul>
+<li>只在测试时使用，用于编译和运行测试代码。不会随项目发布。</li>
+</ul>
+</li>
+<li>system<ul>
+<li>类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>exclusions</code><ul>
+<li>排除项目中的依赖冲突时使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="聚合拆分-amp-继承"><a href="#聚合拆分-amp-继承" class="headerlink" title="聚合拆分 &amp; 继承"></a>聚合拆分 &amp; 继承</h2><ul>
+<li>父子模块天生是继承关系</li>
+<li>子模块之间是依赖关系，需要后天建立</li>
+</ul>
+<h3 id="工程和模块"><a href="#工程和模块" class="headerlink" title="工程和模块"></a>工程和模块</h3><ul>
+<li>工程不等于完整的项目，模块也不等于完整的项目，一个完整的项目是看代码的，代码完整就可以说是一个完整的项目。</li>
+<li>工程天生只能使用自己内部资源，工程天生是独立的，后天可以和其它工程或模块建立关联关系。</li>
+<li>模块天生是属于父工程的，不是独立的，模块一旦建立，所有父工程的资源都可以使用</li>
+</ul>
+<h3 id="父模块"><a href="#父模块" class="headerlink" title="父模块"></a>父模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;modelVersion&gt;&lt;/modelVersion&gt;</span><br><span class="line">&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;&lt;/version&gt;</span><br><span class="line">&lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line">&lt;modules&gt;</span><br><span class="line">	&lt;module&gt;&lt;/module&gt;</span><br><span class="line">	&lt;module&gt;&lt;/module&gt;</span><br><span class="line">	&lt;module&gt;&lt;/module&gt;</span><br><span class="line">&lt;/modules&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;modelVersion&gt;&lt;/modelVersion&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">	&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;&lt;/version&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">&lt;packaging&gt;war&lt;/packaging&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><h3 id="插件-1"><a href="#插件-1" class="headerlink" title="插件"></a>插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugins&gt;</span><br><span class="line">     &lt;plugin&gt;</span><br><span class="line">         &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">         &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">         &lt;configuration&gt;</span><br><span class="line">             &lt;tomcat-url&gt;http://localhost:8080/manager/html&lt;/tomcat-url&gt;</span><br><span class="line">             &lt;server&gt;tomcat_localtest&lt;/server&gt;</span><br><span class="line">         &lt;/configuration&gt;</span><br><span class="line">     &lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line"> &lt;resource&gt;</span><br><span class="line">    &lt;targetPath&gt;WEB-INF/resource&lt;/targetPath&gt;</span><br><span class="line">     &lt;!-- 不对文件中的表达式进行处理 --&gt;</span><br><span class="line">     &lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">     &lt;directory&gt;$&#123;basedir&#125;/src/test/resources&lt;/directory&gt;</span><br><span class="line">     &lt;includes&gt;</span><br><span class="line">         &lt;include&gt;include.xml&lt;/include&gt;</span><br><span class="line">     &lt;/includes&gt;</span><br><span class="line">     &lt;excludes&gt;</span><br><span class="line">         &lt;exclude&gt;exclude.xml&lt;/exclude&gt;</span><br><span class="line">     &lt;/excludes&gt;</span><br><span class="line"> &lt;/resource&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="私服"><a href="#私服" class="headerlink" title="私服"></a>私服</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>安装（其实就是服务）</li>
+<li>开启服务</li>
+</ul>
+<h2 id="私服仓库类型"><a href="#私服仓库类型" class="headerlink" title="私服仓库类型"></a>私服仓库类型</h2><ul>
+<li><code>virtual</code><ul>
+<li>虚拟仓库</li>
+</ul>
+</li>
+<li><code>group</code><ul>
+<li>组仓库</li>
+<li>包含宿主仓库和代理仓库</li>
+<li>要链接的就是组仓库</li>
+</ul>
+</li>
+<li><code>Hosted</code><ul>
+<li>宿主仓库</li>
+<li>存放本公司开发的jar包<ul>
+<li><code>Releases</code>正式版本</li>
+<li><code>Snapshots</code>测试版本</li>
+<li><code>3rd party</code>第三方(存在版权问题如oracle)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Proxy</code><ul>
+<li>代理仓库</li>
+<li>代理中央仓库，apache下测试版本的jar包</li>
+</ul>
+</li>
+</ul>
+<h2 id="上传jar到私服"><a href="#上传jar到私服" class="headerlink" title="上传jar到私服"></a>上传jar到私服</h2><ol>
+<li>认证<ul>
+<li>配置用户名和密码</li>
+<li>maven目录<code>conf/setting.xml</code></li>
+</ul>
+</li>
+<li>配置上传路径<ul>
+<li>在项目<code>pom.xml</code>中</li>
+</ul>
+</li>
+<li>执行命令发布项目到私服<br> <code>Deploy</code></li>
+</ol>
+<h2 id="从私服下载jar包"><a href="#从私服下载jar包" class="headerlink" title="从私服下载jar包"></a>从私服下载jar包</h2><ol>
+<li>配置模板<ul>
+<li>maven目录<code>conf/setting.xml</code></li>
+</ul>
+</li>
+<li>激活模板<ul>
+<li>maven目录<code>conf/setting.xml</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h1><h2 id="配置阿里中心仓库镜像"><a href="#配置阿里中心仓库镜像" class="headerlink" title="配置阿里中心仓库镜像"></a>配置阿里中心仓库镜像</h2><ol>
+<li><p><code>settings.xml</code>中<code>mirrors</code>标签下添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;  </span><br><span class="line">      &lt;id&gt;alimaven&lt;/id&gt;  </span><br><span class="line">      &lt;name&gt;aliyun maven&lt;/name&gt;  </span><br><span class="line">      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;  </span><br><span class="line">      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;          </span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>pom.xml</code>中直接添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;repositories&gt;&lt;!-- 代码库 --&gt;  </span><br><span class="line">    &lt;repository&gt;  </span><br><span class="line">        &lt;id&gt;maven-ali&lt;/id&gt;  </span><br><span class="line">        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public//&lt;/url&gt;  </span><br><span class="line">        &lt;releases&gt;  </span><br><span class="line">            &lt;enabled&gt;true&lt;/enabled&gt;  </span><br><span class="line">        &lt;/releases&gt;  </span><br><span class="line">        &lt;snapshots&gt;  </span><br><span class="line">            &lt;enabled&gt;true&lt;/enabled&gt;  </span><br><span class="line">            &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;  </span><br><span class="line">            &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;  </span><br><span class="line">        &lt;/snapshots&gt;  </span><br><span class="line">    &lt;/repository&gt;  </span><br><span class="line">&lt;/repositories&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-MyBatis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/xd-MyBatis/" itemprop="url">
-                  xd-MyBatis
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-11 00:40:45" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:45+08:00">2018-12-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-SpringMVC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/xd-SpringMVC/" itemprop="url">
-                  xd-SpringMVC
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-11 00:40:23" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:23+08:00">2018-12-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Spring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/xd-Spring/" itemprop="url">
-                  xd-Spring
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-11 00:40:07" itemprop="dateCreated datePublished" datetime="2018-12-11T00:40:07+08:00">2018-12-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Hibernate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/xd-Hibernate/" itemprop="url">
-                  xd-Hibernate
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-11 00:39:59" itemprop="dateCreated datePublished" datetime="2018-12-11T00:39:59+08:00">2018-12-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -2931,7 +5070,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2978,7 +5117,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2999,7 +5138,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3041,7 +5184,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-snowflake-o"></i>
   </span>

@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="目录结构  / etc 存放系统配置文件   home 其它用户的家目录   usr 存放共享资源，软件…   root 管理员的家目录   var 运行时需要改变数据的文件      概述 [root@-an3 ~]# root 登录账号   an3 主机名   ~ 当前所在目录名 ~就是用户主目录 root账号的主目录/root 其它用户的主目录/home/xxx     vimtutor v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xd-Linux">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/xd-Linux/index.html">
+<meta property="og:site_name" content="安₃">
+<meta property="og:description" content="目录结构  / etc 存放系统配置文件   home 其它用户的家目录   usr 存放共享资源，软件…   root 管理员的家目录   var 运行时需要改变数据的文件      概述 [root@-an3 ~]# root 登录账号   an3 主机名   ~ 当前所在目录名 ~就是用户主目录 root账号的主目录/root 其它用户的主目录/home/xxx     vimtutor v">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/3noanswer/pics/raw/master/linux目录结构.jpg">
+<meta property="og:updated_time" content="2019-01-17T08:17:33.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xd-Linux">
+<meta name="twitter:description" content="目录结构  / etc 存放系统配置文件   home 其它用户的家目录   usr 存放共享资源，软件…   root 管理员的家目录   var 运行时需要改变数据的文件      概述 [root@-an3 ~]# root 登录账号   an3 主机名   ~ 当前所在目录名 ~就是用户主目录 root账号的主目录/root 其它用户的主目录/home/xxx     vimtutor v">
+<meta name="twitter:image" content="https://gitee.com/3noanswer/pics/raw/master/linux目录结构.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/xd-Linux/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xd-Linux | 安₃</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!--github start-->
+	<a href="https://github.com/awcnoanswer" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!--github end-->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">安₃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/xd-Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xd-Linux
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-14 19:53:27" itemprop="dateCreated datePublished" datetime="2019-01-14T19:53:27+08:00">2019-01-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-17 16:17:33" itemprop="dateModified" datetime="2019-01-17T16:17:33+08:00">2019-01-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/linux目录结构.jpg" alt=""></p>
+<ul>
+<li><code>/</code><ul>
+<li><code>etc</code><ul>
+<li>存放系统配置文件</li>
+</ul>
+</li>
+<li><code>home</code><ul>
+<li>其它用户的家目录</li>
+</ul>
+</li>
+<li><code>usr</code><ul>
+<li>存放共享资源，软件…</li>
+</ul>
+</li>
+<li><code>root</code><ul>
+<li>管理员的家目录</li>
+</ul>
+</li>
+<li><code>var</code><ul>
+<li>运行时需要改变数据的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>[root@-an3 ~]#</code><ul>
+<li><code>root</code><ul>
+<li>登录账号</li>
+</ul>
+</li>
+<li><code>an3</code><ul>
+<li>主机名</li>
+</ul>
+</li>
+<li><code>~</code><ul>
+<li>当前所在目录名</li>
+<li><code>~</code>就是用户主目录<ul>
+<li>root账号的主目录<code>/root</code></li>
+<li>其它用户的主目录<code>/home/xxx</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>vimtutor</code><ul>
+<li>vim自带的教程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h3><ul>
+<li><code>cd xxx</code><ul>
+<li>切换到当前目录下的xxx目录</li>
+</ul>
+</li>
+<li><code>cd ../</code><ul>
+<li>切换到上一层目录</li>
+</ul>
+</li>
+<li><code>cd /</code><ul>
+<li>切换到系统根目录</li>
+</ul>
+</li>
+<li><code>cd ~</code><ul>
+<li>切换到用户主目录</li>
+<li>如 root就切换到<code>/root</code></li>
+</ul>
+</li>
+<li><code>cd -</code><ul>
+<li>切换到上一个目录（相当于返回）</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>mkdir xxx</code><ul>
+<li>在当前目录下创建xxx目录</li>
+</ul>
+</li>
+<li><code>mkdir -p xxx/yyy/zzz</code><ul>
+<li><code>-p</code><ul>
+<li>会创建父目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><ul>
+<li><code>pwd</code><ul>
+<li>查看当前所在目录名</li>
+</ul>
+</li>
+<li><code>ls</code><ul>
+<li>查看当前目录的文件和目录列表</li>
+</ul>
+</li>
+<li><code>ls -a</code><ul>
+<li>查看当前目录所有的文件和目录列表(包括隐藏)</li>
+</ul>
+</li>
+<li><code>ls -l</code><ul>
+<li><code>ll</code> 简写</li>
+<li>当前目录的文件和目录列表的详细信息</li>
+<li><code>ll -h</code><ul>
+<li>友好显示文件大小</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><ul>
+<li><code>find 目录 参数</code><ul>
+<li><code>find /root -name &#39;test&#39;</code><ul>
+<li>根据<code>name</code>查找<code>/root</code>目录下包含<code>test</code>的目录(文件)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><ul>
+<li><code>mv 目录名 新名称</code><ul>
+<li>重命名</li>
+<li><code>mv</code>同样适用于文件，压缩包等的重命名</li>
+</ul>
+</li>
+<li><code>mv 目录名 新目录</code><ul>
+<li>剪切</li>
+<li><code>mv</code>同样适用于文件，压缩包等的剪切</li>
+</ul>
+</li>
+</ul>
+<h3 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h3><ul>
+<li><code>cp [-r] 目录名 目标位置</code><ul>
+<li><code>-r</code><ul>
+<li>表示递归，拷贝目录时使用</li>
+<li>如果是文件，压缩包等，不需要<code>-r</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><ul>
+<li><code>rm [-rf] 目录/文件/压缩包</code><ul>
+<li><code>-r</code><ul>
+<li>递归</li>
+</ul>
+</li>
+<li><code>-f</code><ul>
+<li>不加，每个都会询问是否删除</li>
+<li>不询问强制删除</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>touch xxx</code><ul>
+<li>创建文件，linux不需要后缀名，通常带后缀名为了表明是什么文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看-1"><a href="#查看-1" class="headerlink" title="查看"></a>查看</h3><ul>
+<li><code>cat/more/less/tail 文件</code><ul>
+<li><code>cat</code><ul>
+<li>只显示文件内容的最后一屏</li>
+</ul>
+</li>
+<li><code>more</code><ul>
+<li>显示一屏</li>
+<li><code>回车</code>： 翻一行</li>
+<li><code>空格</code>： 翻页</li>
+<li><code>q</code>： 退出查看</li>
+</ul>
+</li>
+<li><code>less</code><ul>
+<li>显示一屏</li>
+<li><code>pageUp</code>：向上翻页</li>
+<li><code>pageDown</code>：向下翻页</li>
+</ul>
+</li>
+<li><code>tail -num</code><ul>
+<li>看文件的后num行（10行）</li>
+<li><code>ctrl+c</code>：强制结束</li>
+</ul>
+</li>
+<li><code>tail -f</code><ul>
+<li>可以对文件进行动态监控</li>
+<li>例如 监控tomcat的日志文件，文件一变化，就会显示</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><ul>
+<li><code>grep 关键字 文件 [--color] [-Anum -Bnum]</code><ul>
+<li>在文件中搜索指定关键字</li>
+<li><code>--color</code><ul>
+<li>高亮</li>
+</ul>
+</li>
+<li><code>-Anum</code><ul>
+<li><code>after num</code> 后num行</li>
+</ul>
+</li>
+<li><code>-Bnum</code><ul>
+<li><code>before num</code> 前num行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改-1"><a href="#修改-1" class="headerlink" title="修改"></a>修改</h3><ul>
+<li><code>vim 文件</code><ul>
+<li><code>:wq</code><ul>
+<li>保存并退出</li>
+</ul>
+</li>
+<li><code>:q</code><ul>
+<li>不保存退出，会提示</li>
+</ul>
+</li>
+<li><code>:q!</code><ul>
+<li>不保存直接退出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>linux中<ul>
+<li>打包文件一般以<code>.tar</code>结尾</li>
+<li>压缩命令一般以<code>.gz</code>结尾</li>
+<li>而通常打包和压缩是一起进行的，打包并压缩后的文件后缀一般为<code>.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h3><ul>
+<li><code>tar -zcvf 打包压缩后的文件名 要打包压缩的文件</code><ul>
+<li><code>z</code><ul>
+<li>调用gzip压缩命令进行压缩</li>
+</ul>
+</li>
+<li><code>c</code><ul>
+<li>打包文件,创建一个新的<code>.tar</code>文件</li>
+</ul>
+</li>
+<li><code>v</code><ul>
+<li>显示运行过程</li>
+</ul>
+</li>
+<li><code>f</code><ul>
+<li>指定文件名</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -zcvf abc.tar.gz x.txt y.conf z.cfg</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="解压（重要）"><a href="#解压（重要）" class="headerlink" title="解压（重要）"></a>解压（重要）</h3><ul>
+<li><code>tar [-xzvf] 压缩文件</code><ul>
+<li><code>x</code><ul>
+<li>解压</li>
+<li>默认解压到当前目录</li>
+</ul>
+</li>
+<li><code>z</code><ul>
+<li>表示 tar 包是被 gzip 压缩过的，所以解压时需要用gunzip 解压</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -xvf abc.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tar [-xzvf] 压缩文件 -C 目录</code><ul>
+<li><code>-C</code><ul>
+<li>代表指定解压的位置</li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>tar -xvf abc.tar.gz -C /usr</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li><code>locale</code><ul>
+<li>查看编码</li>
+</ul>
+</li>
+<li><code>ctrl+c</code><ul>
+<li>终止命令</li>
+</ul>
+</li>
+<li><code>ctrl+z</code><ul>
+<li>后台执行</li>
+<li><code>fg</code><ul>
+<li>调回前台</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>history</code><ul>
+<li>查看历史命令</li>
+</ul>
+</li>
+<li><code>wget 地址</code><ul>
+<li>下载</li>
+</ul>
+</li>
+</ul>
+<h2 id="重定向输出"><a href="#重定向输出" class="headerlink" title="重定向输出"></a>重定向输出</h2><ul>
+<li><code>&gt;</code><ul>
+<li>将前一个命令输出到指定目的地</li>
+<li><code>ip addr &gt; test.txt</code><ul>
+<li>会把<code>ip addr</code>查询的结果输出到<code>test.txt</code>中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&gt;&gt;</code><ul>
+<li><code>&gt;</code>每次输出都会覆盖</li>
+<li><code>&gt;&gt;</code>追加</li>
+</ul>
+</li>
+</ul>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><ul>
+<li><code>|</code><ul>
+<li>将前一个命令的输出作为本次命令的输入</li>
+<li><code>ps -ef | grep xxx</code><ul>
+<li>搜索运行进程中含有xxx的进程</li>
+<li>即管道把<code>ps -ef</code>的输出结果给<code>grep xxx</code>查询</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h2><ul>
+<li><code>&amp;&amp;</code><ul>
+<li>前一个命令执行成功，则执行后一个命令</li>
+<li><code>mkdir xxx &amp;&amp; cd xxx</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ul>
+<li><code>ps -ef</code><ul>
+<li>查看当前运行的进程</li>
+</ul>
+</li>
+<li><code>kill [-9] 进程的PID</code><ul>
+<li>结束进程</li>
+<li><code>-9</code><ul>
+<li>强制结束</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络通信"><a href="#网络通信" class="headerlink" title="网络通信"></a>网络通信</h2><ul>
+<li><code>ifconfig</code></li>
+<li><code>ip addr</code></li>
+<li><code>ping [-c num] ip地址</code><ul>
+<li>测试连接<ul>
+<li>-c num<ul>
+<li>限制次数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>netstat -an</code><ul>
+<li>查询网络端口</li>
+<li><code>netstat -an | grep 3306</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h2><ul>
+<li><code>date</code></li>
+<li><code>df</code><ul>
+<li>显示磁盘信息</li>
+<li><code>df -h</code><ul>
+<li>友好显示大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>free</code><ul>
+<li>显示内存状态</li>
+<li><code>free -m</code><ul>
+<li>以mb为单位显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>top</code><ul>
+<li>显示执行中的程序，以及一些其它的系统信息，负载，cpu…</li>
+</ul>
+</li>
+<li><code>du</code><ul>
+<li>显示目录下所有文件的大小</li>
+<li><code>du -h</code></li>
+</ul>
+</li>
+<li><code>who</code><ul>
+<li>显示登录用户信息</li>
+</ul>
+</li>
+<li><code>hostname</code><ul>
+<li>显示主机名</li>
+<li>修改<ul>
+<li><code>/etc/sysconfig/network</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>uname -a</code><ul>
+<li>显示系统信息</li>
+</ul>
+</li>
+<li><code>clear</code><ul>
+<li>清屏</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
+<li><code>useradd 用户名 [-d 目录] [-g 组名]</code><ul>
+<li>默认home目录<code>/home/用户名</code></li>
+<li><code>-d 目录</code><ul>
+<li>指定home目录</li>
+</ul>
+</li>
+<li><code>-g 组名</code><ul>
+<li>指定组</li>
+<li>如果没有指定组，会创建一个与用户名相同的私有组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>password 用户名</code><ul>
+<li>然后输入密码</li>
+</ul>
+</li>
+<li><code>userdel [-r] 用户名</code><ul>
+<li>删除用户（不会删除home目录）</li>
+<li><code>-r</code><ul>
+<li>删除用户且删除home目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>切换登录<ul>
+<li><code>ssh -1 用户名 -p 22 ip</code><ul>
+<li>使用ssh协议切换登录</li>
+<li><code>22</code><ul>
+<li>ssh的端口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>su -用户名</code><ul>
+<li><code>su -root</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h2><ul>
+<li><code>groupadd 组名</code></li>
+<li><code>groupdel 组名</code><ul>
+<li>如果该组又用户，必须先删除用户</li>
+</ul>
+</li>
+</ul>
+<h2 id="账户文件"><a href="#账户文件" class="headerlink" title="账户文件"></a>账户文件</h2><ul>
+<li><code>/etc/passwd</code><ul>
+<li>用户文件</li>
+</ul>
+</li>
+<li><code>/etc/shadow</code><ul>
+<li>密码文件</li>
+</ul>
+</li>
+<li><code>/etc/group</code><ul>
+<li>组信息文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><ul>
+<li>权限是linux中的重要概念，每个文件/目录都具有权限</li>
+</ul>
+<h2 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h2><ul>
+<li><code>0123456789</code><ul>
+<li>总共十位<code>1+3+3+3</code></li>
+</ul>
+</li>
+<li><code>0</code><ul>
+<li>文件类型<ul>
+<li><code>d</code>：文件夹(directory)</li>
+<li><code>-</code>：文件</li>
+<li><code>l</code>：相当于快捷方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>123</code><ul>
+<li>属主权限<ul>
+<li><code>r</code>：读取权<ul>
+<li>可以用4表示</li>
+</ul>
+</li>
+<li><code>w</code>：写入权<ul>
+<li>2</li>
+</ul>
+</li>
+<li><code>x</code>：执行权<ul>
+<li>1</li>
+</ul>
+</li>
+<li><code>-</code> 无操作权限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>456</code><ul>
+<li>属组权限<ul>
+<li><code>rwx-</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>789</code><ul>
+<li>其它用户权限<ul>
+<li><code>rwx-</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h2><ol>
+<li><code>chmod u=rwx, g=rw, o=r 文件/目录</code><ul>
+<li>u代表属主（user）</li>
+<li>g代表属组（group）</li>
+<li>o代表其它用户（other）</li>
+</ul>
+</li>
+<li><code>chmod u=7, g=6, o=1 文件/目录</code><ul>
+<li>可以设置为权限相加的和</li>
+</ul>
+</li>
+<li><code>chmod 761 文件/目录</code></li>
+</ol>
+<ul>
+<li><code>chown [-R] 用户:组 文件/目录</code><ul>
+<li>改变当前文件/目录所属的用户/组</li>
+<li><code>-R</code><ul>
+<li>改变目录和其中所有的文件和子目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><h3 id="查询某个软件是否安装"><a href="#查询某个软件是否安装" class="headerlink" title="查询某个软件是否安装"></a>查询某个软件是否安装</h3><ol>
+<li>rpm包安装的<ul>
+<li><code>rpm -qa [| grep ]</code></li>
+</ul>
+</li>
+<li>deb包安装的<ul>
+<li><code>dpkg -1 [| grep ]</code></li>
+</ul>
+</li>
+<li>yum安装的<ul>
+<li><code>yum list installed [| grep ]</code></li>
+</ul>
+</li>
+<li>源码包安装<ul>
+<li>只能看可执行文件是否存在</li>
+<li>以root安装的，可执行程序通常都在<code>/sbin:/usr/bin</code>目录下</li>
+</ul>
+</li>
+</ol>
+<h3 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h3><ul>
+<li><code>Redhat Package Manager</code></li>
+<li>相当于一个360之类的管理工具</li>
+</ul>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li><code>rpm -ivh</code><ul>
+<li><code>-i</code><ul>
+<li>安装</li>
+</ul>
+</li>
+<li><code>-v</code><ul>
+<li>可视化</li>
+</ul>
+</li>
+<li><code>-h</code><ul>
+<li>显示安装进度</li>
+</ul>
+</li>
+<li><code>--force</code><ul>
+<li>强制安装，即使覆盖属于其他包的文件也要安装 </li>
+</ul>
+</li>
+<li><code>--nodeps</code><ul>
+<li>当要安装的rpm包依赖其他包时，即使其他包没有安装，也要安装这个包</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h4><ul>
+<li><code>rpm -Uvh</code></li>
+</ul>
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><ul>
+<li><code>rpm -e</code></li>
+<li><code>rpm -e --nodeps</code></li>
+</ul>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ul>
+<li><code>rpm -qa</code><ul>
+<li><code>-qa</code><ul>
+<li><code>query alll</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h3><ul>
+<li><code>yum list</code><ul>
+<li>列出所有可用rpm包资源</li>
+</ul>
+</li>
+<li><code>yum search</code> 或 <code>yum list | grep</code></li>
+<li><code>yum install -y</code><ul>
+<li><code>-y</code><ul>
+<li>确认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>yum remove -y</code></li>
+<li><code>yum update -y</code></li>
+<li><code>yum grouplist</code><ul>
+<li>列出套件</li>
+</ul>
+</li>
+<li><code>yum groupinstall</code></li>
+<li><code>yum groupremove</code></li>
+</ul>
+<h3 id="安装目录"><a href="#安装目录" class="headerlink" title="安装目录"></a>安装目录</h3><ul>
+<li><code>/usr</code><ul>
+<li>系统级的目录，可以理解为<code>C:/Windows/</code></li>
+</ul>
+</li>
+<li><code>/usr/lib</code><ul>
+<li>理解为<code>C:/Windows/System32</code></li>
+</ul>
+</li>
+<li><code>/usr/local</code><ul>
+<li>用户级的程序目录，可以理解为<code>C:/Progrem Files/</code></li>
+<li>用户自己编译的软件默认会安装到这个目录下</li>
+</ul>
+</li>
+<li><code>/opt</code><ul>
+<li>用户级的程序目录，可以理解为<code>D:/Software</code></li>
+<li>opt有可选的意思，这里可以用于放置第三方大型软件（或游戏）</li>
+<li>当你不需要时，直接rm -rf掉即可。</li>
+<li>在硬盘容量不够时，也可将/opt单独挂载到其他磁盘上使用。</li>
+<li>文档说明<ul>
+<li>主要存放那些可选的程序，如你想尝试最新的firefox测试版</li>
+<li>那就装到/opt目录下吧，这样，当你尝试完，想删掉firefox的时候，你就可 以直接删除它，而不影响系统其他任何设置</li>
+<li>安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面</li>
+<li>如测试版firefox安装在<code>/opt/firefox_beta</code><ul>
+<li><code>/opt/firefox_beta</code>目录下面就包含了运 行firefox所需要的所有文件、库、数据等等。要删除firefox的时候，你只需删除/opt/firefox_beta目录即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="源码目录"><a href="#源码目录" class="headerlink" title="源码目录"></a>源码目录</h3><ul>
+<li><code>/usr/src</code><ul>
+<li>系统级的源码目录</li>
+</ul>
+</li>
+<li><code>/usr/local/src</code><ul>
+<li>用户级的源码目录</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><h3 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h3><h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4><ul>
+<li><code>yum install gcc</code></li>
+</ul>
+<h4 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h4><ol>
+<li>要有编译器。因为要编译源码。</li>
+<li>下载源码包<code>gcc.tar.gz</code></li>
+<li>安装依赖库</li>
+<li>三个目录<ul>
+<li><code>srcdir</code><ul>
+<li>源码目录，即解压的目录</li>
+</ul>
+</li>
+<li><code>destdir</code><ul>
+<li>安装目录</li>
+</ul>
+</li>
+<li><code>objdir</code><ul>
+<li>编译输出目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配置</li>
+<li>编译</li>
+<li>安装</li>
+</ol>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><ul>
+<li><code>rpm -qa | grep java</code><ul>
+<li>查看是否安装有jdk</li>
+<li>如果是源码(.tar.gz)安装 查不出来</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps 要卸载的软件</code><ul>
+<li>卸载</li>
+</ul>
+</li>
+<li>把jdk传到linux，解压到指定目录<ul>
+<li>我用的是<code>.tar.gz</code>的形式，直接解压就能用</li>
+<li>删除我没查到怎么删，我直接把文件夹删了。。</li>
+</ul>
+</li>
+<li><p>配置环境遍量</p>
+<ul>
+<li>打开<code>/etc/profile</code>配置文件，在最后加上<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#set java environment</span><br><span class="line">	JAVA_HOME=/usr/local/jdk1.8.0_192</span><br><span class="line">	CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">	PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">	export JAVA_HOME CLASSPATH PATH</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重新加载<code>/etc/profile</code></p>
+<ul>
+<li><code>source /etc/profile</code></li>
+</ul>
+</li>
+<li><code>java -version</code></li>
+</ul>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul>
+<li>解压到指定目录</li>
+<li>然后开放8080端口即可<ul>
+<li><code>firewall-cmd --zone=public --add-port=8080/tcp --permanent</code></li>
+<li><code>firewall-cmd --reload</code></li>
+<li><code>firewall-cmd --zone=public --query-port=8080/tcp</code></li>
+</ul>
+</li>
+<li>进去tomcat的bin<ul>
+<li><code>./startup.sh</code></li>
+<li><code>./shutdown.sh</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li>CentOS7自带的是mariadb数据库，安装新版mysql前，需将系统自带的mariadb-lib卸载<ul>
+<li><code>rpm -qa | grep mysql</code><ul>
+<li>查看是否有mysql</li>
+</ul>
+</li>
+<li><code>rpm -qa|grep mariadb</code><ul>
+<li>查看是否有mariadb</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps mariadb-libs-5.5.56-2.el7.x86_64</code><ul>
+<li>卸载mariadb</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li><strong>Red Hat Enterprise Linux 7 / Oracle Linux 7 (x86, 64-bit), RPM Bundle</strong><ul>
+<li>使用这个版本</li>
+<li>由于下载的mysql是<code>.tar</code>没有打成一个包，最好自己建一个文件夹mysql</li>
+<li>解压mysql到新建文件夹mysql</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>在<code>/mysql</code>下安装mysql<ul>
+<li><code>rpm -ivh mysql-community-common-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>mysql-community-libs-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>rpm -ivh mysql-community-client-5.7.21-1.el7.x86_64.rpm</code></li>
+<li><code>rpm -ivh MySQL-server-5.6.22-1.el6.i686.rpm</code><ul>
+<li>按照顺序按照，会有依赖关系</li>
+<li>安装server前还要安装<code>libaio-0.3.107-10.el6.x86_64.rpm</code><ul>
+<li>可以离线</li>
+<li>也可以<code>yum install libaio</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="启动运行"><a href="#启动运行" class="headerlink" title="启动运行"></a>启动运行</h3><ul>
+<li><code>service mysql start</code>或<code>systemctl start mysqld.service</code><ul>
+<li>启动mysql</li>
+</ul>
+</li>
+<li><code>systemctl status mysqld.service</code><ul>
+<li>查看运行状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ul>
+<li>安装好会有一个随机密码在日志中<ul>
+<li><code>cat /var/log/mysqld.log | grep &#39;password&#39;</code>或<code>grep &quot;password&quot; /var/log/mysqld.log</code><ul>
+<li>可以找到password</li>
+<li><code>A temporary password is generated for root@localhost: lRym!ofXx6/r</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>mysql -uroot -p</code><ul>
+<li>登录</li>
+<li>登录后发现必须修改密码才能做其他事</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><ul>
+<li><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;root&#39;;</code></li>
+<li><code>set password=&#39;新密码&#39;;</code><ul>
+<li>新密码要大小写数字特殊符号。。。</li>
+</ul>
+</li>
+<li><code>SHOW VARIABLES LIKE &#39;validate_password%&#39;;</code><ul>
+<li>可以查看mysql对密码的规范</li>
+<li>修改规范使得可以设置简单密码<ul>
+<li><code>set global validate_password_policy=0;</code></li>
+<li><code>set global validate_password_length=1;</code></li>
+<li>这样就可以设置简单密码了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="开机启动服务"><a href="#开机启动服务" class="headerlink" title="开机启动服务"></a>开机启动服务</h3><ul>
+<li><code>systemctl enable mysqld</code></li>
+</ul>
+<h3 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h3><ul>
+<li>Linux默认不能远程登录mysql，所以需要设置开启远程登录的权限<ul>
+<li><code>grant all privileges on *.* to &#39;root&#39; @&#39;%&#39; identified by &#39;root&#39;;</code><ul>
+<li>最后一个root，是远程访问密码，可以设置别的，自己用就root了。。</li>
+</ul>
+</li>
+<li><code>flush privileges;</code></li>
+</ul>
+</li>
+<li>还要开放3306端口</li>
+</ul>
+<h3 id="卸载上边安装的mysql"><a href="#卸载上边安装的mysql" class="headerlink" title="卸载上边安装的mysql"></a>卸载上边安装的mysql</h3><ul>
+<li><code>rpm -qa | grep mysql</code><ul>
+<li>查看是否安装了MySQL</li>
+</ul>
+</li>
+<li><code>service mysqld status</code><ul>
+<li>查看mysql服务状态</li>
+</ul>
+</li>
+<li><code>service mysqld stop</code><ul>
+<li>关闭mysql服务</li>
+</ul>
+</li>
+<li>卸载组件，存在依赖关系，卸载顺序<code>server-client-libs-common</code><ul>
+<li><code>rpm -ev xxx</code></li>
+</ul>
+</li>
+<li>查询并删除相关文件<ul>
+<li><code>whereis mysql</code></li>
+<li><code>find / -name mysql</code></li>
+<li>我删了一回，在这几个目录<ul>
+<li><code>/usr/local/mysql</code><ul>
+<li>我的安装目录</li>
+</ul>
+</li>
+<li><code>/usr/share/mysql</code></li>
+<li><code>/var/lib/mysql</code></li>
+<li><code>/var/lib/mysql/mysql</code></li>
+<li><code>/var/log/mysqld.log</code><ul>
+<li>日志</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最后可以查询是否删除干净<ul>
+<li><code>rpm -qa | grep mysql</code></li>
+<li><code>whereis mysql</code></li>
+<li><code>find / -name mysql</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="源码安装-1"><a href="#源码安装-1" class="headerlink" title="源码安装"></a>源码安装</h3><ul>
+<li><strong>mysql-5.7.23-linux-glibc2.12-x86_64.tar.gz</strong></li>
+</ul>
+<h4 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h4><ul>
+<li><code>ps -ef|grep mysql</code><ul>
+<li>查看是否安装了mysql</li>
+</ul>
+</li>
+<li><code>ps -ef|grep mariadb</code><ul>
+<li>查看是否安装了mariadb</li>
+</ul>
+</li>
+<li><code>rpm -e --nodeps xxx</code><ul>
+<li><code>nodeps</code><ul>
+<li>强制卸载</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>解压</li>
+<li>在<code>srcdir</code>下新建目录data<ul>
+<li><code>mkdir data</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="创建用户和组"><a href="#创建用户和组" class="headerlink" title="创建用户和组"></a>创建用户和组</h4><ul>
+<li><code>cat /etc/group | grep mysql</code><ul>
+<li>查询是否有用户组“mysql”</li>
+</ul>
+</li>
+<li><code>cat /etc/passwd | grep mysql</code><ul>
+<li>查询是否有用户“mysql”</li>
+</ul>
+</li>
+<li><code>groupadd mysql</code><ul>
+<li>创建用户组”mysql”(可自定义名称 安)</li>
+</ul>
+</li>
+<li><code>useradd -r -g mysql  mysql</code><ul>
+<li>创建用户”mysql” 并关联到组”mysql”上</li>
+</ul>
+</li>
+<li><code>chown mysql:mysql data</code><ul>
+<li>将data目录的所属从<code>root</code>变为<code>mysql组的mysql用户</code></li>
+</ul>
+</li>
+<li><code>chmod 750 data</code><ul>
+<li>修改data目录的权限</li>
+</ul>
+</li>
+</ul>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><ul>
+<li><code>bin/mysqld --initialize --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --user=mysql</code><br>6kZ1rGR/ld4W<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4></li>
+<li><code>touch /etc/my.cnf</code><ul>
+<li>在etc下创建my.cnf</li>
+</ul>
+</li>
+<li><code>vim /etc/my.cnf</code><ul>
+<li>注意my.cnf第一行要有组<code>[mysqld]</code></li>
+<li>仅供参考<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir=/usr/local/mysql</span><br><span class="line">datadir=/usr/local/mysql/data</span><br><span class="line">port=3306</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br><span class="line">character-set-server=utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">socket=/usr/local/mysql/tmp/mysql.sock</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h4><ul>
+<li><code>cp -r support-files/mysql.server /etc/init.d/mysql</code><ul>
+<li>将mysql放到本地系统服务中</li>
+</ul>
+</li>
+<li><code>service mysql start</code><ul>
+<li>启动服务</li>
+<li><code>cannot create xxx.sock</code><ul>
+<li>sock文件要设置到tmp中，并设置用户组</li>
+<li><code>chown mysql:mysq tmp</code></li>
+</ul>
+</li>
+<li><code>ERROR! The server quit without updating PID file</code><ul>
+<li>因为新版本的mysql安全启动安装包只认/usr/local/mysql这个路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>开机自动启动服务<ul>
+<li><code>chkconfig --add mysql</code></li>
+<li><code>chkconfig mysql on</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="登录-1"><a href="#登录-1" class="headerlink" title="登录"></a>登录</h4><ul>
+<li><code>bin/mysql -uroot -p</code><ul>
+<li>登陆，初始密码在初始化时有个随机的记得记录一下</li>
+<li>如果你想用<code>msyql –uroot –p</code>登录<ol>
+<li>建立软连接<ul>
+<li><code>ln -s /basedir/bin/mysql /usr/bin</code><ul>
+<li>系统默认会查找/usr/bin下的命令，如果这个命令不在这个目录下，当然会找不到命令</li>
+<li>需要做的就是映射一个链接到/usr/bin目录下，相当于建立一个链接文</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>修改<code>bin/mysqld_safe</code>文件<ul>
+<li>将所有<code>usr/local/mysql</code>改为<code>basedir</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;root&#39;;</code><ul>
+<li>修改密码</li>
+</ul>
+</li>
+</ul>
+<h4 id="开启远程服务"><a href="#开启远程服务" class="headerlink" title="开启远程服务"></a>开启远程服务</h4><ul>
+<li><code>grant all privileges  on *.* to &#39;用户名&#39;@&#39;%&#39; identified by &#39;密码&#39; with grant option;</code></li>
+<li>mysql8.x<ul>
+<li><code>CREATE USER &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;root&#39;;</code></li>
+<li><code>GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39;WITH GRANT OPTION;</code></li>
+</ul>
+</li>
+<li><code>flush privileges;</code></li>
+</ul>
+<h4 id="设置防火墙开放3306端口"><a href="#设置防火墙开放3306端口" class="headerlink" title="设置防火墙开放3306端口"></a>设置防火墙开放3306端口</h4><ul>
+<li>linux的防火墙默认之开启22端口</li>
+<li><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent</code><ul>
+<li><code>permanent</code><ul>
+<li>永久生效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>firewall-cmd --reload</code><ul>
+<li>不重启直接重新加载</li>
+</ul>
+</li>
+<li><code>firewall-cmd --zone=public --query-port=3306/tcp</code><ul>
+<li>查看3306端口的状态</li>
+</ul>
+</li>
+</ul>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><ul>
+<li>解压缩到<code>/usr/local</code></li>
+<li>进入解压目录<ul>
+<li><code>make test</code><ul>
+<li>如果有错误<code>You need tcl 8.5 or newer in order to run the Redis test</code></li>
+<li>是因为没有安装TCL<ul>
+<li>(Tool Command Language）工具脚本语言，是Linux内的一种语言包</li>
+<li>下载，上传解压</li>
+<li>到安装目录<ul>
+<li><code>cd unix</code></li>
+<li><code>./configure</code></li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>cd src</code></li>
+<li><code>make install PREFIX=/usr/local/redis</code></li>
+<li>将解压目录下的<code>redis.conf</code>拷贝到安装路径下</li>
+<li>前端启动<ul>
+<li><code>cd redis/bin</code></li>
+<li><code>./reids-server</code><ul>
+<li>此时启动成功看到一大堆东西，还有个图</li>
+<li>这属于前端启动，启动后，控制台不能做任何操作了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>后端启动<ul>
+<li>编辑<code>vim redis/redis.conf</code><ul>
+<li><code>daemonize no</code><ul>
+<li>改为yes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>./bin/redis-server ./redis.conf</code><ul>
+<li>加载配置启动</li>
+</ul>
+</li>
+<li><code>ps -ef | grep -i redis</code><ul>
+<li>查看是否启动</li>
+</ul>
+</li>
+<li><code>./bin/redis-cli</code><ul>
+<li>启动客户端</li>
+</ul>
+</li>
+<li><code>./bin/redis-cli shutdown</code><ul>
+<li>关闭redis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><ul>
+<li>解压后</li>
+<li>在<code>srcdir</code>目录<code>make</code></li>
+<li>在<code>srcdir/src</code>目录<code>make install</code></li>
+<li>然后把<code>srcdir/src</code>下的<code>redis-server redis-cli</code>和<code>srcdir</code>下的<code>redis.conf</code>移动到一个文件夹下，方便使用</li>
+<li>启动同上边</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li><p><code>-bash: vim: command not found</code></p>
+<ul>
+<li>Centos默认安装了VI编辑器，VIM是没有安装的</li>
+<li>VIM编辑器需要三个包<ul>
+<li><code>vim-enhanced</code></li>
+<li><code>vim-minimal</code></li>
+<li><code>vim-common</code></li>
+</ul>
+</li>
+<li><code>rpm -qa|grep vim</code><ul>
+<li>查看是否安装</li>
+<li>缺少哪个包就安装哪个</li>
+</ul>
+</li>
+<li><code>yum -y install vim-enhanced</code><ul>
+<li>安装<code>vim-enhanced</code></li>
+</ul>
+</li>
+<li><code>yum -y install vim *</code><ul>
+<li>安装所有缺少的包</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>centos7 添加端口</p>
+<ul>
+<li>centos7防火墙为firewall </li>
+<li><code>firewall-cmd --list-ports</code><ul>
+<li>查看已经开放的端口</li>
+</ul>
+</li>
+<li><code>firewall-cmd --zone=public --add-port=80/tcp --permanent</code><ul>
+<li>开启端口</li>
+<li><code>--zone</code><ul>
+<li>作用域</li>
+</ul>
+</li>
+<li><code>--add-port=80/tcp</code><ul>
+<li>添加端口=端口号/协议</li>
+</ul>
+</li>
+<li><code>--permanent</code><ul>
+<li>永久生效，没此参数重启后失效。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>firewall-cmd --reload</code><ul>
+<li>重启firewall</li>
+</ul>
+</li>
+<li><code>systemctl stop firewalld.service</code><ul>
+<li>停止firewall</li>
+</ul>
+</li>
+<li><code>systemctl start  firewalld.service</code><ul>
+<li>启动firewall</li>
+</ul>
+</li>
+<li><code>systemctl disable firewalld.service</code><ul>
+<li>禁止firewall开机启动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CentOS 7 以下版本 iptables 命令</p>
+<ul>
+<li>centos7以下防火墙为iptables</li>
+<li><code>/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</code><ul>
+<li>开放端口</li>
+</ul>
+</li>
+<li><code>/etc/rc.d/init.d/iptables save</code><ul>
+<li>永久保存</li>
+</ul>
+</li>
+<li><code>/etc/init.d/iptables status</code><ul>
+<li>查看已打开的端口</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><ol>
+<li>下载源码包，解压<ul>
+<li>注意先别安装，安装vim需要个东西，还得重新编译安装。坑四了。</li>
+</ul>
+</li>
+<li>在解压目录（即srcdir 源码目录）<ul>
+<li><code>./configure  --prefix=/usr/local</code><ul>
+<li><code>./</code><ul>
+<li>表示目录是当前目录</li>
+</ul>
+</li>
+<li><code>prefix</code><ul>
+<li>安装目录</li>
+</ul>
+</li>
+<li>如果未安装编译工具如<code>gcc...</code>会报错</li>
+</ul>
+</li>
+<li><code>make</code><ul>
+<li><code>zlib.h: No such file or directory</code><ul>
+<li>缺少 zlib的头文件， 开发包没装<ul>
+<li><code>yum install zlib</code><ul>
+<li>系统默认已经装上</li>
+</ul>
+</li>
+<li><code>yum install zlib-devel</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Can&#39;t locate ExtUtils/MakeMaker.pm in @INC</code>或者 <code>perl.make command not found</code><ul>
+<li><code>yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>sudo make install</code><ul>
+<li><code>sudo</code><ul>
+<li>貌似是管理员的意思</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安装好后<ul>
+<li><code>git --version</code><ul>
+<li>安装到<code>/usr/local</code>可以<ul>
+<li>因为<code>/usr/local/bin</code>这个目录默认已经加入了PATH环境变量中，这样你的git会安装到/usr/local/bin这个目录，所以你在shell下执行时可以找到这个命令</li>
+</ul>
+</li>
+<li>自定义目录<code>/usr/loacl/git</code>不可以<ul>
+<li>因为没有环境变量，类似windows</li>
+<li>可以在安装目录使用命令<code>/usr/local/git/bin/git --version</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>手动添加环境变量<ol>
+<li><code>$PATH=&quot;$PATH&quot;:/NEW_PATH</code><ul>
+<li>临时配置，关闭shell失效</li>
+</ul>
+</li>
+<li><code>/etc/profile</code><ul>
+<li>在下面添加<code>export  PATH=&quot;$PATH:/NEW_PATH&quot;</code></li>
+<li>是针对所有用户（配置好需要重启）</li>
+</ul>
+</li>
+<li>修改个人用户目录下的<code>.bashrc</code><ul>
+<li>在下面添加<code>export  PATH=&quot;$PATH:/NEW_PATH&quot;</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>注意<ul>
+<li><code>-bash: Export: command not found</code><ul>
+<li>export不能大写，linux区分大小写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配置基本信息(网上，未测试)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//配置基本信息</span><br><span class="line">[root@localhost ~]# git config --global user.name &quot;an3&quot;</span><br><span class="line">[root@localhost ~]# git config --global user.email xxx@qq.com</span><br><span class="line">//查看配置</span><br><span class="line">[root@localhost ~]# git config --list</span><br><span class="line">user.name=an3</span><br><span class="line">user.email=xxx@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h2 id="一-使用git安装"><a href="#一-使用git安装" class="headerlink" title="一 使用git安装"></a>一 使用git安装</h2><ol>
+<li><p><code>git clone https://github.com/vim/vim.git</code></p>
+<ul>
+<li><code>fatal: Unable to find remote helper for &#39;https&#39;</code><ul>
+<li>是因为没有安装<code>curl-devel</code><ol>
+<li>源码安装crul，然后重新编译安装git<ul>
+<li><code>./configure --prefix=/usr/local/git --with-curl=curl安装目录</code></li>
+</ul>
+</li>
+<li>yum安装crul，然后重写编译安装git<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ yum install curl-devel</span><br><span class="line">$ # cd to wherever the source for git is</span><br><span class="line">$ ./configure</span><br><span class="line">$ make</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd srcdir</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="二-源码安装"><a href="#二-源码安装" class="headerlink" title="二 源码安装"></a>二 源码安装</h2><ol>
+<li>下载源码包<ul>
+<li>如果源码包是<code>.tar.bz2</code>的<ul>
+<li>解压<code>tar jxvf xxx.tar.bz2</code></li>
+<li><code>bzip2: Cannot exec: No such file or directory</code><ul>
+<li>没有安装<code>bzip2</code></li>
+<li><code>yum install bzip2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>然后编译安装。。<ul>
+<li><code>You need to install a terminal library; for example ncurses.       Or specify the name of the libra</code><ul>
+<li><code>yum install ncurses-devel.x86_64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The End<i class="fa fa-paw"></i>客官请自便-------------</div>
+    
+</div
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/05/xd-Redis/" rel="next" title="xd-Redis">
+                <i class="fa fa-chevron-left"></i> xd-Redis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/14/xd-SecureCRT/" rel="prev" title="xd-SecureCRT">
+                xd-SecureCRT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png"
+                alt="安₃" />
+            
+              <p class="site-author-name" itemprop="name">安₃</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令"><span class="nav-number">3.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">3.1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换"><span class="nav-number">3.1.1.</span> <span class="nav-text">切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">3.1.2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看"><span class="nav-number">3.1.3.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">3.1.4.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">3.1.5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拷贝"><span class="nav-number">3.1.6.</span> <span class="nav-text">拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.1.7.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件"><span class="nav-number">3.2.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">3.2.3.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩包"><span class="nav-number">3.3.</span> <span class="nav-text">压缩包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包压缩"><span class="nav-number">3.3.2.</span> <span class="nav-text">打包压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压（重要）"><span class="nav-number">3.3.3.</span> <span class="nav-text">解压（重要）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">3.4.</span> <span class="nav-text">其它</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向输出"><span class="nav-number">3.5.</span> <span class="nav-text">重定向输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道"><span class="nav-number">3.6.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-amp"><span class="nav-number">3.7.</span> <span class="nav-text">&amp;&amp;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">3.8.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络通信"><span class="nav-number">3.9.</span> <span class="nav-text">网络通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统管理"><span class="nav-number">3.10.</span> <span class="nav-text">系统管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">3.11.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组管理"><span class="nav-number">3.12.</span> <span class="nav-text">组管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#账户文件"><span class="nav-number">3.13.</span> <span class="nav-text">账户文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#权限"><span class="nav-number">4.</span> <span class="nav-text">权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#权限信息"><span class="nav-number">4.1.</span> <span class="nav-text">权限信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改权限"><span class="nav-number">4.2.</span> <span class="nav-text">修改权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件安装"><span class="nav-number">5.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-2"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询某个软件是否安装"><span class="nav-number">5.1.1.</span> <span class="nav-text">查询某个软件是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rpm"><span class="nav-number">5.1.2.</span> <span class="nav-text">rpm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#升级"><span class="nav-number">5.1.2.2.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载"><span class="nav-number">5.1.2.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">5.1.2.4.</span> <span class="nav-text">查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yum"><span class="nav-number">5.1.3.</span> <span class="nav-text">yum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装目录"><span class="nav-number">5.1.4.</span> <span class="nav-text">安装目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码目录"><span class="nav-number">5.1.5.</span> <span class="nav-text">源码目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装方式"><span class="nav-number">5.1.6.</span> <span class="nav-text">安装方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译器"><span class="nav-number">5.2.</span> <span class="nav-text">编译器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GCC"><span class="nav-number">5.2.1.</span> <span class="nav-text">GCC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yum安装"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">yum安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码安装"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">源码安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK"><span class="nav-number">5.3.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat"><span class="nav-number">5.4.</span> <span class="nav-text">tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">5.5.</span> <span class="nav-text">mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">5.5.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">5.5.2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">5.5.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动运行"><span class="nav-number">5.5.4.</span> <span class="nav-text">启动运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">5.5.5.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改密码"><span class="nav-number">5.5.6.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开机启动服务"><span class="nav-number">5.5.7.</span> <span class="nav-text">开机启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程登录"><span class="nav-number">5.5.8.</span> <span class="nav-text">远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载上边安装的mysql"><span class="nav-number">5.5.9.</span> <span class="nav-text">卸载上边安装的mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码安装-1"><span class="nav-number">5.5.10.</span> <span class="nav-text">源码安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备-1"><span class="nav-number">5.5.10.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-2"><span class="nav-number">5.5.10.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户和组"><span class="nav-number">5.5.10.3.</span> <span class="nav-text">创建用户和组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">5.5.10.4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">5.5.10.5.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务"><span class="nav-number">5.5.10.6.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登录-1"><span class="nav-number">5.5.10.7.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启远程服务"><span class="nav-number">5.5.10.8.</span> <span class="nav-text">开启远程服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置防火墙开放3306端口"><span class="nav-number">5.5.10.9.</span> <span class="nav-text">设置防火墙开放3306端口</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">6.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一"><span class="nav-number">6.1.</span> <span class="nav-text">一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二"><span class="nav-number">6.2.</span> <span class="nav-text">二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">7.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-number">8.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim"><span class="nav-number">9.</span> <span class="nav-text">vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-使用git安装"><span class="nav-number">9.1.</span> <span class="nav-text">一 使用git安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-源码安装"><span class="nav-number">9.2.</span> <span class="nav-text">二 源码安装</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">安₃</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+
+
+
+
+
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

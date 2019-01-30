@@ -108,14 +108,17 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="数据载体HTML优点 服务端响应的是普通html字符串，无需JS解析，配合innerHTML属性效率高  缺点 如果需要更新WEB页面中的很多处地方，HTML不太方便，同时innerHTML属性不是DOM的标准，不能操作XML 注意 innerHTML在xml中不能使用，用firstChild.nodeValue替代    适合 小量数据载体，且只更新在web页面中的一个地方 response.s">
+<meta property="og:type" content="article">
 <meta property="og:title" content="xd-Json">
 <meta property="og:url" content="http://yoursite.com/2018/12/11/xd-Json/index.html">
 <meta property="og:site_name" content="安₃">
+<meta property="og:description" content="数据载体HTML优点 服务端响应的是普通html字符串，无需JS解析，配合innerHTML属性效率高  缺点 如果需要更新WEB页面中的很多处地方，HTML不太方便，同时innerHTML属性不是DOM的标准，不能操作XML 注意 innerHTML在xml中不能使用，用firstChild.nodeValue替代    适合 小量数据载体，且只更新在web页面中的一个地方 response.s">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-10T16:37:29.320Z">
+<meta property="og:updated_time" content="2019-01-04T17:26:33.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xd-Json">
+<meta name="twitter:description" content="数据载体HTML优点 服务端响应的是普通html字符串，无需JS解析，配合innerHTML属性效率高  缺点 如果需要更新WEB页面中的很多处地方，HTML不太方便，同时innerHTML属性不是DOM的标准，不能操作XML 注意 innerHTML在xml中不能使用，用firstChild.nodeValue替代    适合 小量数据载体，且只更新在web页面中的一个地方 response.s">
 
 
 
@@ -349,8 +352,42 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-05 01:26:33" itemprop="dateModified" datetime="2019-01-05T01:26:33+08:00">2019-01-05</time>
+              
+            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -379,7 +416,240 @@
       
 
       
-        
+        <h1 id="数据载体"><a href="#数据载体" class="headerlink" title="数据载体"></a>数据载体</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>服务端响应的是普通html字符串，无需JS解析，配合innerHTML属性效率高</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>如果需要更新WEB页面中的很多处地方，HTML不太方便，同时innerHTML属性不是DOM的标准，不能操作XML</li>
+<li>注意<ul>
+<li>innerHTML在xml中不能使用，用<code>firstChild.nodeValue</code>替代</li>
+</ul>
+</li>
+</ul>
+<h3 id="适合"><a href="#适合" class="headerlink" title="适合"></a>适合</h3><ul>
+<li>小量数据载体，且只更新在web页面中的一个地方</li>
+<li><code>response.setContentType(&quot;text/html;charset=utf-8&quot;)</code></li>
+</ul>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><ul>
+<li>重量级的数据交换语言</li>
+</ul>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>是种通用的普通字符串格式，任何技术都能解析，标签名可以任意，使用DOM标准规则能够解析XML的任何部分</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>XML文件格式相当严格，出错后，responseXML属性返回NULL，如果XML文件过长，导致解析效率低下</li>
+</ul>
+<h3 id="适合-1"><a href="#适合-1" class="headerlink" title="适合"></a>适合</h3><ul>
+<li>大量具有层次数据载体</li>
+<li><code>response.setContentType(&quot;text/xml;charset=utf-8&quot;)</code></li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>轻量级的数据交换语言</li>
+<li>兼备HTML和XML的特点</li>
+<li><code>response.setContentType(&quot;text/html;charset=utf-8&quot;)</code></li>
+</ul>
+<h1 id="JSON-1"><a href="#JSON-1" class="headerlink" title="JSON"></a>JSON</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><code>JavaScript Object Notation(记号，标记)</code></li>
+<li>一种轻量级的数据交换语言，以文本字符串为基础，易于阅读。</li>
+<li>采用完全独立于任何程序语言的文本格式，使JSON成为理想的数据交换语言</li>
+<li>JSON本质上，就是用JS语法写的特殊文本记号，用JS可以直接解析，所以必须放在<code>&lt;script&gt;</code>标签中</li>
+<li>JSON是不能完完全全替代XML的，只能在定义对象和数据交换语言方面替代</li>
+</ul>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ul>
+<li><code>{}</code>表示一个对象</li>
+<li><code>[]</code>表示一个数组</li>
+<li>键值对之间用<code>,</code>分割</li>
+<li>对象与对象之间用<code>,</code>分割</li>
+<li>键与值之间用<code>:</code></li>
+<li>键<ul>
+<li>可以用<code>&quot;&quot;</code>或<code>&#39;&#39;</code>也可以不加引号。</li>
+</ul>
+</li>
+<li>值<ul>
+<li>数字（整数或浮点数）</li>
+<li>字符串（必须用引号）</li>
+<li>逻辑值（true/false）</li>
+<li>数组（<code>[]</code>）</li>
+<li>对象（<code>{}</code>）</li>
+</ul>
+</li>
+</ul>
+<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;</span><br><span class="line">	键:值,</span><br><span class="line">	键:值,</span><br><span class="line">	...</span><br><span class="line">	键:值</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var json = [</span><br><span class="line">	&#123;键:值,键:值&#125;,</span><br><span class="line">	&#123;键:[&#123;键:值&#125;]&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;</span><br><span class="line">	键:[&#123;键:值,键:值&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><ol>
+<li><code>json对象.键</code></li>
+<li><code>json对象[&quot;键&quot;]</code></li>
+<li><code>json数组对象[索引]</code></li>
+</ol>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h3 id="对象的遍历"><a href="#对象的遍历" class="headerlink" title="对象的遍历"></a>对象的遍历</h3><ul>
+<li><p><code>for in</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (var key in json对象) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意遍历中获取的<code>key</code>是json对象的键，是字符串形式，本身就带引号</p>
+<ul>
+<li><code>json对象.key</code><ul>
+<li>获取数据是错误的，因为相当于<code>person.&quot;name&quot;</code></li>
+</ul>
+</li>
+<li><code>json对象[key]</code><ul>
+<li>这样可以获取数据，key不用加引号了，相当于<code>person[&quot;name&quot;]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><ul>
+<li>先for循环遍历数组，获取每一个json对象，然后<code>for in</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 数组.length; i++) &#123;</span><br><span class="line">	var json对象 = 数组[i];</span><br><span class="line">	for (var key in json对象)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><h3 id="简化JavaScript自定义对象-。"><a href="#简化JavaScript自定义对象-。" class="headerlink" title="简化JavaScript自定义对象**。"></a>简化JavaScript自定义对象**。</h3><ul>
+<li><p>javascript自定义对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person(id,name)&#123;</span><br><span class="line">	this.id=id;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.show=function()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var person=new Person(1,&quot;旺财&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json格式自定义对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;</span><br><span class="line">			id:1,</span><br><span class="line">			name:&quot;旺财&quot;,</span><br><span class="line">			show:function()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="在AJAX中，作为数据载体之一"><a href="#在AJAX中，作为数据载体之一" class="headerlink" title="在AJAX中，作为数据载体之一"></a>在AJAX中，作为数据载体之一</h3><ul>
+<li>如果JSON是采用JS格式书写的的，JS可以直接解析JSON</li>
+<li>如果JSON是采用Java格式写的，必须使用eval()函数转换后，方可被JS解析<ul>
+<li><code>eval(&quot;&quot;)</code><ul>
+<li>将字符串当作脚本进行解析运行</li>
+<li>函数接收一个字符串格式的内容。</li>
+<li><code>eval(&quot;(&quot;+jsonJava+&quot;)&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Struts2-Json"><a href="#Struts2-Json" class="headerlink" title="Struts2+Json"></a>Struts2+Json</h1><ol>
+<li>导入<code>struts2-json-plugin.jar</code></li>
+<li><code>struts.xml</code>配置中<code>&lt;package extends=&quot;json-default&quot;&gt;</code><ul>
+<li><code>json-default</code>继承了<code>struts-default</code>所以还是继承了<code>struts-default</code>,只是多了json的功能。</li>
+</ul>
+</li>
+<li><code>struts.xml</code>配置中<code>&lt;result type=&quot;json&quot;&gt;</code></li>
+<li>action中只要是<code>getAbc()</code>形式的方法就能自动返回java格式的json(安)<ul>
+<li>将get后边的首字母小写作为json的键</li>
+<li>将方法的返回值作为值<ul>
+<li><code>getNameById(){return &quot;success&quot;;}</code><ul>
+<li><code>jsonJava={nameById:&quot;success&quot;}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>成员变量要先初始化</strong>。</li>
+<li>如果get形式的方法有很多，只想要指定的某个。<ul>
+<li><code>&lt;result type=&quot;json&quot;&gt;&lt;param name=&quot;root&quot;&gt;指定的键&lt;/param&gt;&lt;/result&gt;</code><ul>
+<li>这样返回的json不是键值对，而是只有指定键的值。(安)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回的java格式的json js不能直接解析要转成js的json<ul>
+<li><code>jsonJs=eval(&quot;(&quot;+jsonJava+&quot;)&quot;);</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>json数据与java对象的相互转换</li>
+<li><strong>json→java对象</strong><ul>
+<li>客户端发送json数据给服务器，服务器端将json转为java对象使用。</li>
+</ul>
+</li>
+<li><strong>java对象→json</strong><ul>
+<li>服务器端将java对象转为json，响应给客户端</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见解析器"><a href="#常见解析器" class="headerlink" title="常见解析器"></a>常见解析器</h2><h3 id="Jsonlib"><a href="#Jsonlib" class="headerlink" title="Jsonlib"></a>Jsonlib</h3><ul>
+<li>将JavaBean/list/set/map…转为json</li>
+<li>这只是第三方工具之一。</li>
+</ul>
+<h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><ol>
+<li>导入jar包<ul>
+<li><code>json-lib.jar</code></li>
+<li><code>ezmorph.jar</code></li>
+<li><code>commons-logging.jar</code></li>
+<li><code>commons-lang.jar</code></li>
+<li><code>commons-beanutils.jar</code></li>
+<li><code>commons-collections.jar</code></li>
+</ul>
+</li>
+<li>JSONObject &amp; JSONArray<ul>
+<li>JSONObject<ul>
+<li><code>static JSONObject fromObject(...)</code></li>
+</ul>
+</li>
+<li>JSONArray<ul>
+<li><code>static JSONArray fromObject(...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>调用toString()返回的是java格式的json</li>
+</ol>
+<h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><ul>
+<li><code>Gson gson = new Gson()</code></li>
+<li><code>String json = gson.toJson(数据)</code></li>
+</ul>
+<h2 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h2><h2 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h2><h3 id="java对象→json-使用步骤"><a href="#java对象→json-使用步骤" class="headerlink" title="java对象→json 使用步骤"></a>java对象→json 使用步骤</h3><ol>
+<li>导入jar包<ul>
+<li><code>jackson-core.jar</code></li>
+<li><code>jackson-databind.jar</code></li>
+<li><code>jackson-annotations.jar</code></li>
+</ul>
+</li>
+<li>创建jackson核心对象<code>ObjectMapper</code><ul>
+<li><code>new ObjectMapper()</code></li>
+</ul>
+</li>
+<li>使用ObjectMapper进行转换</li>
+</ol>
+<h3 id="ObjectMapper"><a href="#ObjectMapper" class="headerlink" title="ObjectMapper"></a>ObjectMapper</h3><ul>
+<li><code>writeValue(参数1,Object obj)</code><ul>
+<li>参数1<ul>
+<li><code>File</code>：将obj对象转为json字符串，并保存到指定文件</li>
+<li><code>Writer</code>：将obj对象转为json字符串，并关联到字符输出流</li>
+<li><code>OutputStream</code>：将obj对象转为json字符串，并关联到字节输出流</li>
+<li><code></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String writeValueAsString(Object obj)</code><ul>
+<li>将obj对象转为json字符串</li>
+</ul>
+</li>
+<li><code>readValue(String json, Class clazz)</code><ul>
+<li>将json字符串转为java对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="复杂对象转json的格式"><a href="#复杂对象转json的格式" class="headerlink" title="复杂对象转json的格式"></a>复杂对象转json的格式</h3><ul>
+<li>list set<ul>
+<li>数组</li>
+</ul>
+</li>
+<li>map<ul>
+<li>对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ul>
+<li><code>@JsonIgnore</code><ul>
+<li>忽略该属性</li>
+</ul>
+</li>
+<li><code>@JsonFormat</code><ul>
+<li><code>@JsonFormat(patter=&quot;yyyy-MM-dd&quot;)</code></li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -473,8 +743,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,7 +772,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -514,7 +793,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -543,6 +826,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据载体"><span class="nav-number">1.</span> <span class="nav-text">数据载体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">1.1.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适合"><span class="nav-number">1.1.3.</span> <span class="nav-text">适合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML"><span class="nav-number">1.2.</span> <span class="nav-text">XML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适合-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">适合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">1.3.</span> <span class="nav-text">JSON</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON-1"><span class="nav-number">2.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">2.2.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一"><span class="nav-number">2.2.1.</span> <span class="nav-text">一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二"><span class="nav-number">2.2.2.</span> <span class="nav-text">二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三"><span class="nav-number">2.2.3.</span> <span class="nav-text">三</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取数据"><span class="nav-number">2.3.</span> <span class="nav-text">获取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">2.4.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的遍历"><span class="nav-number">2.4.1.</span> <span class="nav-text">对象的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的遍历"><span class="nav-number">2.4.2.</span> <span class="nav-text">数组的遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.5.</span> <span class="nav-text">作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简化JavaScript自定义对象-。"><span class="nav-number">2.5.1.</span> <span class="nav-text">简化JavaScript自定义对象**。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在AJAX中，作为数据载体之一"><span class="nav-number">2.5.2.</span> <span class="nav-text">在AJAX中，作为数据载体之一</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Struts2-Json"><span class="nav-number">3.</span> <span class="nav-text">Struts2+Json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON解析"><span class="nav-number">4.</span> <span class="nav-text">JSON解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见解析器"><span class="nav-number">4.2.</span> <span class="nav-text">常见解析器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Jsonlib"><span class="nav-number">4.2.1.</span> <span class="nav-text">Jsonlib</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用步骤"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">使用步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gson"><span class="nav-number">4.3.</span> <span class="nav-text">Gson</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FastJson"><span class="nav-number">4.4.</span> <span class="nav-text">FastJson</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jackson"><span class="nav-number">4.5.</span> <span class="nav-text">Jackson</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java对象→json-使用步骤"><span class="nav-number">4.5.1.</span> <span class="nav-text">java对象→json 使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ObjectMapper"><span class="nav-number">4.5.2.</span> <span class="nav-text">ObjectMapper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂对象转json的格式"><span class="nav-number">4.5.3.</span> <span class="nav-text">复杂对象转json的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">4.5.4.</span> <span class="nav-text">注解</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -556,7 +855,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-snowflake-o"></i>
   </span>
