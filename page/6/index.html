@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/xd-类型转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-GUI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -322,8 +322,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/22/xd-类型转换/" itemprop="url">
-                  xd-类型转换
+                <a class="post-title-link" href="/2018/11/23/xd-GUI/" itemprop="url">
+                  xd-GUI
                 </a>
               
             
@@ -349,12 +349,24 @@
                 
               
 
-              <time title="创建时间：2018-11-22 19:26:58 / 修改时间：22:37:44" itemprop="dateCreated datePublished" datetime="2018-11-22T19:26:58+08:00">2018-11-22</time>
+              <time title="创建时间：2018-11-23 17:25:59" itemprop="dateCreated datePublished" datetime="2018-11-23T17:25:59+08:00">2018-11-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:36:14" itemprop="dateModified" datetime="2019-03-08T14:36:14+08:00">2019-03-08</time>
               
             
           </span>
@@ -371,7 +383,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -407,148 +419,72 @@
       
         
           
-            <h1 id="String-→"><a href="#String-→" class="headerlink" title="String → ?"></a>String → ?</h1><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><ol>
-<li><code>static int parseInt(String s)</code><ul>
-<li>基本类型包装类中的静态<code>parseXxx</code>方法</li>
-<li>Character没有<ul>
-<li>如果可以转换，那么得到一个字符类型的数据，字符类型只能有一个字符，一个字符串有多个字符显然不正确</li>
-<li>String → char<ul>
-<li>先获取<code>char[]</code>再遍历</li>
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>Graphical User Interface</code>图形用户接口</li>
+<li><code>java.awt</code></li>
+<li><code>javax.swing</code></li>
+</ul>
+<h1 id="Frame"><a href="#Frame" class="headerlink" title="Frame"></a>Frame</h1><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>setSize()</code></li>
+<li><code>setLocation()</code>    </li>
+<li><code>setVisible(true)</code></li>
+<li><code>add()</code></li>
+</ul>
+<h2 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a>JFrame</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>JFrame 是 Frame 的一个子类，与 Frame 的使用十分相似</li>
+<li>唯一的区别在于，你不能将组件加入到JFrame中<ul>
+<li>JFrame 有一个 Content Pane，窗口能显示的所有组件都是添加在这个 Content Pane 中。</li>
 </ul>
 </li>
 </ul>
-</li>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>getContentPane()</code></li>
+<li><code>setContentPane()</code></li>
+</ul>
+<h3 id="JFrame添加组件有两种方式"><a href="#JFrame添加组件有两种方式" class="headerlink" title="JFrame添加组件有两种方式"></a>JFrame添加组件有两种方式</h3><ol>
+<li><code>getContentPane()</code>获得JFrame的内容面板，再对其加入组件<ul>
+<li><code>frame. getContentPane ().add(childComponent)</code></li>
 </ul>
 </li>
-<li><code>int intValue()</code><ul>
-<li>基本类型包装类<code>xxxValue</code>方法</li>
-<li>先将字符串对象封装成Integer对象<ul>
-<li><code>Integer i=new Integer(&quot;123&quot;)</code></li>
-<li><code>int ii = i.intValue()</code></li>
+<li>建立一个Jpanel或JDesktopPane之类的中间容器，把组件添加到容器中，用setContentPane()方法把该容器置为JFrame的内容面板<ul>
+<li><code>JPanel contentPane = new JPanel()</code></li>
+<li><code>frame.setContentPane(contentPane)</code></li>
+<li>注<ul>
+<li>先添加panel后设置大小，可见。。。正常显示</li>
+<li>反之，不显示，不知道是一次这样，还是就应该这样。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="基本类型包装类"><a href="#基本类型包装类" class="headerlink" title="基本类型包装类"></a>基本类型包装类</h2><ol>
-<li><code>Integer(String s)</code><ul>
-<li>基本类型包装类的构造</li>
+<h1 id="布局管理器"><a href="#布局管理器" class="headerlink" title="布局管理器"></a>布局管理器</h1><ul>
+<li>panel默认流式布局</li>
+</ul>
+<h1 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>事件源<ul>
+<li>被操作的组件</li>
 </ul>
 </li>
-<li><code>static Integer valueOf(String s)</code><ul>
-<li>基本类型包装类的静态方法</li>
+<li>事件<ul>
+<li>用户的一个操作</li>
 </ul>
 </li>
-</ol>
-<h2 id="字符串数组"><a href="#字符串数组" class="headerlink" title="字符串数组"></a>字符串数组</h2><ul>
-<li><code>String[] split(String regex)</code><ul>
-<li>String类</li>
-</ul>
-</li>
-</ul>
-<h2 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h2><ul>
-<li><code>char[] toCharArray()</code><ul>
-<li>String类</li>
+<li>监听器<ul>
+<li>用户对组件执行操作后执行的动作。(安)</li>
 </ul>
 </li>
 </ul>
-<h2 id="字节数组"><a href="#字节数组" class="headerlink" title="字节数组"></a>字节数组</h2><ul>
-<li><code>byte[] getBytes( [Charset charset] )</code></li>
-</ul>
-<h2 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h2><ol>
-<li><code>StringBuffer(String s)</code><ul>
-<li>StringBuffer的构造</li>
-</ul>
-</li>
-<li><code>StringBuffer append(String s)</code><ul>
-<li>StringBuffer类</li>
-</ul>
-</li>
-</ol>
-<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><ul>
-<li><code>Date parse(String source)</code><ul>
-<li>SimpleDateFormat类</li>
+<h2 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h2><ul>
+<li><code>KeyListener</code></li>
+<li><code>MouseListener</code></li>
+<li><code>WindowListener</code></li>
+<li><code>ActiveListener</code></li>
+<li>注<ul>
+<li>除了动作监听只有一个方法，所以直接使用其自身外</li>
+<li>其它三个方法都有很多，所以使用适配器模式<ul>
+<li>使用<code>XxxAdapter</code></li>
 </ul>
 </li>
-</ul>
-<h1 id="→-String"><a href="#→-String" class="headerlink" title="? → String"></a>? → String</h1><h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ol>
-<li><code>String toString()</code></li>
-<li>使用StringBuffer添加后，使用StringBuffer的<code>toString()</code></li>
-<li><code>static String toString(Object[] a)</code><ul>
-<li>Arrays类 数组通用</li>
-</ul>
-</li>
-</ol>
-<h2 id="基本类型-1"><a href="#基本类型-1" class="headerlink" title="基本类型"></a>基本类型</h2><ol>
-<li><code>+ &quot;&quot;</code></li>
-<li><code>static String valueOf(Xxx xxx)</code><ul>
-<li>String类</li>
-</ul>
-</li>
-</ol>
-<h2 id="基本类型包装类-1"><a href="#基本类型包装类-1" class="headerlink" title="基本类型包装类"></a>基本类型包装类</h2><ul>
-<li><code>static String toString(int i)</code></li>
-</ul>
-<h2 id="字符数组-1"><a href="#字符数组-1" class="headerlink" title="字符数组"></a>字符数组</h2><ul>
-<li><code>String(char[] chars)</code><ul>
-<li>String类构造</li>
-</ul>
-</li>
-</ul>
-<h2 id="字节数组-1"><a href="#字节数组-1" class="headerlink" title="字节数组"></a>字节数组</h2><ul>
-<li><code>String(byte[] bytes, [Charset charset] )</code><ul>
-<li>String类构造</li>
-</ul>
-</li>
-</ul>
-<h2 id="StringBuffer-StringBuilder-1"><a href="#StringBuffer-StringBuilder-1" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h2><ol>
-<li><code>String(StringBuffer sb)</code><ul>
-<li>String类构造</li>
-</ul>
-</li>
-<li><code>String toString()</code><ul>
-<li>StringBuffer类</li>
-</ul>
-</li>
-<li><code>String substring(int start, int end)</code><ul>
-<li>StringBuffer类</li>
-</ul>
-</li>
-</ol>
-<h2 id="Date-1"><a href="#Date-1" class="headerlink" title="Date"></a>Date</h2><ul>
-<li><code>String format(Date date)</code><ul>
-<li>SimpleDateFormat类</li>
-</ul>
-</li>
-</ul>
-<h1 id="基本类型-←→-基本类型包装类"><a href="#基本类型-←→-基本类型包装类" class="headerlink" title="基本类型 ←→ 基本类型包装类"></a>基本类型 ←→ 基本类型包装类</h1><h2 id="通用-1"><a href="#通用-1" class="headerlink" title="通用"></a>通用</h2><ul>
-<li>jdk1.5之后自动拆装箱</li>
-</ul>
-<h2 id="基本类型-→-基本类型包装类"><a href="#基本类型-→-基本类型包装类" class="headerlink" title="基本类型 → 基本类型包装类"></a>基本类型 → 基本类型包装类</h2><ul>
-<li><code>Integer(int i)</code><ul>
-<li>基本类型包装类的构造</li>
-</ul>
-</li>
-<li><code>static Integer valueOf(int i)</code><ul>
-<li>基本类型包装类的静态<code>valueOf(xxx x)</code>方法</li>
-</ul>
-</li>
-</ul>
-<h2 id="基本类型包装类-→-基本类型"><a href="#基本类型包装类-→-基本类型" class="headerlink" title="基本类型包装类 → 基本类型"></a>基本类型包装类 → 基本类型</h2><ul>
-<li><code>int intValue()</code><ul>
-<li>基本类型包装类中的<code>xxxValue()</code>方法</li>
-</ul>
-</li>
-</ul>
-<h1 id="集合-←→-数组"><a href="#集合-←→-数组" class="headerlink" title="集合 ←→ 数组"></a>集合 ←→ 数组</h1><h2 id="集合-→-数组"><a href="#集合-→-数组" class="headerlink" title="集合 → 数组"></a>集合 → 数组</h2><ul>
-<li><code>Object[] toArray()</code><ul>
-<li>Collection接口</li>
-</ul>
-</li>
-</ul>
-<h2 id="数组-→-集合"><a href="#数组-→-集合" class="headerlink" title="数组 → 集合"></a>数组 → 集合</h2><ul>
-<li><code>static &lt;T&gt; List&lt;T&gt; asList(T... a)</code><ul>
-<li>Arrays类</li>
 </ul>
 </li>
 </ul>
@@ -609,7 +545,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/xd-Hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/xd-NIO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -628,8 +564,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/14/xd-Hexo/" itemprop="url">
-                  xd-Hexo
+                <a class="post-title-link" href="/2019/02/02/xd-NIO/" itemprop="url">
+                  xd-NIO
                 </a>
               
             
@@ -655,7 +591,7 @@
                 
               
 
-              <time title="创建时间：2018-11-14 17:59:28" itemprop="dateCreated datePublished" datetime="2018-11-14T17:59:28+08:00">2018-11-14</time>
+              <time title="创建时间：2019-02-02 16:16:44" itemprop="dateCreated datePublished" datetime="2019-02-02T16:16:44+08:00">2019-02-02</time>
             
 
             
@@ -672,7 +608,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-07 17:17:46" itemprop="dateModified" datetime="2018-12-07T17:17:46+08:00">2018-12-07</time>
+                <time title="修改时间：2019-03-08 14:43:28" itemprop="dateModified" datetime="2019-03-08T14:43:28+08:00">2019-03-08</time>
               
             
           </span>
@@ -689,7 +625,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -725,58 +661,2681 @@
       
         
           
-            <h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
-<li>修改新建文件的头部模板<ul>
-<li><code>scaffolds/post.md</code></li>
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>new IO</code></li>
+<li>从Java 1.4版本开始引入的一个新的IO API，可以替代标准的Java IO API</li>
+<li>NIO与原来的IO有同样的作用和目的，但是使用的方式完全不同</li>
+</ul>
+<h1 id="NIO-amp-IO"><a href="#NIO-amp-IO" class="headerlink" title="NIO &amp; IO"></a>NIO &amp; IO</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/SE/io和nio.png" alt=""></p>
+<ul>
+<li>io直接面向流</li>
+<li>nio的核心在于通道和缓冲区<ul>
+<li>通道用于连接源与目的</li>
+<li>缓冲区用于装载数据</li>
 </ul>
 </li>
 </ul>
-<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
-<li><code>hexo n filename</code><ul>
-<li>新建文件</li>
+<h1 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h1><ul>
+<li>在java nio中负责数据的存取。</li>
+<li>缓冲区就是数组，用于存储不同类型的数据</li>
+</ul>
+<h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><img src="https://gitee.com/3noanswer/pics/blob/master/SE/nio-缓冲区属性.png" alt=""></p>
+<ul>
+<li><code>capacity</code><ul>
+<li>容量</li>
+<li>缓冲区最大存储容量，声明后不可改变</li>
 </ul>
 </li>
-<li><code>hexo clean</code><ul>
-<li>清理</li>
+<li><code>limit</code><ul>
+<li>界限</li>
+<li>缓冲区可以操作数据的大小（即limit后的数据不能读写）</li>
 </ul>
 </li>
-<li><code>hexo g</code><ul>
-<li>生成静态文件</li>
+<li><code>position</code><ul>
+<li>位置</li>
+<li>缓冲区中整天在操作数据的位置</li>
+<li><code>position &lt;= limit &lt;= capacity</code></li>
 </ul>
 </li>
-<li><code>hexo d</code><ul>
-<li>部署到服务端</li>
+<li><code>mark</code> * <code>reset</code><ul>
+<li>标记是一个索引，通过 Buffer 中的 mark() 方法指定 Buffer 中一个特定的 position</li>
+<li>通过调用 reset() 方法恢复到这个 position</li>
 </ul>
 </li>
-<li><code>hexo s</code><ul>
-<li>启动服务</li>
-<li><code>http://localhost:4000</code></li>
+<li>注<ul>
+<li>默认写模式</li>
+<li>写数据时<ul>
+<li>position会变成即将操作的位置</li>
+<li>limit与capacity一样为最大</li>
 </ul>
 </li>
-<li><code>hexo d -g</code><ul>
-<li>生成+部署</li>
+<li>读数据时<ul>
+<li>position默认为0，随着读操作变化</li>
+<li>limit为有效数据最大</li>
+<li>capacity为最大容量</li>
 </ul>
 </li>
 </ul>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
-<li>Template render error: unknown path<ul>
-<li>hexo转义时候发生的错误，你文章中可能出现了<code>{ {} }</code>，<code>{ % % }</code>。你可以将出现的代码，用 <strong>`</strong>进行注释下就可以了，如果还不行，加个空格</li>
+</li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li><code>int position()</code><ul>
+<li>返回缓冲区的当前位置 position</li>
 </ul>
 </li>
-<li>FATAL can not read a block mapping entry<ul>
-<li>是因为配置文件或者文件中头部的<code>title date....</code>之类的后边要加一个空格</li>
+<li><code>int capacity()</code></li>
+<li><code>int limit()</code></li>
+<li><code>Buffer flip()</code><ul>
+<li>切换为读模式</li>
+<li>将缓冲区的界限设置为当前位置，并将当前位置充值为 0 0</li>
+</ul>
+</li>
+<li><code>Buffer clear()</code><ul>
+<li>清空缓冲区并返回对缓冲区的引用</li>
+<li>缓存区数据依然存在，但出于“被遗忘”状态</li>
+</ul>
+</li>
+<li><code>Buffer mark()</code><ul>
+<li>对缓冲区设置标记</li>
+</ul>
+</li>
+<li><code>Buffer reset()</code><ul>
+<li>将位置 position 转到以前设置的 mark 所在的位置</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本类型缓冲区"><a href="#基本类型缓冲区" class="headerlink" title="基本类型缓冲区"></a>基本类型缓冲区</h3><ul>
+<li><code>ByteBuffer</code></li>
+<li><code>ShortBuffer</code></li>
+<li><code>CharBuffer</code></li>
+<li><code>IntBuffer</code></li>
+<li><code>LongBuffer</code></li>
+<li><code>FloatBuffer</code></li>
+<li><code>DoubleBuffer</code></li>
+<li>注<ul>
+<li>boolean没有</li>
+<li><code>static XxxBuffer allocate(int capacity)</code><ul>
+<li>获取缓冲区（上述皆有此方法）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="API-1"><a href="#API-1" class="headerlink" title="API"></a>API</h4><ul>
+<li><code>get()</code></li>
+<li><code>get(byte[] dst)</code></li>
+<li><code>get(int index)</code></li>
+<li><code>put(byte b)</code><ul>
+<li>将给定单个字节写入缓冲区的当前位置</li>
+</ul>
+</li>
+<li><code>put (byte[] src)</code><ul>
+<li>将 src 中的字节写入缓冲区的当前位置</li>
+</ul>
+</li>
+<li><code>put(int index, byte b)</code><ul>
+<li>将指定字节写入缓冲区的索引位置(不会移动 position)</li>
+</ul>
+</li>
+</ul>
+<h2 id="直接缓冲区-amp-非直接缓冲区"><a href="#直接缓冲区-amp-非直接缓冲区" class="headerlink" title="直接缓冲区 &amp; 非直接缓冲区"></a>直接缓冲区 &amp; 非直接缓冲区</h2><h3 id="直接缓冲区"><a href="#直接缓冲区" class="headerlink" title="直接缓冲区"></a>直接缓冲区</h3><ul>
+<li><code>allocateDirect()</code></li>
+</ul>
+<h3 id="非直接缓冲区"><a href="#非直接缓冲区" class="headerlink" title="非直接缓冲区"></a>非直接缓冲区</h3><ul>
+<li><code>allocate()</code></li>
+<li>非直接缓冲区不能直接操作磁盘的文件，jvm内存和os内存之前会有一个复制的过程</li>
+</ul>
+<h1 id="通道"><a href="#通道" class="headerlink" title="通道"></a>通道</h1><ul>
+<li>用于源节点和目标节点的连接，负责缓冲区数据的传输，本身不存储数据</li>
+</ul>
+<h2 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h2><ul>
+<li><code>java.nio.chanels.Chanel</code><ul>
+<li><code>FileChannel</code></li>
+<li><code>SocketChannel</code></li>
+<li><code>ServerSocketChannel</code></li>
+<li><code>DatagramChannel</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><ol>
+<li>java针对支持通道的类提供了<code>getChannel()</code>方法<ul>
+<li><code>FileInputStream/FIleOutputStream</code></li>
+<li><code>Socket/ServerSocket/DatagramSocket</code></li>
+</ul>
+</li>
+<li>jdk7中的nio.2针对各个通道提供了静态<code>open()</code>方法</li>
+<li>jdk7中的nio.2的Files工具类<code>newByteChannel()</code></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-IO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/xd-IO/" itemprop="url">
+                  xd-IO
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 17:25:31" itemprop="dateCreated datePublished" datetime="2018-11-23T17:25:31+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:29:18" itemprop="dateModified" datetime="2019-03-08T14:29:18+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h1><h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><ul>
+<li><strong><code>InputStream</code> </strong><ul>
+<li><strong><code>FileInputStream</code></strong></li>
+<li><code>ObjectInputStream</code></li>
+<li><code>SequenceInputStream</code></li>
+<li><code>FilterInputStream</code><ul>
+<li><strong><code>BufferedInputStream</code></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>OutputStream</code></strong><ul>
+<li><strong><code>FileOutputStream</code></strong></li>
+<li><code>ObjectOutputStream</code></li>
+<li><code>FilterOutputStream</code><ul>
+<li><strong><code>BufferedOutputStream</code></strong></li>
+<li><strong><code>PrintStream</code> </strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><ul>
+<li><strong><code>Reader</code></strong> <ul>
+<li><strong><code>BufferedReader</code></strong><ul>
+<li><code>LineNumberReader</code> </li>
+</ul>
+</li>
+<li><strong><code>InputStreamReader</code></strong><ul>
+<li><strong><code>FileReader</code></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Writer</code></strong>    <ul>
+<li><strong><code>BufferedWriter</code></strong></li>
+<li><strong><code>OutputStreamWriter</code></strong><ul>
+<li><strong><code>FileWriter</code> </strong></li>
+</ul>
+</li>
+<li><strong><code>PrintWriter</code></strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="IO的异常处理"><a href="#IO的异常处理" class="headerlink" title="IO的异常处理"></a>IO的异常处理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">InputStream in=null;</span><br><span class="line">try&#123;</span><br><span class="line">	in=...;</span><br><span class="line">	code..</span><br><span class="line">&#125; catch(IOException e) &#123;</span><br><span class="line">	code...</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">	if(in!=null)&#123;</span><br><span class="line">		try&#123;</span><br><span class="line">			in.close();</span><br><span class="line">		&#125;catch (IOException e) &#123;</span><br><span class="line">			throw new RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Jdk7.0以后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">try(InputStream in=new FileInputStream(&quot;&quot;);)&#123;code...&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>io体系实现了<strong>AutoCloseble</strong>接口</li>
+<li>可以将流写在try的括号中，则在后边大括号code执行完之后自动关闭。</li>
+</ul>
+</li>
+</ul>
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>File更应该叫做一个路径<ul>
+<li>文件路径或者文件夹路径  </li>
+</ul>
+</li>
+</ul>
+<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>File(String pathname)</code></li>
+<li><code>File(String parent, String child)</code></li>
+<li><code>File(File parent, String child)</code></li>
+</ul>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ul>
+<li><code>boolean createNewFile()</code><ul>
+<li>创建文件 如果存在这样的文件，就不创建了</li>
+</ul>
+</li>
+<li><code>boolean mkdir()</code><ul>
+<li>创建文件夹 如果存在这样的文件夹，就不创建了</li>
+</ul>
+</li>
+<li><code>boolean mkdirs()</code><ul>
+<li>创建文件夹,如果父文件夹不存在，会帮你创建出来</li>
+</ul>
+</li>
+</ul>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ul>
+<li><code>boolean delete()</code><ul>
+<li>Java中的删除不走回收站。</li>
+<li>要删除一个文件夹，请注意该文件夹内不能包含文件或者文件夹</li>
+</ul>
+</li>
+<li><code>boolean renameTo(File dest)</code><ul>
+<li>如果路径名相同，就是改名。</li>
+<li>如果路径名不同，就是改名并剪切。</li>
+</ul>
+</li>
+</ul>
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><ul>
+<li><code>boolean isDirectory()</code></li>
+<li><code>boolean isFile()</code></li>
+<li><code>boolean exists()</code></li>
+<li><code>boolean canRead()</code></li>
+<li><code>boolean canWrite()</code></li>
+<li><code>boolean isHidden()</code></li>
+</ul>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><ul>
+<li><code>String getName()</code></li>
+<li><code>String getPath()</code><ul>
+<li>构造File对象的字符串写的什么,这个获取的就是什么。(安)</li>
+</ul>
+</li>
+<li><code>String getAbsolutePath()</code></li>
+<li><code>long length()</code></li>
+<li><code>long lastModified()</code></li>
+<li><code>static File[] listRoots()</code><ul>
+<li>获取系统可用盘符</li>
+</ul>
+</li>
+<li><code>String[] list()</code><ul>
+<li>获取指定目录下的所有文件或者文件夹的名称(String)数组</li>
+<li>封装的File对象必须是目录</li>
+</ul>
+</li>
+<li><code>File[] listFiles()</code><ul>
+<li>获取指定目录下的所有文件或者文件夹的File数组</li>
+</ul>
+</li>
+</ul>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ul>
+<li><code>String[] list(FilenameFilter filter)</code><ul>
+<li>文件名称过滤器</li>
+<li>可以用匿名对象，覆盖的accept方法中的参数<ul>
+<li>dir就是调用list方法的file对象</li>
+<li>name就是file对象目录下的文件名</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>File[] listFiles(FileFilter filter)</code><ul>
+<li>文件过滤器</li>
+</ul>
+</li>
+<li><code>File[] listFiles(FilenameFilter filter</code><ul>
+<li>文件名过滤器</li>
+</ul>
+</li>
+</ul>
+<h1 id="字节流-1"><a href="#字节流-1" class="headerlink" title="字节流"></a>字节流</h1><h2 id="interface-InputStream"><a href="#interface-InputStream" class="headerlink" title="interface InputStream"></a>interface InputStream</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>abstract  int read()</code><ul>
+<li>读取一个字节 返回数据的int值</li>
+<li>read()方法读取的是一个字节,为什么返回是int,而不是byte？<ul>
+<li>因为字节输入流可以操作任意类型的文件,比如图片音频等,这些文件底层都是以二进制形式的存储的,如果每次读取都返回byte,有可能在读到中间的时候遇到111111111（-1的补码）。那么这11111111是byte类型的-1,我们的程序是遇到-1就会停止不读了,后面的数据就读不到了,所以在读取的时候用int类型接收,如果11111111会在其前面补上24个0凑足4个字节,那么byte类型的-1就变成int类型的255了这样可以保证整个数据读完,而结束标记的-1就是int类型</li>
+</ul>
+</li>
+<li>那么前边加了24个0 数据不是改变了吗？<ul>
+<li>OutputStream的<code>write()</code>方法在写的时候会自动砍去。 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>int read(byte[] b)</code><ul>
+<li>返回读入缓冲区的字节总数，如果因为已经到达流末尾而没有更多的数据，则返回 -1</li>
+</ul>
+</li>
+<li><code>int read(byte[] b, int off, int len)</code></li>
+</ul>
+<h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><h4 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h4><ul>
+<li><code>FileInputStream(File file)</code></li>
+<li><code>FileInputStream(String name)</code><ul>
+<li>创建对象时，文件必须存在</li>
+</ul>
+</li>
+</ul>
+<h2 id="interface-OutputStream"><a href="#interface-OutputStream" class="headerlink" title="interface OutputStream"></a>interface OutputStream</h2><ul>
+<li><code>abstract  void write(int b)</code><ul>
+<li>写出一个字节。</li>
+<li>会去掉前边三个8位，只保留最后一个8位</li>
+</ul>
+</li>
+<li><code>void write(byte[] b)</code></li>
+<li><code>void write(byte[] b, int off, int len)</code></li>
+<li><code>void flush()</code><ul>
+<li>刷新后还可以继续写</li>
+</ul>
+</li>
+<li><code>void close()</code><ul>
+<li>关闭前会刷新</li>
+</ul>
+</li>
+</ul>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><h4 id="构造-2"><a href="#构造-2" class="headerlink" title="构造"></a>构造</h4><ul>
+<li><code>FileOutputStream(String name, [boolean append])</code></li>
+<li><code>FileOutputStream(File file, [boolean append])</code><ul>
+<li>创建对象时<ul>
+<li>如果没有文件会创建</li>
+<li>如果有文件会清空</li>
+</ul>
+</li>
+<li><code>append</code><ul>
+<li>是否续写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="字节流操作中文"><a href="#字节流操作中文" class="headerlink" title="字节流操作中文"></a>字节流操作中文</h2><ul>
+<li>字节流读取中文<ul>
+<li>有可能出现问题</li>
+<li>一个中文两个字节<ul>
+<li><code>read()</code>读取一个字节肯定出问题</li>
+<li><code>read(byte[] b)</code>读到一个字节数组中<ul>
+<li>字节数组大小是奇数，会出问题</li>
+<li>字节数组大小是偶数，如果文件是中英混合，那么也会出问题。</li>
+<li>总之就是如果包含中文的文件字节数的奇偶如果与字节数组的奇偶不一致，就会乱码。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字节流写出中文<ul>
+<li>没有问题。</li>
+<li>将中文变成字节数组直接写出</li>
+<li><code>&quot;\r\n&quot;.getBytes()</code><ul>
+<li>字节流写出换行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="字符流-1"><a href="#字符流-1" class="headerlink" title="字符流"></a>字符流</h1><h2 id="interface-Reader"><a href="#interface-Reader" class="headerlink" title="interface Reader"></a>interface Reader</h2><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>int read()</code><ul>
+<li>读取单个字符。返回读取的字符的int值</li>
+<li>如果已到达流的末尾，则返回 -1</li>
+</ul>
+</li>
+<li><code>int read(char[] cbuf)</code><ul>
+<li>将字符读入数组。返回读取的字符数</li>
+<li>如果已到达流的末尾，则返回 -1 </li>
+</ul>
+</li>
+<li><code>abstract  int read(char[] cbuf, int off, int len)</code><ul>
+<li>将字符读入数组的某一部分，返回读取的字符数</li>
+<li>如果已到达流的末尾，则返回 -1 </li>
+</ul>
+</li>
+</ul>
+<h2 id="interface-Writer"><a href="#interface-Writer" class="headerlink" title="interface Writer"></a>interface Writer</h2><ul>
+<li>Writer中有个2K大小的缓冲区，如果数据未写出，可能没有刷新或者关流。</li>
+</ul>
+<h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>void write(int c)</code><ul>
+<li>写出时去掉前边16位，保留后16位。</li>
+</ul>
+</li>
+<li><code>void write(String str)</code></li>
+<li><code>void write(String str, int off, int len)</code></li>
+<li><code>void write(char[] cbuf)</code></li>
+<li><code>abstract  void write(char[] cbuf, int off, int len)</code></li>
+</ul>
+<h2 id="字符流的使用"><a href="#字符流的使用" class="headerlink" title="字符流的使用"></a>字符流的使用</h2><ul>
+<li>读取一段文本用<ul>
+<li>读取时按照字符大小读取的，不会出现乱码</li>
+</ul>
+</li>
+<li>写出一段文本用<ul>
+<li>写出时直接将字符串写出，不用转换为字节数组</li>
+</ul>
+</li>
+<li>拷贝时（不推荐）<ul>
+<li>因为读取时会把字节转字符，写出时又把字符转字节。</li>
+<li>而字节流直接读取字节，写出字节，不用转换</li>
+</ul>
+</li>
+</ul>
+<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="缓冲思想"><a href="#缓冲思想" class="headerlink" title="缓冲思想"></a>缓冲思想</h2><ul>
+<li>一次读写一个数组的速度明显比一次读写一个字节或字符的速度快很多，</li>
+<li>这是加入了数组这样的缓冲区效果，java本身在设计的时候，也考虑到了这样的设计思想(装饰设计模式)，所以提供了缓冲区流</li>
+</ul>
+<h2 id="缓冲原理"><a href="#缓冲原理" class="headerlink" title="缓冲原理"></a>缓冲原理</h2><h3 id="读"><a href="#读" class="headerlink" title="读"></a>读</h3><ul>
+<li>缓冲流会先从文件将数据读取到缓冲区</li>
+<li>程序是从缓冲区中读取数据</li>
+<li>缓冲区数据读完后，然后重复过程</li>
+</ul>
+<h3 id="写"><a href="#写" class="headerlink" title="写"></a>写</h3><ul>
+<li>程序会先将数据写入缓冲区中</li>
+<li>缓冲区写满后，缓冲流会将数据一次性写入文件，然后重复过程<ul>
+<li>如果最后一次缓冲区没写满，需要<ul>
+<li><code>flush()</code></li>
+<li><code>close()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="BufferedInputStream"><a href="#BufferedInputStream" class="headerlink" title="BufferedInputStream"></a>BufferedInputStream</h2><ul>
+<li>内置了一个缓冲区（byte[]数组，大小为8192字节）</li>
+</ul>
+<h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>int read()</code></li>
+<li><code>int read(byte[] b, int off, int len)</code></li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
+<li>读取一个字节时<ul>
+<li>缓冲流会一次性从文件中读取8192个, 存在缓冲区中（此过程在内存中进行）</li>
+<li>程序读取一个字节是从缓冲流的缓冲区中读取的，而不是从文件中，减少了硬盘读取次数</li>
+<li>缓冲区数据全部读取完毕，缓冲流再次一次性从文件中读取8192个</li>
+</ul>
+</li>
+</ul>
+<h2 id="BufferedOutputStream"><a href="#BufferedOutputStream" class="headerlink" title="BufferedOutputStream"></a>BufferedOutputStream</h2><ul>
+<li>内置了一个缓冲区（byte[]数组，大小为8192字节）</li>
+</ul>
+<h3 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>void write(int b)</code></li>
+<li><code>void write(byte[] b, int off, int len)</code></li>
+</ul>
+<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><ul>
+<li>写出一个字节时<ul>
+<li>程序会先写入缓冲流的缓冲区中</li>
+<li>缓冲区写满了，缓冲流会一次性把缓冲区数据写到文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><ul>
+<li>内置了一个缓冲区（char[]数组，大小位8192字符）</li>
+</ul>
+<h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>int read()</code></li>
+<li><code>int read(char[] cbuf, int off, int len)</code>  </li>
+<li><code>String readLine()</code><ul>
+<li>读取一行</li>
+<li>原理<ul>
+<li>使用了缓冲区的<code>read()</code>方法将读取的字符缓存并判断换行标记然后将缓存的字符以字符串返回</li>
+</ul>
+</li>
+<li>返回<ul>
+<li>包含该行内容的字符串，不包含任何行终止符（<code>\r\n</code>），如果已到达流末尾，则返回 null </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h3><ul>
+<li>同字节缓冲流</li>
+</ul>
+<h3 id="LineNumberReader"><a href="#LineNumberReader" class="headerlink" title="LineNumberReader"></a>LineNumberReader</h3><ul>
+<li><code>getLineNumber()</code><ul>
+<li>获取行号</li>
+</ul>
+</li>
+<li><code>setLineNumber()</code><ul>
+<li>设置行号开始数(第一行=设置值+1)</li>
+</ul>
+</li>
+</ul>
+<h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><ul>
+<li>内置了一个缓冲区（char[]数组，大小位8192字符）</li>
+</ul>
+<h3 id="方法-6"><a href="#方法-6" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>newLine()</code><ul>
+<li>换行<ul>
+<li><code>newLine()</code>跨平台</li>
+<li><code>\r\n</code>只支持Windows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>flush()</code><ul>
+<li>使用字符缓冲流要刷新</li>
+<li>字节缓冲流不用刷新</li>
+</ul>
+</li>
+<li><code>void write(int c)</code></li>
+<li><code>void write(char[] cbuf, int off, int len)</code></li>
+<li><code>void write(String s, int off, int len)</code></li>
+</ul>
+<h3 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h3><ul>
+<li>同字节缓冲流</li>
+</ul>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ul>
+<li><strong>定义数组和带Buffered的缓冲流哪个读写更快</strong>?<ul>
+<li>相同大小<ul>
+<li>小数组会略胜一筹,因为读和写操作的是同一个数组</li>
+<li>而Buffered两个流操作的是两个数组</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h1><h2 id="InputStreamReader"><a href="#InputStreamReader" class="headerlink" title="InputStreamReader"></a>InputStreamReader</h2><ul>
+<li>字节到字符的桥梁 解码</li>
+<li>是字符流</li>
+</ul>
+<h3 id="构造-3"><a href="#构造-3" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>InputStreamReader(InputStream in, [String charsetName])</code><ul>
+<li>可以指定编码表，默认使用平台编码表</li>
+</ul>
+</li>
+</ul>
+<h2 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h2><ul>
+<li>字符到字节的桥梁 编码</li>
+<li>是字符流</li>
+</ul>
+<h3 id="构造-4"><a href="#构造-4" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>OutputStreamWriter(OutputStream out, [String charsetName])</code><ul>
+<li>可以指定编码表，默认使用平台编码表</li>
+</ul>
+</li>
+</ul>
+<h2 id="原理-4"><a href="#原理-4" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><p>字符流原理就是转换流以平台默认码表将字节流转换成了字符流。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileWriter fw=new FileWriter(&quot;test.txt&quot;);</span><br><span class="line">OutputStreamWriter osw=new OutputStreamWriter(new FileOutputStream(&quot;test.txt&quot;),&quot;utf-8&quot;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果转换流不指定码表或者系统码表就是转换流指定的码表，那么上边两句是等同的。</li>
+<li><code>FileWriter</code>/<code>FileReader</code>实际就是转换流用了系统默认码表将字节流转换成了字符流</li>
+<li>java中字符用的Unicode码表，字符串用的平台默认码表</li>
+</ul>
+</li>
+</ul>
+<h2 id="转换流常见写法"><a href="#转换流常见写法" class="headerlink" title="转换流常见写法"></a>转换流常见写法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader br=new BufferedReader(new InputStreamReader(System.in))</span><br><span class="line">BUfferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out))</span><br></pre></td></tr></table></figure>
+<h2 id="两种方法实现键盘录入"><a href="#两种方法实现键盘录入" class="headerlink" title="两种方法实现键盘录入"></a>两种方法实现键盘录入</h2><ul>
+<li><code>BufferedReader br=new BufferedReader(new InputStreamReader(System.in))</code></li>
+<li><code>Scanner sc=new Scanner(System.in);</code></li>
+</ul>
+<h1 id="标准输入输出流"><a href="#标准输入输出流" class="headerlink" title="标准输入输出流"></a>标准输入输出流</h1><ul>
+<li><code>System.in</code><ul>
+<li><code>InputStream</code></li>
+<li>默认可以从键盘输入读取字节数据</li>
+</ul>
+</li>
+<li><code>System.out</code><ul>
+<li><code>PrintStream</code></li>
+<li>默认可以向Console中输出字符和字节数据</li>
+</ul>
+</li>
+<li>不用关，否则只有重启系统才能再次获取使用。</li>
+<li>改变标准输入输出流<ul>
+<li><code>System.setIn(...)</code></li>
+<li><code>System.setOut(...)</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>可以对多种数据类型进行打印，并<strong>保持数据的表示形式</strong></li>
+<li>该流可以很方便的将对象的toString()结果输出, 并且自动加上换行, 而且可以使用自动刷出的模式</li>
+<li>不抛出IOException</li>
+</ul>
+<h2 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h2><ul>
+<li>打印的所有字符都使用平台的默认字符编码转换为字节</li>
+<li>System.out就是一个PrintStream, 其默认向控制台输出信息</li>
+</ul>
+<h3 id="构造-5"><a href="#构造-5" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>PrintStream(File file)</code></li>
+<li><code>PrintStream(String fileName)</code></li>
+<li><code>PrintStream(OutputStream out, [boolean autoFlush])</code></li>
+</ul>
+<h3 id="方法-7"><a href="#方法-7" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>void print(...)</code></li>
+<li><code>void println(...)</code><ul>
+<li>要写出的数据是什么样，打印的结果就是什么样。</li>
+<li>原理(安)<ul>
+<li>基本类型会先变成字符串再打印</li>
+<li>引用类型如果是null就返回null。非null就调用对象的toString方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>void write(...)</code><ul>
+<li>write只写出一个字节</li>
+<li>如write一个int只会写出最低8位</li>
+</ul>
+</li>
+<li><strong>打印流只操作数据目的</strong></li>
+</ul>
+<h2 id="PrintWriter"><a href="#PrintWriter" class="headerlink" title="PrintWriter"></a>PrintWriter</h2><h3 id="构造-6"><a href="#构造-6" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>PrintWriter(File file)</code></li>
+<li><code>PrintWriter(String fileName)</code></li>
+<li><code>PrintWriter(OutputStream out, [boolean autoFlush])</code></li>
+<li><code>PrintWriter(Writer out, [boolean autoFlush])</code><ul>
+<li>自动刷新只对<code>println() printf() format()</code>方法有效</li>
+</ul>
+</li>
+</ul>
+<h2 id="PrintStream-amp-PrintWriter-区别"><a href="#PrintStream-amp-PrintWriter-区别" class="headerlink" title="PrintStream &amp; PrintWriter 区别"></a>PrintStream &amp; PrintWriter 区别</h2><ul>
+<li>PrintStream能做的PrintWriter也都能实现，并且PrintWriter的功能更为强大。但是由于PrintWriter出现的比较晚，较早的System.out使用的是PrintStream来实现的，所以为了兼容就没有废弃PrintStream。 </li>
+<li>PrintStream在输出字符，将字符转换为字节时采用的是系统默认的编码格式，这样当数据传输另一个平台，而另一个平台使用另外一个编码格式解码时就会出现问题，存在不可控因素。</li>
+<li>PrintWriter可以接收一个Writer，对传入的Writer可以指定编码。（转换流将字节流转成字符流时指定编码）</li>
+</ul>
+<h1 id="序列流"><a href="#序列流" class="headerlink" title="序列流"></a>序列流</h1><h2 id="SequenceInputStream"><a href="#SequenceInputStream" class="headerlink" title="SequenceInputStream"></a>SequenceInputStream</h2><ul>
+<li>序列流可以把多个字节输入流整合成一个, 从序列流中读取数据时, 将从被整合的第一个流开始读, 读完一个之后继续读第二个, 以此类推.</li>
+</ul>
+<h3 id="整合两个流"><a href="#整合两个流" class="headerlink" title="整合两个流"></a>整合两个流</h3><ul>
+<li><code>SequenceInputStream(InputStream, InputStream)</code></li>
+</ul>
+<h3 id="整合两个以上。"><a href="#整合两个以上。" class="headerlink" title="整合两个以上。"></a>整合两个以上。</h3><ul>
+<li><code>SequenceInputStream(Enumeration en)</code><ul>
+<li>获取字节输入流的枚举<ol>
+<li>Vector集合的<code>elements()</code>方法</li>
+<li>Vector效率低，想用ArryaList但是没有获取枚举的方法。可以用集合工具类Collections中的方法</li>
+</ol>
+<ul>
+<li><code>static Enumeration enumeration(Collection c)</code></li>
+<li>此方法原理<ul>
+<li>根据集合获取迭代器对象。</li>
+<li>新建枚举对象实现<code>hasMoreElements()</code>和<code>nextElement()</code>方法。</li>
+<li>枚举方法的实现利用迭代器的<code>hasNext()</code>和<code>next()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h1><ul>
+<li>可以将一个对象写出, 或者读取一个对象到程序中. 也就是执行了序列化和反序列化的操作.</li>
+<li>操作的对象要实现<code>Serializable</code>序列化接口</li>
+</ul>
+<h2 id="ObjectInputStream"><a href="#ObjectInputStream" class="headerlink" title="ObjectInputStream"></a>ObjectInputStream</h2><ul>
+<li><code>ObjectInputStream(InputStream in)</code></li>
+<li><code>Object readObject()</code></li>
+</ul>
+<h2 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h2><ul>
+<li><code>ObjectOutputStream(OutputStream out)</code></li>
+<li><code>void writeObject(Object obj)</code></li>
+</ul>
+<h2 id="interface-Serializable"><a href="#interface-Serializable" class="headerlink" title="interface Serializable"></a>interface Serializable</h2><ul>
+<li>序列化接口</li>
+<li>判断类和对象是否是同一个版本。</li>
+<li><code>transient</code><ul>
+<li>短暂的，暂时的</li>
+<li><code>static</code>和<code>transient</code>修饰的属性不会被序列化</li>
+</ul>
+</li>
+</ul>
+<h1 id="内存流"><a href="#内存流" class="headerlink" title="内存流"></a>内存流</h1><ul>
+<li>操作字节数组</li>
+<li>流关闭无效。不抛IOException</li>
+</ul>
+<h2 id="ByteArrayInputStream"><a href="#ByteArrayInputStream" class="headerlink" title="ByteArrayInputStream"></a>ByteArrayInputStream</h2><h3 id="构造-7"><a href="#构造-7" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>ByteArrayInputStream(byte[] buf)</code></li>
+<li><code>ByteArrayInputStream(byte[] buf, int offset, int length)</code></li>
+</ul>
+<h3 id="方法-8"><a href="#方法-8" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>int read()</code></li>
+<li><code>int read(byte[] b, int off, int len)</code></li>
+</ul>
+<h2 id="ByteArrayOutputStream"><a href="#ByteArrayOutputStream" class="headerlink" title="ByteArrayOutputStream"></a>ByteArrayOutputStream</h2><ul>
+<li>可以向内存中写数据, 把内存当作一个缓冲区, 写出之后可以一次性获取出所有数据</li>
+<li>字节流读取中文时会乱码，用内存输出流可以解决这个问题。<ul>
+<li>将读到的字节写入内存输出流的缓冲区中，然后一次性获取数据即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="构造-8"><a href="#构造-8" class="headerlink" title="构造"></a>构造</h3><ul>
+<li><code>ByteArrayOutputStream([int size])</code><ul>
+<li>创建对象（可以指定缓冲区大小）</li>
+<li>在内存中创建了可以增长的字节数组</li>
+</ul>
+</li>
+</ul>
+<h3 id="方法-9"><a href="#方法-9" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>void write(int b)</code><ul>
+<li>将数据写到内存中(即内存数组中)</li>
+</ul>
+</li>
+<li><code>void write(byte[] b, int off, int len)</code></li>
+<li><code>byte[] toByteArray()</code><ul>
+<li>将缓冲区的数据全部取出，获取一个字节数组</li>
+</ul>
+</li>
+<li><code>String toString()</code><ul>
+<li>将缓冲区的数据用平台默认编码转为字符串(即比上一个方法多了将字节数组转为字符串，但此方法编码不能自己指定)</li>
+</ul>
+</li>
+</ul>
+<h1 id="基本数据类型输入输出流"><a href="#基本数据类型输入输出流" class="headerlink" title="基本数据类型输入输出流"></a>基本数据类型输入输出流</h1><ul>
+<li>可以按照基本数据类型大小读写数据<ul>
+<li>普通字节流写出时只也出一个字节，读取时也只读取一个字节</li>
+<li>例如按Long大小写出一个数字, 写出时该数据占8字节. 读取的时候也可以按照Long类型读取, 一次读取8个字节<h2 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h2><h2 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h2></li>
+</ul>
+</li>
+</ul>
+<h1 id="管道流"><a href="#管道流" class="headerlink" title="管道流"></a>管道流</h1><ul>
+<li>结合多线程使用。</li>
+</ul>
+<h2 id="PipedInputStream"><a href="#PipedInputStream" class="headerlink" title="PipedInputStream"></a>PipedInputStream</h2><h2 id="PipedOutputStream"><a href="#PipedOutputStream" class="headerlink" title="PipedOutputStream"></a>PipedOutputStream</h2><h1 id="字符数组输入输出流"><a href="#字符数组输入输出流" class="headerlink" title="字符数组输入输出流"></a>字符数组输入输出流</h1><h2 id="CharArrayReader"><a href="#CharArrayReader" class="headerlink" title="CharArrayReader"></a>CharArrayReader</h2><h2 id="CharArrayWriter"><a href="#CharArrayWriter" class="headerlink" title="CharArrayWriter"></a>CharArrayWriter</h2><h1 id="字符串输入输出流"><a href="#字符串输入输出流" class="headerlink" title="字符串输入输出流"></a>字符串输入输出流</h1><h2 id="StringReader"><a href="#StringReader" class="headerlink" title="StringReader"></a>StringReader</h2><h2 id="StringWriter"><a href="#StringWriter" class="headerlink" title="StringWriter"></a>StringWriter</h2><h1 id="RandomAccessFile"><a href="#RandomAccessFile" class="headerlink" title="RandomAccessFile"></a>RandomAccessFile</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>RandomAccessFile类不属于流，但它融合了InputStream和OutputStream的功能</li>
+<li>该对象即能读，也能写。</li>
+<li>内部维护了一个byte[]数组，并通过指针可以操作数组中的元素。</li>
+<li>该对象是将字节输入和输出流进行了封装。</li>
+<li>该对象的源和目的只能是文件。</li>
+<li>通过设置指针对任意指定位置读写，可以实现多线程下载</li>
+</ul>
+<h2 id="方法-10"><a href="#方法-10" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>long getFilePointer()</code><ul>
+<li>获取指针位置</li>
+</ul>
+</li>
+<li><code>void seek(long pos)</code><ul>
+<li>设置指针位置</li>
+<li>随机读取写入，设置指针位置即可。</li>
+</ul>
+</li>
+</ul>
+<h1 id="小结-安"><a href="#小结-安" class="headerlink" title="小结(安)"></a>小结(安)</h1><h2 id="字节流-2"><a href="#字节流-2" class="headerlink" title="字节流"></a>字节流</h2><ul>
+<li>读取一个字节，返回一个int<ul>
+<li>会在字节前加24个0，这样一个字节就变成一个int</li>
+<li>为什么不返回一个字节<ul>
+<li>因为读取的结束标记是返回-1</li>
+<li>如果-1是一个字节的-1，因为数据都是由字节组成的，难免数据中包含一个字节的-1，这样数据没读完就结束了。</li>
+<li>所以会在字节前加0 变成int 四个字节，这样表示一个字节的-1变成四个字节，结果肯定不是-1.</li>
+</ul>
+</li>
+<li>读取中文时可能乱码</li>
+</ul>
+</li>
+<li>写出一个字节 写出的是int 或者字节数组<ul>
+<li>会将int的前24个0去除，这样就变成一个字节了。</li>
+<li>可以写出中文，以字节数组写出。</li>
+</ul>
+</li>
+<li>一次读写一个字节，速度太慢<ol>
+<li>自己创建缓冲数组</li>
+<li>使用缓冲流<ul>
+<li>字节缓冲流，内置了一个8192大小的数组</li>
+<li>读取时先将数据读到缓冲区中，再从缓冲区读取一个字节。<ul>
+<li>为什么从缓存区中读取一个字节速度就比直接读一个字节快？<ul>
+<li>因为将数据读取到缓冲区中时是在内存中操作的，速度很快。降低硬盘读写次数就会提高效率</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>写出时先将数据写到缓冲区中，缓冲区写满后，自动写出。若没满，可以flush或者close来写出。<ul>
+<li>同样的，将数据从缓冲区写出时是在内存中操作的。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="Readme-md"><a href="#Readme-md" class="headerlink" title="Readme.md"></a>Readme.md</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ol>
-<li>执行命令<code>hexo g</code>之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面</li>
-<li>继续执行命令<code>hexo d</code>之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库</li>
-<li>由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会删掉仓库里的README.md文件，这就是具体的原因</li>
+</li>
+</ul>
+<h2 id="字符流-2"><a href="#字符流-2" class="headerlink" title="字符流"></a>字符流</h2><ul>
+<li>读取一个字符，返回一个int<ul>
+<li>在字符前加16个0</li>
+</ul>
+</li>
+<li>写出一个字符 写出int string 或者字符数组<ul>
+<li>写出int时，去除前16个0</li>
+</ul>
+</li>
+<li>字符流不能操作非纯文本文件。</li>
+</ul>
+<h2 id="转换流-1"><a href="#转换流-1" class="headerlink" title="转换流"></a>转换流</h2><ul>
+<li>字节流什么文件都能读写，而现在有纯文本文件每次都要将字节转为字符，不太方便，且有时会有编码问题。所以需要字符流。于是就出现了能将字节流转换位字符流的转换流。</li>
+<li>java使用默认码表帮我们转换了字符流就是<code>FileReader</code>/<code>FileWriter</code></li>
+<li>如果我们需要其它码表，就自己转换<ul>
+<li>即如果文本文件编码与平台一致，那么直接用<code>FileReader</code>/<code>FileWriter</code>即可，如果不一致，我们自己用指定的码表将字节流转为字符流，</li>
+</ul>
+</li>
+</ul>
+<h2 id="内存输出流"><a href="#内存输出流" class="headerlink" title="内存输出流"></a>内存输出流</h2><ul>
+<li>字节流读取中文时，可能会乱码。</li>
+<li>使用内存输出流先写到内存中，然后一次性获取所有数据。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/xd-线程/" itemprop="url">
+                  xd-线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 17:24:22" itemprop="dateCreated datePublished" datetime="2018-11-23T17:24:22+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:28:56" itemprop="dateModified" datetime="2019-03-08T14:28:56+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="进程-amp-线程"><a href="#进程-amp-线程" class="headerlink" title="进程 &amp; 线程"></a>进程 &amp; 线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+<li>正在执行中的程序，一个进程至少有一个线程。</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>进程中的一个负责程序执行的控制单元（执行路径）</li>
+<li>每一个线程都有自己运行的内容，可以称之为线程任务。</li>
+</ul>
+<h2 id="并行-amp-并发"><a href="#并行-amp-并发" class="headerlink" title="并行 &amp; 并发"></a>并行 &amp; 并发</h2><ul>
+<li>并行指两个任务同时执行，(需要多核cpu)</li>
+<li>并发指两个任务都请求执行，同一时间只能执行一个任务，(cpu在不同任务之间快速切换)。</li>
+</ul>
+<h2 id="java程序运行原理"><a href="#java程序运行原理" class="headerlink" title="java程序运行原理"></a>java程序运行原理</h2><ul>
+<li>Java命令启动java虚拟机。启动jvm，等于启动了一个应用程序，也就是启动了一个进程，该进程会自动启动一个“主线程”，然后主线程去调用某个main方法。</li>
+<li><strong>jvm的启动是多线程的</strong><ul>
+<li>jvm启动至少启动了主线程和垃圾回收线程。</li>
+</ul>
+</li>
+</ul>
+<h1 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2><ul>
+<li>创建线程对象</li>
+</ul>
+<h2 id="就绪"><a href="#就绪" class="headerlink" title="就绪"></a>就绪</h2><ul>
+<li>线程启动，有执行资格但没有获取cpu执行权</li>
+<li>新建→就绪<ul>
+<li><code>start()</code></li>
+</ul>
+</li>
+<li>运行→就绪<ul>
+<li>运行状态失去了执行权就变成就绪状态</li>
+</ul>
+</li>
+<li>阻塞→就绪<ul>
+<li>阻塞醒了以后得到执行资格就变成就绪状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ul>
+<li>有执行资格且获取cpu执行权</li>
+<li>就绪→运行<ul>
+<li>就绪状态抢到了执行权就变成运行状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h2><ul>
+<li>没有执行资格也没有cpu执行权</li>
+<li>运行→阻塞<ul>
+<li>运行状态wait或者sleep就变成阻塞状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="死亡"><a href="#死亡" class="headerlink" title="死亡"></a>死亡</h2><ul>
+<li>代码完毕线程死亡    <ul>
+<li><code>run()</code>结束</li>
+<li><code>stop()</code>(已过时)</li>
+</ul>
+</li>
+</ul>
+<h1 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h1><ol>
+<li>继承Thread<ul>
+<li>定义类继承Thread</li>
+<li>重写run方法</li>
+<li>把新线程要做的事写在run方法中</li>
+<li>创建线程对象</li>
+<li>调用start()开启新线程</li>
+</ul>
+</li>
+<li>实现Runnable<ul>
+<li>定义类实现Runnable接口</li>
+<li>实现run方法</li>
+<li>把新线程要做的事写在run方法中</li>
+<li>创建自定义的Runnable的子类对象</li>
+<li>创建Thread对象, 传入Runnable的子类对象</li>
+<li>调用start()开启新线程</li>
+</ul>
+</li>
+<li>实现<code>Callable</code>接口覆写<code>call</code>方法 </li>
 </ol>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><ul>
-<li>在本地的source文件里新建一个README.md文件</li>
-<li>修改Hexo根目录下的_config.yml文件，将skip_render参数的值设置为README.md<ul>
-<li><code>skip_render: README.md</code></li>
+<ul>
+<li><p><strong>Thread类实现了Runnable接口</strong></p>
+<ul>
+<li><p>原理</p>
+<ul>
+<li>Thread类中有Runnable成员变量r<ul>
+<li><code>private Runnable r</code></li>
+<li>如果构造传入了Runnable的实现类对象，会赋值给r</li>
+</ul>
+</li>
+<li><p>Thread类的run 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private void run()&#123;</span><br><span class="line">                if(r!=null)&#123;</span><br><span class="line">                   r.run();</span><br><span class="line">                &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承Thread类时调用start执行的是子类覆写的run方法</p>
+</li>
+<li>实现Runnable接口传入Thread类中则成员r不为空，则调用的是Runnable实现类的run方法</li>
+<li>即有子类也有任务，以子类为主</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h1><h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><ul>
+<li><code>Thread()</code></li>
+<li><code>Thread(Runnable target, [String name])</code><ul>
+<li>name是线程名</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>static currentThread()</code><ul>
+<li>获取当前线程,主线程也可以获取</li>
+</ul>
+</li>
+<li><code>static sleep(long millis)</code><ul>
+<li>控制当前线程休眠若干毫秒</li>
+</ul>
+</li>
+<li><code>getName()</code><ul>
+<li>获取线程对象的名字</li>
+</ul>
+</li>
+<li><code>setName(String name)</code><ul>
+<li>设置线程对象的名字</li>
+<li>还有一种设置名字的方式是构造</li>
+</ul>
+</li>
+<li><code>setDaemon()</code><ul>
+<li>设置一个线程为守护线程</li>
+<li><strong>守护线程</strong><ul>
+<li>该线程不会单独执行,当其他非守护线程都执行结束后,自动退出</li>
+<li>意思是有其它线程在的话，如果守护线程先执行了，那就可以执行，如果其它线程都结束了，守护线程还没完，那就不会执行了。</li>
+<li>即存在其它线程，守护线程才有可能执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>join()</code><ul>
+<li>加入线程 (相当于插队)</li>
+<li>当前线程暂停, 等待指定的线程执行结束后, 当前线程再继续</li>
+</ul>
+</li>
+<li><code>join(int)</code><ul>
+<li>可以等待指定的毫秒之后继续</li>
+<li>即插队执行指定的时间，时间过后接着交替执行。</li>
+</ul>
+</li>
+<li><code>yield()</code><ul>
+<li>礼让线程</li>
+<li>不过效果不明显</li>
+</ul>
+</li>
+<li><code>setPriority()</code><ul>
+<li>设置线程的优先级</li>
+</ul>
+</li>
+</ul>
+<h1 id="线程的结束"><a href="#线程的结束" class="headerlink" title="线程的结束"></a>线程的结束</h1><ol>
+<li>定义标记<ul>
+<li><code>boolean flag;</code></li>
+<li>在线程任务对象中定义一个可以修改标记的方法，想要结束线程时，在主线程中修改标记即可。</li>
+</ul>
+</li>
+<li>如果线程处于冻结状态，无法读取标记，如何结束呢？<ul>
+<li><code>interrupt()</code><ul>
+<li>将线程从冻结状态强制恢复到运行状态，由于不是正常的唤醒，会发生<code>InterruptedException</code></li>
+<li>可以在catch中修改标记</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h1><h2 id="线程安全问题产生的原因"><a href="#线程安全问题产生的原因" class="headerlink" title="线程安全问题产生的原因"></a>线程安全问题产生的原因</h2><ul>
+<li>多个线程操作共享数据</li>
+<li>操作共享数据的线程代码有多条</li>
+<li>安<ul>
+<li>比如卖票，现在标记是1，线程1判断大于0，还没减减，另一条线程也过来判断，这时也是大于0的，就出问题了。</li>
+</ul>
+</li>
+</ul>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li>思路就是一个线程，一组代码没执行完，不让别的线程执行。</li>
+<li>这就需要<strong>线程锁</strong>。没有锁进不来。</li>
+</ul>
+<h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><h2 id="什么情况下需要同步"><a href="#什么情况下需要同步" class="headerlink" title="什么情况下需要同步"></a>什么情况下需要同步</h2><ul>
+<li>当多线程并发, 有多段代码同时执行时, 我们希望某一段代码执行的过程中CPU不要切换到其他线程工作. 这时就需要同步.</li>
+<li>如果两段代码是同步的, 那么同一时间只能执行一段, 在一段代码没执行结束之前, 不会执行另外一段代码.</li>
+</ul>
+<h2 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h2><ul>
+<li>使用<code>synchronized</code>关键字加上一个锁对象来定义一段代码, 这就叫同步代码块</li>
+<li>多个同步代码块如果使用相同的锁对象, 那么他们就是同步的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">synchronized(锁) &#123;</span><br><span class="line">	code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="同步函数"><a href="#同步函数" class="headerlink" title="同步函数"></a>同步函数</h2><ul>
+<li><p>返回值前加synchronized关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public synchronized void show() &#123;</span><br><span class="line">	code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非静态同步函数的锁是<code>this</code></p>
+</li>
+<li>静态的同步函数的锁是<code>字节码对象</code></li>
+</ul>
+<h2 id="释放锁"><a href="#释放锁" class="headerlink" title="释放锁"></a>释放锁</h2><ol>
+<li>执行完同步代码块<ul>
+<li>我的理解是比如一个无限循环中，同步的代码是循环中的一部分，执行完这一部分也会释放锁。</li>
+</ul>
+</li>
+<li>在执行同步代码块的过程中，遇到异常而导致线程终止。</li>
+<li>在执行同步代码块的过程中，执行了锁所属对象的wait()方法，这个线程会释放锁，进行对象的等待池</li>
+</ol>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><ul>
+<li>多线程同步的时候, 如果同步代码嵌套, 使用相同锁, 就有可能出现死锁<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;a&quot;;</span><br><span class="line">String s2 = &quot;b&quot;;</span><br><span class="line">new Thread()&#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            synchronized (s1) &#123;</span><br><span class="line">                System.out.println(&quot;111---s1&quot;);</span><br><span class="line">                synchronized (s2) &#123;</span><br><span class="line">                    System.out.println(&quot;111---s2&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.start();</span><br><span class="line">new Thread()&#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            synchronized (s2) &#123;</span><br><span class="line">                System.out.println(&quot;22222222---s2&quot;);</span><br><span class="line">                synchronized (s1) &#123;</span><br><span class="line">                    System.out.println(&quot;22222222---s1&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.start();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>构造函数私有化</li>
+<li>本类定义一个私有的本类对象成员变量</li>
+<li>提供公有的获取方法</li>
+<li>Runtime是一个单例类</li>
+</ul>
+<h2 id="单例的线程安全"><a href="#单例的线程安全" class="headerlink" title="单例的线程安全"></a>单例的线程安全</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">private static Single single;</span><br><span class="line">private Single()&#123;&#125;</span><br><span class="line">public static Single getSingle() &#123;</span><br><span class="line">    if (single == null) &#123;</span><br><span class="line">        synchronized (Single.class) &#123;</span><br><span class="line">            if (single == null) &#123;</span><br><span class="line">                single=new Single();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return single;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h1><ul>
+<li>计时器类</li>
+<li><code>schedule(TimerTask task,Date time,[long l])</code><ul>
+<li>指定时间(time)执行指定任务,每隔（l）秒再次执行</li>
+</ul>
+</li>
+</ul>
+<h1 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h1><ul>
+<li>什么时候需要通信<ul>
+<li>多个线程并发执行时, 在默认情况下CPU是随机切换线程的</li>
+<li>如果我们希望他们有规律的执行, 就可以使用通信, 例如每个线程执行一次打印</li>
+</ul>
+</li>
+<li>怎么通信<ul>
+<li>如果希望线程等待, 就调用wait()</li>
+<li>如果希望唤醒等待的线程, 就调用notify();</li>
+<li><strong>这两个方法必须在同步代码中执行, 并且使用同步锁对象来调用</strong></li>
+</ul>
+</li>
+<li>多个线程通信的问题<ul>
+<li>notify()方法是随机唤醒一个线程</li>
+<li>notifyAll()方法是唤醒所有线程</li>
+<li>JDK5之前无法唤醒指定的一个线程</li>
+<li>如果多个线程之间通信, 需要使用notifyAll()通知所有线程, 用while来反复判断条件<ul>
+<li>使用while是为了线程醒了之后还要判断锁</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wait-amp-sleep"><a href="#wait-amp-sleep" class="headerlink" title="wait() &amp; sleep()"></a>wait() &amp; sleep()</h2><ul>
+<li>参数<ul>
+<li>sleep必须传入参数，参数时间到了自动醒来。</li>
+<li>wait可传也可不传，传参则参数时间到了等待，不传则立即等待。</li>
+</ul>
+</li>
+<li>锁<ul>
+<li>sleep不释放锁</li>
+<li>wait释放锁</li>
+</ul>
+</li>
+</ul>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
+<li>为何wait()和notify()定义在Object中？<ul>
+<li>因为锁对象是任意的，而wait()和notify()都需要锁对象来调用，所以定义在Object中。</li>
+</ul>
+</li>
+</ol>
+<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><ul>
+<li>java1.5提供的<code>java.util.concurrent</code></li>
+</ul>
+<h2 id="内存可见性"><a href="#内存可见性" class="headerlink" title="内存可见性"></a>内存可见性</h2><p><img src="https://gitee.com/3noanswer/pics/blob/master/SE/内存可见性.png" alt=""></p>
+<ul>
+<li>线程1对主存中共享数据的操作，主线程是不可见的</li>
+<li>所以即使线程1对flag做了修改，主线程也不知道</li>
+</ul>
+<h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h3><ul>
+<li>当多个线程进行操作共享数据时,可以保证内存中的数据是可见的</li>
+<li>相较于 synchronized 是一种较为轻量级的同步策略</li>
+<li>volatile 不具备”互斥性”</li>
+<li>volatile 不能保证变量的”原子性”<ul>
+<li>比如<code>i++</code>，其实是三步操作，使用volatile不能解决<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int i =1;</span><br><span class="line">i = i++;</span><br><span class="line">// i++实际分为&quot;读-改-写&quot;</span><br><span class="line">int temp = i;</span><br><span class="line">i = i+1;</span><br><span class="line">i = temp;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="原子变量"><a href="#原子变量" class="headerlink" title="原子变量"></a>原子变量</h2><ul>
+<li><code>java.util.concurrent.atomic</code>提供了常用原子变量</li>
+<li>原子变量原理<ol>
+<li>内部使用<code>volatile</code>保证内存可见性</li>
+<li>CAS（compare-and-swap）算法保证数据原子性</li>
+</ol>
+</li>
+</ul>
+<h3 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h3><ul>
+<li>是硬件对于并发操作共享数据的支持、</li>
+<li>包含三个操作数<ul>
+<li>内存值<code>V</code></li>
+<li>预估值<code>A</code></li>
+<li>更新值<code>B</code></li>
+</ul>
+</li>
+<li>当且仅当<code>V == A</code>时，<code>V = B</code>,否则，不做任何操作</li>
+<li>安<ul>
+<li>一个线程操作共享数据时<ol>
+<li>读取共享数据</li>
+<li>操作</li>
+</ol>
+</li>
+<li>而在读取后到操作之间，其它线程可能会对共享数据操作。</li>
+<li>CAS的做法是<ol>
+<li>读取共享数据</li>
+<li>操作<ol>
+<li>操作前再次读取共享数据，如果两次一致，则进行操作</li>
+<li>如果不一致，则放弃本次操作，从头进行下一次CAS</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="同步容器"><a href="#同步容器" class="headerlink" title="同步容器"></a>同步容器</h2><h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><ul>
+<li>介于 HashMap 与 Hashtable 之间</li>
+<li>内部采用“锁分段”机制替代 Hashtable 的独占锁。进而提高性能</li>
+<li>锁分段<ul>
+<li>一个容器分为16份，每一份都有一个锁</li>
+</ul>
+</li>
+<li>jdk8采用CAS代替锁分段</li>
+</ul>
+<h3 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h3><ul>
+<li>TreeMap</li>
+</ul>
+<h3 id="CopyOnWriteArrayList"><a href="#CopyOnWriteArrayList" class="headerlink" title="CopyOnWriteArrayList"></a>CopyOnWriteArrayList</h3><ul>
+<li>ArrayList</li>
+<li>每次写入时都会复制一个新的容器再写入</li>
+<li>在迭代并添加时没有并发修改异常</li>
+<li>每次写入都会复制，效率低，适合并发迭代</li>
+</ul>
+<h3 id="ConcurrentSkipListSet"><a href="#ConcurrentSkipListSet" class="headerlink" title="ConcurrentSkipListSet"></a>ConcurrentSkipListSet</h3><h3 id="CopyOnwriteArraySet"><a href="#CopyOnwriteArraySet" class="headerlink" title="CopyOnwriteArraySet"></a>CopyOnwriteArraySet</h3><h2 id="闭锁"><a href="#闭锁" class="headerlink" title="闭锁"></a>闭锁</h2><ul>
+<li><code>CountDownLatch</code></li>
+<li>一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待</li>
+</ul>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
+<li>闭锁可以延迟线程的进度直到其到达终止状态，闭锁可以用来确保某些活<br>动直到其他活动都完成才继续执行<ol>
+<li>确保某个计算在其需要的所有资源都被初始化之后才继续执行</li>
+<li>确保某个服务在其依赖的所有其他服务都已经启动之后才启动</li>
+<li>等待直到某个操作所有参与者都准备就绪再继续执行</li>
+</ol>
+</li>
+<li>例<ul>
+<li>要计算一段代码执行时间，而这段代码是线程1中的，计算代码是主线程的，主线程和线程1是同时执行的，所以根本无法计算</li>
+<li>使用闭锁使主线程等待线程1执行完毕后再执行即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><code>CountDownLatch latch = new CountDownLatch(3)</code><ul>
+<li>构造时传入一个计数</li>
+</ul>
+</li>
+<li>线程都是用同一个闭锁</li>
+<li><code>latch.await()</code><ul>
+<li>想让哪个线程等待，就在哪个线程<code>await()</code></li>
+</ul>
+</li>
+<li><code>latch.cuntDown()</code><ul>
+<li>计数-1</li>
+<li>当计数减为0时，等待的线程才执行</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程的第三种方式"><a href="#线程的第三种方式" class="headerlink" title="线程的第三种方式"></a>线程的第三种方式</h2><ul>
+<li>实现<code>Callable</code>接口<ul>
+<li>可以有返回值，可以抛出异常</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p>执行Callable，需要<code>FutureTask implements Future</code>的支持，用于接收结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FutureTask&lt;返回值类型&gt; result = new FutureTask&lt;&gt;(Callable call);</span><br><span class="line">new Thread(result).start();</span><br><span class="line">result.get(); // 获取返回值</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>result.get()</code><ul>
+<li>会在线程执行结束才会执行</li>
+<li>可以用于闭锁</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="同步锁"><a href="#同步锁" class="headerlink" title="同步锁"></a>同步锁</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Lock lock = new ReentrantLock();</span><br><span class="line">Condition c1=lock.newCondition();</span><br><span class="line">Condition c2=lock.newCondition();</span><br><span class="line">lock.lock();</span><br><span class="line">try&#123;</span><br><span class="line">	while(...) &#123;</span><br><span class="line">		c1.await();</span><br><span class="line">	&#125;</span><br><span class="line">	c2.signal();</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">	lock.unlock</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="interface-Lock"><a href="#interface-Lock" class="headerlink" title="interface Lock"></a>interface Lock</h2><ul>
+<li><code>java.util.concurrent.locks</code></li>
+<li>锁的操作变成显式的</li>
+</ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>lock();</li>
+<li>unlock();</li>
+</ul>
+<h2 id="interface-Condition"><a href="#interface-Condition" class="headerlink" title="interface Condition"></a>interface Condition</h2><ul>
+<li><code>java.util.concurrent.locks</code></li>
+<li>监视器接口</li>
+<li>一个锁可以有多个监视器所以可以指定唤醒</li>
+</ul>
+<h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>await()</li>
+<li>signal()</li>
+<li>signalAll()</li>
+</ul>
+<h2 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h2><ul>
+<li><code>ReadWriteLock</code></li>
+<li>读写/写写 需要互斥</li>
+<li>读读 不需要互斥</li>
+</ul>
+<h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>Lock readLock()</code></li>
+<li><code>Lock writeLock()</code></li>
+</ul>
+<h1 id="线程组-ThreadGroup"><a href="#线程组-ThreadGroup" class="headerlink" title="线程组(ThreadGroup)"></a>线程组(ThreadGroup)</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>java中用ThreadGroup表示线程组，它可以对一批线程进行分类管理，java允许程序直接对线程组进行控制</li>
+<li>默认所有的线程都属于主线程组。</li>
+</ul>
+<h2 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>ThreadGroup getThreadGroup()</code><ul>
+<li><code>Thread t=new Thread()</code></li>
+<li><code>ThreadGroup tg=t.getThreadGroup()</code><ul>
+<li>默认是main</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Thread构造中可以传入一个线程组<ul>
+<li><code>ThreadGroup tg=new ThreadGroup(&quot;我是新线程组&quot;)</code></li>
+<li><code>Thread t=new Thread(tg,Runnable r)</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>程序启动和销毁一个线程成本是比较高的，因为它涉及到要与操作系统进行交互，使用线程池可以提高性能。</li>
+<li>线程池中的每一个线程代码结束后，不会死亡，而是回到线程池中成为空闲状态，等待下一个对象使用。</li>
+<li>jdk5之前，手动实现自己的线程池，jdk5之后，java内置线程池。</li>
+</ul>
+<h2 id="Executor"><a href="#Executor" class="headerlink" title="Executor"></a>Executor</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.util.concurrent.Executor </span><br><span class="line">	|--ExecutorService</span><br><span class="line">		|--ThredPoolExecutor</span><br><span class="line">		|--ScheduledExecutorService</span><br><span class="line">			|--ScheduledThreedPoolExecutor</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Executor</code><ul>
+<li>负责线程的使用和调度的根接口</li>
+</ul>
+</li>
+<li><strong>ExecutorService</strong><ul>
+<li>线程池的主要接口</li>
+</ul>
+</li>
+<li><code>ThredPoolExecutor</code><ul>
+<li>线程池的实现类</li>
+</ul>
+</li>
+<li><code>ScheduledExecutorService</code><ul>
+<li>负责线程调度的子接口</li>
+</ul>
+</li>
+<li><code>ScheduledThreedPoolExecutor</code><ul>
+<li>继承<code>ThredPoolExecutor</code>又实现了<code>ScheduledExecutorService</code></li>
+<li>既可以使用线程，又能调度</li>
+</ul>
+</li>
+</ul>
+<h2 id="Executors"><a href="#Executors" class="headerlink" title="Executors"></a>Executors</h2><ul>
+<li>线程池工具类</li>
+</ul>
+<h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>static ExecutorService newFixedThreadPool(int nThreads)</code><ul>
+<li>创建线程池，指定池大小(可以放几个线程)</li>
+</ul>
+</li>
+<li><code>static ExecutorService new CachedThreadPool()</code><ul>
+<li>缓存线程池</li>
+<li>数量不固定，可以根据需求自动变更数量</li>
+</ul>
+</li>
+<li><code>static ExecutorService new SingleThreadExecutor()</code><ul>
+<li>创建单个线程的线程池</li>
+</ul>
+</li>
+<li><code>static ScheduledExecutorService newScheduledThreadPool()</code><ul>
+<li>创建固定大小线程池，可以延迟或定时执行任务</li>
+</ul>
+</li>
+</ul>
+<h2 id="ExecutorService"><a href="#ExecutorService" class="headerlink" title="ExecutorService"></a>ExecutorService</h2><ul>
+<li><code>Future&lt;?&gt; submit(Runnable r/Callable call)</code><ul>
+<li>为线程池中的线程分配任务</li>
+<li>可以执行Runnable对象或Callable对象代表的线程</li>
+<li>Callable时又返回值<code>Future</code></li>
+</ul>
+</li>
+<li><code>void shutdown()</code><ul>
+<li>关闭线程池</li>
+</ul>
+</li>
+</ul>
+<h2 id="ScheduledExecutorService"><a href="#ScheduledExecutorService" class="headerlink" title="ScheduledExecutorService"></a>ScheduledExecutorService</h2><ul>
+<li><code>Future schedule(Callable call, long delay, TimeUnit unit)</code><ul>
+<li><code>delay</code><ul>
+<li>延迟多久</li>
+</ul>
+</li>
+<li><code>unit</code><ul>
+<li>延迟时间的单位</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h1><ul>
+<li><p>模拟ThreadLocal</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadLocal&#123;</span><br><span class="line">	private Map&lt;Runnable,Object&gt; container = new HashMap&lt;Runnable,Object&gt;();</span><br><span class="line">	public void set(Object value)&#123;</span><br><span class="line">		//用当前线程作为key</span><br><span class="line">		container.put(Thread.currentThread(),value);</span><br><span class="line">	&#125;</span><br><span class="line">	public Object get()&#123;</span><br><span class="line">		return container.get(Thread.currentThread());</span><br><span class="line">	&#125;</span><br><span class="line">	public void remove()&#123;</span><br><span class="line">		container.remove(Thread.currentThread());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>总(安)</p>
+<ul>
+<li>维护了一个map，以当前线程为key存入值，只有这个线程才能取到值，别的线程取不到。</li>
+<li>调用该类的get方法，永远返回当前线程放入的数据。</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/xd-异常/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/xd-异常/" itemprop="url">
+                  xd-异常
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-05 17:14:49" itemprop="dateCreated datePublished" datetime="2018-11-05T17:14:49+08:00">2018-11-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:28:46" itemprop="dateModified" datetime="2019-03-08T14:28:46+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h1><ul>
+<li>Throwable<ul>
+<li>Error</li>
+<li>Exception<ul>
+<li>RuntimeException</li>
+<li>编译时异常</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="编译时异常-amp-运行时异常"><a href="#编译时异常-amp-运行时异常" class="headerlink" title="编译时异常 &amp; 运行时异常"></a>编译时异常 &amp; 运行时异常</h1><ul>
+<li><strong>检查和非检查是对于javac来说的</strong></li>
+</ul>
+<h2 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
+<li>检查异常（checked exception）</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>Java程序必须显示处理，否则程序就会发生错误，无法通过编译</li>
+<li>抛出时必须声明</li>
+</ul>
+<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><ul>
+<li>除了Error 和 RuntimeException的其它异常。javac强制要求程序员为这样的异常做预备处理工作（使用try…catch…finally或者throws）。在方法中要么用try-catch语句捕获它并处理，要么用throws子句声明抛出它，否则编译不会通过。这样的异常一般是由程序的运行环境导致的。因为程序可能被运行在各种未知的环境下，而程序员无法干预用户如何使用他编写的程序，于是程序员就应该为这样的异常时刻准备着。如SQLException , IOException 等。</li>
+</ul>
+<h2 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
+<li>非检查异常（unckecked exception）</li>
+</ul>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>无需显示处理，也可以和编译时异常一样处理</li>
+<li>抛出时可以不用声明</li>
+</ul>
+<h3 id="释义-1"><a href="#释义-1" class="headerlink" title="释义"></a>释义</h3><ul>
+<li>Error 和 RuntimeException 以及他们的子类。javac在编译时，不会提示和发现这样的异常，不要求在程序处理这些异常。所以如果愿意，我们可以编写代码处理（使用try…catch…finally）这样的异常，也可以不处理。对于这些异常，我们应该修正代码，而不是去通过异常处理器处理 。这样的异常发生的原因多半是代码写的有问题。如除0错误ArithmeticException，错误的强制类型转换错误ClassCastException，数组索引越界ArrayIndexOutOfBoundsException，使用了空对象NullPointerException等等。</li>
+</ul>
+<h2 id="区别-安"><a href="#区别-安" class="headerlink" title="区别(安)"></a>区别(安)</h2><ul>
+<li>编译时异常<ul>
+<li>程序逻辑没有错误，但是你可能会访问不存在的端口，文件..必须处理才能编译通过。</li>
+<li>未雨绸缪异常</li>
+<li>我觉得就是程序写的没问题，但是不健壮，你无法保证用户的运行环境，你不能因为用户写错了一个地址就让程序终止，而应该有此方面的相应处理，如果用户写错了，程序怎么怎么样。</li>
+</ul>
+</li>
+<li>运行时异常<ul>
+<li>程序有问题，比如除了0，角标越界，空指针.</li>
+<li>程序员所犯的错误,需要回来修改代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h1><h2 id="运行时异常-1"><a href="#运行时异常-1" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
+<li>ClassCastException<ul>
+<li>类型转换异常</li>
+</ul>
+</li>
+<li>ArithmeticException<ul>
+<li>当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。</li>
+</ul>
+</li>
+<li>NullPointerException<ul>
+<li>空指针异常</li>
+</ul>
+</li>
+<li>illegaArguementException<ul>
+<li>参数传递异常</li>
+</ul>
+</li>
+<li>IndexOutOfBoundsException<ul>
+<li>数组索引越界异常</li>
+</ul>
+</li>
+<li>ConcurrentModificationException<ul>
+<li>并发修改异常</li>
+<li>遍历集合时对集合修改会发生次异常</li>
+</ul>
+</li>
+<li>NoSuchElementException<ul>
+<li>由 Enumeration 的 nextElement 方法抛出，表明枚举中没有更多的元素。</li>
+</ul>
+</li>
+</ul>
+<h2 id="编译时异常-1"><a href="#编译时异常-1" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
+<li>ClassNotFoundException</li>
+<li>DateFormatException</li>
+<li>FileNotFoundException</li>
+<li>NoSuchMethodException</li>
+<li>NoSuchFieldException</li>
+<li>IOException</li>
+<li>SQLException</li>
+</ul>
+<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><ul>
+<li>NoClassDefFoundError</li>
+<li>OutOfMemoryError</li>
+</ul>
+<h1 id="Throwable的几个常见方法"><a href="#Throwable的几个常见方法" class="headerlink" title="Throwable的几个常见方法"></a>Throwable的几个常见方法</h1><ul>
+<li><code>getMessage()</code><ul>
+<li>获取异常信息，返回字符串。</li>
+</ul>
+</li>
+<li><code>toString()</code><ul>
+<li>获取异常类名和异常信息，返回字符串。</li>
+</ul>
+</li>
+<li><code>printStackTrace()</code><ul>
+<li>获取异常类名和异常信息，以及异常出现在程序中的位置。返回值void。</li>
+</ul>
+</li>
+</ul>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><ol>
+<li>继承Exception</li>
+<li>继承RuntimeException</li>
+</ol>
+<h1 id="继承中的异常"><a href="#继承中的异常" class="headerlink" title="继承中的异常"></a>继承中的异常</h1><ul>
+<li>子类重写父类方法时，子类的方法必须抛出相同的异常或父类异常的子类。</li>
+<li>如果父类抛出了多个异常,子类重写父类时,只能抛出相同的异常或者是他的子集,子类不能抛出父类没有的异常</li>
+<li>如果被重写的方法没有异常抛出,那么子类的方法绝对不可以抛出异常,如果子类方法内有异常发生,那么子类只能try,不能throws</li>
+</ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="JVM默认是如何处理异常的"><a href="#JVM默认是如何处理异常的" class="headerlink" title="JVM默认是如何处理异常的"></a>JVM默认是如何处理异常的</h2><ol>
+<li>某个方法发生异常<ul>
+<li>jvm会根据异常产生的原因创建一个异常对象（包含内容.原因.位置）</li>
+<li>如果此方法自己处理则处理后决定是否继续执行</li>
+<li>如果方法没有处理，则jvm会把异常对象抛给此方法的调用者main方法</li>
+</ul>
+</li>
+<li>main函数收到异常时<ul>
+<li>自己将该问题处理,然后继续运行</li>
+<li>自己没有针对的处理方式,只有交给调用main的jvm来处理</li>
+</ul>
+</li>
+<li>jvm有一个默认的异常处理机制<ul>
+<li><code>printStackTrace()</code></li>
+<li>将该异常的名称,异常的信息.异常出现的位置打印在了控制台上,同时将程序停止运行</li>
+</ul>
+</li>
+</ol>
+<h2 id="异常处理的原则"><a href="#异常处理的原则" class="headerlink" title="异常处理的原则"></a>异常处理的原则</h2><ul>
+<li>如果功能内部可以将问题处理，则捕获异常<ul>
+<li><code>try</code></li>
+</ul>
+</li>
+<li>如果处理不了，则抛出异常，交由调用者处理<ul>
+<li><code>throws</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="try-amp-throw-amp-throws"><a href="#try-amp-throw-amp-throws" class="headerlink" title="try &amp; throw &amp; throws"></a>try &amp; throw &amp; throws</h1><h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><ul>
+<li>try…catch用于捕获异常 处理之后，程序可以继续运行。</li>
+<li><p>多catch时，大异常要在后边。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try(</span><br><span class="line">	code;</span><br><span class="line">) catch(Exception e) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>try中的code发生异常相当于创建了一个异常对象，然后赋值给catch后边括号中的变量(即用catch中的异常变量接收)</p>
+<ul>
+<li><code>new Exception();</code></li>
+<li><code>Exception e = new Exception();</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><ul>
+<li>用来抛出一个具体的异常类型对象<ul>
+<li>抛出编译时异常<ol>
+<li>用try…catch捕获</li>
+<li>用throws声明</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用在方法中</li>
+<li>后跟异常对象，且只能一个</li>
+<li>可以单独使用，也可以结合catch使用</li>
+<li>throw 跟return一样结束程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">throw new RuntimeException()</span><br><span class="line">或</span><br><span class="line">Exception e = new Exception();</span><br><span class="line">throw e</span><br><span class="line">前者相当于抛了一个匿名对象</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><ul>
+<li>用来声明一个方法可能产生的所有异常</li>
+<li>用在方法上</li>
+<li>后跟异常类名，可以多个，用逗号隔开</li>
+<li>表示此方法不处理异常，而交给方法调用处进行处理</li>
+</ul>
+<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ul>
+<li>如果catch里面有return语句，finally的代码还会执行吗? 如果会，是在return前还是return后。<ul>
+<li>会执行，前。（准确说是中间）</li>
+<li>(安)<ul>
+<li>执行到了return,已经把要return的值准备好了。这时先去执行finally中的代码,然后再return。</li>
+<li>就算finally中改变了要return的值。结果也不会改变.因为return的值已经缓存好了，改变了也没用。</li>
+<li>但是如果finally中也return一个值，那么最后是finally的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-集合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/xd-集合/" itemprop="url">
+                  xd-集合
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 17:24:03" itemprop="dateCreated datePublished" datetime="2018-11-23T17:24:03+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:28:27" itemprop="dateModified" datetime="2019-03-08T14:28:27+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="集合-amp-数组"><a href="#集合-amp-数组" class="headerlink" title="集合 &amp; 数组"></a>集合 &amp; 数组</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
+<li>. <ul>
+<li>数组既可以存储基本数据类型（存储值），又可以存储引用数据类型（存储地址值）。</li>
+<li>集合只能存储引用数据类型，存储基本数据类型时会自动装箱为基本类型包装类。</li>
+</ul>
+</li>
+<li>.<ul>
+<li>数组长度是固定的,不能自动增长</li>
+<li>集合的长度的是可变的,可以根据元素的增加而增长</li>
+</ul>
+</li>
+</ol>
+<h2 id="选择使用"><a href="#选择使用" class="headerlink" title="选择使用"></a>选择使用</h2><ul>
+<li>如果元素个数是固定的推荐用数组</li>
+<li>如果元素个数不是固定的推荐用集合</li>
+</ul>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="数组-amp-链表"><a href="#数组-amp-链表" class="headerlink" title="数组 &amp; 链表"></a>数组 &amp; 链表</h2><ul>
+<li>数组<ul>
+<li>查询快修改也快</li>
+<li>增删慢</li>
+</ul>
+</li>
+<li>链表<ul>
+<li>查询慢修改也慢<ul>
+<li>链表的查询是先判断索引在前半段还是后半段，然后一个一个查询过去。所以速度很慢。</li>
+</ul>
+</li>
+<li>增删快</li>
+</ul>
+</li>
+</ul>
+<h2 id="栈-amp-队列"><a href="#栈-amp-队列" class="headerlink" title="栈 &amp; 队列"></a>栈 &amp; 队列</h2><ul>
+<li>栈<ul>
+<li>先进后出 </li>
+</ul>
+</li>
+<li>队列<ul>
+<li>先进先出</li>
+</ul>
+</li>
+</ul>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>提高安全性(将运行期的错误转换到编译期) </li>
+<li>省去强转的麻烦</li>
+<li><code>&lt;&gt;</code>中放的必须是引用数据类型 </li>
+<li>前后的泛型必须一致,或者后面的泛型可以省略不写(1.7的新特性菱形泛型) </li>
+</ul>
+<h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><ul>
+<li><code>public class 类名&lt;泛型类型1,…&gt;</code></li>
+</ul>
+<h2 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h2><ul>
+<li><code>public interface 接口名&lt;泛型类型1,…&gt;</code><ul>
+<li>实现类<ol>
+<li><code>public 类名 implements 接口&lt;具体类型&gt;</code><ul>
+<li>实现时直接指定类型，推荐</li>
+</ul>
+</li>
+<li><code>public 类名&lt;泛型&gt; implements 接口&lt;泛型&gt;</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h2><ul>
+<li><code>public &lt;泛型类型&gt; 返回类型 方法名(泛型类型 变量名)</code><ul>
+<li>泛型定义在修饰符后返回值前<ul>
+<li>静态方法不能访问类上定义的泛型。只能自己定义泛型.</li>
+<li>非静态方法最好使用类上定义的泛型.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h2><ul>
+<li><code>&lt;?&gt;</code><ul>
+<li>任意类型，如果没有明确，那么就是Object以及任意的Java类了</li>
+</ul>
+</li>
+<li><code>? extends E</code><ul>
+<li>向下限定，E及其子类（通常 存）</li>
+</ul>
+</li>
+<li><code>? super E</code><ul>
+<li>向上限定，E及其父类（通常 取）</li>
+</ul>
+</li>
+</ul>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/Java集合框架图.jpg" alt=""></p>
+<ul>
+<li>单列集合底层依赖的是双列集合(安)<ul>
+<li>双列变单列 简单</li>
+<li>单列变双列 难</li>
+</ul>
+</li>
+</ul>
+<h1 id="interface-Collection"><a href="#interface-Collection" class="headerlink" title="interface Collection"></a>interface Collection</h1><ul>
+<li><strong>增加</strong><ul>
+<li><code>boolean add(E e)</code></li>
+<li><code>boolean addAll(Collection c)</code></li>
+</ul>
+</li>
+<li><strong>删除</strong><ul>
+<li><code>boolean remove(E e)</code></li>
+<li><code>boolean removeAll(Collection c)</code></li>
+<li><code>void clear()</code></li>
+</ul>
+</li>
+<li><strong>判断</strong><ul>
+<li><code>boolean contains(E e)</code></li>
+<li><code>boolean containsAll(Collection c)</code></li>
+<li><code>boolean isEmpty()</code></li>
+</ul>
+</li>
+<li><strong>获取</strong><ul>
+<li><code>int size()</code></li>
+<li><code>Iterator iterator()</code></li>
+</ul>
+</li>
+<li><strong>other</strong><ul>
+<li><code>boolean retainAll(Collection c)</code><ul>
+<li>取交集</li>
+<li>调用的集合改变就返回true</li>
+</ul>
+</li>
+<li><code>Object[] toArray()</code><ul>
+<li>集合→数组</li>
+</ul>
+</li>
+<li><code>T[] toArray(T[] t)</code><ul>
+<li>传入一个指定类型的数组，并转为指定类型的数组</li>
+<li>传入的数组长度如何定义？<ul>
+<li>如果长度小于集合的size，那么该方法会创建一个同类型并和集合相同size的数组。</li>
+<li>如果长度大于集合的size，那么该方法直接使用传入的数组，存储集合的元素，其它位置默认为null</li>
+<li>所以传入的长度最好为集合的size</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="interface-Iterator"><a href="#interface-Iterator" class="headerlink" title="interface Iterator"></a>interface Iterator</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>Collection容器进行元素抽取的公共接口.</li>
+<li>只定义了取出元素的方式。具体实现依赖于具体的容器。</li>
+<li>具体的容器以内部类实现Iterator接口通过iterator方法返回对象。</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>boolean hasNext()</code></li>
+<li><code>E next()</code></li>
+<li><code>void remove()</code></li>
+</ul>
+<h2 id="迭代器原理"><a href="#迭代器原理" class="headerlink" title="迭代器原理"></a>迭代器原理</h2><ul>
+<li>迭代器是对集合进行遍历,而每一个集合内部的存储结构都是不同的,所以每一个集合存和取都是不一样,那么就需要在每一个类中定义hasNext()和next()方法,这样做是可以的,但是会让整个集合体系过于臃肿,迭代器是将这样的方法向上抽取出接口,然后在每个类的内部,定义自己迭代方式。</li>
+<li><strong>好处</strong><ol>
+<li>规定了整个集合体系的遍历方式都是hasNext()和next()方法,</li>
+<li>代码有底层内部实现,使用者不用管怎么实现的,会用即可 </li>
+</ol>
+</li>
+<li><strong>迭代器源码解析</strong><ul>
+<li>iterator()方法</li>
+<li>返回值类型是new Itr(),说明Itr这个类实现Iterator接口</li>
+<li>查找Itr这个内部类,发现重写了Iterator中的所有抽象方法 </li>
+</ul>
+</li>
+</ul>
+<h2 id="interface-ListIterator"><a href="#interface-ListIterator" class="headerlink" title="interface  ListIterator"></a>interface  ListIterator</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>使用迭代器迭代时，如果对集合进行添加，会发生并发修改异常<code>ConcurrentModificationException</code>。</li>
+<li>使用ListIterator中的方法可以在迭代list集合时进行添加。</li>
+</ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>void add(E e)</code></li>
+<li><code>boolean hasNext()</code></li>
+<li><code>E next()</code></li>
+<li><code>boolean hasPrevious()</code></li>
+<li><code>E previous()</code></li>
+</ul>
+<h1 id="interface-List"><a href="#interface-List" class="headerlink" title="interface List"></a>interface List</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>存取有序(存入和取出的顺序一致)</li>
+<li>元素有索引</li>
+<li>元素可以重复</li>
+</ul>
+<h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><strong>增</strong><ul>
+<li><code>void add(int index,E e)</code></li>
+<li><code>boolean addAll(int index,Collection c)</code></li>
+</ul>
+</li>
+<li><strong>删</strong><ul>
+<li><code>Object remove(int index)</code></li>
+</ul>
+</li>
+<li><strong>修改</strong><ul>
+<li><code>Object set(int index,E e)</code></li>
+</ul>
+</li>
+<li><strong>获取</strong><ul>
+<li><code>Object get(int index)</code></li>
+<li><code>int indexOf(E e)</code></li>
+<li><code>int lastIndexOf(E e)</code></li>
+<li><code>List subList(int fromIndex,int toIndex)</code><ul>
+<li>含头不含尾</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>迭代</strong><ul>
+<li><code>ListIterator listIterator()</code><ul>
+<li>List特有的迭代方法，可以在迭代过程中用迭代器操作集合.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="interface-ArrayList"><a href="#interface-ArrayList" class="headerlink" title="interface ArrayList"></a>interface ArrayList</h2><h2 id="interface-LinkedList"><a href="#interface-LinkedList" class="headerlink" title="interface LinkedList"></a>interface LinkedList</h2><table>
+<thead>
+<tr>
+<th>原</th>
+<th>jdk6</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void addFirst(E e)</code></td>
+<td><code>void offerFirst(E e)</code></td>
+<td>在集合首部添加元素</td>
+</tr>
+<tr>
+<td><code>void addLast(E e)</code></td>
+<td><code>void offerLast(E e)</code></td>
+<td>在集合尾部添加元素</td>
+</tr>
+<tr>
+<td><code>E getFirst()</code></td>
+<td><code>E peekFirst()</code></td>
+<td>获取集合首部元素</td>
+</tr>
+<tr>
+<td><code>E getLast()</code></td>
+<td><code>E peekLast()</code></td>
+<td>获取集合尾部元素</td>
+</tr>
+<tr>
+<td><code>E removeFirst()</code></td>
+<td><code>E pollFirst()</code></td>
+<td>移除集合首部元素</td>
+</tr>
+<tr>
+<td><code>E removeLast()</code></td>
+<td><code>E pollLast()</code></td>
+<td>移除集合尾部元素</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>获取和移除<ul>
+<li>原<ul>
+<li>如果链表为空,抛出<code>NoSuchElementException</code></li>
+</ul>
+</li>
+<li>jdk6<ul>
+<li>如果链表为空,返回null</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><ul>
+<li>线程安全</li>
+<li><code>void addElement(E e)</code></li>
+<li><code>Enumeration&lt;E&gt; elements()</code></li>
+</ul>
+<h1 id="interface-Set"><a href="#interface-Set" class="headerlink" title="interface Set"></a>interface Set</h1><h2 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>存取无序(存入和取出的顺序不一致)</li>
+<li>元素唯一(元素不可以重复)</li>
+</ul>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><h3 id="唯一"><a href="#唯一" class="headerlink" title="唯一"></a>唯一</h3><ul>
+<li>元素要存入HashSet必须覆盖<code>hashCode()</code>和<code>equals()</code>方法</li>
+<li><strong>哈希表判断元素是否相同</strong><ol>
+<li>判断两个元素的哈希值是否相同<ul>
+<li>使用的是对象的<code>hashCode()</code>方法</li>
+<li>如果哈希值不同，说明元素不相同。不用再判断equals了</li>
+</ul>
+</li>
+<li>如果哈希值相同，则判断内容是否相同<ul>
+<li>使用<code>equals()</code>方法</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>存取有序</li>
+<li>元素唯一</li>
+</ul>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><h3 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>存取无序</li>
+<li>元素唯一</li>
+<li>元素排序</li>
+</ul>
+<h4 id="唯一-1"><a href="#唯一-1" class="headerlink" title="唯一"></a>唯一</h4><ul>
+<li>保证元素唯一是根据比较方法来判断的。</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><ol>
+<li>存入的元素具有比较性<ul>
+<li>元素实现<code>Comparable</code>接口<ul>
+<li>覆写<code>compareTo()</code>方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>集合具有比较性<ul>
+<li>创建一个比较器类实现<code>Comparator</code>接口</li>
+<li>创建集合时传入比较器类。<ul>
+<li>如果传入比较器，则会优先使用比较器，而不使用元素本身的比较性。</li>
+<li>这样我们可以利用自定义的比较器(元素比较时如果=0，返回一个非0的数)，就可以添加相同的元素。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="interface-Map"><a href="#interface-Map" class="headerlink" title="interface Map"></a>interface Map</h1><ul>
+<li><strong>增</strong><ul>
+<li><code>value put(key,value)</code><ul>
+<li>若key已存在返回与key关联的value</li>
+<li>若key不存在返回null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>删除</strong><ul>
+<li><code>value remove(key)</code></li>
+<li><code>void clear()</code></li>
+</ul>
+</li>
+<li><strong>判断</strong><ul>
+<li><code>boolean containsKey(key)</code></li>
+<li><code>boolean containsValue(value)</code></li>
+<li><code>boolean isEmpty()</code></li>
+</ul>
+</li>
+<li><strong>获取</strong><ul>
+<li><code>value get(key)</code><ul>
+<li>若key不存在，返回null</li>
+<li>可以通过返回null判断是否包含指定key</li>
+</ul>
+</li>
+<li><code>int size()</code></li>
+</ul>
+</li>
+<li><strong>迭代</strong><ul>
+<li><code>Set&lt;k&gt; keySet()</code></li>
+<li><code>Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet()</code><ul>
+<li><code>Map.Entry</code>是内部类接口的形式。</li>
+</ul>
+</li>
+<li><code>Collection&lt;E&gt; values()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><ul>
+<li>对键进行排序</li>
+</ul>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><ul>
+<li>不同步</li>
+<li><code>null</code>可以作为键，作为值</li>
+</ul>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><ul>
+<li>键存取有序</li>
+</ul>
+<h2 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h2><ul>
+<li>同步</li>
+<li><code>null</code>不能作为键，也不能作为值</li>
+</ul>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>Properties 类表示了一个持久的属性集。</li>
+<li>Properties 可保存在流中或从流中加载。</li>
+<li>属性列表中的键和值都是字符串。</li>
+<li>通常用于操作以键值对形式存在的配置文件。</li>
+</ul>
+<h4 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><code>String getProperty(String key)</code><ul>
+<li>根据键获取值</li>
+</ul>
+</li>
+<li><code>Set&lt;String&gt; stringPropertyNames()</code><ul>
+<li>jdk1.6</li>
+<li>获取键的set集合 </li>
+</ul>
+</li>
+<li><code>Object setProperty(String key, String value)</code><ul>
+<li>设置键值，调用的是Hashtable的put方法</li>
+</ul>
+</li>
+<li><code>Enumeration&lt;?&gt; propertyNames()</code><ul>
+<li>获取键的枚举</li>
+</ul>
+</li>
+<li><code>void list(PringtStream out)</code><ul>
+<li>将集合的数据输出到指定的输出流<ul>
+<li>如<code>prop.list(System.out)</code>即输出到控制台</li>
+</ul>
+</li>
+<li>常用于调试</li>
+</ul>
+</li>
+<li><code>void list(PrintWriter out)</code></li>
+</ul>
+<h4 id="流相关方法"><a href="#流相关方法" class="headerlink" title="流相关方法"></a>流相关方法</h4><ul>
+<li><strong>写</strong><ul>
+<li><code>void store(OutputStream out, String comments)</code><ul>
+<li>comments<ul>
+<li>描述</li>
+<li>别写中文，使用的是iso8859-1会把非其它文字转16进制码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>void store(Writer writer, String comments)</code></li>
+</ul>
+</li>
+<li><strong>读</strong><ul>
+<li><code>void load(InputStream inStream)</code></li>
+<li><code>void load(Reader reader)</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><ul>
+<li><code>static String toString(数组)</code><ul>
+<li><code>[a,b,c...]</code>格式打印数组</li>
+</ul>
+</li>
+<li><code>static void sort(数组)</code><ul>
+<li>对数组排序</li>
+</ul>
+</li>
+<li><code>static int binarySearch(数组, key)</code><ul>
+<li>返回<code>-插入点-1</code></li>
+</ul>
+</li>
+<li><code>static Collecation asList(...)</code><ul>
+<li>注意<ol>
+<li>数组长度固定，所以转成的集合的增删方法不能使用。</li>
+<li>集合中只能存储引用数据类型，所以<ul>
+<li>如果数组中的元素是引用类型，会将数组中的元素作为集合的元素存入集合。</li>
+<li>如果数组中的元素是基本类型，会将数组作为集合的元素存入集合。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><ul>
+<li><code>static  void sort(List list,[Comparator c])</code></li>
+<li><code>static void swap(List list,int i,int j)</code></li>
+<li><code>static int binarySearch(List list,T key,[Comparator c])</code></li>
+<li><code>static T max(Collection c)</code></li>
+<li><code>static void reverse(List list)</code></li>
+<li><code>static void shuffle(List list)</code><ul>
+<li>随机洗牌</li>
+</ul>
+</li>
+<li><code>static Comparator reverseOrder([Comparator c])</code><ul>
+<li>返回一个比较器，逆转顺序</li>
+</ul>
+</li>
+<li><code>static boolean replaceAll(List list,T oldVal,T newVal)</code></li>
+<li><code>static Collection synchronizedCollection(Collection c)</code><ul>
+<li>将非同步集合转为同步集合</li>
 </ul>
 </li>
 </ul>
@@ -900,7 +3459,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-23 15:47:58" itemprop="dateModified" datetime="2018-11-23T15:47:58+08:00">2018-11-23</time>
+                <time title="修改时间：2019-03-08 14:28:10" itemprop="dateModified" datetime="2019-03-08T14:28:10+08:00">2019-03-08</time>
               
             
           </span>
@@ -917,7 +3476,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -1563,6 +4122,245 @@
 </ul>
 </li>
 </ul>
+<h1 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h1><h2 id="DateFormat"><a href="#DateFormat" class="headerlink" title="DateFormat"></a>DateFormat</h2><ul>
+<li><code>static DateFormat getDateInstance([int style])</code></li>
+<li><code>static DateFormat getDateTimeInstance([int dateStyle,int timeStyle])</code></li>
+<li><code>String format(Date date)</code><ul>
+<li>日期→字符串</li>
+</ul>
+</li>
+<li><code>Date parse(String date)</code><ul>
+<li>字符串→日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h3><h1 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h1><ul>
+<li><code>static Calendar getInstance()</code></li>
+<li><code>int get(int field)</code></li>
+<li><code>abstract void add(int field,int amount)</code><ul>
+<li>amount<ul>
+<li>我的理解是当前字段的偏移量</li>
+<li>比如字段是<code>MONTH</code><ul>
+<li>amount=0表示当前月</li>
+<li>amount=1表示当前月+1即下个月</li>
+<li>amount=-1表示当前月-1即上个月</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>void set(int field, int value)</code><ul>
+<li>将给定的日历字段设置为给定值</li>
+<li>set 表示直接设值 不考虑原来的时间值</li>
+<li>add 表示在原有的基础上进行加减</li>
+</ul>
+</li>
+</ul>
+<h1 id="jdk8的日期"><a href="#jdk8的日期" class="headerlink" title="jdk8的日期"></a>jdk8的日期</h1><ul>
+<li>新的日期API类都是final修饰而不可变的，如果遇到加减运算及格式化操作，本质上会创建新的实例。</li>
+<li>新的API操作都是线程安全的</li>
+</ul>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><ul>
+<li><code>java.time</code><ul>
+<li>基础包，使用标准的iso-8601历法</li>
+</ul>
+</li>
+<li><code>java.time.chrono</code><ul>
+<li>使用一些非标准的历法（中华民国历法(辛亥革命)，泰国佛教历法…）</li>
+</ul>
+</li>
+<li><code>java.time.formate</code><ul>
+<li>包含能够格式化和解析日期时间对象的类</li>
+<li>在绝大多数情况下，我们不应该直接使用它们，因为 java.time 包中相应的类已经提供了格式化和解析的方法</li>
+</ul>
+</li>
+<li><code>java.time.temporal</code><ul>
+<li>包含一些时态对象，用于找出特定时间和日期（如某月第一天）</li>
+</ul>
+</li>
+<li><code>java.time.zone</code><ul>
+<li>包含支持不同时区以及相关规定的类</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h2><ul>
+<li><code>toString()</code><ul>
+<li>默认格式<code>yyyy-MM-dd</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>static LoaclDate now()</code><ul>
+<li>从<code>system clock</code>和默认的时区获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate now(Clock clock)</code><ul>
+<li>从指定的clock获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate now(ZoneId zone)</code><ul>
+<li>指定的时区id获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate of(int year, int month, int dayOfMonth)</code><ul>
+<li>从指定的year, month and day获取LocalDate实例</li>
+</ul>
+</li>
+<li><code>static LoaclDate of(int year, Month month, int dayOfMonth)</code><ul>
+<li>Month中是枚举</li>
+</ul>
+</li>
+<li><code>static LoaclDate ofEpochDay(long epochDay)</code><ul>
+<li>就是<code>1970-01-01</code>加上传入的天数<code>epochDay</code></li>
+</ul>
+</li>
+<li><code>static LoaclDate ofYearDay(int year, int dayOfYear)</code><ul>
+<li>根据指定的year和当年的第几天获取LocalDate实例</li>
+</ul>
+</li>
+</ul>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><ul>
+<li><code>plus(long amountToAdd, TemporalUnit unit)</code></li>
+<li><code>plus(TemporalAmount amountToAdd)</code></li>
+<li><code>plusDays(long daysToAdd)</code></li>
+<li><code>plusWeeks(long weeksToAdd)</code></li>
+<li><code>plusMonths(long monthsToAdd)</code></li>
+<li><code>plusYears(long yearsToAdd)</code></li>
+<li><strong>minus同plus</strong></li>
+</ul>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><ul>
+<li><code>String format(DateTimeFormatter formatter)</code><ul>
+<li>日期转成指定格式的字符串</li>
+</ul>
+</li>
+<li><code>static LocalDate parse(CharSequence text)</code><ul>
+<li>将字符串转成<code>yyyy-MM-dd</code>格式的日期，必须是<code>yyyy-MM-dd</code>格式的字符串</li>
+</ul>
+</li>
+<li><code>static LocalDate parse(CharSequence text, DateTimeFormatter formatter)</code><ul>
+<li>将指定格式的字符串转成<code>yyyy-MM-dd</code>格式的日期</li>
+<li>有内置的格式，也可以自定义<ul>
+<li><code>DateTimeFormatter.ofPattern(自定格式)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取-2"><a href="#获取-2" class="headerlink" title="获取"></a>获取</h3><ul>
+<li><code>Period until(ChronoLocalDate endDateExclusive)</code><ul>
+<li>获取日期直接的差值</li>
+</ul>
+</li>
+<li><code>long until(Temporal endExclusive, TemporalUnit unit)</code></li>
+<li><code>with(TemporalAdjuster adjuster)</code></li>
+<li><code>with(TemporalField field, long newValue)</code></li>
+<li><code>withDayOfMonth(int dayOfMonth)</code><ul>
+<li>取本月第几天</li>
+</ul>
+</li>
+<li><code>withDayOfYear(int dayOfYear)</code></li>
+<li><code>withMonth(int month)</code></li>
+<li><code>withYear(int year)</code></li>
+</ul>
+<h4 id="TemporalAdjuster"><a href="#TemporalAdjuster" class="headerlink" title="TemporalAdjuster"></a>TemporalAdjuster</h4><ul>
+<li>时间矫正器</li>
+<li><code>TemporalAdjusters</code><ul>
+<li>工具类 用于获取TemporalAdjuster</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h2><ul>
+<li><code>toString()</code><ul>
+<li>默认格式<code>HH:mm:ss.SSS</code></li>
+<li><code>SSS</code><ul>
+<li>毫秒数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本用法同LocalDate</li>
+<li><code>withNano(0)</code><ul>
+<li>去除毫秒数</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h2><ul>
+<li><code>static LocalDateTime ofInstant(Instant instant, ZoneId zone)</code><ul>
+<li>将instant按指定zone转换为LocalDateTime</li>
+</ul>
+</li>
+</ul>
+<h2 id="Instant"><a href="#Instant" class="headerlink" title="Instant"></a>Instant</h2><ul>
+<li>用在机器可读的时间格式上的，它以 Unix 时间戳的形式存储日期时间</li>
+<li>本质是一个数字时间戳，底层实际上是对System.currentTimeMillis()进行了包装</li>
+<li>以unix元年：1970-1-1 00:00:00 到某个时间的毫秒值</li>
+<li><code>Instant now()</code><ul>
+<li>默认获取UTC时区</li>
+</ul>
+</li>
+<li><code>long toEpochMilli()</code><ul>
+<li>转成毫秒</li>
+</ul>
+</li>
+</ul>
+<h2 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h2><ul>
+<li>定义了许多的格式</li>
+</ul>
+<h2 id="Clock"><a href="#Clock" class="headerlink" title="Clock"></a>Clock</h2><ul>
+<li>时钟提供给我们用于访问某个特定 时区的 瞬时时间、日期 和 时间的</li>
+<li><code>Clock c1 = Clock.systemUTC()</code><ul>
+<li>系统默认UTC时钟</li>
+<li>当前瞬时时间 System.currentTimeMillis()</li>
+</ul>
+</li>
+<li><code>Clock c2 = Clock.systemDefaultZone()</code><ul>
+<li>系统默认时区时钟</li>
+</ul>
+</li>
+<li><code>Clock c3 = Clock.system(ZoneId.of(&quot;Asia/Shanghai&quot;))</code><ul>
+<li>上海时区时钟</li>
+<li>注意每次调用将返回当前瞬时时区(UTC)</li>
+</ul>
+</li>
+<li><code>Clock c4 = Clock.fixed(Instant.now(), ZoneId.of(&quot;Asia/Shanghai&quot;))</code><ul>
+<li>固定上海时区时钟</li>
+</ul>
+</li>
+</ul>
+<h2 id="Period"><a href="#Period" class="headerlink" title="Period"></a>Period</h2><ul>
+<li>计算两个日期之间的间隔</li>
+<li>也可以直接使用日期中的<code>until()</code>完成</li>
+<li><code>static Period between(LocalDate startDate, LocalDate endDate)</code> </li>
+<li><code>getDays()</code></li>
+<li><code>getMonths()</code></li>
+</ul>
+<h2 id="Druation"><a href="#Druation" class="headerlink" title="Druation"></a>Druation</h2><ul>
+<li>计算两个日期时间之间的间隔</li>
+<li><code>static Duration between(Temporal start, Temporal end)</code></li>
+<li><code>getNano()</code></li>
+<li><code>toMilliis()</code></li>
+<li><code>getSeconds()</code></li>
+</ul>
+<h2 id="ZoneDate-ZoneTime-ZoneDateTime"><a href="#ZoneDate-ZoneTime-ZoneDateTime" class="headerlink" title="ZoneDate/ZoneTime/ZoneDateTime"></a>ZoneDate/ZoneTime/ZoneDateTime</h2><h2 id="旧的日期支持"><a href="#旧的日期支持" class="headerlink" title="旧的日期支持"></a>旧的日期支持</h2><ul>
+<li><code>Instant timestamp = new Date().toInstant()</code><ul>
+<li>Date to Instant</li>
+<li>然后可以把Instant转换为LocalDateTime</li>
+</ul>
+</li>
+<li><code>Date dt = Date.from(Instant.now())</code><ul>
+<li>Instant to Date</li>
+</ul>
+</li>
+<li><code>Instant time = Calendar.getInstance().toInstant()</code><ul>
+<li>Calendar to Instant</li>
+</ul>
+</li>
+<li><code>ZoneId defaultzone = Timezone.getDefault().toZoneId()</code><ul>
+<li>TimeZone to ZoneId</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -1683,7 +4481,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-22 22:15:33" itemprop="dateModified" datetime="2018-11-22T22:15:33+08:00">2018-11-22</time>
+                <time title="修改时间：2019-03-08 14:27:35" itemprop="dateModified" datetime="2019-03-08T14:27:35+08:00">2019-03-08</time>
               
             
           </span>
@@ -1700,7 +4498,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -1850,366 +4648,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/xd-异常/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/05/xd-异常/" itemprop="url">
-                  xd-异常
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-05 17:14:49" itemprop="dateCreated datePublished" datetime="2018-11-05T17:14:49+08:00">2018-11-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-20 21:43:08" itemprop="dateModified" datetime="2018-12-20T21:43:08+08:00">2018-12-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h1><ul>
-<li>Throwable<ul>
-<li>Error</li>
-<li>Exception<ul>
-<li>RuntimeException</li>
-<li>编译时异常</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="编译时异常-amp-运行时异常"><a href="#编译时异常-amp-运行时异常" class="headerlink" title="编译时异常 &amp; 运行时异常"></a>编译时异常 &amp; 运行时异常</h1><ul>
-<li><strong>检查和非检查是对于javac来说的</strong></li>
-</ul>
-<h2 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
-<li>检查异常（checked exception）</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>Java程序必须显示处理，否则程序就会发生错误，无法通过编译</li>
-<li>抛出时必须声明</li>
-</ul>
-<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><ul>
-<li>除了Error 和 RuntimeException的其它异常。javac强制要求程序员为这样的异常做预备处理工作（使用try…catch…finally或者throws）。在方法中要么用try-catch语句捕获它并处理，要么用throws子句声明抛出它，否则编译不会通过。这样的异常一般是由程序的运行环境导致的。因为程序可能被运行在各种未知的环境下，而程序员无法干预用户如何使用他编写的程序，于是程序员就应该为这样的异常时刻准备着。如SQLException , IOException 等。</li>
-</ul>
-<h2 id="运行时异常"><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
-<li>非检查异常（unckecked exception）</li>
-</ul>
-<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>无需显示处理，也可以和编译时异常一样处理</li>
-<li>抛出时可以不用声明</li>
-</ul>
-<h3 id="释义-1"><a href="#释义-1" class="headerlink" title="释义"></a>释义</h3><ul>
-<li>Error 和 RuntimeException 以及他们的子类。javac在编译时，不会提示和发现这样的异常，不要求在程序处理这些异常。所以如果愿意，我们可以编写代码处理（使用try…catch…finally）这样的异常，也可以不处理。对于这些异常，我们应该修正代码，而不是去通过异常处理器处理 。这样的异常发生的原因多半是代码写的有问题。如除0错误ArithmeticException，错误的强制类型转换错误ClassCastException，数组索引越界ArrayIndexOutOfBoundsException，使用了空对象NullPointerException等等。</li>
-</ul>
-<h2 id="区别-安"><a href="#区别-安" class="headerlink" title="区别(安)"></a>区别(安)</h2><ul>
-<li>编译时异常<ul>
-<li>程序逻辑没有错误，但是你可能会访问不存在的端口，文件..必须处理才能编译通过。</li>
-<li>未雨绸缪异常</li>
-<li>我觉得就是程序写的没问题，但是不健壮，你无法保证用户的运行环境，你不能因为用户写错了一个地址就让程序终止，而应该有此方面的相应处理，如果用户写错了，程序怎么怎么样。</li>
-</ul>
-</li>
-<li>运行时异常<ul>
-<li>程序有问题，比如除了0，角标越界，空指针.</li>
-<li>程序员所犯的错误,需要回来修改代码</li>
-</ul>
-</li>
-</ul>
-<h1 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h1><h2 id="运行时异常-1"><a href="#运行时异常-1" class="headerlink" title="运行时异常"></a>运行时异常</h2><ul>
-<li>ClassCastException<ul>
-<li>类型转换异常</li>
-</ul>
-</li>
-<li>ArithmeticException<ul>
-<li>当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。</li>
-</ul>
-</li>
-<li>NullPointerException<ul>
-<li>空指针异常</li>
-</ul>
-</li>
-<li>illegaArguementException<ul>
-<li>参数传递异常</li>
-</ul>
-</li>
-<li>IndexOutOfBoundsException<ul>
-<li>数组索引越界异常</li>
-</ul>
-</li>
-<li>ConcurrentModificationException<ul>
-<li>并发修改异常</li>
-<li>遍历集合时对集合修改会发生次异常</li>
-</ul>
-</li>
-<li>NoSuchElementException<ul>
-<li>由 Enumeration 的 nextElement 方法抛出，表明枚举中没有更多的元素。</li>
-</ul>
-</li>
-</ul>
-<h2 id="编译时异常-1"><a href="#编译时异常-1" class="headerlink" title="编译时异常"></a>编译时异常</h2><ul>
-<li>ClassNotFoundException</li>
-<li>DateFormatException</li>
-<li>FileNotFoundException</li>
-<li>NoSuchMethodException</li>
-<li>NoSuchFieldException</li>
-<li>IOException</li>
-<li>SQLException</li>
-</ul>
-<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><ul>
-<li>NoClassDefFoundError</li>
-<li>OutOfMemoryError</li>
-</ul>
-<h1 id="Throwable的几个常见方法"><a href="#Throwable的几个常见方法" class="headerlink" title="Throwable的几个常见方法"></a>Throwable的几个常见方法</h1><ul>
-<li><code>getMessage()</code><ul>
-<li>获取异常信息，返回字符串。</li>
-</ul>
-</li>
-<li><code>toString()</code><ul>
-<li>获取异常类名和异常信息，返回字符串。</li>
-</ul>
-</li>
-<li><code>printStackTrace()</code><ul>
-<li>获取异常类名和异常信息，以及异常出现在程序中的位置。返回值void。</li>
-</ul>
-</li>
-</ul>
-<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><ol>
-<li>继承Exception</li>
-<li>继承RuntimeException</li>
-</ol>
-<h1 id="继承中的异常"><a href="#继承中的异常" class="headerlink" title="继承中的异常"></a>继承中的异常</h1><ul>
-<li>子类重写父类方法时，子类的方法必须抛出相同的异常或父类异常的子类。</li>
-<li>如果父类抛出了多个异常,子类重写父类时,只能抛出相同的异常或者是他的子集,子类不能抛出父类没有的异常</li>
-<li>如果被重写的方法没有异常抛出,那么子类的方法绝对不可以抛出异常,如果子类方法内有异常发生,那么子类只能try,不能throws</li>
-</ul>
-<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="JVM默认是如何处理异常的"><a href="#JVM默认是如何处理异常的" class="headerlink" title="JVM默认是如何处理异常的"></a>JVM默认是如何处理异常的</h2><ol>
-<li>某个方法发生异常<ul>
-<li>jvm会根据异常产生的原因创建一个异常对象（包含内容.原因.位置）</li>
-<li>如果此方法自己处理则处理后决定是否继续执行</li>
-<li>如果方法没有处理，则jvm会把异常对象抛给此方法的调用者main方法</li>
-</ul>
-</li>
-<li>main函数收到异常时<ul>
-<li>自己将该问题处理,然后继续运行</li>
-<li>自己没有针对的处理方式,只有交给调用main的jvm来处理</li>
-</ul>
-</li>
-<li>jvm有一个默认的异常处理机制<ul>
-<li><code>printStackTrace()</code></li>
-<li>将该异常的名称,异常的信息.异常出现的位置打印在了控制台上,同时将程序停止运行</li>
-</ul>
-</li>
-</ol>
-<h2 id="异常处理的原则"><a href="#异常处理的原则" class="headerlink" title="异常处理的原则"></a>异常处理的原则</h2><ul>
-<li>如果功能内部可以将问题处理，则捕获异常<ul>
-<li><code>try</code></li>
-</ul>
-</li>
-<li>如果处理不了，则抛出异常，交由调用者处理<ul>
-<li><code>throws</code></li>
-</ul>
-</li>
-</ul>
-<h1 id="try-amp-throw-amp-throws"><a href="#try-amp-throw-amp-throws" class="headerlink" title="try &amp; throw &amp; throws"></a>try &amp; throw &amp; throws</h1><h2 id="try"><a href="#try" class="headerlink" title="try"></a>try</h2><ul>
-<li>try…catch用于捕获异常 处理之后，程序可以继续运行。</li>
-<li><p>多catch时，大异常要在后边。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try(</span><br><span class="line">	code;</span><br><span class="line">) catch(Exception e) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>try中的code发生异常相当于创建了一个异常对象，然后赋值给catch后边括号中的变量(即用catch中的异常变量接收)</p>
-<ul>
-<li><code>new Exception();</code></li>
-<li><code>Exception e = new Exception();</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><ul>
-<li>用来抛出一个具体的异常类型对象<ul>
-<li>抛出编译时异常<ol>
-<li>用try…catch捕获</li>
-<li>用throws声明</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>用在方法中</li>
-<li>后跟异常对象，且只能一个</li>
-<li>可以单独使用，也可以结合catch使用</li>
-<li>throw 跟return一样结束程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">throw new RuntimeException()</span><br><span class="line">或</span><br><span class="line">Exception e = new Exception();</span><br><span class="line">throw e</span><br><span class="line">前者相当于抛了一个匿名对象</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><ul>
-<li>用来声明一个方法可能产生的所有异常</li>
-<li>用在方法上</li>
-<li>后跟异常类名，可以多个，用逗号隔开</li>
-<li>表示此方法不处理异常，而交给方法调用处进行处理</li>
-</ul>
-<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ul>
-<li>如果catch里面有return语句，finally的代码还会执行吗? 如果会，是在return前还是return后。<ul>
-<li>会执行，前。（准确说是中间）</li>
-<li>(安)<ul>
-<li>执行到了return,已经把要return的值准备好了。这时先去执行finally中的代码,然后再return。</li>
-<li>就算finally中改变了要return的值。结果也不会改变.因为return的值已经缓存好了，改变了也没用。</li>
-<li>但是如果finally中也return一个值，那么最后是finally的值</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/xd-面向对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2273,7 +4711,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-14 01:35:59" itemprop="dateModified" datetime="2018-12-14T01:35:59+08:00">2018-12-14</time>
+                <time title="修改时间：2019-03-08 14:26:57" itemprop="dateModified" datetime="2019-03-08T14:26:57+08:00">2019-03-08</time>
               
             
           </span>
@@ -2290,7 +4728,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -2902,7 +5340,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-13 22:57:16" itemprop="dateModified" datetime="2018-12-13T22:57:16+08:00">2018-12-13</time>
+                <time title="修改时间：2019-03-08 14:25:46" itemprop="dateModified" datetime="2019-03-08T14:25:46+08:00">2019-03-08</time>
               
             
           </span>
@@ -2919,7 +5357,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -3286,617 +5724,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/xd-编码进制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/02/xd-编码进制/" itemprop="url">
-                  xd-编码进制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-02 13:24:35 / 修改时间：16:18:44" itemprop="dateCreated datePublished" datetime="2018-11-02T13:24:35+08:00">2018-11-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>我认为进制其实就是一种规则，进制的数其实是同一个数在不同规则下的表现形式。</li>
-<li>一个数3之所以为3，其实是人们赋予它的意义。当初为何3就是如今我们所认为的3的意思呢？为何当初没用3表示八个的意思呢？就好比语言和文字，其实其意义都是人们赋予的。(-_-有点扯远了。。。)</li>
-<li>根据现有数字的意义，我们完全可以得出任意进制，只是我们习惯了十进制。或许是因为方便?</li>
-</ul>
-<h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><ul>
-<li>十进制由<code>0~9</code>组成，并且<code>逢十进一</code>，不难得出一进制由<code>0</code>组成，并且<code>逢一进一</code>，二进制由<code>0~1</code>组成，并且<code>逢二进一</code>，……，n进制由<code>0~n-1</code>组成，并且<code>逢n进一</code>(超过十进制以后，用字母表示。)</li>
-<li>则十进制的数对应的一进制如下<ul>
-<li><code>0</code>==<code>0</code></li>
-<li><code>1</code>==<code>00</code></li>
-<li><code>2</code>==<code>000</code></li>
-<li><code>...</code></li>
-</ul>
-</li>
-<li>二进制<ul>
-<li><code>0</code>==<code>0</code></li>
-<li><code>1</code>==<code>1</code></li>
-<li><code>2</code>==<code>10</code></li>
-<li><code>...</code></li>
-</ul>
-</li>
-<li>可以看出一个数，我们可以用不同的进制来表示。日常中所遇到的数字只是人们达成的一个共识，都把那个数视为十进制的数。你要不嫌麻烦，你完全可以用一进制的101个0来表示100.</li>
-</ul>
-<h2 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h2><ul>
-<li>x进制→十进制<ul>
-<li><code>abcd</code></li>
-<li>十进制=d<em>x<sup>0</sup>+c</em>x<sup>1</sup>+b<em>x<sup>2</sup>+a</em>x<sup>3</sup>          </li>
-</ul>
-</li>
-<li>十进制→x进制<ul>
-<li><code>abcd</code></li>
-<li>abcd不断除以x倒取余</li>
-</ul>
-</li>
-</ul>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
-<li>为何计算机只识别二进制?<ul>
-<li>好像跟电气工程有关系，开关之类的。历史原因？技术原因？查资料。。。</li>
-</ul>
-</li>
-<li>为何常用二，八，十，十六进制?<ul>
-<li>二，十不必多言。</li>
-<li>我猜想，搞计算机就离不开二进制，可二进制位数太多很不方便，可以用一个其它进制来表示，而随便选一个进制又不太合适，那就这样，二进制不是位数多吗，那就截取，比如一个16位的二进制数<ul>
-<li>每三位截取一下，就变成<code>1 3 3 3</code>，然后每三位算出对应的十进制数(不足三位前边补0)，这样数字不就变短了吗。<ul>
-<li>因为3位二进制能表示的最大数<code>111</code>对应的十进制是<code>7</code>，最小<code>000</code>对应的十进制是<code>0</code>，即新得出的数每一位都是由<code>0~7</code>组成，所以这就是八进制</li>
-</ul>
-</li>
-<li>如果嫌八进制还是长，那就每四位截取一下，就是十六进制。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h1><h2 id="2-1-前言"><a href="#2-1-前言" class="headerlink" title="2.1 前言"></a>2.1 前言</h2><ul>
-<li>计算机只能识别二进制数据。在计算机内部，所有的信息最终都表示为一个二进制的字符串。</li>
-</ul>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="编码是什么？"><a href="#编码是什么？" class="headerlink" title="编码是什么？"></a>编码是什么？</h3><ul>
-<li>我们先假设没有编码，那么计算机存储的应该就是10组成的数字，我们打开电脑，不管是文字，还是图片，音乐，视频，都应该是10数字。很显然，我们看不懂。</li>
-<li>古时候，二军传递信息，或者江湖门派传递信息。害怕敌人拦截信件后获取秘密，就使用密信，你拿到信，你也看不懂。这个过程怎么实现呢？<ul>
-<li>现在假如有一本书《九阴真经》，传信双方都有。</li>
-<li>我给你信这么写<code>页数，行数，第几个字</code>组成一个数，通篇都这么写，别人能看懂就见鬼了，你拿到信，在《九阴真经》一查，就知道什么意思了。</li>
-</ul>
-</li>
-<li>现在假如我们有这样一本《九阴真经》，这本《九阴真经》内容是一张表，这张表有个对应关系，<code>a~z</code>对应一个不同的二进制数。<ul>
-<li>我们想往计算机写个单词<code>fuck</code>，可计算机不认识啊，还好我们有《九阴真经》，让计算机查一下书，就能找到对应的二进制数，这样计算机就认识了。</li>
-<li>那我们存过了，我们看的时候不想看到10数，想看到<code>fuck</code>。那也简单，计算机给我们显示的时候，也让它先查一下书，就能通过二进制数查到对应的英文单词，这样就把<code>fuck</code>给我们显示出来了。</li>
-</ul>
-</li>
-<li>这本书就叫做码表。码表其实就是一个计算机看懂的二进制与人类看得懂的文字之间的对应关系。<ul>
-<li>再举个例子，就是我懂汉语，你懂英语，码表就是汉英英汉双解字典。</li>
-</ul>
-</li>
-<li>编码<ul>
-<li>文字查看码表变成二进制数字的过程</li>
-</ul>
-</li>
-<li>解码<ul>
-<li>二进制数字查看码表变成文字的过程</li>
-</ul>
-</li>
-</ul>
-<h2 id="Ascii"><a href="#Ascii" class="headerlink" title="Ascii"></a>Ascii</h2><ul>
-<li>美国信息交换标准代码表<br><img src="https://gitee.com/3noanswer/pics/raw/master/ASCII.jpg" alt=""></li>
-<li>美国佬为了实现人机交互，把一些符号，英文大小写统统用八位二进制组成的数一一对应。形成的表就是Ascii码表<ul>
-<li>八位二进制最多能表示256个(八位01排列组合，算不出来的复习一下数学。)</li>
-<li>可以看到，Ascii只用了7位就表示完了，第8位都是<code>0</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Iso8859-1"><a href="#Iso8859-1" class="headerlink" title="Iso8859-1"></a>Iso8859-1</h2><ul>
-<li>单字节编码。别名latin1。一个字节的8位表示。</li>
-<li>拉丁码表 欧洲码表。</li>
-<li>ISO-8859-1编码范围使用了单字节内的所有空间，前128与ASCII码一样。换言之，就是ISO-8859-1把ASCII码没用到的单字节空间利用了。</li>
-</ul>
-<h2 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h2><ul>
-<li>我们也想和计算机交互，但是中国文化博大精深，汉字太多了，一个字节跟本表示不完，于是我们用两个字节来表示一个汉字。</li>
-<li>理论上最多可以表示256×256=65536个</li>
-<li>GB2312是简体中文。GBK简繁+特殊。</li>
-<li>后来发现还是不够，这是后话。。。</li>
-</ul>
-<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><ul>
-<li>现在就有个问题，像前边的例子，我们写信查的是《九阴真经》，拿到信用《金瓶梅》去解，那肯定驴头不对马嘴。</li>
-<li>二进制数是不会变得，可对应的东西不同的码表就不一样了。小日本用日本码表写个东西，我们用gbk打开肯定凉凉啊。世界上有这么多不同的语言文字，就有那么多的码表，我们打开一个文件，首先要知道它的码表，否则就乱码。这就很不方便。</li>
-<li>假如有这样一个码表，世界上所有的语言文字都包含在内，并且都有一一对应的二进制数。世界上所有人都用这张码表。那也就不存在乱码了。这张码表就是Unicode.</li>
-<li>可想而知，Unicode包含的数目肯定特别大，所以需要三个字节甚至四个字节来表示一个。</li>
-<li>Unicode的问题<ol>
-<li>计算机表示：我有句mmp不知当讲不当讲，如何才能区别unicode和ascii？计算机怎么知道三个字节表示一个符号，而不是分别表示三个符号呢？</li>
-<li>美帝也表示：我也有句mmp一定要讲。哥ASCII码表用的好好的，一个字节绰绰有余。到你这Unicode非得用三四个字节表示。平白无故在前边加了两三个字节的0，存储起来莫名奇妙大了两三倍。我不能忍！</li>
-</ol>
-</li>
-<li>解决<ul>
-<li>Unicode表示：这锅我背了。反正对应表我是搞出来了。怎么存怎么解决问题你们自己决定把。</li>
-<li>UTF-8表示：都闪开让我来。</li>
-</ul>
-</li>
-</ul>
-<h2 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h2><ul>
-<li><strong>UTF-8是Unicode的实现方式之一。</strong></li>
-<li>UTF-8最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</li>
-<li>UTF-8的编码规则<ul>
-<li>对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。</li>
-<li>对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Unicode符号范围</th>
-<th>UTF-8编码方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>(十六进制)</td>
-<td>（二进制）</td>
-</tr>
-<tr>
-<td>0000 0000 ~ 0000 007F</td>
-<td>0xxxxxxx</td>
-</tr>
-<tr>
-<td>0000 0080 ~ 0000 07FF</td>
-<td>110xxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0000 0800 ~ 0000 FFFF</td>
-<td>1110xxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0001 0000 ~ 0010 FFFF</td>
-<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>UTF-8只是一种规则，查的还是Unicode码表<ul>
-<li>编码：根据Unicode表查出符号对应的Unicode码十六进制形式，然后根据utf-8的规则变成utf-8的二进制形式存储。</li>
-<li>解码：根据utf-8的二进制形式逆向得到Unicode的十六进制形式，再根据Unicode码表查出对应的符号。<ul>
-<li>为什么计算机知道这是个utf-8的二进制呢，因为utf-8前边都加的有标识。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
-<li>为何一个字节是8个二进制位<ul>
-<li>（网）所谓字节,原意就是用来表示一个完整的字符的。最初的计算机性能和存储容量都比较差,所以普遍采用4位BCD编码(这个编码出现比计算机还早,最早是用在打孔卡上的)。BCD编码表示数字还可以,但表示字母或符号就很不好用,需要用多个编码来表示。后来又演变出6位的BCD编码(BCDIC),以及至今仍在广泛使用的7位ASCII编码。不过最终决定字节大小的,是大名鼎鼎的System/360。当时IBM为System/360设计了一套8位EBCDIC编码,涵盖了数字、大小写字母和大部分常用符号,同时又兼容广泛用于打孔卡的6位BCDIC编码。System/360很成功,也奠定了字符存储单位采用8位长度的基础,这就是1字节=8位的由来。</li>
-</ul>
-</li>
-</ol>
-<h1 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h1><h2 id="计算机整数的存储"><a href="#计算机整数的存储" class="headerlink" title="计算机整数的存储"></a>计算机整数的存储</h2><ul>
-<li>无符号<ul>
-<li>用全部位存储</li>
-<li>n字节大小<ul>
-<li>0 ~ 2<sup>8n</sup>-1 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>有符号<ul>
-<li>最高位当做符号位 ，其余为表示数值</li>
-<li>n字节大小<ul>
-<li>-2<sup>8n-1</sup> ~ 2<sup>8n-1</sup>-1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="原码-反码-补码"><a href="#原码-反码-补码" class="headerlink" title="原码 反码 补码"></a>原码 反码 补码</h2><h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><ul>
-<li>最高位表示符号位的就是原码</li>
-</ul>
-<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><ul>
-<li>正数和0<ul>
-<li>=原码</li>
-</ul>
-</li>
-<li>负数<ul>
-<li>原码符号位不变，其余位取反</li>
-</ul>
-</li>
-</ul>
-<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><ul>
-<li><ul>
-<li>正数和0<ul>
-<li>=原码</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>负数<ul>
-<li>反码+1</li>
-</ul>
-</li>
-</ul>
-<h3 id="计算机只有加法，没有减法。"><a href="#计算机只有加法，没有减法。" class="headerlink" title="计算机只有加法，没有减法。"></a>计算机只有加法，没有减法。</h3><ul>
-<li><code>1 + (-1) = 0000 0001 + 1000 0001 = 1000 0010 = -2</code><ul>
-<li>很显然不正确，为了避免减法错误，发明了反码。</li>
-</ul>
-</li>
-<li><code>1 + (-1) = 0000 0001(反) + 1111 1110(反) = 1111 1111(反) = 1000 0000(原) = -0</code><ul>
-<li>结果是正确的，可是多余出现了<code>0，-0</code>，于是又发明了补码</li>
-</ul>
-</li>
-<li><code>1 + (-1) = 0000 0001(补) + 1111 1111(补) = 10000 0000(补) = 0000 0000(原) = 0</code><ul>
-<li><code>10000 0000</code>一个字节最多八位，多出的第9位被舍去了。</li>
-</ul>
-</li>
-</ul>
-<h3 id="为何byte大小是-128-127"><a href="#为何byte大小是-128-127" class="headerlink" title="为何byte大小是-128~127"></a>为何byte大小是<code>-128~127</code></h3><ul>
-<li><code>0</code>的原码为<code>0000 0000</code>，<code>-0</code>的原码<code>1000 0000</code>没有用上，<code>-127~127</code>都有一一对应了。剩下了<code>-128</code>和<code>1000 0000</code><ul>
-<li>假如能有9位，那么<code>-128</code>的原码为<code>1 1000 0000</code>，舍去第9位后发现和<code>-0</code>的原码<code>1000 0000</code>一样，所以才可以用<code>-0</code>表示<code>-128</code></li>
-<li><code>byte b = (byte) -129;</code><ul>
-<li><code>sout(b)</code>=127</li>
-<li><code>-129 = 1 1000 0001( 原) = 1 0111 1110(反) = 1 0111 1111(补码)</code><ul>
-<li>byte只有8位，强转后舍去多余位<code>0111 1111(补码) = 0111 1111(原) = 127</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>-128 + (-1) = 127</code>一样的道理<ul>
-<li><code>1000 0000(补) + 1111 1111(补) = 1 0111 1111(补)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/xd-Anki/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/28/xd-Anki/" itemprop="url">
-                  xd-Anki
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-28 00:51:03" itemprop="dateCreated datePublished" datetime="2018-08-28T00:51:03+08:00">2018-08-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-04 16:14:12" itemprop="dateModified" datetime="2019-01-04T16:14:12+08:00">2019-01-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="笔记类型"><a href="#笔记类型" class="headerlink" title="笔记类型"></a>笔记类型</h1><ul>
-<li><strong>问答</strong><ul>
-<li><code>Basic</code></li>
-<li><code>Basic (and reversed card)</code><ul>
-<li>正面+反面显示一遍，之后，反面+正面显示一遍 </li>
-</ul>
-</li>
-<li><code>Basic (optional reversed card)</code><ul>
-<li>=Basic+Basic (and reversed card)</li>
-<li>会出现三次</li>
-</ul>
-</li>
-<li>注<ul>
-<li>可更多次，自行添加</li>
-<li><code>Basic (and reversed card)</code> 和<code>Basic (optional reversed card)</code> 如果只在正面有内容，那么就等于<code>Basic</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>填空</strong><ul>
-<li><code>Cloze</code>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/28/xd-Anki/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -3943,7 +5775,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3968,7 +5800,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

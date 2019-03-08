@@ -303,6 +303,2902 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-WEB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/xd-WEB/" itemprop="url">
+                  xd-WEB
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-25 22:57:57" itemprop="dateCreated datePublished" datetime="2018-12-25T22:57:57+08:00">2018-12-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:38:29" itemprop="dateModified" datetime="2019-03-08T14:38:29+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h1><ul>
+<li>所有的程序运行都需要有一个必要的运行环境。这个环境可以是软件，也可以是硬件，或者是软件和硬件的结合。比如说Windows操作系统需要运行在硬件基础上；Office软件需要运行在操作系统上。并且程序与运行环境之间会有一定的数据交换，比如操作系统会将运行指令传递给硬件，硬件也会将指令运行结果传递给操作系统</li>
+<li>Java Web程序也需要一个运行环境才能够执行。这种运行Java Web程序的环境被称为Web容器，Java Web程序与Web容器之间存在数据交互。</li>
+</ul>
+<h2 id="独立的Java-Web容器"><a href="#独立的Java-Web容器" class="headerlink" title="独立的Java Web容器"></a>独立的Java Web容器</h2><ul>
+<li>在这种容器里面只能运行Web程序，这种容器一般也叫做Web服务器，如Tomcat</li>
+</ul>
+<h2 id="与其他Java-EE容器混合在一起的Web容器"><a href="#与其他Java-EE容器混合在一起的Web容器" class="headerlink" title="与其他Java EE容器混合在一起的Web容器"></a>与其他Java EE容器混合在一起的Web容器</h2><ul>
+<li>Web容器负责运行Web程序，其他容器负责运行EJB等程序，如WebLogic</li>
+</ul>
+<h2 id="web容器与web应用间的数据交互"><a href="#web容器与web应用间的数据交互" class="headerlink" title="web容器与web应用间的数据交互"></a>web容器与web应用间的数据交互</h2><ul>
+<li>web容器接收客户端请求封装<strong>HttpServletRequest</strong>对象，并传递给web应用</li>
+<li>web应用处理请求</li>
+<li>web容器将结果封装到<strong>HttpServletResponse</strong>对象，响应给客户端</li>
+<li>注<ul>
+<li>这两个对象仅存在于Web容器和Web应用当中，与浏览器没有关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat和servlet的区别"><a href="#tomcat和servlet的区别" class="headerlink" title="tomcat和servlet的区别"></a>tomcat和servlet的区别</h2><ul>
+<li>Tomcat 是Web应用服务器,是一个Servlet/JSP容器</li>
+<li>servlet是一种运行在服务器端的Java应用程序</li>
+</ul>
+<h2 id="web应用服务器"><a href="#web应用服务器" class="headerlink" title="web应用服务器"></a>web应用服务器</h2><ul>
+<li><code>tomcat</code><ul>
+<li>支持servlet/jsp规范</li>
+</ul>
+</li>
+<li><code>weblogic</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>websphere</code><ul>
+<li>支持全部j2ee规范</li>
+</ul>
+</li>
+<li><code>jboss</code></li>
+</ul>
+<h1 id="标准JavaWeb应用目录结构"><a href="#标准JavaWeb应用目录结构" class="headerlink" title="标准JavaWeb应用目录结构"></a>标准JavaWeb应用目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyApp  				//项目名</span><br><span class="line">	html,css,js,img... //资源文件</span><br><span class="line">	WEB-INF</span><br><span class="line">		classes	    //.class文件，配置文件</span><br><span class="line">		lib			// jar包</span><br><span class="line">		web.xml		//web配置文件</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明<ul>
+<li>ide中的src目录<ul>
+<li>编译后会存在web-inf下的classes中。</li>
+</ul>
+</li>
+<li>以下三个目录中的文件会直接存在应用下，与web-inf同级，相当于资源文件<ul>
+<li>eclipse中的WebContent目录</li>
+<li>Myeclipse中的WebRoot目录</li>
+<li>intellij中的web目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>Tomcat启动时，需要查找<code>CATALINA_HOME</code>这个环境变量<ul>
+<li>判断<code>CATALINA_HOME</code>环境变量是否为空<ul>
+<li>为空<ul>
+<li>就将当前目录设为CATALINA_HOME的值，接着判断当前目录下是否存在<code>bin\catalina.bat</code>，如果文件不存在，将当前目录的父目录设为<code>CATALINA_HOM</code>E的值，循环，最后如果找不到<code>bin\catalina.bat</code>就报错。</li>
+</ul>
+</li>
+<li>不为空<ul>
+<li>通过这个环境变量调用<code>bin\catalina.bat</code>命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行<code>startup.bat</code>命令，会自动去执行<code>catalina.bat start</code>命令</li>
+</ul>
+<p>##<code>CATALINA_HOME</code>和<code>CATALINA_BASE</code>区别</p>
+<h3 id="CATALINA-HOME"><a href="#CATALINA-HOME" class="headerlink" title="CATALINA_HOME"></a>CATALINA_HOME</h3><ul>
+<li>是Tomcat的安装目录</li>
+<li>类似于<code>JAVA_HOME</code>环境变量</li>
+<li>如果配置了就能在任意路径执行bin目录下的bat或者exe</li>
+<li>通常不配置</li>
+</ul>
+<h3 id="CATALINA-BASE"><a href="#CATALINA-BASE" class="headerlink" title="CATALINA_BASE"></a>CATALINA_BASE</h3><ul>
+<li>是Tomcat的工作目录</li>
+<li>如果CATALINA_BASE没有值的话，它默认的值就是CATALINA_HOME</li>
+</ul>
+<h3 id="tomcat目录"><a href="#tomcat目录" class="headerlink" title="tomcat目录"></a>tomcat目录</h3><ul>
+<li>其中只有 bin 和 lib 目录被多个tomcat示例公用</li>
+<li>其它目录conf、logs、temp、webapps和work 每个Tomcat实例必须拥有其自己独立的备份</li>
+<li>catalina.home(安装目录)：<ul>
+<li>指向公用信息的位置，就是bin和lib的父目录</li>
+</ul>
+</li>
+<li>catalina.base(工作目录)：<ul>
+<li>指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。</li>
+</ul>
+</li>
+<li>仅运行一个Tomcat实例时，这两个属性指向的位置是相同的</li>
+</ul>
+<h3 id="网上自建startup-bat的内容"><a href="#网上自建startup-bat的内容" class="headerlink" title="网上自建startup.bat的内容"></a>网上自建<code>startup.bat</code>的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set &quot;CATALINA_BASE=%cd%&quot;  </span><br><span class="line">set &quot;CATALINA_HOME=D:/save/apache-tomcat-8.0.48&quot;  </span><br><span class="line">set &quot;EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat&quot;  </span><br><span class="line">call &quot;%EXECUTABLE%&quot; start</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>%cd%</code><ul>
+<li>代表当前目录（不太确定）</li>
+</ul>
+</li>
+<li><code>CATALINA_BASE</code>就代表一个tomcat的运行实例<ul>
+<li>包含<code>conf</code>,logs,temp,webapps,work`的目录。</li>
+</ul>
+</li>
+<li><code>CATALINA_HOME</code>代表了一个tomcat，需要tomcat的<code>bin,lib...</code></li>
+<li>启动tomcat后，<code>CATALINA_BASE</code>指向哪个tomcat实例，就运行哪个。<ul>
+<li>比如我有一个tomcat8080，然后再另一个文件夹复制了一个<code>conf</code>并设置端口号为7070</li>
+<li><code>CATALINA_HOME</code>为tomcat8080安装目录，设置<code>CATALINA_BASE</code>为7070对应的目录，那么能访问的是7070而非8080,</li>
+<li><strong>虚拟目录</strong>貌似就是这个原理。</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat部署应用"><a href="#tomcat部署应用" class="headerlink" title="tomcat部署应用"></a>tomcat部署应用</h2><h3 id="部署形式"><a href="#部署形式" class="headerlink" title="部署形式"></a>部署形式</h3><ol>
+<li>项目文件夹</li>
+<li>war包<ul>
+<li>tomcat会自动判断war包并解压。</li>
+</ul>
+</li>
+</ol>
+<h3 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h3><h4 id="一-将项目复制到tomcat-webapps目录下。"><a href="#一-将项目复制到tomcat-webapps目录下。" class="headerlink" title="一 将项目复制到tomcat/webapps目录下。"></a>一 将项目复制到<code>tomcat/webapps</code>目录下。</h4><ul>
+<li>Myeclipse就是这种方式。</li>
+</ul>
+<h4 id="二-虚拟目录"><a href="#二-虚拟目录" class="headerlink" title="二 虚拟目录"></a>二 虚拟目录</h4><ul>
+<li>就是把项目放到其它位置通过一些配置也能一样访问。(安)</li>
+</ul>
+<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><ul>
+<li><p><code>tomcat/conf/server.xml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host&gt;</span><br><span class="line">	&lt;Context docBase=&quot;应用的真实路径&quot; path=&quot;网络访问的虚拟目录名(自定义)&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Eclipse使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不推荐，修改需要重启tomcat</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><ul>
+<li><p><code>tomcat/conf/catalina/localhost</code></p>
+<ul>
+<li>新建<code>虚拟目录名(自定义).xml</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;应用的真实路径&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Intellij使用这种方式</p>
+<ul>
+<li><code>Catalina_Base</code><ul>
+<li><code>Intellij/system/tomcat/</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>支持热部署，修改不用重启tomcat</li>
+<li>如果新建的<code>虚拟目录名</code>为<code>ROOT</code>，则访问时，可以不写<ul>
+<li>Intellij就是这样做的</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomcat的访问"><a href="#tomcat的访问" class="headerlink" title="tomcat的访问"></a>tomcat的访问</h2><ul>
+<li><code>http://ip:端口/应用/资源</code></li>
+</ul>
+<h3 id="默认端口"><a href="#默认端口" class="headerlink" title="默认端口"></a>默认端口</h3><ul>
+<li>http协议端口为80</li>
+<li>把tomcat端口设为80就不用写端口了</li>
+</ul>
+<h3 id="默认应用"><a href="#默认应用" class="headerlink" title="默认应用"></a>默认应用</h3><ul>
+<li>tomcat默认访问ROOT应用<br>  *（见上边虚拟目录）</li>
+</ul>
+<h3 id="默认主页"><a href="#默认主页" class="headerlink" title="默认主页"></a>默认主页</h3><ul>
+<li><code>web.xml</code>中配置</li>
+</ul>
+<h2 id="idea中tomcat的部署"><a href="#idea中tomcat的部署" class="headerlink" title="idea中tomcat的部署"></a>idea中tomcat的部署</h2><h3 id="war"><a href="#war" class="headerlink" title="war"></a><code>war</code></h3><ul>
+<li>将web工程以war包的形式上传到服务器</li>
+<li>可以称之为是发布模式，看名字也知道，这是先打包war包，再发布</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\apache-tomcat-8.0.48\webapps\ROOT\</code></li>
+<li>结果是tomcat的webapps的Root目录</li>
+<li>会把Root目录项目替换成此项目<ul>
+<li>此种情况是配置tomcat时application context选择了<code>/</code></li>
+<li>如果配置成别的如<code>/aaa</code><ul>
+<li>则不会替换Root，而是在webapps下创建aaa</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="war-exploed"><a href="#war-exploed" class="headerlink" title="war exploed"></a><code>war exploed</code></h3><ul>
+<li>将web工程以当前文件夹的位置关系上传到服务器</li>
+<li>展开部署(相当于将资源文件进行展开后进行部署)</li>
+<li>直接把文件夹，jsp页面，classes等等移到Tomcat部署文件夹里面，进行加载部署。因此这种方式支持热部署，一般在开发的时候也是用这种方式。</li>
+<li><code>request.getServletContext().getRealPath(&quot;/&quot;)</code><ul>
+<li><code>D:\save\IntellijWP\project\HelloMaven\target\HelloMaven-1.0-SNAPSHOT\</code></li>
+<li>可以看到是项目target下的目录</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Json/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-Json/" itemprop="url">
+                  xd-Json
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:37:29" itemprop="dateCreated datePublished" datetime="2018-12-11T00:37:29+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:38:13" itemprop="dateModified" datetime="2019-03-08T14:38:13+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据载体"><a href="#数据载体" class="headerlink" title="数据载体"></a>数据载体</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>服务端响应的是普通html字符串，无需JS解析，配合innerHTML属性效率高</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>如果需要更新WEB页面中的很多处地方，HTML不太方便，同时innerHTML属性不是DOM的标准，不能操作XML</li>
+<li>注意<ul>
+<li>innerHTML在xml中不能使用，用<code>firstChild.nodeValue</code>替代</li>
+</ul>
+</li>
+</ul>
+<h3 id="适合"><a href="#适合" class="headerlink" title="适合"></a>适合</h3><ul>
+<li>小量数据载体，且只更新在web页面中的一个地方</li>
+<li><code>response.setContentType(&quot;text/html;charset=utf-8&quot;)</code></li>
+</ul>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><ul>
+<li>重量级的数据交换语言</li>
+</ul>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>是种通用的普通字符串格式，任何技术都能解析，标签名可以任意，使用DOM标准规则能够解析XML的任何部分</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>XML文件格式相当严格，出错后，responseXML属性返回NULL，如果XML文件过长，导致解析效率低下</li>
+</ul>
+<h3 id="适合-1"><a href="#适合-1" class="headerlink" title="适合"></a>适合</h3><ul>
+<li>大量具有层次数据载体</li>
+<li><code>response.setContentType(&quot;text/xml;charset=utf-8&quot;)</code></li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>轻量级的数据交换语言</li>
+<li>兼备HTML和XML的特点</li>
+<li><code>response.setContentType(&quot;text/html;charset=utf-8&quot;)</code></li>
+</ul>
+<h1 id="JSON-1"><a href="#JSON-1" class="headerlink" title="JSON"></a>JSON</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><code>JavaScript Object Notation(记号，标记)</code></li>
+<li>一种轻量级的数据交换语言，以文本字符串为基础，易于阅读。</li>
+<li>采用完全独立于任何程序语言的文本格式，使JSON成为理想的数据交换语言</li>
+<li>JSON本质上，就是用JS语法写的特殊文本记号，用JS可以直接解析，所以必须放在<code>&lt;script&gt;</code>标签中</li>
+<li>JSON是不能完完全全替代XML的，只能在定义对象和数据交换语言方面替代</li>
+</ul>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ul>
+<li><code>{}</code>表示一个对象</li>
+<li><code>[]</code>表示一个数组</li>
+<li>键值对之间用<code>,</code>分割</li>
+<li>对象与对象之间用<code>,</code>分割</li>
+<li>键与值之间用<code>:</code></li>
+<li>键<ul>
+<li>可以用<code>&quot;&quot;</code>或<code>&#39;&#39;</code>也可以不加引号。</li>
+</ul>
+</li>
+<li>值<ul>
+<li>数字（整数或浮点数）</li>
+<li>字符串（必须用引号）</li>
+<li>逻辑值（true/false）</li>
+<li>数组（<code>[]</code>）</li>
+<li>对象（<code>{}</code>）</li>
+</ul>
+</li>
+</ul>
+<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;</span><br><span class="line">	键:值,</span><br><span class="line">	键:值,</span><br><span class="line">	...</span><br><span class="line">	键:值</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var json = [</span><br><span class="line">	&#123;键:值,键:值&#125;,</span><br><span class="line">	&#123;键:[&#123;键:值&#125;]&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var json = &#123;</span><br><span class="line">	键:[&#123;键:值,键:值&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><ol>
+<li><code>json对象.键</code></li>
+<li><code>json对象[&quot;键&quot;]</code></li>
+<li><code>json数组对象[索引]</code></li>
+</ol>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h3 id="对象的遍历"><a href="#对象的遍历" class="headerlink" title="对象的遍历"></a>对象的遍历</h3><ul>
+<li><p><code>for in</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (var key in json对象) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意遍历中获取的<code>key</code>是json对象的键，是字符串形式，本身就带引号</p>
+<ul>
+<li><code>json对象.key</code><ul>
+<li>获取数据是错误的，因为相当于<code>person.&quot;name&quot;</code></li>
+</ul>
+</li>
+<li><code>json对象[key]</code><ul>
+<li>这样可以获取数据，key不用加引号了，相当于<code>person[&quot;name&quot;]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><ul>
+<li>先for循环遍历数组，获取每一个json对象，然后<code>for in</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 数组.length; i++) &#123;</span><br><span class="line">	var json对象 = 数组[i];</span><br><span class="line">	for (var key in json对象)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><h3 id="简化JavaScript自定义对象-。"><a href="#简化JavaScript自定义对象-。" class="headerlink" title="简化JavaScript自定义对象**。"></a>简化JavaScript自定义对象**。</h3><ul>
+<li><p>javascript自定义对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person(id,name)&#123;</span><br><span class="line">	this.id=id;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.show=function()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var person=new Person(1,&quot;旺财&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json格式自定义对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;</span><br><span class="line">			id:1,</span><br><span class="line">			name:&quot;旺财&quot;,</span><br><span class="line">			show:function()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="在AJAX中，作为数据载体之一"><a href="#在AJAX中，作为数据载体之一" class="headerlink" title="在AJAX中，作为数据载体之一"></a>在AJAX中，作为数据载体之一</h3><ul>
+<li>如果JSON是采用JS格式书写的的，JS可以直接解析JSON</li>
+<li>如果JSON是采用Java格式写的，必须使用eval()函数转换后，方可被JS解析<ul>
+<li><code>eval(&quot;&quot;)</code><ul>
+<li>将字符串当作脚本进行解析运行</li>
+<li>函数接收一个字符串格式的内容。</li>
+<li><code>eval(&quot;(&quot;+jsonJava+&quot;)&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Struts2-Json"><a href="#Struts2-Json" class="headerlink" title="Struts2+Json"></a>Struts2+Json</h1><ol>
+<li>导入<code>struts2-json-plugin.jar</code></li>
+<li><code>struts.xml</code>配置中<code>&lt;package extends=&quot;json-default&quot;&gt;</code><ul>
+<li><code>json-default</code>继承了<code>struts-default</code>所以还是继承了<code>struts-default</code>,只是多了json的功能。</li>
+</ul>
+</li>
+<li><code>struts.xml</code>配置中<code>&lt;result type=&quot;json&quot;&gt;</code></li>
+<li>action中只要是<code>getAbc()</code>形式的方法就能自动返回java格式的json(安)<ul>
+<li>将get后边的首字母小写作为json的键</li>
+<li>将方法的返回值作为值<ul>
+<li><code>getNameById(){return &quot;success&quot;;}</code><ul>
+<li><code>jsonJava={nameById:&quot;success&quot;}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>成员变量要先初始化</strong>。</li>
+<li>如果get形式的方法有很多，只想要指定的某个。<ul>
+<li><code>&lt;result type=&quot;json&quot;&gt;&lt;param name=&quot;root&quot;&gt;指定的键&lt;/param&gt;&lt;/result&gt;</code><ul>
+<li>这样返回的json不是键值对，而是只有指定键的值。(安)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回的java格式的json js不能直接解析要转成js的json<ul>
+<li><code>jsonJs=eval(&quot;(&quot;+jsonJava+&quot;)&quot;);</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>json数据与java对象的相互转换</li>
+<li><strong>json→java对象</strong><ul>
+<li>客户端发送json数据给服务器，服务器端将json转为java对象使用。</li>
+</ul>
+</li>
+<li><strong>java对象→json</strong><ul>
+<li>服务器端将java对象转为json，响应给客户端</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见解析器"><a href="#常见解析器" class="headerlink" title="常见解析器"></a>常见解析器</h2><h3 id="Jsonlib"><a href="#Jsonlib" class="headerlink" title="Jsonlib"></a>Jsonlib</h3><ul>
+<li>将JavaBean/list/set/map…转为json</li>
+<li>这只是第三方工具之一。</li>
+</ul>
+<h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><ol>
+<li>导入jar包<ul>
+<li><code>json-lib.jar</code></li>
+<li><code>ezmorph.jar</code></li>
+<li><code>commons-logging.jar</code></li>
+<li><code>commons-lang.jar</code></li>
+<li><code>commons-beanutils.jar</code></li>
+<li><code>commons-collections.jar</code></li>
+</ul>
+</li>
+<li>JSONObject &amp; JSONArray<ul>
+<li>JSONObject<ul>
+<li><code>static JSONObject fromObject(...)</code></li>
+</ul>
+</li>
+<li>JSONArray<ul>
+<li><code>static JSONArray fromObject(...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>调用toString()返回的是java格式的json</li>
+</ol>
+<h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><ul>
+<li><code>Gson gson = new Gson()</code></li>
+<li><code>String json = gson.toJson(数据)</code></li>
+</ul>
+<h2 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h2><h2 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h2><h3 id="java对象→json-使用步骤"><a href="#java对象→json-使用步骤" class="headerlink" title="java对象→json 使用步骤"></a>java对象→json 使用步骤</h3><ol>
+<li>导入jar包<ul>
+<li><code>jackson-core.jar</code></li>
+<li><code>jackson-databind.jar</code></li>
+<li><code>jackson-annotations.jar</code></li>
+</ul>
+</li>
+<li>创建jackson核心对象<code>ObjectMapper</code><ul>
+<li><code>new ObjectMapper()</code></li>
+</ul>
+</li>
+<li>使用ObjectMapper进行转换</li>
+</ol>
+<h3 id="ObjectMapper"><a href="#ObjectMapper" class="headerlink" title="ObjectMapper"></a>ObjectMapper</h3><ul>
+<li><code>writeValue(参数1,Object obj)</code><ul>
+<li>参数1<ul>
+<li><code>File</code>：将obj对象转为json字符串，并保存到指定文件</li>
+<li><code>Writer</code>：将obj对象转为json字符串，并关联到字符输出流</li>
+<li><code>OutputStream</code>：将obj对象转为json字符串，并关联到字节输出流</li>
+<li><code></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>String writeValueAsString(Object obj)</code><ul>
+<li>将obj对象转为json字符串</li>
+</ul>
+</li>
+<li><code>readValue(String json, Class clazz)</code><ul>
+<li>将json字符串转为java对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="复杂对象转json的格式"><a href="#复杂对象转json的格式" class="headerlink" title="复杂对象转json的格式"></a>复杂对象转json的格式</h3><ul>
+<li>list set<ul>
+<li>数组</li>
+</ul>
+</li>
+<li>map<ul>
+<li>对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ul>
+<li><code>@JsonIgnore</code><ul>
+<li>忽略该属性</li>
+</ul>
+</li>
+<li><code>@JsonFormat</code><ul>
+<li><code>@JsonFormat(patter=&quot;yyyy-MM-dd&quot;)</code></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-XML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-XML/" itemprop="url">
+                  xd-XML
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:37:45" itemprop="dateCreated datePublished" datetime="2018-12-11T00:37:45+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:37:58" itemprop="dateModified" datetime="2019-03-08T14:37:58+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>Extensible Markup Language</code>可扩展标记语言</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>配置文件</li>
+<li>数据传输</li>
+</ul>
+<h2 id="html-amp-xml"><a href="#html-amp-xml" class="headerlink" title="html &amp; xml"></a>html &amp; xml</h2><ul>
+<li>html语法松散，xml语法严格</li>
+<li>html做页面展示，xml做数据存储</li>
+<li>html所有标签都是预定义的，xml所有标签都是自定义的</li>
+</ul>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="文档声明"><a href="#文档声明" class="headerlink" title="文档声明"></a>文档声明</h2><ul>
+<li><code>&lt;?xml 属性列表 ?&gt;</code><ul>
+<li><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</code><ul>
+<li>必须写在第一行</li>
+</ul>
+</li>
+<li><code>version</code> <ul>
+<li>版本 1.0</li>
+<li>必须属性</li>
+</ul>
+</li>
+<li><code>encoding</code> <ul>
+<li>编码方式</li>
+<li>默认<code>iso-8859-1</code></li>
+</ul>
+</li>
+<li><code>standalone</code> <ul>
+<li>文档是否独立(是否依赖其它文件)<ul>
+<li><code>yes</code></li>
+<li><code>no</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
+<li>只有一个根元素</li>
+<li>元素正确闭合，嵌套</li>
+<li>元素名区分大小写，不能以数字开头</li>
+</ul>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><ul>
+<li><code>CDATA</code><ul>
+<li>数据原样输出</li>
+<li><code>&lt;![CDATA[数据]]&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>值必须用引号<code>&#39;&#39;</code>或<code>&quot;&quot;</code></li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li><code>&lt;!-- --&gt;</code></li>
+</ul>
+<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ul>
+<li>约束就是xml的书写规则。<ul>
+<li>即根元素是什么，可以写哪些标签，有哪些属性，顺序….(安)</li>
+</ul>
+</li>
+</ul>
+<h2 id="dtd约束"><a href="#dtd约束" class="headerlink" title="dtd约束"></a>dtd约束</h2><ul>
+<li>内部dtd<ul>
+<li>在xml内部定义dtd</li>
+</ul>
+</li>
+<li>外部dtd<ul>
+<li>在外部定义dtd<ul>
+<li>本地dtd<ul>
+<li><code>&lt;!DOCTYPE 根标签名 SYSTEM &quot;dtd文件位置&quot;</code></li>
+</ul>
+</li>
+<li>网络dtd<ul>
+<li><code>&lt;!DOCTYPE 根标签名 PUBLIC &quot;名称空间(dtd文件名)&quot; &quot;dtd文件位置&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="schema约束"><a href="#schema约束" class="headerlink" title="schema约束"></a>schema约束</h2><ul>
+<li>xsd约束文档</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>编写根标签</li>
+<li>引入实例名称空间(<strong>xsi前缀</strong>)<ul>
+<li><code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code></li>
+</ul>
+</li>
+<li>引入名称空间<ul>
+<li><code>xsi:schemaLocation=&quot;http://www.com.cn/xml student.xsd&quot;</code><ul>
+<li>如果不声明别名，使用标签时<code>&lt;地址值:标签名&gt;</code><ul>
+<li><code>&lt;http://www.com.cn/xml student.xsd:students&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>命名空间声明(为每一个名称空间设置别名)<ul>
+<li><code>xmlns=&quot;...&quot;</code><ul>
+<li>默认</li>
+<li>使用时直接写标签名即可</li>
+<li>例<ul>
+<li><code>xmlns=&quot;http://www.springframework.org/schema/beans&quot;</code></li>
+<li><code>&lt;bean&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>xmlns:别名=&quot;...&quot;</code><ul>
+<li>标签<code>&lt;别名&gt;</code></li>
+<li>例<ul>
+<li><code>xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</code></li>
+<li><code>&lt;context&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><h2 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>如果xml作为配置文件：读</li>
+<li>如果xml作为传输文件：写，读</li>
+</ul>
+<h2 id="解析思想"><a href="#解析思想" class="headerlink" title="解析思想"></a>解析思想</h2><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul>
+<li>将文档加载进内存，形成一颗dom树(document对象)，将文档的各个组成部分封装为一些对象。</li>
+<li>优点<ul>
+<li>因为，在内存中会形成dom树，可以对dom树进行增删改查。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>dom树非常占内存，解析速度慢。</li>
+</ul>
+</li>
+</ul>
+<h3 id="SAX"><a href="#SAX" class="headerlink" title="SAX"></a>SAX</h3><ul>
+<li>逐行读取，基于事件驱动</li>
+<li>优点<ul>
+<li>不占内存，速度快</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>只能读取，不能回写</li>
+</ul>
+</li>
+<li>五个对象(安)<ul>
+<li>StartDocument/endDocument</li>
+<li>Characters 解析文本</li>
+<li>StartElement/endElement</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用的解析器"><a href="#常用的解析器" class="headerlink" title="常用的解析器"></a>常用的解析器</h2><h3 id="JAXP"><a href="#JAXP" class="headerlink" title="JAXP"></a>JAXP</h3><ul>
+<li>sun公司提供的解析。支持dom和sax。</li>
+</ul>
+<h3 id="JDOM"><a href="#JDOM" class="headerlink" title="JDOM"></a>JDOM</h3><h3 id="PULL"><a href="#PULL" class="headerlink" title="PULL"></a>PULL</h3><ul>
+<li>android内置的解析器</li>
+<li>sax方式</li>
+</ul>
+<h3 id="DOM4J"><a href="#DOM4J" class="headerlink" title="DOM4J"></a>DOM4J</h3><ul>
+<li><code>dom for java</code></li>
+<li>民间方式，但是非常好。  支持dom</li>
+</ul>
+<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><ol>
+<li>导入jar包 dom4j.jar</li>
+<li>创建解析器<br> <code>SAXReader reader = new SAXReader();</code></li>
+<li>解析xml 获得document对象<br> <code>Document document = reader.read(url);</code></li>
+</ol>
+<h3 id="xpath"><a href="#xpath" class="headerlink" title="xpath"></a>xpath</h3><ul>
+<li>XML路径语言，它是一种用来确定XML文档中某部分位置的语言</li>
+<li>专门用于查询</li>
+</ul>
+<h3 id="Jsoup"><a href="#Jsoup" class="headerlink" title="Jsoup"></a>Jsoup</h3><ul>
+<li>一款java的html解析器，可以直接解析某个url地址、html文本内容。它提供了jQuery的操作方法来取出和操作数据</li>
+</ul>
+<h4 id="Jsoup-1"><a href="#Jsoup-1" class="headerlink" title="Jsoup"></a>Jsoup</h4><ul>
+<li>工具类，可以解析html或xml文档，返回Document对象</li>
+</ul>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><code>static Document parse(File file, String character)</code><ul>
+<li>解析html或xml文件</li>
+</ul>
+</li>
+<li><code>static Document parse(String html)</code><ul>
+<li>解析html或xml字符串</li>
+<li>把html或xml 以字符串传入</li>
+</ul>
+</li>
+<li><code>static Document parse(Url url, int timoutMillis)</code><ul>
+<li>解析网络上的html或xml</li>
+</ul>
+</li>
+</ul>
+<h4 id="Document"><a href="#Document" class="headerlink" title="Document"></a>Document</h4><ul>
+<li>文档对象，代表内存中的dom树</li>
+<li>继承Element</li>
+</ul>
+<h5 id="方法-从Element中继承来的"><a href="#方法-从Element中继承来的" class="headerlink" title="方法(从Element中继承来的)"></a>方法(从Element中继承来的)</h5><ul>
+<li><code>Element getElementById(String id)</code><ul>
+<li>根据id获取元素对象</li>
+</ul>
+</li>
+<li><code>Elements getElementsByClass(String className)</code><ul>
+<li>根据class获取元素对象集合</li>
+</ul>
+</li>
+<li><code>Elements getElementsByTag(String tagName)</code><ul>
+<li>根据标签名获取元素对象集合</li>
+</ul>
+</li>
+<li><code>Elements getElementsByAttribute(String key)</code><ul>
+<li>根据属性名获取元素对象集合</li>
+</ul>
+</li>
+<li><code>Elements getElementsByAttribute(String key, String value)</code><ul>
+<li>根据属性名和值获取元素对象集合</li>
+</ul>
+</li>
+</ul>
+<h4 id="Elements"><a href="#Elements" class="headerlink" title="Elements"></a>Elements</h4><ul>
+<li>元素对象的集合，可以当作<code>ArrayList&lt;Element</code>来使用</li>
+</ul>
+<h4 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h4><ul>
+<li>元素对象</li>
+<li>继承Node</li>
+</ul>
+<h5 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><code>String attr(String key)</code><ul>
+<li>根据属性名获取值</li>
+</ul>
+</li>
+<li><code>String text()</code><ul>
+<li>获取文本内容</li>
+</ul>
+</li>
+<li><code>String html()</code><ul>
+<li>获取标签体所有内容</li>
+</ul>
+</li>
+</ul>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><ul>
+<li>节点对象</li>
+</ul>
+<h4 id="快捷查询"><a href="#快捷查询" class="headerlink" title="快捷查询"></a>快捷查询</h4><ol>
+<li>使用选择器<ul>
+<li><code>Elements select(String csssQuery)</code><ul>
+<li>语法：参考selector中的定义</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用xpath</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-Ajax/" itemprop="url">
+                  xd-Ajax
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:36:58" itemprop="dateCreated datePublished" datetime="2018-12-11T00:36:58+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:35:10" itemprop="dateModified" datetime="2019-03-08T14:35:10+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li><code>Asynchronous JavaScript And XML</code></li>
+<li>传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。</li>
+<li>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新</li>
+<li>传统<ul>
+<li>客户端发送请求到服务端，服务端返回数据给客户端。</li>
+</ul>
+</li>
+<li>Ajax<ul>
+<li>客户端通过<code>javascript call</code> ajax引擎，由<code>ajax engine</code>发送请求到服务端，服务端，返回数据给<code>ajax engine</code>再由<code>ajax engine</code>把数据交给客户端</li>
+</ul>
+</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。</li>
+</ul>
+<h2 id="同步-amp-异步"><a href="#同步-amp-异步" class="headerlink" title="同步&amp;异步"></a>同步&amp;异步</h2><ul>
+<li>客户端与服务器相互通信时<ul>
+<li>同步<ul>
+<li>客户端必须等待服务器的响应，等待期间客户端不能做其它操作</li>
+</ul>
+</li>
+<li>异步<ul>
+<li>客户端不需要等待服务器的响应，在服务器处理请求的过程中，客户端可以进行其它操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h1><ul>
+<li>异步通讯对象</li>
+<li>XMLHttpRequest 是 AJAX 的基础。</li>
+<li>IE5 和 IE6 使用 <strong>ActiveXObject</strong></li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
+<li><code>onreadystatechange</code></li>
+<li>存储函数（或函数名），每当 <code>readyState</code> 属性改变时，就会调用该函数。</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li><code>readyState</code><ul>
+<li>存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</li>
+<li>0<ul>
+<li>请求未初始化</li>
+</ul>
+</li>
+<li>1<ul>
+<li>服务器连接已建立</li>
+<li>已经调用了<code>open()</code>但没有真正发送请求</li>
+</ul>
+</li>
+<li>2<ul>
+<li>请求已接收</li>
+<li>已调用<code>send()</code>但暂时没有到达服务器</li>
+</ul>
+</li>
+<li>3<ul>
+<li>请求处理中</li>
+</ul>
+</li>
+<li>4<ul>
+<li>请求已完成，且响应已就绪</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>status</code><ul>
+<li>200<ul>
+<li>OK</li>
+</ul>
+</li>
+<li>404<ul>
+<li>未找到页面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>responseText</code><ul>
+<li>获得字符串形式的响应数据。 </li>
+</ul>
+</li>
+<li><code>responseXML</code><ul>
+<li>获得 XML 形式的响应数据。</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><code>open(method,url,async)</code><ul>
+<li>method<ul>
+<li>请求的类型；GET 或 POST</li>
+</ul>
+</li>
+<li>url<ul>
+<li>文件在服务器上的位置</li>
+</ul>
+</li>
+<li>async<ul>
+<li>true（异步，默认）</li>
+<li>false（同步）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>send(string)</code><ul>
+<li>string<ul>
+<li>发送的数据，仅用于 POST 请求。</li>
+<li>POST发送前要设置请求头。<ul>
+<li><code>setRequestHeader(&quot;content-type&quot;,&quot;application/x-www-form-urlencoded&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="创建AJAX"><a href="#创建AJAX" class="headerlink" title="创建AJAX"></a>创建AJAX</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ajax;</span><br><span class="line">if(window.XMLHttpRequest)&#123;</span><br><span class="line">	ajax=new XMLHttpRequest();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	ajax=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">&#125;</span><br><span class="line">return ajax;</span><br></pre></td></tr></table></figure>
+<h1 id="AJAX的使用"><a href="#AJAX的使用" class="headerlink" title="AJAX的使用"></a>AJAX的使用</h1><ol>
+<li><strong>创建XMLHttpRequest对象</strong>。</li>
+<li><p><strong>向服务器发送请求</strong></p>
+<ul>
+<li><p><strong>GET</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ajax.open(&quot;GET&quot;,&quot;url?name=&quot;+name);</span><br><span class="line">ajax.send();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>POST</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ajax.open(&quot;POST&quot;,&quot;url&quot;);</span><br><span class="line">ajax.setRequestHeader(&quot;content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">ajax.send(&quot;name=xxx&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>等待判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ajax.onreadystatechange=function()&#123;</span><br><span class="line">	if (ajax.readyState==4 &amp;&amp; ajax.status==200)&#123;</span><br><span class="line">		//获取返回的值</span><br><span class="line">		var res=ajax.responseText;</span><br><span class="line">		var res=ajax.responseXml;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>服务端不能使用转发或重定向到web页面，因为这样会起浏览器全面刷新<ul>
+<li>只能以流的方式响应给浏览器</li>
+</ul>
+</li>
+<li>异步提交下form标签的action和method没有意义</li>
+<li>AJAX适合用在什么地方<ul>
+<li>AJAX【适合】不用来传递大量数据，而只用来【传递少量数据】，在用户的【体验】上，【更加人性化】。</li>
+</ul>
+</li>
+<li>AJAX是一个和服务器无关的技术，即服务器可使用：JavaEE，.NET，PHP，。。。这些技术都可。AJAX只管向服务器发送请求，同时只管接收服务器的HTML或XML或JSON载体响应。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/xd-BootStrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/xd-BootStrap/" itemprop="url">
+                  xd-BootStrap
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-25 13:38:34" itemprop="dateCreated datePublished" datetime="2018-12-25T13:38:34+08:00">2018-12-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:34:58" itemprop="dateModified" datetime="2019-03-08T14:34:58+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-Jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/11/xd-Jquery/" itemprop="url">
+                  xd-Jquery
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 00:37:12" itemprop="dateCreated datePublished" datetime="2018-12-11T00:37:12+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:34:36" itemprop="dateModified" datetime="2019-03-08T14:34:36+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li>jQuery 是一个 JavaScript 库。</li>
+<li>jQuery 极大地简化了 JavaScript 编程。</li>
+</ul>
+<h2 id="其它流行的库"><a href="#其它流行的库" class="headerlink" title="其它流行的库"></a>其它流行的库</h2><ul>
+<li><strong>Bootstrap</strong><ul>
+<li>来自twitter,基于jquery的一个ui工具</li>
+</ul>
+</li>
+<li><code>http:docs.kissyui.com</code><ul>
+<li>淘宝ui</li>
+</ul>
+</li>
+<li><code>Dojo</code><ul>
+<li>很多js单独文件，优化，打包(常见：开发小图标，一张图片)</li>
+</ul>
+</li>
+<li><code>EXT_JS</code><ul>
+<li>2.0开始收费</li>
+</ul>
+</li>
+</ul>
+<h2 id="Jquery分类"><a href="#Jquery分类" class="headerlink" title="Jquery分类"></a>Jquery分类</h2><h3 id="web版"><a href="#web版" class="headerlink" title="web版"></a>web版</h3><h3 id="UI版"><a href="#UI版" class="headerlink" title="UI版"></a>UI版</h3><ul>
+<li>集成了ui组件</li>
+</ul>
+<h3 id="mobile版"><a href="#mobile版" class="headerlink" title="mobile版"></a>mobile版</h3><ul>
+<li>移动端开发</li>
+</ul>
+<h3 id="qunit版"><a href="#qunit版" class="headerlink" title="qunit版"></a>qunit版</h3><ul>
+<li>用于js测试</li>
+</ul>
+<h2 id="jquery版本说明"><a href="#jquery版本说明" class="headerlink" title="jquery版本说明"></a>jquery版本说明</h2><h3 id="1x"><a href="#1x" class="headerlink" title="1x"></a><code>1x</code></h3><ul>
+<li>兼容ie678,使用最为广泛的，官方只做BUG维护，功能不再新增。因此一般项目来说，使用1.x版本就可以了，最终版本：1.12.4 (2016年5月20日)</li>
+</ul>
+<h3 id="2x"><a href="#2x" class="headerlink" title="2x"></a><code>2x</code></h3><ul>
+<li>不兼容ie678，很少有人使用，官方只做BUG维护，功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，最终版本：2.2.4 (2016年5月20日)</li>
+</ul>
+<h3 id="3x"><a href="#3x" class="headerlink" title="3x"></a><code>3x</code></h3><ul>
+<li>不兼容ie678，只支持最新的浏览器。除非特殊要求，一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。目前该版本是官方主要更新维护的版本。</li>
+</ul>
+<h1 id="js-amp-jquery"><a href="#js-amp-jquery" class="headerlink" title="js &amp; jquery"></a>js &amp; jquery</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><table>
+<thead>
+<tr>
+<th>API</th>
+<th>javascript</th>
+<th>jquery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>获取标签失败</strong></td>
+<td>没有提示</td>
+<td>提示undefined</td>
+</tr>
+<tr>
+<td><strong>获取标签value</strong></td>
+<td>value</td>
+<td>val()</td>
+</tr>
+<tr>
+<td><strong>获取标签体的值</strong></td>
+<td>innerHTML</td>
+<td>html() <br>text()</td>
+</tr>
+<tr>
+<td><strong>删除标签</strong></td>
+<td>removeChild()</td>
+<td>remove()</td>
+</tr>
+<tr>
+<td><strong>添加标签</strong></td>
+<td>appendChild()</td>
+<td>append()</td>
+</tr>
+<tr>
+<td><strong>创建标签并添加属性</strong></td>
+<td>var div=document.createElement(“div”);<br>div.setAttribute(“id”,”divID”)</td>
+<td>var $div=$(“&lt;div id=’divID’&gt;&lt;/div&gt;”)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>jquery的html()和text()区别</strong><ul>
+<li><code>html()</code><ul>
+<li>强调的是标签中的内容，即便标签中的子标签，也会显示出来</li>
+<li>要用于html/jsp，不能用在xml</li>
+</ul>
+</li>
+<li><code>text()</code><ul>
+<li>强调的是标签中的文本内容，即便标签中的子标签，也只会显示出文本内容，不会显示子标签</li>
+<li>既能用于html/jsp，且能用于xml</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><ul>
+<li><strong>js→jquery</strong><ul>
+<li><code>jquery=$(js);</code></li>
+</ul>
+</li>
+<li><strong>jquery-&gt;js</strong><ul>
+<li>jquery是一个数组</li>
+<li><code>js=jquery[0];</code></li>
+<li><code>js=jquery.get(0);</code></li>
+<li>jquery对象为一个数组,求大小<ul>
+<li><code>size()</code></li>
+<li><code>length</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h1><h2 id="selector"><a href="#selector" class="headerlink" title="$(selector)"></a><code>$(selector)</code></h2><h2 id="html"><a href="#html" class="headerlink" title="$(html)"></a><code>$(html)</code></h2><ul>
+<li>1.8版本+</li>
+<li>新建一个html标签的jqury对象</li>
+<li>传入的是html标签完整书写的字符串<ul>
+<li><code>var $div=$(&quot;&lt;div id=&#39;1&#39;&gt;xxx&lt;/div&gt;&quot;)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="fn"><a href="#fn" class="headerlink" title="$(fn)"></a><code>$(fn)</code></h2><ul>
+<li><code>$(document).ready(fn)</code>的简写</li>
+</ul>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><h2 id="each-obj-fn"><a href="#each-obj-fn" class="headerlink" title="$.each(obj, fn)"></a><code>$.each(obj, fn)</code></h2><h2 id="jQuery对象-each-fn"><a href="#jQuery对象-each-fn" class="headerlink" title="jQuery对象.each(fn)"></a><code>jQuery对象.each(fn)</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;id&quot;).each(function(index, domEle)&#123;</span><br><span class="line">	this;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>this<ul>
+<li>是js对象</li>
+<li>转成jQuery对象<ul>
+<li><code>$(this)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>index</code><ul>
+<li>遍历的索引</li>
+</ul>
+</li>
+<li><code>domEle</code><ul>
+<li>相当于this</li>
+</ul>
+</li>
+</ul>
+<h2 id="for-of"><a href="#for-of" class="headerlink" title="for..of"></a>for..of</h2><ul>
+<li>jquery3x才有的方式，类似增强for<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(a of b)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><ul>
+<li><code>$(&quot;#id&quot;)</code></li>
+<li><code>$(&quot;html标签名&quot;)</code></li>
+<li><code>$(&quot;.class&quot;)</code></li>
+<li><code>$(&quot;*&quot;)</code><ul>
+<li>所有元素</li>
+</ul>
+</li>
+<li><code>$(&quot;s1,s2,s3......)</code><ul>
+<li>选择器可以并列</li>
+</ul>
+</li>
+</ul>
+<h2 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s1 s2	* s1下的所有s2标签(子，孙，重孙...)</span><br><span class="line">s1&gt;s2	* s1下的子级s2标签</span><br><span class="line">s1+s2	* s1同级的第一个标签(若非s2则undefined)</span><br><span class="line">s1~s2	* s1同级的所有s2标签(只会往s1下找,上边的不算)</span><br></pre></td></tr></table></figure>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[attribute]		   * 包含指定属性</span><br><span class="line">[attribute=value]	 * 指定属性的值为value</span><br><span class="line">[attribute!=value]	* 指定属性的值不为value(没有这个属性也包含在内)</span><br><span class="line">[attribute^=value]	* 指定属性的值以value开头</span><br><span class="line">[attribute$=value]	* 指定属性的值以value结尾</span><br><span class="line">[attribute*=value]	* 指定属性的值包含value</span><br><span class="line">[s1][s2][selectorN]   * 同时满足多个条件相当于&quot;&amp;&amp;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">:first		* 第一个</span><br><span class="line">:last 		* 最后一个</span><br><span class="line">:not(s)	   * 非</span><br><span class="line">:even		 * 偶数索引 索引从0开始</span><br><span class="line">:odd		  * 奇数索引</span><br><span class="line">:eq(index)	* equles</span><br><span class="line">:gt(index)	* great than</span><br><span class="line">:lt(index)	* low than</span><br><span class="line">:header	   * 标题h1，h2...</span><br><span class="line">:animated 	* 获取所有动画</span><br><span class="line">:focus		* 获取焦点</span><br></pre></td></tr></table></figure>
+<h2 id="表单选择器"><a href="#表单选择器" class="headerlink" title="表单选择器"></a>表单选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">:input	* 匹配所有 input, textarea, select 和 button 元素</span><br><span class="line">:type 	* type为</span><br><span class="line">			* text </span><br><span class="line">			* password</span><br><span class="line">			* radio</span><br><span class="line">			* checkbox</span><br><span class="line">			* submit</span><br><span class="line">			* image</span><br><span class="line">			* reset</span><br><span class="line">			* button</span><br><span class="line">			* file</span><br><span class="line">			* hidden</span><br><span class="line">				* 匹配所有不可见元素，或者type为hidden的元素</span><br></pre></td></tr></table></figure>
+<h2 id="表单对象属性选择器"><a href="#表单对象属性选择器" class="headerlink" title="表单对象属性选择器"></a>表单对象属性选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:enabled	 * 匹配所有可用元素</span><br><span class="line">:disabled	* 匹配所有不可用元素(1`xxx disabled=&quot;disabled&quot;` 2`xxx disabled=&quot;&quot;` 3`xxx disabled`)</span><br><span class="line">:checked	 * 匹配所有选中的元素(复选框、单选框等,不包括select中的option)</span><br><span class="line">:selected	* 匹配下拉框所有选中的option元素</span><br></pre></td></tr></table></figure>
+<h2 id="内容选择器"><a href="#内容选择器" class="headerlink" title="内容选择器"></a>内容选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:contains(text)		* 元素是否包含文本</span><br><span class="line">:empty				 * 是否为空(没有标签体(子元素，文本))</span><br><span class="line">:has(selector)		 * 是否包含某个selector</span><br><span class="line">:parent				* 是否是父元素(包含文本或者子标签)</span><br></pre></td></tr></table></figure>
+<h2 id="可见性选择器"><a href="#可见性选择器" class="headerlink" title="可见性选择器"></a>可见性选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:hidden		* 匹配所有不可见元素(style=&quot;display:none&quot;)，或者type为hidden的元素</span><br><span class="line">:visible	   * 匹配所有的可见元素</span><br></pre></td></tr></table></figure>
+<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">:first-child	* 为每个父元素匹配第一个子元素</span><br><span class="line">					* :first有多个匹配也只返回文档中第一个符合的。</span><br><span class="line">:last-child	 * 为每个父元素匹配最后一个子元素</span><br><span class="line">					* :last有多个匹配也只返回文档中第一个符合的。</span><br><span class="line">:only-child	 * 如果某个元素是父元素中唯一的子元素，那将会被匹配</span><br><span class="line">:nth-child()	* 匹配其父元素下的第N个子或奇偶元素,索引从1开始。</span><br><span class="line">					* :eq(index)有多个匹配也只返回文档中第一个符合的。</span><br><span class="line">				* 可以写</span><br><span class="line">					* :nth-child(even)</span><br><span class="line">					* :nth-child(odd)</span><br><span class="line">					* :nth-child(3n)</span><br><span class="line">					* :nth-child(2)</span><br><span class="line">					* :nth-child(3n+1)</span><br><span class="line">					* :nth-child(3n+2)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>表达式前边必须是元素<ul>
+<li><code>$(&quot;div:nth-child(2)&quot;)</code></li>
+</ul>
+</li>
+<li>如果元素加了条件，必须使用空格<ul>
+<li><code>$(&quot;div[id=&#39;xx&#39;]空格:nth-child(2))</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h1><h2 id="文档内容"><a href="#文档内容" class="headerlink" title="文档内容"></a>文档内容</h2><h3 id="获取-amp-设置"><a href="#获取-amp-设置" class="headerlink" title="获取&amp;设置"></a>获取&amp;设置</h3><ul>
+<li><code>html()</code><ul>
+<li>空参<ul>
+<li>获取标签体，包含标签</li>
+</ul>
+</li>
+<li>有参<ul>
+<li>设置标签体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>text()</code><ul>
+<li>空参<ul>
+<li>获取标签体纯文本内容</li>
+</ul>
+</li>
+<li>有参<ul>
+<li>设置标签体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>val()</code><ul>
+<li>空参<ul>
+<li>获取元素value属性的值</li>
+</ul>
+</li>
+<li>有参<ul>
+<li>设置元素value属性的值 </li>
+<li><code>val(&quot;&quot;)</code><ul>
+<li>设置value属性值为””，相当于清空</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><ul>
+<li><code>append()</code><ul>
+<li>添加到父元素尾部</li>
+<li><code>A.append(B)</code><ul>
+<li>B添加到A内部</li>
+</ul>
+</li>
+<li>想把一个select的option选项移到另一个。只需把这个select的option对象加入要移动到的select对象中。</li>
+</ul>
+</li>
+<li><code>appendTo()</code><ul>
+<li><code>A.appendTo(B)</code><ul>
+<li>A添加到B内部</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>prepend()</code><ul>
+<li>添加到父元素首部</li>
+</ul>
+</li>
+<li><code>prependTo()</code></li>
+<li><code>after()</code><ul>
+<li>添加到兄弟元素之后</li>
+</ul>
+</li>
+<li><code>before()</code><ul>
+<li>添加到兄弟元素之前    </li>
+</ul>
+</li>
+<li><code>insertAfter()</code><ul>
+<li>添加到兄弟元素之后</li>
+</ul>
+</li>
+<li><code>insertBefore()</code><ul>
+<li>添加到兄弟元素之前    </li>
+</ul>
+</li>
+</ul>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><ul>
+<li><code>replaceWith()</code></li>
+<li><code>replaceAll()</code></li>
+</ul>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><ul>
+<li><code>remove()</code><ul>
+<li>删除自已及后代节点</li>
+<li>移除绑定事件及绑定数据</li>
+</ul>
+</li>
+<li><code>detach()</code><ul>
+<li>删除</li>
+<li>保留绑定事件及绑定数据</li>
+</ul>
+</li>
+<li><code>empty()</code><ul>
+<li>将后代元素清空，但保留自己及属性节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><ul>
+<li><code>clone()</code><ul>
+<li>只复制样式，不复制行为</li>
+</ul>
+</li>
+<li><code>clone(true)</code><ul>
+<li>既复制样式，又复制行为</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li><code>$.trim(str)</code><ul>
+<li>去掉字符串起始和结尾的空格</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ul>
+<li><code>data(key,value)</code><ul>
+<li>绑定数据</li>
+</ul>
+</li>
+<li><code>data(key)</code><ul>
+<li>获取绑定数据</li>
+</ul>
+</li>
+<li><code>removeData(key)</code><ul>
+<li>移除绑定数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li><code>attr(key)</code><ul>
+<li>获取元素指定属性key的值。</li>
+</ul>
+</li>
+<li><code>attr(key,value)</code><ul>
+<li>设置元素指定属性key的值为指定的值value。</li>
+<li>可以串写。<ul>
+<li><code>$().attr(key,value).attr(key,value);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>removeAttr(key)</code><ul>
+<li>删除元素指定属性key。</li>
+</ul>
+</li>
+<li><code>prop</code><ul>
+<li>用法同attr</li>
+<li>如果是标签的固有属性，建议prop，自定义建议attr。</li>
+</ul>
+</li>
+</ul>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><ul>
+<li><code>css(key,value)</code><ul>
+<li>添加样式属性key值value</li>
+<li>可串写<ul>
+<li><code>$().css(key,value).css(key,value)</code></li>
+</ul>
+</li>
+<li>可以写多个值<ul>
+<li><code>$().css({&quot;width&quot;:&quot;10px&quot;,&quot;height&quot;:&quot;10px&quot;,...});</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>addClass(&quot;class&quot;)</code><ul>
+<li>添加样式class</li>
+</ul>
+</li>
+<li><code>removeClass(&quot;class&quot;)</code><ul>
+<li>删除样式class</li>
+</ul>
+</li>
+<li><code>toggleClass(&quot;class&quot;)</code><ul>
+<li>如果标签有样式class就删除，否则增加样式class</li>
+</ul>
+</li>
+<li><code>hasClass(&quot;class&quot;)</code><ul>
+<li>是否有样式class</li>
+</ul>
+</li>
+</ul>
+<h2 id="位置尺寸"><a href="#位置尺寸" class="headerlink" title="位置尺寸"></a>位置尺寸</h2><ul>
+<li><code>offset()</code><ul>
+<li>获取匹配元素在当前视口的相对偏移。</li>
+<li>获取的是json对象</li>
+<li>属性<ul>
+<li>top</li>
+<li>left</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>offset({top:value,left:value})</code><ul>
+<li>设置匹配元素在当前视口的left和top坐标</li>
+</ul>
+</li>
+<li><code>width()</code><ul>
+<li>获取元素的宽度</li>
+</ul>
+</li>
+<li><code>width(value)</code><ul>
+<li>设置元素的宽度为value</li>
+</ul>
+</li>
+<li><code>height()</code><ul>
+<li>获取元素的高度</li>
+</ul>
+</li>
+<li><code>height(value)</code><ul>
+<li>设置元素的高度为value</li>
+</ul>
+</li>
+</ul>
+<h1 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>选择器能完成的，筛选提供相同函数</li>
+<li>例<ul>
+<li>选择器<code>:first</code></li>
+<li>筛选<code>first()</code></li>
+<li>区别<ul>
+<li><code>$(&quot;div:first&quot;)</code><ul>
+<li>直接获取第一个div(只能操作第一个)</li>
+</ul>
+</li>
+<li><code>$(&quot;div&quot;).first()</code><ul>
+<li>先获取所有div，再从所有中获取第一个。(可以操作第一个，也可以操作所有)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h2><ul>
+<li><code>eq(index | -index)</code><ul>
+<li>index 从0开始</li>
+<li>-index 倒数，从-1开始</li>
+</ul>
+</li>
+<li><code>first()</code></li>
+<li><code>last()</code></li>
+<li><code>is(expr | obj | ele | fn)</code><ul>
+<li>判断</li>
+<li>如<code>is($&quot;option:selected&quot;)</code></li>
+</ul>
+</li>
+<li><code>filter(expr | obj | ele | fn)</code><ul>
+<li>筛选出与指定表达式匹配的元素集合</li>
+<li>安<ul>
+<li>两个选择器挨着写类似于筛选</li>
+<li><code>$(&quot;div.myClass&quot;)</code></li>
+<li><code>$(&quot;div&quot;).filter(&quot;.myClass&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>not(expr | ele | fn)</code><ul>
+<li>相当于从结果集中移除</li>
+</ul>
+</li>
+<li><code>has(expr | ele)</code></li>
+<li><code>slice(start, [end])</code><ul>
+<li>截取元素，含头不含尾</li>
+</ul>
+</li>
+<li><code>map(callback)</code></li>
+</ul>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><ul>
+<li><code>children()</code><ul>
+<li>获取所有子元素，不包括后代元素。</li>
+</ul>
+</li>
+<li><code>next()</code><ul>
+<li>获取下一个兄弟元素。</li>
+</ul>
+</li>
+<li><code>nextAll()</code></li>
+<li><code>prev()</code><ul>
+<li>获取上一个兄弟元素</li>
+</ul>
+</li>
+<li><code>prevAll()</code></li>
+<li><code>siblings()</code><ul>
+<li>获取所有兄弟元素</li>
+</ul>
+</li>
+<li><code>parent()</code><ul>
+<li>父元素</li>
+</ul>
+</li>
+<li><code>closest()</code><ul>
+<li>向上获取指定父元素(包含自己)</li>
+</ul>
+</li>
+<li><code>find(expr)</code><ul>
+<li>查找符合筛选的元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="串联"><a href="#串联" class="headerlink" title="串联"></a>串联</h2><ul>
+<li>将多条语句改为一条（装x用）</li>
+<li><code>add()</code><ul>
+<li><code>A.add(B)</code></li>
+<li>将AB组合成一个对象，类似<code>$(&quot;A,B&quot;)</code></li>
+</ul>
+</li>
+<li><code>addSelf()</code><ul>
+<li>将之前对象添加到…</li>
+<li><code>A.children().addSelf()</code></li>
+<li>将A添加到A的后代中</li>
+</ul>
+</li>
+<li><code>contents()</code></li>
+<li><code>end()</code><ul>
+<li>回到最后一个“破坏性”操作之前。</li>
+<li><code>A.children().end()</code></li>
+<li>回到A的后代之前，就是A</li>
+</ul>
+</li>
+</ul>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h2><ol>
+<li><code>$(document).ready(fn)</code><ul>
+<li>标准API</li>
+</ul>
+</li>
+<li><code>$(fn)</code><ul>
+<li>简化版</li>
+</ul>
+</li>
+</ol>
+<h3 id="js与jquery页面加载的区别"><a href="#js与jquery页面加载的区别" class="headerlink" title="js与jquery页面加载的区别"></a>js与jquery页面加载的区别</h3><ul>
+<li><code>window.onload=function(){}</code><ul>
+<li>可以写多个onload但是后者会覆盖前者。</li>
+</ul>
+</li>
+<li><code>$(fn)</code><ul>
+<li>可以写多个ready,会依次执行不会覆盖。</li>
+<li>ready和onload同时存在时，二者都会触发执行，ready快于onload</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h2><ul>
+<li><code>change()</code><ul>
+<li>当内容改变时触发</li>
+</ul>
+</li>
+<li><code>click()</code><ul>
+<li>单击</li>
+</ul>
+</li>
+<li><code>dblclick()</code><ul>
+<li>双击</li>
+</ul>
+</li>
+<li><code>blur()</code><ul>
+<li>失去焦点</li>
+</ul>
+</li>
+<li><code>focus()</code><ul>
+<li>焦点获取</li>
+</ul>
+</li>
+<li><code>select()</code><ul>
+<li>文本框或文本域被选中</li>
+</ul>
+</li>
+<li><code>keyup()</code><ul>
+<li>鼠标弹起</li>
+<li>ie浏览器会自动创建event事件对象.<ul>
+<li><code>event.keyCode</code><br>  获取按键的unicode编码</li>
+<li><code>event.clientX</code><ul>
+<li>获取鼠标x坐标</li>
+</ul>
+</li>
+<li><code>event.clientY</code><ul>
+<li>获取鼠标y坐标</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>keydown()</code></li>
+<li><code>keypress()</code></li>
+<li><code>mousedown</code></li>
+<li><code>mousemove()</code><ul>
+<li>鼠标在指定区域中不断移动触发</li>
+</ul>
+</li>
+<li><code>mouseover()</code><ul>
+<li>鼠标移入时触发</li>
+</ul>
+</li>
+<li><code>mouseout()</code><ul>
+<li>鼠标移出时触发</li>
+</ul>
+</li>
+<li><code>submit()</code><ul>
+<li>提交表单时触发，true表示提交，false表示不提交</li>
+</ul>
+</li>
+</ul>
+<h3 id="juqery提供的额外事件，用于完善js缺失的"><a href="#juqery提供的额外事件，用于完善js缺失的" class="headerlink" title="juqery提供的额外事件，用于完善js缺失的"></a>juqery提供的额外事件，用于完善js缺失的</h3><ul>
+<li><code>focusin</code><ul>
+<li>获得焦点</li>
+<li>与focus区别<ul>
+<li>可以在父元素上检测子元素的焦点获得</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>focusout</code><ul>
+<li>失去焦点</li>
+<li>与blur区别 同上</li>
+</ul>
+</li>
+<li><code>mouseenter</code><ul>
+<li>鼠标移入</li>
+<li>与mouseover区别<ul>
+<li>在父元素与子元素之间穿越时，不触发</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>mouseleave</code><ul>
+<li>鼠标移岀</li>
+</ul>
+</li>
+</ul>
+<h2 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h2><ul>
+<li><code>jq对象.事件方法名(fn);</code><ul>
+<li>标准方式</li>
+<li><code>$().ckick(fn).focus(fn).change(fn);</code><ul>
+<li>可以连续绑定。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>on/off(事件方法名,fn)</code><ul>
+<li>绑定/解绑事件</li>
+<li><code>jq对象.on(&quot;click blur change&quot;,fn)</code><ul>
+<li>可以绑定多个，用空格隔开，表示都执行后边的一个方法</li>
+</ul>
+</li>
+<li><code>jq对象.off()</code><ul>
+<li>解除所有绑定的事件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>toggle(fn1,fn2...)</code><ul>
+<li>事件切换</li>
+<li>第一次执行fn1,依此类推，执行完，从头开始</li>
+</ul>
+</li>
+<li><code>bind(type,fn)</code><ul>
+<li>给当前对象绑定<strong>一个</strong>事件</li>
+<li>例<ul>
+<li><code>$().bind(&quot;click&quot;,fn);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>unbind(type)</code><ul>
+<li>解绑，会解绑所有绑定事件。</li>
+<li>解绑指定的事件，可以使用别名</li>
+<li><strong>事件别名</strong><ul>
+<li>格式<ul>
+<li><code>事件.别名</code></li>
+</ul>
+</li>
+<li>例<ul>
+<li><code>$().bind(&quot;click.aaa&quot;,fn);</code></li>
+<li><code>$().unbind(&quot;click.aaa&quot;);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>triggerHandler(type)</code><ul>
+<li>在每一个匹配的元素上触发某类事件</li>
+</ul>
+</li>
+<li><code>triggerHa(type)</code><ul>
+<li>在每一个匹配的元素上触发某类事件。但不会执行浏览器默认动作，也不会产生事件冒泡</li>
+</ul>
+</li>
+</ul>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><h2 id="显示隐藏"><a href="#显示隐藏" class="headerlink" title="显示隐藏"></a>显示隐藏</h2><p>通过改变元素<strong>宽和高</strong>，来显示和隐藏</p>
+<ul>
+<li><code>show(speed,easing,fn)</code><ul>
+<li>speed<ul>
+<li>时间值</li>
+<li>固定字符串 slow normal,fast 等等</li>
+</ul>
+</li>
+<li>easing<ul>
+<li>swing<ul>
+<li>默认，动画效果 慢-块-慢</li>
+</ul>
+</li>
+<li>linear<ul>
+<li>动画匀速</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fn<ul>
+<li>动画执行完，执行的函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>hide()</code></li>
+<li><code>toggle()</code><ul>
+<li>切换</li>
+</ul>
+</li>
+</ul>
+<h2 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h2><p>通过改变元素<strong>高</strong>，来滑动显示和隐藏</p>
+<ul>
+<li><code>slideUp()</code><ul>
+<li>向上滑动</li>
+</ul>
+</li>
+<li><code>slideDown()</code><ul>
+<li>向下滑动</li>
+</ul>
+</li>
+<li><code>slideToggle()</code><ul>
+<li>上下切换滑动</li>
+</ul>
+</li>
+</ul>
+<h2 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h2><p>通过改变元素<strong>透明度</strong>，来淡入淡出显示和隐藏</p>
+<ul>
+<li><code>fadeIn()</code><ul>
+<li>淡入显示</li>
+</ul>
+</li>
+<li><code>fadeOut()</code><ul>
+<li>淡出隐藏</li>
+</ul>
+</li>
+<li><code>fadeToggle()</code><ul>
+<li>切换</li>
+</ul>
+</li>
+<li><code>fadeTo(speed,opacity,fn)</code><ul>
+<li>指定透明度</li>
+<li>opacity 透明度<ul>
+<li>0-1之间的数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><ul>
+<li>用于增强jQuery功能</li>
+</ul>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="fn-extend-json格式"><a href="#fn-extend-json格式" class="headerlink" title="$.fn.extend(json格式)"></a><code>$.fn.extend(json格式)</code></h3><ul>
+<li>增强通过jQuery获取的对象的功能</li>
+</ul>
+<h3 id="extend-obj"><a href="#extend-obj" class="headerlink" title="$.extend(obj)"></a><code>$.extend(obj)</code></h3><ul>
+<li>增强jQuery对象自身的功能（$/jQeury）</li>
+</ul>
+<h1 id="jquery中的ajax"><a href="#jquery中的ajax" class="headerlink" title="jquery中的ajax"></a>jquery中的ajax</h1><h2 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h2><h3 id="第一层"><a href="#第一层" class="headerlink" title="第一层"></a>第一层</h3><ul>
+<li><code>$.ajax()</code><ul>
+<li>最底层ajax请求，编写复杂，功能最全</li>
+</ul>
+</li>
+</ul>
+<h3 id="第二层"><a href="#第二层" class="headerlink" title="第二层"></a>第二层</h3><ul>
+<li><code>load(),$.get(),$.post()</code></li>
+</ul>
+<h3 id="第三层-高级开发"><a href="#第三层-高级开发" class="headerlink" title="第三层 高级开发"></a>第三层 高级开发</h3><ul>
+<li><code>$.getJSON()</code><ul>
+<li>可以完成js<strong>跨域</strong>请求</li>
+<li>域名：域名+端口+项目</li>
+<li>js默认不能跨域请求</li>
+</ul>
+</li>
+<li><code>$.getScript()</code><ul>
+<li>相当于<code>&lt;script src=&quot;&quot;&gt;</code>导入js</li>
+<li>这个可以动态加载js</li>
+</ul>
+</li>
+</ul>
+<h2 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url:&quot;&quot;,</span><br><span class="line">	type:&quot;&quot;,</span><br><span class="line">	data:&quot;&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	dataType:&quot;&quot;,</span><br><span class="line">	success:function()&#123;&#125;,</span><br><span class="line">	error:function()&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>url</strong><ul>
+<li>请求地址</li>
+</ul>
+</li>
+<li><strong>type</strong><ul>
+<li>GET或POST…，默认GET。</li>
+</ul>
+</li>
+<li><strong>data</strong><ul>
+<li>请求数据</li>
+<li><code>key=value</code>字符串或者json</li>
+</ul>
+</li>
+<li><strong>async</strong><ul>
+<li>是否异步，默认true。false为同步。</li>
+</ul>
+</li>
+<li><strong>dataType</strong><ul>
+<li>响应数据类型</li>
+<li><code>xml html json text script jsonp</code></li>
+</ul>
+</li>
+<li><strong>success</strong><ul>
+<li>请求成功后的回调函数(参数可选)</li>
+<li><code>function(data,textStatus,XHR){}</code><ul>
+<li>data<ul>
+<li>响应数据，已根据dataType参数进行处理后的数据</li>
+</ul>
+</li>
+<li>textStatus<ul>
+<li>描述状态的字符串</li>
+</ul>
+</li>
+<li>XHR<ul>
+<li>ajax引擎,XMLHttpRequest对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>error</strong><ul>
+<li>请求失败时调用此函数(参数可选)</li>
+<li><code>function(XMLHttpRequest,textStatus,errorThrown){}</code><ul>
+<li>XMLHttpRequest<ul>
+<li>XMLHttpRequest对象</li>
+</ul>
+</li>
+<li>textStatus<ul>
+<li>错误信息</li>
+</ul>
+</li>
+<li>errorThrown<ul>
+<li>捕获的异常对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="s-load"><a href="#s-load" class="headerlink" title="$(s).load()"></a>$(s).load()</h2><ul>
+<li><code>$(jquery对象).load(url,[sendData],[callback])</code><ul>
+<li>调用时必须使用jquery对象。</li>
+<li><strong>url</strong><ul>
+<li>请求地址</li>
+</ul>
+</li>
+<li><strong>sendData</strong><ul>
+<li>请求参数<ul>
+<li><code>key=value</code>字符串或者json</li>
+<li>无参数则为GET请求</li>
+<li>有参数则为POST请求</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>callback</strong><ul>
+<li>回调函数</li>
+<li><code>function(backData,textStatus,XHR){}</code><ul>
+<li><strong>backData</strong><ul>
+<li>响应数据</li>
+<li>load永远获取的是字符串，使用需要手动转成json</li>
+<li><code>var jsonData=eval(&quot;(&quot;+backData+&quot;)&quot;);</code></li>
+</ul>
+</li>
+<li>textStatus<ul>
+<li>描述状态的字符串（success,error…）</li>
+</ul>
+</li>
+<li>XHR<ul>
+<li>ajax引擎，XMLHttpRequest对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>load方法的编码<ul>
+<li>请求自动编码</li>
+<li>响应存在中文乱码，需要设置<ul>
+<li><code>res.setContentType(&quot;application/json;charset=UTF-8&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h2><ul>
+<li><code>$.get(url,[sendData],[callback],[type]){})</code><ul>
+<li>请求时存在乱码，需要手动解码<code>new String(...)</code></li>
+<li><strong>type</strong><ul>
+<li>客户端认为的服务器响应数据类型</li>
+<li>“json”</li>
+</ul>
+</li>
+<li>客户端将服务器响应数据当作json<ol>
+<li><code>application/json;charset=utf-8</code><ul>
+<li>通过设置响应mime类型，直接告诉客户端响应的就是json</li>
+</ul>
+</li>
+<li><code>text/html;charset-utf-8</code><ul>
+<li>需要通过设置参数type</li>
+<li><strong><code>type=json</code></strong>，客户端才会将数据当作json</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="post"><a href="#post" class="headerlink" title="$.post"></a>$.post</h2><ul>
+<li><code>$.post(url,[sendData],[callback],[type]){})</code><ul>
+<li>请求时存在乱码，需要设置，其它同get</li>
+</ul>
+</li>
+</ul>
+<h3 id="安"><a href="#安" class="headerlink" title="安"></a>安</h3><ul>
+<li>backData和xmlHttpRequest.responseText区别<ul>
+<li>backData是js对象</li>
+<li>xmlHttpRequest.responseText是字符串</li>
+</ul>
+</li>
+<li>用jquery解析xml文件时xml就是js对象<ul>
+<li>可以按照js的api解析xml</li>
+</ul>
+</li>
+<li>ajax解析xml文件，直接把url写成xml地址即可</li>
+</ul>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><h2 id="表单序列化"><a href="#表单序列化" class="headerlink" title="表单序列化"></a>表单序列化</h2><ul>
+<li><code>serialize()</code><ul>
+<li><code>$(&quot;form&quot;).serialize()</code></li>
+<li>将表单中所有项拼凑成一个字符串，类似get请求参数<ul>
+<li><code>usernmae=an3&amp;passwrod=123&amp;...</code></li>
+</ul>
+</li>
+<li>将表单项的name属性作为key</li>
+<li>注意：<ul>
+<li>必须用<code>&lt;form&gt;</code>标签元素</li>
+<li>为每个jQuery对象设置一个name属性，因为name属性会被认为请求参数名</li>
+<li>如果属性过多，强烈推荐采用这个API </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>serializeArray()</code><ul>
+<li>将表单中所有项拼凑成一个json数组<ul>
+<li><code>[{&quot;name&quot;:&quot;an3&quot;},{&quot;password&quot;:&quot;123&quot;},{}...]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>子元素事件触发时，也会触发父元素事件。</p>
+<ul>
+<li>阻止事件冒泡<ol>
+<li><code>return false</code></li>
+<li><code>event.stopPropagation()</code><ul>
+<li>阻止事件冒泡（传播行为）</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="浏览器默认行为"><a href="#浏览器默认行为" class="headerlink" title="浏览器默认行为"></a>浏览器默认行为</h2><ul>
+<li>如a标签的默认跳转行为</li>
+<li>阻止默认行为<ol>
+<li><code>return false</code></li>
+<li><code>event.preventDefault()</code><ul>
+<li>阻止默认事件行为的触发</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="附-跨域"><a href="#附-跨域" class="headerlink" title="附 跨域"></a>附 跨域</h1><ul>
+<li><strong>域</strong><ul>
+<li>服务器域名，唯一标识（协议，域名，端口）必须保证一致，说明域相同。</li>
+</ul>
+</li>
+<li><strong>跨域</strong><ul>
+<li>在一个服务器上，去访问另一个服务器。</li>
+<li>两个不同域名之间的通信。</li>
+</ul>
+</li>
+<li>js如果调用另一个域程序，不能执行当前域的js函数。</li>
+<li><strong>js的跨域处理</strong></li>
+<li><strong>JSONP</strong><ul>
+<li>是json的一种“使用模式”，可以从别的域要资料。</li>
+<li>可以通过<code>&lt;script&gt;</code>这个元素的开放策略，从其它源动态的获取json，这种使用模式就叫JSONP.</li>
+<li>大致原理<ul>
+<li>现又两个服务器<code>tom1</code>，<code>tom2</code>，1要从2获取数据。</li>
+<li>则1中<ul>
+<li><code>&lt;script src=&quot;&quot;&gt;</code></li>
+<li>src中是指向2的请求地址。而由于不同域，2响应的json数据，1的回调函数是无法接收的。所以需要在请求地址中将回调函数名称当作参数传给2.<ul>
+<li><code>http:.../xxx?callback=showData()</code></li>
+</ul>
+</li>
+<li>2获取1的回调函数后，将回调函数域json数据组合后响应给1，意思是通知1调用这个函数。<ul>
+<li>响应的是一个函数</li>
+<li><code>res.print(callback+&quot;(&quot;&quot;+jsonData+&quot;&quot;)&quot;)</code></li>
+<li>callback<ul>
+<li>1传过来的回调函数名</li>
+</ul>
+</li>
+<li>jsonData<ul>
+<li>2的json数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>这样1就会执行回调函数，并有了json数据</li>
+</ul>
+</li>
+<li>注意，1中回到函数写在<code>&lt;script&gt;</code>标签前，以免找不到函数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>jquery的跨域处理</strong><ul>
+<li><code>$.getJson(url,[data],fn)</code><ul>
+<li>url<ul>
+<li>指向另一个域的请求地址</li>
+<li>因为回调函数是匿名的所以url这样写<ul>
+<li><code>http:.../xx?callback=?</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/xd-JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -366,7 +3262,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-25 13:41:53" itemprop="dateModified" datetime="2018-12-25T13:41:53+08:00">2018-12-25</time>
+                <time title="修改时间：2019-03-08 14:34:29" itemprop="dateModified" datetime="2019-03-08T14:34:29+08:00">2019-03-08</time>
               
             
           </span>
@@ -1791,7 +4687,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-25 13:29:09" itemprop="dateModified" datetime="2018-12-25T13:29:09+08:00">2018-12-25</time>
+                <time title="修改时间：2019-03-08 14:34:23" itemprop="dateModified" datetime="2019-03-08T14:34:23+08:00">2019-03-08</time>
               
             
           </span>
@@ -2296,7 +5192,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-24 16:27:52" itemprop="dateModified" datetime="2018-12-24T16:27:52+08:00">2018-12-24</time>
+                <time title="修改时间：2019-03-08 14:34:16" itemprop="dateModified" datetime="2019-03-08T14:34:16+08:00">2019-03-08</time>
               
             
           </span>
@@ -2935,1265 +5831,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/xd-递归/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/29/xd-递归/" itemprop="url">
-                  xd-递归
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-29 14:46:48" itemprop="dateCreated datePublished" datetime="2018-11-29T14:46:48+08:00">2018-11-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-30 01:17:15" itemprop="dateModified" datetime="2018-11-30T01:17:15+08:00">2018-11-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
-<li>自己调用自己</li>
-<li>确定结束条件</li>
-</ul>
-<h1 id="好处-amp-弊端"><a href="#好处-amp-弊端" class="headerlink" title="好处 &amp; 弊端"></a>好处 &amp; 弊端</h1><ul>
-<li>好处<ul>
-<li>不用知道循环次数。</li>
-</ul>
-</li>
-<li>弊端<ul>
-<li>调用次数过多，栈内存会溢出。</li>
-</ul>
-</li>
-</ul>
-<h1 id="例"><a href="#例" class="headerlink" title="例"></a>例</h1><ol>
-<li><p>求一个数的阶乘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int jc(int num) &#123;</span><br><span class="line">	if (num == 1) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return num * jc(num-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>求一个数的阶乘结果后边有多少个0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int fun(int num) &#123;</span><br><span class="line">	if (num &gt;0 &amp;&amp; num &lt; 5) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return num/5 + fun(num/5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>规律<ul>
-<li>只要一个数是5的倍数，那么它跟偶数相乘末尾肯定有个0，所以一个数有多少个5，结果末尾就有多少个0</li>
-<li>每隔5个的数就包含一个5。<code>num/5</code>可以求出包含一个5的数有多少个<ul>
-<li><code>5*1 5*2 5*3 5*4 5*5 ...</code></li>
-<li>而这些数中每隔5个的数包含两个5，<code>num/5/5</code>可以求出包含两个5的数有多少个<ul>
-<li><code>5*5*1 5*5*2 5*5*3 5*5*4 5*5*5 ...</code></li>
-<li>在这些数中每隔5个的数包含三个5，<code>num/5/5/5</code>可以求出包含三个5的数有多少个</li>
-<li>……</li>
-<li>一直到最后数不够5个了，就没有包含5的数了。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>斐波那契数列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int fun(int num) &#123;</span><br><span class="line">	if (num == 1 || num ==2) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return fun(num - 1) + fun (num - 2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>问题<ul>
-<li>一对刚出生的兔子，一个月后长成大兔子，此后每月都会生出一对兔子，问n月兔子的总对数。</li>
-</ul>
-</li>
-<li>规律<ul>
-<li><code>1 1 2 3 5 8 13 ...</code></li>
-<li>可以看出除了第一第二月，后边每月是前边两月的和。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>约瑟夫环（非递归，集合）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">private int getLuckyNum(int n) &#123;</span><br><span class="line">	ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">	// 把n个人添加到集合</span><br><span class="line">	for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">		list.add(i);</span><br><span class="line">	&#125;</span><br><span class="line">	// 定义数数变量</span><br><span class="line">	int count = 1;</span><br><span class="line">	// 只要多于一个人，就一直杀</span><br><span class="line">	for (int i = 0; list.size() != 1; i++) &#123;</span><br><span class="line">		// 如果数到末尾了，从头接着数</span><br><span class="line">		if (i == list.size()) &#123;</span><br><span class="line">			i = 0;</span><br><span class="line">		&#125;</span><br><span class="line">		// 如果数到3的倍数就把人杀掉，指针记得--，数数记得++</span><br><span class="line">		if (count % 3 == 0) &#123;</span><br><span class="line">			list.remove(i--);</span><br><span class="line">		&#125;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	// 最后就剩了一个人</span><br><span class="line">	return list.get(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>问题<ul>
-<li>n个人围成一个环，从头开始数数，数到3的倍数就把这个位置的人杀掉，那么n个人中哪个数是活到最后的。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-Jar包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-Jar包/" itemprop="url">
-                  xd-Jar包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:33:05" itemprop="dateCreated datePublished" datetime="2018-11-23T17:33:05+08:00">2018-11-23</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-JDK新特性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-JDK新特性/" itemprop="url">
-                  xd-JDK新特性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:32:16" itemprop="dateCreated datePublished" datetime="2018-11-23T17:32:16+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 23:28:56" itemprop="dateModified" datetime="2018-12-06T23:28:56+08:00">2018-12-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Jdk-5"><a href="#Jdk-5" class="headerlink" title="Jdk 5"></a>Jdk 5</h1><h2 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h2><h3 id="interface-Iterable"><a href="#interface-Iterable" class="headerlink" title="interface Iterable"></a>interface Iterable</h3><ul>
-<li><code>Iterator iterator()</code></li>
-<li>此接口为<code>Collection</code>的父接口</li>
-<li>实现此接口的都可以用<code>for-each</code></li>
-</ul>
-<h3 id="三种迭代能否删除"><a href="#三种迭代能否删除" class="headerlink" title="三种迭代能否删除"></a>三种迭代能否删除</h3><ul>
-<li>普通for循环<ul>
-<li>可以删除,但是索引要<code>--</code></li>
-</ul>
-</li>
-<li>迭代器<ul>
-<li>可以删除,但是必须使用迭代器自身的<code>remove()</code>方法,否则会出现并发修改异常</li>
-</ul>
-</li>
-<li>增强for循环<ul>
-<li>不能删除</li>
-<li>增强for依赖的是迭代器，会发生并发修改异常</li>
-</ul>
-</li>
-</ul>
-<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><ul>
-<li>格式<ul>
-<li>修饰符 返回值类型 方法名(<code>数据类型…  变量名</code>){}</li>
-</ul>
-</li>
-<li>注意事项：<ul>
-<li>这里的变量其实是一个数组</li>
-<li>如果一个方法有可变参数，并且有多个参数，那么，可变参数肯定是最后一个 </li>
-</ul>
-</li>
-</ul>
-<h2 id="静态导入"><a href="#静态导入" class="headerlink" title="静态导入"></a>静态导入</h2><ul>
-<li>格式<ul>
-<li><code>import static 包名.类名.方法名</code> <ul>
-<li>静态导入导入的是类中的静态方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h1 id="Jdk-6"><a href="#Jdk-6" class="headerlink" title="Jdk 6"></a>Jdk 6</h1><h1 id="Jdk-7"><a href="#Jdk-7" class="headerlink" title="Jdk 7"></a>Jdk 7</h1><h2 id="二进制字面量"><a href="#二进制字面量" class="headerlink" title="二进制字面量"></a>二进制字面量</h2><ul>
-<li>用<code>0b</code>表示二进制<ul>
-<li><code>0b110</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="数字字面量可以出现下划线"><a href="#数字字面量可以出现下划线" class="headerlink" title="数字字面量可以出现下划线"></a>数字字面量可以出现下划线</h2><ul>
-<li>运行时会去掉<ul>
-<li><code>100_000</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="switch语句可以用字符串"><a href="#switch语句可以用字符串" class="headerlink" title="switch语句可以用字符串"></a><code>switch</code>语句可以用字符串</h2><h2 id="泛型简化-菱形泛型"><a href="#泛型简化-菱形泛型" class="headerlink" title="泛型简化,菱形泛型"></a>泛型简化,菱形泛型</h2><ul>
-<li>=号前写了泛型，=后只写个<code>&lt;&gt;</code>即可<ul>
-<li><code>List&lt;String&gt; list=new ArrayList&lt;&gt;();</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="异常的多个catch合并，每个异常用或"><a href="#异常的多个catch合并，每个异常用或" class="headerlink" title="异常的多个catch合并，每个异常用或|"></a>异常的多个catch合并，每个异常用或<code>|</code></h2><h2 id="标准异常处理代码"><a href="#标准异常处理代码" class="headerlink" title="标准异常处理代码"></a>标准异常处理代码</h2><ul>
-<li><code>try-with-resources</code>语句</li>
-</ul>
-<h1 id="jdk-8"><a href="#jdk-8" class="headerlink" title="jdk 8"></a>jdk 8</h1><h2 id="接口中可以定义一般方法"><a href="#接口中可以定义一般方法" class="headerlink" title="接口中可以定义一般方法"></a>接口中可以定义一般方法</h2><ul>
-<li>使用<code>default</code>关键字<ul>
-<li><code>public default void fun(){}</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="接口中可以定义静态方法"><a href="#接口中可以定义静态方法" class="headerlink" title="接口中可以定义静态方法"></a>接口中可以定义静态方法</h2><ul>
-<li><code>public static void fun(){}</code><ul>
-<li>调用<code>接口名.方法名</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="局部内部类访问局部变量时可以不加final"><a href="#局部内部类访问局部变量时可以不加final" class="headerlink" title="局部内部类访问局部变量时可以不加final"></a>局部内部类访问局部变量时可以不加final</h2><ul>
-<li>但实际上还是final的</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-江湖百晓生/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-江湖百晓生/" itemprop="url">
-                  xd-江湖百晓生
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:31:39" itemprop="dateCreated datePublished" datetime="2018-11-23T17:31:39+08:00">2018-11-23</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-测试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-测试/" itemprop="url">
-                  xd-测试
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:30:36" itemprop="dateCreated datePublished" datetime="2018-11-23T17:30:36+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-23 10:24:44" itemprop="dateModified" datetime="2018-12-23T10:24:44+08:00">2018-12-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Junit4"><a href="#Junit4" class="headerlink" title="Junit4"></a>Junit4</h1><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><ul>
-<li><code>@Test</code><ul>
-<li><code>public void method()</code></li>
-<li>测试注释</li>
-<li>指示方法可以作为一个测试用例</li>
-</ul>
-</li>
-<li><code>@Before</code><ul>
-<li><code>public void method()</code></li>
-<li>该方法必须在类中的每个测试之前执行，以便执行测试某些必要的先决条件。</li>
-<li>会在每个用例运行之前都运行一次</li>
-</ul>
-</li>
-<li><code>@BeforeClass</code><ul>
-<li><code>public static void method()</code></li>
-<li>在测试类里所有用例运行之前，运行一次这个方法</li>
-<li>只会运行一次，一般用于创建数据库连接、读取文件等</li>
-</ul>
-</li>
-<li><code>@After</code><ul>
-<li><code>public void method()</code></li>
-<li>该方法在执行每项测试后执行</li>
-<li>如执行每一个测试后重置某些变量，删除临时变量等</li>
-</ul>
-</li>
-<li><code>@AfterClass</code><ul>
-<li><code>public static void method()</code></li>
-<li>测试类里所有用例运行之后，运行一次。用于处理一些测试后续工作</li>
-<li>如清理数据，从数据库断开连接</li>
-</ul>
-</li>
-<li><code>@Ignore</code><ul>
-<li><code>public static void method()</code><ul>
-<li>当想暂时禁用特定的测试执行可以使用忽略注释</li>
-<li>每个被注解为@Ignore的方法将不被执行。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><ul>
-<li><code>void assertEquals([String message], expected value, actual value)</code><ul>
-<li>断言两个值相等</li>
-<li>值可能是类型有 int, short, long, byte, char or java.lang.Object.</li>
-<li>第一个参数是一个可选的字符串消息</li>
-</ul>
-</li>
-<li><code>void assertTrue([String message], boolean condition)</code><ul>
-<li>断言一个条件为真 </li>
-</ul>
-</li>
-<li><code>void assertFalse([String message],boolean condition)</code><ul>
-<li>断言一个条件为假</li>
-</ul>
-</li>
-<li><code>void assertNotNull([String message], java.lang.Object object)</code><ul>
-<li>断言一个对象不为空(null) </li>
-</ul>
-</li>
-<li><code>void assertNull([String message], java.lang.Object object)</code><ul>
-<li>断言一个对象为空(null)</li>
-</ul>
-</li>
-<li><code>void assertSame([String message], java.lang.Object expected, java.lang.Object actual)</code><ul>
-<li>断言两个对象引用相同的对象</li>
-</ul>
-</li>
-<li><code>void assertNotSame([String message], java.lang.Object unexpected, java.lang.Object actual)</code><ul>
-<li>断言两个对象不是引用同一个对象</li>
-</ul>
-</li>
-<li><code>void assertArrayEquals([String message], expectedArray, resultArray)</code><ul>
-<li>断言预期数组和结果数组相等</li>
-<li>数组的类型可能是 int, long, short, char, byte or java.lang.Object. </li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-枚举/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/xd-枚举/" itemprop="url">
-                  xd-枚举
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 17:29:18" itemprop="dateCreated datePublished" datetime="2018-11-23T17:29:18+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 23:14:54" itemprop="dateModified" datetime="2018-12-06T23:14:54+08:00">2018-12-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li>将变量的值意义列举出来，变量的值只限于列举出来的范围内。如：一周7天。。。</li>
-<li>单例类<ul>
-<li>一个类一个实例</li>
-</ul>
-</li>
-<li>多例类<ul>
-<li>一个类有多个实例</li>
-</ul>
-</li>
-<li>枚举类<ul>
-<li>一个类有有限个实例</li>
-</ul>
-</li>
-</ul>
-<h1 id="手动实现枚举类"><a href="#手动实现枚举类" class="headerlink" title="手动实现枚举类"></a>手动实现枚举类</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><ul>
-<li>类似单例，不过是有多个实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Week&#123;</span><br><span class="line">    public static Week Mon=new Week();</span><br><span class="line">    public static Week Tus=new Week();</span><br><span class="line">    public static Week Sun=new Week();</span><br><span class="line"></span><br><span class="line">    private Week() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><ul>
-<li>有成员变量，构造是有参的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Week&#123;</span><br><span class="line">    public static Week Mon=new Week(&quot;xxx&quot;);</span><br><span class="line">    public static Week Tus=new Week(&quot;xxx&quot;);</span><br><span class="line">    public static Week Sun=new Week(&quot;xxx&quot;);</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    private Week(String name) &#123;</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><ul>
-<li>如果是抽象类,使用匿名内部类<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">abstract class Week&#123;</span><br><span class="line">    public static Week Mon=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;        </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    public static Week Tus=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    public static Week Sun=new Week()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    private Week() &#123;&#125;</span><br><span class="line"></span><br><span class="line">   public abstract void show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h1><ul>
-<li>枚举类</li>
-</ul>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>定义枚举类要用<code>enum</code><ul>
-<li><code>public enum xxx</code></li>
-</ul>
-</li>
-<li>枚举项要在首行。</li>
-<li>枚举类可以有构造器， 但必须是私有的，默认也是私有的</li>
-<li>枚举类可以有抽象方法，但枚举项必须重写抽象方法</li>
-<li>枚举项都是有编号的。</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><code>int ordinal()</code><ul>
-<li>返回枚举常量的编号</li>
-</ul>
-</li>
-<li><code>int compareTo(E o)</code><ul>
-<li>比较的就是序号</li>
-</ul>
-</li>
-<li><code>String name()</code><ul>
-<li>返回此枚举常量的名称</li>
-</ul>
-</li>
-<li><code>valueOf(Class&lt;T&gt; enumType, String name)</code><ul>
-<li>返回带指定名称的指定枚举类型的枚举常量</li>
-<li><code>Week mon=Week.valueOf(Week.class,&quot;Mon&quot;)</code></li>
-</ul>
-</li>
-<li><code>values()</code><ul>
-<li>文档中没有，但所有枚举都有这个方法。获取所有枚举值</li>
-</ul>
-</li>
-</ul>
-<h1 id="Enum的枚举"><a href="#Enum的枚举" class="headerlink" title="Enum的枚举"></a>Enum的枚举</h1><h2 id="一-1"><a href="#一-1" class="headerlink" title="一"></a>一</h2><ul>
-<li>默认空参构造就是私有的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum Week&#123;</span><br><span class="line">        Mon,Tus,Sun;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="二-1"><a href="#二-1" class="headerlink" title="二"></a>二</h2><ul>
-<li>有成员变量，有参构造。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public enum Week&#123;</span><br><span class="line">        Mon(&quot;星期一&quot;),Tus(&quot;星期二&quot;),Sun(&quot;星期天&quot;);</span><br><span class="line">        private String name;</span><br><span class="line">        private Week(String name)&#123;</span><br><span class="line">          this.name=name;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="三-1"><a href="#三-1" class="headerlink" title="三"></a>三</h2><ul>
-<li>如果有抽象方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">enum Week3&#123;</span><br><span class="line">    Mon(&quot;星期一&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Tus(&quot;星期二&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ,Sun(&quot;星期天&quot;)&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void show() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    private String name;</span><br><span class="line">    private Week5(String name)&#123;</span><br><span class="line">        this.name=name;</span><br><span class="line">    &#125;</span><br><span class="line">    public abstract void show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-设计模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -4257,7 +5894,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-06 22:40:35" itemprop="dateModified" datetime="2018-12-06T22:40:35+08:00">2018-12-06</time>
+                <time title="修改时间：2019-03-08 14:33:35" itemprop="dateModified" datetime="2019-03-08T14:33:35+08:00">2019-03-08</time>
               
             
           </span>
@@ -4274,7 +5911,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -4407,17 +6044,29 @@
 <li>目标对象和代理对象实现同一接口是为了保证方法一致</li>
 <li>动态代理与代理模式原理是一样的，只是它没有具体的代理类，直接通过反射生成了一个代理对象。</li>
 </ul>
-<h4 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h4><h5 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h5><ul>
+<h4 id="基于接口-amp-基于继承"><a href="#基于接口-amp-基于继承" class="headerlink" title="基于接口 &amp; 基于继承"></a>基于接口 &amp; 基于继承</h4><ul>
+<li>基于接口，接口有的方法才能代理，目标类中特有的不能代理</li>
+<li>基于继承，由于代理类继承了目标类，目标类中所有方法都能代理。</li>
+</ul>
+<h4 id="基于接口动态代理"><a href="#基于接口动态代理" class="headerlink" title="基于接口动态代理"></a>基于接口动态代理</h4><ul>
+<li>jdk动态代理</li>
+</ul>
+<h5 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h5><ul>
 <li>对装饰者设计模式简化。使用前提：必须有接口</li>
 <li>接口+实现类</li>
 </ul>
 <h5 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h5><ul>
+<li>动态代理的顶级父类</li>
 <li>返回代理对象的名称<ul>
 <li><code>$Proxy数字</code></li>
 </ul>
 </li>
 </ul>
 <h6 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h6><ul>
+<li><code>static Class&lt;?&gt; getProxyClass(ClassLoader loader,Class&lt;?&gt;[] interfaces)</code><ul>
+<li>获取代理类的class</li>
+</ul>
+</li>
 <li><code>static Object newProxyInstance(ClassLoader loader,Class&lt;?&gt;[] interfaces,InvocationHandler h)</code><ul>
 <li>返回一个指定接口的代理类实例。</li>
 <li><code>ClassLoader</code><ul>
@@ -4502,7 +6151,19 @@
 </ul>
 </li>
 </ul>
-<h4 id="Cglib动态代理"><a href="#Cglib动态代理" class="headerlink" title="Cglib动态代理"></a>Cglib动态代理</h4><h5 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h5><ul>
+<h5 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h5><ul>
+<li><p>为何使用代理类调用目标方法会执行<code>InvocationHandler</code>的<code>invoke()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class $Proxy0 extends Proxy implements 目标对象接口&#123;</span><br><span class="line">	protected $Proxy0(InvocationHandler h)&#123;</span><br><span class="line">		super(h);</span><br><span class="line">	&#125;</span><br><span class="line">	public String add()&#123;</span><br><span class="line">		return super.h.invoke(this,method,args)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>模拟代理类的底层实现</li>
+<li>构造代理类时，会把<code>InvocationHandler</code>赋给代理类，然后再目标方法中使用的是<code>InvocationHandler</code>的<code>invoke()</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="基于继承动态代理"><a href="#基于继承动态代理" class="headerlink" title="基于继承动态代理"></a>基于继承动态代理</h4><ul>
+<li>Cglib动态代理</li>
+</ul>
+<h5 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h5><ul>
 <li>没有接口,只有实现类。</li>
 <li>采用字节码增强框架 cglib，在运行时 创建目标类的子类，从而对目标类进行增强。</li>
 <li>可以对任何类生成代理，原理是对目标对象进行继承代理</li>
@@ -4607,7 +6268,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -4654,7 +6315,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -4679,7 +6340,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/xd-Git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/xd-h/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -322,8 +322,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/30/xd-Git/" itemprop="url">
-                  xd-Git
+                <a class="post-title-link" href="/2019/03/08/xd-h/" itemprop="url">
+                  xd-h
                 </a>
               
             
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="创建时间：2019-01-30 15:57:51 / 修改时间：22:12:59" itemprop="dateCreated datePublished" datetime="2019-01-30T15:57:51+08:00">2019-01-30</time>
+              <time title="创建时间：2019-03-08 14:14:33 / 修改时间：14:52:41" itemprop="dateCreated datePublished" datetime="2019-03-08T14:14:33+08:00">2019-03-08</time>
             
 
             
@@ -371,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
 
                 
                 
@@ -407,438 +407,7 @@
       
         
           
-            <h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><ul>
-<li>分布式版本管理</li>
-</ul>
-<h1 id="git配置的增删改查"><a href="#git配置的增删改查" class="headerlink" title="git配置的增删改查"></a>git配置的增删改查</h1><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
-<li><code>git config --list</code><ul>
-<li><code>git config -l</code>简写</li>
-</ul>
-</li>
-</ul>
-<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><ul>
-<li><code>git config --global 键 &#39;值&#39;</code></li>
-</ul>
-<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
-<li><code>git config   --global --unset  键</code></li>
-</ul>
-<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
-<li><code>git config --global --replace-all 键 &#39;值&#39;</code></li>
-</ul>
-<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
-<li><code>git init</code><ul>
-<li>将一个目录变成Git管理的仓库</li>
-<li>目录下会有一个隐藏的<code>.git</code>文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="版本库概念"><a href="#版本库概念" class="headerlink" title="版本库概念"></a>版本库概念</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库1.png" alt=""></p>
-<ul>
-<li>仓库包含<ul>
-<li>版本库<ul>
-<li><code>.git</code></li>
-</ul>
-</li>
-<li>工作区<ul>
-<li>除了<code>.git</code>文件夹外的其它</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库2.jpg" alt=""></p>
-<ul>
-<li><code>git add</code><ul>
-<li>把工作区的文件添加到版本库的暂存区</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库3.jpg" alt=""></p>
-<ul>
-<li><code>git commit</code><ul>
-<li>把暂存区的文件提交到版本库的指定分支</li>
-</ul>
-</li>
-</ul>
-<h1 id="添加-amp-提交"><a href="#添加-amp-提交" class="headerlink" title="添加 &amp; 提交"></a>添加 &amp; 提交</h1><ul>
-<li><code>git add</code><ul>
-<li>把文件添加到版本库的暂存区</li>
-<li>注意文件编码</li>
-<li>可以多次add不同的文件</li>
-</ul>
-</li>
-<li><code>git commit [-m &quot;message&quot;]</code><ul>
-<li>把文件提交到版本库的分支</li>
-<li><code>-m</code><ul>
-<li>提交的说明</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h1><ul>
-<li><code>git status</code><ul>
-<li>查看仓库状态</li>
-</ul>
-</li>
-<li><code>git diff</code><ul>
-<li>比较工作区和暂存区文件的区别</li>
-</ul>
-</li>
-<li><code>git diff --cached</code><ul>
-<li>比较暂存区和分支文件的区别</li>
-</ul>
-</li>
-<li><code>git diff HEAD</code><ul>
-<li>比较工作区和分支文件的区别</li>
-</ul>
-</li>
-<li><code>git log [--pretty=oneline]</code><ul>
-<li>查看历史记录</li>
-<li><code>--pretty=oneline</code><ul>
-<li>整理日志信息（在一行..）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><ul>
-<li><code>HEAD</code><ul>
-<li>表示当前版本</li>
-</ul>
-</li>
-<li><code>HEAD^</code><ul>
-<li>上一个版本</li>
-</ul>
-</li>
-<li><code>HEAD^^</code><ul>
-<li>上上个版本</li>
-</ul>
-</li>
-<li><code>HEAD-100</code><ul>
-<li>上100个版本</li>
-</ul>
-</li>
-</ul>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
-<li><code>git reset  --hard HEAD或commit id</code></li>
-<li><code>git reflog</code><ul>
-<li>记录着每一次命令（有命令id）</li>
-<li>回退后，可以用此命令查询commit id </li>
-</ul>
-</li>
-</ul>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h3 id="工作区的文件修改了，尚未add"><a href="#工作区的文件修改了，尚未add" class="headerlink" title="工作区的文件修改了，尚未add"></a>工作区的文件修改了，尚未add</h3><ul>
-<li><code>git checkout -- &lt;file&gt;</code><ul>
-<li>撤销工作区文件的修改</li>
-<li>我的理解就是从版本库分支中检出了一份覆盖了。</li>
-</ul>
-</li>
-</ul>
-<h3 id="工作区的文件修改了，已经add，尚未commit"><a href="#工作区的文件修改了，已经add，尚未commit" class="headerlink" title="工作区的文件修改了，已经add，尚未commit"></a>工作区的文件修改了，已经add，尚未commit</h3><ul>
-<li><code>git reset HEAD &lt;file&gt;</code><ul>
-<li>将文件从暂存区回退到工作区</li>
-</ul>
-</li>
-<li><code>git checkout -- &lt;file&gt;</code></li>
-</ul>
-<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
-<li><code>rm &lt;file&gt;</code><ul>
-<li>删除本地的（工作区的）</li>
-</ul>
-</li>
-<li><code>git checkout -- &lt;file&gt;</code><ul>
-<li>不想删了，可以再检出回来</li>
-</ul>
-</li>
-<li><code>git rm &lt;file&gt;</code></li>
-<li><code>git commit -m</code><ul>
-<li>经过上面两步就把版本库中的也删除了</li>
-</ul>
-</li>
-</ul>
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
-<li>不需要私匙和公匙，推送和克隆时需要邮箱和密码</li>
-</ul>
-<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><ul>
-<li><code>Secure Shell</code><ul>
-<li>安全外壳协议</li>
-</ul>
-</li>
-<li>使用私匙和公匙推送和克隆</li>
-</ul>
-<h3 id="为什么GitHub需要SSH-Key呢？"><a href="#为什么GitHub需要SSH-Key呢？" class="headerlink" title="为什么GitHub需要SSH Key呢？"></a>为什么GitHub需要SSH Key呢？</h3><ul>
-<li>因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送</li>
-</ul>
-<h3 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH KEY"></a>配置SSH KEY</h3><ol>
-<li>创建SSH Key<ul>
-<li>先看本地用户目录下是否有<code>.ssh</code><ul>
-<li><code>id_rsa</code><ul>
-<li>私钥，不能泄露出去</li>
-</ul>
-</li>
-<li><code>id_rsa.pub</code><ul>
-<li>公钥，可以放心地告诉任何人</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><ul>
-<li>如果没有，用此命令创建</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>登陆GitHub，打开“Account settings”，“SSH Keys”页面<ul>
-<li><code>Add SSH Key</code><ul>
-<li>Title<ul>
-<li>任意</li>
-</ul>
-</li>
-<li>Key<ul>
-<li>id_rsa.pub文件的内容</li>
-<li>可以添加多个</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="从本地推送到远程库"><a href="#从本地推送到远程库" class="headerlink" title="从本地推送到远程库"></a>从本地推送到远程库</h3><ol>
-<li>在GitHub创建一个库</li>
-<li>与本地仓库关联（在需要关联的仓库下执行命令）<ul>
-<li><code>git remote add origin git@github.com:awcnoanswer/test.git</code><ul>
-<li>远程库默认名<code>origin</code>（别名）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>推送本地内容到远程库<ul>
-<li><code>git push -u origin master</code><ul>
-<li>第一次推送master分支时，</li>
-<li><code>-u</code><ul>
-<li>Git不但会把本地的master分支所有内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>git push origin master 最新修改</code><ul>
-<li>在以后的推送或者拉取时就可以简化命令</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h3><ul>
-<li><code>git clone git@github.com:awcnoanswer/test.git</code><ul>
-<li>会克隆到执行命令的目录</li>
-</ul>
-</li>
-</ul>
-<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/分支.png" alt=""></p>
-<ul>
-<li><code>master</code><ul>
-<li>主分支</li>
-</ul>
-</li>
-<li><code>dev</code><ul>
-<li>分支</li>
-</ul>
-</li>
-<li><code>HEAD</code><ul>
-<li>当前版本</li>
-</ul>
-</li>
-<li>默认只有一条主分支，然后创建分支，想要切换分支，只要把<code>HEAD</code>指向想要切换的分支即可。</li>
-<li>分支合并到主分支<ul>
-<li><code>master</code>指向分支即可。</li>
-</ul>
-</li>
-</ul>
-<h2 id="创建-amp-合并分支"><a href="#创建-amp-合并分支" class="headerlink" title="创建&amp;合并分支"></a>创建&amp;合并分支</h2><ul>
-<li><code>git branch dev</code><ul>
-<li>创建分支dev（自定义）</li>
-</ul>
-</li>
-<li><code>git checkout dev</code><ul>
-<li>切换到分支dev</li>
-</ul>
-</li>
-<li><code>git checkout -b dev</code><ul>
-<li>git checkout命令加上-b参数表示创建并切换，相当于上两条</li>
-</ul>
-</li>
-<li><code>git branch</code><ul>
-<li>查看当前分支</li>
-<li>会列出分支列表，当前分支前有<code>*</code>号</li>
-</ul>
-</li>
-<li><code>git merge dev</code><ul>
-<li>把分支dev合并到当前分支</li>
-</ul>
-</li>
-<li><code>git branch -d dev</code><ul>
-<li>删除分支dev</li>
-</ul>
-</li>
-</ul>
-<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><ol>
-<li><code>git status</code><ul>
-<li>查看冲突信息</li>
-</ul>
-</li>
-<li>手动修改冲突文件</li>
-<li><code>add commit</code></li>
-</ol>
-<ul>
-<li><code>git log --graph</code><ul>
-<li>查看分支合并图</li>
-</ul>
-</li>
-</ul>
-<h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><ul>
-<li><code>git merge dev</code><ul>
-<li>默认使用<code>fast forward</code><ul>
-<li>快进模式下，删除分支后，会丢掉分支信息</li>
-<li>合并就看不出来曾经做过合并。</li>
-</ul>
-</li>
-<li><code>--no-ff</code><ul>
-<li>用普通模式合并，合并后的历史有分支，能看出来曾经做过合并</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="分支管理原则"><a href="#分支管理原则" class="headerlink" title="分支管理原则"></a>分支管理原则</h3><ul>
-<li><code>master</code><ul>
-<li>主分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活</li>
-</ul>
-</li>
-<li><code>dev</code><ul>
-<li>分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本，然后继续在分支干活准备2.0版本。</li>
-<li>平时在分支上干活</li>
-</ul>
-</li>
-</ul>
-<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><ul>
-<li>正在分支进行工作，临时需要修复一个bug，然而分支工作没完成不能提交，<ol>
-<li>先保存当前分支工作空间</li>
-<li>创建临时bug分支</li>
-<li>修复完合并并删除bug分支</li>
-<li>恢复分支工作空间</li>
-</ol>
-</li>
-<li>注意?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">先说几个名词</span><br><span class="line">    未被追踪的文件:指的是新建的文件或文件夹且还没加入到暂存区(新建的还没有被git add 过得)</span><br><span class="line">    未加入到暂存区的文件:指的是已经被追踪过，但是没有加入到暂存区(已经执行过git add/commit的但是这次修改后还没有git add)</span><br><span class="line">    举例:</span><br><span class="line">        readme.md  已经被git add/git commit过，但是呢 我这次只是修改了，而且没有修改完，不能commit</span><br><span class="line">        test    新建的文件夹,没有被git add/git commit过</span><br><span class="line">        有个急事需要处理,这时候我需要切换分支，去处理紧急任务,比如文中的举例去修改bug，</span><br><span class="line">        正确的步骤:</span><br><span class="line">            git add test（让git去追踪这个新文件）</span><br><span class="line">            git stash保留现场</span><br><span class="line">   如果我不执行这两个命令，那么我在修改BUG完成之后</span><br><span class="line">   git status，就会发现readme.md 没有添加到暂存区，同时又多了个test文件,但是自己的readme.md没有完成，万万不可以提交，这样导致bug的修改代码也提交不了。所以你需要</span><br><span class="line">git stash，这样你在提交修改bug代码的时候 ，就不会看见readme.md 和 test。可以安心提交修改bug的代码。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><ul>
-<li><code>git stash</code><ul>
-<li>保存工作空间</li>
-</ul>
-</li>
-<li><code>git stash list</code><ul>
-<li>查看保存列表</li>
-</ul>
-</li>
-<li><code>git stash apply</code><ul>
-<li>恢复工作空间，但不删除stash内容</li>
-</ul>
-</li>
-<li><code>git stash pop</code><ul>
-<li>恢复工作空间，同时删除stash内容</li>
-</ul>
-</li>
-</ul>
-<h2 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h2><ul>
-<li>附加功能分支，要添加新功能，重新开启一个分支</li>
-<li><code>git branch -D &lt;name&gt;</code><ul>
-<li>强制删除还没有合并的分支</li>
-</ul>
-</li>
-</ul>
-<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><ul>
-<li><code>git remote</code><ul>
-<li>查看远程仓库信息</li>
-</ul>
-</li>
-<li><code>git remote -v</code><ul>
-<li>查看远程仓库详细信息</li>
-</ul>
-</li>
-<li><code>git checkout -b branch-name origin/branch-name</code><ul>
-<li>将远程仓库origin中的分支<code>branch-name</code>检出到本地</li>
-</ul>
-</li>
-<li><code>git push origin branch-name</code><ul>
-<li>将分支推送到远程仓库</li>
-<li>如果推送失败，先<code>git pull</code>更新，解决冲突后，再提交</li>
-</ul>
-</li>
-<li><code>gti pull</code><ul>
-<li>抓取最新的提交</li>
-<li>如果失败提示<code>no tracking information</code>说明本地分支与远程分支的链接关系没有创建<ul>
-<li><code>git branch --set-upstream branch-name origin/branch-name</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><h2 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h2><ul>
-<li><code>git tag &lt;name&gt;</code><ul>
-<li>新建一个标签，默认为HEAD，也可以指定一个commit id</li>
-</ul>
-</li>
-<li><code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
-<li>可以创建时指定标签信息</li>
-</ul>
-</li>
-<li><code>git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
-<li>用PGP签名标签</li>
-<li>签名采用PGP签名，因此，必须首先安装gpg（GnuPG）</li>
-</ul>
-</li>
-<li><code>git tag</code><ul>
-<li>查看所有标签，默认安装字母排序</li>
-</ul>
-</li>
-<li><code>git show &lt;tagname&gt;</code><ul>
-<li>查看标签信息</li>
-</ul>
-</li>
-</ul>
-<h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><ul>
-<li><code>git push origin &lt;tagname&gt;</code><ul>
-<li>推送一个本地标签到远程仓库</li>
-</ul>
-</li>
-<li><code>git push origin --tags</code><ul>
-<li>推送全部未推送过的本地标签</li>
-</ul>
-</li>
-<li><code>git tag -d &lt;tagname&gt;</code><ul>
-<li>删除一个本地标签；</li>
-</ul>
-</li>
-<li><code>git push origin :refs/tags/&lt;tagname&gt;</code><ul>
-<li>删除一个远程标签。</li>
-</ul>
-</li>
-</ul>
-<h1 id="自定义git"><a href="#自定义git" class="headerlink" title="自定义git"></a>自定义git</h1><h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><ul>
-<li>在工作区创建<code>.gitignore</code>，然后把要忽略的文件名填进去.<ul>
-<li><code>.gitignore</code>文件可以在线查询</li>
-</ul>
-</li>
-<li>忽略文件的原则是：<ol>
-<li>忽略操作系统自动生成的文件，比如缩略图等；</li>
-<li>忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；</li>
-<li>忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件</li>
-</ol>
-</li>
-</ul>
-
+            
           
         
       
@@ -895,7 +464,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/xd-JNDI/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/xd-Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -914,8 +483,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/21/xd-JNDI/" itemprop="url">
-                  xd-JNDI
+                <a class="post-title-link" href="/2018/11/14/xd-Hexo/" itemprop="url">
+                  xd-Hexo
                 </a>
               
             
@@ -941,12 +510,24 @@
                 
               
 
-              <time title="创建时间：2019-01-21 14:00:02 / 修改时间：14:39:55" itemprop="dateCreated datePublished" datetime="2019-01-21T14:00:02+08:00">2019-01-21</time>
+              <time title="创建时间：2018-11-14 17:59:28" itemprop="dateCreated datePublished" datetime="2018-11-14T17:59:28+08:00">2018-11-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:53:26" itemprop="dateModified" datetime="2019-03-08T14:53:26+08:00">2019-03-08</time>
               
             
           </span>
@@ -963,7 +544,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
 
                 
                 
@@ -999,37 +580,58 @@
       
         
           
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li><code>Java Naming and Directory Interface</code></li>
-<li>Java命名和目录接口</li>
-<li>是SUN公司提供的一种标准的Java命名系统接口，JNDI提供统一的客户端API，通过不同的访问提供者接口JNDI服务供应接口(SPI)的实现，由管理者将JNDI API映射为特定的命名服务和目录系统，使得Java应用程序可以和这些命名服务和目录服务之间进行交互</li>
-</ul>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/JNDI原理.png" alt=""></p>
-<h1 id="用JavaWeb服务器管理数据源"><a href="#用JavaWeb服务器管理数据源" class="headerlink" title="用JavaWeb服务器管理数据源"></a>用JavaWeb服务器管理数据源</h1><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
-<li>拷贝数据库连接的jar(mysql-Connector)到tomcatlib目录下<ul>
-<li>maven好像不用拷贝</li>
+            <h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
+<li>修改新建文件的头部模板<ul>
+<li><code>scaffolds/post.md</code></li>
 </ul>
 </li>
-<li><p>配置数据源XML文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context&gt;</span><br><span class="line">		&lt;Resource </span><br><span class="line">			name=&quot;jdbc/TestDB&quot;		 	//数据源名称</span><br><span class="line">			auth=&quot;Container&quot; 			  //数据源提供者</span><br><span class="line">			type=&quot;javax.sql.DataSource&quot;	//数据源类型</span><br><span class="line">			maxTotal=&quot;100&quot; 			</span><br><span class="line">			maxIdle=&quot;30&quot; 				</span><br><span class="line">			maxWaitMillis=&quot;10000&quot;</span><br><span class="line">			username=&quot;root&quot; </span><br><span class="line">			password=&quot;root&quot; </span><br><span class="line">			driverClassName=&quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">			url=&quot;jdbc:mysql://localhost:3306/javatest&quot;/&gt;</span><br><span class="line">&lt;/Context&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>在当前应用的<code>META-INF</code>中创建<code>context.xml</code>, 编写配置信息，那么只有当前应用可以使用。</li>
-<li>在tomcat下的conf目录的<code>context.xml</code>中，编写配置信息，那么tomcat下所有应用都能使用此数据源。<ul>
-<li>可以多个Resource如mysql，Oracle，sqlserver…</li>
-<li>多个就构成了<strong>JNDI</strong>(安)</li>
+</ul>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
+<li><code>hexo n filename</code><ul>
+<li>新建文件</li>
+</ul>
+</li>
+<li><code>hexo clean</code><ul>
+<li>清理</li>
+</ul>
+</li>
+<li><code>hexo g</code><ul>
+<li>生成静态文件</li>
+</ul>
+</li>
+<li><code>hexo d</code><ul>
+<li>部署到服务端</li>
+</ul>
+</li>
+<li><code>hexo s</code><ul>
+<li>启动服务</li>
+<li><code>http://localhost:4000</code></li>
+</ul>
+</li>
+<li><code>hexo d -g</code><ul>
+<li>生成+部署</li>
+</ul>
+</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li>Template render error: unknown path<ul>
+<li>hexo转义时候发生的错误，你文章中可能出现了<code>{ {} }</code>，<code>{ % % }</code>。你可以将出现的代码，用 <strong>`</strong>进行注释下就可以了，如果还不行，加个空格</li>
+</ul>
+</li>
+<li>FATAL can not read a block mapping entry<ul>
+<li>是因为配置文件或者文件中头部的<code>title date....</code>之类的后边要加一个空格</li>
 </ul>
 </li>
 </ol>
-</li>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="Readme-md"><a href="#Readme-md" class="headerlink" title="Readme.md"></a>Readme.md</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ol>
+<li>执行命令<code>hexo g</code>之后，会把source文件里的.md格式的文件渲染为html文件并放到public下面</li>
+<li>继续执行命令<code>hexo d</code>之后，会把public下面的所有文件提交到对应的XXX.github.io这个仓库</li>
+<li>由于本地public文件夹里没有README.md这个文件，所以在提交public文件时，github会认为你把README.md文件删掉了，同时github也会删掉仓库里的README.md文件，这就是具体的原因</li>
 </ol>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Context initContext = new InitialContext();</span><br><span class="line">//Context envContext  = (Context)initContext.lookup(&quot;java:/comp/env&quot;);</span><br><span class="line">//DataSource ds = (DataSource)envContext.lookup(&quot;jdbc/TestDB&quot;);</span><br><span class="line">//上面两句可以合写成下面这一句</span><br><span class="line">DataSource ds = (DataSource)=initContext.lookup(&quot;java:/comp/env/jdbc/TestDB&quot;);</span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>java:/comp/env</code><ul>
-<li>是固定写法</li>
-</ul>
-</li>
-<li><code>jdbc/TestDB</code><ul>
-<li>数据源XML配置中的Resource的name，自定义。</li>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><ul>
+<li>在本地的source文件里新建一个README.md文件</li>
+<li>修改Hexo根目录下的_config.yml文件，将skip_render参数的值设置为README.md<ul>
+<li><code>skip_render: README.md</code></li>
 </ul>
 </li>
 </ul>
@@ -1090,7 +692,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/xd-nginx/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/xd-Anki/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -1109,8 +711,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/17/xd-nginx/" itemprop="url">
-                  xd-nginx
+                <a class="post-title-link" href="/2018/08/28/xd-Anki/" itemprop="url">
+                  xd-Anki
                 </a>
               
             
@@ -1136,12 +738,24 @@
                 
               
 
-              <time title="创建时间：2019-01-17 14:26:57 / 修改时间：16:36:14" itemprop="dateCreated datePublished" datetime="2019-01-17T14:26:57+08:00">2019-01-17</time>
+              <time title="创建时间：2018-08-28 00:51:03" itemprop="dateCreated datePublished" datetime="2018-08-28T00:51:03+08:00">2018-08-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:53:16" itemprop="dateModified" datetime="2019-03-08T14:53:16+08:00">2019-03-08</time>
               
             
           </span>
@@ -1158,7 +772,205 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="笔记类型"><a href="#笔记类型" class="headerlink" title="笔记类型"></a>笔记类型</h1><ul>
+<li><strong>问答</strong><ul>
+<li><code>Basic</code></li>
+<li><code>Basic (and reversed card)</code><ul>
+<li>正面+反面显示一遍，之后，反面+正面显示一遍 </li>
+</ul>
+</li>
+<li><code>Basic (optional reversed card)</code><ul>
+<li>=Basic+Basic (and reversed card)</li>
+<li>会出现三次</li>
+</ul>
+</li>
+<li>注<ul>
+<li>可更多次，自行添加</li>
+<li><code>Basic (and reversed card)</code> 和<code>Basic (optional reversed card)</code> 如果只在正面有内容，那么就等于<code>Basic</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>填空</strong><ul>
+<li><code>Cloze</code>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/28/xd-Anki/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/xd-江湖百晓生/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/xd-江湖百晓生/" itemprop="url">
+                  xd-江湖百晓生
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 17:31:39" itemprop="dateCreated datePublished" datetime="2018-11-23T17:31:39+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:52:22" itemprop="dateModified" datetime="2019-03-08T14:52:22+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
 
                 
                 
@@ -1194,99 +1006,168 @@
       
         
           
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li>Nginx (engine x) 是一个高性能的HTTP和反向代理服务，也是一个IMAP/POP3/SMTP服务</li>
-<li>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行</li>
-</ul>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ol>
-<li><code>start nginx</code><ul>
-<li>推荐</li>
-</ul>
-</li>
-<li><code>nginx.exe</code><ul>
-<li>会使cmd窗口一直处于执行中，不能进行其他命令操作</li>
-</ul>
-</li>
-</ol>
-<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h3><ol>
-<li><code>nginx.exe -s quit</code><ul>
-<li>完整有序的停止nginx，并保存相关信息</li>
-</ul>
-</li>
-<li><code>nginx.exe -s stop</code><ul>
-<li>快速停止nginx，可能并不保存相关信息</li>
-</ul>
-</li>
-</ol>
-<h3 id="重新加载配置"><a href="#重新加载配置" class="headerlink" title="重新加载配置"></a>重新加载配置</h3><ul>
-<li><code>nginx.exe -s reload</code></li>
-</ul>
-<h3 id="重新打开日志"><a href="#重新打开日志" class="headerlink" title="重新打开日志"></a>重新打开日志</h3><ul>
-<li><code>nginx.exe -s reopen</code></li>
-</ul>
-<h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><ul>
-<li><code>nginx -v</code></li>
-</ul>
-<h2 id="tomcat集群"><a href="#tomcat集群" class="headerlink" title="tomcat集群"></a>tomcat集群</h2><ol>
-<li><p>修改各个tomcat端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Server port=&quot;8015&quot; shutdown=&quot;SHUTDOWN&quot;&gt;</span><br><span class="line">&lt;Connector port=&quot;8081&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;8443&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;8019&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>每个tomcat一套端口（3个），都不能一样。</li>
-</ul>
-</li>
-<li>配置nginx<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#配置服务器列表 名称(serverlb)任意(有的版本不能用&quot;_&quot;);</span><br><span class="line">upstream serverlb&#123;</span><br><span class="line">	# 格式 server ip:端口 weight=num;</span><br><span class="line">	# weight 权重 num越大访问的概率越高</span><br><span class="line">	server 127.0.0.1:8081;</span><br><span class="line">	server 127.0.0.1:8082;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    # 集群后的统一访问名称，有域名可以用域名 </span><br><span class="line">    server_name  localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">		root   html;</span><br><span class="line">		# 配置代理</span><br><span class="line">		proxy_pass http://serverlb;</span><br><span class="line">		index  index.html index.htm;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="tomcat集群的session共享"><a href="#tomcat集群的session共享" class="headerlink" title="tomcat集群的session共享"></a>tomcat集群的session共享</h2><ol>
-<li><p>配置nginx，使每个用户只会访问一个tomcat，而不是随机访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream xxx&#123;</span><br><span class="line">	server ip:端口;</span><br><span class="line">	...</span><br><span class="line">	# 一个用户只会访问一个tomcat</span><br><span class="line">	ip_hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用tomcat广播机制完成session共享（不推荐）</p>
-</li>
-<li>每个用户的数据存在redis中，不同tomcat从redis中取数据，来实现session共享（推荐） </li>
-</ol>
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
-<li><code>gcc</code><ul>
-<li><code>yum install gcc-c++</code></li>
-</ul>
-</li>
-<li><code>pcre</code><ul>
-<li><code>yum install -y pcre pcre-devel</code></li>
-</ul>
-</li>
-<li><code>zlib</code><ul>
-<li><code>yum install -y zlib zlib-delvel</code></li>
-</ul>
-</li>
-<li><code>openssl</code><ul>
-<li><code>yum install -y openssl openssl-devel</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cd srcdir</span><br><span class="line">./configure --prefix=destdir（默认/usrl/local/nginx）</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h2><h3 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h3><ul>
-<li><code>/destdir/sbin/nginx [-c /destdir/conf/nginx.conf]</code><ul>
-<li><code>-c</code><ul>
-<li>指定配置文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="停止-1"><a href="#停止-1" class="headerlink" title="停止"></a>停止</h2><ul>
-<li><code>/destdir/sbin/nginx -s stop</code></li>
-<li><code>/destdir/sbin/nginx -s quit</code></li>
-</ul>
-<h2 id="重新加载配置-1"><a href="#重新加载配置-1" class="headerlink" title="重新加载配置"></a>重新加载配置</h2><ul>
-<li><code>/destdir/sbin/nginx -s reload</code></li>
-</ul>
-<h2 id="tomcat集群-1"><a href="#tomcat集群-1" class="headerlink" title="tomcat集群"></a>tomcat集群</h2><ul>
-<li>配置和windows一样</li>
-</ul>
-<h2 id="tomcat集群的session共享-1"><a href="#tomcat集群的session共享-1" class="headerlink" title="tomcat集群的session共享"></a>tomcat集群的session共享</h2><ul>
-<li>使用redis</li>
-</ul>
+            
+          
+        
+      
+    </div>
 
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/xd-Idea/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/xd-Idea/" itemprop="url">
+                  xd-Idea
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-08 14:21:29 / 修改时间：14:52:05" itemprop="dateCreated datePublished" datetime="2019-03-08T14:21:29+08:00">2019-03-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
           
         
       
@@ -1389,12 +1270,24 @@
                 
               
 
-              <time title="创建时间：2019-01-14 19:55:55 / 修改时间：20:00:53" itemprop="dateCreated datePublished" datetime="2019-01-14T19:55:55+08:00">2019-01-14</time>
+              <time title="创建时间：2019-01-14 19:55:55" itemprop="dateCreated datePublished" datetime="2019-01-14T19:55:55+08:00">2019-01-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:51:45" itemprop="dateModified" datetime="2019-03-08T14:51:45+08:00">2019-03-08</time>
               
             
           </span>
@@ -1411,7 +1304,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -1632,7 +1525,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-17 16:17:33" itemprop="dateModified" datetime="2019-01-17T16:17:33+08:00">2019-01-17</time>
+                <time title="修改时间：2019-03-08 14:51:37" itemprop="dateModified" datetime="2019-03-08T14:51:37+08:00">2019-03-08</time>
               
             
           </span>
@@ -3070,7 +2963,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/xd-Redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/xd-Svn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安₃">
@@ -3089,8 +2982,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/05/xd-Redis/" itemprop="url">
-                  xd-Redis
+                <a class="post-title-link" href="/2019/03/08/xd-Svn/" itemprop="url">
+                  xd-Svn
                 </a>
               
             
@@ -3116,24 +3009,12 @@
                 
               
 
-              <time title="创建时间：2019-01-05 01:55:58" itemprop="dateCreated datePublished" datetime="2019-01-05T01:55:58+08:00">2019-01-05</time>
+              <time title="创建时间：2019-03-08 14:50:51 / 修改时间：14:51:12" itemprop="dateCreated datePublished" datetime="2019-03-08T14:50:51+08:00">2019-03-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-14 19:55:25" itemprop="dateModified" datetime="2019-01-14T19:55:25+08:00">2019-01-14</time>
               
             
           </span>
@@ -3150,7 +3031,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/DB/" itemprop="url" rel="index"><span itemprop="name">DB</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
 
                 
                 
@@ -3186,1021 +3067,637 @@
       
         
           
-            <h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li><code>Not Only SQL</code></li>
-<li>全新数据库理念，泛指非关系型数据库</li>
-<li>适合大数据高并发，高负载，高扩展</li>
-<li>性能高</li>
-<li>数据之间没有关系，数据存储在内存中</li>
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/xd-Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="安₃">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安₃">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/30/xd-Git/" itemprop="url">
+                  xd-Git
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-30 15:57:51" itemprop="dateCreated datePublished" datetime="2019-01-30T15:57:51+08:00">2019-01-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 14:50:35" itemprop="dateModified" datetime="2019-03-08T14:50:35+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><ul>
+<li>分布式版本管理</li>
 </ul>
-<h2 id="常见NoSQL数据库"><a href="#常见NoSQL数据库" class="headerlink" title="常见NoSQL数据库"></a>常见NoSQL数据库</h2><ul>
-<li><code>Redis</code></li>
-<li><code>mongo</code></li>
-<li><code>HBASE</code><ul>
-<li>hadoop中生态系统中</li>
+<h1 id="git配置的增删改查"><a href="#git配置的增删改查" class="headerlink" title="git配置的增删改查"></a>git配置的增删改查</h1><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
+<li><code>git config --list</code><ul>
+<li><code>git config -l</code>简写</li>
 </ul>
 </li>
 </ul>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>官网<ul>
-<li><code>redis.io</code></li>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><ul>
+<li><code>git config --global 键 &#39;值&#39;</code></li>
+</ul>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
+<li><code>git config   --global --unset  键</code></li>
+</ul>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
+<li><code>git config --global --replace-all 键 &#39;值&#39;</code></li>
+</ul>
+<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><ul>
+<li><code>git init</code><ul>
+<li>将一个目录变成Git管理的仓库</li>
+<li>目录下会有一个隐藏的<code>.git</code>文件</li>
 </ul>
 </li>
-<li>中文网<ul>
-<li><code>redis.net.cn</code></li>
+</ul>
+<h1 id="版本库概念"><a href="#版本库概念" class="headerlink" title="版本库概念"></a>版本库概念</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库1.png" alt=""></p>
+<ul>
+<li>仓库包含<ul>
+<li>版本库<ul>
+<li><code>.git</code></li>
 </ul>
 </li>
-<li>端口 <ul>
-<li><code>6379</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
-<li>前端启动<ul>
-<li><code>./redis-server</code></li>
-<li>直接使用<code>redis-server</code>启动</li>
-<li>类似tomcat的dos窗口，不能关，一关就结束了</li>
-</ul>
-</li>
-<li>后端启动<ul>
-<li>拷贝解压目录中的<code>redis.conf</code>到安装目录中，并修改<code>daemonize no</code>为<code>yes</code></li>
-<li><code>./redis-server redis.conf</code></li>
-<li>关闭<ul>
-<li>如果在操作中，<code>exit</code>回到命令</li>
-<li><code>./redis-cli shutdown</code></li>
+<li>工作区<ul>
+<li>除了<code>.git</code>文件夹外的其它</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="Redis连接java报错"><a href="#Redis连接java报错" class="headerlink" title="Redis连接java报错"></a>Redis连接java报错</h2><ul>
-<li><code>Connection refused: connect</code><ul>
-<li>是因为<code>redis.conf</code>中<code>bind 127.0.0.1</code>绑定了本地ip</li>
-<li>该配置会导致，其它ip登录被拒绝，注释掉它</li>
-</ul>
-</li>
-<li><code>DENIED Redis is running in protected mode because protected mode is enabled…</code><ul>
-<li>注释后又有了新问题，说redis处于受保护模式，不允许非本地客户端链接</li>
-<li>可以通过给redis设置密码，链接时写上密码即可<ul>
-<li><code>config set requirepass 密码</code></li>
-<li><code>Jedis j = new Jedis(&quot;ip&quot;,6379)</code></li>
-<li><code>j.auth(&quot;密码&quot;)</code></li>
-</ul>
-</li>
-<li>还有一种说法是修改<code>redis.conf</code>把<code>protected-mod yes</code>改为no</li>
+<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库2.jpg" alt=""></p>
+<ul>
+<li><code>git add</code><ul>
+<li>把工作区的文件添加到版本库的暂存区</li>
 </ul>
 </li>
 </ul>
-<h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><ul>
-<li>一款java操作redis数据库的工具，类似jdbc，是用来在java中操作redis的</li>
-<li>jar包<ul>
-<li><code>commons-pool.jar</code></li>
-<li><code>jedis.jar</code></li>
+<p><img src="https://gitee.com/3noanswer/pics/raw/master/git/git版本库3.jpg" alt=""></p>
+<ul>
+<li><code>git commit</code><ul>
+<li>把暂存区的文件提交到版本库的指定分支</li>
 </ul>
 </li>
 </ul>
-<h3 id="Jedis-1"><a href="#Jedis-1" class="headerlink" title="Jedis"></a>Jedis</h3><h4 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h4><ul>
-<li><code>Jedis()</code><ul>
-<li>空参构造，默认为<code>localhost和6379</code></li>
+<h1 id="添加-amp-提交"><a href="#添加-amp-提交" class="headerlink" title="添加 &amp; 提交"></a>添加 &amp; 提交</h1><ul>
+<li><code>git add</code><ul>
+<li>把文件添加到版本库的暂存区</li>
+<li>注意文件编码</li>
+<li>可以多次add不同的文件</li>
 </ul>
 </li>
-<li><code>Jedis(String host, int port)</code></li>
-</ul>
-<h4 id="操作string"><a href="#操作string" class="headerlink" title="操作string"></a>操作string</h4><ul>
-<li><code>String set(String key, String value)</code></li>
-<li><code>String get(String key)</code></li>
-<li><code>String setex(String key, int seconds, String value)</code><ul>
-<li>seconds：存活时间，过期删除</li>
-</ul>
-</li>
-</ul>
-<h4 id="操作hash"><a href="#操作hash" class="headerlink" title="操作hash"></a>操作hash</h4><ul>
-<li><code>Long hset(String map, String key, String value)</code></li>
-<li><code>Map&lt;String, String&gt; hgetAll(String map)</code></li>
-<li><code>Set&lt;String&gt; hkeys(String map)</code></li>
-</ul>
-<h4 id="操作list"><a href="#操作list" class="headerlink" title="操作list"></a>操作list</h4><ul>
-<li><code>Long lpush(String list, String... strings)</code></li>
-<li><code>List&lt;String&gt; lrange(String list, long start, long end)</code></li>
-<li><code>String lpop(String list)</code></li>
-</ul>
-<h4 id="操作set"><a href="#操作set" class="headerlink" title="操作set"></a>操作set</h4><ul>
-<li><code>Long sadd(String set, String... members)</code></li>
-<li><code>Set&lt;String&gt; smembers(String set)</code></li>
-</ul>
-<h4 id="操作sortedset"><a href="#操作sortedset" class="headerlink" title="操作sortedset"></a>操作sortedset</h4><ul>
-<li><code>Long zadd(String set, double score, String member)</code></li>
-<li><code>Set&lt;String&gt; zrange(String set, long start, long end)</code></li>
-</ul>
-<h2 id="JedisPool-连接池"><a href="#JedisPool-连接池" class="headerlink" title="JedisPool 连接池"></a>JedisPool 连接池</h2><ol>
-<li>创建连接池配置对象<ul>
-<li><code>JedisPoolConfig cfg = new JedisPoolConfig();</code><ul>
-<li>cfg的一些设置(最大链接数，最大空闲数，最小空闲数…)</li>
+<li><code>git commit [-m &quot;message&quot;]</code><ul>
+<li>把文件提交到版本库的分支</li>
+<li><code>-m</code><ul>
+<li>提交的说明</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>根据配置创建连接池对象并获取Jedis对象<ul>
-<li><code>JedisPool pool = new JedisPool(cfg, ip, port)</code></li>
-<li><code>Jedis jedis = pool.getResource()</code></li>
+</ul>
+<h1 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h1><ul>
+<li><code>git status</code><ul>
+<li>查看仓库状态</li>
 </ul>
 </li>
-<li>操作</li>
-<li>关闭资源<ul>
-<li><code>jedis.close()</code></li>
+<li><code>git diff</code><ul>
+<li>比较工作区和暂存区文件的区别</li>
+</ul>
+</li>
+<li><code>git diff --cached</code><ul>
+<li>比较暂存区和分支文件的区别</li>
+</ul>
+</li>
+<li><code>git diff HEAD</code><ul>
+<li>比较工作区和分支文件的区别</li>
+</ul>
+</li>
+<li><code>git log [--pretty=oneline]</code><ul>
+<li>查看历史记录</li>
+<li><code>--pretty=oneline</code><ul>
+<li>整理日志信息（在一行..）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><ul>
+<li><code>HEAD</code><ul>
+<li>表示当前版本</li>
+</ul>
+</li>
+<li><code>HEAD^</code><ul>
+<li>上一个版本</li>
+</ul>
+</li>
+<li><code>HEAD^^</code><ul>
+<li>上上个版本</li>
+</ul>
+</li>
+<li><code>HEAD-100</code><ul>
+<li>上100个版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li><code>git reset  --hard HEAD或commit id</code></li>
+<li><code>git reflog</code><ul>
+<li>记录着每一次命令（有命令id）</li>
+<li>回退后，可以用此命令查询commit id </li>
+</ul>
+</li>
+</ul>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h3 id="工作区的文件修改了，尚未add"><a href="#工作区的文件修改了，尚未add" class="headerlink" title="工作区的文件修改了，尚未add"></a>工作区的文件修改了，尚未add</h3><ul>
+<li><code>git checkout -- &lt;file&gt;</code><ul>
+<li>撤销工作区文件的修改</li>
+<li>我的理解就是从版本库分支中检出了一份覆盖了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="工作区的文件修改了，已经add，尚未commit"><a href="#工作区的文件修改了，已经add，尚未commit" class="headerlink" title="工作区的文件修改了，已经add，尚未commit"></a>工作区的文件修改了，已经add，尚未commit</h3><ul>
+<li><code>git reset HEAD &lt;file&gt;</code><ul>
+<li>将文件从暂存区回退到工作区</li>
+</ul>
+</li>
+<li><code>git checkout -- &lt;file&gt;</code></li>
+</ul>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
+<li><code>rm &lt;file&gt;</code><ul>
+<li>删除本地的（工作区的）</li>
+</ul>
+</li>
+<li><code>git checkout -- &lt;file&gt;</code><ul>
+<li>不想删了，可以再检出回来</li>
+</ul>
+</li>
+<li><code>git rm &lt;file&gt;</code></li>
+<li><code>git commit -m</code><ul>
+<li>经过上面两步就把版本库中的也删除了</li>
+</ul>
+</li>
+</ul>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>不需要私匙和公匙，推送和克隆时需要邮箱和密码</li>
+</ul>
+<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><ul>
+<li><code>Secure Shell</code><ul>
+<li>安全外壳协议</li>
+</ul>
+</li>
+<li>使用私匙和公匙推送和克隆</li>
+</ul>
+<h3 id="为什么GitHub需要SSH-Key呢？"><a href="#为什么GitHub需要SSH-Key呢？" class="headerlink" title="为什么GitHub需要SSH Key呢？"></a>为什么GitHub需要SSH Key呢？</h3><ul>
+<li>因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送</li>
+</ul>
+<h3 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH KEY"></a>配置SSH KEY</h3><ol>
+<li>创建SSH Key<ul>
+<li>先看本地用户目录下是否有<code>.ssh</code><ul>
+<li><code>id_rsa</code><ul>
+<li>私钥，不能泄露出去</li>
+</ul>
+</li>
+<li><code>id_rsa.pub</code><ul>
+<li>公钥，可以放心地告诉任何人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><ul>
+<li>如果没有，用此命令创建</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>登陆GitHub，打开“Account settings”，“SSH Keys”页面<ul>
+<li><code>Add SSH Key</code><ul>
+<li>Title<ul>
+<li>任意</li>
+</ul>
+</li>
+<li>Key<ul>
+<li>id_rsa.pub文件的内容</li>
+<li>可以添加多个</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<h2 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h2><ul>
-<li>存的是键值对<ul>
-<li>KEY<ul>
-<li>都是字符串</li>
+<h3 id="从本地推送到远程库"><a href="#从本地推送到远程库" class="headerlink" title="从本地推送到远程库"></a>从本地推送到远程库</h3><ol>
+<li>在GitHub创建一个库</li>
+<li>与本地仓库关联（在需要关联的仓库下执行命令）<ul>
+<li><code>git remote add origin git@github.com:awcnoanswer/test.git</code><ul>
+<li>远程库默认名<code>origin</code>（别名）</li>
 </ul>
 </li>
-<li>value<ul>
-<li>字符串(string)</li>
-<li>哈希(hash map)</li>
-<li>字符串序列(list)</li>
-<li>字符串集合(set)</li>
-<li>有序字符串集合(sorted set)</li>
 </ul>
 </li>
+<li>推送本地内容到远程库<ul>
+<li><code>git push -u origin master</code><ul>
+<li>第一次推送master分支时，</li>
+<li><code>-u</code><ul>
+<li>Git不但会把本地的master分支所有内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，</li>
 </ul>
 </li>
 </ul>
-<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><ul>
-<li><code>KEY</code> = <code>string</code></li>
-<li>是redis中最基础也是最重要的</li>
-<li>是二进制安全的<ul>
-<li>即存取数据相同</li>
-</ul>
-</li>
-<li><strong>存</strong><ul>
-<li><code>set KEY value</code></li>
-</ul>
-</li>
-<li><strong>取</strong><ul>
-<li><code>get KEY</code></li>
-<li><code>getset KEY value</code><ul>
-<li>先获取KEY的value值，然后修改为value</li>
-</ul>
-</li>
-<li>获取空为<code>nil</code></li>
-</ul>
-</li>
-<li><strong>删</strong><ul>
-<li><code>del KEY</code><ul>
-<li>各种数据通用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>数值增减</strong><ul>
-<li><code>incr KEY</code><ul>
-<li>i++</li>
-<li>KEY的value值可以转成数字</li>
-<li>如果KEY不存在，会增加一个KEY，且初始value为0，并++</li>
-</ul>
-</li>
-<li><code>decr KEY</code><ul>
-<li>i–</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>扩展</strong><ul>
-<li><code>increby key 数字</code><ul>
-<li>将指定key的值增加指定数字</li>
-<li><code>i+=数字</code></li>
-</ul>
-</li>
-<li><code>devrby key 数字</code><ul>
-<li><code>i-=数字</code></li>
-</ul>
-</li>
-<li><code>append key value</code><ul>
-<li>为key的值拼接value</li>
-<li>拼接字符串</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><ul>
-<li><code>KEY</code> = <code>map</code></li>
-<li><code>hset KEY key value</code><ul>
-<li>为指定的map(map名为KEY)中的key赋值</li>
-</ul>
-</li>
-<li><code>hmset KEY key1 value1 key2 value2 ... n</code><ul>
-<li>批量添加</li>
-</ul>
-</li>
-<li><code>hget KEY key</code><ul>
-<li>取值</li>
-</ul>
-</li>
-<li><code>hmget KEY key1 key2 ... n</code><ul>
-<li>批量获取</li>
-</ul>
-</li>
-<li><code>hgetall KEY</code><ul>
-<li>获取KEY的map所有键值</li>
-</ul>
-</li>
-<li><code>hdel KEY key</code><ul>
-<li>删除KEY中map的key</li>
-</ul>
-</li>
-<li><code>del KEY</code><ul>
-<li>删除KEY</li>
-</ul>
-</li>
-<li><code>hincrby KEY key 数字</code><ul>
-<li>为KEY中map的key的value增加指定数字</li>
-</ul>
-</li>
-<li><code>hexists KEY key</code><ul>
-<li>KEY的map中是否存在key</li>
-<li>返回1/0</li>
-</ul>
-</li>
-<li><code>hlen KEY</code><ul>
-<li>获取KEY的map中的键值对数量</li>
-</ul>
-</li>
-<li><code>hkeys KEY</code><ul>
-<li>获取KEY的map的所有key</li>
-</ul>
-</li>
-</ul>
-<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><ul>
-<li><code>KEY</code> = <code>list</code><ul>
-<li>list底层是链表</li>
-</ul>
-</li>
-<li><code>lpush KEY value1 value2 ... n</code><ul>
-<li>从左边往栈中存</li>
-<li>存取都是从两端存或取</li>
-<li>存的时候是压栈</li>
-</ul>
-</li>
-<li><code>rpush KEY value1 value2 ... n</code><ul>
-<li>从右边往栈中存</li>
-</ul>
-</li>
-<li><code>lrange KEY start end</code><ul>
-<li>取</li>
-<li>start 从0开始</li>
-<li>start、end可为负数，若为-1则表示链表尾部的元素，-2则表示倒数第二个，依次类推… </li>
-<li><code>0 -1</code>：表示从0开始到最后一个元素</li>
-</ul>
-</li>
-<li><code>lpop KEY</code><ul>
-<li>从左弹栈一个值(即左边第一个)</li>
-<li>相当于删除并返回</li>
-</ul>
-</li>
-<li><code>rpop KEY</code><ul>
-<li>从右弹栈</li>
-</ul>
-</li>
-<li><code>llen KEY</code><ul>
-<li>获取长度</li>
-</ul>
-</li>
-<li><code>lpushx KEY value</code><ul>
-<li>如果KEY不存在，不会存</li>
-</ul>
-</li>
-<li><code>rpushx KEY value</code></li>
-<li><code>lrem KEY count value</code><ul>
-<li>删除count个值为value的元素</li>
-<li>如果count大于0，从头向尾遍历并删除count个值为value的元素</li>
-<li>如果count小于0，则从尾向头遍历并删除</li>
-<li>如果count等于0，则删除链表中所有等于value的元素</li>
-</ul>
-</li>
-<li><code>let KEY index value</code><ul>
-<li>将指定index处的值修改为value</li>
-</ul>
-</li>
-<li><code>linsert KEY before/after value value1</code><ul>
-<li>在指定value前/后边插入value1</li>
-</ul>
-</li>
-<li><code>rpoplpuch KEY1 KEY2</code><ul>
-<li>将KEY1的右边元素弹栈，压栈到KEY2的左边</li>
-<li>就是KEY1的最右边元素放到KEY2的最左边</li>
-</ul>
-</li>
-</ul>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><ul>
-<li><code>KEY</code> = <code>set</code><ul>
-<li>这里的set是无序的，唯一</li>
-</ul>
-</li>
-<li><code>sadd KEY value1 ... n</code><ul>
-<li>如果value已经存在，则不会重复添加</li>
-</ul>
-</li>
-<li><code>smembers KEY</code><ul>
-<li>获取全部</li>
-</ul>
-</li>
-<li><code>scard KEY</code><ul>
-<li>获取数量</li>
-</ul>
-</li>
-<li><code>srem KEY value1 ... n</code><ul>
-<li>删除</li>
-</ul>
-</li>
-<li><code>sismember KEY value</code><ul>
-<li>查看是否存在value</li>
-<li>返回0或者本身</li>
-</ul>
-</li>
-<li><code>srandmember KEY</code><ul>
-<li>返回set中随机一个value</li>
-</ul>
 </li>
-<li><code>sdiff KEY1 KEY2</code><ul>
-<li>返回KEY1中不在KEY2中的元素</li>
+<li><code>git push origin master 最新修改</code><ul>
+<li>在以后的推送或者拉取时就可以简化命令</li>
 </ul>
 </li>
-<li><code>sdiffstore KEY KEY1 KEY2</code><ul>
-<li>将KEY1中不在KEY2中的元素存储到KEY中</li>
 </ul>
 </li>
-<li><code>sinter KEY1 KEY2</code><ul>
-<li>返回KEY1中在KEY2中的元素（交集）</li>
+</ol>
+<h3 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h3><ul>
+<li><code>git clone git@github.com:awcnoanswer/test.git</code><ul>
+<li>会克隆到执行命令的目录</li>
 </ul>
 </li>
-<li><code>sunion KEY1 KEY2</code><ul>
-<li>返回并集</li>
-</ul>
-</li>
-</ul>
-<h3 id="sortedset"><a href="#sortedset" class="headerlink" title="sortedset"></a>sortedset</h3><ul>
-<li><code>KEY</code> = <code>sortedset</code><ul>
-<li>sortedset中的元素都有一个与之关联的double类型的分数(score)</li>
-<li>有序，唯一，分数可以重复</li>
-</ul>
-</li>
-<li><code>zadd KEY score1 value1 score2 value2 ... n</code><ul>
-<li>添加时要指定分数</li>
-</ul>
-</li>
-<li><code>zcard KEY</code><ul>
-<li>获取数量</li>
-</ul>
-</li>
-<li><code>zcount KEY min max</code><ul>
-<li>获取分数在[min,max]之间的成员</li>
-</ul>
-</li>
-<li><code>zincrby KEY 数字 value</code><ul>
-<li>指定的value的分数加上指定数字</li>
-</ul>
-</li>
-<li><code>zrange KEY start end [withscores]</code><ul>
-<li>获取集合中脚标为start-end的成员</li>
-<li><code>withscores</code><ul>
-<li>明返回的成员包含其分数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>zrangebyscore KEY min max [withscores] [limit offset count]</code><ul>
-<li>返回分数在[min,max]的成员并按照分数从低到高排序</li>
-<li><code>limit offset count</code><ul>
-<li>表明从脚标为offset的元素开始并返回count个成员</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>zrank KEY value</code><ul>
-<li>返回value的位置</li>
-</ul>
-</li>
-<li><code>zrem KEY value1 ... n</code><ul>
-<li>移除</li>
-</ul>
-</li>
-<li><code>zscore KEY value</code><ul>
-<li>获取指定value的分数</li>
-</ul>
-</li>
-</ul>
-<h3 id="KEY的通用操作"><a href="#KEY的通用操作" class="headerlink" title="KEY的通用操作"></a>KEY的通用操作</h3><ul>
-<li><code>keys pattern</code><ul>
-<li>获取与pattern匹配的KEY</li>
-<li><code>*</code>：任意一个或多个</li>
-<li><code>?</code>：任意一个</li>
-</ul>
-</li>
-<li><code>del KEY1 ... n</code></li>
-<li><code>exists KEY</code><ul>
-<li>返回0/1</li>
-</ul>
-</li>
-<li><code>rename KEY newKEY</code><ul>
-<li>重命名</li>
-</ul>
-</li>
-<li><code>expire KEY n秒</code><ul>
-<li>设置过期时间(n秒以后)</li>
-</ul>
-</li>
-<li><code>ttl KEY</code><ul>
-<li>返回所剩的超时时间</li>
-<li>如果未设置过，返回-1</li>
-<li>如果已超时，返回-2</li>
-</ul>
-</li>
-<li><code>type KEY</code><ul>
-<li>获取KEY存储的类型</li>
-</ul>
-</li>
-</ul>
-<h1 id="Redis-特性"><a href="#Redis-特性" class="headerlink" title="Redis 特性"></a>Redis 特性</h1><h2 id="多数据库"><a href="#多数据库" class="headerlink" title="多数据库"></a>多数据库</h2><ul>
-<li>redis默认有16个数据库<ul>
-<li><code>db0~15</code></li>
-</ul>
-</li>
-<li>默认使用0号库</li>
-<li><code>select 数字</code><ul>
-<li>使用几号库</li>
-<li><code>select 0</code></li>
-</ul>
-</li>
-<li><code>move KEY 数字</code><ul>
-<li>将KEY剪切到指定数字的库</li>
-<li><strong>移库</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="服务器命令"><a href="#服务器命令" class="headerlink" title="服务器命令"></a>服务器命令</h1><ul>
-<li><code>ping</code><ul>
-<li>测试链接是否存活</li>
-</ul>
-</li>
-<li><code>quit</code><ul>
-<li>退出链接</li>
-</ul>
-</li>
-<li><code>echo xxx</code><ul>
-<li>在命令行打印内容</li>
-</ul>
-</li>
-<li><code>select num</code><ul>
-<li>选择数据库</li>
-</ul>
-</li>
-<li><code>dbsize</code><ul>
-<li>返回当前数据库KEY的数目</li>
-</ul>
-</li>
-<li><code>info</code><ul>
-<li>获取服务器信息统计</li>
-</ul>
-</li>
-<li><code>flushdb</code><ul>
-<li>删除当前数据库的所有KEY</li>
-</ul>
-</li>
-<li><code>flushall</code><ul>
-<li>删除所有数据库的所有KEY</li>
-</ul>
-</li>
-</ul>
-<h1 id="消息订阅与发布"><a href="#消息订阅与发布" class="headerlink" title="消息订阅与发布"></a>消息订阅与发布</h1><ul>
-<li><code>subscibe channel</code><ul>
-<li>订阅指定频道</li>
-<li><code>subscibe mychat</code><ul>
-<li>订阅mychat频道</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>psubscribe channel*</code><ul>
-<li>批量订阅频道</li>
-<li><code>psubscibe s*</code><ul>
-<li>订阅以s开头的频道</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>publish channel content</code><ul>
-<li>在指定频道中发布消息</li>
-<li><code>publish channel mychat &#39;hello&#39;</code><ul>
-<li>在mychat中发布<code>hello</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Redos-事务"><a href="#Redos-事务" class="headerlink" title="Redos 事务"></a>Redos 事务</h1><ul>
-<li>更确切的说应该是批处理<ul>
-<li>原来是写一句执行一句</li>
-<li>开启事务以后，一直到提交，才一起执行<ul>
-<li>有语句错误不影响其它语句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>multi</code><ul>
-<li>开启事务</li>
-</ul>
-</li>
-<li><code>exec</code><ul>
-<li>提交事务</li>
-</ul>
-</li>
-<li><code>discard</code><ul>
-<li>回滚</li>
-<li>事务中的语句都作废，不执行</li>
-</ul>
-</li>
-</ul>
-<h1 id="Redis-持久化"><a href="#Redis-持久化" class="headerlink" title="Redis 持久化"></a>Redis 持久化</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li>Redis的高性能是因为数据存储到了内存中，为了使Redis在重启之后仍能保证数据不丢失，需要将数据从内存同步到硬盘中，即持久化</li>
 </ul>
-<h2 id="RDB持久化"><a href="#RDB持久化" class="headerlink" title="RDB持久化"></a>RDB持久化</h2><ul>
-<li>默认支持，无需配置</li>
-<li>该机制是在指定的时间间隔内将内存中的数据集快照写入硬盘</li>
-<li><p>存储时机及位置</p>
+<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://gitee.com/3noanswer/pics/raw/master/git/分支.png" alt=""></p>
 <ul>
-<li><p>在<code>redis.conf</code>中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 60 10000</span><br><span class="line">dbfilename dump.rdb</span><br><span class="line">dir ./</span><br></pre></td></tr></table></figure>
+<li><code>master</code><ul>
+<li>主分支</li>
+</ul>
 </li>
-<li><p><code>save</code></p>
+<li><code>dev</code><ul>
+<li>分支</li>
+</ul>
+</li>
+<li><code>HEAD</code><ul>
+<li>当前版本</li>
+</ul>
+</li>
+<li>默认只有一条主分支，然后创建分支，想要切换分支，只要把<code>HEAD</code>指向想要切换的分支即可。</li>
+<li>分支合并到主分支<ul>
+<li><code>master</code>指向分支即可。</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建-amp-合并分支"><a href="#创建-amp-合并分支" class="headerlink" title="创建&amp;合并分支"></a>创建&amp;合并分支</h2><ul>
+<li><code>git branch dev</code><ul>
+<li>创建分支dev（自定义）</li>
+</ul>
+</li>
+<li><code>git checkout dev</code><ul>
+<li>切换到分支dev</li>
+</ul>
+</li>
+<li><code>git checkout -b dev</code><ul>
+<li>git checkout命令加上-b参数表示创建并切换，相当于上两条</li>
+</ul>
+</li>
+<li><code>git branch</code><ul>
+<li>查看当前分支</li>
+<li>会列出分支列表，当前分支前有<code>*</code>号</li>
+</ul>
+</li>
+<li><code>git merge dev</code><ul>
+<li>把分支dev合并到当前分支</li>
+</ul>
+</li>
+<li><code>git branch -d dev</code><ul>
+<li>删除分支dev</li>
+</ul>
+</li>
+</ul>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><ol>
+<li><code>git status</code><ul>
+<li>查看冲突信息</li>
+</ul>
+</li>
+<li>手动修改冲突文件</li>
+<li><code>add commit</code></li>
+</ol>
 <ul>
-<li>表示修改1个以上，每隔900秒来一个快照</li>
-<li>修改10个以上，隔300秒</li>
-<li>修改10000以上，隔60秒<ul>
-<li><code>dbfilename</code></li>
-</ul>
-</li>
-<li>表示存到哪个文件<ul>
-<li><code>dir</code></li>
-</ul>
-</li>
-<li>存储文件的目录</li>
+<li><code>git log --graph</code><ul>
+<li>查看分支合并图</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="AOF持久化"><a href="#AOF持久化" class="headerlink" title="AOF持久化"></a>AOF持久化</h2><ul>
-<li>该机制将以日志的形式记录服务器所处理的每一个写操作，在Redis服务器启动之初会读取该文件来重新构建数据库，以保证启动后数据是完整的</li>
-<li><p>配置</p>
-<ul>
-<li><p><code>redis.conf</code>中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">appendonly no</span><br><span class="line">appendfilename &quot;appendonly.aof&quot;</span><br><span class="line"># appendfsync always</span><br><span class="line">appendfsync everysec</span><br><span class="line"># appendfsync no</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>appendonly</code></p>
-<ul>
-<li>默认不使用aof</li>
+<h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><ul>
+<li><code>git merge dev</code><ul>
+<li>默认使用<code>fast forward</code><ul>
+<li>快进模式下，删除分支后，会丢掉分支信息</li>
+<li>合并就看不出来曾经做过合并。</li>
 </ul>
 </li>
-<li><code>appendfilename</code><ul>
-<li>存储文件名</li>
-</ul>
-</li>
-<li><code>appendfsync</code><ul>
-<li><code>always</code><ul>
-<li>一修改就存储</li>
-</ul>
-</li>
-<li><code>everysec</code><ul>
-<li>每分钟存储一次</li>
+<li><code>--no-ff</code><ul>
+<li>用普通模式合并，合并后的历史有分支，能看出来曾经做过合并</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h3 id="分支管理原则"><a href="#分支管理原则" class="headerlink" title="分支管理原则"></a>分支管理原则</h3><ul>
+<li><code>master</code><ul>
+<li>主分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活</li>
+</ul>
+</li>
+<li><code>dev</code><ul>
+<li>分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本，然后继续在分支干活准备2.0版本。</li>
+<li>平时在分支上干活</li>
+</ul>
 </li>
 </ul>
+<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><ul>
+<li>正在分支进行工作，临时需要修复一个bug，然而分支工作没完成不能提交，<ol>
+<li>先保存当前分支工作空间</li>
+<li>创建临时bug分支</li>
+<li>修复完合并并删除bug分支</li>
+<li>恢复分支工作空间</li>
+</ol>
+</li>
+<li>注意?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">先说几个名词</span><br><span class="line">    未被追踪的文件:指的是新建的文件或文件夹且还没加入到暂存区(新建的还没有被git add 过得)</span><br><span class="line">    未加入到暂存区的文件:指的是已经被追踪过，但是没有加入到暂存区(已经执行过git add/commit的但是这次修改后还没有git add)</span><br><span class="line">    举例:</span><br><span class="line">        readme.md  已经被git add/git commit过，但是呢 我这次只是修改了，而且没有修改完，不能commit</span><br><span class="line">        test    新建的文件夹,没有被git add/git commit过</span><br><span class="line">        有个急事需要处理,这时候我需要切换分支，去处理紧急任务,比如文中的举例去修改bug，</span><br><span class="line">        正确的步骤:</span><br><span class="line">            git add test（让git去追踪这个新文件）</span><br><span class="line">            git stash保留现场</span><br><span class="line">   如果我不执行这两个命令，那么我在修改BUG完成之后</span><br><span class="line">   git status，就会发现readme.md 没有添加到暂存区，同时又多了个test文件,但是自己的readme.md没有完成，万万不可以提交，这样导致bug的修改代码也提交不了。所以你需要</span><br><span class="line">git stash，这样你在提交修改bug代码的时候 ，就不会看见readme.md 和 test。可以安心提交修改bug的代码。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><ul>
+<li><code>git stash</code><ul>
+<li>保存工作空间</li>
+</ul>
+</li>
+<li><code>git stash list</code><ul>
+<li>查看保存列表</li>
+</ul>
+</li>
+<li><code>git stash apply</code><ul>
+<li>恢复工作空间，但不删除stash内容</li>
+</ul>
+</li>
+<li><code>git stash pop</code><ul>
+<li>恢复工作空间，同时删除stash内容</li>
+</ul>
+</li>
+</ul>
+<h2 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h2><ul>
+<li>附加功能分支，要添加新功能，重新开启一个分支</li>
+<li><code>git branch -D &lt;name&gt;</code><ul>
+<li>强制删除还没有合并的分支</li>
+</ul>
+</li>
+</ul>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><ul>
+<li><code>git remote</code><ul>
+<li>查看远程仓库信息</li>
+</ul>
+</li>
+<li><code>git remote -v</code><ul>
+<li>查看远程仓库详细信息</li>
+</ul>
+</li>
+<li><code>git checkout -b branch-name origin/branch-name</code><ul>
+<li>将远程仓库origin中的分支<code>branch-name</code>检出到本地</li>
+</ul>
+</li>
+<li><code>git push origin branch-name</code><ul>
+<li>将分支推送到远程仓库</li>
+<li>如果推送失败，先<code>git pull</code>更新，解决冲突后，再提交</li>
+</ul>
+</li>
+<li><code>gti pull</code><ul>
+<li>抓取最新的提交</li>
+<li>如果失败提示<code>no tracking information</code>说明本地分支与远程分支的链接关系没有创建<ul>
+<li><code>git branch --set-upstream branch-name origin/branch-name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><h2 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h2><ul>
+<li><code>git tag &lt;name&gt;</code><ul>
+<li>新建一个标签，默认为HEAD，也可以指定一个commit id</li>
+</ul>
+</li>
+<li><code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
+<li>可以创建时指定标签信息</li>
+</ul>
+</li>
+<li><code>git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</code><ul>
+<li>用PGP签名标签</li>
+<li>签名采用PGP签名，因此，必须首先安装gpg（GnuPG）</li>
+</ul>
+</li>
+<li><code>git tag</code><ul>
+<li>查看所有标签，默认安装字母排序</li>
+</ul>
+</li>
+<li><code>git show &lt;tagname&gt;</code><ul>
+<li>查看标签信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><ul>
+<li><code>git push origin &lt;tagname&gt;</code><ul>
+<li>推送一个本地标签到远程仓库</li>
+</ul>
+</li>
+<li><code>git push origin --tags</code><ul>
+<li>推送全部未推送过的本地标签</li>
+</ul>
+</li>
+<li><code>git tag -d &lt;tagname&gt;</code><ul>
+<li>删除一个本地标签；</li>
+</ul>
+</li>
+<li><code>git push origin :refs/tags/&lt;tagname&gt;</code><ul>
+<li>删除一个远程标签。</li>
+</ul>
+</li>
+</ul>
+<h1 id="自定义git"><a href="#自定义git" class="headerlink" title="自定义git"></a>自定义git</h1><h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><ul>
+<li>在工作区创建<code>.gitignore</code>，然后把要忽略的文件名填进去.<ul>
+<li><code>.gitignore</code>文件可以在线查询</li>
+</ul>
+</li>
+<li>忽略文件的原则是：<ol>
+<li>忽略操作系统自动生成的文件，比如缩略图等；</li>
+<li>忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；</li>
+<li>忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件</li>
+</ol>
+</li>
+</ul>
+<h1 id="git-clone-速度问题"><a href="#git-clone-速度问题" class="headerlink" title="git clone 速度问题"></a>git clone 速度问题</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>因为<code>github.global.ssl.fastly.Net</code>域名被限制了。只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–&gt;域名的映射，刷新DNS缓存就可以了</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>查询域名<code>global-ssl.fastly.Net</code>和 <code>github.com</code> 公网地址<ul>
+<li><code>https://www.ipaddress.com/</code></li>
+<li>或者其它查询网站</li>
+</ul>
+</li>
+<li>将ip地址与网址映射添加到hosts文件<ul>
+<li><code>/etc/hosts</code><ul>
+<li>linux</li>
+</ul>
+</li>
+<li><code>c:/windows/system32/driver/etc/hosts</code><ul>
+<li>windows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>刷新DNS缓存<ul>
+<li><code>sudo /etc/init.d/networking restart</code></li>
+<li><code>ipconfig /flushdns</code></li>
+</ul>
+</li>
+</ol>
 
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-工作流/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/03/xd-工作流/" itemprop="url">
-                  xd-工作流
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-03 14:56:06" itemprop="dateCreated datePublished" datetime="2019-01-03T14:56:06+08:00">2019-01-03</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-SSM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/03/xd-SSM/" itemprop="url">
-                  xd-SSM
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-03 14:55:49" itemprop="dateCreated datePublished" datetime="2019-01-03T14:55:49+08:00">2019-01-03</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/xd-SSH/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="安₃">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://github.com/awcnoanswer/myPicture/raw/master/headPic/swk.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安₃">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/03/xd-SSH/" itemprop="url">
-                  xd-SSH
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-03 14:55:42" itemprop="dateCreated datePublished" datetime="2019-01-03T14:55:42+08:00">2019-01-03</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -4320,7 +3817,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 23:22:01" itemprop="dateModified" datetime="2019-01-29T23:22:01+08:00">2019-01-29</time>
+                <time title="修改时间：2019-03-08 14:50:23" itemprop="dateModified" datetime="2019-03-08T14:50:23+08:00">2019-03-08</time>
               
             
           </span>
@@ -4337,7 +3834,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
 
                 
                 
@@ -5070,7 +4567,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -5117,7 +4614,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -5142,7 +4639,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

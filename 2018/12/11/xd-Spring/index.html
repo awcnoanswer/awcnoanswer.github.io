@@ -108,20 +108,20 @@
 
 
 
-  <meta name="description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案   轻量级 与EJB对比，依赖资源少，销毁的资源少     Spr">
+  <meta name="description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源容器框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案 在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xd-Spring">
 <meta property="og:url" content="http://yoursite.com/2018/12/11/xd-Spring/index.html">
 <meta property="og:site_name" content="安₃">
-<meta property="og:description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案   轻量级 与EJB对比，依赖资源少，销毁的资源少     Spr">
+<meta property="og:description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源容器框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案 在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://gitee.com/3noanswer/pics/raw/master/spring-overview.png">
 <meta property="og:image" content="https://gitee.com/3noanswer/pics/raw/master/springAPI体系.png">
 <meta property="og:image" content="https://gitee.com/3noanswer/pics/raw/master/Bean实例化过程.png">
-<meta property="og:updated_time" content="2019-01-26T16:34:04.952Z">
+<meta property="og:updated_time" content="2019-03-08T06:46:11.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xd-Spring">
-<meta name="twitter:description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案   轻量级 与EJB对比，依赖资源少，销毁的资源少     Spr">
+<meta name="twitter:description" content="概述 Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源容器框架 分层 web层：struts，spring-MVC service层：spring dao层：hibernate，mybatis ， jdbcTemplate  –&amp;gt; spring-data   一站式 每一个层都提供的解决方案 在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的">
 <meta name="twitter:image" content="https://gitee.com/3noanswer/pics/raw/master/spring-overview.png">
 
 
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-27 00:34:04" itemprop="dateModified" datetime="2019-01-27T00:34:04+08:00">2019-01-27</time>
+                <time title="修改时间：2019-03-08 14:46:11" itemprop="dateModified" datetime="2019-03-08T14:46:11+08:00">2019-03-08</time>
               
             
           </span>
@@ -421,7 +421,7 @@
 
       
         <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
-<li>Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架<ul>
+<li>Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源容器框架<ul>
 <li><strong>分层</strong><ul>
 <li>web层：struts，spring-MVC</li>
 <li>service层：spring</li>
@@ -430,6 +430,7 @@
 </li>
 <li><strong>一站式</strong><ul>
 <li>每一个层都提供的解决方案</li>
+<li>在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库（实际上Spring 自身也提供了表述层的SpringMVC和持久层的Spring JDBC）</li>
 </ul>
 </li>
 <li><strong>轻量级</strong><ul>
@@ -438,8 +439,30 @@
 </li>
 </ul>
 </li>
-<li>Spring的核心是<strong>控制反转（IOC）</strong>和<strong>面向切面（AOP）</strong></li>
+<li>Spring的核心是<strong>控制反转（IOC（DI））</strong>和<strong>面向切面（AOP）</strong></li>
 </ul>
+<h2 id="Spring-优良特性"><a href="#Spring-优良特性" class="headerlink" title="Spring 优良特性"></a>Spring 优良特性</h2><ol>
+<li>非侵入式<ul>
+<li>基于Spring开发的应用中的对象可以不依赖于Spring的API</li>
+</ul>
+</li>
+<li>依赖注入<ul>
+<li>DI——Dependency Injection，反转控制(IOC)最经典的实现</li>
+</ul>
+</li>
+<li>面向切面编程<ul>
+<li>Aspect Oriented Programming——AOP</li>
+</ul>
+</li>
+<li>容器<ul>
+<li>Spring是一个容器，因为它包含并且管理应用对象的生命周期</li>
+</ul>
+</li>
+<li>组件化<ul>
+<li>Spring实现了使用简单的组件配置组合成一个复杂的应用。在 Spring 中可以使用XML和Java注解组合这些对象</li>
+</ul>
+</li>
+</ol>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
 <li><code>https://repo.spring.io/webapp/#/home</code><ul>
 <li><code>artifacts</code>→<code>libs-release-loacl</code>→<code>springframework</code>→<code>spring</code></li>
@@ -464,43 +487,63 @@
 <li><code>Expert One-to-One J2EE Development without EJB</code></li>
 </ul>
 <h1 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h1><p><img src="https://gitee.com/3noanswer/pics/raw/master/spring-overview.png" alt=""></p>
-<h2 id="Core-Container-核心容器"><a href="#Core-Container-核心容器" class="headerlink" title="Core Container(核心容器)"></a>Core Container(核心容器)</h2><h3 id="Beans"><a href="#Beans" class="headerlink" title="Beans"></a><code>Beans</code></h3><ul>
+<h2 id="Core-Container-核心容器"><a href="#Core-Container-核心容器" class="headerlink" title="Core Container(核心容器)"></a>Core Container(核心容器)</h2><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ol>
+<li><code>Beans</code><ul>
 <li>管理bean    </li>
 </ul>
-<h3 id="Core"><a href="#Core" class="headerlink" title="Core"></a><code>Core</code></h3><ul>
+</li>
+<li><code>Core</code>    <ul>
 <li>核心</li>
 </ul>
-<h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a><code>Context</code></h3><ul>
+</li>
+<li><code>Context</code><ul>
 <li>上下文(配置文件…)</li>
 </ul>
-<h3 id="Expression-Language"><a href="#Expression-Language" class="headerlink" title="Expression Language"></a><code>Expression Language</code></h3><ul>
+</li>
+<li><code>Expression Language</code><ul>
 <li>SpEL(springEl表达式…)</li>
 </ul>
-<h3 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a><code>Messaging</code></h3><h2 id="Aop-Aspect-Oriented-Programming"><a href="#Aop-Aspect-Oriented-Programming" class="headerlink" title="Aop(Aspect Oriented Programming)"></a>Aop(Aspect Oriented Programming)</h2><h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a><code>AOP</code></h3><ul>
+</li>
+</ol>
+<h2 id="Aop-Aspect-Oriented-Programming"><a href="#Aop-Aspect-Oriented-Programming" class="headerlink" title="Aop(Aspect Oriented Programming)"></a>Aop(Aspect Oriented Programming)</h2><ol>
+<li><code>AOP</code><ul>
 <li>面向切面编程</li>
 </ul>
-<h3 id="Aspects"><a href="#Aspects" class="headerlink" title="Aspects"></a><code>Aspects</code></h3><ul>
+</li>
+<li><code>Aspects</code><ul>
 <li>AOP框架</li>
 </ul>
-<h3 id="Instrumentation"><a href="#Instrumentation" class="headerlink" title="Instrumentation"></a><code>Instrumentation</code></h3><h2 id="Data-Access-Integration"><a href="#Data-Access-Integration" class="headerlink" title="Data Access/Integration"></a>Data Access/Integration</h2><h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a><code>JDBC</code></h3><ul>
+</li>
+<li><code>Instrumentation</code></li>
+<li><code>Messaging</code></li>
+</ol>
+<h2 id="Data-Access-Integration"><a href="#Data-Access-Integration" class="headerlink" title="Data Access/Integration"></a>Data Access/Integration</h2><ol>
+<li><code>JDBC</code><ul>
 <li>jdbc的支持 JdbcTemplate</li>
 </ul>
-<h3 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a><code>ORM</code></h3><ul>
+</li>
+<li><code>ORM</code><ul>
 <li>对象关系映射</li>
 </ul>
-<h3 id="OXM"><a href="#OXM" class="headerlink" title="OXM"></a><code>OXM</code></h3><ul>
+</li>
+<li><code>OXM</code><ul>
 <li>对象xml映射，集成orm框架</li>
 </ul>
-<h3 id="JMS"><a href="#JMS" class="headerlink" title="JMS"></a><code>JMS</code></h3><ul>
+</li>
+<li><code>JMS</code><ul>
 <li>java消息服务</li>
 </ul>
-<h3 id="Transactions"><a href="#Transactions" class="headerlink" title="Transactions"></a><code>Transactions</code></h3><ul>
-<li>事务控制</li>
-</ul>
-<h2 id="Web-MVC-Remoting"><a href="#Web-MVC-Remoting" class="headerlink" title="Web(MVC/Remoting)"></a>Web(MVC/Remoting)</h2><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a><code>Web</code></h3><h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a><code>Servlet</code></h3><h3 id="Portlet"><a href="#Portlet" class="headerlink" title="Portlet"></a><code>Portlet</code></h3><h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a><code>WebSocket</code></h3><h3 id="struts"><a href="#struts" class="headerlink" title="struts"></a><code>struts</code></h3><h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><ul>
-<li>……</li>
-</ul>
-<h1 id="Jar包"><a href="#Jar包" class="headerlink" title="Jar包"></a>Jar包</h1><h2 id="Core-1"><a href="#Core-1" class="headerlink" title="Core"></a>Core</h2><ul>
+</li>
+<li><code>Transactions</code></li>
+</ol>
+<h2 id="Web-MVC-Remoting"><a href="#Web-MVC-Remoting" class="headerlink" title="Web(MVC/Remoting)"></a>Web(MVC/Remoting)</h2><ol>
+<li><code>Web</code></li>
+<li><code>Servlet</code></li>
+<li><code>Portlet</code></li>
+<li><code>WebSocket</code></li>
+<li><code>struts</code></li>
+</ol>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h1 id="Jar包"><a href="#Jar包" class="headerlink" title="Jar包"></a>Jar包</h1><h2 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h2><ul>
 <li><code>spring-core.jar</code><ul>
 <li>IoC与DI的最基本实现</li>
 <li>依赖<code>commons-logging.jar</code></li>
@@ -603,19 +646,89 @@
 </ul>
 </li>
 </ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="核心监听器"><a href="#核心监听器" class="headerlink" title="核心监听器"></a>核心监听器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">&lt;/listener&gt;</span><br><span class="line">&lt;context-param&gt;</span><br><span class="line">    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">    &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="核心配置"><a href="#核心配置" class="headerlink" title="核心配置"></a>核心配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 扫描注解 --&gt;</span><br><span class="line">&lt;context:component-scan base-package=&quot;&quot;/&gt;</span><br><span class="line">&lt;!-- 配置properties --&gt;</span><br><span class="line">&lt;context:property-placeholder location=&quot;classpath:包名xxx.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="IOC（Inversion-of-Control）"><a href="#IOC（Inversion-of-Control）" class="headerlink" title="IOC（Inversion of Control）"></a>IOC（<code>Inversion of Control</code>）</h1><ul>
+<li>控制反转</li>
+<li>把创建对象的权力交给Spring。</li>
+</ul>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>在应用程序中的组件需要获取资源时，传统的方式是组件主动的从容器中获取所需要的资源，在这样的模式下开发人员往往需要知道在具体容器中特定资源的获取方式，增加了学习成本，同时降低了开发效率。</li>
+<li>反转控制的思想完全颠覆了应用程序组件获取资源的传统方式：反转了资源的获取方向——改由容器主动的将资源推送给需要的组件，开发人员不需要知道容器是如何创建资源对象的，只需要提供接收资源的方式即可，极大的降低了学习成本，提高了开发的效率。这种行为也称为查找的被动形式</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>降低耦合。</p>
+<h2 id="实现策略"><a href="#实现策略" class="headerlink" title="实现策略"></a>实现策略</h2><ul>
+<li>DI（<code>Dependency Injection</code>）依赖注入</li>
+<li>DL（<code>Dependency Lookup</code>）依赖查找</li>
+</ul>
+<h1 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h1><h2 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>IOC的另一种表述方式：即组件以一些预先定义好的方式(例如：setter 方法)接受来自于容器的资源注入。相对于IOC而言，这种表述更直接</li>
+<li>IOC 描述的是一种思想，而DI 是对IOC思想的具体实现</li>
+</ul>
+<h2 id="bean之间的关系"><a href="#bean之间的关系" class="headerlink" title="bean之间的关系"></a>bean之间的关系</h2><ul>
+<li>依赖<ul>
+<li>一个对象需要使用另一个对象</li>
+<li>has a：有一个，成员变量，依赖</li>
+</ul>
+</li>
+<li>继承<ul>
+<li>is a ：是一个，继承。</li>
+<li><code>&lt;bean parent=&quot;&quot;&gt;&lt;/bean&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="注解扫描"><a href="#注解扫描" class="headerlink" title="注解扫描"></a>注解扫描</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package=&quot;&quot; use-default-filters=&quot;&quot;&gt;</span><br><span class="line">	&lt;context:include-filter type=&quot;annotation&quot; expression=&quot;&quot;/&gt;</span><br><span class="line">	&lt;context:exclude-filter type=&quot;annotation&quot; expression=&quot;&quot;/&gt;</span><br><span class="line">&lt;/context:component-scan&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>use-default-filters</code><ul>
+<li>默认true</li>
+<li>如使用<code>include</code>，<code>use-default-filters</code>要设为<code>false</code></li>
+<li>如使用<code>exclude</code>，<code>use-default-filters</code>要设为<code>true</code></li>
+</ul>
+</li>
+<li><code>type</code><ul>
+<li><code>annotation</code><ul>
+<li><code>expression</code>为注解全类名</li>
+</ul>
+</li>
+<li><code>assignable</code><ul>
+<li><code>expression</code>为bean全类名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="引入配置文件"><a href="#引入配置文件" class="headerlink" title="引入配置文件"></a>引入配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1</span><br><span class="line">&lt;context:property-placeholder location=&quot;classpath:包名xxx.properties&quot;/&gt;</span><br><span class="line">// 2</span><br><span class="line">&lt;bean class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;location&quot; value=&quot;classpath:包名xxx.properties&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>classpath</code><ul>
+<li>工程分模块时，当前模块类路径下</li>
+</ul>
+</li>
+<li><code>classpath*</code><ul>
+<li>从所有模块类路径下</li>
+</ul>
+</li>
+</ul>
 <h1 id="核心API-了解"><a href="#核心API-了解" class="headerlink" title="核心API(了解)"></a>核心API(了解)</h1><h2 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h2><p><img src="https://gitee.com/3noanswer/pics/raw/master/springAPI体系.png" alt=""></p>
+<ul>
+<li>IOC在Spring中的实现<ol>
+<li><code>BeanFactory</code></li>
+<li><code>ApplicationContext</code></li>
+</ol>
+</li>
+</ul>
 <h2 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h2><ul>
 <li>spring原始接口，针对原始接口的实现类功能较为单一</li>
+<li>IOC容器的基本实现，是Spring内部的基础设施，是面向Spring本身的，不是提供给开发人员使用的</li>
 <li>特点<ul>
 <li>此接口实现类的容器，每次获取对象时才会创建对象。</li>
 <li><strong>延迟加载，第一次获取对象（getBean()）时才实例化Bean</strong></li>
 </ul>
 </li>
 </ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><code>Object getBean(String name)</code></li>
+<li><code>T getBean(String name, Class&lt;T&gt; requiredType)</code></li>
+</ul>
 <h2 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h2><ul>
-<li>BeanFactory子接口，功能更强大。<ul>
+<li>BeanFactory子接口，功能更强大。面向Spring的使用者<ul>
 <li>国际化，事件传递，bean自动装配….</li>
 </ul>
 </li>
@@ -624,52 +737,27 @@
 </ul>
 </li>
 </ul>
-<h2 id="ClassPathXmlApplicationContext"><a href="#ClassPathXmlApplicationContext" class="headerlink" title="ClassPathXmlApplicationContext"></a>ClassPathXmlApplicationContext</h2><ul>
-<li>ApplicationContext实现类</li>
+<h3 id="ApplicationContext实现类"><a href="#ApplicationContext实现类" class="headerlink" title="ApplicationContext实现类"></a>ApplicationContext实现类</h3><h4 id="ClassPathXmlApplicationContext"><a href="#ClassPathXmlApplicationContext" class="headerlink" title="ClassPathXmlApplicationContext"></a>ClassPathXmlApplicationContext</h4><ul>
 <li>用于加载类路径下的xml</li>
 </ul>
-<h2 id="FileSystemXmlApplicaitonContext"><a href="#FileSystemXmlApplicaitonContext" class="headerlink" title="FileSystemXmlApplicaitonContext"></a>FileSystemXmlApplicaitonContext</h2><ul>
-<li>ApplicationContext实现类</li>
+<h4 id="FileSystemXmlApplicaitonContext"><a href="#FileSystemXmlApplicaitonContext" class="headerlink" title="FileSystemXmlApplicaitonContext"></a>FileSystemXmlApplicaitonContext</h4><ul>
 <li>用于加载磁盘任意路径下的xml</li>
 </ul>
-<h2 id="AnnotationConfigApplicationContext"><a href="#AnnotationConfigApplicationContext" class="headerlink" title="AnnotationConfigApplicationContext"></a>AnnotationConfigApplicationContext</h2><ul>
-<li>ApplicationContext实现类</li>
+<h4 id="AnnotationConfigApplicationContext"><a href="#AnnotationConfigApplicationContext" class="headerlink" title="AnnotationConfigApplicationContext"></a>AnnotationConfigApplicationContext</h4><ul>
 <li>用于读取注解创建容器</li>
 </ul>
-<h1 id="IOC（Inversion-of-Control）"><a href="#IOC（Inversion-of-Control）" class="headerlink" title="IOC（Inversion of Control）"></a>IOC（<code>Inversion of Control</code>）</h1><ul>
-<li>控制反转</li>
-<li>把创建对象的权力交给Spring。</li>
+<h2 id="ConfigurableApplicationContext"><a href="#ConfigurableApplicationContext" class="headerlink" title="ConfigurableApplicationContext"></a>ConfigurableApplicationContext</h2><ul>
+<li>是ApplicationContext的子接口，包含一些扩展方法</li>
+<li>让ApplicationContext具有启动、关闭和刷新上下文的能力</li>
+<li><code>refresh()</code></li>
+<li><code>close()</code></li>
 </ul>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>降低耦合。</p>
-<h2 id="实现策略"><a href="#实现策略" class="headerlink" title="实现策略"></a>实现策略</h2><ul>
-<li>DI（<code>Dependency Injection</code>）依赖注入</li>
-<li>DL（<code>Dependency Lookup</code>）依赖查找</li>
+<h2 id="WebApplicationContext"><a href="#WebApplicationContext" class="headerlink" title="WebApplicationContext"></a>WebApplicationContext</h2><ul>
+<li>专门为WEB应用而准备的，它允许从相对于WEB根目录的路径中完成初始化工作</li>
 </ul>
-<h2 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h2><ul>
-<li>依赖<ul>
-<li>一个对象需要使用另一个对象</li>
-<li>is a ：是一个，继承。</li>
-<li>has a：有一个，成员变量，依赖</li>
-</ul>
-</li>
-<li>注入<ul>
-<li>注入方式<ul>
-<li>set</li>
-<li>构造</li>
-<li>字段</li>
-</ul>
-</li>
-<li>注入类型<ul>
-<li>值类型</li>
-<li>引用类型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Bean基于xml"><a href="#Bean基于xml" class="headerlink" title="Bean基于xml"></a>Bean基于xml</h1><h2 id="Bean实例化方式"><a href="#Bean实例化方式" class="headerlink" title="Bean实例化方式"></a>Bean实例化方式</h2><h3 id="默认构造"><a href="#默认构造" class="headerlink" title="默认构造"></a>默认构造</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;&quot; class=&quot;bean全类名&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="基于xml"><a href="#基于xml" class="headerlink" title="基于xml"></a>基于xml</h1><h2 id="Bean实例化"><a href="#Bean实例化" class="headerlink" title="Bean实例化"></a>Bean实例化</h2><h3 id="默认构造"><a href="#默认构造" class="headerlink" title="默认构造"></a>默认构造</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;&quot; class=&quot;bean全类名&quot;&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>必须提供默认构造</li>
+<li>必须提供空参构造，因为反射<code>newInstance()</code>调用的是默认空参构造</li>
 </ul>
 <h3 id="静态工厂"><a href="#静态工厂" class="headerlink" title="静态工厂"></a>静态工厂</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;&quot;  class=&quot;静态工厂全类名&quot;  factory-method=&quot;静态工厂中获取bean的静态方法&quot;&gt;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -679,13 +767,30 @@
 <ul>
 <li>必须先有工厂实例对象，通过工厂实例对象创建对象。</li>
 </ul>
+<h3 id="FactoryBean"><a href="#FactoryBean" class="headerlink" title="FactoryBean"></a>FactoryBean</h3><ul>
+<li>使用<ol>
+<li>编写此接口实现类</li>
+<li>配置实现类bean</li>
+</ol>
+</li>
+<li>如果一个bean实现了FactoryBean，spring会把这个bean当成一个工厂，不再返回配置的bean类型，返回的bean类型为<code>getObjetct()</code>方法返回的类型</li>
+<li>BeanFactory<ul>
+<li>bean的工厂</li>
+</ul>
+</li>
+<li>FactoryBean<ul>
+<li>工厂bean</li>
+</ul>
+</li>
+</ul>
 <h2 id="Bean作用域"><a href="#Bean作用域" class="headerlink" title="Bean作用域"></a>Bean作用域</h2><ul>
 <li><code>&lt;bean id=&quot;&quot; class=&quot;&quot;  scope=&quot;&quot;&gt;</code></li>
 </ul>
 <h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3><ul>
 <li><code>singleton</code><ul>
 <li>单例 默认</li>
-<li>加载配置文件就会创建bean</li>
+<li>并非是JavaBean是单例的，而是容器中的bean是单例的，即在ioc容器中只能存在一个bean的对象。</li>
+<li>IOC容器创建时就会创建bean</li>
 </ul>
 </li>
 <li><code>prototype</code><ul>
@@ -694,12 +799,12 @@
 </ul>
 </li>
 <li><code>request</code><ul>
-<li>作用于web应用的请求范围</li>
+<li>作用于web应用的请求范围，仅适用于WebApplicationContext环境</li>
 <li>每次http请求会创建一个新的bean</li>
 </ul>
 </li>
 <li><code>session</code><ul>
-<li>作用于web应用的会话范围</li>
+<li>作用于web应用的会话范围，仅适用于WebApplicationContext环境</li>
 <li>同一个HTTP session共享一个bean</li>
 </ul>
 </li>
@@ -709,6 +814,136 @@
 </ul>
 </li>
 </ul>
+<h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><h3 id="注入方式"><a href="#注入方式" class="headerlink" title="注入方式"></a>注入方式</h3><h4 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;user&quot; class=&quot;an.s1.domain.User&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;id&quot; value=&quot;3&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;name&quot; value=&quot;旺财&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;property&gt;</code><ul>
+<li><code>name</code><ul>
+<li>bean中set方法中的属性名</li>
+</ul>
+</li>
+<li><code>value</code><ul>
+<li>为基本类型数据赋值</li>
+</ul>
+</li>
+<li><code>ref</code><ul>
+<li>为引用类型数据赋值</li>
+<li>一般是另一个bean 的id</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;user&quot; class=&quot;an.s1.domain.User&quot;&gt;</span><br><span class="line">	&lt;constructor-arg name=&quot;name&quot; value=&quot;小强&quot;/&gt;</span><br><span class="line">	&lt;constructor-arg name=&quot;age&quot; value=&quot;24&quot;/&gt;</span><br><span class="line">	&lt;constructor-arg index=&quot;0&quot; type=&quot;java.lang.String&quot; value=&quot;xx&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;constructor-arg&gt;</code><ul>
+<li><code>name</code><ul>
+<li>属性名</li>
+</ul>
+</li>
+<li><code>index</code><ul>
+<li>构造参数的索引 从0开始。</li>
+<li>若只有索引，匹配到多个构造方法时，使用第一个匹配的。</li>
+<li>配合type使用。</li>
+</ul>
+</li>
+<li><code>type</code><ul>
+<li>参数类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="P命名空间"><a href="#P命名空间" class="headerlink" title="P命名空间"></a>P命名空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;属性名&quot; value=&quot;普通值&quot; ref=&quot;引用值&quot;&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;bean p:属性名=&quot;普通值&quot; p:属性名-ref=&quot;引用值&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对set方法注入进行简化，去掉了标签体中的<code>&lt;property&gt;</code>标签，用属性代替</li>
+<li><code>&lt;property name=&quot;key&quot; value=&quot;value&quot;/&gt;</code>替换成<code>p:key=&quot;value&quot;</code></li>
+</ul>
+<h4 id="SpEL"><a href="#SpEL" class="headerlink" title="SpEL"></a>SpEL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=&quot;&quot; value=&quot;#&#123;spEL表达式&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>spEL表达式<ul>
+<li><code>#{123}</code><ul>
+<li>数字</li>
+</ul>
+</li>
+<li><code>#{&#39;an&#39;}</code><ul>
+<li>字符串</li>
+</ul>
+</li>
+<li><code>#{beanId}</code><ul>
+<li>另一个bean引用</li>
+</ul>
+</li>
+<li><code>#{beanId.propName}</code><ul>
+<li>操作属性数据</li>
+</ul>
+</li>
+<li><code>#{beanId.toString()}</code><ul>
+<li>执行方法</li>
+</ul>
+</li>
+<li><code>#{xx?.method()}</code><ul>
+<li>如果xx为空则不调用方法,不为空调用</li>
+</ul>
+</li>
+<li><code>#{T(类).字段|方法}</code><ul>
+<li>静态方法或字段</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="注入类型"><a href="#注入类型" class="headerlink" title="注入类型"></a>注入类型</h3><h4 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h4><ol>
+<li><p>可以用字符串表示的值（基本类型及其封装类，String），可以通过value属性或value子节点的方式指定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property value=&quot;值&quot;&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">	&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特殊字符</p>
+<ol>
+<li>使用实体（即html特殊符号如<code>&amp;nbmp/&amp;lt/</code>）</li>
+<li><code>&lt;![CDATA[]]</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h4><ul>
+<li>外部Bean<ul>
+<li><code>ref</code></li>
+</ul>
+</li>
+<li>内部Bean<ul>
+<li>即直接在<code>&lt;property&gt;&lt;bean&gt;&lt;/bean&gt;&lt;/property&gt;</code>声明bean</li>
+</ul>
+</li>
+<li>为引用类型级联赋值<ul>
+<li>使用对象导航图</li>
+</ul>
+</li>
+</ul>
+<h4 id="null"><a href="#null" class="headerlink" title="null"></a>null</h4><ul>
+<li><code>&lt;null/&gt;</code><ul>
+<li><code>&lt;property&gt;&lt;null/&gt;&lt;/property&gt;</code></li>
+<li>不写默认其实也是null</li>
+</ul>
+</li>
+</ul>
+<h4 id="数组-集合的注入"><a href="#数组-集合的注入" class="headerlink" title="数组/集合的注入"></a>数组/集合的注入</h4><h5 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h5><ul>
+<li>分为两种结构，同一种结构的标签可以通用<ul>
+<li><strong>list</strong><ul>
+<li>数组，list，set</li>
+</ul>
+</li>
+<li><strong>map</strong><ul>
+<li>map，properties</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>还有一种注入的方法是使用<code>util</code>名称空间定义一个集合，然后直接在注入时<code>ref</code>引入即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;util:list id=&quot;&quot;&gt;</span><br><span class="line">&lt;/util:list&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;数组属性名&quot;&gt;</span><br><span class="line">		&lt;array&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;ref bean=&quot;&quot;/&gt;</span><br><span class="line">			&lt;bean&gt;&lt;/bean&gt;</span><br><span class="line">		&lt;/array&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;List属性名&quot;&gt;</span><br><span class="line">		&lt;list&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;ref bean=&quot;&quot;/&gt;</span><br><span class="line">			&lt;bean&gt;&lt;/bean&gt;</span><br><span class="line">		&lt;/list&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Set属性名&quot;&gt;</span><br><span class="line">		&lt;set&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;ref bean=&quot;&quot;/&gt;</span><br><span class="line">			&lt;bean&gt;&lt;/bean&gt;</span><br><span class="line">		&lt;/set&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Map属性名&quot;&gt;</span><br><span class="line">		&lt;map&gt;</span><br><span class="line">			&lt;entry key=&quot;键&quot; value=&quot;值&quot; /&gt;</span><br><span class="line">		&lt;/map&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Properties属性名&quot;&gt;</span><br><span class="line">		&lt;props&gt;</span><br><span class="line">			&lt;prop key=&quot;键&quot;&gt;值&lt;/prop&gt;</span><br><span class="line">			&lt;prop key=&quot;键&quot;&gt;值&lt;/prop&gt;</span><br><span class="line">		&lt;/props&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h2><p><img src="https://gitee.com/3noanswer/pics/raw/master/Bean实例化过程.png" alt=""></p>
 <ol>
 <li>instantiate bean<ul>
@@ -758,12 +993,21 @@
 <li><code>&lt;bean destroy-method=&quot;销毁方法&quot;&gt;</code></li>
 <li>若配置则执行此指定销毁方法</li>
 <li>销毁方法要执行<ul>
-<li>必须关闭容器。(ApplicationContext)</li>
+<li>必须关闭容器。</li>
 <li>必须是单例</li>
 </ul>
 </li>
 </ul>
 </li>
+</ol>
+<h3 id="简单过程"><a href="#简单过程" class="headerlink" title="简单过程"></a>简单过程</h3><ol>
+<li>实例化</li>
+<li>属性注入</li>
+<li>后处理bean-前置处理</li>
+<li>初始化</li>
+<li>后处理bean-后置处理</li>
+<li>业务方法</li>
+<li>销毁</li>
 </ol>
 <h3 id="单例Bean"><a href="#单例Bean" class="headerlink" title="单例Bean"></a>单例Bean</h3><ul>
 <li>创建<ul>
@@ -797,16 +1041,16 @@
 <li>spring提供的工厂勾子，用于修改实例对象，如可以生成代理对象，是AOP底层</li>
 </ul>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
-<li>spring提供的一种机制，只要实现此接口，并将实现类提供给spring容器，spring容器将自动<ul>
+<li>spring提供的一种机制，只要实现此接口，并将实现类提供给spring容器，spring容器将自动针对容器中所有bean<ul>
 <li>在初始化方法前<ul>
 <li>执行<code>postProcessBeforeInitialization(Object bean,String beanName)</code><ul>
 <li><code>bean</code><ul>
-<li>就是spring创建的要初始化的目标类</li>
+<li>就是spring创建的要初始化的目标类对象</li>
 </ul>
 </li>
 <li>返回值<ol>
-<li>spring创建的目标对象</li>
-<li>目标对象的代理对象</li>
+<li>可以是spring创建的目标对象</li>
+<li>也可以是目标对象的代理对象</li>
 </ol>
 </li>
 </ul>
@@ -838,7 +1082,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="类A的创建初始化→目标方法→销毁过程"><a href="#类A的创建初始化→目标方法→销毁过程" class="headerlink" title="类A的创建初始化→目标方法→销毁过程"></a>类A的创建初始化→目标方法→销毁过程</h4><ol>
+<h4 id="类A的创建→初始化→目标方法→销毁过程"><a href="#类A的创建→初始化→目标方法→销毁过程" class="headerlink" title="类A的创建→初始化→目标方法→销毁过程"></a>类A的创建→初始化→目标方法→销毁过程</h4><ol>
 <li><p>一般过程</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A a=new A()</span><br><span class="line">a.init()</span><br><span class="line">a.add()</span><br><span class="line">a.destroy()</span><br></pre></td></tr></table></figure>
 </li>
@@ -860,18 +1104,31 @@
 </ul>
 </li>
 </ol>
-<h1 id="Bean基于注解"><a href="#Bean基于注解" class="headerlink" title="Bean基于注解"></a>Bean基于注解</h1><ul>
-<li><code>&lt;context:component-scan base-package=&quot;&quot;/&gt;</code><ul>
-<li>配置注解扫描</li>
+<h2 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h2><ul>
+<li>手动装配<ul>
+<li>通过<code>value/ref</code>注入的都是手动装配</li>
+</ul>
+</li>
+<li>自动装配<ul>
+<li><code>&lt;bean autowire=&quot;&quot;&gt;&lt;/bean&gt;</code><ul>
+<li><code>byName</code><ul>
+<li>按照属性名（setXxx）注入</li>
+</ul>
+</li>
+<li><code>byType</code><ul>
+<li>如果IOC中类型有多个匹配，则出错。</li>
 </ul>
 </li>
 </ul>
-<h2 id="Bean实例化"><a href="#Bean实例化" class="headerlink" title="Bean实例化"></a>Bean实例化</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>取代的是<code>&lt;bean class=&quot;&quot;&gt;</code></li>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="基于注解"><a href="#基于注解" class="headerlink" title="基于注解"></a>基于注解</h1><h2 id="Bean实例化-1"><a href="#Bean实例化-1" class="headerlink" title="Bean实例化"></a>Bean实例化</h2><ul>
+<li><code>@Component</code><ul>
 <li>默认bean id为 类名首字母小写</li>
 </ul>
-<h3 id="实例化注解"><a href="#实例化注解" class="headerlink" title="实例化注解"></a>实例化注解</h3><ul>
-<li><code>@Component</code></li>
+</li>
 <li><code>@Controller</code><ul>
 <li>web层</li>
 </ul>
@@ -885,13 +1142,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
 <li><code>@Scope</code><ul>
 <li><code>@Scope(&quot;prototype&quot;)</code>多例</li>
 </ul>
 </li>
 </ul>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ul>
 <li><code>@PostConstruct</code><ul>
 <li>初始化</li>
 </ul>
@@ -901,133 +1158,12 @@
 </ul>
 </li>
 </ul>
-<h1 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h1><h2 id="注入的数据类型"><a href="#注入的数据类型" class="headerlink" title="注入的数据类型"></a>注入的数据类型</h2><ol>
-<li>基本类型和String</li>
-<li>其它Bean（xml或注解配置过的Bean）</li>
-<li>复杂类型/数组集合</li>
-</ol>
-<h3 id="数组-集合的注入"><a href="#数组-集合的注入" class="headerlink" title="数组/集合的注入"></a>数组/集合的注入</h3><ul>
-<li>使用set方法注入(其它构造 p spel也可以)</li>
-<li>分为两种结构，同一种结构的标签可以通用<ul>
-<li>list<ul>
-<li>数组，list，set</li>
-</ul>
-</li>
-<li>map<ul>
-<li>map，properties</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;数组属性名&quot;&gt;</span><br><span class="line">		&lt;array&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">		&lt;/array&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;List属性名&quot;&gt;</span><br><span class="line">		&lt;list&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">		&lt;/list&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Set属性名&quot;&gt;</span><br><span class="line">		&lt;set&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">		&lt;/set&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Map属性名&quot;&gt;</span><br><span class="line">		&lt;map&gt;</span><br><span class="line">			&lt;entry key=&quot;键&quot; value=&quot;值&quot; /&gt;</span><br><span class="line">			&lt;entry key=&quot;键&quot;&gt;</span><br><span class="line">				&lt;value&gt;值&lt;/value&gt;</span><br><span class="line">			&lt;/entry&gt;</span><br><span class="line">		&lt;/map&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;Properties属性名&quot;&gt;</span><br><span class="line">		&lt;props&gt;</span><br><span class="line">			&lt;prop key=&quot;键&quot;&gt;值&lt;/prop&gt;</span><br><span class="line">			&lt;prop key=&quot;键&quot;&gt;值&lt;/prop&gt;</span><br><span class="line">		&lt;/props&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="注入方式"><a href="#注入方式" class="headerlink" title="注入方式"></a>注入方式</h2><h3 id="基于xml注入"><a href="#基于xml注入" class="headerlink" title="基于xml注入"></a>基于xml注入</h3><h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;user&quot; class=&quot;an.s1.domain.User&quot;&gt;</span><br><span class="line">	&lt;constructor-arg name=&quot;name&quot; value=&quot;小强&quot;/&gt;</span><br><span class="line">	&lt;constructor-arg name=&quot;age&quot; value=&quot;24&quot;/&gt;</span><br><span class="line">	&lt;constructor-arg index=&quot;0&quot; type=&quot;java.lang.String&quot; value=&quot;xx&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>创建bean时默认使用的是空参构造，可以指定使用哪个构造方法，这样即可为属性注入值。<ul>
-<li><code>&lt;constructor-arg&gt;</code><ul>
-<li>配置给谁赋值<ul>
-<li><code>name</code><ul>
-<li>属性名</li>
-</ul>
-</li>
-<li><code>index</code><ul>
-<li>构造参数的索引 从0开始。</li>
-<li>若只有索引，匹配到多个构造方法时，使用第一个匹配的。配合type使用。</li>
-</ul>
-</li>
-<li><code>type</code><ul>
-<li>参数类型</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>配置值<ul>
-<li><code>value</code><ul>
-<li>为普通属性数据赋值</li>
-</ul>
-</li>
-<li><code>ref</code><ul>
-<li>为引用属性数据赋值</li>
-<li>一般是另一个bean 的id</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;user&quot; class=&quot;an.s1.domain.User&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;id&quot; value=&quot;3&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;name&quot; value=&quot;旺财&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>&lt;property&gt;</code><ul>
-<li><code>name</code><ul>
-<li>bean中set方法中的属性名</li>
-</ul>
-</li>
-<li><code>value</code><ul>
-<li>为普通属性数据赋值</li>
-</ul>
-</li>
-<li><code>ref</code><ul>
-<li>为引用属性数据赋值</li>
-<li>一般是另一个bean 的id</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="P命名空间-了解"><a href="#P命名空间-了解" class="headerlink" title="P命名空间(了解)"></a>P命名空间(了解)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean&gt;</span><br><span class="line">	&lt;property name=&quot;属性名&quot; value=&quot;普通值&quot; ref=&quot;引用值&quot;&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;bean p:属性名=&quot;普通值&quot; p:属性名-ref=&quot;引用值&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对set方法注入进行简化，去掉了标签体中的<code>&lt;property&gt;</code>标签，用属性代替<ul>
-<li><code>&lt;property name=&quot;key&quot; value=&quot;value&quot;/&gt;</code>替换成<code>p:key=&quot;value&quot;</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="SpEL-了解"><a href="#SpEL-了解" class="headerlink" title="SpEL(了解)"></a>SpEL(了解)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=&quot;&quot; value=&quot;#&#123;spEL表达式&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>spEL表达式<ul>
-<li><code>#{123}</code><ul>
-<li>数字</li>
-</ul>
-</li>
-<li><code>#{&#39;an&#39;}</code><ul>
-<li>字符串</li>
-</ul>
-</li>
-<li><code>#{beanId}</code><ul>
-<li>另一个bean引用</li>
-</ul>
-</li>
-<li><code>#{beanId.propName}</code><ul>
-<li>操作属性数据</li>
-</ul>
-</li>
-<li><code>#{beanId.toString()}</code><ul>
-<li>执行方法</li>
-</ul>
-</li>
-<li><code>#{xx?.method()}</code><ul>
-<li>如果xx为空则不调用方法,不为空调用</li>
-</ul>
-</li>
-<li><code>#{T(类).字段|方法}</code><ul>
-<li>静态方法或字段</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="基于注解注入"><a href="#基于注解注入" class="headerlink" title="基于注解注入"></a>基于注解注入</h3><h4 id="Value-value-”值-spEL”"><a href="#Value-value-”值-spEL”" class="headerlink" title="@Value(value=”值/spEL”)"></a>@Value(value=”值/spEL”)</h4><ul>
+<h2 id="依赖注入-1"><a href="#依赖注入-1" class="headerlink" title="依赖注入"></a>依赖注入</h2><h3 id="Value-value-”值-spEL”"><a href="#Value-value-”值-spEL”" class="headerlink" title="@Value(value=”值/spEL”)"></a>@Value(value=”值/spEL”)</h3><ul>
 <li>注入基本数据类型和String</li>
 <li>spEL在类文件中格式为<code>${}</code>，在xml中为<code>#{}</code></li>
 </ul>
-<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><ul>
-<li>按照类型注入<ul>
+<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><ul>
+<li>按照类型<code>byType</code>注入<ul>
 <li>如果容器没有此类型匹配项<ul>
 <li>注入失败</li>
 </ul>
@@ -1037,13 +1173,18 @@
 </ul>
 </li>
 <li>如果容器有多个此类型匹配项<ul>
-<li>则以要注入的对象变量名作为Bean的id去匹配所有匹配项，若有此id则注入成功，无此id则注入失败。</li>
+<li>按照<code>byName</code>注入，若有，成功。没有，失败。</li>
+<li>即以要注入的对象变量名（即成员变量名）作为Bean的id去匹配所有匹配项，若有此id则注入成功，无此id则注入失败。</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><code>requied</code><ul>
+<li>默认<code>true</code>，即只要加了<code>@Autowired</code>则必须注入成功。注入失败会报错</li>
 </ul>
-<h4 id="Qualifier-value-”beanId”"><a href="#Qualifier-value-”beanId”" class="headerlink" title="@Qualifier(value=”beanId”)"></a>@Qualifier(value=”beanId”)</h4><ul>
+</li>
+</ul>
+<h3 id="Qualifier-value-”beanId”"><a href="#Qualifier-value-”beanId”" class="headerlink" title="@Qualifier(value=”beanId”)"></a>@Qualifier(value=”beanId”)</h3><ul>
 <li>作用在字段上<ul>
 <li>不能单独使用，配合<code>@Autowire</code></li>
 <li>在按照类型注入的基础上指定bean的id</li>
@@ -1054,29 +1195,29 @@
 </ul>
 </li>
 </ul>
-<h4 id="Resource-name-”beanId”"><a href="#Resource-name-”beanId”" class="headerlink" title="@Resource(name=”beanId”)"></a>@Resource(name=”beanId”)</h4><ul>
+<h3 id="Resource-name-”beanId”"><a href="#Resource-name-”beanId”" class="headerlink" title="@Resource(name=”beanId”)"></a>@Resource(name=”beanId”)</h3><ul>
 <li>按照bean的id注入</li>
 </ul>
-<h1 id="新注解"><a href="#新注解" class="headerlink" title="新注解"></a>新注解</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<h2 id="新注解"><a href="#新注解" class="headerlink" title="新注解"></a>新注解</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ul>
 <li>原有注解还是要配合xml一起使用，如扫描注解，配置不是我们编写的bean如数据源..</li>
 </ul>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><ul>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h3><h4 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>配置在类上，指定当前类是一个spring配置类，创建容器时会从该类上加载注解。相当于<code>applicationContext.xml</code></li>
 <li>创建容器要使用ApplicationContext的注解实现类AnnotationApplicationContext<ul>
 <li><code>ApplicationContext ac = new AnnotationApplicationContext(有@Configuration 注解的类.class)</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
 <li><code>value</code><ul>
 <li>用于指定配置类的字节码</li>
 </ul>
 </li>
 </ul>
-<h2 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h2><h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><ul>
+<h3 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h3><h4 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>用于指定 spring 在初始化容器时要扫描的包，即原来的扫描注解</li>
 </ul>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><ul>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ul>
 <li><code>basePackages</code><ul>
 <li>用于指定要扫描的包</li>
 </ul>
@@ -1086,39 +1227,39 @@
 </ul>
 </li>
 </ul>
-<h2 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h2><h3 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h3><ul>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h3><h4 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>只能写在方法上，把当前方法的返回值作为bean对象存入spring的ioc容器中</li>
 <li>如果方法有参数，spring会去容器中查找是否有参数对应的bean，查找方式与<code>@Autowire</code>一样，且也可以加<code>@Qualifier</code>注解<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Bean(name=&quot;runner&quot;)</span><br><span class="line">@Scope(&quot;prototype&quot;)</span><br><span class="line">public QueryRunner createQueryRunner(@Qualifier(&quot;ds&quot;) DataSource dataSource)&#123;</span><br><span class="line">		return new QueryRunner(dataSource);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><ul>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ul>
 <li><code>name</code><ul>
 <li>给当前@Bean 注解方法创建的对象指定一个名称(即 bean 的 id）</li>
 <li>默认为方法名。</li>
 </ul>
 </li>
 </ul>
-<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h2><h3 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h3><ul>
+<h3 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h3><h4 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>用于加载<code>.properties</code> 文件</li>
 </ul>
-<h3 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h3><ul>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ul>
 <li><code>value[]</code><ul>
 <li>用于指定 properties 文件位置</li>
 <li>类路径下要加上<code>classpath:</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="Import"><a href="#Import" class="headerlink" title="@Import"></a>@Import</h2><h3 id="作用-5"><a href="#作用-5" class="headerlink" title="作用"></a>作用</h3><ul>
+<h3 id="Import"><a href="#Import" class="headerlink" title="@Import"></a>@Import</h3><h4 id="作用-5"><a href="#作用-5" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>用于导入其他配置类</li>
 <li>当我们使用@Import的注解之后，有@Import注解的类就父配置类，而导入的都是子配置类</li>
 </ul>
-<h3 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h3><ul>
+<h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><ul>
 <li><code>value[]</code><ul>
 <li>用于指定其他配置类的字节码</li>
 </ul>
 </li>
 </ul>
-<h1 id="AOP-1"><a href="#AOP-1" class="headerlink" title="AOP"></a>AOP</h1><ul>
+<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><ul>
 <li><code>Aspect Oriented Programming</code> </li>
 <li>面向切面编程</li>
 </ul>
@@ -1128,8 +1269,11 @@
 </ul>
 </li>
 <li>将核心业务代码与外围业务（日志记录、权限校验、异常处理、事务控制）代码分离出来，提高模块化，降低代码耦合度，使职责更单一</li>
+<li>AOP编程操作的主要对象是切面（aspect），切面模块化横切关注点</li>
+<li>AOP编程时，仍需定义公共功能，但可以明确的定义这个功能应用在哪里，以什么方式应用，且不必修改受影响的类。这样一来横切关注点就被模块化到特殊的类里-这样的类称为切面</li>
 </ul>
 <h2 id="AOP的实现框架"><a href="#AOP的实现框架" class="headerlink" title="AOP的实现框架"></a>AOP的实现框架</h2><h3 id="AspectJ"><a href="#AspectJ" class="headerlink" title="AspectJ"></a>AspectJ</h3><ul>
+<li>java社区最完整最流行的AOP框架</li>
 <li>AspectJ是一个比较牛逼的AOP框架，他可以对类的成员变量，方法进行拦截。由于 AspectJ 是 Java 语言语法和语义的扩展，所以它提供了自己的一套处理方面的关键字。除了包含字段和方法之外，AspectJ 的方面声明还包含切入点和通知成员。</li>
 <li>AspectJ是一个java实现的AOP框架，它能够对java代码进行AOP编译（一般在编译期进行），让java代码具有AspectJ的AOP功能（当然需要特殊的编译器）</li>
 <li>静态织入<ul>
@@ -1182,7 +1326,10 @@
 <h3 id="运行阶段（Spring）"><a href="#运行阶段（Spring）" class="headerlink" title="运行阶段（Spring）"></a>运行阶段（Spring）</h3><ul>
 <li>spring监控切入点方法的执行，一旦切入点方法运行，使用代理机制，动态创建目标对象的代理对象，根据通知类型，在代理对象的相应位置，将通知织入。</li>
 </ul>
-<h2 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h2><h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><ul>
+<h2 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h2><h3 id="横切关注点"><a href="#横切关注点" class="headerlink" title="横切关注点"></a>横切关注点</h3><ul>
+<li>从每个方法中抽取出来的同一类非核心业务。</li>
+</ul>
+<h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><ul>
 <li>目标类</li>
 <li>需要被代理的类。</li>
 </ul>
@@ -1196,7 +1343,7 @@
 </ul>
 <h3 id="Advice"><a href="#Advice" class="headerlink" title="Advice"></a>Advice</h3><ul>
 <li>通知/增强</li>
-<li>在某个特定的pointcut上需要执行的动作（代码）</li>
+<li>切面要完成的各个具体功能</li>
 <li>如日志，权限验证。。。</li>
 </ul>
 <h3 id="Weaving"><a href="#Weaving" class="headerlink" title="Weaving"></a>Weaving</h3><ul>
@@ -1206,7 +1353,7 @@
 <li>Aspectj采用编译期织入和类装载期织入</li>
 </ul>
 <h3 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h3><ul>
-<li>代理类</li>
+<li>织入后创建的目标对象的代理对象</li>
 </ul>
 <h3 id="Aspect-advisor"><a href="#Aspect-advisor" class="headerlink" title="Aspect/advisor"></a>Aspect/advisor</h3><ul>
 <li>切面</li>
@@ -1296,7 +1443,7 @@
 </ul>
 </li>
 </ul>
-<h6 id="方法"><a href="#方法" class="headerlink" title="方法()"></a>方法()</h6><ul>
+<h6 id="方法-1"><a href="#方法-1" class="headerlink" title="方法()"></a>方法()</h6><ul>
 <li>不可省略</li>
 <li><code>M</code> <ul>
 <li>指定方法</li>
@@ -1445,44 +1592,35 @@
 </ul>
 </li>
 </ul>
-<h1 id="Spring-AOP编程"><a href="#Spring-AOP编程" class="headerlink" title="Spring AOP编程"></a>Spring AOP编程</h1><h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h3 id="手动方式"><a href="#手动方式" class="headerlink" title="手动方式"></a>手动方式</h3><ol>
-<li>编写目标类</li>
-<li>编写通知</li>
-<li>手动生成目标类代理对象<ol>
-<li>jdk动态代理</li>
-<li>cglib</li>
-</ol>
-</li>
-</ol>
-<h3 id="半自动方式"><a href="#半自动方式" class="headerlink" title="半自动方式"></a>半自动方式</h3><ol>
-<li>编写目标类</li>
-<li>编写通知（aop联盟的通知，实现指定接口）</li>
-<li>通过配置让spring创建代理对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--1 配置目标类--&gt;</span><br><span class="line">&lt;bean id=&quot;userService&quot; class=&quot;an.s4.service.UserServiceImpl&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--2 配置切面类--&gt;</span><br><span class="line">&lt;bean id=&quot;myAdvice&quot; class=&quot;an.s4.advice.MyAdvice&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--3 配置代理对象--&gt;</span><br><span class="line">&lt;!--使用工厂bean  FactoryBean 底层调用getObject()--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">    ProxyFactoryBean</span><br><span class="line">        interfaces:确定接口们</span><br><span class="line">        target：确定目标类</span><br><span class="line">        interceptorNames:确定切面类(通知)</span><br><span class="line">        optimize：强制使用cglib</span><br><span class="line">        底层机制：如果目标类有接口:采用jdk</span><br><span class="line">                目标类没有接口:采用cglib</span><br><span class="line">                声明了optimize:强制cglib</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id=&quot;proxyService&quot; class=&quot;org.springframework.aop.framework.ProxyFactoryBean&quot;&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">	&lt;property name=&quot;interfaces&quot;&gt;</span><br><span class="line">       	 &lt;array&gt;</span><br><span class="line">   		     &lt;value&gt;an.s4.service.UserService&lt;/value&gt;</span><br><span class="line">        	&lt;/array&gt;</span><br><span class="line">    	&lt;/property&gt;</span><br><span class="line">--&gt;</span><br><span class="line">    &lt;!--数组只有一个值时可以简化--&gt;</span><br><span class="line">    &lt;property name=&quot;interfaces&quot; value=&quot;an.s4.service.UserService&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;target&quot; ref=&quot;userService&quot;/&gt;</span><br><span class="line">    &lt;!--注意这里写的是value而不是ref 因为interceptorNames类型是String[] 而target是Object--&gt;</span><br><span class="line">    &lt;property name=&quot;interceptorNames&quot; value=&quot;myAdvice&quot;/&gt;</span><br><span class="line">    &lt;!--&lt;property name=&quot;optimize&quot; value=&quot;true&quot;/&gt;--&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="全自动方式"><a href="#全自动方式" class="headerlink" title="全自动方式"></a>全自动方式</h3><ol>
-<li>编写目标类</li>
-<li>编写通知</li>
-<li>配置AOP<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--1 配置目标类--&gt;</span><br><span class="line">&lt;bean id=&quot;userService&quot; class=&quot;an.s5.service.UserServiceImpl&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--2 配置切面类--&gt;</span><br><span class="line">&lt;bean id=&quot;myAdvice&quot; class=&quot;an.s5.advice.MyAdvice&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--3 配置aop--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">    proxy-target-class=&quot;true&quot;:使用cglib代理</span><br><span class="line">    &lt;aop:advisor&gt;</span><br><span class="line">        特殊的切面，只有一个通知 和 一个切入点</span><br><span class="line">        advice-ref 通知引用</span><br><span class="line">        pointcut-ref 切入点引用</span><br><span class="line">--&gt;</span><br><span class="line">&lt;aop:config proxy-target-class=&quot;true&quot;&gt;</span><br><span class="line">  &lt;aop:pointcut id=&quot;pointcutID&quot; expression=&quot;execution(* an.s5.service.*.*(..))&quot;/&gt;</span><br><span class="line">  &lt;aop:advisor advice-ref=&quot;myAdvice&quot; pointcut-ref=&quot;pointcutID&quot;/&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="基于经典的SpringAOP"><a href="#基于经典的SpringAOP" class="headerlink" title="基于经典的SpringAOP"></a>基于经典的SpringAOP</h2><ul>
+<h1 id="Spring-AOP编程"><a href="#Spring-AOP编程" class="headerlink" title="Spring AOP编程"></a>Spring AOP编程</h1><h2 id="基于经典的SpringAOP"><a href="#基于经典的SpringAOP" class="headerlink" title="基于经典的SpringAOP"></a>基于经典的SpringAOP</h2><ul>
 <li>使用aop联盟的通知类型</li>
 <li>通知需要实现指定的接口</li>
 </ul>
 <h2 id="Spring-AspectJ"><a href="#Spring-AspectJ" class="headerlink" title="Spring+AspectJ"></a>Spring+AspectJ</h2><ul>
 <li>使用AspectJ的通知类型</li>
 </ul>
-<h3 id="基于xml的AOP编程"><a href="#基于xml的AOP编程" class="headerlink" title="基于xml的AOP编程"></a>基于xml的AOP编程</h3><ol>
+<h3 id="AspectJ基于xml的AOP编程"><a href="#AspectJ基于xml的AOP编程" class="headerlink" title="AspectJ基于xml的AOP编程"></a>AspectJ基于xml的AOP编程</h3><ol>
 <li>编写目标类</li>
 <li><p>编写通知类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class MyAdvice &#123;</span><br><span class="line">		public void myBefore(JoinPoint jp) &#123;</span><br><span class="line">		    System.out.println(&quot;前置通知 :name=&quot;+jp.getSignature().getName());</span><br><span class="line">		&#125;</span><br><span class="line">		public void myAfterReturning(JoinPoint jp,Object obj) &#123;</span><br><span class="line">		    System.out.println(&quot;后置通知 :return=&quot;+obj);</span><br><span class="line">		&#125;</span><br><span class="line">		public Object myAround(ProceedingJoinPoint pjp) throws Throwable &#123;</span><br><span class="line">		    System.out.println(&quot;环绕通知...前&quot;);</span><br><span class="line">		    Object proceed = pjp.proceed();</span><br><span class="line">		    System.out.println(&quot;环绕通知...后&quot;);</span><br><span class="line">		    return proceed;</span><br><span class="line">		&#125;</span><br><span class="line">		public void myAfterThrowning() &#123;</span><br><span class="line">		    System.out.println(&quot;异常通知&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		public void myAfter() &#123;</span><br><span class="line">		    System.out.println(&quot;最终通知&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置aop织入通知</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置目标类--&gt;</span><br><span class="line">&lt;bean id=&quot;userService&quot; class=&quot;an.s6.service.UserServiceImpl&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--配置通知类--&gt;</span><br><span class="line">&lt;bean id=&quot;myAdvice&quot; class=&quot;an.s6.advice.MyAdvice&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--aop配置--&gt;</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">    &lt;aop:aspect id=&quot;aspectID&quot; ref=&quot;myAdvice&quot;&gt;</span><br><span class="line">        &lt;aop:pointcut id=&quot;pontcutID&quot; expression=&quot;execution(* an.s6.service.*.*(..))&quot;&gt;&lt;/aop:pointcut&gt;</span><br><span class="line">        &lt;aop:before method=&quot;myBefore&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after-returning method=&quot;myAfterReturning&quot; pointcut-ref=&quot;pontcutID&quot; returning=&quot;obj&quot;/&gt;</span><br><span class="line">        &lt;aop:around method=&quot;myAround&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after-throwing method=&quot;myAfterThrowning&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after method=&quot;myAfter&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">    &lt;/aop:aspect&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置目标类--&gt;</span><br><span class="line">&lt;bean id=&quot;userService&quot; class=&quot;an.s6.service.UserServiceImpl&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--配置通知类--&gt;</span><br><span class="line">&lt;bean id=&quot;myAdvice&quot; class=&quot;an.s6.advice.MyAdvice&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;!--aop配置--&gt;</span><br><span class="line">&lt;aop:config proxy-target-class=&quot;true&quot;&gt;</span><br><span class="line">    &lt;aop:aspect id=&quot;aspectID&quot; ref=&quot;myAdvice&quot;&gt;</span><br><span class="line">        &lt;aop:pointcut id=&quot;pontcutID&quot; expression=&quot;execution(* an.s6.service.*.*(..))&quot;&gt;&lt;/aop:pointcut&gt;</span><br><span class="line">        &lt;aop:before method=&quot;myBefore&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after-returning method=&quot;myAfterReturning&quot; pointcut-ref=&quot;pontcutID&quot; returning=&quot;obj&quot;/&gt;</span><br><span class="line">        &lt;aop:around method=&quot;myAround&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after-throwing method=&quot;myAfterThrowning&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">        &lt;aop:after method=&quot;myAfter&quot; pointcut-ref=&quot;pontcutID&quot;/&gt;</span><br><span class="line">    &lt;/aop:aspect&gt;</span><br><span class="line">	&lt;aop:advisor advice-ref=&quot;&quot; pointcut-ref=&quot;&quot;/&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
 <ul>
+<li><code>proxy-target-class</code><ul>
+<li>默认false</li>
+<li>true<ul>
+<li>使用cglib代理</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><code>&lt;aop:aspect&gt;</code><ul>
 <li>用于配置切面</li>
+</ul>
+</li>
+<li><code>&lt;aop:advisor&gt;</code><ul>
+<li>特殊的切面，只有一个通知 和 一个切入点</li>
 </ul>
 </li>
 <li><code>&lt;aop:pointcut&gt;</code><ul>
@@ -1508,12 +1646,16 @@
 </ul>
 </li>
 </ol>
-<h3 id="基于注解的AOP编程"><a href="#基于注解的AOP编程" class="headerlink" title="基于注解的AOP编程"></a>基于注解的AOP编程</h3><ol>
-<li>手动编写目标类</li>
-<li>手动使用注解编写通知类，并织入<ul>
+<h3 id="AspectJ基于注解的AOP编程"><a href="#AspectJ基于注解的AOP编程" class="headerlink" title="AspectJ基于注解的AOP编程"></a>AspectJ基于注解的AOP编程</h3><ol>
+<li>编写目标类</li>
+<li>使用注解编写通知类，并织入<ul>
 <li>类<ul>
 <li><code>@Aspect</code><ul>
 <li>声明切面</li>
+</ul>
+</li>
+<li><code>@Order()</code><ul>
+<li>值为int数，用来表示切面的优先级</li>
 </ul>
 </li>
 </ul>
@@ -1522,8 +1664,8 @@
 <li><code>@PointCut</code><ul>
 <li>相当于声明了一个切入点，id是方法名</li>
 <li>在其它通知方法上<ul>
-<li><code>@Xxx(&quot;execution(表达式)&quot;)</code><ul>
-<li>相当于使用一个自己定义的切入点表达式</li>
+<li><code>@Xxx(value=&quot;execution(表达式)&quot;)</code><ul>
+<li>相当于定义切入点表达式</li>
 </ul>
 </li>
 <li><code>@Xxx(value=&quot;声明切入点的方法名（方法带括号）&quot;)</code><ul>
@@ -1550,7 +1692,10 @@
 </ul>
 </li>
 <li>开启aop注解<ol>
-<li><code>&lt;aop:aspectj-autoproxy&gt;&lt;/aop:aspectj-autoproxy&gt;</code></li>
+<li><code>&lt;aop:aspectj-autoproxy/&gt;</code><ul>
+<li>主要作用是为切面中通知能作用到的目标类生成代理。</li>
+</ul>
+</li>
 <li><code>@EnableAspectJAutoProxy</code><ul>
 <li>配置在注解配置类上（带<code>@Configuraction</code>的）</li>
 </ul>
@@ -1631,8 +1776,11 @@
 </ul>
 </li>
 <li><code>T queryForObject(String sql, Class&lt;T&gt; requiredType, Object... obj)</code><ul>
-<li>查询一行一列</li>
-<li>一般用于聚合函数的查询</li>
+<li>查询单值，返回单个值。</li>
+</ul>
+</li>
+<li><code>T queryForObject(String sql, RowMapper&lt;T&gt; rowMapper, Object... obj )</code><ul>
+<li>查询单行数据，返回一个对象</li>
 </ul>
 </li>
 <li><code>Map&lt;String, Object&gt; queryForMap(String sql, Object... obj)</code><ul>
@@ -1727,7 +1875,7 @@
 <h5 id="分类-2"><a href="#分类-2" class="headerlink" title="分类"></a>分类</h5><ul>
 <li><strong>PROPAGATION_REQUIRED</strong> (required 必须)(默认值)<ul>
 <li>支持当前事务<ul>
-<li>如果A有事务，B将使用该事务。</li>
+<li>如果A（调用者）有事务，B（被调用者）将使用该事务。</li>
 <li>如果A没有事务，B将创建一个新的事务。</li>
 </ul>
 </li>
@@ -1779,6 +1927,13 @@
 <li><code>ISOLATION_READ_COMMITTED</code></li>
 <li><code>ISOLATION_REPEATABLE_READ</code></li>
 <li><code>ISOLATION_SERIALIZABLE</code></li>
+</ul>
+<h4 id="是否回滚"><a href="#是否回滚" class="headerlink" title="是否回滚"></a>是否回滚</h4><ul>
+<li>spring默认会对所有运行时异常回滚</li>
+<li><code>rollbackFor</code></li>
+<li><code>rollbackForClassName</code></li>
+<li><code>noRollbackFor</code></li>
+<li><code>noRollbackForClassName</code></li>
 </ul>
 <h3 id="TransactionStatus"><a href="#TransactionStatus" class="headerlink" title="TransactionStatus"></a>TransactionStatus</h3><h4 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h4><ul>
 <li>事务状态，spring用于记录当前事务运行状态。<ul>
@@ -2053,7 +2208,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2078,7 +2233,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2116,7 +2275,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">1.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耦合"><span class="nav-number">1.2.</span> <span class="nav-text">耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#书籍"><span class="nav-number">1.3.</span> <span class="nav-text">书籍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体系结构"><span class="nav-number">2.</span> <span class="nav-text">体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Core-Container-核心容器"><span class="nav-number">2.1.</span> <span class="nav-text">Core Container(核心容器)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Beans"><span class="nav-number">2.1.1.</span> <span class="nav-text">Beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Core"><span class="nav-number">2.1.2.</span> <span class="nav-text">Core</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Context"><span class="nav-number">2.1.3.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expression-Language"><span class="nav-number">2.1.4.</span> <span class="nav-text">Expression Language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Messaging"><span class="nav-number">2.1.5.</span> <span class="nav-text">Messaging</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aop-Aspect-Oriented-Programming"><span class="nav-number">2.2.</span> <span class="nav-text">Aop(Aspect Oriented Programming)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP"><span class="nav-number">2.2.1.</span> <span class="nav-text">AOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aspects"><span class="nav-number">2.2.2.</span> <span class="nav-text">Aspects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instrumentation"><span class="nav-number">2.2.3.</span> <span class="nav-text">Instrumentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Access-Integration"><span class="nav-number">2.3.</span> <span class="nav-text">Data Access/Integration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">2.3.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORM"><span class="nav-number">2.3.2.</span> <span class="nav-text">ORM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OXM"><span class="nav-number">2.3.3.</span> <span class="nav-text">OXM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JMS"><span class="nav-number">2.3.4.</span> <span class="nav-text">JMS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transactions"><span class="nav-number">2.3.5.</span> <span class="nav-text">Transactions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-MVC-Remoting"><span class="nav-number">2.4.</span> <span class="nav-text">Web(MVC/Remoting)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web"><span class="nav-number">2.4.1.</span> <span class="nav-text">Web</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet"><span class="nav-number">2.4.2.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Portlet"><span class="nav-number">2.4.3.</span> <span class="nav-text">Portlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">2.4.4.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#struts"><span class="nav-number">2.4.5.</span> <span class="nav-text">struts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">2.5.</span> <span class="nav-text">Test</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jar包"><span class="nav-number">3.</span> <span class="nav-text">Jar包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Core-1"><span class="nav-number">3.1.</span> <span class="nav-text">Core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aop"><span class="nav-number">3.2.</span> <span class="nav-text">Aop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-access"><span class="nav-number">3.3.</span> <span class="nav-text">data access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web"><span class="nav-number">3.4.</span> <span class="nav-text">web</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">3.5.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#support"><span class="nav-number">3.6.</span> <span class="nav-text">support</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心监听器"><span class="nav-number">4.1.</span> <span class="nav-text">核心监听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心配置"><span class="nav-number">4.2.</span> <span class="nav-text">核心配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心API-了解"><span class="nav-number">5.</span> <span class="nav-text">核心API(了解)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#体系"><span class="nav-number">5.1.</span> <span class="nav-text">体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory"><span class="nav-number">5.2.</span> <span class="nav-text">BeanFactory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ApplicationContext"><span class="nav-number">5.3.</span> <span class="nav-text">ApplicationContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassPathXmlApplicationContext"><span class="nav-number">5.4.</span> <span class="nav-text">ClassPathXmlApplicationContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileSystemXmlApplicaitonContext"><span class="nav-number">5.5.</span> <span class="nav-text">FileSystemXmlApplicaitonContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AnnotationConfigApplicationContext"><span class="nav-number">5.6.</span> <span class="nav-text">AnnotationConfigApplicationContext</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC（Inversion-of-Control）"><span class="nav-number">6.</span> <span class="nav-text">IOC（Inversion of Control）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">6.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现策略"><span class="nav-number">6.2.</span> <span class="nav-text">实现策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DI"><span class="nav-number">6.3.</span> <span class="nav-text">DI</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean基于xml"><span class="nav-number">7.</span> <span class="nav-text">Bean基于xml</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean实例化方式"><span class="nav-number">7.1.</span> <span class="nav-text">Bean实例化方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认构造"><span class="nav-number">7.1.1.</span> <span class="nav-text">默认构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态工厂"><span class="nav-number">7.1.2.</span> <span class="nav-text">静态工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例工厂"><span class="nav-number">7.1.3.</span> <span class="nav-text">实例工厂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean作用域"><span class="nav-number">7.2.</span> <span class="nav-text">Bean作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scope"><span class="nav-number">7.2.1.</span> <span class="nav-text">scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean生命周期"><span class="nav-number">7.3.</span> <span class="nav-text">Bean生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单例Bean"><span class="nav-number">7.3.1.</span> <span class="nav-text">单例Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多例Bean"><span class="nav-number">7.3.2.</span> <span class="nav-text">多例Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanPostProcessor-后处理Bean"><span class="nav-number">7.3.3.</span> <span class="nav-text">BeanPostProcessor (后处理Bean)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">7.3.3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">7.3.3.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类A的创建初始化→目标方法→销毁过程"><span class="nav-number">7.3.3.3.</span> <span class="nav-text">类A的创建初始化→目标方法→销毁过程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean基于注解"><span class="nav-number">8.</span> <span class="nav-text">Bean基于注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean实例化"><span class="nav-number">8.1.</span> <span class="nav-text">Bean实例化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">8.1.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化注解"><span class="nav-number">8.1.2.</span> <span class="nav-text">实例化注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">8.1.3.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">8.1.4.</span> <span class="nav-text">生命周期</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖注入"><span class="nav-number">9.</span> <span class="nav-text">依赖注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注入的数据类型"><span class="nav-number">9.1.</span> <span class="nav-text">注入的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组-集合的注入"><span class="nav-number">9.1.1.</span> <span class="nav-text">数组/集合的注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">9.1.1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">9.1.1.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">9.1.1.3.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map"><span class="nav-number">9.1.1.4.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">9.1.1.5.</span> <span class="nav-text">Properties</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注入方式"><span class="nav-number">9.2.</span> <span class="nav-text">注入方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xml注入"><span class="nav-number">9.2.1.</span> <span class="nav-text">基于xml注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法"><span class="nav-number">9.2.1.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set方法"><span class="nav-number">9.2.1.2.</span> <span class="nav-text">set方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P命名空间-了解"><span class="nav-number">9.2.1.3.</span> <span class="nav-text">P命名空间(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpEL-了解"><span class="nav-number">9.2.1.4.</span> <span class="nav-text">SpEL(了解)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于注解注入"><span class="nav-number">9.2.2.</span> <span class="nav-text">基于注解注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Value-value-”值-spEL”"><span class="nav-number">9.2.2.1.</span> <span class="nav-text">@Value(value=”值/spEL”)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Autowired"><span class="nav-number">9.2.2.2.</span> <span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Qualifier-value-”beanId”"><span class="nav-number">9.2.2.3.</span> <span class="nav-text">@Qualifier(value=”beanId”)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resource-name-”beanId”"><span class="nav-number">9.2.2.4.</span> <span class="nav-text">@Resource(name=”beanId”)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新注解"><span class="nav-number">10.</span> <span class="nav-text">新注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-1"><span class="nav-number">10.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">10.2.</span> <span class="nav-text">@Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用-1"><span class="nav-number">10.2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">10.2.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ComponentScan"><span class="nav-number">10.3.</span> <span class="nav-text">@ComponentScan</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用-2"><span class="nav-number">10.3.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-number">10.3.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean"><span class="nav-number">10.4.</span> <span class="nav-text">@Bean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用-3"><span class="nav-number">10.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-number">10.4.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PropertySource"><span class="nav-number">10.5.</span> <span class="nav-text">@PropertySource</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用-4"><span class="nav-number">10.5.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-number">10.5.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">10.6.</span> <span class="nav-text">@Import</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用-5"><span class="nav-number">10.6.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-number">10.6.2.</span> <span class="nav-text">属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP-1"><span class="nav-number">11.</span> <span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-2"><span class="nav-number">11.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP的实现框架"><span class="nav-number">11.2.</span> <span class="nav-text">AOP的实现框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AspectJ"><span class="nav-number">11.2.1.</span> <span class="nav-text">AspectJ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">11.2.2.</span> <span class="nav-text">Spring-AOP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ-amp-Spring-AOP"><span class="nav-number">11.3.</span> <span class="nav-text">AspectJ &amp; Spring-AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-number">11.3.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">11.3.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">11.3.3.</span> <span class="nav-text">注解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP使用"><span class="nav-number">11.4.</span> <span class="nav-text">AOP使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发阶段（程序员）"><span class="nav-number">11.4.1.</span> <span class="nav-text">开发阶段（程序员）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行阶段（Spring）"><span class="nav-number">11.4.2.</span> <span class="nav-text">运行阶段（Spring）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP术语"><span class="nav-number">11.5.</span> <span class="nav-text">AOP术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">11.5.1.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Joinpoint"><span class="nav-number">11.5.2.</span> <span class="nav-text">Joinpoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PointCut"><span class="nav-number">11.5.3.</span> <span class="nav-text">PointCut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advice"><span class="nav-number">11.5.4.</span> <span class="nav-text">Advice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weaving"><span class="nav-number">11.5.5.</span> <span class="nav-text">Weaving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proxy"><span class="nav-number">11.5.6.</span> <span class="nav-text">proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aspect-advisor"><span class="nav-number">11.5.7.</span> <span class="nav-text">Aspect/advisor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知（Advice）"><span class="nav-number">11.6.</span> <span class="nav-text">通知（Advice）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">11.6.1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前置通知"><span class="nav-number">11.6.1.1.</span> <span class="nav-text">前置通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后置通知"><span class="nav-number">11.6.1.2.</span> <span class="nav-text">后置通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环绕通知"><span class="nav-number">11.6.1.3.</span> <span class="nav-text">环绕通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常抛出通知"><span class="nav-number">11.6.1.4.</span> <span class="nav-text">异常抛出通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引介通知"><span class="nav-number">11.6.1.5.</span> <span class="nav-text">引介通知</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ-1"><span class="nav-number">11.7.</span> <span class="nav-text">AspectJ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切入点表达式"><span class="nav-number">11.7.1.</span> <span class="nav-text">切入点表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#execution"><span class="nav-number">11.7.1.1.</span> <span class="nav-text">execution()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法"><span class="nav-number">11.7.1.1.1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#修饰符"><span class="nav-number">11.7.1.1.1.1.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#返回值"><span class="nav-number">11.7.1.1.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#包"><span class="nav-number">11.7.1.1.1.3.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#类"><span class="nav-number">11.7.1.1.1.4.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法"><span class="nav-number">11.7.1.1.1.5.</span> <span class="nav-text">方法()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#参数"><span class="nav-number">11.7.1.1.1.6.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#throws"><span class="nav-number">11.7.1.1.1.7.</span> <span class="nav-text">throws</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#within-了解"><span class="nav-number">11.7.1.2.</span> <span class="nav-text">within(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-了解"><span class="nav-number">11.7.1.3.</span> <span class="nav-text">this(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#target-了解"><span class="nav-number">11.7.1.4.</span> <span class="nav-text">target(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#args-了解"><span class="nav-number">11.7.1.5.</span> <span class="nav-text">args(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bean-了解"><span class="nav-number">11.7.1.6.</span> <span class="nav-text">bean(了解)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知类型"><span class="nav-number">11.7.2.</span> <span class="nav-text">通知类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-3"><span class="nav-number">11.7.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类-1"><span class="nav-number">11.7.2.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前置通知-1"><span class="nav-number">11.7.2.2.1.</span> <span class="nav-text">前置通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后置通知-1"><span class="nav-number">11.7.2.2.2.</span> <span class="nav-text">后置通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#环绕通知-1"><span class="nav-number">11.7.2.2.3.</span> <span class="nav-text">环绕通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抛出异常通知"><span class="nav-number">11.7.2.2.4.</span> <span class="nav-text">抛出异常通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最终通知"><span class="nav-number">11.7.2.2.5.</span> <span class="nav-text">最终通知</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-AOP编程"><span class="nav-number">12.</span> <span class="nav-text">Spring AOP编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">12.1.</span> <span class="nav-text">方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动方式"><span class="nav-number">12.1.1.</span> <span class="nav-text">手动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半自动方式"><span class="nav-number">12.1.2.</span> <span class="nav-text">半自动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全自动方式"><span class="nav-number">12.1.3.</span> <span class="nav-text">全自动方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于经典的SpringAOP"><span class="nav-number">12.2.</span> <span class="nav-text">基于经典的SpringAOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-AspectJ"><span class="nav-number">12.3.</span> <span class="nav-text">Spring+AspectJ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于xml的AOP编程"><span class="nav-number">12.3.1.</span> <span class="nav-text">基于xml的AOP编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于注解的AOP编程"><span class="nav-number">12.3.2.</span> <span class="nav-text">基于注解的AOP编程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC-Template"><span class="nav-number">13.</span> <span class="nav-text">JDBC Template</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-1"><span class="nav-number">13.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动创建方式-了解"><span class="nav-number">13.1.1.</span> <span class="nav-text">手动创建方式 (了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-ioc之JdbcTemplate"><span class="nav-number">13.1.2.</span> <span class="nav-text">spring ioc之JdbcTemplate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-ioc之-JdbcDaoSupport"><span class="nav-number">13.1.3.</span> <span class="nav-text">spring ioc之 JdbcDaoSupport</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">13.2.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改"><span class="nav-number">13.2.1.</span> <span class="nav-text">增删改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">13.2.2.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RowMapper"><span class="nav-number">13.2.2.1.</span> <span class="nav-text">RowMapper</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#API-1"><span class="nav-number">13.2.2.1.1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring提供的RowMapper实现"><span class="nav-number">13.2.2.1.2.</span> <span class="nav-text">Spring提供的RowMapper实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#BeanPropertyRowMapper"><span class="nav-number">13.2.2.1.2.1.</span> <span class="nav-text">BeanPropertyRowMapper</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务管理"><span class="nav-number">14.</span> <span class="nav-text">事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三个顶级接口"><span class="nav-number">14.1.</span> <span class="nav-text">三个顶级接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PlatformTransactionManager"><span class="nav-number">14.1.1.</span> <span class="nav-text">PlatformTransactionManager</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-4"><span class="nav-number">14.1.1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-2"><span class="nav-number">14.1.1.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务管理器（实现）"><span class="nav-number">14.1.1.3.</span> <span class="nav-text">事务管理器（实现）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DataSourceTransactionManager"><span class="nav-number">14.1.1.3.1.</span> <span class="nav-text">DataSourceTransactionManager</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HibernateTransactionManager"><span class="nav-number">14.1.1.3.2.</span> <span class="nav-text">HibernateTransactionManager</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TransactionDefinition"><span class="nav-number">14.1.2.</span> <span class="nav-text">TransactionDefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-5"><span class="nav-number">14.1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-3"><span class="nav-number">14.1.2.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传播行为"><span class="nav-number">14.1.2.3.</span> <span class="nav-text">传播行为</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述-6"><span class="nav-number">14.1.2.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分类-2"><span class="nav-number">14.1.2.3.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隔离级别"><span class="nav-number">14.1.2.4.</span> <span class="nav-text">隔离级别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TransactionStatus"><span class="nav-number">14.1.3.</span> <span class="nav-text">TransactionStatus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-7"><span class="nav-number">14.1.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-4"><span class="nav-number">14.1.3.2.</span> <span class="nav-text">API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务管理详解"><span class="nav-number">14.2.</span> <span class="nav-text">事务管理详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-8"><span class="nav-number">14.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动管理事务-了解"><span class="nav-number">14.2.2.</span> <span class="nav-text">手动管理事务(了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半自动管理事务"><span class="nav-number">14.2.3.</span> <span class="nav-text">半自动管理事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TransactionProxyFactoryBean"><span class="nav-number">14.2.3.1.</span> <span class="nav-text">TransactionProxyFactoryBean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动管理事务"><span class="nav-number">14.2.4.</span> <span class="nav-text">自动管理事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aop配置事务基于xml"><span class="nav-number">14.2.4.1.</span> <span class="nav-text">Aop配置事务基于xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Aop配置事务基于注解"><span class="nav-number">14.2.4.2.</span> <span class="nav-text">Aop配置事务基于注解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring整合junit"><span class="nav-number">15.</span> <span class="nav-text">spring整合junit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jar包"><span class="nav-number">15.1.</span> <span class="nav-text">jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-2"><span class="nav-number">15.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RunWith-SpringJunit4ClassRunner-class"><span class="nav-number">15.2.1.</span> <span class="nav-text">@RunWith(SpringJunit4ClassRunner.class)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ContextConfiguration"><span class="nav-number">15.2.2.</span> <span class="nav-text">@ContextConfiguration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Autowired-1"><span class="nav-number">15.2.3.</span> <span class="nav-text">@Autowired</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring整合web"><span class="nav-number">16.</span> <span class="nav-text">spring整合web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-9"><span class="nav-number">16.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web技术之服务器-tomcat-一启动就加载配置文件的方式"><span class="nav-number">16.2.</span> <span class="nav-text">web技术之服务器(tomcat)一启动就加载配置文件的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring监听器的配置"><span class="nav-number">16.3.</span> <span class="nav-text">spring监听器的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动获取spring容器"><span class="nav-number">16.4.</span> <span class="nav-text">手动获取spring容器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-优良特性"><span class="nav-number">1.1.</span> <span class="nav-text">Spring 优良特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">1.2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耦合"><span class="nav-number">1.3.</span> <span class="nav-text">耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#书籍"><span class="nav-number">1.4.</span> <span class="nav-text">书籍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体系结构"><span class="nav-number">2.</span> <span class="nav-text">体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Core-Container-核心容器"><span class="nav-number">2.1.</span> <span class="nav-text">Core Container(核心容器)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">2.1.1.</span> <span class="nav-text">模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aop-Aspect-Oriented-Programming"><span class="nav-number">2.2.</span> <span class="nav-text">Aop(Aspect Oriented Programming)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Access-Integration"><span class="nav-number">2.3.</span> <span class="nav-text">Data Access/Integration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-MVC-Remoting"><span class="nav-number">2.4.</span> <span class="nav-text">Web(MVC/Remoting)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">2.5.</span> <span class="nav-text">Test</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jar包"><span class="nav-number">3.</span> <span class="nav-text">Jar包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Core"><span class="nav-number">3.1.</span> <span class="nav-text">Core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aop"><span class="nav-number">3.2.</span> <span class="nav-text">Aop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-access"><span class="nav-number">3.3.</span> <span class="nav-text">data access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web"><span class="nav-number">3.4.</span> <span class="nav-text">web</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">3.5.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#support"><span class="nav-number">3.6.</span> <span class="nav-text">support</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC（Inversion-of-Control）"><span class="nav-number">4.</span> <span class="nav-text">IOC（Inversion of Control）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">4.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现策略"><span class="nav-number">4.3.</span> <span class="nav-text">实现策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DI"><span class="nav-number">5.</span> <span class="nav-text">DI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明-1"><span class="nav-number">5.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bean之间的关系"><span class="nav-number">5.2.</span> <span class="nav-text">bean之间的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">6.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解扫描"><span class="nav-number">6.1.</span> <span class="nav-text">注解扫描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入配置文件"><span class="nav-number">6.2.</span> <span class="nav-text">引入配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心API-了解"><span class="nav-number">7.</span> <span class="nav-text">核心API(了解)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#体系"><span class="nav-number">7.1.</span> <span class="nav-text">体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory"><span class="nav-number">7.2.</span> <span class="nav-text">BeanFactory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">7.2.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ApplicationContext"><span class="nav-number">7.3.</span> <span class="nav-text">ApplicationContext</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ApplicationContext实现类"><span class="nav-number">7.3.1.</span> <span class="nav-text">ApplicationContext实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ClassPathXmlApplicationContext"><span class="nav-number">7.3.1.1.</span> <span class="nav-text">ClassPathXmlApplicationContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FileSystemXmlApplicaitonContext"><span class="nav-number">7.3.1.2.</span> <span class="nav-text">FileSystemXmlApplicaitonContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AnnotationConfigApplicationContext"><span class="nav-number">7.3.1.3.</span> <span class="nav-text">AnnotationConfigApplicationContext</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConfigurableApplicationContext"><span class="nav-number">7.4.</span> <span class="nav-text">ConfigurableApplicationContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebApplicationContext"><span class="nav-number">7.5.</span> <span class="nav-text">WebApplicationContext</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于xml"><span class="nav-number">8.</span> <span class="nav-text">基于xml</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean实例化"><span class="nav-number">8.1.</span> <span class="nav-text">Bean实例化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认构造"><span class="nav-number">8.1.1.</span> <span class="nav-text">默认构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态工厂"><span class="nav-number">8.1.2.</span> <span class="nav-text">静态工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例工厂"><span class="nav-number">8.1.3.</span> <span class="nav-text">实例工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FactoryBean"><span class="nav-number">8.1.4.</span> <span class="nav-text">FactoryBean</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean作用域"><span class="nav-number">8.2.</span> <span class="nav-text">Bean作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scope"><span class="nav-number">8.2.1.</span> <span class="nav-text">scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖注入"><span class="nav-number">8.3.</span> <span class="nav-text">依赖注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注入方式"><span class="nav-number">8.3.1.</span> <span class="nav-text">注入方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set方法"><span class="nav-number">8.3.1.1.</span> <span class="nav-text">set方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法"><span class="nav-number">8.3.1.2.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P命名空间"><span class="nav-number">8.3.1.3.</span> <span class="nav-text">P命名空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpEL"><span class="nav-number">8.3.1.4.</span> <span class="nav-text">SpEL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入类型"><span class="nav-number">8.3.2.</span> <span class="nav-text">注入类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字面量"><span class="nav-number">8.3.2.1.</span> <span class="nav-text">字面量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用类型"><span class="nav-number">8.3.2.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">8.3.2.3.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组-集合的注入"><span class="nav-number">8.3.2.4.</span> <span class="nav-text">数组/集合的注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-2"><span class="nav-number">8.3.2.4.1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">8.3.2.4.2.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">8.3.2.5.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">8.3.2.6.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map"><span class="nav-number">8.3.2.7.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">8.3.2.8.</span> <span class="nav-text">Properties</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean生命周期"><span class="nav-number">8.4.</span> <span class="nav-text">Bean生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单过程"><span class="nav-number">8.4.1.</span> <span class="nav-text">简单过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单例Bean"><span class="nav-number">8.4.2.</span> <span class="nav-text">单例Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多例Bean"><span class="nav-number">8.4.3.</span> <span class="nav-text">多例Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanPostProcessor-后处理Bean"><span class="nav-number">8.4.4.</span> <span class="nav-text">BeanPostProcessor (后处理Bean)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">8.4.4.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">8.4.4.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类A的创建→初始化→目标方法→销毁过程"><span class="nav-number">8.4.4.3.</span> <span class="nav-text">类A的创建→初始化→目标方法→销毁过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动装配"><span class="nav-number">8.5.</span> <span class="nav-text">自动装配</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于注解"><span class="nav-number">9.</span> <span class="nav-text">基于注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean实例化-1"><span class="nav-number">9.1.</span> <span class="nav-text">Bean实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">9.2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">9.3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖注入-1"><span class="nav-number">9.4.</span> <span class="nav-text">依赖注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Value-value-”值-spEL”"><span class="nav-number">9.4.1.</span> <span class="nav-text">@Value(value=”值/spEL”)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Autowired"><span class="nav-number">9.4.2.</span> <span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qualifier-value-”beanId”"><span class="nav-number">9.4.3.</span> <span class="nav-text">@Qualifier(value=”beanId”)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource-name-”beanId”"><span class="nav-number">9.4.4.</span> <span class="nav-text">@Resource(name=”beanId”)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新注解"><span class="nav-number">9.5.</span> <span class="nav-text">新注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-1"><span class="nav-number">9.5.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration"><span class="nav-number">9.5.2.</span> <span class="nav-text">@Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用-1"><span class="nav-number">9.5.2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">9.5.2.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentScan"><span class="nav-number">9.5.3.</span> <span class="nav-text">@ComponentScan</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用-2"><span class="nav-number">9.5.3.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">9.5.3.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean"><span class="nav-number">9.5.4.</span> <span class="nav-text">@Bean</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用-3"><span class="nav-number">9.5.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">9.5.4.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PropertySource"><span class="nav-number">9.5.5.</span> <span class="nav-text">@PropertySource</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用-4"><span class="nav-number">9.5.5.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-3"><span class="nav-number">9.5.5.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import"><span class="nav-number">9.5.6.</span> <span class="nav-text">@Import</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用-5"><span class="nav-number">9.5.6.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-4"><span class="nav-number">9.5.6.2.</span> <span class="nav-text">属性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP"><span class="nav-number">10.</span> <span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-2"><span class="nav-number">10.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP的实现框架"><span class="nav-number">10.2.</span> <span class="nav-text">AOP的实现框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AspectJ"><span class="nav-number">10.2.1.</span> <span class="nav-text">AspectJ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">10.2.2.</span> <span class="nav-text">Spring-AOP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ-amp-Spring-AOP"><span class="nav-number">10.3.</span> <span class="nav-text">AspectJ &amp; Spring-AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-number">10.3.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">10.3.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">10.3.3.</span> <span class="nav-text">注解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP使用"><span class="nav-number">10.4.</span> <span class="nav-text">AOP使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发阶段（程序员）"><span class="nav-number">10.4.1.</span> <span class="nav-text">开发阶段（程序员）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行阶段（Spring）"><span class="nav-number">10.4.2.</span> <span class="nav-text">运行阶段（Spring）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP术语"><span class="nav-number">10.5.</span> <span class="nav-text">AOP术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#横切关注点"><span class="nav-number">10.5.1.</span> <span class="nav-text">横切关注点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">10.5.2.</span> <span class="nav-text">Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Joinpoint"><span class="nav-number">10.5.3.</span> <span class="nav-text">Joinpoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PointCut"><span class="nav-number">10.5.4.</span> <span class="nav-text">PointCut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advice"><span class="nav-number">10.5.5.</span> <span class="nav-text">Advice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weaving"><span class="nav-number">10.5.6.</span> <span class="nav-text">Weaving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proxy"><span class="nav-number">10.5.7.</span> <span class="nav-text">proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aspect-advisor"><span class="nav-number">10.5.8.</span> <span class="nav-text">Aspect/advisor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知（Advice）"><span class="nav-number">10.6.</span> <span class="nav-text">通知（Advice）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">10.6.1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前置通知"><span class="nav-number">10.6.1.1.</span> <span class="nav-text">前置通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后置通知"><span class="nav-number">10.6.1.2.</span> <span class="nav-text">后置通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环绕通知"><span class="nav-number">10.6.1.3.</span> <span class="nav-text">环绕通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常抛出通知"><span class="nav-number">10.6.1.4.</span> <span class="nav-text">异常抛出通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引介通知"><span class="nav-number">10.6.1.5.</span> <span class="nav-text">引介通知</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ-1"><span class="nav-number">10.7.</span> <span class="nav-text">AspectJ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切入点表达式"><span class="nav-number">10.7.1.</span> <span class="nav-text">切入点表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#execution"><span class="nav-number">10.7.1.1.</span> <span class="nav-text">execution()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法"><span class="nav-number">10.7.1.1.1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#修饰符"><span class="nav-number">10.7.1.1.1.1.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#返回值"><span class="nav-number">10.7.1.1.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#包"><span class="nav-number">10.7.1.1.1.3.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#类"><span class="nav-number">10.7.1.1.1.4.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法-1"><span class="nav-number">10.7.1.1.1.5.</span> <span class="nav-text">方法()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#参数"><span class="nav-number">10.7.1.1.1.6.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#throws"><span class="nav-number">10.7.1.1.1.7.</span> <span class="nav-text">throws</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#within-了解"><span class="nav-number">10.7.1.2.</span> <span class="nav-text">within(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-了解"><span class="nav-number">10.7.1.3.</span> <span class="nav-text">this(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#target-了解"><span class="nav-number">10.7.1.4.</span> <span class="nav-text">target(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#args-了解"><span class="nav-number">10.7.1.5.</span> <span class="nav-text">args(了解)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bean-了解"><span class="nav-number">10.7.1.6.</span> <span class="nav-text">bean(了解)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知类型"><span class="nav-number">10.7.2.</span> <span class="nav-text">通知类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-3"><span class="nav-number">10.7.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类-1"><span class="nav-number">10.7.2.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前置通知-1"><span class="nav-number">10.7.2.2.1.</span> <span class="nav-text">前置通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后置通知-1"><span class="nav-number">10.7.2.2.2.</span> <span class="nav-text">后置通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#环绕通知-1"><span class="nav-number">10.7.2.2.3.</span> <span class="nav-text">环绕通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#抛出异常通知"><span class="nav-number">10.7.2.2.4.</span> <span class="nav-text">抛出异常通知</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最终通知"><span class="nav-number">10.7.2.2.5.</span> <span class="nav-text">最终通知</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-AOP编程"><span class="nav-number">11.</span> <span class="nav-text">Spring AOP编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于经典的SpringAOP"><span class="nav-number">11.1.</span> <span class="nav-text">基于经典的SpringAOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-AspectJ"><span class="nav-number">11.2.</span> <span class="nav-text">Spring+AspectJ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AspectJ基于xml的AOP编程"><span class="nav-number">11.2.1.</span> <span class="nav-text">AspectJ基于xml的AOP编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AspectJ基于注解的AOP编程"><span class="nav-number">11.2.2.</span> <span class="nav-text">AspectJ基于注解的AOP编程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC-Template"><span class="nav-number">12.</span> <span class="nav-text">JDBC Template</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-1"><span class="nav-number">12.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动创建方式-了解"><span class="nav-number">12.1.1.</span> <span class="nav-text">手动创建方式 (了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-ioc之JdbcTemplate"><span class="nav-number">12.1.2.</span> <span class="nav-text">spring ioc之JdbcTemplate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-ioc之-JdbcDaoSupport"><span class="nav-number">12.1.3.</span> <span class="nav-text">spring ioc之 JdbcDaoSupport</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">12.2.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改"><span class="nav-number">12.2.1.</span> <span class="nav-text">增删改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">12.2.2.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RowMapper"><span class="nav-number">12.2.2.1.</span> <span class="nav-text">RowMapper</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#API-1"><span class="nav-number">12.2.2.1.1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring提供的RowMapper实现"><span class="nav-number">12.2.2.1.2.</span> <span class="nav-text">Spring提供的RowMapper实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#BeanPropertyRowMapper"><span class="nav-number">12.2.2.1.2.1.</span> <span class="nav-text">BeanPropertyRowMapper</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务管理"><span class="nav-number">13.</span> <span class="nav-text">事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三个顶级接口"><span class="nav-number">13.1.</span> <span class="nav-text">三个顶级接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PlatformTransactionManager"><span class="nav-number">13.1.1.</span> <span class="nav-text">PlatformTransactionManager</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-4"><span class="nav-number">13.1.1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-2"><span class="nav-number">13.1.1.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务管理器（实现）"><span class="nav-number">13.1.1.3.</span> <span class="nav-text">事务管理器（实现）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DataSourceTransactionManager"><span class="nav-number">13.1.1.3.1.</span> <span class="nav-text">DataSourceTransactionManager</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HibernateTransactionManager"><span class="nav-number">13.1.1.3.2.</span> <span class="nav-text">HibernateTransactionManager</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TransactionDefinition"><span class="nav-number">13.1.2.</span> <span class="nav-text">TransactionDefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-5"><span class="nav-number">13.1.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-3"><span class="nav-number">13.1.2.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传播行为"><span class="nav-number">13.1.2.3.</span> <span class="nav-text">传播行为</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述-6"><span class="nav-number">13.1.2.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分类-2"><span class="nav-number">13.1.2.3.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隔离级别"><span class="nav-number">13.1.2.4.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#是否回滚"><span class="nav-number">13.1.2.5.</span> <span class="nav-text">是否回滚</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TransactionStatus"><span class="nav-number">13.1.3.</span> <span class="nav-text">TransactionStatus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-7"><span class="nav-number">13.1.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-4"><span class="nav-number">13.1.3.2.</span> <span class="nav-text">API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务管理详解"><span class="nav-number">13.2.</span> <span class="nav-text">事务管理详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-8"><span class="nav-number">13.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动管理事务-了解"><span class="nav-number">13.2.2.</span> <span class="nav-text">手动管理事务(了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半自动管理事务"><span class="nav-number">13.2.3.</span> <span class="nav-text">半自动管理事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TransactionProxyFactoryBean"><span class="nav-number">13.2.3.1.</span> <span class="nav-text">TransactionProxyFactoryBean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动管理事务"><span class="nav-number">13.2.4.</span> <span class="nav-text">自动管理事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aop配置事务基于xml"><span class="nav-number">13.2.4.1.</span> <span class="nav-text">Aop配置事务基于xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Aop配置事务基于注解"><span class="nav-number">13.2.4.2.</span> <span class="nav-text">Aop配置事务基于注解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring整合junit"><span class="nav-number">14.</span> <span class="nav-text">spring整合junit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jar包"><span class="nav-number">14.1.</span> <span class="nav-text">jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-2"><span class="nav-number">14.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RunWith-SpringJunit4ClassRunner-class"><span class="nav-number">14.2.1.</span> <span class="nav-text">@RunWith(SpringJunit4ClassRunner.class)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ContextConfiguration"><span class="nav-number">14.2.2.</span> <span class="nav-text">@ContextConfiguration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Autowired-1"><span class="nav-number">14.2.3.</span> <span class="nav-text">@Autowired</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring整合web"><span class="nav-number">15.</span> <span class="nav-text">spring整合web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-9"><span class="nav-number">15.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web技术之服务器-tomcat-一启动就加载配置文件的方式"><span class="nav-number">15.2.</span> <span class="nav-text">web技术之服务器(tomcat)一启动就加载配置文件的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring监听器的配置"><span class="nav-number">15.3.</span> <span class="nav-text">spring监听器的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动获取spring容器"><span class="nav-number">15.4.</span> <span class="nav-text">手动获取spring容器</span></a></li></ol></li></ol></div>
             
 
           </div>

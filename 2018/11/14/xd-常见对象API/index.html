@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="安₃">
 <meta property="og:description" content="API Application Programing Interface 应用程序编程接口   java api java提供使用的类    Object java.lang.Object  hashCode() 返回该对象的哈希码值 采用操作系统底层实现的哈希算法。   java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致  getClass() 返回此对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-23T07:47:58.495Z">
+<meta property="og:updated_time" content="2019-03-08T06:28:10.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xd-常见对象API">
 <meta name="twitter:description" content="API Application Programing Interface 应用程序编程接口   java api java提供使用的类    Object java.lang.Object  hashCode() 返回该对象的哈希码值 采用操作系统底层实现的哈希算法。   java规定如果两个对象equals返回true，那么这两个对象的hashCode码必须一致  getClass() 返回此对">
@@ -365,7 +365,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-23 15:47:58" itemprop="dateModified" datetime="2018-11-23T15:47:58+08:00">2018-11-23</time>
+                <time title="修改时间：2019-03-08 14:28:10" itemprop="dateModified" datetime="2019-03-08T14:28:10+08:00">2019-03-08</time>
               
             
           </span>
@@ -382,7 +382,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaSE/" itemprop="url" rel="index"><span itemprop="name">JavaSE</span></a></span>
 
                 
                 
@@ -1026,6 +1026,245 @@
 </ul>
 </li>
 </ul>
+<h1 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h1><h2 id="DateFormat"><a href="#DateFormat" class="headerlink" title="DateFormat"></a>DateFormat</h2><ul>
+<li><code>static DateFormat getDateInstance([int style])</code></li>
+<li><code>static DateFormat getDateTimeInstance([int dateStyle,int timeStyle])</code></li>
+<li><code>String format(Date date)</code><ul>
+<li>日期→字符串</li>
+</ul>
+</li>
+<li><code>Date parse(String date)</code><ul>
+<li>字符串→日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h3><h1 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h1><ul>
+<li><code>static Calendar getInstance()</code></li>
+<li><code>int get(int field)</code></li>
+<li><code>abstract void add(int field,int amount)</code><ul>
+<li>amount<ul>
+<li>我的理解是当前字段的偏移量</li>
+<li>比如字段是<code>MONTH</code><ul>
+<li>amount=0表示当前月</li>
+<li>amount=1表示当前月+1即下个月</li>
+<li>amount=-1表示当前月-1即上个月</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>void set(int field, int value)</code><ul>
+<li>将给定的日历字段设置为给定值</li>
+<li>set 表示直接设值 不考虑原来的时间值</li>
+<li>add 表示在原有的基础上进行加减</li>
+</ul>
+</li>
+</ul>
+<h1 id="jdk8的日期"><a href="#jdk8的日期" class="headerlink" title="jdk8的日期"></a>jdk8的日期</h1><ul>
+<li>新的日期API类都是final修饰而不可变的，如果遇到加减运算及格式化操作，本质上会创建新的实例。</li>
+<li>新的API操作都是线程安全的</li>
+</ul>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><ul>
+<li><code>java.time</code><ul>
+<li>基础包，使用标准的iso-8601历法</li>
+</ul>
+</li>
+<li><code>java.time.chrono</code><ul>
+<li>使用一些非标准的历法（中华民国历法(辛亥革命)，泰国佛教历法…）</li>
+</ul>
+</li>
+<li><code>java.time.formate</code><ul>
+<li>包含能够格式化和解析日期时间对象的类</li>
+<li>在绝大多数情况下，我们不应该直接使用它们，因为 java.time 包中相应的类已经提供了格式化和解析的方法</li>
+</ul>
+</li>
+<li><code>java.time.temporal</code><ul>
+<li>包含一些时态对象，用于找出特定时间和日期（如某月第一天）</li>
+</ul>
+</li>
+<li><code>java.time.zone</code><ul>
+<li>包含支持不同时区以及相关规定的类</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h2><ul>
+<li><code>toString()</code><ul>
+<li>默认格式<code>yyyy-MM-dd</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li><code>static LoaclDate now()</code><ul>
+<li>从<code>system clock</code>和默认的时区获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate now(Clock clock)</code><ul>
+<li>从指定的clock获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate now(ZoneId zone)</code><ul>
+<li>指定的时区id获取当前时间</li>
+</ul>
+</li>
+<li><code>static LoaclDate of(int year, int month, int dayOfMonth)</code><ul>
+<li>从指定的year, month and day获取LocalDate实例</li>
+</ul>
+</li>
+<li><code>static LoaclDate of(int year, Month month, int dayOfMonth)</code><ul>
+<li>Month中是枚举</li>
+</ul>
+</li>
+<li><code>static LoaclDate ofEpochDay(long epochDay)</code><ul>
+<li>就是<code>1970-01-01</code>加上传入的天数<code>epochDay</code></li>
+</ul>
+</li>
+<li><code>static LoaclDate ofYearDay(int year, int dayOfYear)</code><ul>
+<li>根据指定的year和当年的第几天获取LocalDate实例</li>
+</ul>
+</li>
+</ul>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><ul>
+<li><code>plus(long amountToAdd, TemporalUnit unit)</code></li>
+<li><code>plus(TemporalAmount amountToAdd)</code></li>
+<li><code>plusDays(long daysToAdd)</code></li>
+<li><code>plusWeeks(long weeksToAdd)</code></li>
+<li><code>plusMonths(long monthsToAdd)</code></li>
+<li><code>plusYears(long yearsToAdd)</code></li>
+<li><strong>minus同plus</strong></li>
+</ul>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><ul>
+<li><code>String format(DateTimeFormatter formatter)</code><ul>
+<li>日期转成指定格式的字符串</li>
+</ul>
+</li>
+<li><code>static LocalDate parse(CharSequence text)</code><ul>
+<li>将字符串转成<code>yyyy-MM-dd</code>格式的日期，必须是<code>yyyy-MM-dd</code>格式的字符串</li>
+</ul>
+</li>
+<li><code>static LocalDate parse(CharSequence text, DateTimeFormatter formatter)</code><ul>
+<li>将指定格式的字符串转成<code>yyyy-MM-dd</code>格式的日期</li>
+<li>有内置的格式，也可以自定义<ul>
+<li><code>DateTimeFormatter.ofPattern(自定格式)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取-2"><a href="#获取-2" class="headerlink" title="获取"></a>获取</h3><ul>
+<li><code>Period until(ChronoLocalDate endDateExclusive)</code><ul>
+<li>获取日期直接的差值</li>
+</ul>
+</li>
+<li><code>long until(Temporal endExclusive, TemporalUnit unit)</code></li>
+<li><code>with(TemporalAdjuster adjuster)</code></li>
+<li><code>with(TemporalField field, long newValue)</code></li>
+<li><code>withDayOfMonth(int dayOfMonth)</code><ul>
+<li>取本月第几天</li>
+</ul>
+</li>
+<li><code>withDayOfYear(int dayOfYear)</code></li>
+<li><code>withMonth(int month)</code></li>
+<li><code>withYear(int year)</code></li>
+</ul>
+<h4 id="TemporalAdjuster"><a href="#TemporalAdjuster" class="headerlink" title="TemporalAdjuster"></a>TemporalAdjuster</h4><ul>
+<li>时间矫正器</li>
+<li><code>TemporalAdjusters</code><ul>
+<li>工具类 用于获取TemporalAdjuster</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h2><ul>
+<li><code>toString()</code><ul>
+<li>默认格式<code>HH:mm:ss.SSS</code></li>
+<li><code>SSS</code><ul>
+<li>毫秒数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本用法同LocalDate</li>
+<li><code>withNano(0)</code><ul>
+<li>去除毫秒数</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h2><ul>
+<li><code>static LocalDateTime ofInstant(Instant instant, ZoneId zone)</code><ul>
+<li>将instant按指定zone转换为LocalDateTime</li>
+</ul>
+</li>
+</ul>
+<h2 id="Instant"><a href="#Instant" class="headerlink" title="Instant"></a>Instant</h2><ul>
+<li>用在机器可读的时间格式上的，它以 Unix 时间戳的形式存储日期时间</li>
+<li>本质是一个数字时间戳，底层实际上是对System.currentTimeMillis()进行了包装</li>
+<li>以unix元年：1970-1-1 00:00:00 到某个时间的毫秒值</li>
+<li><code>Instant now()</code><ul>
+<li>默认获取UTC时区</li>
+</ul>
+</li>
+<li><code>long toEpochMilli()</code><ul>
+<li>转成毫秒</li>
+</ul>
+</li>
+</ul>
+<h2 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h2><ul>
+<li>定义了许多的格式</li>
+</ul>
+<h2 id="Clock"><a href="#Clock" class="headerlink" title="Clock"></a>Clock</h2><ul>
+<li>时钟提供给我们用于访问某个特定 时区的 瞬时时间、日期 和 时间的</li>
+<li><code>Clock c1 = Clock.systemUTC()</code><ul>
+<li>系统默认UTC时钟</li>
+<li>当前瞬时时间 System.currentTimeMillis()</li>
+</ul>
+</li>
+<li><code>Clock c2 = Clock.systemDefaultZone()</code><ul>
+<li>系统默认时区时钟</li>
+</ul>
+</li>
+<li><code>Clock c3 = Clock.system(ZoneId.of(&quot;Asia/Shanghai&quot;))</code><ul>
+<li>上海时区时钟</li>
+<li>注意每次调用将返回当前瞬时时区(UTC)</li>
+</ul>
+</li>
+<li><code>Clock c4 = Clock.fixed(Instant.now(), ZoneId.of(&quot;Asia/Shanghai&quot;))</code><ul>
+<li>固定上海时区时钟</li>
+</ul>
+</li>
+</ul>
+<h2 id="Period"><a href="#Period" class="headerlink" title="Period"></a>Period</h2><ul>
+<li>计算两个日期之间的间隔</li>
+<li>也可以直接使用日期中的<code>until()</code>完成</li>
+<li><code>static Period between(LocalDate startDate, LocalDate endDate)</code> </li>
+<li><code>getDays()</code></li>
+<li><code>getMonths()</code></li>
+</ul>
+<h2 id="Druation"><a href="#Druation" class="headerlink" title="Druation"></a>Druation</h2><ul>
+<li>计算两个日期时间之间的间隔</li>
+<li><code>static Duration between(Temporal start, Temporal end)</code></li>
+<li><code>getNano()</code></li>
+<li><code>toMilliis()</code></li>
+<li><code>getSeconds()</code></li>
+</ul>
+<h2 id="ZoneDate-ZoneTime-ZoneDateTime"><a href="#ZoneDate-ZoneTime-ZoneDateTime" class="headerlink" title="ZoneDate/ZoneTime/ZoneDateTime"></a>ZoneDate/ZoneTime/ZoneDateTime</h2><h2 id="旧的日期支持"><a href="#旧的日期支持" class="headerlink" title="旧的日期支持"></a>旧的日期支持</h2><ul>
+<li><code>Instant timestamp = new Date().toInstant()</code><ul>
+<li>Date to Instant</li>
+<li>然后可以把Instant转换为LocalDateTime</li>
+</ul>
+</li>
+<li><code>Date dt = Date.from(Instant.now())</code><ul>
+<li>Instant to Date</li>
+</ul>
+</li>
+<li><code>Instant time = Calendar.getInstance().toInstant()</code><ul>
+<li>Calendar to Instant</li>
+</ul>
+</li>
+<li><code>ZoneId defaultzone = Timezone.getDefault().toZoneId()</code><ul>
+<li>TimeZone to ZoneId</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -1149,7 +1388,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1174,7 +1413,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1212,7 +1455,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">2.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">2.1.</span> <span class="nav-text">hashCode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">2.2.</span> <span class="nav-text">getClass()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">2.3.</span> <span class="nav-text">equals()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-equals"><span class="nav-number">2.3.1.</span> <span class="nav-text">== &amp; equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-的重写"><span class="nav-number">2.3.2.</span> <span class="nav-text">equals()的重写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.4.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">2.5.</span> <span class="nav-text">finalize()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scanner"><span class="nav-number">3.</span> <span class="nav-text">Scanner</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造"><span class="nav-number">3.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">3.2.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-1"><span class="nav-number">4.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取"><span class="nav-number">4.2.</span> <span class="nav-text">获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换"><span class="nav-number">4.3.</span> <span class="nav-text">转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断"><span class="nav-number">4.4.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">4.5.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用-1"><span class="nav-number">4.6.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">4.7.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuffer-StringBuilder"><span class="nav-number">5.</span> <span class="nav-text">StringBuffer/StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-amp-StringBuffer"><span class="nav-number">5.1.1.</span> <span class="nav-text">String &amp; StringBuffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-amp-StringBuilder"><span class="nav-number">5.1.2.</span> <span class="nav-text">StringBuffer &amp; StringBuilder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-2"><span class="nav-number">5.2.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加"><span class="nav-number">5.3.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">5.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">5.5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-1"><span class="nav-number">5.6.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型包装类"><span class="nav-number">6.</span> <span class="nav-text">基本类型包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型对应包装类"><span class="nav-number">6.1.</span> <span class="nav-text">基本类型对应包装类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer"><span class="nav-number">6.2.</span> <span class="nav-text">Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造-3"><span class="nav-number">6.2.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制"><span class="nav-number">6.2.2.</span> <span class="nav-text">进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动拆装箱"><span class="nav-number">6.2.4.</span> <span class="nav-text">自动拆装箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考-1"><span class="nav-number">6.2.5.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">7.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ramdom"><span class="nav-number">8.</span> <span class="nav-text">Ramdom</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-4"><span class="nav-number">8.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-number">9.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Runtime"><span class="nav-number">10.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigInteger"><span class="nav-number">11.</span> <span class="nav-text">BigInteger</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-5"><span class="nav-number">11.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1"><span class="nav-number">11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigDecimal"><span class="nav-number">12.</span> <span class="nav-text">BigDecimal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-6"><span class="nav-number">12.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-2"><span class="nav-number">12.2.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">2.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode"><span class="nav-number">2.1.</span> <span class="nav-text">hashCode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getClass"><span class="nav-number">2.2.</span> <span class="nav-text">getClass()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">2.3.</span> <span class="nav-text">equals()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-equals"><span class="nav-number">2.3.1.</span> <span class="nav-text">== &amp; equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-的重写"><span class="nav-number">2.3.2.</span> <span class="nav-text">equals()的重写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.4.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">2.5.</span> <span class="nav-text">finalize()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scanner"><span class="nav-number">3.</span> <span class="nav-text">Scanner</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造"><span class="nav-number">3.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">3.2.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-1"><span class="nav-number">4.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取"><span class="nav-number">4.2.</span> <span class="nav-text">获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换"><span class="nav-number">4.3.</span> <span class="nav-text">转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断"><span class="nav-number">4.4.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">4.5.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用-1"><span class="nav-number">4.6.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">4.7.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuffer-StringBuilder"><span class="nav-number">5.</span> <span class="nav-text">StringBuffer/StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">5.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-amp-StringBuffer"><span class="nav-number">5.1.1.</span> <span class="nav-text">String &amp; StringBuffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-amp-StringBuilder"><span class="nav-number">5.1.2.</span> <span class="nav-text">StringBuffer &amp; StringBuilder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-2"><span class="nav-number">5.2.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加"><span class="nav-number">5.3.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">5.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">5.5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-1"><span class="nav-number">5.6.</span> <span class="nav-text">获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型包装类"><span class="nav-number">6.</span> <span class="nav-text">基本类型包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型对应包装类"><span class="nav-number">6.1.</span> <span class="nav-text">基本类型对应包装类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer"><span class="nav-number">6.2.</span> <span class="nav-text">Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造-3"><span class="nav-number">6.2.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制"><span class="nav-number">6.2.2.</span> <span class="nav-text">进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较-1"><span class="nav-number">6.2.3.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动拆装箱"><span class="nav-number">6.2.4.</span> <span class="nav-text">自动拆装箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考-1"><span class="nav-number">6.2.5.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">7.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ramdom"><span class="nav-number">8.</span> <span class="nav-text">Ramdom</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-4"><span class="nav-number">8.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-number">9.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Runtime"><span class="nav-number">10.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigInteger"><span class="nav-number">11.</span> <span class="nav-text">BigInteger</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-5"><span class="nav-number">11.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1"><span class="nav-number">11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BigDecimal"><span class="nav-number">12.</span> <span class="nav-text">BigDecimal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-6"><span class="nav-number">12.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-2"><span class="nav-number">12.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date"><span class="nav-number">13.</span> <span class="nav-text">Date</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DateFormat"><span class="nav-number">13.1.</span> <span class="nav-text">DateFormat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SimpleDateFormat"><span class="nav-number">13.1.1.</span> <span class="nav-text">SimpleDateFormat</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Calendar"><span class="nav-number">14.</span> <span class="nav-text">Calendar</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jdk8的日期"><span class="nav-number">15.</span> <span class="nav-text">jdk8的日期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#包"><span class="nav-number">15.1.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LocalDate"><span class="nav-number">15.2.</span> <span class="nav-text">LocalDate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">15.2.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算"><span class="nav-number">15.2.2.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化"><span class="nav-number">15.2.3.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取-2"><span class="nav-number">15.2.4.</span> <span class="nav-text">获取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TemporalAdjuster"><span class="nav-number">15.2.4.1.</span> <span class="nav-text">TemporalAdjuster</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LocalTime"><span class="nav-number">15.3.</span> <span class="nav-text">LocalTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LocalDateTime"><span class="nav-number">15.4.</span> <span class="nav-text">LocalDateTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instant"><span class="nav-number">15.5.</span> <span class="nav-text">Instant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DateTimeFormatter"><span class="nav-number">15.6.</span> <span class="nav-text">DateTimeFormatter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clock"><span class="nav-number">15.7.</span> <span class="nav-text">Clock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Period"><span class="nav-number">15.8.</span> <span class="nav-text">Period</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Druation"><span class="nav-number">15.9.</span> <span class="nav-text">Druation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZoneDate-ZoneTime-ZoneDateTime"><span class="nav-number">15.10.</span> <span class="nav-text">ZoneDate/ZoneTime/ZoneDateTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旧的日期支持"><span class="nav-number">15.11.</span> <span class="nav-text">旧的日期支持</span></a></li></ol></li></ol></div>
             
 
           </div>
